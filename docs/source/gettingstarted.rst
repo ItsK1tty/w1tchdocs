@@ -11,13 +11,15 @@ Is this your first time using the LUA Engine? This is the place to get started!
 This page gives a brief introduction to the library.
 
 A Minimal script
-===
+================
 
 Let\’s make a script that responds to a specific key and walk you through it.
 
 It looks something like this:
 
 .. code-block:: lua
+    :linenos:
+
     function my_script_function()
         -- Test key press
         bKeyPressed = system.is_key_pressed("F")
