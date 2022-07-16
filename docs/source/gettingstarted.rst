@@ -32,7 +32,7 @@ There’s a lot going on here, so let’s walk you through it step by step.
 
 #. The first line defines the name of the function. It can be any name you want.
 #. Next, there's the comment. Comments are started with -- and are a good way to explain what something does or keep a certain feature from executing.
-#. We then check if the key is pressed. This is done by calling the `system.is_key_pressed` function. The first and only argument is the key name.
+#. We then check if the key is pressed. This is done by calling the ``system.is_key_pressed`` function. The first and only argument is the key name.
 #. If the key is pressed, we send the "Pressed F to pay respect!" message to the console.
 #. Finally, end keywords are used to end the function or a logic expression.
 #. The last line of the script is to add the function to the main loop, or task list. The main loop runs the feature over and over, that's why we don't use a loop in the function itself.
