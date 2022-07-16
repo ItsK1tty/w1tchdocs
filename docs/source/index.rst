@@ -6,7 +6,7 @@ than the built-in DIS2RBED Menu has.
 It offers straightforward functions to interact with the game
 and provides a lot of useful features for scripting.
 
-Check out the :doc:`generalinfo` section for further information.
+Check out the :doc:`generalinfo` section for further information, as well as :doc:`gettingstarted`.
 
 .. note::
 
