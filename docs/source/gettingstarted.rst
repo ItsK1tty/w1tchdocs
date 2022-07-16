@@ -3,9 +3,6 @@ Getting Started
 
 .. _gettingstarted:
 
-
-Getting started with DIS2RBED LUA framework
-================
 Is this your first time using the LUA Engine? This is the place to get started!
 
 This page gives a brief introduction to the framework.
@@ -29,7 +26,7 @@ It looks something like this:
     end
     system.add_task("My script task", "luaTestTaskHash", -1, my_script_function)
 
-Let’s name this file `example.lua`.
+Let’s name this file ``example.lua``.
 
 There’s a lot going on here, so let’s walk you through it step by step.
 
