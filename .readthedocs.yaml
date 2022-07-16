@@ -6,6 +6,7 @@ build:
     python: "3.8"
 
 python:
-  # Install our python package before building the docs
+  myst-parser
   install:
     - method: pip
+    - requirements: requirements.txt
