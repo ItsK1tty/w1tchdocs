@@ -19,3 +19,4 @@ Contents
 
    generalinfo
    reference
+   gettingstarted
