@@ -1,3 +1,8 @@
+Getting Started
+================
+.. _gettingstarted:
+
+
 Getting started with DIS2RBED LUA framework
 ===
 Is this your first time using the LUA Engine? This is the place to get started!
