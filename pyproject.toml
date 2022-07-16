@@ -3,6 +3,6 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "lumache"
-authors = [{name = "Graziella", email = "graziella@lumache"}]
-dynamic = ["version", "description"]
+name = "D2Lua"
+authors = [{name = "K1tty", email = "k1tty@w1tch.net"}]
+dynamic = ["1.0.0", "DIS2RBED Menu Lua Engine Documentation"]
