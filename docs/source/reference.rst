@@ -4,14 +4,15 @@ DIS2RBED LUA reference
 
 There are multiple namespaces & types in the current DIS2RBED LUA framework, each with their own set of functions.
 
-sdasd
+.. _Test:
 
 Types in LUA Engine
 ######################
 
 Types in LUA Engine are defined in the following way:
 
-* :ref:`Hash` (uint64)
+* :ref:`Test` - Test
+* :ref:`hash` (uint64)
 * :ref:`Entity` (int)
 * :ref:`Ped` (int)
 * :ref:`Player` (int)
@@ -20,7 +21,7 @@ Types in LUA Engine are defined in the following way:
 * :ref:`Any` (int)
 * :ref:`Vehicle` (int)
 
-.. _hash:
+.. _Hash:
 Hash
 ----------------------
 Hash definition here
