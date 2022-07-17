@@ -264,6 +264,10 @@ draw_box_border_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``borderS
    draw_box_border_filled("MyHash", true, 0.f, 0.f, 100.f, 100.f, 10.f, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true, 10.f, 0);
 
 
+**Returns:**
+
+* ``void``
+
 .. _self:
 
 Self namespace
