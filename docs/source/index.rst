@@ -18,5 +18,6 @@ Contents
 .. toctree::
 
    generalinfo
-   reference
    gettingstarted
+   reference
+   

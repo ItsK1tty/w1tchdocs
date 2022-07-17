@@ -1,0 +1,4 @@
+Locals namespace
+====================
+
+Functions here

@@ -1,0 +1,4 @@
+Fire namespace
+=================
+
+Functions here

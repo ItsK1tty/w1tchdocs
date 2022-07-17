@@ -1,0 +1,4 @@
+Graphics namespace
+======================
+
+Functions here

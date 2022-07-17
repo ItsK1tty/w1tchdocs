@@ -1,0 +1,4 @@
+Render namespace
+====================
+
+Functions here
