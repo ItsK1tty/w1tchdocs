@@ -245,38 +245,27 @@ bool file_remove(string *file*);
 
 ..
 
-   */
    bool file_validate(std::string file); // Validate file
-   /*
       file: string; file to validate
       example:
          file_validate("/"); //returns true
-   */
    bool is_file_empty(std::string file); // Check if file is empty
-   /*
       file: string; file to check
       example:
          is_file_empty("/"); //returns true
-   */
    void dir_check(std::string dir); // Check if directory exists, if not create it
-   /*
       dir: string; directory to check
       example:
          dir_check("/"); //returns true
-   */
    void dir_create(std::string dir); // Create directory
-   /*
       dir: string; directory to create
       example:
          dir_create("/"); //returns true
-   */
    void file_copy(std::string source, std::string dest); // Copy file
-   /*
       source: string; source file
       dest: string; destination file
       example:
          file_copy("/", "/"); //returns true
-   */
 
 .. _playerNS:
 
