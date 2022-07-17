@@ -7,53 +7,7 @@ DIS2RBED LUA reference
 System namespace
 -----------------
 
-Test ~
-~~~~~~~~~~
 
-Test "
-""""""""""
-
-Test '
-''''''''''
-
-Test ^
-^^^^^^^^^^
-
-Test #
-##########
-
-Test *
-*********
-
-Test $
-$$$$$$$$$$
-
-Test `
-`````````
-
-Test +
-+++++++++++++++++
-
-Test ;
-;;;;;;;;;;;
-
-Test .
-.............
-
-Test ,
-,,,,,,,,,,
-
-Test _
-____________
-
-Test /
-/////////////
-
-Test %
-%%%%%%%%%%%%
-
-Test &
-&&&&&&&&&&&
-
-Test !
-!!!!!!!!!!!
+.. rst-class:: with-border
+   Test
+   Test
