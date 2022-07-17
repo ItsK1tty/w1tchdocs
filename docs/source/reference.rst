@@ -50,44 +50,47 @@ Vehicle
 ^^^^^^^^^^
 Vehicle definition here
 
+Chapter
+#############
 
-Contents
------------
+Part 
+*************
 
 
-.. toctree:: 
-   :maxdepth: 2
-   system
-   menu
-   stats
-   notify
-   script
-   globals
-   locals
-   render
-   self
-   lobby
-   text
-   fs
-   player
-   ped
-   vehicle
-   entity
-   object
-   weapon
-   streaming
-   ui
-   draw
-   cam
-   gameplay
-   fire
-   network
-   cutscene
-   controls
-   graphics
-   time
-   ai
-   decorator
-   interior
-   audio
-   rope
+..
+   .. toctree:: 
+      :maxdepth: 2
+      system
+      menu
+      stats
+      notify
+      script
+      globals
+      locals
+      render
+      self
+      lobby
+      text
+      fs
+      player
+      ped
+      vehicle
+      entity
+      object
+      weapon
+      streaming
+      ui
+      draw
+      cam
+      gameplay
+      fire
+      network
+      cutscene
+      controls
+      graphics
+      time
+      ai
+      decorator
+      interior
+      audio
+      rope
