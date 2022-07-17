@@ -205,7 +205,7 @@ FS namespace
 bool dir_exist(string ``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if directory exists
+Check if directory exists.
 
 **Parameters:**
 
@@ -218,7 +218,7 @@ Check if directory exists
 bool file_exist(string ``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if file exists
+Check if file exists.
 
 **Parameters:**
 
@@ -226,14 +226,13 @@ Check if file exists
 
 **Returns:**
 
-* ``True`` if file exists, ``false`` otherwise
+* ``bool`` -- ``True`` if file exists, ``false`` otherwise
 
-**Return type:**
-
-* ``bool``
 
 bool file_remove(string ``file``);
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove a file.
 
 **Parameters:**
 
@@ -241,7 +240,73 @@ bool file_remove(string ``file``);
 
 **Returns:**
 
-* ``bool`` -- ``True`` if file was removed, ``false`` otherwise
+* ``bool`` -- ``True`` if file was removed, ``false`` otherwise (e.g. file was not found)
+
+bool file_validate(string ``file``);
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Validate file.
+
+**Parameters:**
+
+* ``file`` (*string*) -- File to validate
+
+**Returns:**
+
+* ``bool`` -- ``True`` if file is valid, ``false`` otherwise (e.g. file was not found)
+
+bool is_file_empty(string ``file``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if file is empty.
+
+**Parameters:**
+
+* ``file`` (*string*) -- File to check
+
+**Returns:**
+
+* ``bool`` -- ``True`` if file is empty, ``false`` otherwise
+
+void dir_check(string ``dir``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if directory exists, and if not, create it.
+
+**Parameters:**
+
+* ``dir`` (*string*) -- Directory to check
+
+**Returns:**
+
+``void``
+
+void dir_create(string ``dir``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Create a directory.
+
+**Parameters:**
+
+* ``dir`` (*string*) -- Directory to create
+
+**Returns:**
+
+``void``
+
+void file_copy(string ``source``, string ``dest``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Copy a file.
+
+**Parameters:**
+
+* ``source`` (*string*) -- Path to source file
+* ``dest`` (*string*) -- Path to destination file
+
+**Returns:**
+
+``void``
 
 .. _playerNS:
 
