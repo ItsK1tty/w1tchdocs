@@ -151,7 +151,7 @@ System namespace
 log_chat(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sends a message to the log as [CHAT]. Has a purple color.
+Sends a message to the log as ``[CHAT]``. Has a purple color.
 
 **Parameters:**
 
@@ -171,7 +171,7 @@ Sends a message to the log as [CHAT]. Has a purple color.
 log_debug(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sends a message to the log as [DEBUG]. Has a grey color.
+Sends a message to the log as ``[DEBUG]``. Has a grey color.
 
 **Parameters:**
 
@@ -191,7 +191,7 @@ Sends a message to the log as [DEBUG]. Has a grey color.
 log_info(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sends a message to the log as [INFO]. Has a blue color.
+Sends a message to the log as ``[INFO]``. Has a blue color.
 
 **Parameters:**
 
@@ -211,7 +211,7 @@ Sends a message to the log as [INFO]. Has a blue color.
 log_online(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sends a message to the log as [ONLINE]. Has a bright yellow color.
+Sends a message to the log as ``[ONLINE]``. Has a bright yellow color.
 
 **Parameters:**
 
@@ -232,7 +232,7 @@ Sends a message to the log as [ONLINE]. Has a bright yellow color.
 log_protex(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sends a message to the log as [PROTEX]. Has a light blue color.
+Sends a message to the log as ``[PROTEX]``. Has a light blue color.
 
 **Parameters:**
 
@@ -252,7 +252,7 @@ Sends a message to the log as [PROTEX]. Has a light blue color.
 log_warning(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sends a message to the log as [WARNING]. Has a red color.
+Sends a message to the log as ``[WARNING]``. Has a red color.
 
 **Parameters:**
 
