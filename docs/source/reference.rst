@@ -6,17 +6,17 @@ There are multiple namespaces & types in the current DIS2RBED LUA framework, eac
 
 Types in LUA Engine
 ######################
-:ref:`types`
+
 Types in LUA Engine are defined in the following way:
 
-* :doc:`Hash` (uint64)
-* :doc:`Entity` (int)
-* :doc:`Ped` (int)
-* :doc:`Player` (int)
-* :doc:`Cam` (int)
-* :doc:`Blip` (int)
-* :doc:`Any` (int)
-* :doc:`Vehicle` (int)
+* :ref:`Hash` (uint64)
+* :ref:`Entity` (int)
+* :ref:`Ped` (int)
+* :ref:`Player` (int)
+* :ref:`Cam` (int)
+* :ref:`Blip` (int)
+* :ref:`Any` (int)
+* :ref:`Vehicle` (int)
 
 .. _hash:
 Hash
