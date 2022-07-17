@@ -175,6 +175,7 @@ Render namespace
 ----------------------
 
 draw_box(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0.f``, ``rounding_flags`` = ``0``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. warning::
     This function's documentation lacks testing and information. It is not recommended to use this function.
@@ -189,16 +190,77 @@ Draws a box with the given color and rounding.
 *  ``y`` (``float``) -- The Y coordinate of the box's starting point.
 *  ``w`` (``float``) -- The width of the box (in pixels)
 *   ``h`` (``float``) -- The height of the box (in pixels)
-*   ``color`` (``vector<int>``) -- The color of the box. {R, G, B, A}
-*   ``rounding`` (``float``) -- The rounding  of the box. Default is ``0.f``.
+*   ``color`` (``vector<int>``) -- The color of the box. ``{R, G, B, A}``
+*   ``rounding`` (``float``) -- The rounding rule of the box. Default is ``0.f``.
 *   ``rounding_flags`` (``int``) -- The rounding flags of the box. Default is ``0``.
 **Example:**
 
-* draw_box(``"MyHash"``, ``true``, ``0.f``, ``0.f``, ``100.f``, ``100.f``, ``{ 255, 255, 255, 255 }``, ``10.f``, ``0``);
+.. code-block:: lua
+   :linenos:
+   
+   draw_box("MyHash", true, 0.f, 0.f, 100.f, 100.f, { 255, 255, 255, 255 }, 10.f, 0);
 
 **Returns:**
 
 * ``void``
+
+draw_box_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0.f``, ``rounding_flags`` = ``0``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning::
+    This function's documentation lacks testing and information. It is not recommended to use this function.
+
+
+Draws a filled box with the given color and rounding.
+
+**Parameters:**
+
+*  ``hash`` (``string``) -- The hash of the box to draw. Hash is used to identify the box, so it must be unique.
+*  ``draw`` (``bool``) -- Whether to draw the box or not. Pass ``true`` to draw the box, ``false`` to do otherwise.
+*  ``x`` (``float``) -- The X coordinate of the box's starting point.
+*  ``y`` (``float``) -- The Y coordinate of the box's starting point.
+*  ``w`` (``float``) -- The width of the box (in pixels)
+*   ``h`` (``float``) -- The height of the box (in pixels)
+*   ``color`` (``vector<int>``) -- The color of the box. ``{R, G, B, A}``
+*   ``rounding`` (``float``) -- The rounding rule of the box. Default is ``0.f``.
+*   ``rounding_flags`` (``int``) -- The rounding flags of the box. Default is ``0``.
+**Example:**
+.. code-block:: lua
+   :linenos:
+   
+   draw_box_filled("MyHash", true, 0.f, 0.f, 100.f, 100.f, { 255, 255, 255, 255 }, 10.f, 0);
+
+**Returns:**
+
+* ``void``
+
+draw_box_border_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``borderSize``, ``color``, ``colorBorder``, ``borderFilled`` = ``true``, ``rounding`` = ``0.f``, ``rounding_flags`` = ``0``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning::
+    This function's documentation lacks testing and information. It is not recommended to use this function.
+
+**Parameters:**
+
+*  ``hash`` (``string``) -- The hash of the box to draw. Hash is used to identify the box, so it must be unique.
+*  ``draw`` (``bool``) -- Whether to draw the box or not. Pass ``true`` to draw the box, ``false`` to do otherwise.
+*  ``x`` (``float``) -- The X coordinate of the box's starting point.
+*  ``y`` (``float``) -- The Y coordinate of the box's starting point.
+*  ``w`` (``float``) -- The width of the box (in pixels)
+*   ``h`` (``float``) -- The height of the box (in pixels)
+*   ``borderSize`` (``float``) -- The width of the border (in pixels)
+*   ``color`` (``vector<int>``) -- The color of the box. ``{R, G, B, A}``
+*   ``colorBorder`` (``vector<int>``) -- The color of the border. ``{R, G, B, A}``
+*   ``borderFilled`` (``bool``) -- Whether to fill the border or not. Default is ``true``.
+*   ``rounding`` (``float``) -- The rounding rule of the box. Default is ``0.f``.
+*   ``rounding_flags`` (``int``) -- The rounding flags of the box. Default is ``0``.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   draw_box_border_filled("MyHash", true, 0.f, 0.f, 100.f, 100.f, 10.f, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true, 10.f, 0);
 
 
 .. _self:
@@ -272,7 +334,7 @@ file_validate(``file``)
 
 .. warning::
     This function's documentation lacks testing and information. It is not recommended to use this function.
-    
+
 Validate file.
 
 **Parameters:**
