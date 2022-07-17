@@ -291,6 +291,7 @@ Waits for ``ms`` milliseconds.
 
 
 add_task(``name``, ``hash``, ``ms``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a task into the process's main loop.
 
@@ -452,6 +453,31 @@ Converts a key hash to a string key.
 
    -- why 36, you ask? See this: https://www.oreilly.com/library/view/javascript-dhtml/9780596514082/apb.html
 
+
+bool is_key_pressed(string key)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if key is pressed
+
+**Parameters:**
+
+* ``key`` (``string``) - The key to check.
+
+**Returns:**
+
+* ``bool`` - ``True`` if the key is pressed, ``false`` otherwise.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   function my_script_function(text)
+      kPressed = system.is_key_pressed("F")
+      if kPressed then
+         system.log_info("Hello World!")
+      end
+   end
 
 
 .. _menu:
