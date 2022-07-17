@@ -176,6 +176,9 @@ Render namespace
 
 draw_box(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0.f``, ``rounding_flags`` = ``0``)
 
+.. warning::
+    This function's documentation lacks testing and information. It is not recommended to use this function.
+
 Draws a box with the given color and rounding.
 
 **Parameters:**
@@ -191,7 +194,7 @@ Draws a box with the given color and rounding.
 *   ``rounding_flags`` (``int``) -- The rounding flags of the box. Default is ``0``.
 **Example:**
 
-* draw_box("MyHash", true, 0.f, 0.f, 100.f, 100.f, { 255, 255, 255, 255 }, 10.f, 0);
+* draw_box(``"MyHash"``, ``true``, ``0.f``, ``0.f``, ``100.f``, ``100.f``, ``{ 255, 255, 255, 255 }``, ``10.f``, ``0``);
 
 **Returns:**
 
@@ -267,6 +270,9 @@ Remove a file.
 file_validate(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. warning::
+    This function's documentation lacks testing and information. It is not recommended to use this function.
+    
 Validate file.
 
 **Parameters:**
