@@ -37,6 +37,6 @@ There’s a lot going on here, so let’s walk you through it step by step.
 #. Finally, end keywords are used to end the function or a logic expression.
 #. The last line of the script is to add the function to the main loop, or task list. The main loop runs the feature over and over, that's why we don't use a loop in the function itself.
 
-Now that we've made a script, we have to *run* the script. Inject DIS2RBED, and the script will start running right after DIS2RBED is initialized.
+Now that we've made a script, we have to **run** the script. Inject DIS2RBED, and the script will start running right after DIS2RBED is initialized.
 
 You can now play around with your basic script.
