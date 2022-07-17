@@ -104,9 +104,9 @@ ColorRGBA definition here
 Global Variables
 ###########################
 
-``int`` ``chatSenderId`` -- Last chat message sender ID
-``string`` ``chatSenderName`` -- Last chat message sender name
-``string`` ``chatMessage`` -- Last chat message
+* ``int`` ``chatSenderId`` -- Last chat message sender ID
+* ``string`` ``chatSenderName`` -- Last chat message sender name
+* ``string`` ``chatMessage`` -- Last chat message
 
 .. _namespaces:
 
