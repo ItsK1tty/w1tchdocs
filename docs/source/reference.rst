@@ -450,7 +450,7 @@ Converts a key hash to a string key.
 
    system.log_info(tostring(system.key_to_string(36))) -- get "HOME" key hash
 
-   -- why 36, you ask? Because it's the key hash returned by string_to_key function.
+   -- why 36, you ask? See this: https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.keys?view=windowsdesktop-6.0
 
 
 
