@@ -204,28 +204,28 @@ FS namespace
 
 Functions here
 
-.. _player:
+.. _playerNS:
 
 Player namespace
 ----------------------
 
 Functions here
 
-.. _ped:
+.. _pedNS:
 
 Ped namespace
 ----------------------
 
 Functions here
 
-.. _vehicle:
+.. _vehicleNS:
 
 Vehicle namespace
 ----------------------
 
 Functions here
 
-.. _entity:
+.. _entityNS:
 
 Entity namespace
 ----------------------
@@ -267,7 +267,7 @@ Draw namespace
 
 Functions here
 
-.. _cam:
+.. _camNS:
 
 Cam namespace
 ----------------------
