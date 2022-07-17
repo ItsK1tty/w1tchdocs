@@ -25,6 +25,7 @@ Types in LUA Engine are defined in the following order:
 * :ref:`ColorRGBA` (int ``r``, int ``g``, int ``b``, int ``a``)
 
 
+
 .. _Hash:
 
 Hash
@@ -97,15 +98,6 @@ ColorRGBA
 ----------------------
 ColorRGBA definition here
 
-
-
-..
-
-   # with overline, for chapters
-   = for sections
-   - for subsections
-   ^ for subsubsections
-   " for paragraph
 
 .. _namespaces:
 
@@ -632,7 +624,7 @@ Returns the current FPS.
    local fps = render.get_fps(); -- Gets the FPS.
    system.log_warning("The FPS is " .. tostring(fps) .. "."); -- Prints the FPS.
 
-get_menu_rounding();
+get_menu_rounding()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the menu's rounding.
@@ -654,7 +646,7 @@ Returns the menu's rounding.
    system.log_warning("The rounding is " .. tostring(rounding) .. "."); -- Prints the rounding.
 
 
-get_menu_width();
+get_menu_width()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the menu's width.
@@ -772,7 +764,7 @@ Returns the cursor position.
 
 **Returns:**
 
-:ref:`Vector2` -- The cursor position.
+``Vector2`` -- The cursor position.
 
 **Example:**
 
@@ -796,7 +788,7 @@ Returns the menu position.
 
 **Returns:**
 
-:ref:`Vector2` -- The menu position.
+``Vector2`` -- The menu position.
 
 **Example:**
 
@@ -819,7 +811,7 @@ Returns the menu total size.
 
 **Returns:**
 
-:ref:`Vector2` -- The menu total size.
+``Vector2`` -- The menu total size.
 
 **Example:**
 
@@ -842,7 +834,7 @@ Returns the screen resolution.
 
 **Returns:**
 
-:ref:`Vector2` -- The screen resolution.
+``Vector2`` -- The screen resolution.
 
 **Example:**
 
@@ -860,7 +852,7 @@ Brings up a warning (as if a moderator was detected in a session)
 
 **Parameters:**
 
-   * ``message`` (``string```) -- The warning message.
+   * ``message`` (``string``) -- The warning message.
 
 **Returns:**
 
