@@ -5,7 +5,7 @@ Current available text flags are:
 
 * ``Default`` = ``0``,
 * ``Center`` = ``1``,
-* ``Right``= ``2``,
+* ``Right`` = ``2``,
 * ``DefaultOutline`` = ``3``,
 * ``CenterOutline`` = ``4``,
 * ``RightOutline`` = ``5``
