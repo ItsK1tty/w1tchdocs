@@ -450,8 +450,7 @@ Converts a key hash to a string key.
 
    system.log_info(tostring(system.key_to_string(36))) -- get "HOME" key hash
 
-   -- why 36, you ask? See this: https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.keys?view=windowsdesktop-6.0
-
+   -- why 36, you ask? See this: https://www.oreilly.com/library/view/javascript-dhtml/9780596514082/apb.html
 
 
 
