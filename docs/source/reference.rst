@@ -202,46 +202,46 @@ Functions here
 FS namespace
 ----------------------
 
-bool dir_exist(string *dir*)
+bool dir_exist(string ``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if directory exists
 
 **Parameters:**
 
-* **dir** (*string*) -- Directory to check
+* ``dir`` (*string*``) -- Directory to check
 
 **Returns:**
 
-* **bool** -- True if directory exists, false otherwise
+* ``bool`` -- ``True`` if directory exists, ``false`` otherwise
 
-bool file_exist(string *file*)
+bool file_exist(string ``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if file exists
 
 **Parameters:**
 
-* **file** (*string*) -- File to check
+* ``file`` (*string*) -- File to check
 
 **Returns:**
 
-* True if file exists, false otherwise
+* ``True`` if file exists, ``false`` otherwise
 
 **Return type:**
 
-* **bool**
+* ``bool``
 
-bool file_remove(string *file*);
+bool file_remove(string ``file``);
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Parameters:**
 
-* **file** (*string*) -- File to remove
+* ``file`` (*string*) -- File to remove
 
 **Returns:**
 
-* **bool** -- True if file was removed, false otherwise
+* ``bool`` -- ``True`` if file was removed, ``false`` otherwise
 
 .. _playerNS:
 
