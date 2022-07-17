@@ -50,7 +50,6 @@ To retrieve a list of random ingredients,
 you can use the ``lumache.get_random_ingredients()`` function:
 .. lua:autoclass:: MyOrg.Car
 
-.. lua:automodule:: cls:test
 ..
    .. autofunction:: lumache.get_random_ingredients
 
