@@ -148,7 +148,312 @@ Function namespaces in LUA Engine are defined in the following order:
 System namespace
 ----------------------
 
-Functions here
+log_chat(``text``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends a message to the log as [CHAT]. Has a purple color.
+
+**Parameters:**
+
+* ``text`` (``string``) - The text to send to the log.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   system.log_chat("Hello World!")
+
+log_debug(``text``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends a message to the log as [DEBUG]. Has a grey color.
+
+**Parameters:**
+
+* ``text`` (``string``) - The text to send to the log.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   system.log_debug("Hello World!")
+
+log_info(``text``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends a message to the log as [INFO]. Has a blue color.
+
+**Parameters:**
+
+* ``text`` (``string``) - The text to send to the log.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   system.log_info("Hello World!")
+
+log_online(``text``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends a message to the log as [ONLINE]. Has a bright yellow color.
+
+**Parameters:**
+
+* ``text`` (``string``) - The text to send to the log.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   system.log_online("Hello World!")
+
+
+log_protex(``text``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends a message to the log as [PROTEX]. Has a light blue color.
+
+**Parameters:**
+
+* ``text`` (``string``) - The text to send to the log.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   system.log_protex("Hello World!")
+
+log_warning(``text``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends a message to the log as [WARNING]. Has a red color.
+
+**Parameters:**
+
+* ``text`` (``string``) - The text to send to the log.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   system.log_warning("Hello World!")
+
+wait(ms)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Waits for ``ms`` milliseconds.
+
+**Parameters:**
+
+* ``ms`` (``int``) - The number of milliseconds to wait. Can be `-1`, but not less.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   system.wait(10000) -- Waits for 10 seconds
+
+
+add_task(``name``, ``hash``, ``ms``, ``fn``)
+
+Adds a task into the process's main loop.
+
+.. note::
+
+   DO NOT USE ``system.wait()`` inside task functions! You can use it only in the options functions!
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the task.
+* ``hash`` (``string``) - The hash of the task. Hash is used to identify the task, so it must be unique.
+* ``ms`` (``int``) - The number of milliseconds to wait before calling the task. Can be `-1` to execute the task again and again.
+* ``fn`` (``function``) - The function to call when the task is executed.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   function my_script_function()
+        system.log_info("Hello World!")
+   end
+   system.add_task("My script task", "luaTestTaskHash", 1000, my_script_function)
+   --or
+   function my_script_function()
+        -- Test key press
+        bKeyPressed = system.is_key_pressed("F")
+        if bKeyPressed then
+            system.log_warning("Pressed F to pay respect!")
+        end
+   end
+   system.add_task("My script task", "luaTestTaskHash", -1, my_script_function)
+
+remove_task(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes a task from the process's main loop.
+
+**Parameters:**
+
+* ``hash`` (``string``) - The hash of the task to remove.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   function my_script_function()
+        system.log_info("Hello World!")
+   end
+   system.add_task("My script task", "luaTestTaskHash", 1000, my_script_function)
+   system.remove_task("luaTestTaskHash")
+
+
+add_chat_listener(``name``, ``hash``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Connects a chat listener that calls a task every time a message is sent in the chat.
+
+.. note::
+
+   Chat listener only reacts to other player's chat messages, not your own ones.
+
+.. note::
+
+   DO NOT USE ``system.wait()`` inside task functions! You can use it only in the options functions!
+
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the task.
+* ``hash`` (``string``) - The hash of the task. Hash is used to identify the task, so it must be unique.
+* ``fn`` (``function``) - The function to call when the task is executed.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   function my_script_function(text)
+        system.log_info("Hello World!")
+   end
+   system.add_chat_listener("My script task", "luaTestTaskHash", my_script_function)
+
+remove_chat_listener(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Disconnects a chat listener for a certain task.
+
+**Parameters:**
+
+* ``hash`` (``string``) - The hash of the task to remove.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   function my_script_function(text)
+        system.log_info("Hello World!")
+   end
+   system.add_chat_listener("My script task", "luaTestTaskHash", my_script_function)
+   system.remove_chat_listener("luaTestTaskHash")
+
+
+string_to_key(``key``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Converts a string key to a key hash.
+
+**Parameters:**
+
+* ``key`` (``string``) - The key to convert.
+
+**Returns:**
+
+* ``int`` - The key hash. -1 if the key is not any special key or it doesn't exist at all
+
+**Example:**
+.. code-block:: lua
+   :linenos:
+
+
+   system.log_info(tostring(system.string_to_key("HOME"))) -- get "HOME" key hash
+
+string key_to_string(``key``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Converts a key hash to a string key.
+
+**Parameters:**
+
+* ``key`` (``int``) - The key hash to convert.
+
+**Returns:**
+
+* ``string`` - The key as string.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   system.log_info(tostring(system.key_to_string(36))) -- get "HOME" key hash
+
+   -- why 36, you ask? Because it's the key hash returned by string_to_key function.
+
+
+
 
 .. _menu:
 
@@ -226,7 +531,7 @@ More about rounding flags: :doc:`roundingflags`
 .. code-block:: lua
    :linenos:
    
-   render.draw_box("MyHash", true, 0, 0, 100, 100, { 255, 255, 255, 255 }, 10, 0);
+   render.draw_box("MyHash", true, 0, 0, 100, 100, { 255, 255, 255, 255 }, 10, 0)
 
 
 draw_box_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0``, ``rounding_flags`` = ``0``)
@@ -257,7 +562,7 @@ More about rounding flags: :doc:`roundingflags`
 .. code-block:: lua
    :linenos:
    
-   render.draw_box_filled("MyHash", true, 0, 0, 100, 100, { 255, 255, 255, 255 }, 10, 0);
+   render.draw_box_filled("MyHash", true, 0, 0, 100, 100, { 255, 255, 255, 255 }, 10, 0)
 
 draw_box_border_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``borderSize``, ``color``, ``colorBorder``, ``borderFilled`` = ``true``, ``rounding`` = ``0``, ``rounding_flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -291,7 +596,7 @@ More about rounding flags: :doc:`roundingflags`
 .. code-block:: lua
    :linenos:
    
-   render.draw_box_border_filled("MyHash", true, 0, 0, 100, 100, 10, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true, 10, 0);
+   render.draw_box_border_filled("MyHash", true, 0, 0, 100, 100, 10, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true, 10, 0)
 
 draw_circle(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color``, ``segments`` = ``16``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -320,7 +625,7 @@ Draws a circle with the given color.
 .. code-block:: lua
    :linenos:
    
-   render.draw_circle("MyHash", true, 0, 0, 100, { 255, 255, 255, 255 }, 16);
+   render.draw_circle("MyHash", true, 0, 0, 100, { 255, 255, 255, 255 }, 16)
 
 
 draw_circle_filled(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color``, ``segments`` = ``16``)
@@ -348,7 +653,7 @@ Draws a filled circle with the given color.
 .. code-block:: lua
    :linenos:
 
-   render.draw_circle_filled("MyHash", true, 0, 0, 100, { 255, 255, 255, 255 }, 16);
+   render.draw_circle_filled("MyHash", true, 0, 0, 100, { 255, 255, 255, 255 }, 16)
 
 
 draw_circle_border_filled(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color``, ``colorBorder``, ``borderFilled`` = ``true``, ``segments`` = ``16``)
@@ -379,7 +684,7 @@ Draws a filled border circle with the given color.
 .. code-block:: lua
    :linenos:
 
-   render.draw_circle_border_filled("MyHash", true, 0, 0, 100, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true, 16);
+   render.draw_circle_border_filled("MyHash", true, 0, 0, 100, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true, 16)
 
 draw_triangle(``hash``, ``draw``, ``x``, ``y``, ``color``, ``size`` = ``1.1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -404,7 +709,7 @@ Draws a triangle with the given color.
 .. code-block:: lua
    :linenos:
       
-   render.draw_triangle("MyHash", true, 0, 0, { 255, 255, 255, 255 }, 1.1);
+   render.draw_triangle("MyHash", true, 0, 0, { 255, 255, 255, 255 }, 1.1)
 
 
 draw_triangle_filled(``hash``, ``draw``, ``x``, ``y``, ``color``, ``size`` = ``1.1``)
@@ -432,7 +737,7 @@ Draws a filled triangle with the given color.
 .. code-block:: lua
    :linenos:
 
-   render.draw_triangle_filled("MyHash", true, 0.f, 0.f, { 255, 255, 255, 255 }, 1.1);
+   render.draw_triangle_filled("MyHash", true, 0.f, 0.f, { 255, 255, 255, 255 }, 1.1)
 
 
 draw_triangle_border_filled(``hash``, ``draw``, ``x``, ``y``, ``color``, ``colorBorder``, ``borderFilled`` = ``true``)
@@ -459,7 +764,7 @@ Draws a filled border triangle with the given color.
 .. code-block:: lua
    :linenos:
 
-   render.draw_triangle_border_filled("MyHash", true, 0, 0, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true);
+   render.draw_triangle_border_filled("MyHash", true, 0, 0, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true)
 
 draw_text(``hash``, ``draw``, ``text``, ``x``, ``y``, ``scale``, ``color``, ``flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -489,7 +794,7 @@ More about text flags: :doc:`textflags`
 .. code-block:: lua
    :linenos:
 
-   render.draw_text("MyHash", true, "Hello World", 0, 0, 1, { 255, 255, 255, 255 }, 0);
+   render.draw_text("MyHash", true, "Hello World", 0, 0, 1, { 255, 255, 255, 255 }, 0)
 
 
 
@@ -512,7 +817,7 @@ Checks if the color picker is active.
    :linenos:
       
    if render.is_color_picker_rendering() then
-      system.log_warning("The color picker is active!"); -- Prints if the color picker is active.
+      system.log_warning("The color picker is active!") -- Prints if the color picker is active.
    end
 
 is_cursor_hover_menu()
@@ -534,7 +839,7 @@ Checks if the cursor is hovering over the menu.
    :linenos:
 
    if render.is_cursor_hover_menu() then
-      system.log_warning("The cursor is hovering over the menu!"); -- This will only be logged if the cursor is hovering over the menu.
+      system.log_warning("The cursor is hovering over the menu!") -- This will only be logged if the cursor is hovering over the menu.
    end
 
 is_cursor_hover_option()
@@ -556,10 +861,10 @@ Checks if the cursor is hovering over an option.
    :linenos:
       
    if render.is_cursor_hover_option() then
-      system.log_warning("The cursor is hovering over an option!"); -- This will only be logged if the cursor is hovering over an option.
+      system.log_warning("The cursor is hovering over an option!") -- This will only be logged if the cursor is hovering over an option.
    end
 
-is_input_active();
+is_input_active()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Checks if the input window is active. (The input window is for example, the window that appears when you press the ` key in story mode)
@@ -578,7 +883,7 @@ Checks if the input window is active. (The input window is for example, the wind
    :linenos:
       
    if render.is_input_active() then
-      system.log_warning("The input window is active!"); -- This will only be logged if the input window is active.
+      system.log_warning("The input window is active!") -- This will only be logged if the input window is active.
    end
 
 
@@ -600,8 +905,8 @@ Returns the process window's border size.
 .. code-block:: lua
    :linenos:
       
-   local borderSize = render.get_border_size(); -- Gets the border size.
-   system.log_warning("The border size is " .. tostring(borderSize) .. "."); -- Prints the border size.
+   local borderSize = render.get_border_size() -- Gets the border size.
+   system.log_warning("The border size is " .. tostring(borderSize) .. ".") -- Prints the border size.
 
 get_fps()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -621,8 +926,8 @@ Returns the current FPS.
 .. code-block:: lua
    :linenos:
       
-   local fps = render.get_fps(); -- Gets the FPS.
-   system.log_warning("The FPS is " .. tostring(fps) .. "."); -- Prints the FPS.
+   local fps = render.get_fps() -- Gets the FPS.
+   system.log_warning("The FPS is " .. tostring(fps) .. ".") -- Prints the FPS.
 
 get_menu_rounding()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -642,8 +947,8 @@ Returns the menu's rounding.
 .. code-block:: lua
    :linenos:
       
-   local rounding = render.get_menu_rounding(); -- Gets the rounding.
-   system.log_warning("The rounding is " .. tostring(rounding) .. "."); -- Prints the rounding.
+   local rounding = render.get_menu_rounding() -- Gets the rounding.
+   system.log_warning("The rounding is " .. tostring(rounding) .. ".") -- Prints the rounding.
 
 
 get_menu_width()
@@ -664,8 +969,8 @@ Returns the menu's width.
 .. code-block:: lua
    :linenos:
       
-   local width = render.get_menu_width(); -- Gets the width.
-   system.log_warning("The width is " .. tostring(width) .. "."); -- Prints the width.
+   local width = render.get_menu_width() -- Gets the width.
+   system.log_warning("The width is " .. tostring(width) .. ".") -- Prints the width.
 
 get_font_header_size()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -685,8 +990,8 @@ Returns the font header size.
 .. code-block:: lua
    :linenos:
       
-   local headerSize = render.get_font_header_size(); -- Gets the header size.
-   system.log_warning("The header size is " .. tostring(headerSize) .. "."); -- Prints the header size.
+   local headerSize = render.get_font_header_size() -- Gets the header size.
+   system.log_warning("The header size is " .. tostring(headerSize) .. ".") -- Prints the header size.
 
 get_font_helper_size()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -706,8 +1011,8 @@ Returns the font helper size.
 .. code-block:: lua
    :linenos:
       
-   local helperSize = render.get_font_helper_size(); -- Gets the helper size.
-   system.log_warning("The helper size is " .. tostring(helperSize) .. "."); -- Prints the helper size.
+   local helperSize = render.get_font_helper_size() -- Gets the helper size.
+   system.log_warning("The helper size is " .. tostring(helperSize) .. ".") -- Prints the helper size.
 
 
 get_font_option_size()
@@ -728,8 +1033,8 @@ Returns the font option size.
 .. code-block:: lua
    :linenos:
       
-   local optionSize = render.get_font_option_size(); -- Gets the option size.
-   system.log_warning("The option size is " .. tostring(optionSize) .. "."); -- Prints the option size.
+   local optionSize = render.get_font_option_size() -- Gets the option size.
+   system.log_warning("The option size is " .. tostring(optionSize) .. ".") -- Prints the option size.
 
 get_font_warning_size()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -749,8 +1054,8 @@ Returns the font warning size.
 .. code-block:: lua
    :linenos:
       
-   local warningSize = render.get_font_warning_size(); -- Gets the warning size.
-   system.log_warning("The warning size is " .. tostring(warningSize) .. "."); -- Prints the warning size.
+   local warningSize = render.get_font_warning_size() -- Gets the warning size.
+   system.log_warning("The warning size is " .. tostring(warningSize) .. ".") -- Prints the warning size.
 
 
 get_menu_cursor_pos()
@@ -771,9 +1076,9 @@ Returns the cursor position.
 .. code-block:: lua
    :linenos:
       
-   local cursorPos = render.get_menu_cursor_pos(); -- Gets the cursor position.
-   system.log_warning("The cursor position is " .. tostring(cursorPos.x) .. "."); -- Prints the cursor X position coordinate.
-   system.log_warning("The cursor position is " .. tostring(cursorPos.y) .. "."); -- Prints the cursor Y position coordinate.
+   local cursorPos = render.get_menu_cursor_pos() -- Gets the cursor position.
+   system.log_warning("The cursor position is " .. tostring(cursorPos.x) .. ".") -- Prints the cursor X position coordinate.
+   system.log_warning("The cursor position is " .. tostring(cursorPos.y) .. ".") -- Prints the cursor Y position coordinate.
 
 
 
@@ -795,9 +1100,9 @@ Returns the menu position.
 .. code-block:: lua
    :linenos:
       
-   local menuPos = render.get_menu_position(); -- Gets the menu position.
-   system.log_warning("The menu position is " .. tostring(menuPos.x) .. "."); -- Prints the menu X position coordinate.
-   system.log_warning("The menu position is " .. tostring(menuPos.y) .. "."); -- Prints the menu Y position coordinate.
+   local menuPos = render.get_menu_position() -- Gets the menu position.
+   system.log_warning("The menu position is " .. tostring(menuPos.x) .. ".") -- Prints the menu X position coordinate.
+   system.log_warning("The menu position is " .. tostring(menuPos.y) .. ".") -- Prints the menu Y position coordinate.
 
 
 get_menu_total_size()
@@ -818,9 +1123,9 @@ Returns the menu total size.
 .. code-block:: lua
    :linenos:
       
-   local totalSize = render.get_menu_total_size(); -- Gets the menu total size.
-   system.log_warning("The menu total size is " .. tostring(totalSize.x) .. "."); -- Prints the menu total X size.
-   system.log_warning("The menu total size is " .. tostring(totalSize.y) .. "."); -- Prints the menu total Y size.
+   local totalSize = render.get_menu_total_size() -- Gets the menu total size.
+   system.log_warning("The menu total size is " .. tostring(totalSize.x) .. ".") -- Prints the menu total X size.
+   system.log_warning("The menu total size is " .. tostring(totalSize.y) .. ".") -- Prints the menu total Y size.
 
 
 get_screen_resolution()
@@ -841,9 +1146,9 @@ Returns the screen resolution.
 .. code-block:: lua
    :linenos:
       
-   local screenRes = render.get_screen_resolution(); -- Gets the screen resolution.
-   system.log_warning("The screen resolution is " .. tostring(screenRes.x) .. "."); -- Prints the screen X resolution.
-   system.log_warning("The screen resolution is " .. tostring(screenRes.y) .. "."); -- Prints the screen Y resolution.
+   local screenRes = render.get_screen_resolution() -- Gets the screen resolution.
+   system.log_warning("The screen resolution is " .. tostring(screenRes.x) .. ".") -- Prints the screen X resolution.
+   system.log_warning("The screen resolution is " .. tostring(screenRes.y) .. ".") -- Prints the screen Y resolution.
 
 set_warning(``message``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -863,7 +1168,7 @@ Brings up a warning (as if a moderator was detected in a session)
    .. code-block:: lua
          :linenos:
          
-         render.set_warning("This is a warning."); -- Brings up a warning.
+         render.set_warning("This is a warning.") -- Brings up a warning.
 
 .. _self:
 
@@ -910,7 +1215,7 @@ Checks if directory exists.
    :linenos:
    
    if fs.dir_exist("C:\Users\") then
-      system.log_warning("Directory exists.");
+      system.log_warning("Directory exists.")
 
    end
 
@@ -933,8 +1238,8 @@ Checks if file exists.
 .. code-block:: lua
    :linenos:
    
-   if not fs.dir_exist("D:\NewFolder") then
-      fs.make_dir("D:\NewFolder");
+   if not fs.file_exist("D:\NewFolder\BetterCallSaulS05E06.mp4") then
+      system.log_warning("Better not to call Saul.")
    end
 
 
@@ -956,9 +1261,9 @@ Removes a file.
 .. code-block:: lua
    :linenos:
       
-   local success = fs.file_remove("test.txt"); -- Removes the file.
+   local success = fs.file_remove("test.txt") -- Removes the file.
    if success then
-      system.log_warning("File removed."); -- Prints a message if the file was removed.
+      system.log_warning("File removed.") -- Prints a message if the file was removed.
    end
 
 file_validate(``file``)
@@ -980,7 +1285,7 @@ Checks if file is corrupted, checks if the permissions are correct, if it's read
    :linenos:
    
    if fs.file_validate("/test.txt") then
-      system.log_warning("File is valid and ready.");
+      system.log_warning("File is valid and ready.")
    end
 
 
@@ -1004,15 +1309,15 @@ Checks if file is empty.
    :linenos:
    
    if fs.is_file_empty("test.txt") then
-      system.log_warning("The file is empty.");
+      system.log_warning("The file is empty.")
    else
-      system.log_warning("The file is not empty.");
+      system.log_warning("The file is not empty.")
    end
 
 dir_check(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if directory exists, and if not, create it.
+Checks if directory exists, and if not, creates it.
 
 **Parameters:**
 
@@ -1027,7 +1332,7 @@ Checks if directory exists, and if not, create it.
 .. code-block:: lua
    :linenos:
    
-   fs.dir_check("D:\NewFolder"); -- Creates the directory if it doesn't exist.
+   fs.dir_check("D:\NewFolder") -- Creates the directory if it doesn't exist.
 
 dir_create(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1047,7 +1352,7 @@ Creates a directory.
 .. code-block:: lua
    :linenos:
    
-   fs.dir_create("D:\NewFolder"); -- Creates a directory.
+   fs.dir_create("D:\NewFolder") -- Creates a directory.
 
 file_copy(``source``, ``dest``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1068,9 +1373,9 @@ Copies a file.
 .. code-block:: lua
    :linenos:
 
-   fs.file_copy("source.txt", "dest.txt");
-
-   fs.file_copy("files/source.txt", "files/dest.txt");
+   fs.file_copy("source.txt", "dest.txt")
+   -- or
+   fs.file_copy("files/source.txt", "files/dest.txt")
 
 .. _playerNS:
 
