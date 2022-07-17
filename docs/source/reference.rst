@@ -202,7 +202,7 @@ Functions here
 FS namespace
 ----------------------
 
-bool dir_exist(string ``dir``)
+dir_exist(string *``dir``*)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if directory exists.
@@ -215,7 +215,7 @@ Check if directory exists.
 
 * ``bool`` -- ``True`` if directory exists, ``false`` otherwise
 
-bool file_exist(string ``file``)
+file_exist(string *``file``*)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if file exists.
@@ -229,8 +229,8 @@ Check if file exists.
 * ``bool`` -- ``True`` if file exists, ``false`` otherwise
 
 
-bool file_remove(string ``file``);
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+file_remove(string *``file``*)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Remove a file.
 
@@ -242,8 +242,8 @@ Remove a file.
 
 * ``bool`` -- ``True`` if file was removed, ``false`` otherwise (e.g. file was not found)
 
-bool file_validate(string ``file``);
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+file_validate(string *``file``*)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Validate file.
 
@@ -255,8 +255,8 @@ Validate file.
 
 * ``bool`` -- ``True`` if file is valid, ``false`` otherwise (e.g. file was not found)
 
-bool is_file_empty(string ``file``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+is_file_empty(string *``file``*)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if file is empty.
 
@@ -268,8 +268,8 @@ Check if file is empty.
 
 * ``bool`` -- ``True`` if file is empty, ``false`` otherwise
 
-void dir_check(string ``dir``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dir_check(string *``dir``*)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if directory exists, and if not, create it.
 
@@ -281,8 +281,8 @@ Check if directory exists, and if not, create it.
 
 ``void``
 
-void dir_create(string ``dir``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dir_create(string *``dir``*)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a directory.
 
@@ -294,8 +294,8 @@ Create a directory.
 
 ``void``
 
-void file_copy(string ``source``, string ``dest``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+file_copy(string *``source``, string ``dest``*)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Copy a file.
 
