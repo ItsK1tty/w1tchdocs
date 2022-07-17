@@ -22,41 +22,49 @@ Types in LUA Engine are defined in the following way:
 * :ref:`Vehicle` (int)
 
 .. _Hash:
+
 Hash
 ----------------------
 Hash definition here
 
 .. _Entity:
+
 Entity
 ----------------------
 Entity definition here
 
 .. _Ped:
+
 Ped
 ----------------------
 Ped definition here
 
 .. _Player:
+
 Player
 ----------------------
 Player definition here
 
 .. _Cam:
+
 Cam
 ----------------------
 Cam definition here
 
 .. _Blip:
+
 Blip
 ----------------------
 Blip definition here
 
 .. _Any:
+
 Any
 ----------------------
 Any type definition here
 
 .. _Vehicle:
+
 Vehicle
 ----------------------
 Vehicle definition here
