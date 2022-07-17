@@ -9,54 +9,66 @@ Types in LUA Engine
 :ref:`types`
 Types in LUA Engine are defined in the following way:
 
-* Hash (uint64)
-* Entity (int)
-* Ped (int)
-* Player (int)
-* Cam (int)
-* Blip (int)
-* Any (int)
-* Vehicle (int)
+* :doc:`Hash` (uint64)
+* :doc:`Entity` (int)
+* :doc:`Ped` (int)
+* :doc:`Player` (int)
+* :doc:`Cam` (int)
+* :doc:`Blip` (int)
+* :doc:`Any` (int)
+* :doc:`Vehicle` (int)
 
+:ref:`Hash`
 Hash
 ----------------------
 Hash definition here
 
+:ref:`Entity`
 Entity
 ----------------------
 Entity definition here
 
+:ref:`Ped`
 Ped
 ----------------------
 Ped definition here
 
+:ref:`Player`
 Player
 ----------------------
 Player definition here
 
+:ref:`Cam`
 Cam
 ----------------------
 Cam definition here
 
+:ref:`Blip`
 Blip
 ----------------------
 Blip definition here
 
+:ref:`Any`
 Any
 ----------------------
 Any type definition here
 
+:ref:`Vehicle`
 Vehicle
 ----------------------
 Vehicle definition here
+
 ..
+
    # with overline, for chapters
    = for sections
    - for subsections
    ^ for subsubsections
    " for paragraph
 
-
+:ref:`namespaces`
+Namespaces in LUA Engine
+###########################
 
 
 
