@@ -48,8 +48,11 @@ Creating recipes
 
 To retrieve a list of random ingredients,
 you can use the ``lumache.get_random_ingredients()`` function:
+.. lua:autoclass:: MyOrg.Car
 
-.. autofunction:: lumache.get_random_ingredients
+.. lua:automodule:: cls:test
+..
+   .. autofunction:: lumache.get_random_ingredients
 
 The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
 or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`

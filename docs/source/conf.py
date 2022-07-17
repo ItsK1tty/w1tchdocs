@@ -18,6 +18,8 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     "myst_parser",
+    'sphinxcontrib.luadomain',
+    'sphinx_lua',
 ]
 
 intersphinx_mapping = {
@@ -27,6 +29,8 @@ intersphinx_mapping = {
 intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
+
+lua_source_path = ["../source/lua"]  # default is "./"
 
 # -- Options for HTML output
 
