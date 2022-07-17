@@ -178,7 +178,7 @@ draw_box(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. warning::
-    This function's documentation lacks testing and information. It is not recommended to use this function.
+    This function's documentation lacks testing and information. 
 
 Draws a box with the given color and rounding.
 
@@ -208,7 +208,7 @@ draw_box_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rou
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. warning::
-    This function's documentation lacks testing and information. It is not recommended to use this function.
+    This function's documentation lacks testing and information. 
 
 
 Draws a filled box with the given color and rounding.
@@ -239,7 +239,10 @@ draw_box_border_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``borderS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. warning::
-    This function's documentation lacks testing and information. It is not recommended to use this function.
+    This function's documentation lacks testing and information. 
+
+
+Draws a filled border box with the given color and rounding.
 
 **Parameters:**
 
@@ -263,10 +266,187 @@ draw_box_border_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``borderS
    
    draw_box_border_filled("MyHash", true, 0.f, 0.f, 100.f, 100.f, 10.f, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true, 10.f, 0);
 
+**Returns:**
+
+* ``void``
+
+draw_circle(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color``, ``segments`` = ``16``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ .. warning::
+    This function's documentation lacks testing and information. 
+
+Draws a circle with the given color.
+
+**Parameters:**
+
+*  ``hash`` (``string``) -- The hash of the circle to draw. Hash is used to identify the circle, so it must be unique.
+*  ``draw`` (``bool``) -- Whether to draw the circle or not. Pass ``true`` to draw the circle, ``false`` to do otherwise.
+*  ``x`` (``float``) -- The X coordinate of the circle's center.
+*  ``y`` (``float``) -- The Y coordinate of the circle's center.
+*  ``radius`` (``float``) -- The radius of the circle (in pixels).
+*  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
+*  ``segments`` (``int``) -- The number of segments of the circle. Default is ``16``.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   draw_circle("MyHash", true, 0.f, 0.f, 100.f, { 255, 255, 255, 255 }, 16);
 
 **Returns:**
 
 * ``void``
+
+
+draw_circle_filled(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color``, ``segments`` = ``16``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning::
+   This function's documentation lacks testing and information. 
+
+Draws a filled circle with the given color.
+
+**Parameters:**
+
+*  ``hash`` (``string``) -- The hash of the circle to draw. Hash is used to identify the circle, so it must be unique.
+*  ``draw`` (``bool``) -- Whether to draw the circle or not. Pass ``true`` to draw the circle, ``false`` to do otherwise.
+*  ``x`` (``float``) -- The X coordinate of the circle's center.
+*  ``y`` (``float``) -- The Y coordinate of the circle's center.
+*  ``radius`` (``float``) -- The radius of the circle (in pixels).
+*  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
+*  ``segments`` (``int``) -- The number of segments of the circle. Default is ``16``.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   draw_circle_filled("MyHash", true, 0.f, 0.f, 100.f, { 255, 255, 255, 255 }, 16);
+
+**Returns:**
+
+* ``void``
+
+draw_circle_border_filled(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color``, ``colorBorder``, ``borderFilled`` = ``true``, ``segments`` = ``16``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning::
+   This function's documentation lacks testing and information. 
+
+Draws a filled border circle with the given color.
+
+**Parameters:**
+
+*  ``hash`` (``string``) -- The hash of the circle to draw. Hash is used to identify the circle, so it must be unique.
+*  ``draw`` (``bool``) -- Whether to draw the circle or not. Pass ``true`` to draw the circle, ``false`` to do otherwise.
+*  ``x`` (``float``) -- The X coordinate of the circle's center.
+*  ``y`` (``float``) -- The Y coordinate of the circle's center.
+*  ``radius`` (``float``) -- The radius of the circle (in pixels).
+*  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
+*  ``colorBorder`` (``vector<int>``) -- The color of the border. ``{R, G, B, A}``
+*  ``borderFilled`` (``bool``) -- Whether to fill the border or not. Default is ``true``.
+*  ``segments`` (``int``) -- The number of segments of the circle. Default is ``16``.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   draw_circle_border_filled("MyHash", true, 0.f, 0.f, 100.f, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true, 16);
+
+**Returns:**
+
+* ``void``
+
+draw_triangle(``hash``, ``draw``, ``x``, ``y``, ``color``, ``size`` = ``1.1f``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning::
+   This function's documentation lacks testing and information. 
+
+Draws a triangle with the given color.
+
+**Parameters:**
+
+*  ``hash`` (``string``) -- The hash of the triangle to draw. Hash is used to identify the triangle, so it must be unique.
+*  ``draw`` (``bool``) -- Whether to draw the triangle or not. Pass ``true`` to draw the triangle, ``false`` to do otherwise.
+*  ``x`` (``float``) -- The X coordinate of the triangle's center.
+*  ``y`` (``float``) -- The Y coordinate of the triangle's center.
+*  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
+*  ``size`` (``float``) -- The size of the triangle (in pixels). Default is ``1.1f``.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+      
+   draw_triangle("MyHash", true, 0.f, 0.f, { 255, 255, 255, 255 }, 1.1f);
+
+
+**Returns:**
+
+* ``void``
+
+draw_triangle_filled(``hash``, ``draw``, ``x``, ``y``, ``color``, ``size`` = ``1.1f``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning::
+   This function's documentation lacks testing and information. 
+
+Draws a filled triangle with the given color.
+
+**Parameters:**
+
+*  ``hash`` (``string``) -- The hash of the triangle to draw. Hash is used to identify the triangle, so it must be unique.
+*  ``draw`` (``bool``) -- Whether to draw the triangle or not. Pass ``true`` to draw the triangle, ``false`` to do otherwise.
+*  ``x`` (``float``) -- The X coordinate of the triangle's center.
+*  ``y`` (``float``) -- The Y coordinate of the triangle's center.
+*  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
+*  ``size`` (``float``) -- The size of the triangle (in pixels). Default is ``1.1f``.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   draw_triangle_filled("MyHash", true, 0.f, 0.f, { 255, 255, 255, 255 }, 1.1f);
+
+**Returns:**
+
+* ``void``
+
+
+draw_triangle_border_filled(``hash``, ``draw``, ``x``, ``y``, ``color``, ``colorBorder``, ``borderFilled`` = ``true``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning::
+   This function's documentation lacks testing and information. 
+
+Draws a filled border triangle with the given color.
+
+**Parameters:**
+
+*  ``hash`` (``string``) -- The hash of the triangle to draw. Hash is used to identify the triangle, so it must be unique.
+*  ``draw`` (``bool``) -- Whether to draw the triangle or not. Pass ``true`` to draw the triangle, ``false`` to do otherwise.
+*  ``x`` (``float``) -- The X coordinate of the triangle's center.
+*  ``y`` (``float``) -- The Y coordinate of the triangle's center.
+*  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
+*  ``colorBorder`` (``vector<int>``) -- The color of the border. ``{R, G, B, A}``
+*  ``borderFilled`` (``bool``) -- Whether to fill the border or not. Default is ``true``.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   draw_triangle_border_filled("MyHash", true, 0.f, 0.f, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true);
+
+**Returns:**
+
+* ``void``
+
 
 .. _self:
 
@@ -297,7 +477,7 @@ FS namespace
 dir_exist(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if directory exists.
+Checks if directory exists.
 
 **Parameters:**
 
@@ -310,7 +490,7 @@ Check if directory exists.
 file_exist(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if file exists.
+Checks if file exists.
 
 **Parameters:**
 
@@ -324,7 +504,7 @@ Check if file exists.
 file_remove(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Remove a file.
+Removes a file.
 
 **Parameters:**
 
@@ -338,9 +518,9 @@ file_validate(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. warning::
-    This function's documentation lacks testing and information. It is not recommended to use this function.
+    This function's documentation lacks testing and information. 
 
-Validate file.
+Validates a file.
 
 **Parameters:**
 
@@ -353,7 +533,7 @@ Validate file.
 is_file_empty(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if file is empty.
+Checks if file is empty.
 
 **Parameters:**
 
@@ -366,7 +546,7 @@ Check if file is empty.
 dir_check(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if directory exists, and if not, create it.
+Checks if directory exists, and if not, create it.
 
 **Parameters:**
 
@@ -379,7 +559,7 @@ Check if directory exists, and if not, create it.
 dir_create(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a directory.
+Creates a directory.
 
 **Parameters:**
 
@@ -392,12 +572,21 @@ Create a directory.
 file_copy(``source``, ``dest``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Copy a file.
+Copies a file.
 
 **Parameters:**
 
 * ``source`` (*string*) -- Path to source file
 * ``dest`` (*string*) -- Path to destination file
+
+**Example**
+
+.. code-block:: lua
+   :linenos:
+
+   file_copy("source.txt", "dest.txt");
+
+   file_copy("files/source.txt", "files/dest.txt");
 
 **Returns:**
 
