@@ -1,4 +1,0 @@
-Entity namespace
-===================
-
-Functions here

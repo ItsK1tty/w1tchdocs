@@ -1,4 +1,0 @@
-Decorator namespace
-====================
-
-Functions here

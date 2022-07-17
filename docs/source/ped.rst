@@ -1,4 +1,0 @@
-Ped namespace
-====================
-
-Functions here

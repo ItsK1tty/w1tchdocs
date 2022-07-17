@@ -1,4 +1,0 @@
-Globals namespace
-====================
-
-Functions here

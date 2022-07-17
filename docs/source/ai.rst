@@ -1,4 +1,0 @@
-AI namespace
-==========================
-
-Functions here

@@ -1,4 +1,0 @@
-UI namespace
-=====================
-
-Functions here

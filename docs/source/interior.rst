@@ -1,4 +1,0 @@
-Interior namespace
-====================
-
-Functions here

@@ -1,4 +1,0 @@
-Vehicle namespace
-====================
-
-Functions here

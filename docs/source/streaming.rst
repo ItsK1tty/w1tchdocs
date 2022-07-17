@@ -1,4 +1,0 @@
-Streaming namespace
-====================
-
-Functions here

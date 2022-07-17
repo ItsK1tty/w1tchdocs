@@ -1,4 +1,0 @@
-Network namespace
-====================
-
-Functions here

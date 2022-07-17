@@ -1,4 +1,0 @@
-Script namespace
-====================
-
-Functions here

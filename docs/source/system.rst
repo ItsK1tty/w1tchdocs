@@ -1,4 +1,0 @@
-System namespace
-====================
-
-Functions here

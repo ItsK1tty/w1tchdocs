@@ -1,4 +1,0 @@
-Time namespace
-====================
-
-Functions here

@@ -1,4 +1,0 @@
-Cutscene namespace
-====================
-
-Functions here

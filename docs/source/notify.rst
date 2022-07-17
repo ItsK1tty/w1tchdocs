@@ -1,4 +1,0 @@
-Notify namespace
-====================
-
-Functions here

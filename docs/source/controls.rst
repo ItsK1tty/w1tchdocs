@@ -1,4 +1,0 @@
-Controls namespace
-===================
-
-Functions here

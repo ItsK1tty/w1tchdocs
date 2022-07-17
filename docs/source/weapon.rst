@@ -1,4 +1,0 @@
-Weapon namespace
-==================
-
-Functions here

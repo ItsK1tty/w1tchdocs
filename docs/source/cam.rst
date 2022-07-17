@@ -1,4 +1,0 @@
-Cam namespace
-===============
-
-Functions here

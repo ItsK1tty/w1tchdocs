@@ -1,4 +1,0 @@
-Draw namespace
-=================
-
-Functions here

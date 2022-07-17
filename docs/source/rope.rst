@@ -1,4 +1,0 @@
-Rope namespace
-================
-
-Functions here

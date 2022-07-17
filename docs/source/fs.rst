@@ -1,4 +1,0 @@
-FS namespace
-====================
-
-Functions here
