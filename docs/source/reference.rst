@@ -4,12 +4,8 @@ DIS2RBED LUA reference
 
 There are multiple namespaces & types in the current DIS2RBED LUA framework, each with their own set of functions.
 
-Chapter
-#############
-
-
 Types in LUA Engine
-----------------------
+######################
 :ref:`types`
 Types in LUA Engine are defined in the following way:
 
@@ -23,36 +19,46 @@ Types in LUA Engine are defined in the following way:
 * Vehicle (int)
 
 Hash
-^^^^^^^^^^
+----------------------
 Hash definition here
 
 Entity
-^^^^^^^^^^
+----------------------
 Entity definition here
 
 Ped
-^^^^^^^^^^
+----------------------
 Ped definition here
 
 Player
-^^^^^^^^^^
+----------------------
 Player definition here
 
 Cam
-^^^^^^^^^^
+----------------------
 Cam definition here
 
 Blip
-^^^^^^^^^^
+----------------------
 Blip definition here
 
 Any
-^^^^^^^^^^
+----------------------
 Any type definition here
 
 Vehicle
-^^^^^^^^^^
+----------------------
 Vehicle definition here
+..
+   # with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraph
+
+
+
+
 
 
 ..
