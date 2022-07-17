@@ -225,6 +225,7 @@ Draws a filled box with the given color and rounding.
 *   ``rounding`` (``float``) -- The rounding rule of the box. Default is ``0.f``.
 *   ``rounding_flags`` (``int``) -- The rounding flags of the box. Default is ``0``.
 **Example:**
+
 .. code-block:: lua
    :linenos:
    
