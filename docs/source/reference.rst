@@ -278,6 +278,8 @@ bool file_remove(string *file*);
          file_copy("/", "/"); //returns true
    */
 
+.. _playerNS:
+
 Player namespace
 ----------------------
 
