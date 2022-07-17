@@ -1,9 +1,8 @@
-Template for the Read the Docs tutorial
+W1TCH Documentation
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+This GitHub repository includes DIS2RBED Lua Engine documentation.
 
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+.. image:: https://readthedocs.org/projects/w1tch-documentation/badge/?version=latest
+:target: https://w1tch-documentation.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
