@@ -21,4 +21,6 @@ Contents
    generalinfo
    gettingstarted
    reference
+   roundingflags
+   textflags
    
