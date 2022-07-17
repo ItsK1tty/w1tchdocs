@@ -174,7 +174,29 @@ Functions here
 Render namespace
 ----------------------
 
-Functions here
+draw_box(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0.f``, ``rounding_flags`` = ``0``)
+
+Draws a box with the given color and rounding.
+
+**Parameters:**
+
+*  ``hash`` (``string``) -- The hash of the box to draw. Hash is used to identify the box, so it must be unique.
+*  ``draw`` (``bool``) -- Whether to draw the box or not. Pass ``true`` to draw the box, ``false`` to do otherwise.
+*  ``x`` (``float``) -- The X coordinate of the box's starting point.
+*  ``y`` (``float``) -- The Y coordinate of the box's starting point.
+*  ``w`` (``float``) -- The width of the box (in pixels)
+*   ``h`` (``float``) -- The height of the box (in pixels)
+*   ``color`` (``vector<int>``) -- The color of the box. {R, G, B, A}
+*   ``rounding`` (``float``) -- The rounding  of the box. Default is ``0.f``.
+*   ``rounding_flags`` (``int``) -- The rounding flags of the box. Default is ``0``.
+**Example:**
+
+* draw_box("MyHash", true, 0.f, 0.f, 100.f, 100.f, { 255, 255, 255, 255 }, 10.f, 0);
+
+**Returns:**
+
+* ``void``
+
 
 .. _self:
 
@@ -202,99 +224,99 @@ Functions here
 FS namespace
 ----------------------
 
-dir_exist(string *``dir``*)
+dir_exist(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if directory exists.
 
 **Parameters:**
 
-* ``dir`` (*string*``) -- Directory to check
+* ``dir`` (``string``) -- Directory to check
 
 **Returns:**
 
 * ``bool`` -- ``True`` if directory exists, ``false`` otherwise
 
-file_exist(string *``file``*)
+file_exist(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if file exists.
 
 **Parameters:**
 
-* ``file`` (*string*) -- File to check
+* ``file`` (``string``) -- File to check
 
 **Returns:**
 
 * ``bool`` -- ``True`` if file exists, ``false`` otherwise
 
 
-file_remove(string *``file``*)
+file_remove(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Remove a file.
 
 **Parameters:**
 
-* ``file`` (*string*) -- File to remove
+* ``file`` (``string``) -- File to remove
 
 **Returns:**
 
 * ``bool`` -- ``True`` if file was removed, ``false`` otherwise (e.g. file was not found)
 
-file_validate(string *``file``*)
+file_validate(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Validate file.
 
 **Parameters:**
 
-* ``file`` (*string*) -- File to validate
+* ``file`` (``string``) -- File to validate
 
 **Returns:**
 
 * ``bool`` -- ``True`` if file is valid, ``false`` otherwise (e.g. file was not found)
 
-is_file_empty(string *``file``*)
+is_file_empty(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if file is empty.
 
 **Parameters:**
 
-* ``file`` (*string*) -- File to check
+* ``file`` (``string``) -- File to check
 
 **Returns:**
 
 * ``bool`` -- ``True`` if file is empty, ``false`` otherwise
 
-dir_check(string *``dir``*)
+dir_check(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if directory exists, and if not, create it.
 
 **Parameters:**
 
-* ``dir`` (*string*) -- Directory to check
+* ``dir`` (``string``) -- Directory to check
 
 **Returns:**
 
 ``void``
 
-dir_create(string *``dir``*)
+dir_create(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a directory.
 
 **Parameters:**
 
-* ``dir`` (*string*) -- Directory to create
+* ``dir`` (``string``) -- Directory to create
 
 **Returns:**
 
 ``void``
 
-file_copy(string *``source``, string ``dest``*)
+file_copy(``source``, ``dest``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Copy a file.
