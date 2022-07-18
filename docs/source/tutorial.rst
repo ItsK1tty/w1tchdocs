@@ -98,18 +98,18 @@ example
 
 for internal hyperlinks, you first need to make a place holder. lemme show you:
 
-.. _: this we use to make a place holder
+``.. _name:`` this we use to make a place holder
 
-.. _ColorRGB: 
+.. _test: 
 
-ColorRGB
+test
 ----------------------
-ColorRGB definition here
+test definition here
 
 
 then you make a refernce:
 
-:ref:`ColorRGB`
+:ref:`test`
 
 you can make a reference to another page:
 
