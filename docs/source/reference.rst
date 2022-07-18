@@ -262,6 +262,8 @@ Sends a message to the log as ``[INFO]``. Has a blue color.
 
    system.log_info("Hello World!")
 
+================================
+
 log_online(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -282,6 +284,7 @@ Sends a message to the log as ``[ONLINE]``. Has a bright yellow color.
 
    system.log_online("Hello World!")
 
+================================
 
 log_protex(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -303,6 +306,8 @@ Sends a message to the log as ``[PROTEX]``. Has a light blue color.
 
    system.log_protex("Hello World!")
 
+================================
+
 log_warning(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -323,6 +328,8 @@ Sends a message to the log as ``[WARNING]``. Has a red color.
 
    system.log_warning("Hello World!")
 
+================================
+
 wait(``ms``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -330,7 +337,7 @@ Waits for ``ms`` milliseconds.
 
 **Parameters:**
 
-* ``ms`` (``int``) - The number of milliseconds to wait. Can be `-1`, but not less.
+* ``ms`` (``int``) - The number of milliseconds to wait. If ``-1`` is set, skips ticks.
 
 **Returns:**
 
@@ -343,6 +350,7 @@ Waits for ``ms`` milliseconds.
 
    system.wait(10000) -- Waits for 10 seconds
 
+================================
 
 add_task(``name``, ``hash``, ``ms``, ``fn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -383,6 +391,8 @@ Adds a task into the process's main loop.
    end
    system.add_task("My script task", "luaTestTaskHash", -1, my_script_function)
 
+================================
+
 remove_task(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -406,6 +416,7 @@ Removes a task from the process's main loop.
    system.add_task("My script task", "luaTestTaskHash", 1000, my_script_function)
    system.remove_task("luaTestTaskHash")
 
+================================
 
 add_chat_listener(``name``, ``hash``, ``fn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -441,6 +452,8 @@ Connects a chat listener that calls a task every time a message is sent in the c
    end
    system.add_chat_listener("My script task", "luaTestTaskHash", my_script_function)
 
+================================
+
 remove_chat_listener(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -464,6 +477,7 @@ Disconnects a chat listener for a certain task.
    system.add_chat_listener("My script task", "luaTestTaskHash", my_script_function)
    system.remove_chat_listener("luaTestTaskHash")
 
+================================
 
 string_to_key(``key``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -484,6 +498,8 @@ Converts a string key to a key hash.
 
 
    system.log_info(tostring(system.string_to_key("HOME"))) -- get "HOME" key hash
+
+================================
 
 key_to_string(``key``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -507,6 +523,7 @@ Converts a key hash to a string key.
 
    -- why 36, you ask? See this: https://www.oreilly.com/library/view/javascript-dhtml/9780596514082/apb.html
 
+================================
 
 is_key_pressed(```key``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -533,11 +550,16 @@ Checks if key is pressed
       end
    end
 
+================================
 
 .. _menu:
 
 Menu namespace
 ----------------------
+
+This namespace contains functions for working with the menu sections.
+
+================================
 
 add_parent(``name``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -558,6 +580,8 @@ Adds a parent section into menu resolution
    :linenos:
 
    menu.add_parent("My parent section")
+
+================================
 
 add_child(``name``, ``parent``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -581,6 +605,7 @@ Adds a child section to a parent section
    parent = menu.add_parent("My parent section")
    child = menu.add_child("Child section of my parent section", parent) 
 
+================================
 
 .. _stats:
 
@@ -595,6 +620,7 @@ This namespace contains functions that are used to get and set certain stats in 
 
    There are no examples for this namespace, as experienced users will know how to use it.
 
+================================
 
 set_packed_bool(``index``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -608,6 +634,8 @@ set_packed_bool(``index``, ``value``)
 
 * None
 
+================================
+
 get_packed_bool(``index``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -619,6 +647,7 @@ get_packed_bool(``index``)
 
 * ``bool`` - The value of the packed bool stat.
 
+================================
 
 
 .. _notify:
@@ -628,12 +657,16 @@ Notify namespace
 
 Functions here
 
+================================
+
 .. _script:
 
 Script namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _globals:
 
@@ -642,6 +675,8 @@ Globals namespace
 
 Functions here
 
+================================
+
 .. _locals:
 
 Locals namespace
@@ -649,11 +684,16 @@ Locals namespace
 
 Functions here
 
+================================
+
 .. _render:
 
 Render namespace
 ----------------------
 
+This namespace contains functions that are used to render certain objects in the game and gathering certain objects' coordinates on screen.
+
+================================
 draw_box(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0``, ``rounding_flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -685,6 +725,7 @@ More about rounding flags: :doc:`roundingflags`
    
    render.draw_box("MyHash", true, 0, 0, 100, 100, { 255, 255, 255, 255 }, 10, 0)
 
+================================
 
 draw_box_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0``, ``rounding_flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -715,6 +756,8 @@ More about rounding flags: :doc:`roundingflags`
    :linenos:
    
    render.draw_box_filled("MyHash", true, 0, 0, 100, 100, { 255, 255, 255, 255 }, 10, 0)
+
+================================
 
 draw_box_border_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``borderSize``, ``color``, ``colorBorder``, ``borderFilled`` = ``true``, ``rounding`` = ``0``, ``rounding_flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -750,6 +793,8 @@ More about rounding flags: :doc:`roundingflags`
    
    render.draw_box_border_filled("MyHash", true, 0, 0, 100, 100, 10, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true, 10, 0)
 
+================================
+
 draw_circle(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color``, ``segments`` = ``16``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -779,6 +824,7 @@ Draws a circle with the given color.
    
    render.draw_circle("MyHash", true, 0, 0, 100, { 255, 255, 255, 255 }, 16)
 
+================================
 
 draw_circle_filled(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color``, ``segments`` = ``16``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -807,10 +853,10 @@ Draws a filled circle with the given color.
 
    render.draw_circle_filled("MyHash", true, 0, 0, 100, { 255, 255, 255, 255 }, 16)
 
+================================
 
 draw_circle_border_filled(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color``, ``colorBorder``, ``borderFilled`` = ``true``, ``segments`` = ``16``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 
 Draws a filled border circle with the given color.
 
@@ -838,6 +884,8 @@ Draws a filled border circle with the given color.
 
    render.draw_circle_border_filled("MyHash", true, 0, 0, 100, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true, 16)
 
+================================
+
 draw_triangle(``hash``, ``draw``, ``x``, ``y``, ``color``, ``size`` = ``1.1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -863,6 +911,7 @@ Draws a triangle with the given color.
       
    render.draw_triangle("MyHash", true, 0, 0, { 255, 255, 255, 255 }, 1.1)
 
+================================
 
 draw_triangle_filled(``hash``, ``draw``, ``x``, ``y``, ``color``, ``size`` = ``1.1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -891,6 +940,7 @@ Draws a filled triangle with the given color.
 
    render.draw_triangle_filled("MyHash", true, 0.f, 0.f, { 255, 255, 255, 255 }, 1.1)
 
+================================
 
 draw_triangle_border_filled(``hash``, ``draw``, ``x``, ``y``, ``color``, ``colorBorder``, ``borderFilled`` = ``true``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -917,6 +967,8 @@ Draws a filled border triangle with the given color.
    :linenos:
 
    render.draw_triangle_border_filled("MyHash", true, 0, 0, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true)
+
+================================
 
 draw_text(``hash``, ``draw``, ``text``, ``x``, ``y``, ``scale``, ``color``, ``flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -948,7 +1000,7 @@ More about text flags: :doc:`textflags`
 
    render.draw_text("MyHash", true, "Hello World", 0, 0, 1, { 255, 255, 255, 255 }, 0)
 
-
+================================
 
 is_color_picker_rendering()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -972,6 +1024,8 @@ Checks if the color picker is active.
       system.log_warning("The color picker is active!") -- Prints if the color picker is active.
    end
 
+================================
+
 is_cursor_hover_menu()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -993,6 +1047,8 @@ Checks if the cursor is hovering over the menu.
    if render.is_cursor_hover_menu() then
       system.log_warning("The cursor is hovering over the menu!") -- This will only be logged if the cursor is hovering over the menu.
    end
+
+================================
 
 is_cursor_hover_option()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1016,6 +1072,8 @@ Checks if the cursor is hovering over an option.
       system.log_warning("The cursor is hovering over an option!") -- This will only be logged if the cursor is hovering over an option.
    end
 
+================================
+
 is_input_active()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1038,6 +1096,7 @@ Checks if the input window is active. (The input window is for example, the wind
       system.log_warning("The input window is active!") -- This will only be logged if the input window is active.
    end
 
+================================
 
 get_border_size()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1060,6 +1119,8 @@ Returns the process window's border size.
    local borderSize = render.get_border_size() -- Gets the border size.
    system.log_warning("The border size is " .. tostring(borderSize) .. ".") -- Prints the border size.
 
+================================
+
 get_fps()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1080,6 +1141,8 @@ Returns the current FPS.
       
    local fps = render.get_fps() -- Gets the FPS.
    system.log_warning("The FPS is " .. tostring(fps) .. ".") -- Prints the FPS.
+
+================================
 
 get_menu_rounding()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1102,6 +1165,7 @@ Returns the menu's rounding.
    local rounding = render.get_menu_rounding() -- Gets the rounding.
    system.log_warning("The rounding is " .. tostring(rounding) .. ".") -- Prints the rounding.
 
+================================
 
 get_menu_width()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1124,6 +1188,8 @@ Returns the menu's width.
    local width = render.get_menu_width() -- Gets the width.
    system.log_warning("The width is " .. tostring(width) .. ".") -- Prints the width.
 
+================================
+
 get_font_header_size()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1144,6 +1210,8 @@ Returns the font header size.
       
    local headerSize = render.get_font_header_size() -- Gets the header size.
    system.log_warning("The header size is " .. tostring(headerSize) .. ".") -- Prints the header size.
+
+================================
 
 get_font_helper_size()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1166,6 +1234,7 @@ Returns the font helper size.
    local helperSize = render.get_font_helper_size() -- Gets the helper size.
    system.log_warning("The helper size is " .. tostring(helperSize) .. ".") -- Prints the helper size.
 
+================================
 
 get_font_option_size()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1188,6 +1257,8 @@ Returns the font option size.
    local optionSize = render.get_font_option_size() -- Gets the option size.
    system.log_warning("The option size is " .. tostring(optionSize) .. ".") -- Prints the option size.
 
+================================
+
 get_font_warning_size()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1209,6 +1280,7 @@ Returns the font warning size.
    local warningSize = render.get_font_warning_size() -- Gets the warning size.
    system.log_warning("The warning size is " .. tostring(warningSize) .. ".") -- Prints the warning size.
 
+================================
 
 get_menu_cursor_pos()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1233,6 +1305,7 @@ Returns the cursor position.
    system.log_warning("The cursor position is " .. tostring(cursorPos.y) .. ".") -- Prints the cursor Y position coordinate.
 
 
+================================
 
 get_menu_position()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1256,6 +1329,7 @@ Returns the menu position.
    system.log_warning("The menu position is " .. tostring(menuPos.x) .. ".") -- Prints the menu X position coordinate.
    system.log_warning("The menu position is " .. tostring(menuPos.y) .. ".") -- Prints the menu Y position coordinate.
 
+================================
 
 get_menu_total_size()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1279,6 +1353,7 @@ Returns the menu total size.
    system.log_warning("The menu total size is " .. tostring(totalSize.x) .. ".") -- Prints the menu total X size.
    system.log_warning("The menu total size is " .. tostring(totalSize.y) .. ".") -- Prints the menu total Y size.
 
+================================
 
 get_screen_resolution()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1302,6 +1377,8 @@ Returns the screen resolution.
    system.log_warning("The screen resolution is " .. tostring(screenRes.x) .. ".") -- Prints the screen X resolution.
    system.log_warning("The screen resolution is " .. tostring(screenRes.y) .. ".") -- Prints the screen Y resolution.
 
+================================
+
 set_warning(``message``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1322,12 +1399,16 @@ Brings up a warning (as if a moderator was detected in a session)
          
          render.set_warning("This is a warning.") -- Brings up a warning.
 
+================================
+
 .. _self:
 
 Self namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _lobby:
 
@@ -1336,6 +1417,8 @@ Lobby namespace
 
 Functions here
 
+================================
+
 .. _text:
 
 Text namespace
@@ -1343,10 +1426,16 @@ Text namespace
 
 Functions here
 
+================================
+
 .. _fs:
 
 FS namespace
 ----------------------
+
+This namespace contains functions that let you interact with the file system.
+
+================================
 
 dir_exist(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1371,6 +1460,7 @@ Checks if directory exists.
 
    end
 
+================================
 
 file_exist(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1394,6 +1484,7 @@ Checks if file exists.
       system.log_warning("Better not to call Saul.")
    end
 
+================================
 
 file_remove(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1418,6 +1509,8 @@ Removes a file.
       system.log_warning("File removed.") -- Prints a message if the file was removed.
    end
 
+================================
+
 file_validate(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1440,7 +1533,7 @@ Checks if file is corrupted, checks if the permissions are correct, if it's read
       system.log_warning("File is valid and ready.")
    end
 
-
+================================
 
 is_file_empty(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1466,6 +1559,8 @@ Checks if file is empty.
       system.log_warning("The file is not empty.")
    end
 
+================================
+
 dir_check(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1486,6 +1581,8 @@ Checks if directory exists, and if not, creates it.
    
    fs.dir_check("D:\NewFolder") -- Creates the directory if it doesn't exist.
 
+================================
+
 dir_create(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1505,6 +1602,8 @@ Creates a directory.
    :linenos:
    
    fs.dir_create("D:\NewFolder") -- Creates a directory.
+
+================================
 
 file_copy(``source``, ``dest``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1529,11 +1628,16 @@ Copies a file.
    -- or
    fs.file_copy("files/source.txt", "files/dest.txt")
 
+================================
 
 .. _scripting:
 
 Scripting functions
 #############################
+
+Scripting functions are functions that let you interact with DIS2RBED's built-in options
+
+================================
 
 .. _playerNSS:
 
@@ -1542,12 +1646,16 @@ Player namespace
 
 Functions here
 
+================================
+
 .. _pedNSS:
 
 Ped namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _entityNSS:
 
@@ -1556,12 +1664,16 @@ Entity namespace
 
 Functions here
 
+================================
+
 .. _vehicleNSS:
 
 Vehicle namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _online:
 
@@ -1570,6 +1682,7 @@ Online namespace
 
 Functions here
 
+================================
 
 .. _networkNSS:
 
@@ -1578,12 +1691,16 @@ Network namespace
 
 Functions here
 
+================================
+
 .. _spawn:
 
 Spawn namespace
 ----------------
 
 Functions here
+
+================================
 
 .. _weaponNSS:
 
@@ -1592,12 +1709,16 @@ Weapon namespace
 
 Functions here
 
+================================
+
 .. _teleport:
 
 Teleport namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _world:
 
@@ -1606,10 +1727,16 @@ World namespace
 
 Functions here
 
+================================
+
 .. _rage:
 
 Rage Functions
 #################
+
+This namespace contains native game functions.
+
+================================
 
 .. _playerNSR:
 
@@ -1618,12 +1745,16 @@ Player namespace
 
 Functions here
 
+================================
+
 .. _pedNSR:
 
 Ped namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _vehicleNSR:
 
@@ -1632,12 +1763,16 @@ Vehicle namespace
 
 Functions here
 
+================================
+
 .. _entityNSR:
 
 Entity namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _object:
 
@@ -1646,12 +1781,16 @@ Object namespace
 
 Functions here
 
+================================
+
 .. _weaponNSR:
 
 Weapon namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _streaming:
 
@@ -1660,12 +1799,16 @@ Streaming namespace
 
 Functions here
 
+================================
+
 .. _ui:
 
 UI namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _draw:
 
@@ -1674,12 +1817,16 @@ Draw namespace
 
 Functions here
 
+================================
+
 .. _camNS:
 
 Cam namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _gameplay:
 
@@ -1688,12 +1835,16 @@ Gameplay namespace
 
 Functions here
 
+================================
+
 .. _fire:
 
 Fire namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _networkNSR:
 
@@ -1702,12 +1853,16 @@ Network namespace
 
 Functions here
 
+================================
+
 .. _cutscene:
 
 Cutscene namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _controls:
 
@@ -1716,12 +1871,16 @@ Controls namespace
 
 Functions here
 
+================================
+
 .. _graphics:
 
 Graphics namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _time:
 
@@ -1730,12 +1889,16 @@ Time namespace
 
 Functions here
 
+================================
+
 .. _ai:
 
 AI namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _decorator:
 
@@ -1744,12 +1907,16 @@ Decorator namespace
 
 Functions here
 
+================================
+
 .. _interior:
 
 Interior namespace
 ----------------------
 
 Functions here
+
+================================
 
 .. _audio:
 
@@ -1758,9 +1925,13 @@ Audio namespace
 
 Functions here
 
+================================
+
 .. _rope:
 
 Rope namespace
 ----------------------
 
 Functions here
+
+================================
