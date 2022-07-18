@@ -653,10 +653,20 @@ Returns a packed boolean stat.
 
 ================================
 
-void set_mass_packed_bool(bool value, int min, int max)
+set_mass_packed_bool(``value``, ``min``, ``max``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sets a mass-packed boolean stat.
+
+**Parameters:**
+
+* ``value`` (``bool``) - The value to set.
+* ``min`` (``int``) - The minimum value of the mass-packed bool stat.
+* ``max`` (``int``) - The maximum value of the mass-packed bool stat.
+
+**Returns:**
+
+* None
 
 ================================
 
@@ -665,9 +675,18 @@ get_mass_packed_bool(``min``, ``max``)
 
 .. note::
 
-   This function is not implemented yet, hence not documented.
-   
+   This function is not implemented yet.
+
 Returns a mass-packed boolean stat.
+
+**Parameters:**
+
+* ``min`` (``int``) - The minimum value of the mass-packed bool stat.
+* ``max`` (``int``) - The maximum value of the mass-packed bool stat.
+
+**Returns:**
+
+* None
 
 ================================
 
@@ -702,15 +721,39 @@ Returns a packed integer stat.
 
 ================================
 
-void get_mass_packed_int(int min, int max)
+get_mass_packed_int(``min``, ``max``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is not implemented yet.
+
+Returns a mass-packed integer stat.
+
+**Parameters:**
+
+* ``min`` (``int``) - The minimum value of the mass-packed integer stat.
+* ``max`` (``int``) - The maximum value of the mass-packed integer stat.
+
+**Returns:**
+
+* None
 
 ================================
 
-void set_stat_bit(string stat, int bit);
+void set_stat_bit(string stat, int bit)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Set a bit in a stat.
+
+**Parameters:**
+
+* ``stat`` (``string``) - The stat name.
+* ``bit`` (``int``) - The bit to set.
+
+**Returns:**
+
+* None
 
 ================================
 
@@ -719,6 +762,14 @@ clear_stat_bit(``stat``, ``bit``)
 
 Clear a bit in a stat.
 
+**Parameters:**
+
+* ``stat`` (``string``) - The stat name.
+* ``bit`` (``int``) - The bit to clear.
+
+**Returns:**
+
+* None
 
 ================================
 
@@ -816,14 +867,34 @@ Sets a float stat.
 ================================
 
 
-
-
 .. _notify:
 
 Notify namespace
 ----------------------
 
-Functions here
+This namespace contains functions for sending notifications.
+
+================================
+
+above_map(``text``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Send a notification in the bottom-left corner of the screen.
+
+**Parameters:**
+
+* ``text`` (``string``) - The text to display.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   notify.above_map("Hello world!")
 
 ================================
 
@@ -832,7 +903,35 @@ Functions here
 Script namespace
 ----------------------
 
-Functions here
+This namespace contains functions for executing in-game events.
+
+.. warning::
+
+   These functions are meant to be used by experienced users only.
+
+================================
+
+void trigger_script_event(int eventGroup, int64_t* args, int playerId); // script.trigger_script_event(0x0000000, { 1234567, 7654321, 1234321 }, playerId)
+
+Triggers a script event.
+
+**Parameters:**
+
+* ``eventGroup`` (``int``) - The event group ID.
+* ``args`` (``int64_t``) - The arguments to pass to the event.
+* ``playerId`` (``int``) - The player ID to send the event to.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+
+.. code-block:: lua
+   :linenos:
+
+   script.trigger_script_event(0x0000000, { 1234567, 7654321, 1234321 }, chatSenderId)
 
 ================================
 
