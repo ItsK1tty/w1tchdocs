@@ -529,9 +529,6 @@ Adds a parent section into menu resolution
    menu.add_parent("My parent section")
 
 add_child(``name``, ``parent``)
-
-
-add_child(``name``, ``parent``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a child section to a parent section
