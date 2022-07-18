@@ -105,14 +105,6 @@ for internal hyperlinks, you first need to make a place holder. lemme show you:
 
 
 
-.. _test: 
-
-test
-----------------------
-test definition here
-
-
-
 you can make a reference to another page:
 
 :doc:`gettingstarted`
@@ -128,3 +120,11 @@ then we ref
 Small LUA guide we recommend for new developers: `LUA guide`_. Credits to Tyler Neylon.
 
 this basically it 
+
+continuing samepage hyperlinks:
+
+.. _test: 
+
+test
+----------------------
+test definition here
