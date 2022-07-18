@@ -170,6 +170,7 @@ System namespace
 
 This namespace contains functions that are used to interact with the DIS2RBED's task management and logging.
 
+================================
 
 log_chat(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -191,6 +192,8 @@ Sends a message to the log as ``[CHAT]``. Has a purple color.
 
    system.log_chat("Hello World!")
 
+================================
+
 log_debug(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -210,6 +213,8 @@ Sends a message to the log as ``[DEBUG]``. Has a grey color.
    :linenos:
 
    system.log_debug("Hello World!")
+
+================================
 
 log_info(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -536,7 +541,6 @@ Adds a child section to a parent section
 **Parameters:**
 
 * ``name`` (``string``) - The name of the child section.
-
 * ``parent`` (``int``) - The parent section.
 
 **Returns:**
