@@ -660,9 +660,13 @@ Sets a mass-packed boolean stat.
 
 ================================
 
-void get_mass_packed_bool(int min, int max)
+get_mass_packed_bool(``min``, ``max``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. note::
+
+   This function is not implemented yet, hence not documented.
+   
 Returns a mass-packed boolean stat.
 
 ================================
