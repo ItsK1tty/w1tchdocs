@@ -648,7 +648,7 @@ Adds a menu option button.
 
 **Returns:**
 
-* ``None``
+* None
 
 **Example:**
 
@@ -680,7 +680,7 @@ Adds a toggable menu option button.
 
 **Returns:**
 
-* ``None``
+* None
 
 **Example:**
 
@@ -711,7 +711,7 @@ Adds a slider menu option.
 
 **Returns:**
 
-* ``None``
+* None
 
 **Example:**
 
@@ -742,7 +742,7 @@ Adds a toggable slider menu option.
 
 **Returns:**
 
-* ``None``
+* None
 
 **Example:**
 
@@ -774,7 +774,7 @@ Adds a menu option with a pre-set value
 
 **Returns:**
 
-* ``None``
+* None
 
 **Example:**
 
@@ -806,7 +806,7 @@ Adds a toggable menu option with a pre-set value.
 
 **Returns:**
 
-* ``None``
+* None
 
 **Example:**
 
@@ -835,7 +835,7 @@ Adds a menu option with multiple values.
 
 **Returns:**
 
-* ``None``
+* None
 
 **Example:**
 
@@ -864,7 +864,7 @@ Adds a toggable menu option with multiple values.
 
 **Returns:**
 
-* ``None``
+* None
 
 **Example:**
 
@@ -890,7 +890,7 @@ Adds a teleport option button.
 
 **Returns:**
 
-* ``None``
+* None
 
 **Example:**
 
@@ -917,7 +917,7 @@ Adds a spawn option button.
 
 **Returns:**
 
-* ``None``
+* None
 
 **Example:**
 
@@ -944,7 +944,7 @@ Adds a text option (e.g. a note).
 
 **Returns:**
 
-* ``None``
+* None
 
 **Example:**
 
@@ -971,7 +971,7 @@ Adds a text option. (e.g. a note).
 
 **Returns:**
 
-* ``None``
+* None
 
 **Example:**
 
@@ -982,7 +982,163 @@ Adds a text option. (e.g. a note).
 
    menu.add_option_text("Just a text option", "luaOptHashInfo", "Some info", parent)
 
-================================
+======================
+
+update_root_parent(``keepActiveOption`` = ``false``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Update the main section to display the created Lua section/option.
+
+**Parameters:**
+
+* ``keepActiveOption`` (``bool``) - Keep the option active (``true`` / ``false``).
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   menu.update_root_parent(true)
+
+======================
+
+update_current_parent(``keepActiveOption`` = ``false``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Update the current section to display the created Lua section/option.
+
+**Parameters:**
+
+* ``keepActiveOption`` (``bool``) - Keep the option active (``true`` / ``false``).
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.update_current_parent(true)
+
+======================
+
+is_option_toggled(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if an option is toggled.
+
+**Parameters:**
+
+* ``hash`` (``string``) - The option hash.
+
+**Returns:**
+
+* ``bool`` - Returns ``True`` if the option is toggled, ``False`` otherwise.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Get option state
+   optionToggled = "~rl~luaOptDummyToggle ~w~state is: ~g~" .. tostring(menu.is_option_toggled("luaOptDummyToggle"))
+
+======================
+
+is_option_visible(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if an option is visible.
+
+**Parameters:**
+
+* ``hash`` (``string``) - The option hash.
+
+**Returns:**
+
+* ``bool`` - Returns ``True`` if the option is visible, ``False`` otherwise.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   optionVisible = "~rl~luaOptDummyToggle ~w~state is: ~g~" .. tostring(menu.is_option_visible("luaOptDummyToggle"))
+
+======================
+
+is_option_enabled(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if an option is enabled.
+
+**Parameters:**
+
+* ``hash`` (``string``) - The option hash.
+
+**Returns:**
+
+* ``bool`` - Returns ``True`` if the option is enabled, ``False`` otherwise.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   optionEnabled = "~rl~luaOptDummyToggle ~w~state is: ~g~" .. tostring(menu.is_option_enabled("luaOptDummyToggle"))
+
+======================
+
+get_option_value(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the value of an option.
+
+**Parameters:**
+
+* ``hash`` (``string``) - The option hash.
+
+**Returns:**
+
+* ``float`` - Returns option value.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Get option value
+   optionValue = "~rl~luaOptHashValue ~w~value is: ~g~" .. tostring(menu.get_option_value("luaOptHashValue"))
+
+======================
+
+remove_option(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes an option.
+
+**Parameters:**
+
+* ``hash`` (``string``) - The option hash.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.remove_option(``luaOpt``)
+
+======================
 
 .. _stats:
 
@@ -1120,7 +1276,7 @@ Returns a mass-packed integer stat.
 
 ================================
 
-void set_stat_bit(string stat, int bit)
+set_stat_bit(string stat, int bit)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Set a bit in a stat.
@@ -1407,7 +1563,7 @@ Returns a global integer value.
 
 **Returns:**
 
-* ``int`` - The value of the global.
+* ``int`` - The global value.
 
 ================================
 
@@ -1422,7 +1578,7 @@ Returns a global float value.
 
 **Returns:**
 
-* ``float`` - The value of the global.
+* ``float`` - The global value.
 
 ================================
 
@@ -1437,7 +1593,7 @@ Returns a global boolean value.
 
 **Returns:**
 
-* ``bool`` - The value of the global.
+* ``bool`` - The global value..
 
 ================================
 
@@ -1452,7 +1608,7 @@ Returns a global string value.
 
 **Returns:**
 
-* ``string`` - The value of the global.
+* ``string`` - The global value.
 
 ================================
 
@@ -1461,7 +1617,155 @@ Returns a global string value.
 Locals namespace
 ----------------------
 
-Functions here
+This namespace contains functions for accessing local in-game values.
+
+.. warning::
+
+   These functions are meant to be used by experienced users only.
+
+   *Sapienti sat*
+
+================================
+
+void set_local_int(string scriptName, uint64_t local, int value)
+void set_local_float(string scriptName, uint64_t local, float value)
+void set_local_bool(string scriptName, uint64_t local, bool value)
+void set_local_string(string scriptName, uint64_t local, std::string value)
+
+int get_local_int(std::string scriptName, uint64_t local)
+float get_local_float(std::string scriptName, uint64_t local)
+bool get_local_bool(std::string scriptName, uint64_t local)
+std::string get_local_string(std::string scriptName, uint64_t local)
+
+set_local_int(``scriptName``, ``local``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a new local integer value.
+
+**Parameters:**
+
+* ``scriptName`` (``string``) - The name of the script.
+* ``local`` (``uint64_t``) - The name of the local value.
+* ``value`` (``int``) - The value to set.
+
+**Returns:**
+
+* None
+
+================================
+
+set_local_float(``scriptName``, ``local``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a new local float value.
+
+**Parameters:**
+
+* ``scriptName`` (``string``) - The name of the script.
+* ``local`` (``uint64_t``) - The name of the local value.
+* ``value`` (``float``) - The value to set.
+
+**Returns:**
+
+* None
+
+================================
+
+set_local_bool(``scriptName``, ``local``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a new local boolean value.
+
+**Parameters:**
+
+* ``scriptName`` (``string``) - The name of the script.
+* ``local`` (``uint64_t``) - The name of the local value.
+* ``value`` (``bool``) - The value to set.
+
+**Returns:**
+
+* None
+
+================================
+
+set_local_string(``scriptName``, ``local``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a new local string value.
+
+**Parameters:**
+
+* ``scriptName`` (``string``) - The name of the script.
+* ``local`` (``uint64_t``) - The name of the local value.
+* ``value`` (``string``) - The value to set.
+
+**Returns:**
+
+* None
+
+================================
+
+get_local_int(``scriptName``, ``local``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a local integer value.
+
+**Parameters:**
+
+* ``scriptName`` (``string``) - The name of the script.
+* ``local`` (``uint64_t``) - The name of the local value.
+
+**Returns:**
+
+* ``int`` - The local value.
+
+================================
+
+get_local_float(``scriptName``, ``local``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a local float value.
+
+**Parameters:**
+
+* ``scriptName`` (``string``) - The name of the script.
+* ``local`` (``uint64_t``) - The name of the local value.
+
+**Returns:**
+
+* ``float`` - The local value.
+
+================================
+
+get_local_bool(``scriptName``, ``local``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a local boolean value.
+
+**Parameters:**
+
+* ``scriptName`` (``string``) - The name of the script.
+* ``local`` (``uint64_t``) - The name of the local value.
+
+**Returns:**
+
+* ``bool`` - The local value.
+
+================================
+
+get_local_string(``scriptName``, ``local``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a local string value.
+
+**Parameters:**
+
+* ``scriptName`` (``string``) - The name of the script.
+* ``local`` (``uint64_t``) - The name of the local value.
+
+**Returns:**
+
+* ``string`` - The local value.
 
 ================================
 
@@ -1494,7 +1798,7 @@ More about rounding flags: :doc:`roundingflags`
 
 **Returns:**
 
-* ``void``
+* None
 
 
 **Example:**
@@ -1527,7 +1831,7 @@ More about rounding flags: :doc:`roundingflags`
 
 **Returns:**
 
-* ``void``
+* None
 
 **Example:**
 
@@ -1563,7 +1867,7 @@ More about rounding flags: :doc:`roundingflags`
 
 **Returns:**
 
-* ``void``
+* None
 
 **Example:**
 
@@ -1593,7 +1897,7 @@ Draws a circle with the given color.
 
 **Returns:**
 
-* ``void``
+* None
 
 
 **Example:**
@@ -1623,7 +1927,7 @@ Draws a filled circle with the given color.
 
 **Returns:**
 
-* ``void``
+* None
 
 **Example:**
 
@@ -1653,7 +1957,7 @@ Draws a filled border circle with the given color.
 
 **Returns:**
 
-* ``void``
+* None
 
 
 **Example:**
@@ -1681,7 +1985,7 @@ Draws a triangle with the given color.
 
 **Returns:**
 
-* ``void``
+* None
 
 **Example:**
 
@@ -1709,7 +2013,7 @@ Draws a filled triangle with the given color.
 
 **Returns:**
 
-* ``void``
+* None
 
 
 **Example:**
@@ -1738,7 +2042,7 @@ Draws a filled border triangle with the given color.
 
 **Returns:**
 
-* ``void``
+* None
 
 **Example:**
 
@@ -1770,7 +2074,7 @@ More about text flags: :doc:`textflags`
 
 **Returns:**
 
-* ``void``
+* None
 
 **Example:**
 
@@ -2282,7 +2586,7 @@ Removes a file.
 
 .. code-block:: lua
    :linenos:
-      
+
    local success = fs.file_remove("test.txt") -- Removes the file.
    if success then
       system.log_warning("File removed.") -- Prints a message if the file was removed.
@@ -2351,7 +2655,7 @@ Checks if directory exists, and if not, creates it.
 
 **Returns:**
 
-``void``
+None
 
 **Example:**
 
@@ -2373,7 +2677,7 @@ Creates a directory.
 
 **Returns:**
 
-``void``
+None
 
 **Example**
 
@@ -2396,7 +2700,7 @@ Copies a file.
 
 **Returns:**
 
-``void``
+None
 
 **Example**
 
