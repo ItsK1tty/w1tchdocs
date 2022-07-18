@@ -506,36 +506,7 @@ Checks if key is pressed
 Menu namespace
 ----------------------
 
-Menu
-==========
-
-menu stuff here
-
-int add_parent(name)
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-stuff here
-
-int add_parent(name)
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-stuff here
-
-Menu sections
-==================
-
-menu sections stuff here
-
-int section_self_mods();
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-stuff here
-
-int section_self_mods();
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-stuff here
-
+Functions here
 
 .. _stats:
 
