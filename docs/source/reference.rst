@@ -205,7 +205,7 @@ Sends a message to the log as ``[CHAT]``. Has a purple color.
 
 **Parameters:**
 
-* ``text`` (``string``) - The text to send to the log.
+* ``text`` (``string``) -- The text to send to the log.
 
 **Returns:**
 
@@ -227,7 +227,7 @@ Sends a message to the log as ``[DEBUG]``. Has a grey color.
 
 **Parameters:**
 
-* ``text`` (``string``) - The text to send to the log.
+* ``text`` (``string``) -- The text to send to the log.
 
 **Returns:**
 
@@ -249,7 +249,7 @@ Sends a message to the log as ``[INFO]``. Has a blue color.
 
 **Parameters:**
 
-* ``text`` (``string``) - The text to send to the log.
+* ``text`` (``string``) -- The text to send to the log.
 
 **Returns:**
 
@@ -271,7 +271,7 @@ Sends a message to the log as ``[ONLINE]``. Has a bright yellow color.
 
 **Parameters:**
 
-* ``text`` (``string``) - The text to send to the log.
+* ``text`` (``string``) -- The text to send to the log.
 
 **Returns:**
 
@@ -293,7 +293,7 @@ Sends a message to the log as ``[PROTEX]``. Has a light blue color.
 
 **Parameters:**
 
-* ``text`` (``string``) - The text to send to the log.
+* ``text`` (``string``) -- The text to send to the log.
 
 **Returns:**
 
@@ -315,7 +315,7 @@ Sends a message to the log as ``[WARNING]``. Has a red color.
 
 **Parameters:**
 
-* ``text`` (``string``) - The text to send to the log.
+* ``text`` (``string``) -- The text to send to the log.
 
 **Returns:**
 
@@ -337,7 +337,7 @@ Waits for ``ms`` milliseconds.
 
 **Parameters:**
 
-* ``ms`` (``int``) - The number of milliseconds to wait. If ``-1`` is set, skips ticks.
+* ``ms`` (``int``) -- The number of milliseconds to wait. If ``-1`` is set, skips ticks.
 
 **Returns:**
 
@@ -363,10 +363,10 @@ Adds a task into the process's main loop.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the task.
-* ``hash`` (``string``) - The hash of the task. Hash is used to identify the task, so it must be unique.
-* ``ms`` (``int``) - The number of milliseconds to wait before calling the task. Can be `-1` to execute the task again and again.
-* ``fn`` (``function``) - The function to call when the task is executed.
+* ``name`` (``string``) -- The name of the task.
+* ``hash`` (``string``) -- The hash of the task. Hash is used to identify the task, so it must be unique.
+* ``ms`` (``int``) -- The number of milliseconds to wait before calling the task. Can be `-1` to execute the task again and again.
+* ``fn`` (``function``) -- The function to call when the task is executed.
 
 **Returns:**
 
@@ -386,7 +386,7 @@ Adds a task into the process's main loop.
         -- Test key press
         bKeyPressed = system.is_key_pressed("F")
         if bKeyPressed then
-            system.log_warning("Pressed F to pay respect!")
+            system.log_info("Pressed F to pay respect!")
         end
    end
    system.add_task("My script task", "luaTestTaskHash", -1, my_script_function)
@@ -400,7 +400,7 @@ Removes a task from the process's main loop.
 
 **Parameters:**
 
-* ``hash`` (``string``) - The hash of the task to remove.
+* ``hash`` (``string``) -- The hash of the task to remove.
 
 **Returns:**
 
@@ -435,9 +435,9 @@ Connects a chat listener that calls a task every time a message is sent in the c
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the task.
-* ``hash`` (``string``) - The hash of the task. Hash is used to identify the task, so it must be unique.
-* ``fn`` (``function``) - The function to call when the task is executed.
+* ``name`` (``string``) -- The name of the task.
+* ``hash`` (``string``) -- The hash of the task. Hash is used to identify the task, so it must be unique.
+* ``fn`` (``function``) -- The function to call when the task is executed.
 
 **Returns:**
 
@@ -461,7 +461,7 @@ Disconnects a chat listener for a certain task.
 
 **Parameters:**
 
-* ``hash`` (``string``) - The hash of the task to remove.
+* ``hash`` (``string``) -- The hash of the task to remove.
 
 **Returns:**
 
@@ -486,11 +486,11 @@ Converts a string key to a key hash.
 
 **Parameters:**
 
-* ``key`` (``string``) - The key to convert.
+* ``key`` (``string``) -- The key to convert.
 
 **Returns:**
 
-* ``int`` - The key hash. -1 if the key is not any special key or it doesn't exist at all
+* ``int`` -- The key hash. -1 if the key is not any special key or it doesn't exist at all
 
 **Example:**
 .. code-block:: lua
@@ -508,11 +508,11 @@ Converts a key hash to a string key.
 
 **Parameters:**
 
-* ``key`` (``int``) - The key hash to convert.
+* ``key`` (``int``) -- The key hash to convert.
 
 **Returns:**
 
-* ``string`` - The key as string.
+* ``string`` -- The key as string.
 
 **Example:**
 
@@ -532,11 +532,11 @@ Checks if key is pressed
 
 **Parameters:**
 
-* ``key`` (``string``) - The key to check.
+* ``key`` (``string``) -- The key to check.
 
 **Returns:**
 
-* ``bool`` - ``True`` if the key is pressed, ``false`` otherwise.
+* ``bool`` -- ``True`` if the key is pressed, ``false`` otherwise.
 
 **Example:**
 
@@ -557,6 +557,10 @@ Checks if key is pressed
 Menu namespace
 ----------------------
 
+This namespace contains functions for creating and manipulating menu options and sections.
+
+================================
+
 Menu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -569,11 +573,11 @@ Adds a parent section into menu resolution.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the parent section.
+* ``name`` (``string``) -- The name of the parent section.
 
 **Returns:**
 
-* ``int`` - The ID of the parent section.
+* ``int`` -- The ID of the parent section.
 
 **Example:**
 
@@ -591,12 +595,12 @@ Adds a child section to a parent section.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the child section.
-* ``parent`` (``int``) - The parent section.
+* ``name`` (``string``) -- The name of the child section.
+* ``parent`` (``int``) -- The parent section.
 
 **Returns:**
 
-* ``int`` - The ID of the child section.
+* ``int`` -- The ID of the child section.
 
 **Example:**
 
@@ -616,12 +620,12 @@ Adds a delimiter to a section.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the delimiter.
-* ``parent`` (``int``) - The parent section.
+* ``name`` (``string``) -- The name of the delimiter.
+* ``parent`` (``int``) -- The parent section.
 
 **Returns:**
 
-* ``int`` - The ID of the delimiter.
+* ``int`` -- The ID of the delimiter.
 
 **Example:**
 
@@ -641,10 +645,10 @@ Adds a menu option button.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the option.
-* ``hash`` (``string``) - The option hash.
-* ``parent`` (``int``) - The parent section.
-* ``fn`` (``function``) - Function to call.
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``parent`` (``int``) -- The parent section.
+* ``fn`` (``function``) -- Function to call.
 
 **Returns:**
 
@@ -657,7 +661,7 @@ Adds a menu option button.
 
    -- A test function
    function test()
-      log_warning("Test function!")
+      log_info("Test function!")
    end
    
    parent = menu.add_parent("My parent section")
@@ -673,10 +677,10 @@ Adds a toggable menu option button.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the option.
-* ``hash`` (``string``) - The option hash.
-* ``parent`` (``int``) - The parent section.
-* ``fn`` (``function``) - Function to call.
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``parent`` (``int``) -- The parent section.
+* ``fn`` (``function``) -- Function to call.
 
 **Returns:**
 
@@ -700,14 +704,14 @@ Adds a slider menu option.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the option.
-* ``hash`` (``string``) - The option hash.
-* ``value`` (``float``) - The option default value.
-* ``min`` (``float``) - Minimum slider value.
-* ``max`` (``float``) - Maximum slider value.
-* ``mod`` (``float``) - Step of value increase.
-* ``parent`` (``int``) - The parent section.
-* ``fn`` (``function``) - Function to call.
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- The option default value.
+* ``min`` (``float``) -- Minimum slider value.
+* ``max`` (``float``) -- Maximum slider value.
+* ``mod`` (``float``) -- Step of value increase.
+* ``parent`` (``int``) -- The parent section.
+* ``fn`` (``function``) -- Function to call.
 
 **Returns:**
 
@@ -731,14 +735,14 @@ Adds a toggable slider menu option.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the option.
-* ``hash`` (``string``) - The option hash.
-* ``value`` (``float``) - The option default value.
-* ``min`` (``float``) - Minimum slider value.
-* ``max`` (``float``) - Maximum slider value.
-* ``mod`` (``float``) - Step of value increase.
-* ``parent`` (``int``) - The parent section.
-* ``fn`` (``function``) - Function to call.
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- The option default value.
+* ``min`` (``float``) -- Minimum slider value.
+* ``max`` (``float``) -- Maximum slider value.
+* ``mod`` (``float``) -- Step of value increase.
+* ``parent`` (``int``) -- The parent section.
+* ``fn`` (``function``) -- Function to call.
 
 **Returns:**
 
@@ -762,15 +766,15 @@ Adds a menu option with a pre-set value
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the option.
-* ``hash`` (``string``) - The option hash.
-* ``value`` (``float``) - The option default value.
-* ``min`` (``float``) - Minimum slider value.
-* ``max`` (``float``) - Maximum slider value.
-* ``mod`` (``float``) - Step of value increase.
-* ``parent`` (``int``) - The parent section.
-* ``valueSuffix`` (``string``) - The value suffix text (e.g. ``m/s``)
-* ``fn`` (``function``) - Function to call.
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- The option default value.
+* ``min`` (``float``) -- Minimum slider value.
+* ``max`` (``float``) -- Maximum slider value.
+* ``mod`` (``float``) -- Step of value increase.
+* ``parent`` (``int``) -- The parent section.
+* ``valueSuffix`` (``string``) -- The value suffix text (e.g. ``m/s``)
+* ``fn`` (``function``) -- Function to call.
 
 **Returns:**
 
@@ -794,15 +798,15 @@ Adds a toggable menu option with a pre-set value.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the option.
-* ``hash`` (``string``) - The option hash.
-* ``value`` (``float``) - The option default value.
-* ``min`` (``float``) - Minimum slider value.
-* ``max`` (``float``) - Maximum slider value.
-* ``mod`` (``float``) - Step of value increase.
-* ``parent`` (``int``) - The parent section.
-* ``valueSuffix`` (``string``) - The value suffix text (e.g. ``m/s``)
-* ``fn`` (``function``) - Function to call.
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- The option default value.
+* ``min`` (``float``) -- Minimum slider value.
+* ``max`` (``float``) -- Maximum slider value.
+* ``mod`` (``float``) -- Step of value increase.
+* ``parent`` (``int``) -- The parent section.
+* ``valueSuffix`` (``string``) -- The value suffix text (e.g. ``m/s``)
+* ``fn`` (``function``) -- Function to call.
 
 **Returns:**
 
@@ -826,12 +830,12 @@ Adds a menu option with multiple values.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the option.
-* ``hash`` (``string``) - The option hash.
-* ``value`` (``float``) - The option default value.
-* ``parent`` (``int``) - The parent section.
-* ``list`` (``vector<string>``) - The values list separated with a comma
-* ``fn`` (``function``) - Function to call.
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- The option default value.
+* ``parent`` (``int``) -- The parent section.
+* ``list`` (``vector<string>``) -- The values list separated with a comma
+* ``fn`` (``function``) -- Function to call.
 
 **Returns:**
 
@@ -855,12 +859,12 @@ Adds a toggable menu option with multiple values.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the option.
-* ``hash`` (``string``) - The option hash.
-* ``value`` (``float``) - The option default value.
-* ``parent`` (``int``) - The parent section.
-* ``list`` (``vector<string>``) - The values list separated with a comma.
-* ``fn`` (``function``) - Function to call.
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- The option default value.
+* ``parent`` (``int``) -- The parent section.
+* ``list`` (``vector<string>``) -- The values list separated with a comma.
+* ``fn`` (``function``) -- Function to call.
 
 **Returns:**
 
@@ -884,9 +888,9 @@ Adds a teleport option button.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the option.
-* ``coords`` (``Vector3``) - The teleport coordinates.
-* ``parent`` (``int``) - The parent section.
+* ``name`` (``string``) -- The name of the option.
+* ``coords`` (``Vector3``) -- The teleport coordinates.
+* ``parent`` (``int``) -- The parent section.
 
 **Returns:**
 
@@ -910,10 +914,10 @@ Adds a spawn option button.
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the option.
-* ``model`` (``Hash``) - The vehicle hash.
-* ``type`` (``int``) - The vehicle spawn type.
-* ``parent`` (``int``) - The parent section.
+* ``name`` (``string``) -- The name of the option.
+* ``model`` (``Hash``) -- The vehicle hash.
+* ``type`` (``int``) -- The vehicle spawn type.
+* ``parent`` (``int``) -- The parent section.
 
 **Returns:**
 
@@ -937,10 +941,10 @@ Adds a text option (e.g. a note).
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the option.
-* ``hash`` (``string``) - The option hash.
-* ``text`` (``string``) - The displayed text to the right of the name.
-* ``parent`` (``int``) - The parent section.
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``text`` (``string``) -- The displayed text to the right of the name.
+* ``parent`` (``int``) -- The parent section.
 
 **Returns:**
 
@@ -964,10 +968,10 @@ Adds a text option. (e.g. a note).
 
 **Parameters:**
 
-* ``name`` (``string``) - The name of the option.
-* ``hash`` (``string``) - The option hash.
-* ``info`` (``string``) - Info to display to the right of the option name.
-* ``parent`` (``int``) - The parent section.
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``info`` (``string``) -- Info to display to the right of the option name.
+* ``parent`` (``int``) -- The parent section.
 
 **Returns:**
 
@@ -984,14 +988,281 @@ Adds a text option. (e.g. a note).
 
 ======================
 
-update_root_parent(``keepActiveOption`` = ``false``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+add_player_option(``name``, ``hash``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Update the main section to display the created Lua section/option.
+Adds a player menu option in the selected player section.
 
 **Parameters:**
 
-* ``keepActiveOption`` (``bool``) - Keep the option active (``true`` / ``false``).
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Just a test function
+   function test()
+      log_info("Test function!")
+   end
+
+   menu.add_player_option("Lua Player Option", "luaOptHash", test)
+
+======================
+
+add_player_option_toggle(``name``, ``hash``, ``fn``);
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a toggable player menu option in the selected player section.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option_toggle("Toggle Player Option", "luaOptDummyToggle", function())
+
+======================
+
+add_player_option_slider(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a player menu slider option in the selected player section.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- The option default value.
+* ``min`` (``float``) -- Minimum slider value.
+* ``max`` (``float``) -- Maximum slider value.
+* ``mod`` (``float``) -- Step of value increase
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_player_option_slider("Slider Player Option", "luaOptDummyToggle", 10, 0, 100, 1, function())
+
+======================
+
+add_player_option_slider_toggle(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a toggable slider player menu option in the selected player section.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- The option default value.
+* ``min`` (``float``) -- Minimum slider value.
+* ``max`` (``float``) -- Maximum slider value.
+* ``mod`` (``float``) -- Step of value increase.
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_player_option_slider_toggle("Toggable Slider Player Option", "luaOptDummyToggle", 10, 0, 100, 1, function())
+
+======================
+
+add_player_option_value(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``valueSuffix``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a player menu option with a set value in the selected player section.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- The option default value.
+* ``min`` (``float``) -- Minimum slider value.
+* ``max`` (``float``) -- Maximum slider value.
+* ``mod`` (``float``) -- Step of value increase
+* ``valueSuffix`` (``string``) -- The value suffix text
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_player_option_value("Lua option with value", "luaOptDummyToggle", 10, 0, 100, 1, "kb", function())
+
+======================
+
+add_player_option_value_toggle(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``valueSuffix``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a toggable player menu option with a set value in the selected player section.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- The option default value.
+* ``min`` (``float``) -- Minimum slider value.
+* ``max`` (``float``) -- Maximum slider value.
+* ``mod`` (``float``) -- Step of value increase
+* ``valueSuffix`` (``string``) -- The value suffix text
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_player_option_value_toggle("Toggable Lua option with value", "luaOptDummyToggle", 10, 0, 100, 1, "kb", function())
+
+======================
+
+add_player_option_value_str(``name``, ``hash``, ``value``, ``list``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a player menu option with multiple values in the selected player section.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- The option default value.
+* ``list`` (``string``) -- The values list separed with a comma.
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_player_option_value_str("Lua option with multiple values", "luaOptDummyToggle", 0, { "One", "Two", "Three" }, function())
+
+======================
+
+add_player_option_value_str_toggle(``name``, ``hash``, ``value``, ``list``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a toggable player menu option with multiple values in the selected player section.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- The option default value.
+* ``list`` (``string``) -- The values list separed with a comma.
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option_value_str("Toggable Lua option with multiple values", "luaOptDummyToggle", 0, { "One", "Two", "Three" }, function())
+
+======================
+
+add_player_option_text(``name``, ``hash``, ``text``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a player menu text option in the selected player section.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``text`` (``string``) -- The option displayed text.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_player_option_text("Just a text option", "luaOptHashText", "Text")
+
+======================
+
+add_player_option_info(``name``, ``hash``, ``info``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a text menu option in the selected player section.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``info`` (``string``) -- The option displayed info as text.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_player_option_text("Just a text option", "luaOptHashInfo", "Some info")
+
+======================
+
+update_root_parent(``keepActiveOption`` = ``false``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updates the main section to display the created Lua section/option.
+
+**Parameters:**
+
+* ``keepActiveOption`` (``bool``) -- Keep the option active (``true`` / ``false``).
 
 **Returns:**
 
@@ -1009,11 +1280,11 @@ Update the main section to display the created Lua section/option.
 update_current_parent(``keepActiveOption`` = ``false``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Update the current section to display the created Lua section/option.
+Updates the current section to display the created Lua section/option.
 
 **Parameters:**
 
-* ``keepActiveOption`` (``bool``) - Keep the option active (``true`` / ``false``).
+* ``keepActiveOption`` (``bool``) -- Keep the option active (``true`` / ``false``).
 
 **Returns:**
 
@@ -1035,11 +1306,11 @@ Checks if an option is toggled.
 
 **Parameters:**
 
-* ``hash`` (``string``) - The option hash.
+* ``hash`` (``string``) -- The option hash.
 
 **Returns:**
 
-* ``bool`` - Returns ``True`` if the option is toggled, ``False`` otherwise.
+* ``bool`` -- Returns ``True`` if the option is toggled, ``False`` otherwise.
 
 **Example:**
 
@@ -1058,11 +1329,11 @@ Checks if an option is visible.
 
 **Parameters:**
 
-* ``hash`` (``string``) - The option hash.
+* ``hash`` (``string``) -- The option hash.
 
 **Returns:**
 
-* ``bool`` - Returns ``True`` if the option is visible, ``False`` otherwise.
+* ``bool`` -- Returns ``True`` if the option is visible, ``False`` otherwise.
 
 **Example:**
 
@@ -1080,11 +1351,11 @@ Checks if an option is enabled.
 
 **Parameters:**
 
-* ``hash`` (``string``) - The option hash.
+* ``hash`` (``string``) -- The option hash.
 
 **Returns:**
 
-* ``bool`` - Returns ``True`` if the option is enabled, ``False`` otherwise.
+* ``bool`` -- Returns ``True`` if the option is enabled, ``False`` otherwise.
 
 **Example:**
 
@@ -1102,11 +1373,11 @@ Gets the value of an option.
 
 **Parameters:**
 
-* ``hash`` (``string``) - The option hash.
+* ``hash`` (``string``) -- The option hash.
 
 **Returns:**
 
-* ``float`` - Returns option value.
+* ``float`` -- Returns option value.
 
 **Example:**
 
@@ -1125,7 +1396,7 @@ Removes an option.
 
 **Parameters:**
 
-* ``hash`` (``string``) - The option hash.
+* ``hash`` (``string``) -- The option hash.
 
 **Returns:**
 
@@ -1164,8 +1435,8 @@ Sets a packed boolean stat.
 
 **Parameters:**
 
-* ``index`` (``int``) - The index of the packed bool stat.
-* ``value`` (``bool``) - The value to set.
+* ``index`` (``int``) -- The index of the packed bool stat.
+* ``value`` (``bool``) -- The value to set.
 
 **Returns:**
 
@@ -1180,11 +1451,11 @@ Returns a packed boolean stat.
 
 **Parameters:**
 
-* ``index`` (``int``) - The index of the packed bool stat.
+* ``index`` (``int``) -- The index of the packed bool stat.
 
 **Returns:**
 
-* ``bool`` - The value of the packed bool stat.
+* ``bool`` -- The value of the packed bool stat.
 
 ================================
 
@@ -1195,9 +1466,9 @@ Sets a mass-packed boolean stat.
 
 **Parameters:**
 
-* ``value`` (``bool``) - The value to set.
-* ``min`` (``int``) - The minimum value of the mass-packed bool stat.
-* ``max`` (``int``) - The maximum value of the mass-packed bool stat.
+* ``value`` (``bool``) -- The value to set.
+* ``min`` (``int``) -- The minimum value of the mass-packed bool stat.
+* ``max`` (``int``) -- The maximum value of the mass-packed bool stat.
 
 **Returns:**
 
@@ -1216,8 +1487,8 @@ Returns a mass-packed boolean stat.
 
 **Parameters:**
 
-* ``min`` (``int``) - The minimum value of the mass-packed bool stat.
-* ``max`` (``int``) - The maximum value of the mass-packed bool stat.
+* ``min`` (``int``) -- The minimum value of the mass-packed bool stat.
+* ``max`` (``int``) -- The maximum value of the mass-packed bool stat.
 
 **Returns:**
 
@@ -1232,8 +1503,8 @@ Sets a packed integer stat.
 
 **Parameters:**
 
-* ``index`` (``int``) - The index of the packed integer stat.
-* ``value`` (``int``) - The value to set.
+* ``index`` (``int``) -- The index of the packed integer stat.
+* ``value`` (``int``) -- The value to set.
 
 **Returns:**
 
@@ -1248,11 +1519,11 @@ Returns a packed integer stat.
 
 **Parameters:**
 
-* ``index`` (``int``) - The index of the packed integer stat.
+* ``index`` (``int``) -- The index of the packed integer stat.
 
 **Returns:**
 
-* ``int`` - The value of the packed integer stat.
+* ``int`` -- The value of the packed integer stat.
 
 ================================
 
@@ -1267,8 +1538,8 @@ Returns a mass-packed integer stat.
 
 **Parameters:**
 
-* ``min`` (``int``) - The minimum value of the mass-packed integer stat.
-* ``max`` (``int``) - The maximum value of the mass-packed integer stat.
+* ``min`` (``int``) -- The minimum value of the mass-packed integer stat.
+* ``max`` (``int``) -- The maximum value of the mass-packed integer stat.
 
 **Returns:**
 
@@ -1283,8 +1554,8 @@ Set a bit in a stat.
 
 **Parameters:**
 
-* ``stat`` (``string``) - The stat name.
-* ``bit`` (``int``) - The bit to set.
+* ``stat`` (``string``) -- The stat name.
+* ``bit`` (``int``) -- The bit to set.
 
 **Returns:**
 
@@ -1299,8 +1570,8 @@ Clear a bit in a stat.
 
 **Parameters:**
 
-* ``stat`` (``string``) - The stat name.
-* ``bit`` (``int``) - The bit to clear.
+* ``stat`` (``string``) -- The stat name.
+* ``bit`` (``int``) -- The bit to clear.
 
 **Returns:**
 
@@ -1316,11 +1587,11 @@ Returns an integer stat.
 
 **Parameters:**
 
-* ``stat`` (``string``) - The name of the stat.
+* ``stat`` (``string``) -- The name of the stat.
 
 **Returns:**
 
-* ``int`` - The value of the stat.
+* ``int`` -- The value of the stat.
 
 ================================
 
@@ -1330,8 +1601,8 @@ stat_set_int(``stat``, ``value``)
 
 **Parameters:**
 
-* ``stat`` (``string``) - The name of the stat.
-* ``value`` (``int``) - The value to set.
+* ``stat`` (``string``) -- The name of the stat.
+* ``value`` (``int``) -- The value to set.
 
 **Returns:**
 
@@ -1346,11 +1617,11 @@ Returns a boolean stat.
 
 **Parameters:**
 
-* ``stat`` (``string``) - The name of the stat.
+* ``stat`` (``string``) -- The name of the stat.
 
 **Returns:**
 
-* ``bool`` - The value of the stat.
+* ``bool`` -- The value of the stat.
 
 ================================
 
@@ -1361,8 +1632,8 @@ Sets a boolean stat.
 
 **Parameters:**
 
-* ``stat`` (``string``) - The name of the stat.
-* ``value`` (``bool``) - The value to set.
+* ``stat`` (``string``) -- The name of the stat.
+* ``value`` (``bool``) -- The value to set.
 
 **Returns:**
 
@@ -1377,11 +1648,11 @@ Returns a float stat.
 
 **Parameters:**
 
-* ``stat`` (``string``) - The name of the stat.
+* ``stat`` (``string``) -- The name of the stat.
 
 **Returns:**
 
-* ``float`` - The value of the stat.
+* ``float`` -- The value of the stat.
 
 ================================
 
@@ -1392,8 +1663,8 @@ Sets a float stat.
 
 **Parameters:**
 
-* ``stat`` (``string``) - The name of the stat.
-* ``value`` (``float``) - The value to set.
+* ``stat`` (``string``) -- The name of the stat.
+* ``value`` (``float``) -- The value to set.
 
 **Returns:**
 
@@ -1418,7 +1689,7 @@ Sends a notification in the bottom-left corner of the screen.
 
 **Parameters:**
 
-* ``text`` (``string``) - The text to display.
+* ``text`` (``string``) -- The text to display.
 
 **Returns:**
 
@@ -1456,9 +1727,9 @@ Triggers a script event.
 
 **Parameters:**
 
-* ``eventGroup`` (``int``) - The event group ID.
-* ``args`` (``int64_t``) - The arguments to pass to the event.
-* ``playerId`` (``int``) - The player ID to send the event to.
+* ``eventGroup`` (``int``) -- The event group ID.
+* ``args`` (``int64_t``) -- The arguments to pass to the event.
+* ``playerId`` (``int``) -- The player ID to send the event to.
 
 **Returns:**
 
@@ -1497,8 +1768,8 @@ Sets a new global integer value.
 
 **Parameters:**
 
-* ``global`` (``uint64_t``) - The name of the global value.
-* ``value`` (``int``) - The value to set.
+* ``global`` (``uint64_t``) -- The name of the global value.
+* ``value`` (``int``) -- The value to set.
 
 **Returns:**
 
@@ -1513,8 +1784,8 @@ Sets a new global float value.
 
 **Parameters:**
 
-* ``global`` (``uint64_t``) - The name of the global value.
-* ``value`` (``float``) - The value to set.
+* ``global`` (``uint64_t``) -- The name of the global value.
+* ``value`` (``float``) -- The value to set.
 
 **Returns:**
 
@@ -1529,8 +1800,8 @@ Sets a new global boolean value.
 
 **Parameters:**
 
-* ``global`` (``uint64_t``) - The name of the global value.
-* ``value`` (``bool``) - The value to set.
+* ``global`` (``uint64_t``) -- The name of the global value.
+* ``value`` (``bool``) -- The value to set.
 
 **Returns:**
 
@@ -1545,8 +1816,8 @@ Sets a new global string value.
 
 **Parameters:**
 
-* ``global`` (``uint64_t``) - The name of the global value.
-* ``value`` (``string``) - The value to set.
+* ``global`` (``uint64_t``) -- The name of the global value.
+* ``value`` (``string``) -- The value to set.
 
 **Returns:**
 
@@ -1561,11 +1832,11 @@ Returns a global integer value.
 
 **Parameters:**
 
-* ``global`` (``uint64_t``) - The name of the global value.
+* ``global`` (``uint64_t``) -- The name of the global value.
 
 **Returns:**
 
-* ``int`` - The global value.
+* ``int`` -- The global value.
 
 ================================
 
@@ -1576,11 +1847,11 @@ Returns a global float value.
 
 **Parameters:**
 
-* ``global`` (``uint64_t``) - The name of the global value.
+* ``global`` (``uint64_t``) -- The name of the global value.
 
 **Returns:**
 
-* ``float`` - The global value.
+* ``float`` -- The global value.
 
 ================================
 
@@ -1591,11 +1862,11 @@ Returns a global boolean value.
 
 **Parameters:**
 
-* ``global`` (``uint64_t``) - The name of the global value.
+* ``global`` (``uint64_t``) -- The name of the global value.
 
 **Returns:**
 
-* ``bool`` - The global value..
+* ``bool`` -- The global value.
 
 ================================
 
@@ -1606,11 +1877,11 @@ Returns a global string value.
 
 **Parameters:**
 
-* ``global`` (``uint64_t``) - The name of the global value.
+* ``global`` (``uint64_t``) -- The name of the global value.
 
 **Returns:**
 
-* ``string`` - The global value.
+* ``string`` -- The global value.
 
 ================================
 
@@ -1636,9 +1907,9 @@ Sets a new local integer value.
 
 **Parameters:**
 
-* ``scriptName`` (``string``) - The name of the script.
-* ``local`` (``uint64_t``) - The name of the local value.
-* ``value`` (``int``) - The value to set.
+* ``scriptName`` (``string``) -- The name of the script.
+* ``local`` (``uint64_t``) -- The name of the local value.
+* ``value`` (``int``) -- The value to set.
 
 **Returns:**
 
@@ -1653,9 +1924,9 @@ Sets a new local float value.
 
 **Parameters:**
 
-* ``scriptName`` (``string``) - The name of the script.
-* ``local`` (``uint64_t``) - The name of the local value.
-* ``value`` (``float``) - The value to set.
+* ``scriptName`` (``string``) -- The name of the script.
+* ``local`` (``uint64_t``) -- The name of the local value.
+* ``value`` (``float``) -- The value to set.
 
 **Returns:**
 
@@ -1670,9 +1941,9 @@ Sets a new local boolean value.
 
 **Parameters:**
 
-* ``scriptName`` (``string``) - The name of the script.
-* ``local`` (``uint64_t``) - The name of the local value.
-* ``value`` (``bool``) - The value to set.
+* ``scriptName`` (``string``) -- The name of the script.
+* ``local`` (``uint64_t``) -- The name of the local value.
+* ``value`` (``bool``) -- The value to set.
 
 **Returns:**
 
@@ -1687,9 +1958,9 @@ Sets a new local string value.
 
 **Parameters:**
 
-* ``scriptName`` (``string``) - The name of the script.
-* ``local`` (``uint64_t``) - The name of the local value.
-* ``value`` (``string``) - The value to set.
+* ``scriptName`` (``string``) -- The name of the script.
+* ``local`` (``uint64_t``) -- The name of the local value.
+* ``value`` (``string``) -- The value to set.
 
 **Returns:**
 
@@ -1704,12 +1975,12 @@ Returns a local integer value.
 
 **Parameters:**
 
-* ``scriptName`` (``string``) - The name of the script.
-* ``local`` (``uint64_t``) - The name of the local value.
+* ``scriptName`` (``string``) -- The name of the script.
+* ``local`` (``uint64_t``) -- The name of the local value.
 
 **Returns:**
 
-* ``int`` - The local value.
+* ``int`` -- The local value.
 
 ================================
 
@@ -1720,12 +1991,12 @@ Returns a local float value.
 
 **Parameters:**
 
-* ``scriptName`` (``string``) - The name of the script.
-* ``local`` (``uint64_t``) - The name of the local value.
+* ``scriptName`` (``string``) -- The name of the script.
+* ``local`` (``uint64_t``) -- The name of the local value.
 
 **Returns:**
 
-* ``float`` - The local value.
+* ``float`` -- The local value.
 
 ================================
 
@@ -1736,12 +2007,12 @@ Returns a local boolean value.
 
 **Parameters:**
 
-* ``scriptName`` (``string``) - The name of the script.
-* ``local`` (``uint64_t``) - The name of the local value.
+* ``scriptName`` (``string``) -- The name of the script.
+* ``local`` (``uint64_t``) -- The name of the local value.
 
 **Returns:**
 
-* ``bool`` - The local value.
+* ``bool`` -- The local value.
 
 ================================
 
@@ -1752,12 +2023,12 @@ Returns a local string value.
 
 **Parameters:**
 
-* ``scriptName`` (``string``) - The name of the script.
-* ``local`` (``uint64_t``) - The name of the local value.
+* ``scriptName`` (``string``) -- The name of the script.
+* ``local`` (``uint64_t``) -- The name of the local value.
 
 **Returns:**
 
-* ``string`` - The local value.
+* ``string`` -- The local value.
 
 ================================
 
@@ -2098,7 +2369,7 @@ Checks if the color picker is active.
    :linenos:
       
    if render.is_color_picker_rendering() then
-      system.log_warning("The color picker is active!") -- Prints if the color picker is active.
+      system.log_info("The color picker is active!") -- Prints if the color picker is active.
    end
 
 ================================
@@ -2122,7 +2393,7 @@ Checks if the cursor is hovering over the menu.
    :linenos:
 
    if render.is_cursor_hover_menu() then
-      system.log_warning("The cursor is hovering over the menu!") -- This will only be logged if the cursor is hovering over the menu.
+      system.log_info("The cursor is hovering over the menu!") -- This will only be logged if the cursor is hovering over the menu.
    end
 
 ================================
@@ -2146,7 +2417,7 @@ Checks if the cursor is hovering over an option.
    :linenos:
       
    if render.is_cursor_hover_option() then
-      system.log_warning("The cursor is hovering over an option!") -- This will only be logged if the cursor is hovering over an option.
+      system.log_info("The cursor is hovering over an option!") -- This will only be logged if the cursor is hovering over an option.
    end
 
 ================================
@@ -2170,7 +2441,7 @@ Checks if the input window is active. (The input window is for example, the wind
    :linenos:
       
    if render.is_input_active() then
-      system.log_warning("The input window is active!") -- This will only be logged if the input window is active.
+      system.log_info("The input window is active!") -- This will only be logged if the input window is active.
    end
 
 ================================
@@ -2193,8 +2464,8 @@ Returns the process window's border size.
 .. code-block:: lua
    :linenos:
       
-   local borderSize = render.get_border_size() -- Gets the border size.
-   system.log_warning("The border size is " .. tostring(borderSize) .. ".") -- Prints the border size.
+   borderSize = render.get_border_size() -- Gets the border size.
+   system.log_info("The border size is " .. tostring(borderSize) .. ".") -- Prints the border size.
 
 ================================
 
@@ -2216,8 +2487,8 @@ Returns the current FPS.
 .. code-block:: lua
    :linenos:
       
-   local fps = render.get_fps() -- Gets the FPS.
-   system.log_warning("The FPS is " .. tostring(fps) .. ".") -- Prints the FPS.
+   fps = render.get_fps() -- Gets the FPS.
+   system.log_info("The FPS is " .. tostring(fps) .. ".") -- Prints the FPS.
 
 ================================
 
@@ -2239,8 +2510,8 @@ Returns the menu's rounding.
 .. code-block:: lua
    :linenos:
       
-   local rounding = render.get_menu_rounding() -- Gets the rounding.
-   system.log_warning("The rounding is " .. tostring(rounding) .. ".") -- Prints the rounding.
+   rounding = render.get_menu_rounding() -- Gets the rounding.
+   system.log_info("The rounding is " .. tostring(rounding) .. ".") -- Prints the rounding.
 
 ================================
 
@@ -2262,8 +2533,8 @@ Returns the menu's width.
 .. code-block:: lua
    :linenos:
       
-   local width = render.get_menu_width() -- Gets the width.
-   system.log_warning("The width is " .. tostring(width) .. ".") -- Prints the width.
+   width = render.get_menu_width() -- Gets the width.
+   system.log_info("The width is " .. tostring(width) .. ".") -- Prints the width.
 
 ================================
 
@@ -2285,8 +2556,8 @@ Returns the font header size.
 .. code-block:: lua
    :linenos:
       
-   local headerSize = render.get_font_header_size() -- Gets the header size.
-   system.log_warning("The header size is " .. tostring(headerSize) .. ".") -- Prints the header size.
+   headerSize = render.get_font_header_size() -- Gets the header size.
+   system.log_info("The header size is " .. tostring(headerSize) .. ".") -- Prints the header size.
 
 ================================
 
@@ -2308,8 +2579,8 @@ Returns the font helper size.
 .. code-block:: lua
    :linenos:
       
-   local helperSize = render.get_font_helper_size() -- Gets the helper size.
-   system.log_warning("The helper size is " .. tostring(helperSize) .. ".") -- Prints the helper size.
+   helperSize = render.get_font_helper_size() -- Gets the helper size.
+   system.log_info("The helper size is " .. tostring(helperSize) .. ".") -- Prints the helper size.
 
 ================================
 
@@ -2331,8 +2602,8 @@ Returns the font option size.
 .. code-block:: lua
    :linenos:
       
-   local optionSize = render.get_font_option_size() -- Gets the option size.
-   system.log_warning("The option size is " .. tostring(optionSize) .. ".") -- Prints the option size.
+   optionSize = render.get_font_option_size() -- Gets the option size.
+   system.log_info("The option size is " .. tostring(optionSize) .. ".") -- Prints the option size.
 
 ================================
 
@@ -2354,8 +2625,8 @@ Returns the font warning size.
 .. code-block:: lua
    :linenos:
       
-   local warningSize = render.get_font_warning_size() -- Gets the warning size.
-   system.log_warning("The warning size is " .. tostring(warningSize) .. ".") -- Prints the warning size.
+   warningSize = render.get_font_warning_size() -- Gets the warning size.
+   system.log_info("The warning size is " .. tostring(warningSize) .. ".") -- Prints the warning size.
 
 ================================
 
@@ -2377,9 +2648,9 @@ Returns the cursor position.
 .. code-block:: lua
    :linenos:
       
-   local cursorPos = render.get_menu_cursor_pos() -- Gets the cursor position.
-   system.log_warning("The cursor position is " .. tostring(cursorPos.x) .. ".") -- Prints the cursor X position coordinate.
-   system.log_warning("The cursor position is " .. tostring(cursorPos.y) .. ".") -- Prints the cursor Y position coordinate.
+   cursorPos = render.get_menu_cursor_pos() -- Gets the cursor position.
+   system.log_info("The cursor position is " .. tostring(cursorPos.x) .. ".") -- Prints the cursor X position coordinate.
+   system.log_info("The cursor position is " .. tostring(cursorPos.y) .. ".") -- Prints the cursor Y position coordinate.
 
 
 ================================
@@ -2402,9 +2673,9 @@ Returns the menu position.
 .. code-block:: lua
    :linenos:
       
-   local menuPos = render.get_menu_position() -- Gets the menu position.
-   system.log_warning("The menu position is " .. tostring(menuPos.x) .. ".") -- Prints the menu X position coordinate.
-   system.log_warning("The menu position is " .. tostring(menuPos.y) .. ".") -- Prints the menu Y position coordinate.
+   menuPos = render.get_menu_position() -- Gets the menu position.
+   system.log_info("The menu position is " .. tostring(menuPos.x) .. ".") -- Prints the menu X position coordinate.
+   system.log_info("The menu position is " .. tostring(menuPos.y) .. ".") -- Prints the menu Y position coordinate.
 
 ================================
 
@@ -2426,9 +2697,9 @@ Returns the menu total size.
 .. code-block:: lua
    :linenos:
       
-   local totalSize = render.get_menu_total_size() -- Gets the menu total size.
-   system.log_warning("The menu total size is " .. tostring(totalSize.x) .. ".") -- Prints the menu total X size.
-   system.log_warning("The menu total size is " .. tostring(totalSize.y) .. ".") -- Prints the menu total Y size.
+   totalSize = render.get_menu_total_size() -- Gets the menu total size.
+   system.log_info("The menu total size is " .. tostring(totalSize.x) .. ".") -- Prints the menu total X size.
+   system.log_info("The menu total size is " .. tostring(totalSize.y) .. ".") -- Prints the menu total Y size.
 
 ================================
 
@@ -2450,9 +2721,9 @@ Returns the screen resolution.
 .. code-block:: lua
    :linenos:
       
-   local screenRes = render.get_screen_resolution() -- Gets the screen resolution.
-   system.log_warning("The screen resolution is " .. tostring(screenRes.x) .. ".") -- Prints the screen X resolution.
-   system.log_warning("The screen resolution is " .. tostring(screenRes.y) .. ".") -- Prints the screen Y resolution.
+   screenRes = render.get_screen_resolution() -- Gets the screen resolution.
+   system.log_info("The screen resolution is " .. tostring(screenRes.x) .. ".") -- Prints the screen X resolution.
+   system.log_info("The screen resolution is " .. tostring(screenRes.y) .. ".") -- Prints the screen Y resolution.
 
 ================================
 
@@ -2463,7 +2734,7 @@ Brings up a warning (as if a moderator was detected in a session)
 
 **Parameters:**
 
-   * ``message`` (``string``) -- The warning message.
+* ``message`` (``string``) -- The warning message.
 
 **Returns:**
 
@@ -2483,16 +2754,1241 @@ Brings up a warning (as if a moderator was detected in a session)
 Self namespace
 ----------------------
 
-Functions here
+This namespace contains functions that are related to the character of the menu user.
 
 ================================
+
+is_alive()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns whether the user is alive.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool`` -- Whether the user is alive.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   if self.is_alive() then -- Checks if the user is alive.
+      system.log_info("The user is alive.") 
+   else
+      system.log_info("The user is dead.")
+   end
+
+================================
+
+is_in_vehicle()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the user is in a vehicle.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool`` -- Whether the user is in a vehicle.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   if self.is_in_vehicle() then -- Checks if the user is in a vehicle.
+      system.log_info("The user is in a vehicle.") 
+   else
+      system.log_info("The user is not in a vehicle.")
+   end
+
+================================
+
+is_valid()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the player is valid -- the player is alive, is fully loaded into the session, and has control of the character.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool`` -- Whether the player is valid. Can also be ``true`` during cutscenes.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   if self.is_valid() then -- Checks if the player is valid.
+      system.log_info("The player is valid.") 
+   else
+      system.log_info("The player is invalid.")
+   end
+
+================================
+
+get_online_index()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the online index of the user's character.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The online index of the user's character.
+* * ``0`` -- The first character is used
+* * ``1`` -- The second character is used
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   index = self.get_online_index() -- Gets the online index of the user's character.
+   if index == 0 then -- Checks if the first character is used.
+      system.log_info("The first character is used.")
+   elseif index == 1 then -- Checks if the second character is used.
+      system.log_info("The second character is used.")
+   end
+
+================================
+
+get_ped()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the user's character's ped ID
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The user's character's ped ID.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+   if rage.ped.is_ped_a_player(ped) then -- If the ped is a player.
+      system.log_info("The ped is a player.")
+   end
+
+================================
+
+get_id()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the user's character's ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The user's character's ID.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   id = self.get_id() -- Gets the user's character's ID.
+   system.log_info("The character ID is " .. tostring(id) .. ".")
+
+======================
+
+get_name()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets self username.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``string``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   selfUsername = self.get_name()
+   system.log_info("My username is: " .. selfUsername)
+
+======================
+
+get_original_scid()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets your SCID (Social Club ID).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``uint32_t`` -- Original Social Club ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   selfOGscid = self.get_original_scid()
+   system.log_info("My original SCID is: " .. tostring(selfOGscid))
+
+======================
+
+get_scid()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets your current SCID (Social Club ID).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``uint32_t`` -- Current Social Club ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   selfSCID = self.get_scid()
+   system.log_info("My current SCID is: " .. tostring(selfSCID))
+
+======================
+
+get_saved_scid()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets your saved SCID (Social Club ID).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``uint64_t`` -- Saved Social Club ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   selfSavedSCID = self.get_saved_scid()
+   system.log_info("My saved SCID is: " .. tostring(selfSavedSCID))
+
+======================
+
+get_coords()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets your character's coordinates.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``Vector3`` -- Coordinates
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   coords = self.get_coords()
+   system.log_info("I'm located at the following coords: " .. tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z) .. " .")
+
+======================
+
+get_coords_infront(``distance`` = ``5.0``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets your current coordinates.
+
+**Parameters:**
+
+* ``distance`` (``float``) -- Distance calculated starting from in front of self. Default value is ``5.0``.
+
+**Returns:**
+
+* ``Vector3`` -- Returns coordinates in Vector3 form.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   coords = self.get_coords_infront(5)
+   system.log_info("The coords in front of me are: " .. tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z) .. " .")
+
+======================
+
+get_vehicle()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets your current vehicle's ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``Vehicle`` -- Returns vehicle ID.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   selfVehicle = self.get_vehicle()
+   system.log_info("You're riding vehicle ID: " .. tostring(selfVehicle))
+
+======================
 
 .. _lobby:
 
 Lobby namespace
 ----------------------
 
-Functions here
+This namespace contains functions related to the interaction with the online game session.
+
+.. note::
+   Functions from this namespace only work in online mode.
+
+================================
+
+is_player_active(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the player is in active, in the session, is fully loaded, 
+connected, is in the same game mode as you (e.g. freemode)
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``bool`` -- Whether the player is active.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   isActive = lobby.is_player_active(lobby.get_host()) -- Checks if the player is active.
+   if isActive then -- If the player is active.
+      system.log_info("The player is active.")
+   end
+
+================================
+
+is_player_connected(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the player is connected.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``bool`` -- Whether the player is connected.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   isConnected = lobby.is_player_connected(lobby.get_host()) -- Checks if the player is connected.
+   if isConnected then -- If the player is connected.
+      system.log_info("The player is connected.")
+   end
+
+================================
+
+is_player_friend(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the player is a friend.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``bool`` -- Whether the player is a friend.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   isFriend = lobby.is_player_friend(lobby.get_host()) -- Checks if the player is a friend.
+   if isFriend then -- If the player is a friend.
+      system.log_info("The player is a friend.")
+   end
+
+================================
+
+is_player_host(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the player is the host.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``bool`` -- Whether the player is the host.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   isHost = lobby.is_player_host(lobby.get_host()) -- Checks if the player is the host.
+   if isHost then -- If the player is the host.
+      system.log_info("The player is the host.")
+   end
+
+================================
+
+is_player_host_next(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the player is the next script host.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``bool`` -- Whether the player is the next script host.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   isHostNext = lobby.is_player_host_next(lobby.get_host()) -- Checks if the player is the next script host.
+   if isHostNext then -- If the player is the next script host.
+      system.log_info("The player is the next script host.")
+   end
+
+================================
+
+is_player_in_vehicle(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the player is in a vehicle.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``bool`` -- Whether the player is in a vehicle.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   isInVehicle = lobby.is_player_in_vehicle(lobby.get_host()) -- Checks if the player is in a vehicle.
+   if isInVehicle then -- If the player is in a vehicle.
+      system.log_info("The player is in a vehicle.")
+   end
+
+
+================================
+
+is_player_modder(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the player is a modder.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``bool`` -- Whether the player is a modder.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   isModder = lobby.is_player_modder(lobby.get_host()) -- Checks if the player is a modder.
+   if isModder then -- If the player is a modder.
+      system.log_info("The player is a modder.")
+   end
+
+================================
+
+is_player_selected(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the player is selected in the menu's online section.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``bool`` -- Whether the player is selected.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   isSelected = lobby.is_player_selected(lobby.get_host()) -- Checks if the player is selected.
+   if isSelected then -- If the player is selected.
+      system.log_info("The player is selected.")
+   end
+
+================================
+
+is_player_staff(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the player is a Rockstar staff member.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``bool`` -- Whether the player is a Rockstar staff member.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   isStaff = lobby.is_player_staff(lobby.get_host()) -- Checks if the player is a Rockstar staff member.
+   if isStaff then -- If the player is a Rockstar staff member.
+      system.log_info("The player is a Rockstar staff member.")
+   end
+
+================================
+
+is_player_valid(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the player is valid - if it's connected to the session, fully loaded, and alive.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``bool`` -- Whether the player is valid.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   isValid = lobby.is_player_valid(lobby.get_host()) -- Checks if the player is valid.
+   if isValid then -- If the player is valid.
+      system.log_info("The player is valid.")
+   end
+
+================================
+
+is_session_started()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the session has started: returns true if it's fully loaded and you're not hanging in the clouds.
+
+**Returns:**
+
+* ``bool`` -- Whether the session has started.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   isStarted = lobby.is_session_started() -- Checks if the session has started.
+   if isStarted then -- If the session has started.
+      system.log_info("The session has started.")
+   end
+
+================================
+
+get_active_players()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a number of all active players.
+
+**Returns:**
+
+* ``int`` -- a number of all active players.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   activePlayers = lobby.get_active_players() -- Returns a number of all active players.
+   system.log_info("There are " .. tostring(activePlayers) .. " active players.")
+
+================================
+
+get_connected_players()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a number of connected players.
+
+**Returns:**
+
+* ``int`` --  a number of connected players.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   connectedPlayers = lobby.get_connected_players() -- Gets a number of connected players.
+   system.log_info("There are " .. tostring(connectedPlayers) .. " connected players.")
+
+================================
+
+get_player_armour(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's armour health.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``int`` -- The player's armour health.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   armour = lobby.get_player_armour(lobby.get_host()) -- Gets the player's armour ID.
+   if armour == 0 then -- If the player has no armour.
+      system.log_info("The player has no armour.")
+   end
+
+================================
+
+get_player_health(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's health.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``int`` -- The player's health.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   health = lobby.get_player_health(lobby.get_host()) -- Gets the host's health.
+   if health == 100 then -- If the host has full health.
+      system.log_info("The host has full health.")
+   end
+
+
+================================
+
+get_player_max_health(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's maximum health.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``int`` -- The player's maximum health.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   maxHealth = lobby.get_player_max_health(lobby.get_host()) -- Gets the host's maximum health.
+   health = lobby.get_player_health(lobby.get_host()) -- Gets the host's health.
+   if maxHealth == health then -- If the host has full health.
+      system.log_info("The host has full health.")
+   end
+
+================================
+
+get_player_team(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's team.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``int`` -- The player's team ID. -1 if the player is not in a team.
+
+================================
+
+get_player_ped(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's ped.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``Ped`` -- The player's ped.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = lobby.get_player_ped(lobby.get_host()) -- Gets the host's ped.
+   if rage.ped.is_ped_a_player(ped) then -- If the ped is a player.
+      system.log_info("The ped is a player.")
+   end
+
+================================
+
+get_host()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the host player ID.
+
+**Returns:**
+
+* ``Player`` -- The host player ID.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   host = lobby.get_host() -- Gets the host player ID.
+   system.log_debug("The host is " .. get_player_name(host) .. ".")
+
+================================
+
+get_next_host()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the next host player ID.
+
+**Returns:**
+
+* ``Player`` -- The next host player ID.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   nextHost = lobby.get_next_host() -- Gets the next host player ID.
+   system.log_debug("The next host is " .. get_player_name(nextHost) .. ".")
+
+================================
+
+get_selected_player()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the ID of a player that is currently selected in the Online section.
+
+**Returns:**
+
+* ``Player`` -- The selected player ID.
+
+================================
+
+get_player_coords_str(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's coordinates as a string.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``string`` -- The player's coordinates
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   coords = lobby.get_player_coords_str(lobby.get_host()) -- Gets the host's coordinates.
+   system.log_debug("The host is at " .. coords .. ".")
+
+================================
+
+get_player_ip(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's IP.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``string`` -- The player's IP.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ip = lobby.get_player_ip(lobby.get_host()) -- Gets the host's IP.
+   system.log_debug("The host's IP is " .. ip .. ".")
+
+================================
+
+get_player_name(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's name.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``string`` -- The player's name.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   name = lobby.get_player_name(lobby.get_host()) -- Gets the host's name.
+   system.log_debug("The host's name is " .. name .. ".")
+
+================================
+
+get_player_status(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's status.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``string`` -- The player's status.
+* * ``H`` -- The player is the host.
+* * ``NH`` -- The player is a next host.
+* * ``F`` -- The player is a friend.
+* * ``M`` -- The player is a modder.
+
+**Example:**
+
+
+.. code-block:: lua
+   :linenos:
+   
+   status = lobby.get_player_status(lobby.get_selected_player()) -- Gets the selected player's status.
+   system.log_debug("The selected player's status is " .. status .. ".")
+
+===============================
+
+get_player_vehicle_name(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's vehicle name.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``string`` -- The player's vehicle name. If the player is not in a vehicle, the string "None" is returned.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   vehicleName = lobby.get_player_vehicle_name(lobby.get_host()) -- Gets the host's vehicle name.
+   system.log_debug("The host's vehicle name is " .. vehicleName .. ".")
+
+================================
+
+get_player_deaths(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the total player's deaths.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``int`` -- The player's deaths.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   deaths = lobby.get_player_deaths(lobby.get_host()) -- Gets the host's deaths.
+   system.log_debug("The host has died " .. tostring(deaths) .. " times.")
+
+================================
+
+get_player_kills(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the total player's kills.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``int`` -- The player's kills.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   kills = lobby.get_player_kills(lobby.get_host()) -- Gets the host's kills.
+   system.log_debug("The host has killed " .. tostring(kills) .. " people.")
+
+================================
+
+get_player_level(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's level.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``int`` -- The player's level.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   level = lobby.get_player_level(lobby.get_host()) -- Gets the host's level.
+   system.log_debug("The host's level is " .. tostring(level) .. ".")
+
+================================
+
+get_player_money_bank(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's bank money.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``int`` -- The player's bank money.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   money = lobby.get_player_money_bank(lobby.get_host()) -- Gets the host's bank money.
+   system.log_debug("The host has $" .. tostring(money) .. " in the bank.")
+
+================================
+
+get_player_money_wallet(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's wallet money.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``int`` -- The player's wallet money.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   money = lobby.get_player_money_wallet(lobby.get_host()) -- Gets the host's wallet money.
+   system.log_debug("The host has $" .. tostring(money) .. " in the wallet.")
+
+================================
+
+get_player_rp(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's RP points.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``int`` -- The player's RP.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   rp = lobby.get_player_rp(lobby.get_host()) -- Gets the host's RP.
+   system.log_debug("The host has " .. tostring(rp) .. " RP.")
+
+================================
+
+get_player_host_token(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's host token.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``string`` -- The player's host token.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   token = lobby.get_player_host_token(lobby.get_host()) -- Gets the host's host token.
+   system.log_debug("The host's host token is " .. token .. ".")
+
+================================
+
+get_player_original_scid(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's original SCID.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``string`` -- The player's original SCID.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scid = lobby.get_player_original_scid(lobby.get_host()) -- Gets the host's original SCID.
+   system.log_debug("The host's original SCID is " .. scid .. ".")
+
+================================
+
+get_player_scid(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's SCID.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``string`` -- The player's SCID.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scid = lobby.get_player_scid(lobby.get_host()) -- Gets the host's SCID.
+   system.log_debug("The host's SCID is " .. scid .. ".")
+
+================================
+
+get_player_coords(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's coordinates.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``Vector3`` -- The player's coordinates.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   coords = lobby.get_player_coords(lobby.get_host()) -- Gets the host's coordinates.
+   system.log_debug("The host is at " .. tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z) .. " .")
+
+================================
+
+set_player_modder(``player``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the player's modder status.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+* ``toggle`` (``bool``) -- The modder status.
+* * ``true`` -- The player is a modder.
+* * ``false`` -- The player is not a modder.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   lobby.set_player_modder(lobby.get_host(), true) -- Sets the host as a modder.
+   system.log_debug("The host is a modder.")
+
+================================
+
+set_player_selected(``player``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the player as selected in the online menu.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+* ``toggle`` (``bool``) -- The selected status.
+* * ``true`` -- The player is set as selected.
+* * ``false`` -- The player is set as not selected.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   lobby.set_player_selected(lobby.get_host(), true) -- Sets the host as selected.
+   system.log_debug("The host is now selected.")
+
+================================
+
+set_player_staff(``player``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the player's staff status.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+* ``toggle`` (``bool``) -- The staff status.
+* * ``true`` -- The player is a staff member.
+* * ``false`` -- The player is not a staff member.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   lobby.set_player_staff(lobby.get_host(), true) -- Sets the host as a staff member.
+   system.log_debug("The host is a staff member.")
+
 
 ================================
 
@@ -2501,7 +3997,273 @@ Functions here
 Text namespace
 ----------------------
 
-Functions here
+This namespace contains functions related to text manipulation.
+
+================================
+
+contains(``source``, ``data``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if string contains character/word.
+
+**Parameters:**
+
+* ``source`` (``string``) -- The string to check.
+* ``data`` (``string``) -- The data to check for.
+
+**Returns:**
+
+* ``bool`` -- Returns ``True`` if data is found, ``False`` otherwise.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+	
+   loremIpsum = Lorem ipsum dolor sit amet
+   Contains = text.contains(loremIpsum, "Lorem")
+   system.log_debug(tostring(Contains))
+
+======================
+
+is_float(``data``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if string is ``float`` type.
+
+**Parameters:**
+
+* ``data`` (``string``) -- The data to check.
+
+**Returns:**
+
+* ``bool`` -- Returns ``True`` if data is float, ``False`` otherwise.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   isFloat = text.is_float("10.1")
+   system.log_debug(tostring(isFloat))
+
+======================
+
+is_number(``data``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if string is a number.
+
+**Parameters:**
+
+* ``data`` (``string``) -- The data to check.
+
+**Returns:**
+
+* ``bool`` -- Returns ``True`` if data is number, ``False`` otherwise.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   isNumber = text.is_number("10")
+   system.log_debug(tostring(isNumber))
+
+======================
+
+is_valid_ip4(``data``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if string is a valid IPv4.
+
+**Parameters:**
+
+* ``data`` (``string``) -- The data to check.
+
+**Returns:**
+
+* ``bool`` -- Returns ``True`` if data is a valid IPv4, ``False`` otherwise.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   isValid = text.is_valid_ip4("1.1.1.1")
+   system.log_debug(tostring(isValid))
+
+
+======================
+
+get_random_string(``length``, ``type``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Generates a random string.
+
+**Parameters:**
+
+* ``length`` (``int``) -- Length of the string.
+* ``type`` (``eRandomType``) -- Type of string generation: 
+* * ``0`` -- Upper
+* * ``1`` -- Lower
+* * ``2`` -- Digits
+* * ``3`` -- UpperLower
+* * ``4`` -- UpperDigits
+* * ``5`` -- LowerDigits
+
+**Returns:**
+
+* ``string`` -- The generated random string.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   r = text.get_random_string(10, 2) -- Generates a random string made of digits
+   system.log_debug(r)
+
+======================
+
+remove_characters(``data``, ``word``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes certain characters from string.
+
+**Parameters:**
+
+* ``data`` (``string``) -- The data to check.
+* ``word`` (``string``) -- Word/Character to remove.
+
+**Returns:**
+
+* ``string`` -- The output string.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   r = remove_characters("Road", "o")
+   system.log_debug(r)
+
+======================
+
+replace_characters(``data``, ``first``, ``second``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Replaces certain characters from string.
+
+**Parameters:**
+
+* ``data`` (``string``) -- The data to check.
+* ``first`` (``string``) -- Word/Character to replace
+* ``second`` (``string``) -- Replacement word/character
+
+**Returns:**
+
+* ``string`` -- The new, replaced string
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+	
+   r = replace_characters("Mr. White", "White", "Black")
+   system.log_debug(r)
+   
+======================
+
+resize_string_center(``data``, ``length``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cuts string from center.
+
+**Parameters:**
+
+* ``data`` (``string``) -- The data to check.
+* ``length`` (``int``) -- Length of the end string.
+
+**Returns:**
+
+* ``string`` -- The new string.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   r = resize_string_center("Hello World", 5)
+   system.log_debug(r)
+
+**Output**
+
+.. code-block:: lua
+   :linenos:
+
+   He...ld
+======================
+
+resize_string_left(``data``, ``length``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cuts string from the left
+
+**Parameters:**
+
+* ``data`` (``string``) -- The data to check.
+* ``length`` (``int``) -- Length of the end string.
+
+**Returns:**
+
+* ``string`` -- Returns the new string.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   r = resize_string_left("Hello World", 5)
+   system.log_debug(r)
+**Output: **
+
+.. code-block:: lua
+   :linenos:
+   
+   ...World
+======================
+
+resize_string_right(``data``, ``length``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cuts string from the right.
+
+**Parameters:**
+
+* ``data`` (``string``) -- The data to check.
+* ``length`` (``int``) -- Length of the end string.
+
+**Returns:**
+
+* ``string`` -- Returns the new string.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   r = resize_string_right("Hello World", 5)
+   system.log_debug(r)
+
+**Output: **
+
+.. code-block:: lua
+   :linenos:
+   
+   Hello...
+
+
 
 ================================
 
@@ -2533,7 +4295,7 @@ Checks if directory exists.
    :linenos:
    
    if fs.dir_exist("C:\Users\") then
-      system.log_warning("Directory exists.")
+      system.log_info("Directory exists.")
 
    end
 
@@ -2558,7 +4320,7 @@ Checks if file exists.
    :linenos:
    
    if not fs.file_exist("D:\NewFolder\BetterCallSaulS05E06.mp4") then
-      system.log_warning("Better not to call Saul.")
+      system.log_info("Better not to call Saul.")
    end
 
 ================================
@@ -2581,9 +4343,9 @@ Removes a file.
 .. code-block:: lua
    :linenos:
 
-   local success = fs.file_remove("test.txt") -- Removes the file.
+   success = fs.file_remove("test.txt") -- Removes the file.
    if success then
-      system.log_warning("File removed.") -- Prints a message if the file was removed.
+      system.log_info("File removed.") -- Prints a message if the file was removed.
    end
 
 ================================
@@ -2607,7 +4369,7 @@ Checks if file is corrupted, checks if the permissions are correct, if it's read
    :linenos:
    
    if fs.file_validate("/test.txt") then
-      system.log_warning("File is valid and ready.")
+      system.log_info("File is valid and ready.")
    end
 
 ================================
@@ -2631,9 +4393,9 @@ Checks if file is empty.
    :linenos:
    
    if fs.is_file_empty("test.txt") then
-      system.log_warning("The file is empty.")
+      system.log_info("The file is empty.")
    else
-      system.log_warning("The file is not empty.")
+      system.log_info("The file is not empty.")
    end
 
 ================================
