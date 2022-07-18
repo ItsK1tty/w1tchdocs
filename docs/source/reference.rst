@@ -509,20 +509,32 @@ Menu namespace
 Menu
 ==========
 
-int add_parent(name)
-^^^^^^^^^^^^^^^^^^^^^^^^
+menu stuff here
 
 int add_parent(name)
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+stuff here
+
+int add_parent(name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+stuff here
 
 Menu sections
 ==================
 
-int section_self_mods();
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+menu sections stuff here
 
 int section_self_mods();
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+stuff here
+
+int section_self_mods();
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+stuff here
 
 
 .. _stats:
