@@ -128,28 +128,40 @@ Function namespaces in LUA Engine are defined in the following order:
 * :ref:`lobby`
 * :ref:`text`
 * :ref:`fs`
-* :ref:`playerNS`
-* :ref:`pedNS`
-* :ref:`vehicleNS`
-* :ref:`entityNS`
-* :ref:`object`
-* :ref:`weapon`
-* :ref:`streaming`
-* :ref:`ui`
-* :ref:`draw`
-* :ref:`camNS`
-* :ref:`gameplay`
-* :ref:`fire`
-* :ref:`network`
-* :ref:`cutscene`
-* :ref:`controls`
-* :ref:`graphics`
-* :ref:`time`
-* :ref:`ai`
-* :ref:`decorator`
-* :ref:`interior`
-* :ref:`audio`
-* :ref:`rope`
+* :ref:`scripting`
+* * :ref:`playerNSS`
+* * :ref:`pedNSS`
+* * :ref:`entityNSS`
+* * :ref:`vehicleNSS`
+* * :ref:`online`
+* * :ref:`networkNSS`
+* * :ref:`spawn`
+* * :ref:`weaponNSS`
+* * :ref:`teleport`
+* * :ref:`world`
+* :ref:`rage`
+* * :ref:`playerNSR`
+* * :ref:`pedNSR`
+* * :ref:`vehicleNSR`
+* * :ref:`entityNSR`
+* * :ref:`object`
+* * :ref:`weaponNSR`
+* * :ref:`streaming`
+* * :ref:`ui`
+* * :ref:`draw`
+* * :ref:`camNS`
+* * :ref:`gameplay`
+* * :ref:`fire`
+* * :ref:`networkNSR`
+* * :ref:`cutscene`
+* * :ref:`controls`
+* * :ref:`graphics`
+* * :ref:`time`
+* * :ref:`ai`
+* * :ref:`decorator`
+* * :ref:`interior`
+* * :ref:`audio`
+* * :ref:`rope`
 
 
 .. _system:
@@ -1411,28 +1423,110 @@ Copies a file.
    -- or
    fs.file_copy("files/source.txt", "files/dest.txt")
 
-.. _playerNS:
+
+.. _scripting:
+
+Scripting functions
+#############################
+
+.. _playerNSS:
 
 Player namespace
 ----------------------
 
 Functions here
 
-.. _pedNS:
+.. _pedNSS:
 
 Ped namespace
 ----------------------
 
 Functions here
 
-.. _vehicleNS:
+.. _entityNSS:
+
+Entity namespace
+----------------------
+
+Functions here
+
+.. _vehicleNSS:
 
 Vehicle namespace
 ----------------------
 
 Functions here
 
-.. _entityNS:
+.. _online:
+
+Online namespace
+----------------
+
+Functions here
+
+
+.. _networkNSS:
+
+Network namespace
+----------------------
+
+Functions here
+
+.. _spawn:
+
+Spawn namespace
+----------------
+
+Functions here
+
+.. _weapon:
+
+Weapon namespace
+----------------------
+
+Functions here
+
+.. _teleport:
+
+Teleport namespace
+----------------------
+
+Functions here
+
+.. _world:
+
+World namespace
+----------------------
+
+Functions here
+
+.. _rage:
+
+Rage Functions
+#################
+
+.. _playerNSR:
+
+Player namespace
+----------------------
+
+Functions here
+
+.. _pedNSR:
+
+Ped namespace
+----------------------
+
+Functions here
+
+.. _vehicleNSR:
+
+Vehicle namespace
+----------------------
+
+Functions here
+
+.. _entityNSR:
 
 Entity namespace
 ----------------------
@@ -1446,7 +1540,7 @@ Object namespace
 
 Functions here
 
-.. _weapon:
+.. _weaponNSR:
 
 Weapon namespace
 ----------------------
@@ -1495,7 +1589,7 @@ Fire namespace
 
 Functions here
 
-.. _network:
+.. _networkNSR:
 
 Network namespace
 ----------------------
