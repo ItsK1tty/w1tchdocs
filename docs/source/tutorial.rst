@@ -1,5 +1,7 @@
 Tutorial
-###############
+================
+
+.. _tutorial:
 
 so the headlines dont exist here
 they're called 'sections'
