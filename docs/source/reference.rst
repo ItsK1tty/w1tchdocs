@@ -493,6 +493,7 @@ Converts a string key to a key hash.
 * ``int`` -- The key hash. -1 if the key is not any special key or it doesn't exist at all
 
 **Example:**
+
 .. code-block:: lua
    :linenos:
 
@@ -1407,7 +1408,7 @@ Removes an option.
 .. code-block:: lua
    :linenos:
 
-   menu.remove_option(``luaOpt``)
+   menu.remove_option("luaOpt") --assuming there's an option with hash "luaOpt"
 
 ======================
 
@@ -4197,7 +4198,7 @@ Cuts string from center.
    r = resize_string_center("Hello World", 5)
    system.log_debug(r)
 
-**Output**
+**Output:*
 
 .. code-block:: lua
    :linenos:
@@ -4226,7 +4227,7 @@ Cuts string from the left
 
    r = resize_string_left("Hello World", 5)
    system.log_debug(r)
-**Output: **
+**Output:**
 
 .. code-block:: lua
    :linenos:
@@ -4256,7 +4257,7 @@ Cuts string from the right.
    r = resize_string_right("Hello World", 5)
    system.log_debug(r)
 
-**Output: **
+**Output:**
 
 .. code-block:: lua
    :linenos:
