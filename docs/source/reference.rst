@@ -452,7 +452,7 @@ Converts a string key to a key hash.
 
    system.log_info(tostring(system.string_to_key("HOME"))) -- get "HOME" key hash
 
-string key_to_string(``key``)
+key_to_string(``key``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Converts a key hash to a string key.
