@@ -100,6 +100,11 @@ for internal hyperlinks, you first need to make a place holder. lemme show you:
 
 ``.. _name:`` this we use to make a place holder
 
+
+* :ref:`test`
+
+
+
 .. _test: 
 
 test
@@ -107,9 +112,6 @@ test
 test definition here
 
 
-then you make a refernce:
-
-:ref:`test`
 
 you can make a reference to another page:
 
