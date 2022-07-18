@@ -525,7 +525,7 @@ Converts a key hash to a string key.
 
 ================================
 
-is_key_pressed(```key``)
+is_key_pressed(``key``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Checks if key is pressed
