@@ -614,6 +614,7 @@ add_delimiter(``name``, ``parent``)
 Adds a delimiter to a section.
 
 **Parameters:**
+
 * ``name`` (``string``) - The name of the delimiter.
 * ``parent`` (``int``) - The parent section.
 
@@ -635,14 +636,14 @@ Adds a delimiter to a section.
 add_option(``name``, ``hash``, ``parent``, ``fn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adds a menu option.
+Adds a menu option button.
 
 **Parameters:**
 
 * ``name`` (``string``) - The name of the option.
 * ``hash`` (``string``) - The option hash.
 * ``parent`` (``int``) - The parent section.
-* ``fn`` (``function``) - Function call.
+* ``fn`` (``function``) - Function to call.
 
 **Returns:**
 
@@ -653,7 +654,7 @@ Adds a menu option.
 .. code-block:: lua
    :linenos:
 
-   -- Just a test function for demonstration purposes
+   -- A test function
    function test()
       log_warning("Test function!")
    end
@@ -667,14 +668,14 @@ Adds a menu option.
 add_option_toggle(``name``, ``hash``, ``parent``, ``fn``);
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adds a toggable menu option.
+Adds a toggable menu option button.
 
 **Parameters:**
 
 * ``name`` (``string``) - The name of the option.
 * ``hash`` (``string``) - The option hash.
 * ``parent`` (``int``) - The parent section.
-* ``fn`` (``function``) - Function call.
+* ``fn`` (``function``) - Function to call.
 
 **Returns:**
 
@@ -703,9 +704,9 @@ Adds a slider menu option.
 * ``value`` (``float``) - The option default value.
 * ``min`` (``float``) - Minimum slider value.
 * ``max`` (``float``) - Maximum slider value.
-* ``mod`` (``float``) - Step of value increase
+* ``mod`` (``float``) - Step of value increase.
 * ``parent`` (``int``) - The parent section.
-* ``fn`` (``function``) - Function call.
+* ``fn`` (``function``) - Function to call.
 
 **Returns:**
 
@@ -734,9 +735,9 @@ Adds a toggable slider menu option.
 * ``value`` (``float``) - The option default value.
 * ``min`` (``float``) - Minimum slider value.
 * ``max`` (``float``) - Maximum slider value.
-* ``mod`` (``float``) - Step of value increase
+* ``mod`` (``float``) - Step of value increase.
 * ``parent`` (``int``) - The parent section.
-* ``fn`` (``function``) - Function call.
+* ``fn`` (``function``) - Function to call.
 
 **Returns:**
 
@@ -756,7 +757,7 @@ Adds a toggable slider menu option.
 add_option_value(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``parent``, ``valueSuffix``, ``fn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adds a menu option with a set value
+Adds a menu option with a pre-set value
 
 **Parameters:**
 
@@ -765,10 +766,10 @@ Adds a menu option with a set value
 * ``value`` (``float``) - The option default value.
 * ``min`` (``float``) - Minimum slider value.
 * ``max`` (``float``) - Maximum slider value.
-* ``mod`` (``float``) - Step of value increase
+* ``mod`` (``float``) - Step of value increase.
 * ``parent`` (``int``) - The parent section.
-* ``valueSuffix`` (``string``) - The value suffix text
-* ``fn`` (``function``) - Function call.
+* ``valueSuffix`` (``string``) - The value suffix text (e.g. ``m/s``)
+* ``fn`` (``function``) - Function to call.
 
 **Returns:**
 
@@ -788,7 +789,7 @@ Adds a menu option with a set value
 add_option_value_toggle(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``parent``, ``valueSuffix``, ``fn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adds a toggable menu option with a set value.
+Adds a toggable menu option with a pre-set value.
 
 **Parameters:**
 
@@ -797,10 +798,10 @@ Adds a toggable menu option with a set value.
 * ``value`` (``float``) - The option default value.
 * ``min`` (``float``) - Minimum slider value.
 * ``max`` (``float``) - Maximum slider value.
-* ``mod`` (``float``) - Step of value increase
+* ``mod`` (``float``) - Step of value increase.
 * ``parent`` (``int``) - The parent section.
-* ``valueSuffix`` (``string``) - The value suffix text
-* ``fn`` (``function``) - Function call.
+* ``valueSuffix`` (``string``) - The value suffix text (e.g. ``m/s``)
+* ``fn`` (``function``) - Function to call.
 
 **Returns:**
 
@@ -828,8 +829,8 @@ Adds a menu option with multiple values.
 * ``hash`` (``string``) - The option hash.
 * ``value`` (``float``) - The option default value.
 * ``parent`` (``int``) - The parent section.
-* ``list`` (``vector<string>``) - The values list separed with a comma, see example.
-* ``fn`` (``function``) - Function call.
+* ``list`` (``vector<string>``) - The values list separated with a comma
+* ``fn`` (``function``) - Function to call.
 
 **Returns:**
 
@@ -857,8 +858,8 @@ Adds a toggable menu option with multiple values.
 * ``hash`` (``string``) - The option hash.
 * ``value`` (``float``) - The option default value.
 * ``parent`` (``int``) - The parent section.
-* ``list`` (``vector<string>``) - The values list separed with a comma, see example.
-* ``fn`` (``function``) - Function call.
+* ``list`` (``vector<string>``) - The values list separated with a comma.
+* ``fn`` (``function``) - Function to call.
 
 **Returns:**
 
@@ -878,12 +879,12 @@ Adds a toggable menu option with multiple values.
 add_option_teleport(``name``, ``coords``, ``parent``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adds a dedicated menu teleport option
+Adds a teleport option button.
 
 **Parameters:**
 
 * ``name`` (``string``) - The name of the option.
-* ``coords`` (``Vector3``) - The teleport coordinates in Vector3 format, see example.
+* ``coords`` (``Vector3``) - The teleport coordinates.
 * ``parent`` (``int``) - The parent section.
 
 **Returns:**
@@ -904,7 +905,7 @@ Adds a dedicated menu teleport option
 add_option_spawn(``name``, ``model``, ``type``, ``parent``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adds a dedicated menu spawn option
+Adds a spawn option button.
 
 **Parameters:**
 
@@ -931,13 +932,13 @@ Adds a dedicated menu spawn option
 add_option_text(``name``, ``hash``, ``text``, ``parent``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adds a menu text option
+Adds a text option (e.g. a note).
 
 **Parameters:**
 
 * ``name`` (``string``) - The name of the option.
 * ``hash`` (``string``) - The option hash.
-* ``text`` (``string``) - The option displayed text.
+* ``text`` (``string``) - The displayed text to the right of the name.
 * ``parent`` (``int``) - The parent section.
 
 **Returns:**
@@ -958,13 +959,13 @@ Adds a menu text option
 add_option_info(``name``, ``hash``, ``info``, ``parent``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adds a menu text option
+Adds a text option. (e.g. a note).
 
 **Parameters:**
 
 * ``name`` (``string``) - The name of the option.
 * ``hash`` (``string``) - The option hash.
-* ``info`` (``string``) - The option displayed info as text.
+* ``info`` (``string``) - Info to display to the right of the option name.
 * ``parent`` (``int``) - The parent section.
 
 **Returns:**
