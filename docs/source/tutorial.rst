@@ -81,3 +81,48 @@ Note:
 
 .. note::
     this is a note
+
+
+Hyperlinks:
+==============
+
+this where fun at
+
+so there are internal and external hyperlinks
+
+internal hyperlinks mean hyperlinks between parts/sections of the same document or just a link to some other page
+
+external hyperlinks mean hyperlinks to other pages on the internet
+
+example
+
+for internal hyperlinks, you first need to make a place holder. lemme show you:
+
+.. _: this we use to make a place holder
+
+.. _ColorRGB: 
+
+ColorRGB
+----------------------
+ColorRGB definition here
+
+
+then you make a refernce:
+
+:ref:`ColorRGB`
+
+you can make a reference to another page:
+
+:doc:`gettingstarted`
+
+for external hyperlinks, see this
+
+first we create a placeholder
+
+.. _LUA guide: https://tylerneylon.com/a/learn-lua/
+
+then we ref
+
+Small LUA guide we recommend for new developers: `LUA guide`_. Credits to Tyler Neylon.
+
+this basically it 
