@@ -625,6 +625,8 @@ This namespace contains functions that are used to get and set certain stats in 
 set_packed_bool(``index``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Sets a packed boolean stat.
+
 **Parameters:**
 
 * ``index`` (``int``) - The index of the packed bool stat.
@@ -639,6 +641,8 @@ set_packed_bool(``index``, ``value``)
 get_packed_bool(``index``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Returns a packed boolean stat.
+
 **Parameters:**
 
 * ``index`` (``int``) - The index of the packed bool stat.
@@ -648,6 +652,166 @@ get_packed_bool(``index``)
 * ``bool`` - The value of the packed bool stat.
 
 ================================
+
+void set_mass_packed_bool(bool value, int min, int max)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a mass-packed boolean stat.
+
+================================
+
+void get_mass_packed_bool(int min, int max)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a mass-packed boolean stat.
+
+================================
+
+set_packed_int(``index``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a packed integer stat.
+
+**Parameters:**
+
+* ``index`` (``int``) - The index of the packed integer stat.
+* ``value`` (``int``) - The value to set.
+
+**Returns:**
+
+* None
+
+================================
+
+get_packed_int(``index``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a packed integer stat.
+
+**Parameters:**
+
+* ``index`` (``int``) - The index of the packed integer stat.
+
+**Returns:**
+
+* ``int`` - The value of the packed integer stat.
+
+================================
+
+void get_mass_packed_int(int min, int max)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+================================
+
+void set_stat_bit(string stat, int bit);
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set a bit in a stat.
+
+================================
+
+clear_stat_bit(``stat``, ``bit``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Clear a bit in a stat.
+
+
+================================
+
+
+stat_get_int(``stat``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns an integer stat.
+
+**Parameters:**
+
+* ``stat`` (``string``) - The name of the stat.
+
+**Returns:**
+
+* ``int`` - The value of the stat.
+
+================================
+
+
+stat_set_int(``stat``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Parameters:**
+
+* ``stat`` (``string``) - The name of the stat.
+* ``value`` (``int``) - The value to set.
+
+**Returns:**
+
+* None
+
+================================
+
+stat_get_bool(``stat``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a boolean stat.
+
+**Parameters:**
+
+* ``stat`` (``string``) - The name of the stat.
+
+**Returns:**
+
+* ``bool`` - The value of the stat.
+
+================================
+
+stat_set_bool(``stat``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a boolean stat.
+
+**Parameters:**
+
+* ``stat`` (``string``) - The name of the stat.
+* ``value`` (``bool``) - The value to set.
+
+**Returns:**
+
+* None
+
+================================
+
+stat_get_float(``stat``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a float stat.
+
+**Parameters:**
+
+* ``stat`` (``string``) - The name of the stat.
+
+**Returns:**
+
+* ``float`` - The value of the stat.
+
+================================
+
+stat_set_float(``stat``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a float stat.
+
+**Parameters:**
+
+* ``stat`` (``string``) - The name of the stat.
+* ``value`` (``float``) - The value to set.
+
+**Returns:**
+
+* None
+
+================================
+
+
 
 
 .. _notify:
