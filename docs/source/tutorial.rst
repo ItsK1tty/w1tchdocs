@@ -73,11 +73,11 @@ the :linenos: option will add line numbers to the code block
 Warning:
 =============
 
-.. warning:
+.. warning::
     this is a warning
 
 Note:
 ==============
 
-..note:
+..note::
     this is a note
