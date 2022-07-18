@@ -911,7 +911,9 @@ This namespace contains functions for executing in-game events.
 
 ================================
 
-void trigger_script_event(int eventGroup, int64_t* args, int playerId); // script.trigger_script_event(0x0000000, { 1234567, 7654321, 1234321 }, playerId)
+trigger_script_event(``eventGroup``, ``args``, ``playerId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 Triggers a script event.
 
