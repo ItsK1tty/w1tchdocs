@@ -551,20 +551,20 @@ Checks if key is pressed
    end
 
 ================================
-
 .. _menu:
 
 Menu namespace
 ----------------------
 
-This namespace contains functions for working with the menu sections.
+Menu
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-================================
+======================
 
 add_parent(``name``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adds a parent section into menu resolution
+Adds a parent section into menu resolution.
 
 **Parameters:**
 
@@ -572,7 +572,7 @@ Adds a parent section into menu resolution
 
 **Returns:**
 
-* ``int`` - The ID of the created parent section.
+* ``int`` - The ID of the parent section.
 
 **Example:**
 
@@ -581,12 +581,12 @@ Adds a parent section into menu resolution
 
    menu.add_parent("My parent section")
 
-================================
+======================
 
 add_child(``name``, ``parent``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adds a child section to a parent section
+Adds a child section to a parent section.
 
 **Parameters:**
 
@@ -603,7 +603,382 @@ Adds a child section to a parent section
    :linenos:
 
    parent = menu.add_parent("My parent section")
-   child = menu.add_child("Child section of my parent section", parent) 
+
+   child = menu.add_child("Child section of my parent section", parent)
+
+======================
+
+add_delimiter(``name``, ``parent``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a delimiter to a section.
+
+**Parameters:**
+* ``name`` (``string``) - The name of the delimiter.
+* ``parent`` (``int``) - The parent section.
+
+**Returns:**
+
+* ``int`` - The ID of the delimiter.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_delimiter("Just a delimiter...", parent)
+
+======================
+
+add_option(``name``, ``hash``, ``parent``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a menu option.
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the option.
+* ``hash`` (``string``) - The option hash.
+* ``parent`` (``int``) - The parent section.
+* ``fn`` (``function``) - Function call.
+
+**Returns:**
+
+* ``None``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Just a test function for demonstration purposes
+   function test()
+      log_warning("Test function!")
+   end
+   
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option("Lua Option", "luaOptHash", parent, test)
+
+======================
+
+add_option_toggle(``name``, ``hash``, ``parent``, ``fn``);
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a toggable menu option.
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the option.
+* ``hash`` (``string``) - The option hash.
+* ``parent`` (``int``) - The parent section.
+* ``fn`` (``function``) - Function call.
+
+**Returns:**
+
+* ``None``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_toggle("Toggle Option", "luaOptDummyToggle", parent, function())
+
+======================
+
+add_option_slider(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``parent``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a slider menu option.
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the option.
+* ``hash`` (``string``) - The option hash.
+* ``value`` (``float``) - The option default value.
+* ``min`` (``float``) - Minimum slider value.
+* ``max`` (``float``) - Maximum slider value.
+* ``mod`` (``float``) - Step of value increase
+* ``parent`` (``int``) - The parent section.
+* ``fn`` (``function``) - Function call.
+
+**Returns:**
+
+* ``None``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_slider("Slider Option", "luaOptDummyToggle", 10, 0, 100, 1, parent, function())
+
+======================
+
+add_option_slider_toggle(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``parent``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a toggable slider menu option.
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the option.
+* ``hash`` (``string``) - The option hash.
+* ``value`` (``float``) - The option default value.
+* ``min`` (``float``) - Minimum slider value.
+* ``max`` (``float``) - Maximum slider value.
+* ``mod`` (``float``) - Step of value increase
+* ``parent`` (``int``) - The parent section.
+* ``fn`` (``function``) - Function call.
+
+**Returns:**
+
+* ``None``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_slider_toggle("Toggable Slider Option", "luaOptDummyToggle", 10, 0, 100, 1, parent, function())
+
+======================
+
+add_option_value(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``parent``, ``valueSuffix``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a menu option with a set value
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the option.
+* ``hash`` (``string``) - The option hash.
+* ``value`` (``float``) - The option default value.
+* ``min`` (``float``) - Minimum slider value.
+* ``max`` (``float``) - Maximum slider value.
+* ``mod`` (``float``) - Step of value increase
+* ``parent`` (``int``) - The parent section.
+* ``valueSuffix`` (``string``) - The value suffix text
+* ``fn`` (``function``) - Function call.
+
+**Returns:**
+
+* ``None``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_value("Lua option with value", "luaOptDummyToggle", 10, 0, 100, 1, parent, "kb", function())
+
+======================
+
+add_option_value_toggle(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``parent``, ``valueSuffix``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a toggable menu option with a set value.
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the option.
+* ``hash`` (``string``) - The option hash.
+* ``value`` (``float``) - The option default value.
+* ``min`` (``float``) - Minimum slider value.
+* ``max`` (``float``) - Maximum slider value.
+* ``mod`` (``float``) - Step of value increase
+* ``parent`` (``int``) - The parent section.
+* ``valueSuffix`` (``string``) - The value suffix text
+* ``fn`` (``function``) - Function call.
+
+**Returns:**
+
+* ``None``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_value_toggle("Toggable Lua option with value", "luaOptDummyToggle", 10, 0, 100, 1, parent, "kb", function())
+
+======================
+
+add_option_value_str(``name``, ``hash``, ``value``, ``parent``, ``list``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a menu option with multiple values.
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the option.
+* ``hash`` (``string``) - The option hash.
+* ``value`` (``float``) - The option default value.
+* ``parent`` (``int``) - The parent section.
+* ``list`` (``vector<string>``) - The values list separed with a comma, see example.
+* ``fn`` (``function``) - Function call.
+
+**Returns:**
+
+* ``None``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_value_str("Lua option with multiple values", "luaOptDummyToggle", 0, parent, { "One", "Two", "Three" }, function())
+
+======================
+
+add_option_value_str_toggle(``name``, ``hash``, ``value``, ``parent``, ``list``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a toggable menu option with multiple values.
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the option.
+* ``hash`` (``string``) - The option hash.
+* ``value`` (``float``) - The option default value.
+* ``parent`` (``int``) - The parent section.
+* ``list`` (``vector<string>``) - The values list separed with a comma, see example.
+* ``fn`` (``function``) - Function call.
+
+**Returns:**
+
+* ``None``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_value_str("Toggable Lua option with multiple values", "luaOptDummyToggle", 0, parent, { "One", "Two", "Three" }, function())
+
+======================
+
+add_option_teleport(``name``, ``coords``, ``parent``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a dedicated menu teleport option
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the option.
+* ``coords`` (``Vector3``) - The teleport coordinates in Vector3 format, see example.
+* ``parent`` (``int``) - The parent section.
+
+**Returns:**
+
+* ``None``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_teleport("Casino Entrance", { 922.680847, 47.205017, 81.106346 }, parent)
+
+======================
+
+add_option_spawn(``name``, ``model``, ``type``, ``parent``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a dedicated menu spawn option
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the option.
+* ``model`` (``Hash``) - The vehicle hash.
+* ``type`` (``int``) - The vehicle spawn type.
+* ``parent`` (``int``) - The parent section.
+
+**Returns:**
+
+* ``None``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_spawn("Spawn Zentorno", zentornoHash, 0, parent) -- 0 is vehicle_spawn type
+
+======================
+
+add_option_text(``name``, ``hash``, ``text``, ``parent``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a menu text option
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the option.
+* ``hash`` (``string``) - The option hash.
+* ``text`` (``string``) - The option displayed text.
+* ``parent`` (``int``) - The parent section.
+
+**Returns:**
+
+* ``None``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_text("Just a text option", "luaOptHashText", "Text", parent)
+
+======================
+
+add_option_info(``name``, ``hash``, ``info``, ``parent``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a menu text option
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the option.
+* ``hash`` (``string``) - The option hash.
+* ``info`` (``string``) - The option displayed info as text.
+* ``parent`` (``int``) - The parent section.
+
+**Returns:**
+
+* ``None``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_text("Just a text option", "luaOptHashInfo", "Some info", parent)
 
 ================================
 
