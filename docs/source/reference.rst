@@ -3646,7 +3646,7 @@ Returns the player's status.
 
 * ``string`` -- The player's status.
 * * ``H`` -- The player is the host.
-* * ``NH`` -- The player is a next host.
+* * ``NH`` -- The player is the next host.
 * * ``F`` -- The player is a friend.
 * * ``M`` -- The player is a modder.
 
