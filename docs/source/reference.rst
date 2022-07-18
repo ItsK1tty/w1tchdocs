@@ -130,6 +130,8 @@ Global Variables
 * ``string`` ``chatSenderName`` -- Last chat message sender name
 * ``string`` ``chatMessage`` -- Last chat message
 
+================================
+
 .. _namespaces:
 
 Namespaces in LUA Engine
@@ -185,6 +187,7 @@ Function namespaces in LUA Engine are defined in the following order:
 * * :ref:`audio`
 * * :ref:`rope`
 
+================================
 
 .. _system:
 
