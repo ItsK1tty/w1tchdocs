@@ -61,7 +61,7 @@ near code-block word you can specify the language so the output will be highligh
 the :linenos: option will add line numbers to the code block
 
 
-.. code-block: lua
+.. code-block:: lua
     :linenos:
 
     print("somestuff")
