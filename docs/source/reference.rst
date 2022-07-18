@@ -31,11 +31,15 @@ Hash
 ----------------------
 Hash definition here
 
+================================
+
 .. _Entity:
 
 Entity
 ----------------------
 Entity definition here
+
+================================
 
 .. _Ped:
 
@@ -43,11 +47,15 @@ Ped
 ----------------------
 Ped definition here
 
+================================
+
 .. _Player:
 
 Player
 ----------------------
 Player definition here
+
+================================
 
 .. _Cam:
 
@@ -55,11 +63,15 @@ Cam
 ----------------------
 Cam definition here
 
+================================
+
 .. _Blip:
 
 Blip
 ----------------------
 Blip definition here
+
+================================
 
 .. _Any:
 
@@ -67,11 +79,15 @@ Any
 ----------------------
 Any type definition here
 
+================================
+
 .. _Vehicle:
 
 Vehicle
 ----------------------
 Vehicle definition here
+
+================================
 
 .. _Vector2:
 
@@ -79,11 +95,15 @@ Vector2
 ----------------------
 Vector2 definition here
 
+================================
+
 .. _Vector3:
 
 Vector3
 ----------------------
 Vector3 definition here
+
+================================
 
 .. _ColorRGB:
 
@@ -91,12 +111,15 @@ ColorRGB
 ----------------------
 ColorRGB definition here
 
+================================
+
 .. _ColorRGBA:
 
 ColorRGBA
 ----------------------
 ColorRGBA definition here
 
+================================
 
 .. _gvars:
 
