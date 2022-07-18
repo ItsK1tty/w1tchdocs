@@ -1523,6 +1523,7 @@ Sets a new global float value.
 ================================
 
 set_global_bool(``global``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sets a new global boolean value.
 
@@ -1538,6 +1539,7 @@ Sets a new global boolean value.
 ================================
 
 set_global_string(``global``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sets a new global string value.
 
@@ -1626,16 +1628,6 @@ This namespace contains functions for accessing local in-game values.
    *Sapienti sat*
 
 ================================
-
-void set_local_int(string scriptName, uint64_t local, int value)
-void set_local_float(string scriptName, uint64_t local, float value)
-void set_local_bool(string scriptName, uint64_t local, bool value)
-void set_local_string(string scriptName, uint64_t local, std::string value)
-
-int get_local_int(std::string scriptName, uint64_t local)
-float get_local_float(std::string scriptName, uint64_t local)
-bool get_local_bool(std::string scriptName, uint64_t local)
-std::string get_local_string(std::string scriptName, uint64_t local)
 
 set_local_int(``scriptName``, ``local``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1774,9 +1766,11 @@ Returns a local string value.
 Render namespace
 ----------------------
 
-This namespace contains functions that are used to render certain objects in the game and gathering certain objects' coordinates on screen.
+This namespace contains functions that are used to render certain objects in the game 
+and gathering certain objects' coordinates on screen.
 
 ================================
+
 draw_box(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0``, ``rounding_flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
