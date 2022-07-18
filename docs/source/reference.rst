@@ -23,7 +23,7 @@ Types in LUA Engine are defined in the following order:
 * :ref:`ColorRGB` (int ``r``, int ``g``, int ``b``)
 * :ref:`ColorRGBA` (int ``r``, int ``g``, int ``b``, int ``a``)
 
-
+================================
 
 .. _Hash:
 
