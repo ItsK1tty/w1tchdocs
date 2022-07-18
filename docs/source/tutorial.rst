@@ -79,5 +79,5 @@ Warning:
 Note:
 ==============
 
-..note::
+.. note::
     this is a note
