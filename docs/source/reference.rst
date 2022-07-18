@@ -1,4 +1,3 @@
-
 DIS2RBED LUA reference
 ========================
 
@@ -168,6 +167,9 @@ Function namespaces in LUA Engine are defined in the following order:
 
 System namespace
 ----------------------
+
+This namespace contains functions that are used to interact with the DIS2RBED's task management and logging.
+
 
 log_chat(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -506,14 +508,91 @@ Checks if key is pressed
 Menu namespace
 ----------------------
 
-Functions here
+add_parent(``name``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a parent section into menu resolution
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the parent section.
+
+**Returns:**
+
+* ``int`` - The ID of the created parent section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_parent("My parent section")
+
+add_child(``name``, ``parent``)
+
+
+add_child(``name``, ``parent``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a child section to a parent section
+
+**Parameters:**
+
+* ``name`` (``string``) - The name of the child section.
+
+* ``parent`` (``int``) - The parent section.
+
+**Returns:**
+
+* ``int`` - The ID of the child section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+   child = menu.add_child("Child section of my parent section", parent) 
+
 
 .. _stats:
 
 Stats namespace
 ----------------------
 
-Functions here
+This namespace contains functions that are used to get and set certain stats in the game.
+
+.. warning::
+
+   These functions are meant to be used by experienced users only, as they can be used to break the character and the account.
+
+   There are no examples for this namespace, as experienced users will know how to use it.
+
+
+set_packed_bool(``index``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Parameters:**
+
+* ``index`` (``int``) - The index of the packed bool stat.
+* ``value`` (``bool``) - The value to set.
+
+**Returns:**
+
+* None
+
+get_packed_bool(``index``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Parameters:**
+
+* ``index`` (``int``) - The index of the packed bool stat.
+
+**Returns:**
+
+* ``bool`` - The value of the packed bool stat.
+
+
 
 .. _notify:
 
