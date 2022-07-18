@@ -24,4 +24,10 @@ thiswouldntwork
 ======================
 
 Third section (even smaller)
-----------------------
+-------------------------------------
+
+it is also important to note that the line should be equal or longer to the length of the section title, so this won't work:
+
+ahfiouashfiuashfiuahfiushfiu
+-----
+
