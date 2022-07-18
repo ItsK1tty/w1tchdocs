@@ -1479,7 +1479,7 @@ Spawn namespace
 
 Functions here
 
-.. _weapon:
+.. _weaponNSS:
 
 Weapon namespace
 ----------------------
