@@ -551,6 +551,7 @@ Checks if key is pressed
    end
 
 ================================
+
 .. _menu:
 
 Menu namespace
@@ -994,7 +995,9 @@ This namespace contains functions that are used to get and set certain stats in 
 
    These functions are meant to be used by experienced users only, as they can be used to break the character and the account.
 
-   There are no examples for this namespace, as experienced users will know how to use it.
+   There are no examples for this namespace, as advanced users will know how to use it.
+
+   *Sapienti sat*
 
 ================================
 
@@ -1255,7 +1258,7 @@ This namespace contains functions for sending notifications.
 above_map(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Send a notification in the bottom-left corner of the screen.
+Sends a notification in the bottom-left corner of the screen.
 
 **Parameters:**
 
@@ -1284,6 +1287,8 @@ This namespace contains functions for executing in-game events.
 .. warning::
 
    These functions are meant to be used by experienced users only.
+
+   *Sapienti sat*
 
 ================================
 
@@ -1318,7 +1323,136 @@ Triggers a script event.
 Globals namespace
 ----------------------
 
-Functions here
+This namespace contains functions for accessing global in-game values.
+
+.. warning::
+
+   These functions are meant to be used by experienced users only.
+
+   *Sapienti sat*
+
+
+================================
+
+set_global_int(``global``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a new global integer value.
+
+**Parameters:**
+
+* ``global`` (``uint64_t``) - The name of the global value.
+* ``value`` (``int``) - The value to set.
+
+**Returns:**
+
+* None
+
+================================
+
+set_global_float(``global``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a new global float value.
+
+**Parameters:**
+
+* ``global`` (``uint64_t``) - The name of the global value.
+* ``value`` (``float``) - The value to set.
+
+**Returns:**
+
+* None
+
+================================
+
+set_global_bool(``global``, ``value``)
+
+Sets a new global boolean value.
+
+**Parameters:**
+
+* ``global`` (``uint64_t``) - The name of the global value.
+* ``value`` (``bool``) - The value to set.
+
+**Returns:**
+
+* None
+
+================================
+
+set_global_string(``global``, ``value``)
+
+Sets a new global string value.
+
+**Parameters:**
+
+* ``global`` (``uint64_t``) - The name of the global value.
+* ``value`` (``string``) - The value to set.
+
+**Returns:**
+
+* None
+
+================================
+
+get_global_int(``global``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a global integer value.
+
+**Parameters:**
+
+* ``global`` (``uint64_t``) - The name of the global value.
+
+**Returns:**
+
+* ``int`` - The value of the global.
+
+================================
+
+get_global_float(``global``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a global float value.
+
+**Parameters:**
+
+* ``global`` (``uint64_t``) - The name of the global value.
+
+**Returns:**
+
+* ``float`` - The value of the global.
+
+================================
+
+get_global_bool(``global``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a global boolean value.
+
+**Parameters:**
+
+* ``global`` (``uint64_t``) - The name of the global value.
+
+**Returns:**
+
+* ``bool`` - The value of the global.
+
+================================
+
+get_global_string(``global``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a global string value.
+
+**Parameters:**
+
+* ``global`` (``uint64_t``) - The name of the global value.
+
+**Returns:**
+
+* ``string`` - The value of the global.
 
 ================================
 
@@ -2376,7 +2510,7 @@ Functions here
 
 .. _rage:
 
-Rage Functions
+RAGE Functions
 #################
 
 This namespace contains native game functions.
