@@ -290,7 +290,7 @@ Sends a message to the log as ``[WARNING]``. Has a red color.
 
    system.log_warning("Hello World!")
 
-wait(ms)
+wait(``ms``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Waits for ``ms`` milliseconds.
@@ -475,7 +475,7 @@ Converts a key hash to a string key.
    -- why 36, you ask? See this: https://www.oreilly.com/library/view/javascript-dhtml/9780596514082/apb.html
 
 
-is_key_pressed(string key)
+is_key_pressed(```key``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Checks if key is pressed
