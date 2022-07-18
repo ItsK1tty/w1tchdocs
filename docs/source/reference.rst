@@ -475,7 +475,7 @@ Converts a key hash to a string key.
    -- why 36, you ask? See this: https://www.oreilly.com/library/view/javascript-dhtml/9780596514082/apb.html
 
 
-bool is_key_pressed(string key)
+is_key_pressed(string key)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Checks if key is pressed
@@ -506,7 +506,24 @@ Checks if key is pressed
 Menu namespace
 ----------------------
 
-Functions here
+Menu
+==========
+
+int add_parent(name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+int add_parent(name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Menu sections
+==================
+
+int section_self_mods();
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+int section_self_mods();
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 .. _stats:
 
