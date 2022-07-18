@@ -4198,7 +4198,7 @@ Cuts string from center.
    r = resize_string_center("Hello World", 5)
    system.log_debug(r)
 
-**Output:*
+**Output:**
 
 .. code-block:: lua
    :linenos:
