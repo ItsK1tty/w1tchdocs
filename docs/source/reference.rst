@@ -366,7 +366,8 @@ Adds a task into the process's main loop.
 
 * ``name`` (``string``) -- The name of the task.
 * ``hash`` (``string``) -- The hash of the task. Hash is used to identify the task, so it must be unique.
-* ``ms`` (``int``) -- The number of milliseconds to wait before calling the task. Can be `-1` to execute the task again and again.
+* ``ms`` (``int``) -- The number of milliseconds to wait before calling the task. 
+* * Can be ``-1`` to execute the task again and again.
 * ``fn`` (``function``) -- The function to call when the task is executed.
 
 **Returns:**
@@ -4436,7 +4437,7 @@ Checks if directory exists, and if not, creates it.
 
 **Returns:**
 
-None
+* None
 
 **Example:**
 
@@ -4458,7 +4459,7 @@ Creates a directory.
 
 **Returns:**
 
-None
+* None
 
 **Example**
 
@@ -4476,12 +4477,12 @@ Copies a file.
 
 **Parameters:**
 
-* ``source`` (*string*) -- Path to source file
-* ``dest`` (*string*) -- Path to destination file
+* ``source`` (``string``) -- Path to source file
+* ``dest`` (``string``) -- Path to destination file
 
 **Returns:**
 
-None
+* None
 
 **Example**
 
@@ -4534,9 +4535,9 @@ Returns the coordinates in front of the specified coordinates.
 
 **Parameters:**
 
-* ``position`` (*Vector3*) -- Position of the object
-* ``rotation`` (*Vector3*) -- Rotation of the object
-* ``distance`` (*float*) -- Distance to the object
+* ``position`` (``Vector3``) -- Position of the object
+* ``rotation`` (``Vector3``) -- Rotation of the object
+* ``distance`` (``float``) -- Distance to the object
 
 **Returns:**
 
@@ -4562,8 +4563,8 @@ Returns the coordinates above of the specified coordinates.
 
 **Parameters:**
 
-* ``position`` (*Vector3*) -- Position of the object
-* ``distance`` (*float*) -- Distance to the object
+* ``position`` (``Vector3``) -- Position of the object
+* ``distance`` (``float``) -- Distance to the object
 
 **Returns:**
 
@@ -4618,11 +4619,12 @@ Toggles and configures the force field.
 
 **Parameters:**
 
-* ``toggle`` (*bool*) -- ``true`` to enable the force field, ``false`` to disable it
+* ``toggle`` (``bool``) -- ``true`` to enable the force field, ``false`` to disable it
 * * ``true`` to enable the force field
 * * ``false`` to disable it
-
-* ``type`` (*int*) -- Type of the force field, ``0`` for ``Normal``, ``1`` for ``Lethal``
+* ``type`` (``int``) -- Type of the force field 
+* * ``0`` for ``Normal`` (Default)
+* * ``1`` for ``Lethal``
 
 
 
