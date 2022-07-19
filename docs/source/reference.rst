@@ -4535,8 +4535,8 @@ Returns the coordinates in front of the specified coordinates.
 
 **Parameters:**
 
-* ``position`` (``Vector3``) -- Position of the object
-* ``rotation`` (``Vector3``) -- Rotation of the object
+* ``position`` (``Vector3``) -- Specified coordinates
+* ``rotation`` (``Vector3``) -- Rotation to use
 * ``distance`` (``float``) -- Distance to the object
 
 **Returns:**
@@ -4548,7 +4548,7 @@ Returns the coordinates in front of the specified coordinates.
 .. code-block:: lua
    :linenos:
    
-   coords = get_coords_infront_of_coords({0,0,0}, {0,0,0}, 10)
+   coords = scripting.get_coords_infront_of_coords(self.get_coords(), rage.entity.get_entity_rotation(self.get_ped(), 1), 10)
    system.log_debug(tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z))
 
 ================================
@@ -4563,8 +4563,8 @@ Returns the coordinates above of the specified coordinates.
 
 **Parameters:**
 
-* ``position`` (``Vector3``) -- Position of the object
-* ``distance`` (``float``) -- Distance to the object
+* ``position`` (``Vector3``) -- Specified coordinates
+* ``distance`` (``float``) -- Distance from the coordinates
 
 **Returns:**
 
@@ -4575,7 +4575,7 @@ Returns the coordinates above of the specified coordinates.
 .. code-block:: lua
    :linenos:
    
-   coords = get_coords_above_of_coords({0,0,0}, 10)
+   coords = get_coords_above_of_coords(self.get_coords(), 10)
    system.log_debug(tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z))
 
 ================================
@@ -4619,12 +4619,38 @@ Toggles and configures the force field.
 
 **Parameters:**
 
-* ``toggle`` (``bool``) -- ``true`` to enable the force field, ``false`` to disable it
+* ``toggle`` (``bool``)
 * * ``true`` to enable the force field
 * * ``false`` to disable it
 * ``type`` (``int``) -- Type of the force field 
 * * ``0`` for ``Normal`` (Default)
 * * ``1`` for ``Lethal``
+
+================================
+
+set_god_mode(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles god mode.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) 
+* * ``true`` to enable god mode
+* * ``false`` to disable it
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_god_mode(true)
+   system.log_debug("God mode enabled.")
+
 
 
 
