@@ -1,4 +1,4 @@
-Headlights colors
+Headlights Colors
 ===================================
 Headlights color IDs are used to set the headlights color of the vehicles in the game.
 Current available headlight color IDs are:

@@ -6934,10 +6934,20 @@ Sets the headlight color of the specified vehicle.
 
 * ``color`` (``int``) -- The headlight color ID
 
+   * For color IDs, see this: :doc:`headlightcolor`
+**Returns:**
 
+* None
 
+**Example:**
 
+.. code-block:: lua
+   :linenos:
+   
+   scripting.vehicle.set_headlight_color(1)
+   system.log_debug("Headlight color set to white.")
 
+================================
 
 
 set_license_plate_madness(``toggle``)
@@ -6948,6 +6958,7 @@ Toggle license plate madness.
 **Parameters:**
 
 * ``toggle`` (``bool``) -- Toggle
+
   * ``true`` -- Toggle license plate madness on
   * ``false`` -- Toggle license plate madness off
 
@@ -6972,6 +6983,7 @@ Toggle license plate scrolling.
 **Parameters:**
 
 * ``toggle`` (``bool``) -- Toggle
+
   * ``true`` -- Toggle license plate scrolling on
   * ``false`` -- Toggle license plate scrolling off
 
@@ -6996,6 +7008,7 @@ Toggle license plate speedo mode.
 **Parameters:**
 
 * ``toggle`` (``bool``)
+
   * ``true`` -- Toggle license plate speedo on
   * ``false`` -- Toggle license plate speedo off
 
@@ -7020,6 +7033,7 @@ Toggle rainbow car mode.
 **Parameters:**
 
 * ``type`` (``eRainbowCarType``) -- Car type
+
   * ``0`` -- Personal car
   * ``1`` -- All cars
 
@@ -7255,8 +7269,8 @@ Set a vehicle waterproof.
 **Parameters:**
 
 * ``vehicle`` (``Vehicle``) -- Vehicle hash
-
 * ``toggle`` (``bool``) -- Toggle waterproof on/off
+
   * ``true`` -- Vehicle is waterproof
   * ``false`` -- Vehicle is not waterproof
 
@@ -7285,6 +7299,7 @@ Set windows opened on a vehicle.
 * ``vehicle`` (``Vehicle``) -- Vehicle hash
 * 
 * ``toggle`` (``bool``) -- Toggle windows open/closed
+
   * ``true`` -- Windows open
   * ``false`` -- Windows closed
 
@@ -7708,12 +7723,14 @@ Give all weapons to a ped with toggable max ammo and max components.
 
 * ``ped`` (``Ped``) -- The ped to give all weapons to.
 
-* ``maxAmmo`` (``bool``) -- Toggle Max Ammo, fefault ``true `` 
-  * ``true`` -- Weapons will be given with max ammo
+* ``maxAmmo`` (``bool``) -- Toggle Max Ammo
+
+  * ``true`` -- Weapons will be given with max ammo (default)
   * ``false`` -- Weapons will be given without max ammo
   
-* ``maxComponents`` -- Toggles Max Components, default ``true``
-  * ``true`` -- Weapons will be given fully upgraded in components
+* ``maxComponents`` -- Toggles Max Components
+
+  * ``true`` -- Weapons will be given fully upgraded in components (default)
   * ``false`` -- Weapons will be given in their default form
 
 
@@ -7788,10 +7805,12 @@ Gives a weapon to ped with toggable max ammo and max components.
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_ to give to the player.
 
 * ``maxAmmo`` (``bool``) -- Toggles Max Ammo, default ``true `` 
+
   * ``true`` -- Weapon will be given with max ammo
   * ``false`` -- Weapon will be given without max ammo
   
 * ``maxComponents`` -- Toggles Max Components, default ``true``
+
   * ``true`` -- Weapon will be given fully upgraded in components
   * ``false`` -- Weapon will be given in its default form
 
@@ -7955,6 +7974,7 @@ Teleport to blip.
 **Returns:**
 
 * ``bool`` -- Returns teleport status
+
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
 
@@ -7979,6 +7999,7 @@ Teleport to entity.
 **Returns:**
 
 * ``bool`` -- Returns teleport status
+
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
 
@@ -8003,6 +8024,7 @@ Teleport to player.
 **Returns:**
 
 * ``bool`` -- Returns teleport status
+
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
 
@@ -8027,6 +8049,7 @@ Teleport to position (through coordinates).
 **Returns:**
 
 * ``bool`` -- Returns teleport status
+
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
 
@@ -8051,6 +8074,7 @@ Teleport to waypoint.
 **Returns:**
 
 * ``bool`` -- Returns teleport status
+
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
 
@@ -8075,6 +8099,7 @@ Teleport to objective.
 **Returns:**
 
 * ``bool`` -- Returns teleport status
+
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
 
@@ -8099,6 +8124,7 @@ Teleport to the nearest vehicle.
 **Returns:**
 
 * ``bool`` -- Returns teleport status
+
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
 
@@ -8510,6 +8536,7 @@ Toggle blackout on/off.
 **Parameters:**
 
 * ``toggle`` (``bool``) -- Toggle
+
   * ``true`` -- Toggle blackout on
   * ``false`` -- Toggle blackout off
 
@@ -8556,6 +8583,7 @@ Disable phone option
 **Parameters:**
 
 * ``toggle`` (``bool``) -- Toggle
+
   * ``true`` -- Toggle disable phone on
   * ``false`` -- Toggle disable phone off
 
