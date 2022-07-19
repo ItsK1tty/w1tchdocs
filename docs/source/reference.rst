@@ -2084,10 +2084,8 @@ Draws a box with the given color and rounding.
 *   ``h`` (``float``) -- The height of the box (in pixels)
 *   ``color`` (``vector<int>``) -- The color of the box. ``{R, G, B, A}``
 *   ``rounding`` (``float``) -- The rounding rule of the box.
-
   *  Default is ``0``.
 *   ``rounding_flags`` (``int``) -- The rounding flags of the box. 
-
   * Default is ``0``.
 
 More about rounding flags: :doc:`roundingflags`
@@ -3131,6 +3129,7 @@ Returns coordinates in front of your character.
 **Parameters:**
 
 * ``distance`` (``float``) -- Distance calculated starting from in front of self. 
+
   * Default value is ``5.0``.
 
 **Returns:**
