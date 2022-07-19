@@ -4622,7 +4622,7 @@ Toggles and configures the force field.
 * * ``true`` to enable the force field
 * * ``false`` to disable it
 
-* ``type`` (*int*) -- Type of the force field, ``0`` for ``Normal``, 1 for ``Lethal``
+* ``type`` (*int*) -- Type of the force field, ``0`` for ``Normal``, ``1`` for ``Lethal``
 
 
 
