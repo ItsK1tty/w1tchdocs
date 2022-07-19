@@ -2075,7 +2075,6 @@ Draws a box with the given color and rounding.
 
 *  ``hash`` (``string``) -- The hash of the box to draw. Hash is used to identify the box, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the box or not.
-
   * ``True`` to draw the box
   * ``false`` to not draw the box 
 *  ``x`` (``float``) -- The X coordinate of the box's starting point.
