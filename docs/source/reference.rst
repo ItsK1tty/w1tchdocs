@@ -4620,11 +4620,11 @@ Toggles and configures the force field.
 **Parameters:**
 
 * ``toggle`` (``bool``)
-* * ``true`` to enable the force field
-* * ``false`` to disable it
+  * ``true`` to enable the force field
+  * ``false`` to disable it
 * ``type`` (``int``) -- Type of the force field 
-* * ``0`` for ``Normal`` (Default)
-* * ``1`` for ``Lethal``
+  * ``0`` for ``Normal`` (Default)
+  * ``1`` for ``Lethal``
 
 ================================
 
