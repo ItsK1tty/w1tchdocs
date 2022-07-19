@@ -153,6 +153,7 @@ Function namespaces in LUA Engine are defined in the following order:
 * :ref:`text`
 * :ref:`fs`
 * :ref:`scripting`
+
   * :ref:`scripting_functions`
   * :ref:`playerNSS`
   * :ref:`pedNSS`
@@ -165,6 +166,7 @@ Function namespaces in LUA Engine are defined in the following order:
   * :ref:`teleport`
   * :ref:`world`
 * :ref:`rage`
+
   * :ref:`playerNSR`
   * :ref:`pedNSR`
   * :ref:`vehicleNSR`
