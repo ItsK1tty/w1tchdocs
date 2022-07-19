@@ -5,10 +5,10 @@ There are multiple namespaces & types in the current DIS2RBED LUA framework, eac
 
 .. _lua_types:
 
-Types in LUA Engine
+Types in the LUA Engine
 ######################
 
-Types in LUA Engine are defined in the following order:
+Types in the LUA Engine are defined in the following order:
 
 * :ref:`hash` (uint64)
 * :ref:`Entity` (int)
@@ -153,6 +153,7 @@ Function namespaces in LUA Engine are defined in the following order:
 * :ref:`text`
 * :ref:`fs`
 * :ref:`scripting`
+* * :ref:`scripting_functions`
 * * :ref:`playerNSS`
 * * :ref:`pedNSS`
 * * :ref:`entityNSS`
@@ -496,7 +497,6 @@ Converts a string key to a key hash.
 
 .. code-block:: lua
    :linenos:
-
 
    system.log_info(tostring(system.string_to_key("HOME"))) -- get "HOME" key hash
 
@@ -1370,7 +1370,7 @@ Checks if an option is enabled.
 get_option_value(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the value of an option.
+Returns the value of an option.
 
 **Parameters:**
 
@@ -2857,7 +2857,7 @@ Returns the online index of the user's character.
 .. code-block:: lua
    :linenos:
    
-   index = self.get_online_index() -- Gets the online index of the user's character.
+   index = self.get_online_index() -- Returns the online index of the user's character.
    if index == 0 then -- Checks if the first character is used.
       system.log_info("The first character is used.")
    elseif index == 1 then -- Checks if the second character is used.
@@ -2917,7 +2917,7 @@ Returns the user's character's ID.
 get_name()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets self username.
+Returns your own username.
 
 **Parameters:**
 
@@ -2940,7 +2940,7 @@ Gets self username.
 get_original_scid()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets your SCID (Social Club ID).
+Returns your SCID (Social Club ID).
 
 **Parameters:**
 
@@ -2963,7 +2963,7 @@ Gets your SCID (Social Club ID).
 get_scid()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets your current SCID (Social Club ID).
+Returns your current SCID (Social Club ID).
 
 **Parameters:**
 
@@ -2986,7 +2986,7 @@ Gets your current SCID (Social Club ID).
 get_saved_scid()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets your saved SCID (Social Club ID).
+Returns your saved SCID (Social Club ID).
 
 **Parameters:**
 
@@ -3009,7 +3009,7 @@ Gets your saved SCID (Social Club ID).
 get_coords()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets your character's coordinates.
+Returns your character's coordinates.
 
 **Parameters:**
 
@@ -3032,7 +3032,7 @@ Gets your character's coordinates.
 get_coords_infront(``distance`` = ``5.0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets your current coordinates.
+Returns coordinates in front of your character.
 
 **Parameters:**
 
@@ -3055,7 +3055,7 @@ Gets your current coordinates.
 get_vehicle()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets your current vehicle's ID.
+Returns your current vehicle's ID.
 
 **Parameters:**
 
@@ -3344,6 +3344,10 @@ is_session_started()
 
 Checks whether the session has started: returns true if it's fully loaded and you're not hanging in the clouds.
 
+**Parameters:**
+
+* None
+
 **Returns:**
 
 * ``bool`` -- Whether the session has started.
@@ -3365,6 +3369,10 @@ get_active_players()
 
 Returns a number of all active players.
 
+**Parameters:**
+
+* None
+
 **Returns:**
 
 * ``int`` -- a number of all active players.
@@ -3374,7 +3382,7 @@ Returns a number of all active players.
 .. code-block:: lua
    :linenos:
    
-   activePlayers = lobby.get_active_players() -- Returns a number of all active players.
+   activePlayers = lobby.get_active_players() -- Gets a number of all active players.
    system.log_info("There are " .. tostring(activePlayers) .. " active players.")
 
 ================================
@@ -3383,6 +3391,10 @@ get_connected_players()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns a number of connected players.
+
+**Parameters:**
+
+* None
 
 **Returns:**
 
@@ -3520,6 +3532,10 @@ get_host()
 
 Returns the host player ID.
 
+**Parameters:**
+
+* None
+
 **Returns:**
 
 * ``Player`` -- The host player ID.
@@ -3539,6 +3555,10 @@ get_next_host()
 
 Returns the next host player ID.
 
+**Parameters:**
+
+* None
+
 **Returns:**
 
 * ``Player`` -- The next host player ID.
@@ -3557,6 +3577,10 @@ get_selected_player()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the ID of a player that is currently selected in the Online section.
+
+**Parameters:**
+
+* None
 
 **Returns:**
 
@@ -4479,12 +4503,128 @@ Scripting functions are functions that let you interact with DIS2RBED's built-in
 
 ================================
 
+.. _scripting_functions:
+
+Functions that are not included in any namespace
+----------------------------------------------------
+
+bool get_vehicle_bypass()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+   Not documented yet.
+
+================================
+
+void set_vehicle_bypass(bool ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+   Not documented yet.
+
+================================
+
+get_coords_infront_of_coords(``position``, ``rotation``, ``distance``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+   Not documented yet.
+
+Returns the coordinates in front of the specified coordinates.
+
+**Parameters:**
+
+* ``position`` (*Vector3*) -- Position of the object
+* ``rotation`` (*Vector3*) -- Rotation of the object
+* ``distance`` (*float*) -- Distance to the object
+
+**Returns:**
+
+* ``Vector3`` -- Coordinates in front of the object
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   coords = get_coords_infront_of_coords({0,0,0}, {0,0,0}, 10)
+   system.log_debug(tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z))
+
+================================
+
+get_coords_above_of_coords(``position``, ``distance``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+   Not documented yet.
+
+Returns the coordinates above of the specified coordinates.
+
+**Parameters:**
+
+* ``position`` (*Vector3*) -- Position of the object
+* ``distance`` (*float*) -- Distance to the object
+
+**Returns:**
+
+* ``Vector3`` -- Coordinates above of the object
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   coords = get_coords_above_of_coords({0,0,0}, 10)
+   system.log_debug(tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z))
+
+================================
+
 .. _playerNSS:
 
 Player namespace
 ----------------------
 
-Functions here
+This namespace contains functions that are related to player and are used to execute built-in menu features
+
+================================
+
+set_clean()
+^^^^^^^^^^^^^^^^^^^^
+
+Cleans the character.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_clean()
+   system.log_debug("Character cleaned.")
+
+================================
+
+set_force_field(``toggle``, ``type`` = ``0``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles and configures the force field.
+
+**Parameters:**
+
+* ``toggle`` (*bool*) -- ``true`` to enable the force field, ``false`` to disable it
+* * ``true`` to enable the force field
+* * ``false`` to disable it
+
+* ``type`` (*int*) -- Type of the force field, ``0`` for ``Normal``, 1 for ``Lethal``
+
+
 
 ================================
 
