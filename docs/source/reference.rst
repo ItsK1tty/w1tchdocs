@@ -153,40 +153,40 @@ Function namespaces in LUA Engine are defined in the following order:
 * :ref:`text`
 * :ref:`fs`
 * :ref:`scripting`
-* * :ref:`scripting_functions`
-* * :ref:`playerNSS`
-* * :ref:`pedNSS`
-* * :ref:`entityNSS`
-* * :ref:`vehicleNSS`
-* * :ref:`online`
-* * :ref:`networkNSS`
-* * :ref:`spawn`
-* * :ref:`weaponNSS`
-* * :ref:`teleport`
-* * :ref:`world`
+  * :ref:`scripting_functions`
+  * :ref:`playerNSS`
+  * :ref:`pedNSS`
+  * :ref:`entityNSS`
+  * :ref:`vehicleNSS`
+  * :ref:`online`
+  * :ref:`networkNSS`
+  * :ref:`spawn`
+  * :ref:`weaponNSS`
+  * :ref:`teleport`
+  * :ref:`world`
 * :ref:`rage`
-* * :ref:`playerNSR`
-* * :ref:`pedNSR`
-* * :ref:`vehicleNSR`
-* * :ref:`entityNSR`
-* * :ref:`object`
-* * :ref:`weaponNSR`
-* * :ref:`streaming`
-* * :ref:`ui`
-* * :ref:`draw`
-* * :ref:`camNS`
-* * :ref:`gameplay`
-* * :ref:`fire`
-* * :ref:`networkNSR`
-* * :ref:`cutscene`
-* * :ref:`controls`
-* * :ref:`graphics`
-* * :ref:`time`
-* * :ref:`ai`
-* * :ref:`decorator`
-* * :ref:`interior`
-* * :ref:`audio`
-* * :ref:`rope`
+  * :ref:`playerNSR`
+  * :ref:`pedNSR`
+  * :ref:`vehicleNSR`
+  * :ref:`entityNSR`
+  * :ref:`object`
+  * :ref:`weaponNSR`
+  * :ref:`streaming`
+  * :ref:`ui`
+  * :ref:`draw`
+  * :ref:`camNS`
+  * :ref:`gameplay`
+  * :ref:`fire`
+  * :ref:`networkNSR`
+  * :ref:`cutscene`
+  * :ref:`controls`
+  * :ref:`graphics`
+  * :ref:`time`
+  * :ref:`ai`
+  * :ref:`decorator`
+  * :ref:`interior`
+  * :ref:`audio`
+  * :ref:`rope`
 
 ================================
 
@@ -367,7 +367,7 @@ Adds a task into the process's main loop.
 * ``name`` (``string``) -- The name of the task.
 * ``hash`` (``string``) -- The hash of the task. Hash is used to identify the task, so it must be unique.
 * ``ms`` (``int``) -- The number of milliseconds to wait before calling the task. 
-* * Can be ``-1`` to execute the task again and again.
+  * Can be ``-1`` to execute the task again and again.
 * ``fn`` (``function``) -- The function to call when the task is executed.
 
 **Returns:**
@@ -538,7 +538,10 @@ Checks if key is pressed
 
 **Returns:**
 
-* ``bool`` -- ``True`` if the key is pressed, ``false`` otherwise.
+* ``bool``
+
+  * ``True`` -- The key is pressed
+  * ``false`` -- The key is not pressed
 
 **Example:**
 
@@ -1264,7 +1267,9 @@ Updates the main section to display the created Lua section/option.
 
 **Parameters:**
 
-* ``keepActiveOption`` (``bool``) -- Keep the option active (``true`` / ``false``).
+* ``keepActiveOption`` (``bool``) 
+  * ``true`` -- Save the cursor position
+  * ``false`` -- Don't save the cursor position
 
 **Returns:**
 
@@ -1284,9 +1289,12 @@ update_current_parent(``keepActiveOption`` = ``false``)
 
 Updates the current section to display the created Lua section/option.
 
+
 **Parameters:**
 
-* ``keepActiveOption`` (``bool``) -- Keep the option active (``true`` / ``false``).
+* ``keepActiveOption`` (``bool``) 
+  * ``true`` -- Save the cursor position
+  * ``false`` -- Don't save the cursor position
 
 **Returns:**
 
@@ -1312,7 +1320,9 @@ Checks if an option is toggled.
 
 **Returns:**
 
-* ``bool`` -- Returns ``True`` if the option is toggled, ``False`` otherwise.
+* ``bool``
+  * ``True`` -- The option is toggled
+  * ``False`` -- The option is not toggled
 
 **Example:**
 
@@ -1335,7 +1345,9 @@ Checks if an option is visible.
 
 **Returns:**
 
-* ``bool`` -- Returns ``True`` if the option is visible, ``False`` otherwise.
+* ``bool``
+  * ``True`` -- The option is visible
+  * ``False`` -- The option is invisible
 
 **Example:**
 
@@ -1357,7 +1369,10 @@ Checks if an option is enabled.
 
 **Returns:**
 
-* ``bool`` -- Returns ``True`` if the option is enabled, ``False`` otherwise.
+* ``bool``
+
+  * ``True`` -- The option is enabled
+  * ``False`` -- The option is disabled
 
 **Example:**
 
@@ -2052,7 +2067,9 @@ Draws a box with the given color and rounding.
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the box to draw. Hash is used to identify the box, so it must be unique.
-*  ``draw`` (``bool``) -- Whether to draw the box or not. Pass ``true`` to draw the box, ``false`` to do otherwise.
+*  ``draw`` (``bool``) -- Whether to draw the box or not.
+  * ``True`` to draw the box
+  * ``false`` to not draw the box 
 *  ``x`` (``float``) -- The X coordinate of the box's starting point.
 *  ``y`` (``float``) -- The Y coordinate of the box's starting point.
 *  ``w`` (``float``) -- The width of the box (in pixels)
@@ -2085,7 +2102,9 @@ Draws a filled box with the given color and rounding.
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the box to draw. Hash is used to identify the box, so it must be unique.
-*  ``draw`` (``bool``) -- Whether to draw the box or not. Pass ``true`` to draw the box, ``false`` to do otherwise.
+*  ``draw`` (``bool``) -- Whether to draw the box or not.
+  * ``True`` to draw the box
+  * ``false`` to not draw the box 
 *  ``x`` (``float``) -- The X coordinate of the box's starting point.
 *  ``y`` (``float``) -- The Y coordinate of the box's starting point.
 *  ``w`` (``float``) -- The width of the box (in pixels)
@@ -2118,7 +2137,9 @@ Draws a filled border box with the given color and rounding.
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the box to draw. Hash is used to identify the box, so it must be unique.
-*  ``draw`` (``bool``) -- Whether to draw the box or not. Pass ``true`` to draw the box, ``false`` to do otherwise.
+*  ``draw`` (``bool``) -- Whether to draw the box or not.
+  * ``True`` to draw the box
+  * ``false`` to not draw the box 
 *  ``x`` (``float``) -- The X coordinate of the box's starting point.
 *  ``y`` (``float``) -- The Y coordinate of the box's starting point.
 *  ``w`` (``float``) -- The width of the box (in pixels)
@@ -2126,7 +2147,9 @@ Draws a filled border box with the given color and rounding.
 *   ``borderSize`` (``float``) -- The width of the border (in pixels)
 *   ``color`` (``vector<int>``) -- The color of the box. ``{R, G, B, A}``
 *   ``colorBorder`` (``vector<int>``) -- The color of the border. ``{R, G, B, A}``
-*   ``borderFilled`` (``bool``) -- Whether to fill the border or not. Default is ``true``.
+*   ``borderFilled`` (``bool``)
+   * ``True`` to fill the border
+   * ``false`` to not fill the border
 *   ``rounding`` (``float``) -- The rounding rule of the box. Default is ``0``.
 *   ``rounding_flags`` (``int``) -- The rounding flags of the box. Default is ``0``.
 
@@ -2155,12 +2178,15 @@ Draws a circle with the given color.
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the circle to draw. Hash is used to identify the circle, so it must be unique.
-*  ``draw`` (``bool``) -- Whether to draw the circle or not. Pass ``true`` to draw the circle, ``false`` to do otherwise.
+*  ``draw`` (``bool``) -- Whether to draw the circle or not.
+   * ``True`` to draw the circle
+   * ``false`` to not draw the circle
 *  ``x`` (``float``) -- The X coordinate of the circle's center.
 *  ``y`` (``float``) -- The Y coordinate of the circle's center.
 *  ``radius`` (``float``) -- The radius of the circle (in pixels).
 *  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
-*  ``segments`` (``int``) -- The number of segments of the circle. Default is ``16``. Better to keep between ``1-50``. Going further may cause the process to crash.
+*  ``segments`` (``int``) -- The number of segments of the circle. Default is ``16``. 
+  * Better to keep between ``1-50``. Going further may cause the process to crash.
 
 **Returns:**
 
@@ -2185,12 +2211,15 @@ Draws a filled circle with the given color.
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the circle to draw. Hash is used to identify the circle, so it must be unique.
-*  ``draw`` (``bool``) -- Whether to draw the circle or not. Pass ``true`` to draw the circle, ``false`` to do otherwise.
+*  ``draw`` (``bool``) -- Whether to draw the circle or not.
+   * ``True`` to draw the circle
+   * ``false`` to not draw the circle
 *  ``x`` (``float``) -- The X coordinate of the circle's center.
 *  ``y`` (``float``) -- The Y coordinate of the circle's center.
 *  ``radius`` (``float``) -- The radius of the circle (in pixels).
 *  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
-*  ``segments`` (``int``) -- The number of segments of the circle. Default is ``16``. Better to keep between ``1-50``. Going further may cause the process to crash.
+*  ``segments`` (``int``) -- The number of segments of the circle. Default is ``16``. 
+  * Better to keep between ``1-50``. Going further may cause the process to crash.
 
 **Returns:**
 
@@ -2213,14 +2242,19 @@ Draws a filled border circle with the given color.
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the circle to draw. Hash is used to identify the circle, so it must be unique.
-*  ``draw`` (``bool``) -- Whether to draw the circle or not. Pass ``true`` to draw the circle, ``false`` to do otherwise.
+*  ``draw`` (``bool``) -- Whether to draw the circle or not.
+   * ``True`` to draw the circle
+   * ``false`` to not draw the circle
 *  ``x`` (``float``) -- The X coordinate of the circle's center.
 *  ``y`` (``float``) -- The Y coordinate of the circle's center.
 *  ``radius`` (``float``) -- The radius of the circle (in pixels).
 *  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
 *  ``colorBorder`` (``vector<int>``) -- The color of the border. ``{R, G, B, A}``
-*  ``borderFilled`` (``bool``) -- Whether to fill the border or not. Default is ``true``.
-*  ``segments`` (``int``) -- The number of segments of the circle. Default is ``16``. Better to keep between ``1-50``. Going further may cause the process to crash.
+*  ``borderFilled`` (``bool``)
+   * ``True`` to fill the border
+   * ``false`` to not fill the border
+*  ``segments`` (``int``) -- The number of segments of the circle. Default is ``16``. 
+  * Better to keep between ``1-50``. Going further may cause the process to crash.
 
 **Returns:**
 
@@ -2244,7 +2278,9 @@ Draws a triangle with the given color.
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the triangle to draw. Hash is used to identify the triangle, so it must be unique.
-*  ``draw`` (``bool``) -- Whether to draw the triangle or not. Pass ``true`` to draw the triangle, ``false`` to do otherwise.
+*  ``draw`` (``bool``) -- Whether to draw the triangle or not.
+   * ``True`` to draw the triangle
+   * ``false`` to not draw the triangle
 *  ``x`` (``float``) -- The X coordinate of the triangle's center.
 *  ``y`` (``float``) -- The Y coordinate of the triangle's center.
 *  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
@@ -2272,7 +2308,9 @@ Draws a filled triangle with the given color.
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the triangle to draw. Hash is used to identify the triangle, so it must be unique.
-*  ``draw`` (``bool``) -- Whether to draw the triangle or not. Pass ``true`` to draw the triangle, ``false`` to do otherwise.
+*  ``draw`` (``bool``) -- Whether to draw the triangle or not.
+   * ``True`` to draw the triangle
+   * ``false`` to not draw the triangle
 *  ``x`` (``float``) -- The X coordinate of the triangle's center.
 *  ``y`` (``float``) -- The Y coordinate of the triangle's center.
 *  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
@@ -2300,12 +2338,16 @@ Draws a filled border triangle with the given color.
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the triangle to draw. Hash is used to identify the triangle, so it must be unique.
-*  ``draw`` (``bool``) -- Whether to draw the triangle or not. Pass ``true`` to draw the triangle, ``false`` to do otherwise.
+*  ``draw`` (``bool``) -- Whether to draw the triangle or not.
+   * ``True`` to draw the triangle
+   * ``false`` to not draw the triangle
 *  ``x`` (``float``) -- The X coordinate of the triangle's center.
 *  ``y`` (``float``) -- The Y coordinate of the triangle's center.
 *  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
 *  ``colorBorder`` (``vector<int>``) -- The color of the border. ``{R, G, B, A}``
-*  ``borderFilled`` (``bool``) -- Whether to fill the border or not. Default is ``true``.
+*  ``borderFilled`` (``bool``)
+   * ``True`` to fill the border (Default)
+   * ``false`` to not fill the border
 
 **Returns:**
 
@@ -2329,7 +2371,9 @@ Draws a text with the given color.
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the text to draw. Hash is used to identify the text, so it must be unique.
-*  ``draw`` (``bool``) -- Whether to draw the text or not. Pass ``true`` to draw the text, ``false`` to do otherwise.
+*  ``draw`` (``bool``) -- Whether to draw the text or not.
+   * ``True`` to draw the text
+   * ``false`` to not draw the text
 *  ``text`` (``string``) -- The text to draw.
 *  ``x`` (``float``) -- The X coordinate of the text's center.
 *  ``y`` (``float``) -- The Y coordinate of the text's center.
@@ -2363,7 +2407,9 @@ Checks if the color picker is active.
 
 **Returns:**
 
-* ``bool`` -- Returns ``True`` if the color picker is active, ``False`` otherwise.
+* ``bool``
+   * ``true`` -- The color picker is active
+   * ``false`` -- The color picker is inactive
 
 **Example:**
 
@@ -2387,7 +2433,9 @@ Checks if the cursor is hovering over the menu.
 
 **Returns:**
 
-* ``bool`` -- Returns ``True`` if the cursor is hovering over the menu, ``False`` otherwise.
+* ``bool``
+   * ``true`` -- The cursor is hovering over the menu
+   * ``false`` -- The cursor is not hovering over the menu
 
 **Example:**
 
@@ -2411,7 +2459,9 @@ Checks if the cursor is hovering over an option.
 
 **Returns:**
 
-* ``bool`` -- Returns ``True`` if the cursor is hovering over an option, ``False`` otherwise.
+* ``bool``
+   * ``true`` -- The cursor is hovering over an option
+   * ``false`` -- The cursor is not hovering over an option
 
 **Example:**
 
@@ -2435,7 +2485,9 @@ Checks if the input window is active. (The input window is for example, the wind
 
 **Returns:**
 
-* ``bool`` -- Returns ``True`` if the input window is active, ``False`` otherwise.
+* ``bool``
+   * ``true`` -- The input window is active
+   * ``false`` -- The input window is inactive
 
 **Example:**
 
@@ -2823,7 +2875,8 @@ Checks whether the player is valid -- the player is alive, is fully loaded into 
 
 **Returns:**
 
-* ``bool`` -- Whether the player is valid. Can also be ``true`` during cutscenes.
+* ``bool`` -- Whether the player is valid. 
+  * Can also be ``true`` during cutscenes.
 
 **Example:**
 
@@ -2850,8 +2903,8 @@ Returns the online index of the user's character.
 **Returns:**
 
 * ``int`` -- The online index of the user's character.
-* * ``0`` -- The first character is used
-* * ``1`` -- The second character is used
+  * ``0`` -- The first character is used
+  * ``1`` -- The second character is used
 
 **Example:**
 
@@ -3670,10 +3723,10 @@ Returns the player's status.
 **Returns:**
 
 * ``string`` -- The player's status.
-* * ``H`` -- The player is the host.
-* * ``NH`` -- The player is the next host.
-* * ``F`` -- The player is a friend.
-* * ``M`` -- The player is a modder.
+  * ``H`` -- The player is the host.
+  * ``NH`` -- The player is the next host.
+  * ``F`` -- The player is a friend.
+  * ``M`` -- The player is a modder.
 
 **Example:**
 
@@ -3948,8 +4001,8 @@ Sets the player's modder status.
 
 * ``player`` (``Player``) -- The player ID.
 * ``toggle`` (``bool``) -- The modder status.
-* * ``true`` -- The player is a modder.
-* * ``false`` -- The player is not a modder.
+  * ``true`` -- The player is a modder.
+  * ``false`` -- The player is not a modder.
 
 **Returns:**
 
@@ -3974,8 +4027,8 @@ Sets the player as selected in the online menu.
 
 * ``player`` (``Player``) -- The player ID.
 * ``toggle`` (``bool``) -- The selected status.
-* * ``true`` -- The player is set as selected.
-* * ``false`` -- The player is set as not selected.
+  * ``true`` -- The player is set as selected.
+  * ``false`` -- The player is set as not selected.
 
 **Returns:**
 
@@ -4000,8 +4053,8 @@ Sets the player's staff status.
 
 * ``player`` (``Player``) -- The player ID.
 * ``toggle`` (``bool``) -- The staff status.
-* * ``true`` -- The player is a staff member.
-* * ``false`` -- The player is not a staff member.
+  * ``true`` -- The player is a staff member.
+  * ``false`` -- The player is not a staff member.
 
 **Returns:**
 
@@ -4039,7 +4092,9 @@ Check if string contains character/word.
 
 **Returns:**
 
-* ``bool`` -- Returns ``True`` if data is found, ``False`` otherwise.
+* ``bool``
+   * ``true`` -- The string contains the data.
+   * ``false`` -- The string does not contain the data.
 
 **Example:**
 
@@ -4063,7 +4118,9 @@ Check if string is ``float`` type.
 
 **Returns:**
 
-* ``bool`` -- Returns ``True`` if data is float, ``False`` otherwise.
+* ``bool``
+   * ``true`` -- The data is a float.
+   * ``false`` -- The data is not a float.
 
 **Example:**
 
@@ -4086,7 +4143,9 @@ Check if string is a number.
 
 **Returns:**
 
-* ``bool`` -- Returns ``True`` if data is number, ``False`` otherwise.
+* ``bool``
+   * ``true`` -- The data is a number.
+   * ``false`` -- The data is not a number.
 
 **Example:**
 
@@ -4109,7 +4168,10 @@ Checks if string is a valid IPv4.
 
 **Returns:**
 
-* ``bool`` -- Returns ``True`` if data is a valid IPv4, ``False`` otherwise.
+* ``bool``
+   * ``true`` -- The data is a valid IPv4.
+   * ``false`` -- The data is not a valid IPv4.
+
 
 **Example:**
 
@@ -4131,12 +4193,12 @@ Generates a random string.
 
 * ``length`` (``int``) -- Length of the string.
 * ``type`` (``eRandomType``) -- Type of string generation: 
-* * ``0`` -- Upper
-* * ``1`` -- Lower
-* * ``2`` -- Digits
-* * ``3`` -- UpperLower
-* * ``4`` -- UpperDigits
-* * ``5`` -- LowerDigits
+  * ``0`` -- Upper
+  * ``1`` -- Lower
+  * ``2`` -- Digits
+  * ``3`` -- UpperLower
+  * ``4`` -- UpperDigits
+  * ``5`` -- LowerDigits
 
 **Returns:**
 
@@ -4313,7 +4375,10 @@ Checks if directory exists.
 
 **Returns:**
 
-* ``bool`` -- ``True`` if directory exists, ``false`` otherwise
+* ``bool``
+
+  * ``True`` -- directory exists
+  * ``False`` -- directory does not exist
 
 **Example:**
 
@@ -4338,7 +4403,10 @@ Checks if file exists.
 
 **Returns:**
 
-* ``bool`` -- ``True`` if file exists, ``false`` otherwise
+* ``bool``
+
+  * ``True`` -- file exists
+  * ``False`` -- file does not exist
 
 **Example:**
 
@@ -4362,7 +4430,9 @@ Removes a file.
 
 **Returns:**
 
-* ``bool`` -- ``True`` if file was removed, ``false`` otherwise (e.g. file was not found)
+* ``bool``
+  * ``True`` -- The file was removed
+  * ``False`` -- The file was not removed (e.g. file was not found)
 
 **Example:**
 
@@ -4387,7 +4457,9 @@ Checks if file is corrupted, checks if the permissions are correct, if it's read
 
 **Returns:**
 
-* ``bool`` -- ``True`` if file is valid, ``false`` otherwise (e.g. file was not found)
+* ``bool``
+  * ``True`` -- The file is valid
+  * ``False`` -- The file is invalid (e.g. file was not found)
 
 **Example:**
 
@@ -4411,7 +4483,10 @@ Checks if file is empty.
 
 **Returns:**
 
-* ``bool`` -- ``True`` if file is empty, ``false`` otherwise
+* ``bool``
+
+  * ``True`` -- The file is empty
+  * ``False`` -- The file is not empty
 
 **Example:**
 
@@ -4621,13 +4696,13 @@ Toggles and configures the force field.
 
 * ``toggle`` (``bool``)
 
-   * ``true`` to enable the force field
-   * ``false`` to disable it
-
+  * ``true`` to enable the force field
+  * ``false`` to disable it
+  
 * ``type`` (``int``) -- Type of the force field 
 
-   * ``0`` for ``Normal`` (Default)
-   * ``1`` for ``Lethal``
+  * ``0`` for ``Normal`` (Default)
+  * ``1`` for ``Lethal``
 
 ================================
 
@@ -4639,8 +4714,9 @@ Toggles god mode.
 **Parameters:**
 
 * ``toggle`` (``bool``) 
-* * ``true`` to enable god mode
-* * ``false`` to disable it
+
+  * ``true`` to enable god mode
+  * ``false`` to disable it
 
 **Returns:**
 
