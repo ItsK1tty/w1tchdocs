@@ -4169,8 +4169,8 @@ Checks if string is a valid IPv4.
 **Returns:**
 
 * ``bool``
-   * ``true`` -- The data is a valid IPv4.
-   * ``false`` -- The data is not a valid IPv4.
+  * ``true`` -- The data is a valid IPv4.
+  * ``false`` -- The data is not a valid IPv4.
 
 
 **Example:**
