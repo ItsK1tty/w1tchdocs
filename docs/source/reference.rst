@@ -2075,17 +2075,17 @@ Draws a box with the given color and rounding.
 
 *  ``hash`` (``string``) -- The hash of the box to draw. Hash is used to identify the box, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the box or not.
-  * ``True`` to draw the box
-  * ``false`` to not draw the box 
+* * ``True`` to draw the box
+* * ``false`` to not draw the box 
 *  ``x`` (``float``) -- The X coordinate of the box's starting point.
 *  ``y`` (``float``) -- The Y coordinate of the box's starting point.
 *  ``w`` (``float``) -- The width of the box (in pixels)
 *   ``h`` (``float``) -- The height of the box (in pixels)
 *   ``color`` (``vector<int>``) -- The color of the box. ``{R, G, B, A}``
 *   ``rounding`` (``float``) -- The rounding rule of the box.
-  *  Default is ``0``.
+* *  Default is ``0``.
 *   ``rounding_flags`` (``int``) -- The rounding flags of the box. 
-  * Default is ``0``.
+* * Default is ``0``.
 
 More about rounding flags: :doc:`roundingflags`
 
