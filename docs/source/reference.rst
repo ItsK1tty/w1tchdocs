@@ -678,8 +678,8 @@ Adds a menu option button.
 
 ======================
 
-add_option_toggle(``name``, ``hash``, ``parent``, ``fn``);
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+add_option_toggle(``name``, ``hash``, ``parent``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a toggable menu option button.
 
@@ -706,7 +706,7 @@ Adds a toggable menu option button.
 ======================
 
 add_option_slider(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``parent``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a slider menu option.
 
@@ -737,7 +737,7 @@ Adds a slider menu option.
 ======================
 
 add_option_slider_toggle(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``parent``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a toggable slider menu option.
 
@@ -768,7 +768,7 @@ Adds a toggable slider menu option.
 ======================
 
 add_option_value(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``parent``, ``valueSuffix``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a menu option with a pre-set value
 
@@ -800,7 +800,7 @@ Adds a menu option with a pre-set value
 ======================
 
 add_option_value_toggle(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``parent``, ``valueSuffix``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a toggable menu option with a pre-set value.
 
@@ -832,7 +832,7 @@ Adds a toggable menu option with a pre-set value.
 ======================
 
 add_option_value_str(``name``, ``hash``, ``value``, ``parent``, ``list``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a menu option with multiple values.
 
@@ -861,7 +861,7 @@ Adds a menu option with multiple values.
 ======================
 
 add_option_value_str_toggle(``name``, ``hash``, ``value``, ``parent``, ``list``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a toggable menu option with multiple values.
 
@@ -890,7 +890,7 @@ Adds a toggable menu option with multiple values.
 ======================
 
 add_option_teleport(``name``, ``coords``, ``parent``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a teleport option button.
 
@@ -997,7 +997,7 @@ Adds a text option. (e.g. a note).
 ======================
 
 add_player_option(``name``, ``hash``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a player menu option in the selected player section.
 
@@ -1025,8 +1025,8 @@ Adds a player menu option in the selected player section.
 
 ======================
 
-add_player_option_toggle(``name``, ``hash``, ``fn``);
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+add_player_option_toggle(``name``, ``hash``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a toggable player menu option in the selected player section.
 
@@ -1050,7 +1050,7 @@ Adds a toggable player menu option in the selected player section.
 ======================
 
 add_player_option_slider(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a player menu slider option in the selected player section.
 
@@ -1078,7 +1078,7 @@ Adds a player menu slider option in the selected player section.
 ======================
 
 add_player_option_slider_toggle(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a toggable slider player menu option in the selected player section.
 
@@ -1106,7 +1106,7 @@ Adds a toggable slider player menu option in the selected player section.
 ======================
 
 add_player_option_value(``name``, ``hash``, ``value``, ``min``, ``max``, ``mod``, ``valueSuffix``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a player menu option with a set value in the selected player section.
 
@@ -1164,7 +1164,7 @@ Adds a toggable player menu option with a set value in the selected player secti
 ======================
 
 add_player_option_value_str(``name``, ``hash``, ``value``, ``list``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a player menu option with multiple values in the selected player section.
 
@@ -1190,7 +1190,7 @@ Adds a player menu option with multiple values in the selected player section.
 ======================
 
 add_player_option_value_str_toggle(``name``, ``hash``, ``value``, ``list``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a toggable player menu option with multiple values in the selected player section.
 
@@ -1315,7 +1315,7 @@ Updates the current section to display the created Lua section/option.
 ======================
 
 is_option_toggled(``hash``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Checks if an option is toggled.
 
@@ -1341,7 +1341,7 @@ Checks if an option is toggled.
 ======================
 
 is_option_visible(``hash``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Checks if an option is visible.
 
@@ -1366,7 +1366,7 @@ Checks if an option is visible.
 ======================
 
 is_option_enabled(``hash``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Checks if an option is enabled.
 
@@ -1391,7 +1391,7 @@ Checks if an option is enabled.
 ======================
 
 get_option_value(``hash``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the value of an option.
 
@@ -1414,7 +1414,7 @@ Returns the value of an option.
 ======================
 
 remove_option(``hash``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Removes an option.
 
@@ -1432,6 +1432,1187 @@ Removes an option.
    :linenos:
 
    menu.remove_option("luaOpt") --assuming there's an option with hash "luaOpt"
+
+======================
+
+
+
+Menu sections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+section_self_mods()
+^^^^^^^^^^^^^^^^^^^^
+
+Returns the Self Mods section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Let's add an option named "Useless Button" in the main Self Mods section.
+
+   menu.add_option("Useless Button", "optUselessBtn", menu.section_self_mods(), function())
+
+======================
+
+section_self_mods_other()
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Self Mods -> Other section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Let's add an option named "Other Option" in the Self Mods -> Other section.
+
+   menu.add_option("Other Option", "optOtherOpt", menu.section_self_mods_other(), function())
+
+======================
+
+section_self_mods_no_clip()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Self Mods -> No Clip section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Let's add an option named "No Clip Plus" in the Self Mods -> No Clip section.
+
+   menu.add_option("No Clip Plus", "optNoclipPlus", menu.section_self_mods_no_clip(), function())
+
+======================
+
+section_self_mods_invincibility()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Self Mods -> Invincibility section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Let's add an option named "Thanos Mode" in the Self Mods -> Invincibility section.
+
+   menu.add_option("Thanos Mode", "optThanosMode", menu.section_self_mods_invincibility(), function())
+
+======================
+
+section_online()
+^^^^^^^^^^^^^^^^^
+
+Returns the Online section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Let's add an option named "Useless Button" in the Online section.
+
+   menu.add_option("Useless Button", "optUselessBtn2", menu.section_online(), function())
+
+======================
+
+section_online_player(``playerId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Online -> Player (specific) section ID.
+
+**Parameters:**
+
+* ``playerId`` (``int``) -- The player ID.
+
+**Returns:**
+
+* ``int`` -- The ID of the player's menu tab.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Look Player", "optLookPlayer", menu.section_online_player(23), function())
+
+======================
+
+section_online_players()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Online -> Players section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("All Online Players", "optAllOnlPlayers", menu.section_online_players(), function())
+
+======================
+
+section_online_protex()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Online -> Protections section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Super Protex", "optSuperPrtx", menu.section_online_protex(), function())
+
+======================
+
+section_online_other()
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Online -> Other section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Other Button", "optOtherBtn", menu.section_online_other(), function())
+
+======================
+
+section_online_spoofer()
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Online -> Spoofing section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Spoof All", "optSpoofAll", menu.section_online_spoofer(), function())
+
+======================
+
+section_network()
+^^^^^^^^^^^^^^^^^^^^
+
+Returns the Online -> Network section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Disconnect", "optNtwrkDisconnect", menu.section_network(), function())
+
+======================
+
+section_recovery()
+^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Recovery section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Let's integrate Heist Control LUA in the Recovery section.
+
+   menu.add_delimiter("Heist Control v0.1", menu.section_recovery())
+
+   -- Child section for Cayo Perico Heist options.
+
+   CayoPericoHeist = menu.add_child("Cayo Perico Heist", menu.section_recovery())
+
+======================
+
+section_recovery_bunker()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Recovery -> Bunker Options section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Sell Everything", "optSellEvery", menu.section_recovery_bunker(), function())
+
+======================
+
+section_recovery_night_club()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Recovery -> NightClub Options section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Let's add a toggable option in memory of the 6 Mil NC Safe Loop, we miss you.
+
+   menu.add_option_toggle("Loop Nightclub Safe Cash", "optNcSafeLoop", menu.section_recovery_nightclub(), function())
+
+======================
+
+section_recovery_motorcycle_club()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Recovery -> Motorcycle Club Options section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Ride or Die", "optMcRideOrDie", menu.section_recovery_motorcycle_club(), function())
+
+======================
+
+section_recovery_casino()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Recovery -> Casino Options section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   function casinoJackpot()
+      log_warning("You hit the jackpot!!!")
+   end
+
+   menu.add_option("Jackpot", "optCasinoJckpt", menu.section_recovery_casino(), casinoJackpot)
+
+======================
+
+section_vehicle_spawn()
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Vehicle Spawn section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Let's add Spawn Zentorno option to Vehicle Spawn section.
+
+   spawn = menu.section_vehicle_spawn()
+
+   zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+
+   menu.add_option_spawn("Spawn Zentorno", zentornoHash, 0, spawn)
+
+======================
+
+section_weapons()
+^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Weapons section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Add Weapon", "optAddWeapon", menu.section_weapons(), function())
+
+======================
+
+section_weapons_ammo()
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Weapons -> Weapons Ammo section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Add Ammo", "optAddAmmo", menu.section_weapons_ammo(), function())
+
+======================
+
+section_teleport()
+^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Teleport section.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Let's add a direct Casino Entrance teleport option, in the Teleport section.
+
+   teleport = menu.section_teleport()
+
+   menu.add_option_teleport("Casino Entrance", { 922.680847, 47.205017, 81.106346 }, teleport)
+
+======================
+
+section_teleport_ipl()
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Teleport -> IPL section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Another IPL Teleport", "optAnotherIplTp", menu.section_teleport_ipl(), function())
+
+======================
+
+section_vehicle_mods()
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Vehicle Mods section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Full Upgrade", "optFullUpgrade", menu.section_vehicle_mods(), function())
+
+======================
+
+section_los_santos_customs()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the LSC Mods section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Rainbow Color", "optLscRainbowClrs", menu.section_los_santos_customs(), function())
+
+======================
+
+section_model_changer()
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Model Changer section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Turn into a cat", "optModelBecomeCat", menu.section_model_changer(), function())
+
+======================
+
+section_animations()
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Animations section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Dance2", "optAnimDance2", menu.section_animations(), function())
+
+======================
+
+section_model_swapper()
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Model Swapper section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Swap Model", "optModelSwap", menu.section_model_swapper(), function())
+
+======================
+
+section_crafting_workshop()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Crafting Workshop section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- Let's add a child section in Crafting Workshop section named "Spawnable Custom Workshops"
+
+   spawnables = menu.add_child("Spawnable Custom Workshops", menu.section_crafting_workshop())
+
+   -- Inside we will have an option to spawn a custom made workshop preset.
+
+   menu.add_option("Spawn Flying Kosatka (Custom 1)", "optCraftingSpawnCustom1", spawnables, function())
+
+======================
+
+section_outfit_store()
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns he Outfit Store section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Random Outfit", "optOutfitRandom", menu.section_outfit_store(), function())
+
+======================
+
+section_outfit_store()
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Outfit Store section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Random Outfit", "optOutfitRandom", menu.section_outfit_store(), function())
+
+======================
+
+section_settings()
+^^^^^^^^^^^^^^^^^^^
+
+Returns the Settings section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Reset Settings", "optSettingsResetStngs", menu.section_settings(), function())
+
+======================
+
+section_settings_lua()
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Settings -> Lua section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Save Lua Settings", "optLuaSettingsSave", menu.section_settings_lua(), function())
+
+======================
+
+section_interface()
+^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Interface section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("Reset Theme", "optInterfaceResetTheme", menu.section_interface(), function())
+
+======================
+
+section_world()
+^^^^^^^^^^^^^^^^^^^
+
+Returns the World section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("World", "optWorld", menu.section_world(), function())
+
+======================
+
+section_about()
+^^^^^^^^^^^^^^^^^^^
+
+Returns the About section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the parent menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_option("About Me", "optAboutAbtMe", menu.section_about(), function())
+
+======================
+
+is_menu_active()
+^^^^^^^^^^^^^^^^^^^
+
+Checks if the menu is active.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool`` -- The status of the menu.
+  
+  *  ``true`` -- The menu is opened
+  *  ``false`` -- The menu is closed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   isMenuOpened = menu.is_menu_active()
+
+======================
+
+is_menu_controls_active()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the menu controls are active.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool`` -- Returns the status of the menu controls.
+  
+  *  ``true`` -- The menu controls are active
+  *  ``false`` -- The menu controls are inactive
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   MenuControlsCheck = menu.is_menu_controls_active()
+
+======================
+
+is_menu_mouse_controls_active()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the menu mouse controls are active.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool`` -- Returns the status of the menu mouse controls.
+  
+  *  ``true`` -- The menu mouse controls are active
+  *  ``false`` -- The menu mouse controls are inactive
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   MouseControlsCheck = menu.is_menu_mouse_controls_active()
+
+======================
+
+menu_set_controls(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles menu controls on/off.
+
+**Parameters:**
+
+* ``toggle`` (``bool``)
+
+  * ``true`` to enable menu controls
+  * ``false`` to disable them
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   controlsOn = menu.set_controls(true)
+
+======================
+
+menu_set_mouse_controls(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles menu mouse controls on/off.
+
+**Parameters:**
+
+* ``toggle`` (``bool``)
+
+  * ``true`` to enable menu mouse controls
+  * ``false`` to disable them
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   mouseControlsOn = menu.set_mouse_controls(true)
+
+======================
+
+menu_set_value()
+^^^^^^^^^^^^^^^^^^^^
+
+Menu action (Set Value).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   setValue = menu.set_value()
+
+======================
+
+menu_back()
+^^^^^^^^^^^^^^
+
+Menu navigation action (Back).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menuBack = menu.menu_back()
+
+======================
+
+menu_back_mouse()
+^^^^^^^^^^^^^^^^^^^
+
+Menu mouse navigation action (Back).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menuBackMouse = menu.menu_back_mouse()
+
+======================
+
+menu_down()
+^^^^^^^^^^^^^^^^
+
+Menu navigation action (Down).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menuDown = menu.menu_down()
+
+======================
+
+
+menu_left()
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Menu navigation action (Left).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menuLeft = menu.menu_left()
+
+======================
+
+menu_remove_hotkey()
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Menu action (Remove Hotkey).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menuRemHotkey = menu.menu_remove_hotkey()
+
+======================
+
+menu_right()
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Menu navigation action (Right).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menuRight = menu.menu_right()
+
+======================
+
+menu_save()
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Menu action (Save settings).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menuSave = menu.menu_save()
+
+======================
+
+menu_select()
+^^^^^^^^^^^^^^^^^^^^^^
+
+Menu navigation action (Select).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menuSelect = menu.menu_select()
+
+======================
+
+menu_select_mouse()
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Menu mouse navigation action (Select).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menuSelectMouse = menu.menu_select_mouse()
+
+======================
+
+menu_toggle()
+^^^^^^^^^^^^^^^^^^
+
+Menu navigation action (Toggle).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menuToggle = menu.menu_toggle()
+
+======================
+
+menu_up()
+^^^^^^^^^^^^^
+
+Menu navigation action (**Up**).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menuUp = menu.menu_up()
 
 ======================
 
@@ -2162,11 +3343,9 @@ Draws a filled border box with the given color and rounding.
 * * ``True`` to fill the border
 * * ``false`` to not fill the border
 *   ``rounding`` (``float``) -- The rounding rule of the box. 
-
-  * Default is ``0``.
+* * Default is ``0``.
 *   ``rounding_flags`` (``int``) -- The rounding flags of the box. 
-
-  * Default is ``0``.
+* * Default is ``0``.
 
 More about rounding flags: :doc:`roundingflags`
 
@@ -2194,17 +3373,15 @@ Draws a circle with the given color.
 
 *  ``hash`` (``string``) -- The hash of the circle to draw. Hash is used to identify the circle, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the circle or not.
-
-  * ``True`` to draw the circle
-  * ``false`` to not draw the circle
+* * ``True`` to draw the circle
+* * ``false`` to not draw the circle
 *  ``x`` (``float``) -- The X coordinate of the circle's center.
 *  ``y`` (``float``) -- The Y coordinate of the circle's center.
 *  ``radius`` (``float``) -- The radius of the circle (in pixels).
 *  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
 *  ``segments`` (``int``) -- The number of segments of the circle. 
-
-  * Default is ``16``. 
-  * Better to keep between ``1-50``. Going further may cause the process to crash.
+* * Default is ``16``. 
+* * Better to keep between ``1-50``. Going further may cause the process to crash.
 
 **Returns:**
 
@@ -2230,16 +3407,15 @@ Draws a filled circle with the given color.
 
 *  ``hash`` (``string``) -- The hash of the circle to draw. Hash is used to identify the circle, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the circle or not.
-
-  * ``True`` to draw the circle
-  * ``false`` to not draw the circle
+* * ``True`` to draw the circle
+* * ``false`` to not draw the circle
 *  ``x`` (``float``) -- The X coordinate of the circle's center.
 *  ``y`` (``float``) -- The Y coordinate of the circle's center.
 *  ``radius`` (``float``) -- The radius of the circle (in pixels).
 *  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
 *  ``segments`` (``int``) -- The number of segments of the circle. 
-  * Default is ``16``. 
-  * Better to keep between ``1-50``. Going further may cause the process to crash.
+* * Default is ``16``. 
+* * Better to keep between ``1-50``. Going further may cause the process to crash.
 
 **Returns:**
 
@@ -2263,21 +3439,19 @@ Draws a filled border circle with the given color.
 
 *  ``hash`` (``string``) -- The hash of the circle to draw. Hash is used to identify the circle, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the circle or not.
-
-  * ``True`` to draw the circle
-  * ``false`` to not draw the circle
+* * ``True`` to draw the circle
+* * ``false`` to not draw the circle
 *  ``x`` (``float``) -- The X coordinate of the circle's center.
 *  ``y`` (``float``) -- The Y coordinate of the circle's center.
 *  ``radius`` (``float``) -- The radius of the circle (in pixels).
 *  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
 *  ``colorBorder`` (``vector<int>``) -- The color of the border. ``{R, G, B, A}``
 *  ``borderFilled`` (``bool``)
-
-  * ``True`` to fill the border
-  * ``false`` to not fill the border
+* * ``True`` to fill the border
+* * ``false`` to not fill the border
 *  ``segments`` (``int``) -- The number of segments of the circle. 
-  * Default is ``16``. 
-  * Better to keep between ``1-50``. Going further may cause the process to crash.
+* * Default is ``16``. 
+* * Better to keep between ``1-50``. Going further may cause the process to crash.
 
 **Returns:**
 
@@ -2302,14 +3476,13 @@ Draws a triangle with the given color.
 
 *  ``hash`` (``string``) -- The hash of the triangle to draw. Hash is used to identify the triangle, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the triangle or not.
-
-  * ``True`` to draw the triangle
-  * ``false`` to not draw the triangle
+* * ``True`` to draw the triangle
+* * ``false`` to not draw the triangle
 *  ``x`` (``float``) -- The X coordinate of the triangle's center.
 *  ``y`` (``float``) -- The Y coordinate of the triangle's center.
 *  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
 *  ``size`` (``float``) -- The size of the triangle (in pixels). 
-  * Default is ``1.1``.
+* * Default is ``1.1``.
 
 **Returns:**
 
@@ -2335,13 +3508,13 @@ Draws a filled triangle with the given color.
 *  ``hash`` (``string``) -- The hash of the triangle to draw. Hash is used to identify the triangle, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the triangle or not.
 
-  * ``True`` to draw the triangle
-  * ``false`` to not draw the triangle
+* * ``True`` to draw the triangle
+* * ``false`` to not draw the triangle
 *  ``x`` (``float``) -- The X coordinate of the triangle's center.
 *  ``y`` (``float``) -- The Y coordinate of the triangle's center.
 *  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
 *  ``size`` (``float``) -- The size of the triangle (in pixels). 
-  * Default is ``1.1``.
+* * Default is ``1.1``.
 
 **Returns:**
 
@@ -2366,17 +3539,16 @@ Draws a filled border triangle with the given color.
 
 *  ``hash`` (``string``) -- The hash of the triangle to draw. Hash is used to identify the triangle, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the triangle or not.
-
-  * ``True`` to draw the triangle
-  * ``false`` to not draw the triangle
+* * ``True`` to draw the triangle
+* * ``false`` to not draw the triangle
 *  ``x`` (``float``) -- The X coordinate of the triangle's center.
 *  ``y`` (``float``) -- The Y coordinate of the triangle's center.
 *  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
 *  ``colorBorder`` (``vector<int>``) -- The color of the border. ``{R, G, B, A}``
 *  ``borderFilled`` (``bool``)
 
-  * ``True`` to fill the border (Default)
-  * ``false`` to not fill the border
+* * ``True`` to fill the border (Default)
+* * ``false`` to not fill the border
 
 **Returns:**
 
@@ -2401,15 +3573,15 @@ Draws a text with the given color.
 
 *  ``hash`` (``string``) -- The hash of the text to draw. Hash is used to identify the text, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the text or not.
-  * ``True`` to draw the text
-  * ``false`` to not draw the text
+* * ``True`` to draw the text
+* * ``false`` to not draw the text
 *  ``text`` (``string``) -- The text to draw.
 *  ``x`` (``float``) -- The X coordinate of the text's center.
 *  ``y`` (``float``) -- The Y coordinate of the text's center.
 *  ``scale`` (``float``) -- The scale of the text.
 *  ``color`` (``vector<int>``) -- The color of the text. ``{R, G, B, A}``
 *  ``flags`` (``int``) -- The flags for the text. 
-  * Default is ``0``.
+* * Default is ``0``.
 
 More about text flags: :doc:`textflags`
 
@@ -3005,7 +4177,7 @@ Returns the user's character's ID.
 ======================
 
 get_name()
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 Returns your own username.
 
@@ -3028,7 +4200,7 @@ Returns your own username.
 ======================
 
 get_original_scid()
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns your SCID (Social Club ID).
 
@@ -3051,7 +4223,7 @@ Returns your SCID (Social Club ID).
 ======================
 
 get_scid()
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 Returns your current SCID (Social Club ID).
 
@@ -3074,7 +4246,7 @@ Returns your current SCID (Social Club ID).
 ======================
 
 get_saved_scid()
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 Returns your saved SCID (Social Club ID).
 
@@ -3097,7 +4269,7 @@ Returns your saved SCID (Social Club ID).
 ======================
 
 get_coords()
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 Returns your character's coordinates.
 
@@ -3120,7 +4292,7 @@ Returns your character's coordinates.
 ======================
 
 get_coords_infront(``distance`` = ``5.0``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns coordinates in front of your character.
 
@@ -3145,7 +4317,7 @@ Returns coordinates in front of your character.
 ======================
 
 get_vehicle()
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 Returns your current vehicle's ID.
 
@@ -4123,7 +5295,7 @@ This namespace contains functions related to text manipulation.
 ================================
 
 contains(``source``, ``data``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if string contains character/word.
 
@@ -4151,7 +5323,7 @@ Check if string contains character/word.
 ======================
 
 is_float(``data``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if string is ``float`` type.
 
@@ -4177,7 +5349,7 @@ Check if string is ``float`` type.
 ======================
 
 is_number(``data``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Check if string is a number.
 
@@ -4203,7 +5375,7 @@ Check if string is a number.
 ======================
 
 is_valid_ip4(``data``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Checks if string is a valid IPv4.
 
@@ -4231,7 +5403,7 @@ Checks if string is a valid IPv4.
 ======================
 
 get_random_string(``length``, ``type``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Generates a random string.
 
@@ -4262,7 +5434,7 @@ Generates a random string.
 ======================
 
 remove_characters(``data``, ``word``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Removes certain characters from string.
 
@@ -4286,7 +5458,7 @@ Removes certain characters from string.
 ======================
 
 replace_characters(``data``, ``first``, ``second``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Replaces certain characters from string.
 
@@ -4311,7 +5483,7 @@ Replaces certain characters from string.
 ======================
 
 resize_string_center(``data``, ``length``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Cuts string from center.
 
@@ -4341,7 +5513,7 @@ Cuts string from center.
 ======================
 
 resize_string_left(``data``, ``length``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Cuts string from the left
 
@@ -4370,7 +5542,7 @@ Cuts string from the left
 ======================
 
 resize_string_right(``data``, ``length``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Cuts string from the right.
 
@@ -4650,7 +5822,7 @@ void set_vehicle_bypass(bool ``toggle``)
 ================================
 
 get_coords_infront_of_coords(``position``, ``rotation``, ``distance``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
    Not documented yet.
@@ -4712,26 +5884,6 @@ Player namespace
 This namespace contains functions that are related to player and are used to execute built-in menu features
 
 ================================
-		void set_clean();
-		void set_force_field(bool toggle, int type = 0);
-		void set_god_mode(bool toggle);
-		void set_infinite_stamina(bool toggle);
-		void set_invisibility(bool toggle);
-		void set_mobile_radio(bool toggle);
-		void set_night_vision(bool toggle);
-		void set_no_wanted_level();
-		void set_noclip(bool toggle, float speed);
-		void set_ragdoll(bool toggle);
-		void set_regeneration(float value);
-		void set_run_speed(bool toggle, float value);
-		void set_seatbelt(bool toggle);
-		void set_super_man(bool toggle, int type);
-		void set_super_run(float value);
-		void set_swim_speed(bool toggle, float value);
-		void set_thermal_vision(bool toggle);
-		void set_walk_on_air(bool toggle);
-		void set_wanted_level(int value);
-
 
 set_clean()
 ^^^^^^^^^^^^^^^^^^^^
@@ -4763,7 +5915,7 @@ Toggles and configures the force field.
 
 **Parameters:**
 
-* ``toggle`` (``bool``)
+* ``toggle`` (``bool``) -- Toggle
 
   * ``true`` to enable the force field
   * ``false`` to disable it
@@ -4772,6 +5924,18 @@ Toggles and configures the force field.
 
   * ``0`` for ``Normal`` (Default)
   * ``1`` for ``Lethal``
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_force_field(true, 1)
+   system.log_debug("Lethal force field enabled.")
 
 ================================
 
@@ -4782,7 +5946,7 @@ Toggles god mode.
 
 **Parameters:**
 
-* ``toggle`` (``bool``) 
+* ``toggle`` (``bool``) -- Toggle
 
   * ``true`` to enable god mode
   * ``false`` to disable it
@@ -4808,7 +5972,7 @@ Toggles infinite stamina.
 
 **Parameters:**
 
-* ``toggle`` (``bool``) 
+* ``toggle`` (``bool``) -- Toggle
 
   * ``true`` to enable infinite stamina
   * ``false`` to disable it
@@ -4834,7 +5998,7 @@ Toggles invisibility.
 
 **Parameters:**
 
-* ``toggle`` (``bool``) 
+* ``toggle`` (``bool``) -- Toggle
 
   * ``true`` to enable invisibility
   * ``false`` to disable it
@@ -4860,7 +6024,7 @@ Toggles mobile radio.
 
 **Parameters:**
 
-* ``toggle`` (``bool``) 
+* ``toggle`` (``bool``) -- Toggle
 
   * ``true`` to enable mobile radio
   * ``false`` to disable it
@@ -4886,7 +6050,7 @@ Toggles night vision.
 
 **Parameters:**
 
-* ``toggle`` (``bool``) 
+* ``toggle`` (``bool``) -- Toggle
 
   * ``true`` to enable night vision
   * ``false`` to disable it
@@ -4935,7 +6099,7 @@ Toggles noclip.
 
 **Parameters:**
 
-* ``toggle`` (``bool``) 
+* ``toggle`` (``bool``) -- Toggle
 
   * ``true`` to enable noclip
   * ``false`` to disable it
@@ -4956,8 +6120,221 @@ Toggles noclip.
 
 ================================
 
+set_ragdoll(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles ragdoll.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` to enable ragdoll
+  * ``false`` to disable it
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_ragdoll(true)
+   system.log_debug("Ragdoll enabled.")
+
+================================
+
+set_regeneration(``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the regeneration value.
+
+**Parameters:**
+
+* ``value`` (``float``) -- The regeneration value
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_regeneration(0.5)
+   system.log_debug("Regeneration set to 0.5.")
+
+================================
+
+set_run_speed(``toggle``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles and configures the walk & run speed.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` to enable speed hack
+  * ``false`` to disable it
+
+* ``value`` (``float``) -- Speed
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_run_speed(true, 1.0)
+   system.log_debug("Run speed enabled.")
 
 
+================================
+
+set_seatbelt(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles seatbelt.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` to enable seatbelt
+  * ``false`` to disable it
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_seatbelt(true)
+   system.log_debug("Seatbelt enabled.")
+
+
+
+set_super_run(``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles and configures super run mode.
+
+**Parameters:**
+
+* ``value`` (``float``) -- Speed
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_super_run(4.0)
+   system.log_debug("Super run enabled.")
+
+================================
+
+set_swim_speed(``toggle``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles and configures the swim speed.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` to enable swim hack
+  * ``false`` to disable it
+
+* ``value`` (``float``) -- Speed
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_swim_speed(true, 4.0)
+   system.log_debug("Swim speed enabled.")
+
+================================
+
+set_thermal_vision(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles thermal vision.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` to enable thermal vision
+  * ``false`` to disable it
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_thermal_vision(true)
+   system.log_debug("Thermal vision enabled.")
+
+================================
+
+set_walk_on_air(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles walk on air.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` to enable walk on air
+  * ``false`` to disable it
+   
+================================
+
+set_wanted_level(``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the wanted level.
+
+**Parameters:**
+
+* ``value`` (``int``) -- The wanted level
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_wanted_level(5)
+   system.log_debug("Wanted level set to 5.")
 
 ================================
 
