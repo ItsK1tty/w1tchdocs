@@ -1271,7 +1271,7 @@ Updates the main section to display the created Lua section/option.
 * ``keepActiveOption`` (``bool``) 
 
   * ``true`` -- Save the cursor position
-  * ``false`` -- Don't save the cursor position
+  * ``false`` -- Don't save the cursor position (default)
 
 **Returns:**
 
@@ -1297,7 +1297,7 @@ Updates the current section to display the created Lua section/option.
 * ``keepActiveOption`` (``bool``) 
 
   * ``true`` -- Save the cursor position
-  * ``false`` -- Don't save the cursor position
+  * ``false`` -- Don't save the cursor position (default)
 
 **Returns:**
 
@@ -2081,8 +2081,12 @@ Draws a box with the given color and rounding.
 *  ``w`` (``float``) -- The width of the box (in pixels)
 *   ``h`` (``float``) -- The height of the box (in pixels)
 *   ``color`` (``vector<int>``) -- The color of the box. ``{R, G, B, A}``
-*   ``rounding`` (``float``) -- The rounding rule of the box. Default is ``0``.
-*   ``rounding_flags`` (``int``) -- The rounding flags of the box. Default is ``0``.
+*   ``rounding`` (``float``) -- The rounding rule of the box.
+
+  *  Default is ``0``.
+*   ``rounding_flags`` (``int``) -- The rounding flags of the box. 
+
+  * Default is ``0``.
 
 More about rounding flags: :doc:`roundingflags`
 
@@ -2117,8 +2121,10 @@ Draws a filled box with the given color and rounding.
 *  ``w`` (``float``) -- The width of the box (in pixels)
 *   ``h`` (``float``) -- The height of the box (in pixels)
 *   ``color`` (``vector<int>``) -- The color of the box. ``{R, G, B, A}``
-*   ``rounding`` (``float``) -- The rounding rule of the box. Default is ``0``.
-*   ``rounding_flags`` (``int``) -- The rounding flags of the box. Default is ``0``.
+*   ``rounding`` (``float``) -- The rounding rule of the box. 
+  * Default is ``0``.
+*   ``rounding_flags`` (``int``) -- The rounding flags of the box. 
+  * Default is ``0``.
 
 More about rounding flags: :doc:`roundingflags`
 
@@ -2159,8 +2165,10 @@ Draws a filled border box with the given color and rounding.
 
   * ``True`` to fill the border
   * ``false`` to not fill the border
-*   ``rounding`` (``float``) -- The rounding rule of the box. Default is ``0``.
-*   ``rounding_flags`` (``int``) -- The rounding flags of the box. Default is ``0``.
+*   ``rounding`` (``float``) -- The rounding rule of the box. 
+  * Default is ``0``.
+*   ``rounding_flags`` (``int``) -- The rounding flags of the box. 
+  * Default is ``0``.
 
 More about rounding flags: :doc:`roundingflags`
 
@@ -2195,8 +2203,9 @@ Draws a circle with the given color.
 *  ``y`` (``float``) -- The Y coordinate of the circle's center.
 *  ``radius`` (``float``) -- The radius of the circle (in pixels).
 *  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
-*  ``segments`` (``int``) -- The number of segments of the circle. Default is ``16``. 
+*  ``segments`` (``int``) -- The number of segments of the circle. 
 
+  * Default is ``16``. 
   * Better to keep between ``1-50``. Going further may cause the process to crash.
 
 **Returns:**
@@ -2230,8 +2239,8 @@ Draws a filled circle with the given color.
 *  ``y`` (``float``) -- The Y coordinate of the circle's center.
 *  ``radius`` (``float``) -- The radius of the circle (in pixels).
 *  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
-*  ``segments`` (``int``) -- The number of segments of the circle. Default is ``16``. 
-
+*  ``segments`` (``int``) -- The number of segments of the circle. 
+  * Default is ``16``. 
   * Better to keep between ``1-50``. Going further may cause the process to crash.
 
 **Returns:**
@@ -2268,8 +2277,8 @@ Draws a filled border circle with the given color.
 
   * ``True`` to fill the border
   * ``false`` to not fill the border
-*  ``segments`` (``int``) -- The number of segments of the circle. Default is ``16``. 
-
+*  ``segments`` (``int``) -- The number of segments of the circle. 
+  * Default is ``16``. 
   * Better to keep between ``1-50``. Going further may cause the process to crash.
 
 **Returns:**
@@ -2301,7 +2310,8 @@ Draws a triangle with the given color.
 *  ``x`` (``float``) -- The X coordinate of the triangle's center.
 *  ``y`` (``float``) -- The Y coordinate of the triangle's center.
 *  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
-*  ``size`` (``float``) -- The size of the triangle (in pixels). Default is ``1.1``.
+*  ``size`` (``float``) -- The size of the triangle (in pixels). 
+  * Default is ``1.1``.
 
 **Returns:**
 
@@ -2332,7 +2342,8 @@ Draws a filled triangle with the given color.
 *  ``x`` (``float``) -- The X coordinate of the triangle's center.
 *  ``y`` (``float``) -- The Y coordinate of the triangle's center.
 *  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
-*  ``size`` (``float``) -- The size of the triangle (in pixels). Default is ``1.1``.
+*  ``size`` (``float``) -- The size of the triangle (in pixels). 
+  * Default is ``1.1``.
 
 **Returns:**
 
@@ -2392,15 +2403,15 @@ Draws a text with the given color.
 
 *  ``hash`` (``string``) -- The hash of the text to draw. Hash is used to identify the text, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the text or not.
-
   * ``True`` to draw the text
   * ``false`` to not draw the text
 *  ``text`` (``string``) -- The text to draw.
 *  ``x`` (``float``) -- The X coordinate of the text's center.
 *  ``y`` (``float``) -- The Y coordinate of the text's center.
-*  ``scale`` (``float``) -- The scale of the text. Default is ``1``.
+*  ``scale`` (``float``) -- The scale of the text.
 *  ``color`` (``vector<int>``) -- The color of the text. ``{R, G, B, A}``
-*  ``flags`` (``int``) -- The flags for the text. Default is ``0``.
+*  ``flags`` (``int``) -- The flags for the text. 
+  * Default is ``0``.
 
 More about text flags: :doc:`textflags`
 
@@ -3117,7 +3128,8 @@ Returns coordinates in front of your character.
 
 **Parameters:**
 
-* ``distance`` (``float``) -- Distance calculated starting from in front of self. Default value is ``5.0``.
+* ``distance`` (``float``) -- Distance calculated starting from in front of self. 
+  * Default value is ``5.0``.
 
 **Returns:**
 
@@ -4701,6 +4713,26 @@ Player namespace
 This namespace contains functions that are related to player and are used to execute built-in menu features
 
 ================================
+		void set_clean();
+		void set_force_field(bool toggle, int type = 0);
+		void set_god_mode(bool toggle);
+		void set_infinite_stamina(bool toggle);
+		void set_invisibility(bool toggle);
+		void set_mobile_radio(bool toggle);
+		void set_night_vision(bool toggle);
+		void set_no_wanted_level();
+		void set_noclip(bool toggle, float speed);
+		void set_ragdoll(bool toggle);
+		void set_regeneration(float value);
+		void set_run_speed(bool toggle, float value);
+		void set_seatbelt(bool toggle);
+		void set_super_man(bool toggle, int type);
+		void set_super_run(float value);
+		void set_swim_speed(bool toggle, float value);
+		void set_thermal_vision(bool toggle);
+		void set_walk_on_air(bool toggle);
+		void set_wanted_level(int value);
+
 
 set_clean()
 ^^^^^^^^^^^^^^^^^^^^
@@ -4767,6 +4799,163 @@ Toggles god mode.
    
    scripting.player.set_god_mode(true)
    system.log_debug("God mode enabled.")
+
+================================
+
+set_infinite_stamina(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles infinite stamina.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) 
+
+  * ``true`` to enable infinite stamina
+  * ``false`` to disable it
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_infinite_stamina(true)
+   system.log_debug("Infinite stamina enabled.")
+
+================================
+
+set_invisibility(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles invisibility.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) 
+
+  * ``true`` to enable invisibility
+  * ``false`` to disable it
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_invisibility(true)
+   system.log_debug("Invisibility enabled.")
+
+================================
+
+set_mobile_radio(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles mobile radio.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) 
+
+  * ``true`` to enable mobile radio
+  * ``false`` to disable it
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_mobile_radio(true)
+   system.log_debug("Mobile radio enabled.")
+
+================================
+
+set_night_vision(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles night vision.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) 
+
+  * ``true`` to enable night vision
+  * ``false`` to disable it
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_night_vision(true)
+   system.log_debug("Night vision enabled.")
+
+================================
+
+set_no_wanted_level()
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the wanted level to 0.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_no_wanted_level()
+   system.log_debug("Wanted level set to 0.")
+
+================================
+
+set_noclip(``toggle``, ``speed``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles noclip.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) 
+
+  * ``true`` to enable noclip
+  * ``false`` to disable it
+  
+* ``speed`` (``float``) -- Speed of the noclip
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.player.set_noclip(true, 1.0)
+   system.log_debug("Noclip enabled.")
+
+================================
 
 
 
