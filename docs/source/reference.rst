@@ -7804,14 +7804,14 @@ Gives a weapon to ped with toggable max ammo and max components.
 
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_ to give to the player.
 
-* ``maxAmmo`` (``bool``) -- Toggles Max Ammo, default ``true `` 
+* ``maxAmmo`` (``bool``) -- Toggles Max Ammo
 
-  * ``true`` -- Weapon will be given with max ammo
+  * ``true`` -- Weapon will be given with max ammo (default)
   * ``false`` -- Weapon will be given without max ammo
   
-* ``maxComponents`` -- Toggles Max Components, default ``true``
+* ``maxComponents`` -- Toggles Max Components
 
-  * ``true`` -- Weapon will be given fully upgraded in components
+  * ``true`` -- Weapon will be given fully upgraded in components (default)
   * ``false`` -- Weapon will be given in its default form
 
 .. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
