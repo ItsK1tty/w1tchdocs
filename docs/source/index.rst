@@ -23,4 +23,8 @@ Contents
    reference
    roundingflags
    textflags
-   
+   cloudtypes
+   weathertypes
+   doors
+   windows
+   headlightscolor

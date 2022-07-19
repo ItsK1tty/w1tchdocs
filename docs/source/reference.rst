@@ -22,6 +22,7 @@ Types in the LUA Engine are defined in the following order:
 * :ref:`Vector3` (float ``x``, float ``y``, float ``z``)
 * :ref:`ColorRGB` (int ``r``, int ``g``, int ``b``)
 * :ref:`ColorRGBA` (int ``r``, int ``g``, int ``b``, int ``a``)
+* :ref:`eSessionType` (int)
 
 ================================
 
@@ -120,6 +121,24 @@ ColorRGBA
 ColorRGBA definition here
 
 ================================
+
+.. _eSessionType:
+
+eSessionType
+----------------------
+eSessionType definition here
+
+
+* ``PublicJoin`` = ``0``,
+* ``PublicStart`` = ``1``,
+* ``CrewClosed`` = ``2``,
+* ``Crew`` = ``3``,
+* ``FriendsClosed`` = ``6``,
+* ``FriendsFind`` = ``9``,
+* ``Solo`` = ``10``,
+* ``Invite`` = ``11``,
+* ``CrewJoin`` = ``12``,
+
 
 .. _gvars:
 
@@ -1439,6 +1458,8 @@ Removes an option.
 
 Menu sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+======================
 
 section_self_mods()
 ^^^^^^^^^^^^^^^^^^^^
@@ -5808,24 +5829,61 @@ Functions that are not included in any namespace
 bool get_vehicle_bypass()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note::
-   Not documented yet.
+Checks if the bypass for spawning Online cars in SinglePlayer is enabled.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool``
+
+  * ``True`` -- The bypass is enabled
+  * ``False`` -- The bypass is disabled
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   if get_vehicle_bypass() then
+      system.log_info("The bypass is enabled.")
+   end   
 
 ================================
 
 void set_vehicle_bypass(bool ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note::
-   Not documented yet.
+Checks if the bypass for spawning Online cars in SinglePlayer is enabled.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle the bypass
+
+  * ``True`` -- Enable the bypass
+  * ``False`` -- Disable the bypass
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   if not scripting.get_vehicle_bypass() then
+      scripting.set_vehicle_bypass(true) -- Enables the bypass.
+      system.log_info("The bypass is enabled.")
+   end
+   
 
 ================================
 
 get_coords_infront_of_coords(``position``, ``rotation``, ``distance``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note::
-   Not documented yet.
 
 Returns the coordinates in front of the specified coordinates.
 
@@ -5843,7 +5901,7 @@ Returns the coordinates in front of the specified coordinates.
 
 .. code-block:: lua
    :linenos:
-   
+
    coords = scripting.get_coords_infront_of_coords(self.get_coords(), rage.entity.get_entity_rotation(self.get_ped(), 1), 10)
    system.log_debug(tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z))
 
@@ -5851,9 +5909,6 @@ Returns the coordinates in front of the specified coordinates.
 
 get_coords_above_of_coords(``position``, ``distance``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note::
-   Not documented yet.
 
 Returns the coordinates above of the specified coordinates.
 
@@ -6343,7 +6398,80 @@ Sets the wanted level.
 Ped namespace
 ----------------------
 
-Functions here
+This namespace contains functions that are related to ped and are used to execute built-in menu features
+
+================================
+
+clone_companion(``owner``, ``target``, ``weaponHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Clones the target ped and sets it as a companion of the owner.
+
+**Parameters:**
+
+* ``owner`` (``Entity``) -- The owner of the clone
+* ``target`` (``Entity``) -- The target to clone
+* ``weaponHash`` (``Hash``) -- The weapon hash to clone with
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   player = self.get_ped()
+   scripting.ped.clone_companion(player, player, rage.gameplay.get_hash_key("Pistol"))
+   system.log_debug("Cloned player.")
+   
+================================
+
+kill_enemies()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Kills all enemies.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+   
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.ped.kill_enemies()
+   system.log_debug("Killed all enemies.")
+
+================================
+
+kill_nearby_peds()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Kills all nearby peds.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.ped.kill_nearby_peds()
+   system.log_debug("Killed all nearby peds.")
+
 
 ================================
 
@@ -6352,7 +6480,127 @@ Functions here
 Entity namespace
 ----------------------
 
-Functions here
+This namespace contains functions that are related to Entities and are used to execute built-in menu features
+
+================================
+
+is_entity_in_whitelist(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is still in development.
+
+
+Checks if the entity is in the whitelist.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity to check
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- The entity is in the whitelist
+  * ``false`` -- The entity is not in the whitelist
+
+**Example:**
+
+.. code-block:: lua
+      :linenos:
+      
+      entity = self.get_ped()
+      scripting.entity.is_entity_in_whitelist(entity)
+      system.log_debug("Entity is in whitelist: " .. tostring(entity_in_whitelist))
+
+
+================================
+
+entity_add_to_whitelist(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is still in development.
+
+Adds the entity to the whitelist.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity to add
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   entity = self.get_ped()
+   scripting.entity.entity_add_to_whitelist(entity)
+   system.log_debug("Entity added to whitelist.")
+
+================================
+
+
+entity_remove_from_whitelist(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is still in development.
+
+Removes the entity from the whitelist.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity to remove
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   entity = self.get_ped()
+   scripting.entity.entity_remove_from_whitelist(entity)
+   system.log_debug("Entity removed from whitelist.")
+
+================================
+
+set_proofs(``entity``, ``bulletProof``, ``fireProof``, ``explosionProof``, ``collisionProof``, ``meleeProof``, ``drownProof``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets resistance to certain damage.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity to set resistance to
+* ``bulletProof`` (``bool``) -- Bullet resistance
+* ``fireProof`` (``bool``) -- Fire resistance
+* ``explosionProof`` (``bool``) -- Explosion resistance
+* ``collisionProof`` (``bool``) -- Collision resistance
+* ``meleeProof`` (``bool``) -- Melee resistance
+* ``drownProof`` (``bool``) -- Drown resistance
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   entity = self.get_ped()
+   scripting.entity.set_proofs(entity, true, true, true, true, true, true)
+   system.log_debug("Nanomachines, son.")
 
 ================================
 
@@ -6361,7 +6609,701 @@ Functions here
 Vehicle namespace
 ----------------------
 
-Functions here
+This namespace contains functions that are related to vehicle mods and are used to execute built-in menu features
+
+================================
+
+
+get_name_from_hash(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the name of the vehicle based on its hash.
+
+**Parameters:**
+
+* ``hash`` (``Hash``) -- The hash of the vehicle
+
+**Returns:**
+
+* ``string`` -- The name of the vehicle
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   vehicle_name = scripting.vehicle.get_name_from_hash(rage.gameplay.get_hash_key("BMX"))
+   system.log_debug("Vehicle name: " .. vehicle_name)
+
+================================
+
+get_personal_vehicle()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the personal vehicle ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``Vehicle`` -- The personal vehicle ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+   system.log_debug("Personal vehicle: " .. tostring(personal_vehicle))
+
+================================
+
+remove_nearby_vehicles()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes all nearby vehicles.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.vehicle.remove_nearby_vehicles()
+   system.log_debug("Removed all nearby vehicles.")
+
+================================
+
+set_air_vehicles_collision(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the air vehicles collision.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` -- Enable the air vehicles collision
+  * ``false`` -- Disable the air vehicles collision
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.vehicle.set_air_vehicles_collision(true)
+   system.log_debug("Air vehicles collision is now enabled.")
+
+================================
+
+set_boost(``vehicle``, ``speed``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the boost speed of the specified vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle to set the boost speed of
+* ``speed`` (``float``) -- The boost speed
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   vehicle = self.get_vehicle()
+   scripting.vehicle.set_boost(vehicle, 50)
+   system.log_debug("Boost speed set to 50 units.")
+
+================================
+
+set_bulletproof_tires(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the bulletproof tires.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` -- Enable the bulletproof tires
+  * ``false`` -- Disable the bulletproof tires
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.vehicle.set_bulletproof_tires(true)
+   system.log_debug("Bulletproof tires are now enabled.")
+
+================================
+
+set_clean(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cleans the specified vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle to clean
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   vehicle = self.get_vehicle()
+   scripting.vehicle.set_clean(vehicle)
+   system.log_debug("Vehicle cleaned.")
+
+================================
+
+set_doors_opened(``vehicle``, ``toggle``, ``doorId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Opens or closes the doors of the specified vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle to open or close the doors of
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` -- Open the doors
+  * ``false`` -- Close the doors
+
+* doorId (``int``) -- The door ID
+
+  * For door IDs, see this: :doc:`doors`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   vehicle = self.get_vehicle()
+   scripting.vehicle.set_doors_opened(vehicle, true, 0)
+   system.log_debug("Door opened.")
+
+================================
+
+set_drift(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles the drift mode.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` -- Enable the drift mode
+  * ``false`` -- Disable the drift mode
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.vehicle.set_drift(true)
+   system.log_debug("Drift mode is now enabled.")
+
+================================
+
+set_drive_on_air(``vehicle``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles the Drive on Air mode.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle to toggle the Drive on Air mode of
+
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` -- Enable the Drive on Air mode
+  * ``false`` -- Disable the Drive on Air mode
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   vehicle = self.get_vehicle()
+   scripting.vehicle.set_drive_on_air(vehicle, true)
+   system.log_debug("Drive on Air mode is now enabled.")
+
+================================
+
+set_force_jump(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles the vehicle force jump mode.
+
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` -- Enable the force jump mode
+  * ``false`` -- Disable the force jump mode
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.vehicle.set_force_jump(true)
+   system.log_debug("Force jump mode is now enabled.")
+
+================================
+
+set_god_mode(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles the god mode for the vehicle.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+
+  * ``true`` -- Enable the god mode
+  * ``false`` -- Disable the god mode
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.vehicle.set_god_mode(true)
+   system.log_debug("God mode is now enabled.")
+
+
+================================
+
+set_headlight_color(``color``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the headlight color of the specified vehicle.
+
+**Parameters:**
+
+* ``color`` (``int``) -- The headlight color ID
+
+
+
+
+
+
+
+set_license_plate_madness(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle license plate madness.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+  * ``true`` -- Toggle license plate madness on
+  * ``false`` -- Toggle license plate madness off
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.vehicle.set_license_plate_madness(true)
+
+================================
+
+set_license_plate_scrolling(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle license plate scrolling.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+  * ``true`` -- Toggle license plate scrolling on
+  * ``false`` -- Toggle license plate scrolling off
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.vehicle.set_license_plate_scrolling(true)
+
+================================
+
+set_license_plate_speedo(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle license plate speedo mode.
+
+**Parameters:**
+
+* ``toggle`` (``bool``)
+  * ``true`` -- Toggle license plate speedo on
+  * ``false`` -- Toggle license plate speedo off
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.vehicle.set_license_plate_speedo(true)
+
+================================
+
+set_rainbow_car(``type``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle rainbow car mode.
+
+**Parameters:**
+
+* ``type`` (``eRainbowCarType``) -- Car type
+  * ``0`` -- Personal car
+  * ``1`` -- All cars
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.vehicle.set_rainbow_car(1) -- Sets all cars rainbow
+
+================================
+
+set_rainbow_headlights()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle rainbow headlights feature.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.vehicle.set_rainbow_headlights()
+
+================================
+
+set_rainbow_neon()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle rainbow neon feature.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.vehicle.set_rainbow_neon()
+
+================================
+
+set_rainbow_tires_smoke()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle rainbow tires smoke.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.vehicle.set_rainbow_tires_smoke()
+
+================================
+
+set_repair()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Repairs vehicle.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.vehicle.set_repair()
+================================
+
+set_stick_to_ground()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make a vehicle stick to the ground.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.vehicle.set_stick_to_ground()
+
+================================
+
+set_stop(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make a vehicle stop.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- Vehicle hash
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+
+   scripting.vehicle.set_stop(personal_vehicle)
+
+================================
+
+set_vehicle_clean_upgrade(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make a vehicle be max upgraded (only non-visible parts eg. engine, turbo...)
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- Vehicle hash
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+
+   scripting.vehicle.set_vehicle_clean_upgrade(personal_vehicle)
+
+================================
+
+set_vehicle_color(``v``, ``primary``, ``secondary``, ``pearl``, ``wheel``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set vehicle color (primary, secondary, pearlescence, wheels)
+
+**Parameters:**
+
+* ``v`` (``Vehicle``) -- Vehicle hash
+* ``primary`` (``int``) - Primary `color ID`_
+* ``secondary`` (``int``) - Secondary `color ID`_
+* ``pearl`` (``int``) - Pearlescence `color ID`_ (if applicable)
+* ``wheel`` (``int``) - Wheel `color ID`_
+  
+.. _color ID: https://wiki.rage.mp/index.php?title=Vehicle_Colors
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+
+   scripting.vehicle.set_vehicle_color(personal_vehicle, 12, 28, 12)
+
+================================
+
+set_vehicle_max_upgrade(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make a vehicle be max upgraded.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- Vehicle hash
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+
+   scripting.vehicle.set_vehicle_max_upgrade(personal_vehicle)
+
+================================
+
+set_waterproof(``vehicle``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set a vehicle waterproof.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- Vehicle hash
+
+* ``toggle`` (``bool``) -- Toggle waterproof on/off
+  * ``true`` -- Vehicle is waterproof
+  * ``false`` -- Vehicle is not waterproof
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+
+   scripting.vehicle.set_waterproof(personal_vehicle, true) -- Your vehicle can now swim
+
+================================
+
+set_windows_opened(``vehicle``, ``toggle``, ``windowId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set windows opened on a vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- Vehicle hash
+* 
+* ``toggle`` (``bool``) -- Toggle windows open/closed
+  * ``true`` -- Windows open
+  * ``false`` -- Windows closed
+
+* ``windowId`` (``int``) -- Window ID to manipulate
+
+  * For window IDs, see this: :doc:`windows`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+
+   scripting.vehicle.set_windows_opened(personal_vehicle, true, 1)
 
 ================================
 
@@ -6370,7 +7312,239 @@ Functions here
 Online namespace
 ----------------
 
-Functions here
+This namespace contains functions that are related to online features and are used to execute built-in menu features
+
+void reset_idle_kick_timer();
+void set_off_radar(bool toggle);
+void set_passive_mode(bool toggle);
+void set_securoserv_bypass();
+void set_skip_cutscene();
+void set_spectating_mode(bool toggle, Player player);
+void teleport_in_player_vehicle(Player player);
+void teleport_to_player(Player player);
+void toggle_protex(bool toggle);
+
+================================
+
+reset_idle_kick_timer()
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Resets the AFK kick timer.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.online.reset_idle_kick_timer()
+   system.log_debug("Reset AFK kick timer.")
+
+================================
+
+set_off_radar(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle the off radar feature.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle the off radar feature
+
+  * ``true`` -- Enable the off radar feature
+  * ``false`` -- Disable the off radar feature
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.online.set_off_radar(true)
+   system.log_debug("Off radar enabled.")
+
+================================
+
+set_passive_mode(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle the passive mode.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle the passive mode
+
+  * ``true`` -- Enable the passive mode
+  * ``false`` -- Disable the passive mode
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.online.set_passive_mode(true)
+   system.log_debug("Passive mode enabled.")
+
+================================
+
+set_securoserv_bypass()
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Activates the securoserv bypass.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.online.set_securoserv_bypass()
+   system.log_debug("Securoserv bypass activated.")
+
+================================
+
+set_skip_cutscene()
+^^^^^^^^^^^^^^^^^^^^^
+
+Activates the skip cutscene feature.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.online.set_skip_cutscene()
+   system.log_debug("Skip cutscene activated.")
+
+================================
+
+set_spectating_mode(``toggle``, ``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle and configure the spectating mode.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle the spectating mode
+
+  * ``true`` -- Enable the spectating mode
+  * ``false`` -- Disable the spectating mode
+* ``player`` (``Player``) -- The player to spectate
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.online.set_spectating_mode(true, lobby.get_host())
+   system.log_debug("Spectating mode enabled.")
+
+
+================================
+
+teleport_in_player_vehicle(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleports the player into specified player's vehicle.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player to teleport to
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.online.teleport_in_player_vehicle(lobby.get_host())
+   system.log_debug("Teleported into host's vehicle.")
+
+================================
+
+teleport_to_player(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleports the player to specified player.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player to teleport to
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.online.teleport_to_player(lobby.get_host())
+   system.log_debug("Teleported to host.")
+
+================================
+
+toggle_protex(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle the online protections.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle the online protections
+
+  * ``true`` -- Enable the online protections
+  * ``false`` -- Disable the online protections
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.online.toggle_protex(true)
+   system.log_debug("Online protections enabled.")
+
 
 ================================
 
@@ -6379,7 +7553,83 @@ Functions here
 Network namespace
 ----------------------
 
-Functions here
+This namespace contains functions that are related to session creation and are used to execute built-in menu features.
+
+================================
+
+void session_choose_character();
+void session_leave_online();
+void session_manager(eSessionType id);
+
+session_choose_character()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends the player to the character selection screen.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.network.session_choose_character()
+   system.log_debug("Sent to character selection screen.")
+
+================================
+
+session_leave_online()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends the player to the singleplayer mode.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.network.session_leave_online()
+   system.log_debug("Sent to singleplayer mode.")
+
+================================
+
+session_manager(``id``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends the player to the specified session.
+
+**Parameters:**
+
+* ``id`` (``eSessionType``) -- The session to send the player to
+
+  * Read more about eSessionType here - :ref:`eSessionType`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.network.session_manager(0)
+   system.log_debug("Sent to the open public session.")
+
 
 ================================
 
@@ -6388,7 +7638,55 @@ Functions here
 Spawn namespace
 ----------------
 
-Functions here
+This namespace contains functions that are related to spawn and are used to execute built-in menu features.
+
+================================
+
+spawn_vehicle(``hash``, ``position``, ``heading``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Spawns a vehicle in a given position and heading.
+
+**Parameters:**
+
+* ``hash`` (``Hash``) -- Vehicle hash
+* ``position`` (``Vector3``) -- Vehicle coordinates
+* ``heading`` (``float``) -- Vehicle heading
+
+**Returns:**
+
+* ``Vehicle`` -- Returns the spawned vehicle.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+
+   scripting.spawn.spawn_vehicle(zentornoHash, self.get_coords(), 1)
+
+================================
+
+spawn_vehicle_personal(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Spawns a personal vehicle.
+
+**Parameters:**
+
+* ``hash`` (``Hash``)
+
+**Returns:**
+
+* ``Vehicle`` -- Returns the spawned vehicle.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.spawn.spawn_vehicle_personal(rage.gameplay.get_hash_key("ZENTORNO"))
 
 ================================
 
@@ -6397,7 +7695,237 @@ Functions here
 Weapon namespace
 ----------------------
 
-Functions here
+This namespace contains functions that are related to weapons and are used to execute built-in menu features.
+
+================================
+
+give_all_weapons(``ped``, ``maxAmmo`` = ``true``, ``maxComponents`` = ``true``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Give all weapons to a ped with toggable max ammo and max components.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped to give all weapons to.
+
+* ``maxAmmo`` (``bool``) -- Toggle Max Ammo, fefault ``true `` 
+  * ``true`` -- Weapons will be given with max ammo
+  * ``false`` -- Weapons will be given without max ammo
+  
+* ``maxComponents`` -- Toggles Max Components, default ``true``
+  * ``true`` -- Weapons will be given fully upgraded in components
+  * ``false`` -- Weapons will be given in their default form
+
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.weapon.give_all_weapons(lobby.get_player_ped(lobby.get_host()), true, true) -- Gives all maxed and upgraded weapons to the session host.
+
+================================
+
+remove_all_weapons_from_ped(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes all weapons from a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped to remove all weapons from.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.weapon.remove_all_weapons_from_ped(lobby.get_player_ped(lobby.get_host())) -- Removes all weapons from the session host
+
+================================
+
+give_weapon_self(``weaponHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gives weapon to the player (self).
+
+**Parameters:**
+
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_ to give to self.
+  
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.weapon.give_weapon_self(rage.gameplay.get_hash_key("MicroSMG")) -- Gives self the MicroSMG
+
+================================
+
+give_weapon(``ped``, ``weaponHash``, ``maxAmmo`` = ``true``, ``maxComponents`` = ``true``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gives a weapon to ped with toggable max ammo and max components.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped to give the weapon to.
+
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_ to give to the player.
+
+* ``maxAmmo`` (``bool``) -- Toggles Max Ammo, default ``true `` 
+  * ``true`` -- Weapon will be given with max ammo
+  * ``false`` -- Weapon will be given without max ammo
+  
+* ``maxComponents`` -- Toggles Max Components, default ``true``
+  * ``true`` -- Weapon will be given fully upgraded in components
+  * ``false`` -- Weapon will be given in its default form
+
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.weapon.give_weapon(lobby.get_player_ped(lobby.get_host()), rage.gameplay.get_hash_key("MicroSMG"), true, true) -- Gives session host a fully loaded and upgraded MicroSMG
+
+================================
+
+give_ammo(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gives ammo to a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped to ammos to.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.weapon.give_ammo(lobby.get_player_ped(lobby.get_host())) -- Gives ammo to session host's weapons
+
+================================
+
+give_ammo_for_weapon(``ped``, ``weaponHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gives ammo for a precise weapon to a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The targeted ped.
+
+* ``weaponHash`` (``Hash``) -- Ped's weapon `Whash`_ to give ammos to.
+
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.weapon.give_ammo_for_weapon(lobby.get_player_ped(lobby.get_host()), rage.gameplay.get_hash_key("MicroSMG")) -- Gives ammo to session host's MicroSMG
+
+================================
+
+ammo_infinite(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gives infinite ammo to a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The targeted ped.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.weapon.ammo_infinite(lobby.get_player_ped(lobby.get_host())) -- Gives infinite ammo to session host
+
+================================
+
+ammo_enhanced(``ped``, ``explosionId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gives enhanced ammo (ammos that generate a particular explosion) to a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The targeted ped.
+  
+* ``explosionId`` (``int``) -- The `explosion IDs`_ , determinates the type of explosion to assign to the ammos.
+
+.. _explosion IDs: https://wiki.gtanet.work/index.php?title=Explosions
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.weapon.ammo_enhanced(lobby.get_player_ped(lobby.get_host()), 7) -- Gives EXPLOSION_CAR type ammo to session host
+
+================================
+
+ammo_mega_damage(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gives mega damage ammo to a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The targeted ped.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.weapon.ammo_mega_damage(lobby.get_player_ped(lobby.get_host())) -- Gives mega damage ammo to Trevor
 
 ================================
 
@@ -6406,7 +7934,422 @@ Functions here
 Teleport namespace
 ----------------------
 
-Functions here
+This namespace contains functions that are related to teleport and are used to execute built-in menu features.
+
+================================
+
+to_blip(``sprite``, ``color`` = ``-1``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to blip.
+
+**Parameters:**
+
+* ``sprite`` (``int``) -- The `blip`_ sprite ID to use.
+* ``color`` (``int``) -- The `blip`_ color ID to use.
+
+  * ``-1`` to use the default color
+
+.. _blip: https://wiki.gtanet.work/index.php?title=Blips
+
+**Returns:**
+
+* ``bool`` -- Returns teleport status
+  * ``true`` -- Teleportation successful
+  * ``false`` -- Teleportation failed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.to_blip(1, 1) -- red circle blip
+
+================================
+
+to_entity(``ent``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to entity.
+
+**Parameters:**
+
+* ``ent`` (``Entity``) -- Targeted entity to teleport to.
+
+**Returns:**
+
+* ``bool`` -- Returns teleport status
+  * ``true`` -- Teleportation successful
+  * ``false`` -- Teleportation failed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.to_entity("prop_storagetank_02b") -- Teleport to the nearest fuel storage tank entity.
+
+================================
+
+to_player(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to player.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- Targeted player to teleport to.
+
+**Returns:**
+
+* ``bool`` -- Returns teleport status
+  * ``true`` -- Teleportation successful
+  * ``false`` -- Teleportation failed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.to_player(lobby.get_host()) -- Teleport to the host player.
+
+================================
+
+to_position(``coords``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to position (through coordinates).
+
+**Parameters:**
+
+* ``coords`` (``Vector3``) -- Targeted coordinates (Vector3) to teleport to.
+
+**Returns:**
+
+* ``bool`` -- Returns teleport status
+  * ``true`` -- Teleportation successful
+  * ``false`` -- Teleportation failed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.to_position(lobby.get_player_coords(lobby.get_host())) -- Teleport to the host player's coordinates.
+
+================================
+
+to_waypoint()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to waypoint.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool`` -- Returns teleport status
+  * ``true`` -- Teleportation successful
+  * ``false`` -- Teleportation failed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.to_waypoint()
+
+================================
+
+to_objective()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to objective.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool`` -- Returns teleport status
+  * ``true`` -- Teleportation successful
+  * ``false`` -- Teleportation failed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.to_objective()
+
+================================
+
+to_nearest_vehicle()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to the nearest vehicle.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool`` -- Returns teleport status
+  * ``true`` -- Teleportation successful
+  * ``false`` -- Teleportation failed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.to_nearest_vehicle()
+
+================================
+
+to_personal_vehicle()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to personal vehicle.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.to_personal_vehicle()
+
+================================
+
+ipl_to_yankton()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to North Yankton (IPL location).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.ipl_to_yankton()
+
+================================
+
+ipl_to_cargo_ship()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to Cargo Ship (IPL location).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.ipl_to_cargo_ship()
+
+================================
+
+ipl_to_hospital()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to Hospital (IPL location).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.ipl_to_hospital()
+
+================================
+
+ipl_to_yacht_sp()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to SinglePlayer Yacht (IPL location).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.ipl_to_yacht_sp()
+
+================================
+
+ipl_to_yacht_online()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to Online Yacht (IPL location).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.ipl_to_yacht_online()
+
+================================
+
+ipl_to_morgue()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to Morgue (IPL location).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.ipl_to_morgue()
+
+================================
+
+ipl_to_ranch()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to Ranch (IPL location).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.ipl_to_ranch()
+
+================================
+
+ipl_to_jewelry()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to Jewelry (IPL location).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.ipl_to_jewelry()
+
+================================
+
+ipl_to_life_invader()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to Life Invader (IPL location).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.ipl_to_life_invader()
+
+================================
+
+ipl_to_fib()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Teleport to FIB building (IPL location).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.teleport.ipl_to_fib()
 
 ================================
 
@@ -6415,7 +8358,283 @@ Functions here
 World namespace
 ----------------------
 
-Functions here
+This namespace contains functions that are related to world and are used to execute built-in menu features.
+
+================================
+
+set_weather(``weatherType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set weather type.
+
+**Parameters:**
+
+* ``weatherType`` (``string``) -- The weather type
+
+  * For weather types, see this: :doc:`weathertypes`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.world.set_weather("RAIN") -- make it rain
+
+================================
+
+set_clouds(``cloudsType``, ``transitionTime``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set clouds type and their transition time.
+
+**Parameters:**
+
+* ``cloudsType`` (``string``)  -- The clouds type
+
+  * For weather types, see this: :doc:`weathertypes`
+* ``transitionTime`` (``float``)  -- The speed of clouds
+
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.world.set_clouds("RAIN")
+
+================================
+
+set_rain_intensity(``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the rain intensity.
+
+**Parameters:**
+
+* ``value`` (``float``) -- Rain intensity value.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.world.set_rain_intensity(5.5)
+
+================================
+
+set_wind_speed(``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the wind speed.
+
+**Parameters:**
+
+* ``value`` (``float``) -- Wind speed value.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.world.set_wind_speed(3)
+
+================================
+
+set_waves_height(``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the waves height.
+
+**Parameters:**
+
+* ``value`` (``float``) -- Waves height value.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.world.set_waves_height(4)
+
+================================
+
+set_time(``hours``, ``minutes``, ``seconds``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the in-game time.
+
+**Parameters:**
+
+* ``hours`` (``int``) -- Hours
+* ``minutes`` (``int``) -- Minutes
+* ``seconds`` (``int``) -- Seconds
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.world.set_time(12, 30, 10) -- 12:30:10
+
+================================
+
+blackout(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle blackout on/off.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+  * ``true`` -- Toggle blackout on
+  * ``false`` -- Toggle blackout off
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.world.blackout(true) -- Blackout is on.
+
+================================
+
+angry_ufo()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Activates Angry Ufo feature.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.world.angry_ufo()
+
+================================
+
+disable_phone(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Disable phone option
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle
+  * ``true`` -- Toggle disable phone on
+  * ``false`` -- Toggle disable phone off
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.world.disable_phone(true) -- Disable phone option toggled on, phone is disabled.
+
+================================
+
+disable_recording()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Disable GTA built-in recording feature.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.world.disable_recording() -- Disable recording
+
+================================
+
+disable_restricted_areas()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Disable GTA restricted areas.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.world.disable_restricted_areas()
+
+================================
+
+disable_stunt_cameras()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Disable GTA built-in stunt cameras.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scripting.world.disable_stunt_cameras()
 
 ================================
 
