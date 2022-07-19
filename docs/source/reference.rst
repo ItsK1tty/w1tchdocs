@@ -129,15 +129,15 @@ eSessionType
 eSessionType definition here
 
 
-* ``PublicJoin`` = ``0``,
-* ``PublicStart`` = ``1``,
-* ``CrewClosed`` = ``2``,
-* ``Crew`` = ``3``,
-* ``FriendsClosed`` = ``6``,
-* ``FriendsFind`` = ``9``,
-* ``Solo`` = ``10``,
-* ``Invite`` = ``11``,
-* ``CrewJoin`` = ``12``,
+* ``PublicJoin`` = ``0``
+* ``PublicStart`` = ``1``
+* ``CrewClosed`` = ``2``
+* ``Crew`` = ``3``
+* ``FriendsClosed`` = ``6``
+* ``FriendsFind`` = ``9``
+* ``Solo`` = ``10``
+* ``Invite`` = ``11``
+* ``CrewJoin`` = ``12``
 
 
 .. _gvars:
@@ -7964,12 +7964,12 @@ Teleport to blip.
 
 **Parameters:**
 
-* ``sprite`` (``int``) -- The `blip`_ sprite ID to use.
-* ``color`` (``int``) -- The `blip`_ color ID to use.
+* ``sprite`` (``int``) -- The `blip <https://wiki.gtanet.work/index.php?title=Blips>` sprite ID to use.
+* ``color`` (``int``) -- The `blip <https://wiki.gtanet.work/index.php?title=Blips>` color ID to use.
 
   * ``-1`` to use the default color
 
-.. _blip: https://wiki.gtanet.work/index.php?title=Blips
+
 
 **Returns:**
 
