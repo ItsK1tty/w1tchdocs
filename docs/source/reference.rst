@@ -10149,7 +10149,7 @@ get_control_normal(``padIndex``, ``control``)
 
 **Returns:**
 
-* ``float`` --
+* ``float`` -- current control value
 
 **Example:**
 
