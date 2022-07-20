@@ -10103,10 +10103,8 @@ Set text justification.
   * ``1`` = Left-Justify
   * ``2`` = Right-Justify
 
-Note:
-==============
-
 .. note::
+
     Right-Justify requires ``set_text_wrap()``, otherwise it will draw to the far right of the screen.
 
 **Returns:**
