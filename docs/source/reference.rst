@@ -552,7 +552,7 @@ Converts a key hash to a string key.
 is_key_pressed(``key``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if key is pressed
+Checks whether the key is pressed
 
 **Parameters:**
 
@@ -1336,7 +1336,7 @@ Updates the current section to display the created Lua section/option.
 is_option_toggled(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if an option is toggled.
+Checks whether an option is toggled.
 
 **Parameters:**
 
@@ -1362,7 +1362,7 @@ Checks if an option is toggled.
 is_option_visible(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if an option is visible.
+Checks whether an option is visible.
 
 **Parameters:**
 
@@ -1387,7 +1387,7 @@ Checks if an option is visible.
 is_option_enabled(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if an option is enabled.
+Checks whether an option is enabled.
 
 **Parameters:**
 
@@ -2250,7 +2250,7 @@ Returns the About section ID.
 is_menu_active()
 ^^^^^^^^^^^^^^^^^^^
 
-Checks if the menu is active.
+Checks whether the menu is active.
 
 **Parameters:**
 
@@ -2258,7 +2258,7 @@ Checks if the menu is active.
 
 **Returns:**
 
-* ``bool`` -- The status of the menu.
+* ``bool``
   
   *  ``true`` -- The menu is opened
   *  ``false`` -- The menu is closed
@@ -2275,7 +2275,7 @@ Checks if the menu is active.
 is_menu_controls_active()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the menu controls are active.
+Checks whether the menu controls are active.
 
 **Parameters:**
 
@@ -2283,7 +2283,7 @@ Checks if the menu controls are active.
 
 **Returns:**
 
-* ``bool`` -- Returns the status of the menu controls.
+* ``bool``
   
   *  ``true`` -- The menu controls are active
   *  ``false`` -- The menu controls are inactive
@@ -2300,7 +2300,7 @@ Checks if the menu controls are active.
 is_menu_mouse_controls_active()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the menu mouse controls are active.
+Checks whether the menu mouse controls are active.
 
 **Parameters:**
 
@@ -2308,7 +2308,7 @@ Checks if the menu mouse controls are active.
 
 **Returns:**
 
-* ``bool`` -- Returns the status of the menu mouse controls.
+* ``bool``
   
   *  ``true`` -- The menu mouse controls are active
   *  ``false`` -- The menu mouse controls are inactive
@@ -3622,7 +3622,7 @@ More about text flags: :doc:`textflags`
 is_color_picker_rendering()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the color picker is active.
+Checks whether the color picker is active.
 
 **Parameters:**
 
@@ -3649,7 +3649,7 @@ Checks if the color picker is active.
 is_cursor_hover_menu()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the cursor is hovering over the menu.
+Checks whether the cursor is hovering over the menu.
 
 **Parameters:**
 
@@ -3676,7 +3676,7 @@ Checks if the cursor is hovering over the menu.
 is_cursor_hover_option()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the cursor is hovering over an option.
+Checks whether the cursor is hovering over an option.
 
 **Parameters:**
 
@@ -3703,7 +3703,7 @@ Checks if the cursor is hovering over an option.
 is_input_active()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the input window is active. (The input window is for example, the window that appears when you press the ` key in story mode)
+Checks whether the input window is active. (The input window is for example, the window that appears when you press the ` key in story mode)
 
 **Parameters:**
 
@@ -4057,7 +4057,7 @@ Returns whether the user is alive.
 .. code-block:: lua
    :linenos:
    
-   if self.is_alive() then -- Checks if the user is alive.
+   if self.is_alive() then -- Checks whether the user is alive.
       system.log_info("The user is alive.") 
    else
       system.log_info("The user is dead.")
@@ -4083,7 +4083,7 @@ Checks whether the user is in a vehicle.
 .. code-block:: lua
    :linenos:
    
-   if self.is_in_vehicle() then -- Checks if the user is in a vehicle.
+   if self.is_in_vehicle() then -- Checks whether the user is in a vehicle.
       system.log_info("The user is in a vehicle.") 
    else
       system.log_info("The user is not in a vehicle.")
@@ -4111,7 +4111,7 @@ Checks whether the player is valid -- the player is alive, is fully loaded into 
 .. code-block:: lua
    :linenos:
    
-   if self.is_valid() then -- Checks if the player is valid.
+   if self.is_valid() then -- Checks whether the player is valid.
       system.log_info("The player is valid.") 
    else
       system.log_info("The player is invalid.")
@@ -4141,9 +4141,9 @@ Returns the online index of the user's character.
    :linenos:
    
    index = self.get_online_index() -- Returns the online index of the user's character.
-   if index == 0 then -- Checks if the first character is used.
+   if index == 0 then -- Checks whether the first character is used.
       system.log_info("The first character is used.")
-   elseif index == 1 then -- Checks if the second character is used.
+   elseif index == 1 then -- Checks whether the second character is used.
       system.log_info("The second character is used.")
    end
 
@@ -4368,6 +4368,7 @@ Lobby namespace
 This namespace contains functions related to the interaction with the online game session.
 
 .. note::
+
    Functions from this namespace only work in online mode.
 
 ================================
@@ -4391,7 +4392,7 @@ connected, is in the same game mode as you (e.g. freemode)
 .. code-block:: lua
    :linenos:
    
-   isActive = lobby.is_player_active(lobby.get_host()) -- Checks if the player is active.
+   isActive = lobby.is_player_active(lobby.get_host()) -- Checks whether the player is active.
    if isActive then -- If the player is active.
       system.log_info("The player is active.")
    end
@@ -4416,7 +4417,7 @@ Checks whether the player is connected.
 .. code-block:: lua
    :linenos:
    
-   isConnected = lobby.is_player_connected(lobby.get_host()) -- Checks if the player is connected.
+   isConnected = lobby.is_player_connected(lobby.get_host()) -- Checks whether the player is connected.
    if isConnected then -- If the player is connected.
       system.log_info("The player is connected.")
    end
@@ -4441,7 +4442,7 @@ Checks whether the player is a friend.
 .. code-block:: lua
    :linenos:
    
-   isFriend = lobby.is_player_friend(lobby.get_host()) -- Checks if the player is a friend.
+   isFriend = lobby.is_player_friend(lobby.get_host()) -- Checks whether the player is a friend.
    if isFriend then -- If the player is a friend.
       system.log_info("The player is a friend.")
    end
@@ -4466,7 +4467,7 @@ Checks whether the player is the host.
 .. code-block:: lua
    :linenos:
    
-   isHost = lobby.is_player_host(lobby.get_host()) -- Checks if the player is the host.
+   isHost = lobby.is_player_host(lobby.get_host()) -- Checks whether the player is the host.
    if isHost then -- If the player is the host.
       system.log_info("The player is the host.")
    end
@@ -4491,7 +4492,7 @@ Checks whether the player is the next script host.
 .. code-block:: lua
    :linenos:
    
-   isHostNext = lobby.is_player_host_next(lobby.get_host()) -- Checks if the player is the next script host.
+   isHostNext = lobby.is_player_host_next(lobby.get_host()) -- Checks whether the player is the next script host.
    if isHostNext then -- If the player is the next script host.
       system.log_info("The player is the next script host.")
    end
@@ -4516,7 +4517,7 @@ Checks whether the player is in a vehicle.
 .. code-block:: lua
    :linenos:
    
-   isInVehicle = lobby.is_player_in_vehicle(lobby.get_host()) -- Checks if the player is in a vehicle.
+   isInVehicle = lobby.is_player_in_vehicle(lobby.get_host()) -- Checks whether the player is in a vehicle.
    if isInVehicle then -- If the player is in a vehicle.
       system.log_info("The player is in a vehicle.")
    end
@@ -4542,7 +4543,7 @@ Checks whether the player is a modder.
 .. code-block:: lua
    :linenos:
    
-   isModder = lobby.is_player_modder(lobby.get_host()) -- Checks if the player is a modder.
+   isModder = lobby.is_player_modder(lobby.get_host()) -- Checks whether the player is a modder.
    if isModder then -- If the player is a modder.
       system.log_info("The player is a modder.")
    end
@@ -4567,7 +4568,7 @@ Checks whether the player is selected in the menu's online section.
 .. code-block:: lua
    :linenos:
    
-   isSelected = lobby.is_player_selected(lobby.get_host()) -- Checks if the player is selected.
+   isSelected = lobby.is_player_selected(lobby.get_host()) -- Checks whether the player is selected.
    if isSelected then -- If the player is selected.
       system.log_info("The player is selected.")
    end
@@ -4592,7 +4593,7 @@ Checks whether the player is a Rockstar staff member.
 .. code-block:: lua
    :linenos:
    
-   isStaff = lobby.is_player_staff(lobby.get_host()) -- Checks if the player is a Rockstar staff member.
+   isStaff = lobby.is_player_staff(lobby.get_host()) -- Checks whether the player is a Rockstar staff member.
    if isStaff then -- If the player is a Rockstar staff member.
       system.log_info("The player is a Rockstar staff member.")
    end
@@ -4617,7 +4618,7 @@ Checks whether the player is valid - if it's connected to the session, fully loa
 .. code-block:: lua
    :linenos:
    
-   isValid = lobby.is_player_valid(lobby.get_host()) -- Checks if the player is valid.
+   isValid = lobby.is_player_valid(lobby.get_host()) -- Checks whether the player is valid.
    if isValid then -- If the player is valid.
       system.log_info("The player is valid.")
    end
@@ -4642,7 +4643,7 @@ Checks whether the session has started: returns true if it's fully loaded and yo
 .. code-block:: lua
    :linenos:
    
-   isStarted = lobby.is_session_started() -- Checks if the session has started.
+   isStarted = lobby.is_session_started() -- Checks whether the session has started.
    if isStarted then -- If the session has started.
       system.log_info("The session has started.")
    end
@@ -4771,6 +4772,8 @@ Returns the player's maximum health.
    end
 
 ================================
+
+.. _lobby_get_player_team:
 
 get_player_team(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5398,7 +5401,7 @@ Check if string is a number.
 is_valid_ip4(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if string is a valid IPv4.
+Checks whether the string is a valid IPv4.
 
 **Parameters:**
 
@@ -5607,7 +5610,7 @@ This namespace contains functions that let you interact with the file system.
 dir_exist(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if directory exists.
+Checks whether the directory exists.
 
 **Parameters:**
 
@@ -5635,7 +5638,7 @@ Checks if directory exists.
 file_exist(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if file exists.
+Checks whether the file exists.
 
 **Parameters:**
 
@@ -5690,7 +5693,7 @@ Removes a file.
 file_validate(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if file is corrupted, checks if the permissions are correct, if it's readable and if it's writable.
+Checks whether the file is corrupted, Checks whether the permissions are correct, if it's readable and if it's writable.
 
 **Parameters:**
 
@@ -5717,7 +5720,7 @@ Checks if file is corrupted, checks if the permissions are correct, if it's read
 is_file_empty(``file``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if file is empty.
+Checks whether the file is empty.
 
 **Parameters:**
 
@@ -5746,7 +5749,7 @@ Checks if file is empty.
 dir_check(``dir``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if directory exists, and if not, creates it.
+Checks whether the directory exists, and if not, creates it.
 
 **Parameters:**
 
@@ -5829,7 +5832,7 @@ Functions that are not included in any namespace
 bool get_vehicle_bypass()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the bypass for spawning Online cars in SinglePlayer is enabled.
+Checks whether the bypass for spawning Online cars in SinglePlayer is enabled.
 
 **Parameters:**
 
@@ -5853,10 +5856,10 @@ Checks if the bypass for spawning Online cars in SinglePlayer is enabled.
 
 ================================
 
-void set_vehicle_bypass(bool ``toggle``)
+set_vehicle_bypass(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the bypass for spawning Online cars in SinglePlayer is enabled.
+Checks whether the bypass for spawning Online cars in SinglePlayer is enabled.
 
 **Parameters:**
 
@@ -6492,7 +6495,7 @@ is_entity_in_whitelist(``entity``)
    This function is still in development.
 
 
-Checks if the entity is in the whitelist.
+Checks whether the entity is in the whitelist.
 
 **Parameters:**
 
@@ -7215,10 +7218,10 @@ Set vehicle color (primary, secondary, pearlescence, wheels)
 **Parameters:**
 
 * ``v`` (``Vehicle``) -- Vehicle hash
-* ``primary`` (``int``) - Primary `color ID`_
-* ``secondary`` (``int``) - Secondary `color ID`_
-* ``pearl`` (``int``) - Pearlescence `color ID`_ (if applicable)
-* ``wheel`` (``int``) - Wheel `color ID`_
+* ``primary`` (``int``) -- Primary `color ID`_
+* ``secondary`` (``int``) -- Secondary `color ID`_
+* ``pearl`` (``int``) -- Pearlescence `color ID`_ (if applicable)
+* ``wheel`` (``int``) -- Wheel `color ID`_
   
 .. _color ID: https://wiki.rage.mp/index.php?title=Vehicle_Colors
 
@@ -7328,16 +7331,6 @@ Online namespace
 ----------------
 
 This namespace contains functions that are related to online features and are used to execute built-in menu features
-
-void reset_idle_kick_timer();
-void set_off_radar(bool toggle);
-void set_passive_mode(bool toggle);
-void set_securoserv_bypass();
-void set_skip_cutscene();
-void set_spectating_mode(bool toggle, Player player);
-void teleport_in_player_vehicle(Player player);
-void teleport_to_player(Player player);
-void toggle_protex(bool toggle);
 
 ================================
 
@@ -7572,10 +7565,6 @@ This namespace contains functions that are related to session creation and are u
 
 ================================
 
-void session_choose_character();
-void session_leave_online();
-void session_manager(eSessionType id);
-
 session_choose_character()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -7631,7 +7620,7 @@ Sends the player to the specified session.
 
 * ``id`` (``eSessionType``) -- The session to send the player to
 
-  * Read more about eSessionType here - :ref:`eSessionType`
+  * Read more about eSessionType here -- :ref:`eSessionType`
 
 **Returns:**
 
@@ -7837,7 +7826,7 @@ Gives ammo to a ped.
 
 **Parameters:**
 
-* ``ped`` (``Ped``) -- The ped to ammos to.
+* ``ped`` (``Ped``) -- The ped to ammo to.
 
 **Returns:**
 
@@ -7861,7 +7850,7 @@ Gives ammo for a precise weapon to a ped.
 
 * ``ped`` (``Ped``) -- The targeted ped.
 
-* ``weaponHash`` (``Hash``) -- Ped's weapon `Whash`_ to give ammos to.
+* ``weaponHash`` (``Hash``) -- Ped's weapon `Whash`_ to give ammo to.
 
 .. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
 
@@ -7903,15 +7892,15 @@ Gives infinite ammo to a ped.
 ammo_enhanced(``ped``, ``explosionId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gives enhanced ammo (ammos that generate a particular explosion) to a ped.
+Gives enhanced ammo (ammo that generate a particular explosion) to a ped.
 
 **Parameters:**
 
 * ``ped`` (``Ped``) -- The targeted ped.
   
-* ``explosionId`` (``int``) -- The `explosion IDs`_ , determinates the type of explosion to assign to the ammos.
+* ``explosionId`` (``int``) -- The explosion ID determinates the type of explosion to assign to the ammo.
 
-.. _explosion IDs: https://wiki.gtanet.work/index.php?title=Explosions
+  * You can read more about explosion IDs here: :doc:`exptypes`
 
 **Returns:**
 
@@ -7964,8 +7953,8 @@ Teleport to blip.
 
 **Parameters:**
 
-* ``sprite`` (``int``) -- The `blip <https://wiki.gtanet.work/index.php?title=Blips>` sprite ID to use.
-* ``color`` (``int``) -- The `blip <https://wiki.gtanet.work/index.php?title=Blips>` color ID to use.
+* ``sprite`` (``int``) -- The `blip <https://wiki.gtanet.work/index.php?title=Blips>`__ sprite ID to use.
+* ``color`` (``int``) -- The `blip <https://wiki.gtanet.work/index.php?title=Blips>`__ color ID to use.
 
   * ``-1`` to use the default color
 
@@ -7973,7 +7962,7 @@ Teleport to blip.
 
 **Returns:**
 
-* ``bool`` -- Returns teleport status
+* ``bool``
 
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
@@ -7998,7 +7987,7 @@ Teleport to entity.
 
 **Returns:**
 
-* ``bool`` -- Returns teleport status
+* ``bool``
 
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
@@ -8023,7 +8012,7 @@ Teleport to player.
 
 **Returns:**
 
-* ``bool`` -- Returns teleport status
+* ``bool``
 
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
@@ -8048,7 +8037,7 @@ Teleport to position (through coordinates).
 
 **Returns:**
 
-* ``bool`` -- Returns teleport status
+* ``bool``
 
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
@@ -8073,7 +8062,7 @@ Teleport to waypoint.
 
 **Returns:**
 
-* ``bool`` -- Returns teleport status
+* ``bool``
 
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
@@ -8098,7 +8087,7 @@ Teleport to objective.
 
 **Returns:**
 
-* ``bool`` -- Returns teleport status
+* ``bool``
 
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
@@ -8123,7 +8112,7 @@ Teleport to the nearest vehicle.
 
 **Returns:**
 
-* ``bool`` -- Returns teleport status
+* ``bool``
 
   * ``true`` -- Teleportation successful
   * ``false`` -- Teleportation failed
@@ -8682,6 +8671,320 @@ Player namespace
 
 Functions here
 
+This namespace contains player-related game functions.
+
+================================
+
+get_player_group(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the group ID the player is member of. Used for :ref:`ai`.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID
+
+**Returns:**
+
+* ``int`` -- Group ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   group = rage.player.get_player_group(rage.player.player_id())
+   system.log_debug("Player is member of group: " .. tostring(group))
+
+
+================================
+
+get_player_name(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player name.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID
+
+**Returns:**
+
+* ``string`` -- Player name
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   name = rage.player.get_player_name(rage.player.player_id())
+   system.log_debug("Player name: " .. tostring(name))
+
+================================
+
+get_player_parachute_model_override(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the hash of the parachute model.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID
+
+**Returns:**
+
+* ``Hash`` -- Parachute model hash
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   parachute_model = rage.player.get_player_parachute_model_override(rage.player.player_id())
+   system.log_debug("Player parachute model hash: " .. tostring(parachute_model))
+
+
+
+================================
+
+get_player_ped_script_index(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Ped ID of the player's character.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID
+
+**Returns:**
+
+* ``Ped`` -- Ped ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = rage.player.get_player_ped_script_index(rage.player.player_id())
+   system.log_debug("Player ped: " .. tostring(ped))
+
+================================
+
+get_player_team(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the team ID the player is member of. Almost like :ref:`lobby_get_player_team`.
+
+.. note::
+
+   Doesn't work in singleplayer. 
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID
+
+**Returns:**
+
+* ``int`` -- Team ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   team = rage.player.get_player_team(rage.player.player_id())
+   system.log_debug("Player is member of team: " .. tostring(team))
+
+================================
+
+get_player_wanted_level()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's wanted level.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- Wanted level
+
+================================
+
+is_player_free_aiming(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns whether the player is aiming.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- the player is aiming
+  * ``false`` -- the player is not aiming
+  
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   if rage.player.is_player_free_aiming(rage.player.player_id()) then
+      system.log_debug("Player is aiming")
+   end
+
+================================
+
+is_player_playing(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns whether the wasted/busted screen is visible or not.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- the wasted/busted screen is visible
+  * ``false`` -- the wasted/busted screen is not visible
+
+================================
+
+is_player_pressing_horn(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the player is pressing the horn.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- Player is pressing the horn
+  * ``false`` -- Player is not pressing the horn
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   if rage.player.is_player_pressing_horn(rage.player.player_id()) then
+      system.log_debug("Player is pressing the horn")
+   end
+
+================================
+
+player_id()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``Player`` -- Player ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   player = rage.player.player_id()
+   system.log_debug("Player ID: " .. tostring(player))
+
+================================
+
+set_player_model(``player``, ``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the model for a specific player.
+
+.. note::
+   
+   This will destroy the current Ped for the Player and create a new one.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID
+* ``model`` (``Hash``) -- The model hash
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   rage.player.set_player_model(rage.player.player_id(), rage.gameplay.get_hash_key(ig_floyd))
+
+
+================================
+
+set_player_parachute_model_override(``player``, ``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the parachute model for a player.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID
+* ``model`` (``Hash``) -- The model hash
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   rage.player.set_player_parachute_model_override(rage.player.player_id(), 73268708)
+
+================================
+
+
+set_player_targeting_mode(``targetMode``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets your targeting mode.
+
+**Parameters:**
+
+* ``targetMode`` (``int``) -- Targeting mode
+
+  * ``0`` = Assisted Aim -- Full
+  * ``1`` = Assisted Aim -- Partial
+  * ``2`` = Free Aim -- Assisted
+  * ``3`` = Free Aim
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   rage.player.set_player_targeting_mode(3)
+   system.log_debug("Targeting mode: Free Aim")
+
 ================================
 
 .. _pedNSR:
@@ -8716,7 +9019,43 @@ Functions here
 Object namespace
 ----------------------
 
-Functions here
+This namespace contains object-related game functions.
+
+================================
+
+
+create_object(``modelHash``, ``x``, ``y``, ``z``, ``isNetwork``, ``bScriptHostObj``, ``dynamic``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates an object (prop) with the specified model at the specified position.
+
+**Parameters:**
+
+* ``modelHash`` (``Hash``) -- The model to spawn.
+
+  * `Models here <https://gta-objects.xyz/objects>`__
+* ``x`` (``float``) -- Spawn coordinate X component.
+* ``y`` (``float``) -- Spawn coordinate Y component.
+* ``z`` (``float``) -- Spawn coordinate Z component.
+* ``isNetwork`` (``bool``) -- Whether to create a network object for the object.
+
+  * ``true`` to create a network object for the object
+  * ``false`` to create a local object for the object. In this case, the object exists only locally.
+* ``bScriptHostObj`` (``bool``) -- Whether to register the object as pinned to the script host in the R* network model.
+* ``dynamic`` (``bool``) -- False to create a door archetype (archetype flag bit 26 set) as a door. Required to be set to true to create door models in network mode.
+
+**Returns:**
+
+* ``Object`` -- An object ID.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   object = rage.object.create_object(rage.gameplay.get_hash_key("apa_mp_apa_crashed_usaf_01a"), 0.0, 0.0, 0.0, true, false, false) -- Hash: 1925170211
+   system.log_debug("Object ID: " .. tostring(object))
+
 
 ================================
 
@@ -8725,7 +9064,482 @@ Functions here
 Weapon namespace
 ----------------------
 
-Functions here
+This namespace contains weapon-related game functions.
+
+================================
+
+get_max_ammo(``ped``, ``weaponHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get ped max ammo for a weapon.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_ 
+
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- Max ammo has been given
+  * ``false`` -- Max ammo hasn't been given
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.weapon.get_max_ammo(lobby.get_player_ped(lobby.get_host()), rage.gameplay.get_hash_key("MicroSMG")) -- Gives session host a fully loaded MicroSMG
+
+================================
+
+get_ped_ammo_type_from_weapon(``ped``, ``weaponHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get ammo type from a specific weapon of a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_ 
+  
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+
+**Returns:**
+
+* ``Hash`` -- Returns ammo type hash
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+
+   rage.weapon.get_ped_ammo_type_from_weapon(ped, rage.gameplay.get_hash_key("MicroSMG")) -- Gets ammo type from session's host MicroSMG
+
+================================
+
+get_ped_weapon_tint_index(``ped``, ``weaponHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get weapon tint ID from a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_ 
+  
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+
+**Returns:**
+
+* ``int`` -- Returns weapon tint ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+
+   rage.weapon.get_ped_weapon_tint_index(ped, rage.gameplay.get_hash_key("MicroSMG"), ) -- Gets weapon tint ID from session's host MicroSMG
+
+================================
+
+get_ped_weapon_tint_count(``weaponHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get weapon tint count.
+
+**Parameters:**
+
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_ 
+  
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+
+**Returns:**
+
+* ``int`` -- Returns weapon tint count
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+
+   rage.weapon.get_ped_weapon_tint_count(ped, rage.gameplay.get_hash_key("MicroSMG"), ) -- Gets weapon tint count from session's host MicroSMG
+
+================================
+
+give_delayed_weapon_to_ped(``ped``, ``weaponHash``, ``ammoCount``, ``bForceInHand``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gives a weapon to PED with a delay.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_ 
+* ``ammoCount`` (``int``) -- Ammo count
+
+* ``bForceInHand`` (``bool``) -- Togglable force in hand
+
+  * ``true`` -- Equip now
+  * ``false`` -- Don't equp
+  
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+   
+   weapon = rage.gameplay.get_hash_key("MicroSMG")
+
+   rage.weapon.give_delayed_weapon_to_ped(ped, weapon, 100, true)
+
+================================
+
+give_weapon_component_to_ped(``ped``, ``weaponHash``, ``componentHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Give a weapon component to a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_ 
+* ``componentHash`` (``Hash``) -- Weapon component `Chash`_ 
+  
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Chash: https://wiki.rage.mp/index.php?title=Weapons_Components
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+   
+   weapon = rage.gameplay.get_hash_key("MicroSMG")
+
+   rage.weapon.give_delayed_weapon_to_ped(ped, weapon, "0x10E6BA2B") -- Gives extended clip component to session host's MicroSMG
+
+================================
+
+has_ped_got_weapon(``ped``, ``weaponHash``, ``p2``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if a ped has got a weapon.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_  
+* ``p2`` (``bool``) -- Should always be ``false``, otherwise the function always returns ``false``
+  
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+
+**Returns:**
+
+* ``bool`` 
+
+  * ``true`` -- Ped has got the weapon
+  * ``false`` -- Ped doesn't have the weapon
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+   
+   weapon = rage.gameplay.get_hash_key("MicroSMG")
+
+   rage.weapon.has_ped_got_weapon(ped, weapon, true) -- Checks if session host has got MicroSMG
+
+================================
+
+has_ped_got_weapon_component(``ped``, ``weaponHash``, ``componentHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if a ped's weapon has got a component.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_  
+* ``componentHash`` (``Hash``) -- Weapon component `Chash`_ 
+  
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Chash: https://wiki.rage.mp/index.php?title=Weapons_Components
+
+**Returns:**
+
+* ``bool`` 
+
+  * ``true`` -- Ped's weapon has got component
+  * ``false`` -- Ped's weapon doesn't have the component
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+   
+   weapon = rage.gameplay.get_hash_key("MicroSMG")
+
+   rage.weapon.has_ped_got_weapon_component(ped, weapon, "0x10E6BA2B") -- Checks if session host's MicroSMG has got Extended Clip
+
+================================
+
+remove_all_ped_weapons(``ped``, ``p1``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove all ped's weapons.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``p1`` (``bool``) -- The value doesn't seem to matter.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+
+   rage.weapon.remove_all_ped_weapons(ped, true) -- Removes all session host's weapons
+
+================================
+
+remove_weapon_component_from_ped(``ped``, ``weaponHash``, ``componentHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove component from a ped's weapon.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_  
+* ``componentHash`` (``Hash``) -- Weapon component `Chash`_ 
+  
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Chash: https://wiki.rage.mp/index.php?title=Weapons_Components
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+
+   weapon = rage.gameplay.get_hash_key("MicroSMG")
+
+   rage.weapon.remove_weapon_component_from_ped(ped, weapon, "0x10E6BA2B") -- Removes Extended Clip from session host's MicroSMG
+
+================================
+
+remove_weapon_from_ped(``ped``, ``weaponHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove a weapon from a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_  
+  
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+
+   weapon = rage.gameplay.get_hash_key("MicroSMG")
+
+   rage.weapon.remove_weapon_from_ped(ped, weapon, "0x10E6BA2B") -- Removes MicroSMG from session host
+
+================================
+
+set_ped_ammo(``ped``, ``weaponHash``, ``ammo``, ``p3``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set ped ammo amount.
+
+.. note::
+
+   This function is still in development.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_  
+* ``ammo`` (``int``) --
+* ``p3`` (``bool``) --
+  
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+
+   weapon = rage.gameplay.get_hash_key("MicroSMG")
+
+   rage.weapon.set_ped_ammo(ped, weapon, 100, true)
+
+================================
+
+set_ped_ammo_by_type(``ped``, ``ammoTypeHash``, ``ammo``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set ped ammo by type.
+
+.. note::
+
+   This function is still in development.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``ammoTypeHash`` (``Hash``) -- Weapon ammo `Ahash`_  
+* ``ammo`` (``int``) -- Ammo Type
+  
+.. _Ahash: https://gist.github.com/root-cause/faf41f59f7a6d818b7db0b839bd147c1
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+   self = lobby.get_player_ped(self.get_ped)
+
+   ammoType = rage.weapon.get_ped_ammo_type_from_weapon(ped, rage.gameplay.get_hash_key("MicroSMG")) -- Get ammo type from session host's MicroSMG
+
+   rage.weapon.set_ped_ammo_by_type(self, ammoType, 100) -- Set self ammo type
+
+================================
+
+set_ped_weapon_tint_index(``ped``, ``weaponHash``, ``tintIndex``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set ped weapon tint ID.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped
+* ``weaponHash`` (``Hash``) -- Weapon `Whash`_  
+* ``tintIndex`` (``int``) -- Weapon tint ID
+
+  * tintIndex can be the following:
+
+    * Default/Black = ``0``
+    * Green = ``1``
+    * Gold = ``2``
+    * Pink = ``3``
+    * Army = ``4``
+    * LSPD = ``5``
+    * Orange = ``6``
+    * Platinum = ``7``
+  * tineIndex for MK2 weapons:
+
+    * Classic Black = ``0``
+    * Classic Gray = ``1``  
+    * Classic Two-Tone = ``2``
+    * Classic White = ``3``
+    * Classic Beige = ``4``
+    * Classic Green = ``5``
+    * Classic Blue = ``6``
+    * Classic Earth = ``7``
+    * Classic Brown & Black = ``8``
+    * Red Contrast = ``9``
+    * Blue Contrast = ``10``
+    * Yellow Contrast = ``11``
+    * Orange Contrast = ``12``
+    * Bold Pink = ``13``
+    * Bold Purple & Yellow = ``14``
+    * Bold Orange = ``15``
+    * Bold Green & Purple = ``16``
+    * Bold Red Features = ``17``
+    * Bold Green Features = ``18``
+    * Bold Cyan Features = ``19``
+    * Bold Yellow Features = ``20``
+    * Bold Red & White = ``21``
+    * Bold Blue & White = ``22``
+    * Metallic Gold = ``23``
+    * Metallic Platinum = ``24``
+    * Metallic Gray & Lilac = ``25``
+    * Metallic Purple & Lime = ``26``
+    * Metallic Red = ``27``
+    * Metallic Green = ``28``
+    * Metallic Blue = ``29``
+    * Metallic White & Aqua = ``30``
+    * Metallic Orange & Yellow = ``31``
+    * Mettalic Red and Yellow = ``32``
+
+
+  
+.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = lobby.get_player_ped(lobby.get_host())
+   self = lobby.get_player_ped(self.get_ped)
+
+   tint = rage.weapon.get_ped_weapon_tint_index(ped, rage.gameplay.get_hash_key("MicroSMG")) -- Gets weapon tint ID from session's host MicroSMG
+
+   rage.weapon.set_ped_weapon_tint_index(self, rage.gameplay.get_hash_key("MicroSMG"), tint) -- Sets self weapon tint
 
 ================================
 
@@ -8779,7 +9593,100 @@ Functions here
 Fire namespace
 ----------------------
 
-Functions here
+This namespace contains fire-related game functions.
+
+================================
+
+add_explosion(``x``, ``y``, ``z``, ``explosionType``, ``damageScale``, ``isAudible``, ``isInvisible``, ``cameraShake``, ``noDamage``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add explosion in certain coordinates with multiple options.
+
+**Parameters:**
+
+* ``x`` (``float``) -- X position
+* ``y`` (``float``) -- Y position
+* ``z`` (``float``) -- Z position
+* ``explosionType`` (``int``) -- Explosion types
+
+  * Read more about explosion types    here: :doc:`exptypes`
+* ``damageScale`` (``float``) -- Damage scale
+* ``isAudible`` (``bool``) -- Toggle explosion sound
+
+  * ``true`` -- Explosion is audible
+  * ``false`` -- Explosion is silent  
+* ``isInvisible`` (``bool``) -- Toggle explosion visibility
+
+  * ``true`` -- Explosion is invisible
+  * ``false`` -- Explosion is visible
+
+* ``cameraShake`` (``float``) -- Camera shake intensity
+* ``noDamage`` (``bool``) -- Toggle no damage
+
+  * ``true`` -- Explosion doesn't cause damage
+  * ``false`` -- Explosion causes damage
+
+  
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   c = self.get_coords()
+   rage.fire.add_explosion(c.x, c.y, c.z, 7, 10, true, false, 10, false)
+   -- Adds a Car Explosion located at Casino Entrance, with 10 damage scale, audible, invisible, 10 camera shake intensity and damage toggled on
+
+================================
+
+start_entity_fire(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Start fire on entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity ID
+
+**Returns:**
+
+``int`` -- Returns a value which represents how many times the fire was applied
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.fire.start_entity_fire(entity)
+
+================================
+
+stop_entity_fire(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Stop fire on entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.fire.stop_entity_fire(entity)
 
 ================================
 
@@ -8788,7 +9695,298 @@ Functions here
 Network namespace
 ----------------------
 
-Functions here
+This namespace contains network-related game functions.
+
+================================
+
+network_get_friend_count()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get friend count.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- Returns friend count
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.network.network_get_friend_count()
+
+================================
+
+network_get_host_of_this_script()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get ID of the player host of this script.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``Player`` -- Returns Player ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.network.network_get_host_of_this_script()
+
+================================
+
+network_get_max_friends()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get max friends.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- Returns max friends
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.network.network_get_max_friends()
+
+================================
+
+network_has_control_of_entity(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check network control of entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity to check
+
+**Returns:**
+
+* ``bool``     
+
+  * ``true`` -- Network has control of the entity
+  * ``false`` -- Network doesn't have control of the entity
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.network.network_has_control_of_entity(entity)
+
+================================
+
+network_is_friend_in_multiplayer(``friendName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if friend is in multiplayer.
+
+**Parameters:**
+
+* ``friendName`` (``string``) -- The friend name to check
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- Friend is in multiplayer
+  * ``false`` -- Friend isn't in multiplayer
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.network.network_is_friend_in_multiplayer("Bobby")
+
+================================
+
+network_is_friend_index_online(``friendIndex``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is poorly documented. It requires testing.
+
+Check if friend is online by friend index.
+
+**Parameters:**
+
+* ``friendIndex`` (``int``) -- The friend index to check
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- Friend is online
+  * ``false`` -- Friend isn't online
+
+
+================================
+
+network_is_friend_online(``name``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if friend is online.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The friend name to check
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- Friend is online
+  * ``false`` -- Friend isn't online
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.network.network_is_friend_online("Huginn5") -- stalking Huginn
+
+================================
+
+network_is_session_started()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if session has started.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` --  Session has started
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.network.network_is_session_started()
+
+================================
+
+network_hash_from_player_handle(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get hash from player handle.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The Player ID
+
+**Returns:**
+
+* ``Hash`` -- Returns hash from player handle.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   player = lobby.get_host()
+   
+   rage.network.network_hash_from_player_handle(player)
+
+================================
+
+network_is_host()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check host status.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool`` 
+
+  * ``true`` --  Player is a host
+  * ``false`` -- Player isn't a host
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.network.network_is_host()
+
+================================
+
+network_session_kick_player(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Kick player out of the session.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The Player ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   player = lobby.get_host()
+
+   rage.network.network_session_kick_player(player)
+
+================================
+
+network_request_control_of_entity(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Request control of entity.
+
+**Parameters:**
+
+* ``Entity`` (``Entity``) -- The Entity ID
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` --  Request successful
+  * ``false`` -- Request failed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.network.network_request_control_of_entity(entity)
 
 ================================
 
@@ -8797,7 +9995,101 @@ Functions here
 Cutscene namespace
 ----------------------
 
-Functions here
+This namespace contains cutscene-related game functions.
+
+================================
+
+is_cutscene_active()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if a cutscene is active.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- Cutscene is active
+  * ``false`` -- Cutscene is inactive
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.cutscene.is_cutscene_active()
+
+================================
+
+is_cutscene_playing()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if a cutscene is playing.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- Cutscene is playing
+  * ``false`` -- Cutscene is not playing
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.cutscene.is_cutscene_playing()
+
+================================
+
+remove_cutscene()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes cutscene.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.cutscene.remove_cutscene()
+
+================================
+
+stop_cutscene_immediately()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Immediately stop cutscene.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.cutscene.stop_cutscene_immediately()
 
 ================================
 
@@ -8806,7 +10098,225 @@ Functions here
 Controls namespace
 ----------------------
 
-Functions here
+This namespace contains controls-related game functions.
+
+================================
+
+disable_control_action(``padIndex``, ``control``, ``disable``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Disable control action.
+
+**Parameters:**
+
+* ``padIndex`` (``int``) -- Control `padIndex`_  
+* ``control`` (``int``) -- `Control types`_  
+* ``disable`` (``bool``) -- Toggle disable
+
+  * ``true`` -- Disable control action
+  * ``false`` -- Do not disable control action
+
+.. _padIndex: https://docs.fivem.net/docs/game-references/controls/#controls
+.. _Control types: https://docs.fivem.net/docs/game-references/controls/#control-types
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.controls.disable_control_action(21, 0, true)
+
+================================
+
+get_control_normal(``padIndex``, ``control``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is poorly documented. It needs more testing and information.
+
+**Parameters:**
+
+* ``padIndex`` (``int``) -- Control `padIndex`_  
+* ``control`` (``int``) -- Control `Ctypes`_  
+
+.. _padIndex: https://docs.fivem.net/docs/game-references/controls/#controls
+.. _Ctypes: https://docs.fivem.net/docs/game-references/controls/#control-types
+
+**Returns:**
+
+* ``float`` --
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.controls.get_control_normal(71, 0) -- returns INPUT_VEH_ACCELERATE value (normalized)
+
+================================
+
+is_control_just_pressed(``padIndex``, ``control``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is poorly documented. It needs more testing and information.
+
+
+**Parameters:**
+
+* ``padIndex`` (``int``) -- Control `padIndex`_  
+* ``control`` (``int``) -- Control `Ctypes`_  
+
+.. _padIndex: https://docs.fivem.net/docs/game-references/controls/#controls
+.. _Ctypes: https://docs.fivem.net/docs/game-references/controls/#control-types
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- Control was just pressed
+  * ``false`` -- Control wasn't just pressed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.controls.is_control_just_pressed(21, 0)
+
+================================
+
+is_control_pressed(``padIndex``, ``control``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+   .. note::
+
+   This function is poorly documented. It needs more testing and information.
+
+.. note::
+
+   ``inputGroup`` is always 2 for xbox 360 controller.
+
+**Parameters:**
+
+* ``padIndex`` (``int``) -- Control `padIndex`_  
+* ``control`` (``int``) -- Control `Ctypes`_  
+
+.. _padIndex: https://docs.fivem.net/docs/game-references/controls/#controls
+.. _Ctypes: https://docs.fivem.net/docs/game-references/controls/#control-types
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- Control button is pressed
+  * ``false`` -- Control button is not pressed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.controls.is_control_pressed(21, 0)
+
+================================
+
+is_disabled_control_just_pressed(``padIndex``, ``control``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if a disabled control is just pressed.
+
+**Parameters:**
+
+* ``padIndex`` (``int``) -- Control `padIndex`_  
+* ``control`` (``int``) -- Control `Ctypes`_  
+
+.. _padIndex: https://docs.fivem.net/docs/game-references/controls/#controls
+.. _Ctypes: https://docs.fivem.net/docs/game-references/controls/#control-types
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- Control is pressed
+  * ``false`` -- Control is not pressed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.controls.is_disabled_control_just_pressed(21, 0)
+
+================================
+
+is_disabled_control_pressed(``padIndex``, ``control``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if a disabled control is pressed.
+
+**Parameters:**
+
+* ``padIndex`` (``int``) -- Control `padIndex`_  
+* ``control`` (``int``) -- Control `Ctypes`_  
+
+.. _padIndex: https://docs.fivem.net/docs/game-references/controls/#controls
+.. _Ctypes: https://docs.fivem.net/docs/game-references/controls/#control-types
+
+**Returns:**
+
+* ``bool`` -- Returns control status
+
+  * ``true`` -- Control is pressed
+  * ``false`` -- Control is not pressed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.controls.is_disabled_control_pressed(21, 0)
+
+================================
+
+set_control_normal(``padIndex``, ``control``, ``amount``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This function simulates player input.
+
+.. note::
+
+   This function is poorly documented. It needs more testing and information.
+
+**Parameters:**
+
+* ``padIndex`` (``int``) -- Control `padIndex`_  
+* ``control`` (``int``) -- Control `Ctypes`_  
+* ``amount`` (``float``)
+
+.. _padIndex: https://docs.fivem.net/docs/game-references/controls/#controls
+.. _Ctypes: https://docs.fivem.net/docs/game-references/controls/#control-types
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- input success
+  * ``false`` -- input failed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.controls.set_control_normal(71, 0, 1) -- sets 1.0 to INPUT_VEH_ACCELERATE
 
 ================================
 
@@ -8824,7 +10334,100 @@ Functions here
 Time namespace
 ----------------------
 
-Functions here
+This namespace contains time-related game functions.
+
+================================
+
+get_clock_hours()
+^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the current in-game hour
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The current hour
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   hour = rage.time.get_clock_hours()
+   system.log_debug("Current hour: " .. hour)
+
+================================
+
+get_current_minutes()
+^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the current in-game minute
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The current minute
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   minute = rage.time.get_current_minutes()
+   system.log_debug("Current minute: " .. minute)
+
+================================
+
+get_current_seconds()
+^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the current in-game second
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The current second
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   second = rage.time.get_current_seconds()
+   system.log_debug("Current second: " .. second)
+
+================================
+
+set_clock_time(``hour``, ``minute``, ``second``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the in-game time
+
+**Parameters:**
+
+* ``hour`` (``int``) -- The hour
+* ``minute`` (``int``) -- The minute
+* ``second`` (``int``) -- The second
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.time.set_clock_time(12, 30, 45) -- Sets in-game time to 12:30:45
 
 ================================
 
@@ -8860,7 +10463,9 @@ Functions here
 Audio namespace
 ----------------------
 
-Functions here
+This namespace contains audio-related game functions. 
+
+=================================
 
 ================================
 

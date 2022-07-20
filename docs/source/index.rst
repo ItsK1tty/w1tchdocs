@@ -28,3 +28,4 @@ Contents
    doors
    windows
    headlightscolor
+   exptypes
