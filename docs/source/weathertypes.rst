@@ -15,3 +15,7 @@ Current available weather types are:
 * ``XMAS``
 * ``SNOWLIGHT``
 * ``BLIZZARD``
+* ``NEUTRAL``
+* ``SNOW``
+* ``HALLOWEEN``
+

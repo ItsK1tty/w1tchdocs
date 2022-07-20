@@ -6937,7 +6937,7 @@ Sets the headlight color of the specified vehicle.
 
 * ``color`` (``int``) -- The headlight color ID
 
-   * For color IDs, see this: :doc:`headlightcolor`
+  * For color IDs, see this: :doc:`headlightcolor`
 **Returns:**
 
 * None
@@ -7767,7 +7767,7 @@ Gives weapon to the player (self).
 
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_ to give to self.
   
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 
 **Returns:**
 
@@ -7803,7 +7803,7 @@ Gives a weapon to ped with toggable max ammo and max components.
   * ``true`` -- Weapon will be given fully upgraded in components (default)
   * ``false`` -- Weapon will be given in its default form
 
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 
 
 **Returns:**
@@ -7852,7 +7852,7 @@ Gives ammo for a precise weapon to a ped.
 
 * ``weaponHash`` (``Hash``) -- Ped's weapon `Whash`_ to give ammo to.
 
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 
 **Returns:**
 
@@ -7953,8 +7953,8 @@ Teleport to blip.
 
 **Parameters:**
 
-* ``sprite`` (``int``) -- The `blip <https://wiki.gtanet.work/index.php?title=Blips>`__ sprite ID to use.
-* ``color`` (``int``) -- The `blip <https://wiki.gtanet.work/index.php?title=Blips>`__ color ID to use.
+* ``sprite`` (``int``) -- The `blip <https://wiki.rage.mp/index.php?title=Blips>`__ sprite ID to use.
+* ``color`` (``int``) -- The `blip <https://wiki.rage.mp/index.php?title=Blips>`__ color ID to use.
 
   * ``-1`` to use the default color
 
@@ -9078,8 +9078,7 @@ Get ped max ammo for a weapon.
 * ``ped`` (``Ped``) -- The ped
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_ 
 
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
-
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 **Returns:**
 
 * ``bool``
@@ -9106,7 +9105,7 @@ Get ammo type from a specific weapon of a ped.
 * ``ped`` (``Ped``) -- The ped
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_ 
   
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 
 **Returns:**
 
@@ -9133,7 +9132,7 @@ Get weapon tint ID from a ped.
 * ``ped`` (``Ped``) -- The ped
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_ 
   
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 
 **Returns:**
 
@@ -9159,7 +9158,7 @@ Get weapon tint count.
 
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_ 
   
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 
 **Returns:**
 
@@ -9192,7 +9191,7 @@ Gives a weapon to PED with a delay.
   * ``true`` -- Equip now
   * ``false`` -- Don't equp
   
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 
 **Returns:**
 
@@ -9222,7 +9221,7 @@ Give a weapon component to a ped.
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_ 
 * ``componentHash`` (``Hash``) -- Weapon component `Chash`_ 
   
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 .. _Chash: https://wiki.rage.mp/index.php?title=Weapons_Components
 
 **Returns:**
@@ -9253,7 +9252,7 @@ Check if a ped has got a weapon.
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_  
 * ``p2`` (``bool``) -- Should always be ``false``, otherwise the function always returns ``false``
   
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 
 **Returns:**
 
@@ -9286,7 +9285,7 @@ Check if a ped's weapon has got a component.
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_  
 * ``componentHash`` (``Hash``) -- Weapon component `Chash`_ 
   
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 .. _Chash: https://wiki.rage.mp/index.php?title=Weapons_Components
 
 **Returns:**
@@ -9345,7 +9344,7 @@ Remove component from a ped's weapon.
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_  
 * ``componentHash`` (``Hash``) -- Weapon component `Chash`_ 
   
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 .. _Chash: https://wiki.rage.mp/index.php?title=Weapons_Components
 
 **Returns:**
@@ -9375,7 +9374,7 @@ Remove a weapon from a ped.
 * ``ped`` (``Ped``) -- The ped
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_  
   
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 
 **Returns:**
 
@@ -9410,7 +9409,7 @@ Set ped ammo amount.
 * ``ammo`` (``int``) --
 * ``p3`` (``bool``) --
   
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 
 **Returns:**
 
@@ -9475,7 +9474,7 @@ Set ped weapon tint ID.
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_  
 * ``tintIndex`` (``int``) -- Weapon tint ID
 
-  * tintIndex can be the following:
+  * ``tintIndex`` can be the following:
 
     * Default/Black = ``0``
     * Green = ``1``
@@ -9485,7 +9484,7 @@ Set ped weapon tint ID.
     * LSPD = ``5``
     * Orange = ``6``
     * Platinum = ``7``
-  * tineIndex for MK2 weapons:
+  * ``tineIndex`` for MK2 weapons:
 
     * Classic Black = ``0``
     * Classic Gray = ``1``  
@@ -9523,7 +9522,7 @@ Set ped weapon tint ID.
 
 
   
-.. _Whash: https://wiki.gtanet.work/index.php?title=Weapons_Models
+.. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 
 **Returns:**
 
@@ -9557,7 +9556,731 @@ Functions here
 UI namespace
 ----------------------
 
-Functions here
+This namespace contains ui-related game functions.
+
+================================
+
+add_blip_for_coord(``x``, ``y``, ``z``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add blip for given coordinates.
+
+**Parameters:**
+
+* ``x`` (``float``) -- X position
+* ``y`` (``float``) -- Y position
+* ``z`` (``float``) -- Z position
+
+**Returns:**
+
+* ``Blip`` -- Returns a blip at the specified coordinates.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.add_blip_for_coord(69.2, 54.8, 192.3)
+
+================================
+
+add_blip_for_entity(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add blip for given entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity to add the blip to
+
+**Returns:**
+
+* ``Blip`` -- Returns a blip at the specified entity.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.ui.add_blip_for_entity(entity) -- Adds a blip to self's ped location.
+
+================================
+
+add_blip_for_pickup(``pickup``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add blip for given pickup.
+
+**Parameters:**
+
+* ``pickup`` (``Pickup``) -- Pickup to add the blip to
+
+**Returns:**
+
+* ``Blip`` -- Returns a blip at the specified pickup.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.ui.add_blip_for_pickup(entity)
+
+================================
+
+add_blip_for_radius(``posX``, ``posY``, ``posZ``, ``radius``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add blip for given coords with custom radius.
+
+**Parameters:**
+
+* ``posX`` (``float``) -- X position
+* ``posY`` (``float``) -- Y position
+* ``posZ`` (``float``) -- Z position
+* ``radius`` (``float``) -- Radius
+
+**Returns:**
+
+* ``Blip`` -- Returns a blip at the specified pickup.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.add_blip_for_radius(69.2, 54.8, 192.3, 20)
+
+================================
+
+get_blip_coords(``blip``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get coordinates for a blip.
+
+**Parameters:**
+
+* ``blip`` (``Blip``) -- Blip
+
+**Returns:**
+
+* ``Vector3`` -- Returns blip coords in Vector3 format
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   blip = rage.ui.add_blip_for_entity(self.get_ped())
+
+   rage.ui.get_blip_coords(blip) -- Returns coords of precedently created self ped's blip
+
+================================
+
+get_blip_from_entity(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get blip from entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity to get the blip from
+
+**Returns:**
+
+* ``Blip`` -- Returns a blip
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.ui.get_blip_from_entity(entity)
+
+================================
+
+get_label_text(``labelName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get label text from label name.
+
+**Parameters:**
+
+* ``string`` (``labelName``) -- Label name to get text from
+
+**Returns:**
+
+* ``string`` -- Returns label text
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.get_label_text("Label")
+
+================================
+
+hide_hud_and_radar_this_frame()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Hide HUD (Heads-up Display) and radar.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.hide_hud_and_radar_this_frame()
+
+================================
+
+hide_hud_component_this_frame(``id``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Hide specified HUD (Heads-up Display) component.
+
+**Parameters:**
+
+* ``id`` (``int``) -- Hud component ID
+  
+  Hud component IDs:
+
+  * ``1`` : WANTED_STARS
+  * ``2`` : WEAPON_ICON
+  * ``3`` : CASH
+  * ``4`` : MP_CASH
+  * ``5`` : MP_MESSAGE
+  * ``6`` : VEHICLE_NAME
+  * ``7`` : AREA_NAME
+  * ``8`` : VEHICLE_CLASS
+  * ``9`` : STREET_NAME
+  * ``10`` : HELP_TEXT
+  * ``11`` : FLOATING_HELP_TEXT_1
+  * ``12`` : FLOATING_HELP_TEXT_2
+  * ``13`` : CASH_CHANGE
+  * ``14`` : RETICLE
+  * ``15`` : SUBTITLE_TEXT
+  * ``16`` : RADIO_STATIONS
+  * ``17`` : SAVING_GAME
+  * ``18`` : GAME_STREAM
+  * ``19`` : WEAPON_WHEEL
+  * ``20`` : WEAPON_WHEEL_STATS
+  * ``21`` : HUD_COMPONENTS
+  * ``22`` : HUD_WEAPONS
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.hide_hud_component_this_frame(19) -- Hides Weapon Wheel from the HUD.
+
+================================
+
+is_hud_component_active(``id``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if specified HUD (Heads-up Display) component is active.
+
+**Parameters:**
+
+* ``id`` (``int``) -- Hud component ID
+
+**Returns:**
+
+* ``bool`` -- Rerturns hud component status
+
+  * ``true`` -- Hud component is active
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.is_hud_component_active(19) -- Checks if Weapon Wheel is active
+
+================================
+
+is_mission_creator_blip(``blip``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if blip is mission creator.
+
+**Parameters:**
+
+* ``blip`` (``Blip``) -- Blip
+
+**Returns:**
+
+* ``bool`` -- Returns blip status
+
+  * ``true`` -- Blip is mission creator
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   blip = rage.ui.add_blip_for_entity(self.get_ped())
+
+   rage.ui.is_mission_creator_blip(blip)
+
+================================
+
+remove_blip(``blip``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes a blip.
+
+**Parameters:**
+
+* ``blip`` (``Blip``) -- Blip
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
+
+   rage.ui.remove_blip(blip) -- Removes precedently added blip
+   
+================================
+
+set_blip_as_mission_creator_blip(``blip``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set blip as mission creator blip.
+
+**Parameters:**
+
+* ``blip`` (``Blip``) -- Blip
+* ``toggle`` (``bool``) -- Toggles blip settings
+
+  * ``true`` -- Set blip as mission creator blip
+  * ``false`` -- Otherwise
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
+
+   rage.ui.set_blip_as_mission_creator_blip(blip, true) -- Sets precedently added blip as mission creator blip
+   
+================================
+
+set_blip_colour(``blip``, ``color``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set blip colour.
+
+**Parameters:**
+
+* ``blip`` (``Blip``) -- Blip
+* ``color`` (``int``) -- Blip `Color ID`_  
+
+.. _Color ID: https://wiki.rage.mp/index.php?title=Blips#Blip_colors
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
+
+   rage.ui.set_blip_colour(blip, 38) -- Sets precedently added blip Blue
+   
+================================
+
+set_blip_coords(``blip``, ``posX``, ``posY``, ``posZ``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set blip coordinates.
+
+**Parameters:**
+
+* ``blip`` (``Blip``) -- Blip
+* ``posX`` (``float``) -- X position
+* ``posY`` (``float``) -- Y position
+* ``posZ`` (``float``) -- Z position
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
+
+   rage.ui.set_blip_coords(blip, 69.2, 54.8, 192.3)
+
+================================
+
+set_blip_route(``blip``, ``enabled``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set blip route, toggable.
+
+**Parameters:**
+
+* ``blip`` (``Blip``) -- Blip
+* ``enabled`` (``bool``) -- Toggle blip route
+  
+  * ``true`` -- Blip route enabled
+  * ``false`` -- Blip route disabled
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
+
+   rage.ui.set_blip_route(blip, true)
+
+================================
+
+set_blip_sprite(``blip``, ``spriteId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set blip sprite.
+
+**Parameters:**
+
+* ``blip`` (``Blip``) -- Blip
+* ``spriteId`` (``int``) -- Blip `Sprite ID`_  
+
+.. _Sprite ID: https://wiki.rage.mp/index.php?title=Blips
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
+
+   rage.ui.set_blip_sprite(blip, 64) -- Sets radar_helicopter sprite to precedently created blip
+
+================================
+
+set_new_waypoint(``x``, ``y``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set new waypoint to given coordinates.
+
+**Parameters:**
+
+* ``x`` (``float``) -- X position
+* ``y`` (``float``) -- Y position
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.set_new_waypoint(69.2, 420.1)
+
+================================
+
+set_text_centre(``align``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set text centre.
+
+**Parameters:**
+
+* ``align`` (``bool``) -- Toggle text alignment
+
+  * ``true`` -- Text is aligned
+  * ``false`` -- Otherwise
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.set_text_centre(true)
+
+================================
+
+set_text_font(``fontType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set text font.
+
+**Parameters:**
+
+* ``fontType`` (``int``) -- Font type ID
+  
+  * Font type IDs:
+
+  * FontChaletLondon = ``0``
+  * FontHouseScript = ``1``
+  * FontMonospace = ``2``
+  * FontWingDings = ``3``
+  * FontChaletComprimeCologne = ``4``
+  * FontPricedown = ``7``
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.set_text_font(0) -- Font type 0, default (Chalet London)
+
+================================
+
+set_text_justification(``justifyType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set text justification.
+
+**Parameters:**
+
+* ``justifyType`` (``int``) -- Text justification ID
+  
+  * Justification types ID:
+
+  * ``0`` = Center-Justify
+  * ``1`` = Left-Justify
+  * ``2`` = Right-Justify
+
+Note:
+==============
+
+.. note::
+    Right-Justify requires ``set_text_wrap()``, otherwise it will draw to the far right of the screen.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.set_text_justification(1) -- Font justification left
+
+================================
+
+set_text_outline()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set text outline.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.set_text_outline()
+
+================================
+
+set_text_right_justify(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle set text right justify.
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Toggle text right justify
+  
+  * ``true`` -- Toggle on
+  * ``false`` -- Toggle off
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.set_text_right_justify(true) -- Toggle on text right justify
+
+================================
+
+set_text_scale(``scale``, ``size``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set text scale.
+
+**Parameters:**
+
+* ``scale`` (``float``) -- Text scale
+* ``size`` (``float``) -- Text size
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.set_text_scale(12, 10)
+
+================================
+
+set_text_wrap(``start``, ``end``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the text in a specified box and wrap the text if it exceeds the boundries. Both values are for X axis. Useful when positioning text set to center or aligned to the right.
+
+**Parameters:**
+
+* ``start`` (``float``) -- Left boundry on screen position (0.0 - 1.0)  
+* ``end`` (``float``) -- Right boundry on screen position (0.0 - 1.0)
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.set_text_wrap(0, 0)
+
+================================
+
+set_waypoint_off()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove the current waypoint from the map.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.set_waypoint_off(0, 0)
+
+================================
+
+show_hud_component_this_frame(``id``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Show specified HUD (Heads-up Display) component.
+
+**Parameters:**
+
+* ``id`` (``int``) -- Hud component ID
+  
+  Hud component IDs:
+
+  * ``1`` : WANTED_STARS
+  * ``2`` : WEAPON_ICON
+  * ``3`` : CASH
+  * ``4`` : MP_CASH
+  * ``5`` : MP_MESSAGE
+  * ``6`` : VEHICLE_NAME
+  * ``7`` : AREA_NAME
+  * ``8`` : VEHICLE_CLASS
+  * ``9`` : STREET_NAME
+  * ``10`` : HELP_TEXT
+  * ``11`` : FLOATING_HELP_TEXT_1
+  * ``12`` : FLOATING_HELP_TEXT_2
+  * ``13`` : CASH_CHANGE
+  * ``14`` : RETICLE
+  * ``15`` : SUBTITLE_TEXT
+  * ``16`` : RADIO_STATIONS
+  * ``17`` : SAVING_GAME
+  * ``18`` : GAME_STREAM
+  * ``19`` : WEAPON_WHEEL
+  * ``20`` : WEAPON_WHEEL_STATS
+  * ``21`` : HUD_COMPONENTS
+  * ``22`` : HUD_WEAPONS
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.show_hud_component_this_frame(19) -- Shows Weapon Wheel from the HUD.
 
 ================================
 
@@ -9566,7 +10289,41 @@ Functions here
 Draw namespace
 ----------------------
 
-Functions here
+This namespace contains drawing-related game functions.
+
+================================
+
+draw_sprite(``textureDict``, ``textureName``, ``screenX``, ``screenY``, ``width``, ``height``, ``heading``, ``red``, ``green``, ``blue``, ``alpha``, ``p11``, ``p12``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Draw a 2D sprite on the screen.  
+
+**Parameters:**
+
+* ``textureDict`` (``string``) -- Name of texture dictionary to load texture from (e.g. "CommonMenu", "MPWeaponsCommon", etc.)  
+* ``textureName`` (``string``) -- Name of texture to load from texture dictionary (e.g. "last_team_standing_icon", "tennis_icon", etc.)  
+* ``screenX`` (``float``) -- Screen offset (0.5 = center)  
+* ``screenY`` (``float``) -- Screen offset (0.5 = center)  
+* ``width`` (``float``) -- Texture scaling. Negative values can be used to flip the texture on that axis. (0.5 = half)  
+* ``height`` (``float``) -- Texture scaling. Negative values can be used to flip the texture on that axis. (0.5 = half)  
+* ``heading`` (``float``) -- Texture rotation in degrees (default = 0.0) positive is clockwise, measured in degrees  
+* ``red`` (``int``) -- Sprite R color (default = 255)  
+* ``green`` (``int``) -- Sprite G color (default = 255)  
+* ``blue`` (``int``) -- Sprite B color (default = 255)  
+* ``alpha`` (``int``) -- Opacity level  
+* ``p11`` (``bool``) -- Unknown
+* ``p12`` (``Any``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ui.draw_sprite("CommonMenu", "shop_new_star", 0.5, 0.5, 0.5, 0.5, 0.0, 255, 255, 255, 255, false, false)
 
 ================================
 
@@ -9575,7 +10332,67 @@ Functions here
 Cam namespace
 ----------------------
 
-Functions here
+This namespace contains draw-related game functions.
+
+================================
+
+get_gameplay_cam_relative_pitch()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get gameplay camera relative pitch.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``float`` -- Returns cam relative pitch value
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   pitch = rage.cam.get_gameplay_cam_relative_pitch()
+   
+   system.log_debug("LocalPlayer pitch: " .. pitch)
+
+================================
+
+get_gameplay_cam_rot(``rotationOrder``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function requires proper documentation & testing.
+
+Get gameplay camera rotation
+
+**Parameters:**
+
+* ``rotationOrder`` (``int``) -- Rotation order.
+
+0-Pitch(X): -70.000092  
+0-Roll(Y): -0.000001  
+0-Yaw(Z): -43.886459  
+1-Pitch(X): -70.000092  
+1-Roll(Y): -0.000001  
+1-Yaw(Z): -43.886463  
+2-Pitch(X): -70.000092  
+2-Roll(Y): -0.000002  
+2-Yaw(Z): -43.886467  
+
+
+**Returns:**
+
+* ``Vector3`` -- Returns coordinates in Vector3 form
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
 
 ================================
 
@@ -9584,7 +10401,558 @@ Functions here
 Gameplay namespace
 ----------------------
 
-Functions here
+This namespace contains gameplay-related game functions.
+
+================================
+
+clear_area_of_cops(``x``, ``y``, ``z``, ``radius``, ``flags``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Clear defined area of cops.
+
+**Parameters:**
+
+* ``x`` (``float``) -- X coordinate of the area center
+* ``y`` (``float``) -- Y coordinate of the area center
+* ``z`` (``float``) -- Z coordinate of the area center
+* ``radius`` (``float``) -- Radius of the area
+* ``flags`` (``int``) -- Flags
+
+  * ``flags`` appears to always be ``0``.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   coords = self.get_coords()
+
+   rage.gameplay.clear_area_of_cops(coords.x, coords.y, coords.z, 100.0, 0) -- 100m cop purge
+
+================================
+
+clear_area_of_objects(``x``, ``y``, ``z``, ``radius``, ``flags``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Clear defined area of props.
+
+**Parameters:**
+
+* ``x`` (``float``) -- X coordinate of the area center
+* ``y`` (``float``) -- Y coordinate of the area center
+* ``z`` (``float``) -- Z coordinate of the area center
+* ``radius`` (``float``) -- Radius of the area
+* ``flags`` (``int``) -- Flags
+
+  * There seem to be some most used flags, though it's unknown what do they change.
+
+    * ``0``
+    * ``2``
+    * ``6``
+    * ``16``
+    * ``17``
+   
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   coords = self.get_coords()
+   
+   rage.gameplay.clear_area_of_objects(coords.x, coords.y, coords.z, 100.0, 0) -- 100m prop purge
+
+================================
+
+clear_area_of_peds(``x``, ``y``, ``z``, ``radius``, ``flags``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Clear defined area of peds.
+
+**Parameters:**
+
+* ``x`` (``float``) -- X coordinate of the area center
+* ``y`` (``float``) -- Y coordinate of the area center
+* ``z`` (``float``) -- Z coordinate of the area center
+* ``radius`` (``float``) -- Radius of the area
+* ``flags`` (``int``) -- Flags
+
+  * ``flags`` appears to always be ``1``.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   coords = self.get_coords()
+   
+   rage.gameplay.clear_area_of_peds(coords.x, coords.y, coords.z, 100.0, 1) -- 100m ped purge
+
+================================
+
+clear_area_of_vehicles(``x``, ``y``, ``z``, ``radius``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``, ``p10``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Clear defined area of vehicles.
+
+**Parameters:**
+
+* ``x`` (``float``) -- X coordinate of the area center
+* ``y`` (``float``) -- Y coordinate of the area center
+* ``z`` (``float``) -- Z coordinate of the area center
+* ``radius`` (``float``) -- Radius of the area
+* ``p4`` (``bool``) -- Unknown (Optional)
+* ``p5`` (``bool``) -- Unknown (Optional)
+* ``p6`` (``bool``) -- Unknown (Optional)
+* ``p7`` (``bool``) -- Unknown (Optional)
+* ``p8`` (``bool``) -- Unknown (Optional)
+* ``p9`` (``bool``) -- Unknown (Optional)
+* ``p10`` (``Any``) -- Unknown (Optional)
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   coords = self.get_coords()
+   
+   rage.gameplay.clear_area_of_vehicles(coords.x, coords.y, coords.z, 100.0) -- 100m vehicle purge
+
+
+================================
+
+clear_override_weather()
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Clears the weather override.
+
+.. note::
+
+   This method only works if the weather using ``set_override_weather()``.
+
+.. note::
+
+   If the weather was previously set by scripting.world.set_weather(), the weather will be reset to that weather.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.gameplay.set_override_weather("RAIN") -- set rain weather
+   rage.gameplay.clear_override_weather() -- clear the weather
+
+================================
+
+display_onscreen_keyboard(``p0``, ``windowTitle``, ``p2``, ``defaultText``, ``defaultConcat1``, ``defaultConcat2``, ``defaultConcat3``, ``maxInputLength``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Displays an onscreen input window.
+
+**Parameters:**
+
+* ``p0`` (``int``) -- Unknown
+
+  * ``p0`` has to be ``6``, otherwise the method might not work as intended.
+* ``windowTitle`` (``string``) -- Title of the window
+
+  * All available window titles are listed here: ``windowtitles``
+* ``p2`` (``string``) -- Unknown
+* ``defaultText`` (``string``) -- Default text in the input box
+* ``defaultConcat1`` (``string``) -- Unknown
+* ``defaultConcat2`` (``string``) -- Unknown
+* ``defaultConcat3`` (``string``) -- Unknown
+* ``maxInputLength`` (``int``) -- Maximum length of the input box
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   function foo()
+      data = nil
+      rage.gameplay.display_onscreen_keyboard(6, "FMMC_KEY_TIP10", "", "Example Text", "", "", "", 30) -- display onscreen keyboard with the "Enter Synopsis" title and a maximum input length of 30 characters
+      while data == "" or data == nil do
+         data = rage.gameplay.get_onscreen_keyboard_result()
+         system.wait(-1)
+      end
+      system.log_debug("The player entered " .. data .. ".")
+   end
+
+   parent = menu.add_parent("My Lua Script")
+   menu.add_option("Get Data", "gd", parent, foo)
+   menu.update_root_parent(true)
+
+================================
+
+find_spawn_point_in_direction(``posX``, ``posY``, ``posZ``, ``fwdVecX``, ``fwdVecY``, ``fwdVecZ``, ``distance``, ``spawnPoint``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Attempts to find a spawn point in the specified direction.
+
+**Parameters:**
+
+* ``posX`` (``float``) -- X coordinate of the spawn point
+* ``posY`` (``float``) -- Y coordinate of the spawn point
+* ``posZ`` (``float``) -- Z coordinate of the spawn point
+* ``fwdVecX`` (``float``) -- X coordinate of the direction vector
+* ``fwdVecY`` (``float``) -- Y coordinate of the direction vector
+* ``fwdVecZ`` (``float``) -- Z coordinate of the direction vector
+* ``distance`` (``float``) -- Limit the search to this distance
+* ``spawnPoint`` (``vector3``) -- The found spawn point
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- A spawn point was found
+  * ``false`` -- No spawn point was found
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   coords = self.get_coords()
+   fwdVec = rage.entity.get_entity_rotation(self.get_ped(), 1)
+   spawnP = coords
+   rage.gameplay.find_spawn_point_in_direction(coords.x, coords.y, coords.z, fwdVec.x, fwdVec.y, fwdVec.z, 100.0, spawnP) -- find spawn point in 100m radius in the direction of the player
+
+   if spawnP then
+      system.log_debug(tostring(spawnP.x) .. " " .. tostring(spawnP.y) .. " " .. tostring(spawnP.z)) -- set the player's coords to the found spawn point
+   end
+
+================================
+
+get_cloud_hat_opacity()
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the current clouds opacity.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``float`` -- The current clouds opacity
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   opacity = rage.gameplay.get_cloud_hat_opacity() -- get current clouds opacity
+   system.log_debug("The clouds opacity is " .. tostring(opacity)) -- log the current clouds opacity
+
+================================
+
+get_frame_count()
+^^^^^^^^^^^^^^^^^
+
+Returns the current frame count.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The current frame count
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   frameCount = rage.gameplay.get_frame_count() -- get current frame count
+   system.log_debug("The frame count is " .. tostring(frameCount)) -- log the current frame count
+
+================================
+
+get_frame_time()
+^^^^^^^^^^^^^^^^
+
+Returns the current frame time - the time it takes for a frame to be rendered.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``float`` -- The current frame time
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   frameTime = rage.gameplay.get_frame_time() -- get current frame time
+   system.log_debug("The frame time is " .. tostring(frameTime)) -- log the current frame time
+
+================================
+
+get_hash_key(``string``)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the hash key of the specified game object.
+
+**Parameters:**
+
+* ``string`` (``string``) -- The game object to get the hash key of
+
+**Returns:**
+
+* ``int`` -- The hash key of the specified string
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO") -- get the hash key of "example"
+   system.log_debug("The hash key of \"ZENTORNO\" is " .. tostring(hashKey)) -- log the hash key of "example"
+
+================================
+
+get_onscreen_keyboard_result()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the result of an onscreen input window.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``string`` -- The result of the onscreen input window
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   function foo()
+      data = nil
+      rage.gameplay.display_onscreen_keyboard(6, "FMMC_KEY_TIP10", "", "Example Text", "", "", "", 30) -- display onscreen keyboard with the "Enter Synopsis" title and a maximum input length of 30 characters
+      while data == "" or data == nil do
+         data = rage.gameplay.get_onscreen_keyboard_result()
+         system.wait(-1)
+      end
+      system.log_debug("The player entered " .. data .. ".")
+   end
+
+   parent = menu.add_parent("My Lua Script")
+   menu.add_option("Get Data", "gd", parent, foo)
+   menu.update_root_parent(true)
+
+================================
+
+preload_cloud_hat(``name``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Preloads the specified cloud hat.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The cloud type
+
+  * You can read more about cloud types here: :doc:`cloudtypes`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.gameplay.preload_cloud_hat("altostratus") -- preload the altostratus cloud hat
+
+================================
+
+load_cloud_hat(``name``, ``transitionTime``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Loads the specified cloud hat.
+
+.. note::
+
+   It appears that the cloud hat can be loaded without calling preload_cloud_hat(). 
+
+**Parameters:**
+
+* ``name`` (``string``) -- The cloud type
+
+   * You can read more about cloud types here: :doc:`cloudtypes`
+
+* ``transitionTime`` (``float``) -- The time to smoothly transit between the current cloud hat and the new cloud hat
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.gameplay.load_cloud_hat("altostratus", 1.0) -- load the altostratus cloud hat with a 1 second transition time
+
+================================
+
+unload_cloud_hat(``name``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Unloads the specified cloud hat.
+
+.. note::
+
+   After unloading, it falls back to the previous cloud hat
+
+**Parameters:**
+
+* ``name`` (``string``) -- The cloud type
+
+   * You can read more about cloud types here: :doc:`cloudtypes`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.gameplay.unload_cloud_hat("altostratus") -- unload the altostratus cloud hat
+   
+
+================================
+
+set_cloud_hat_opacity(``opacity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the opacity of the current cloud hat.
+
+**Parameters:**
+
+* ``opacity`` (``float``) -- The new opacity of the current cloud hat
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.gameplay.set_cloud_hat_opacity(5) -- set the current cloud hat opacity to 5
+
+================================
+
+set_override_weather(``weatherType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the weather to the specified weather type.
+
+**Parameters:**
+
+* ``weatherType`` (``string``) -- The weather type
+
+  * You can read more about weather types here: :doc:`weathertypes`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.gameplay.set_override_weather("XMAS") -- set the weather to XMAS
+
+================================
+
+shoot_single_bullet_between_coords(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``, ``damage``, ``p7``, ``weaponHash``, ``ownerPed``, ``isAudible``, ``isInvisible``, ``speed``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Shoots a bullet from the first coordinates to the second coordinates
+
+**Parameters:**
+
+* ``x1`` (``float``) -- The X coordinate to start the shot at
+* ``y1`` (``float``) -- The Y coordinate to start the shot at
+* ``z1`` (``float``) -- The Z coordinate to start the shot at
+* ``x2`` (``float``) -- The X coordinate the shot should end up at
+* ``y2`` (``float``) -- The Y coordinate the shot should end up at
+* ``z2`` (``float``) -- The Z coordinate the shot should end up at
+* ``damage`` (``int``) -- The amount of damage the bullet carries
+* ``p7`` (``bool``) -- Whether the bullet should have pinpoint accuracy
+* ``weaponHash`` (``Hash``) -- Hash of the weapon the bullet is used as ammunition for
+* ``ownerPed`` (``Ped``) -- Owner of the bullet, e.g. if the bullet kills someone the kill feed shows 'X was shot by ownerPed.'
+* ``isAudible`` (``bool``) -- Whether the bullet should be audible.
+* ``isInvisible`` (``bool``) -- Whether the bullet should be invisible.
+* ``speed`` (``float``) -- Speed the bullet should fly at.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. note::
+   
+   This example is untested.
+
+.. code-block:: lua
+   :linenos:
+
+   coords1 = self.get_coords()
+   coords2 = self.get_coords_infront(10)
+   rage.gameplay.shoot_single_bullet_between_coords(coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords3.z, 1000, true, rage.gameplay.get_hash_key("WEAPON_SAWNOFFSHOTGUN"), self.get_ped(), true, true, 50.0) -- shoot a bullet from player coords to 10 meters in front of them with a damage of 1000, with pinpoint accuracy, using the shotgun, the bullet owner is the player, the bullet is audible and invisible, and the bullet speed is 50.0
+
+
+update_onscreen_keyboard()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+   
+   This method is not documented yet.
 
 ================================
 
