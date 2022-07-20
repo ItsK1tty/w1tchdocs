@@ -9637,7 +9637,7 @@ Add explosion in certain coordinates with multiple options.
    :linenos:
 
    c = self.get_coords()
-   rage.fire.add_explosion(c.x, c.y, c.z, 7, 10, true, false, 10, false)
+   rage.fire.add_explosion(922.60430908203, 49.672721862793, 80.89803314209, 7, 10, true, false, 10, false)
    -- Adds a Car Explosion located at Casino Entrance, with 10 damage scale, audible, invisible, 10 camera shake intensity and damage toggled on
 
 ================================
