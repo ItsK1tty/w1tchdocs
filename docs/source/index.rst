@@ -38,3 +38,4 @@ Contents
    firingpatterns
    ammotypes
    animfx
+   decor

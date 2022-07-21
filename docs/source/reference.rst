@@ -23,7 +23,7 @@ Types in the LUA Engine are defined in the following order:
 * :ref:`ColorRGB` (int ``r``, int ``g``, int ``b``)
 * :ref:`ColorRGBA` (int ``r``, int ``g``, int ``b``, int ``a``)
 * :ref:`eSessionType` (int)
-* :ref:`Pickup` (int)
+* :ref:`Pickup`
 
 ================================
 
@@ -39,12 +39,12 @@ You can find a hash key using this function: rage.gameplay.get_hash_key("string"
 
 You can find most of the game objects here:
 
-* `<Weapons https://wiki.rage.mp/index.php?title=Weapons>`__
-* `<Weapon Components https://wiki.rage.mp/index.php?title=Weapons_Components>`__
-* `<Vehicles https://wiki.rage.mp/index.php?title=Vehicles>`__
-* `<Peds https://wiki.rage.mp/index.php?title=Peds>`__
-* `<Blips https://wiki.rage.mp/index.php?title=Blips>`__
-* `<Props https://cdn.rage.mp/public/odb/index.html>`__
+* `Weapons <https://wiki.rage.mp/index.php?title=Weapons>`__
+* `Weapon Components <https://wiki.rage.mp/index.php?title=Weapons_Components>`__
+* `Vehicles <https://wiki.rage.mp/index.php?title=Vehicles>`__
+* `Peds <https://wiki.rage.mp/index.php?title=Peds>`__
+* `Blips <https://wiki.rage.mp/index.php?title=Blips>`__
+* `Props <https://cdn.rage.mp/public/odb/index.html>`__
 
 
 ================================
@@ -99,7 +99,7 @@ Blip is an Integer ID that represents the mark object on the game map. You can s
 
 You can find Blip types here:
 
-* `<Blips https://wiki.rage.mp/index.php?title=Blips>`__
+* `Blips <https://wiki.rage.mp/index.php?title=Blips>`__
 
 ================================
 
@@ -121,7 +121,7 @@ Vehicle
 Vehicle is an Integer Vehicle ID which represents the Vehicle in the game session. It's unique to each vehicle, and it only lasts one session.
 Vehicle can be converted to Entity, hence it can be used with methods that take Entity as a parameter.
 
-* `<Vehicles https://wiki.rage.mp/index.php?title=Vehicles>`__
+* `Vehicles <https://wiki.rage.mp/index.php?title=Vehicles>`__
 
 ================================
 
@@ -181,6 +181,16 @@ Current available session types are:
 * ``Invite`` = ``11``
 * ``CrewJoin`` = ``12``
 
+===========================
+
+.. _Pickup:
+
+Pickup
+----------------------
+
+Used for money drops. It's not used anywhere at the moment.
+
+===========================
 
 .. _gvars:
 
@@ -1003,7 +1013,7 @@ Adds a spawn option button.
 
 ======================
 
-add_option_text(``name``, ``hash``, ``text``, ``parent``)
+add_option_text(``name``, ``hash``, ``text``, ``parent``, ``fn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a text option (e.g. a note).
@@ -1014,6 +1024,7 @@ Adds a text option (e.g. a note).
 * ``hash`` (``string``) -- The option hash.
 * ``text`` (``string``) -- The displayed text to the right of the name.
 * ``parent`` (``int``) -- The parent section.
+* ``fn`` (``function``) -- Function to call.
 
 **Returns:**
 
@@ -1026,7 +1037,7 @@ Adds a text option (e.g. a note).
 
    parent = menu.add_parent("My parent section")
 
-   menu.add_option_text("Just a text option", "luaOptHashText", "Text", parent)
+   menu.add_option_text("Just a text option", "luaOptHashText", "Text", parent, foo)
 
 ======================
 
@@ -1276,7 +1287,7 @@ Adds a toggable player menu option with multiple values in the selected player s
 
 ======================
 
-add_player_option_text(``name``, ``hash``, ``text``)
+add_player_option_text(``name``, ``hash``, ``text``, ``fn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a player menu text option in the selected player section.
@@ -1286,6 +1297,7 @@ Adds a player menu text option in the selected player section.
 * ``name`` (``string``) -- The name of the option.
 * ``hash`` (``string``) -- The option hash.
 * ``text`` (``string``) -- The option displayed text.
+* ``fn`` (``function``) -- Function to call.
 
 **Returns:**
 
@@ -1296,7 +1308,7 @@ Adds a player menu text option in the selected player section.
 .. code-block:: lua
    :linenos:
 
-   menu.add_player_option_text("Just a text option", "luaOptHashText", "Text")
+   menu.add_player_option_text("Just a text option", "luaOptHashText", "Text", foo)
 
 ======================
 
@@ -1471,6 +1483,29 @@ Returns the value of an option.
 
    -- Get option value
    optionValue = "~rl~luaOptHashValue ~w~value is: ~g~" .. tostring(menu.get_option_value("luaOptHashValue"))
+
+======================
+
+get_option_text(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the option text.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+
+**Returns:**
+
+* ``string`` -- Returns option text.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   -- Get option text
+   optionText = "~rl~luaOptHashText ~w~text is: ~g~" .. tostring(menu.get_option_text("luaOptHashText"))
 
 ======================
 
@@ -3011,6 +3046,38 @@ Triggers a script event.
 
    script.trigger_script_event(0x0000000, { 1234567, 7654321, 1234321 }, chatSenderId)
 
+
+================================
+
+is_script_running(``scriptName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if a script is running.
+
+**Parameters:**
+
+* ``scriptName`` (``string``) -- The name of the script.
+
+**Returns:**
+
+* ``bool`` -- True if the script is running, false otherwise.
+
+================================
+
+execute_as_script(``scriptName``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Execute function as script
+
+**Parameters:**
+
+* ``scriptName`` (``string``) -- The name of the script.
+* ``fn`` (``function``) -- The function to execute.
+
+**Returns:**
+
+* None
+
 ================================
 
 .. _globals:
@@ -3636,15 +3703,17 @@ Draws a text with the given color.
 
 *  ``hash`` (``string``) -- The hash of the text to draw. Hash is used to identify the text, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the text or not.
-* * ``True`` to draw the text
-* * ``false`` to not draw the text
+
+  * ``True`` to draw the text
+  * ``false`` to not draw the text
 *  ``text`` (``string``) -- The text to draw.
 *  ``x`` (``float``) -- The X coordinate of the text's center.
 *  ``y`` (``float``) -- The Y coordinate of the text's center.
 *  ``scale`` (``float``) -- The scale of the text.
 *  ``color`` (``ColorRGBA``) -- The color of the text. ``{R, G, B, A}``
 *  ``flags`` (``int``) -- The flags for the text. 
-* * Default is ``0``.
+
+  * Default is ``0``.
 
 More about text flags: :doc:`textflags`
 
@@ -3660,6 +3729,44 @@ More about text flags: :doc:`textflags`
    render.draw_text("MyHash", true, "Hello World", 0, 0, 1, { 255, 255, 255, 255 }, 0)
 
 ================================
+
+draw_image(``path``, ``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0.f``, ``rounding_flags`` = ``0``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Draws an image.
+
+**Parameters:**
+
+*  ``path`` (``string``) -- The path of the image to draw.
+*  ``hash`` (``string``) -- The hash of the image to draw. Hash is used to identify the image, so it must be unique.
+*  ``draw`` (``bool``) -- Whether to draw the image or not.
+
+  * ``True`` to draw the image
+  * ``false`` to not draw the image
+*  ``x`` (``float``) -- The X coordinate of the image's center.
+*  ``y`` (``float``) -- The Y coordinate of the image's center.
+*  ``w`` (``float``) -- The width of the image.
+*  ``h`` (``float``) -- The height of the image.
+*  ``color`` (``ColorRGBA``) -- The color of the image. ``{R, G, B, A}``
+*  ``rounding`` (``float``) -- The rounding of the image.
+
+  * Default is ``0``.
+*  ``rounding_flags`` (``int``) -- The flags for the rounding.
+
+  * Default is ``0``.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   render.draw_image("/path/to/image.png", "MyHash", true, 0, 0, 100, 100, { 255, 255, 255, 255 }, 0.f, 0)
+
+===============================
 
 is_color_picker_rendering()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -9052,7 +9159,39 @@ Functions here
 Entity namespace
 ----------------------
 
-Functions here
+This namespace contains entity-related game functions.
+
+================================
+
+apply_force_to_entity(``entity``, ``forceFlags``, ``x``, ``y``, ``z``, ``offX``, ``offY``, ``offZ``, ``boneIndex``, ``isDirectionRel``, ``ignoreUpVec``, ``isForceRel``, ``p12``, ``p13``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Applies a force to the specified entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) --
+* ``forceFlags`` (``int``) --
+* ``x`` (``float``) -- Force amount (X)
+* ``y``
+* ``z``
+* ``offX``
+* ``offY``
+* ``offZ``
+* ``boneIndex``
+* ``isDirectionRel``
+* ``ignoreUpVec``
+* ``isForceRel``
+* ``p12``
+* ``p13``
+
+**Returns:**
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
 
 ================================
 
@@ -9589,7 +9728,669 @@ Set ped weapon tint ID.
 Streaming namespace
 ----------------------
 
-Functions here
+This namespace contains ui-related game functions.
+
+================================
+
+has_anim_dict_loaded(``animDict``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if animation dictionary is loaded.
+
+**Parameters:**
+
+* ``animDict`` (``string``) -- Animation dictionary
+
+  * You can read more about animations dicts and names here: :doc:`animtypes`
+
+**Returns:**
+
+* ``bool`` -- Returns anim dict status
+  
+  * ``true`` -- Animation dict is loaded
+  * ``false`` -- Animation dict is not loaded
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.streaming.has_anim_dict_loaded("move_f@injured")
+
+================================
+
+has_anim_set_loaded(``animSet``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if animation set is loaded.
+
+**Parameters:**
+
+* ``animSet`` (``string``) -- Animation set
+
+  * You can read more about animations dicts and names here: :doc:`animtypes`
+
+**Returns:**
+
+* ``bool`` -- Returns anim set status
+  
+  * ``true`` -- Animation set is loaded
+  * ``false`` -- Animation set is not loaded
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.streaming.has_anim_set_loaded("idle_intro")
+
+================================
+
+has_model_loaded(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if animation set is loaded.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is loaded
+  * ``false`` -- Model is not loaded
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.has_model_loaded(hashKey)
+
+================================
+
+has_named_ptfx_asset_loaded(``fxName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if a particles effect is loaded.
+
+**Parameters:**
+
+* ``fxName`` (``string``) -- Effect name
+
+**Returns:**
+
+* ``bool`` -- Returns effect status
+  
+  * ``true`` -- Effect is loaded
+  * ``false`` -- Effect is not loaded
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.streaming.has_named_ptfx_asset_loaded("blood_stab")
+
+================================
+
+is_this_model_a_bicycle(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is a bicycle.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is a bicycle
+  * ``false`` -- Model is not a bicycle
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.is_this_model_a_bicycle(hashKey)
+
+================================
+
+is_this_model_a_bike(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is a bike.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is a bike
+  * ``false`` -- Model is not a bike
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.is_this_model_a_bike(hashKey)
+
+================================
+
+is_this_model_a_boat(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is a boat.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is a boat
+  * ``false`` -- Model is not a boat
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.is_this_model_a_boat(hashKey)
+
+================================
+
+is_this_model_a_car(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is a car.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is a car
+  * ``false`` -- Model is not a car
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.is_this_model_a_car(hashKey) -- Returns true
+
+================================
+
+is_this_model_a_heli(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is a helicopter.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is a helicopter
+  * ``false`` -- Model is not a helicopter
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.is_this_model_a_heli(hashKey)
+
+================================
+
+is_model_a_ped(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is a ped.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is a ped
+  * ``false`` -- Model is not a ped
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.is_model_a_ped(hashKey) -- Returns false
+
+================================
+
+is_this_model_a_plane(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is a plane.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is a plane
+  * ``false`` -- Model is not a plane
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.is_this_model_a_plane(hashKey)
+
+================================
+
+is_this_model_a_quadbike(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is a quadbike.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is a quadbike
+  * ``false`` -- Model is not a quadbike
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.is_this_model_a_quadbike(hashKey)
+
+================================
+
+is_this_model_a_train(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is a train.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is a train
+  * ``false`` -- Model is not a train
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.is_this_model_a_train(hashKey)
+
+================================
+
+is_model_a_vehicle(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is a vehicle.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is a vehicle
+  * ``false`` -- Model is not a vehicle
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.is_model_a_vehicle(hashKey)
+
+================================
+
+is_model_in_cdimage(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is in cdimage (rpf).
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is in cdimage
+  * ``false`` -- Model is not in cdimage
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.is_model_in_cdimage(hashKey)
+
+================================
+
+is_model_valid(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is valid.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* ``bool`` -- Returns Model status
+  
+  * ``true`` -- Model is valid
+  * ``false`` -- Model is not valid
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.is_model_valid(hashKey)
+
+================================
+
+remove_anim_dict(``animDict``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes the animation dictionary.
+
+**Parameters:**
+
+* ``animDict`` (``string``) -- Animation dictionary
+
+  * You can read more about animations dicts and names here: :doc:`animtypes`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.streaming.remove_anim_dict("move_f@injured")
+
+================================
+
+remove_anim_set(``animSet``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes the animation set.
+
+**Parameters:**
+
+* ``animSet`` (``string``) -- Animation set
+
+  * You can read more about animations dicts and names here: :doc:`animtypes`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.streaming.has_anim_set_loaded("idle_intro")
+
+================================
+
+remove_ipl(``iplName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes the IPL.
+
+**Parameters:**
+
+* ``iplName`` (``string``) -- IPL name
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.streaming.remove_ipl("gr_case10_bunkerclosed")
+
+================================
+
+remove_named_ptfx_asset(``fxName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes the named particle effects asset.
+
+**Parameters:**
+
+* ``fxName`` (``string``) -- Effect name
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.streaming.remove_named_ptfx_asset("blood_stab")
+
+================================
+
+request_anim_dict(``animDict``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Requests the animation dictionary.
+
+**Parameters:**
+
+* ``animDict`` (``string``) -- Animation dictionary
+
+  * You can read more about animations dicts and names here: :doc:`animtypes`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.streaming.request_anim_dict("move_f@injured")
+
+================================
+
+request_anim_set(``animSet``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Rquests the animation set.
+
+**Parameters:**
+
+* ``animSet`` (``string``) -- Animation set
+
+  * You can read more about animations dicts and names here: :doc:`animtypes`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.streaming.request_anim_set("idle_intro")
+
+================================
+
+request_ipl(``iplName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Requests the IPL.
+
+**Parameters:**
+
+* ``iplName`` (``string``) -- IPL name
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.streaming.request_ipl("gr_case10_bunkerclosed")
+
+================================
+
+request_model(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is valid.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.request_model(hashKey)
+
+================================
+
+request_named_ptfx_asset(``fxName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Requests the named particle effects asset.
+
+**Parameters:**
+
+* ``fxName`` (``string``) -- Effect name
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.streaming.request_named_ptfx_asset("blood_stab")
+
+================================
+
+set_model_as_no_longer_needed(``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the model is valid.
+
+**Parameters:**
+
+* ``model`` (``Hash``) -- Model hash
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.streaming.set_model_as_no_longer_needed(hashKey)
 
 ================================
 
@@ -12858,7 +13659,7 @@ Makes the ped play an animation with custom duration and flags.
   * You can read more about animations dicts and names here: :doc:`animtypes`
 
 * ``blendInSpeed`` (``float``) -- Normal speed is ``8.0``
-* ``blendOutSpeed`` (``float``) -- Normal speed is ``8.0 ``
+* ``blendOutSpeed`` (``float``) -- Normal speed is ``8.0``
 * ``duration`` (``int``) -- Time in millisecond
 * ``flag`` (``int``) -- enum eAnimationFlags:
   
@@ -13221,7 +14022,7 @@ Makes ped drive the vehicle to given coordinates.
 * ``x`` (``float``) -- The ``X`` position
 * ``y`` (``float``) -- The ``Y`` position
 * ``z`` (``float``) -- The ``Z`` position
-* ``speed``(``float``) -- The driving speed
+* ``speed`` (``float``) -- The driving speed
 * ``p6`` (``Any``) -- Unknown
 * ``vehicleModel`` (``Hash``) -- The vehilemde ash 
 * ``drivingMode`` (``int``) -- Driving mode
@@ -13259,7 +14060,7 @@ Makes ped drive to the destination at set speed and driving style.
 * ``x`` (``float``) -- The ``X`` position
 * ``y`` (``float``) -- The ``Y`` position
 * ``z`` (``float``) -- The ``Z`` position
-* ``speed``(``float``) -- The driving speed
+* ``speed`` (``float``) -- The driving speed
 * ``driveMode`` (``int``) -- Driving mode, `Driving Style calculator`_  
 * ``stopRange`` (``float``) -- Stops in the specific range near the destination. ``20.0`` works fine
 
@@ -13291,7 +14092,7 @@ Makes ped drive randomly with no destination set.
 
 * ``ped`` (``Ped``) -- Ped object
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
-* ``speed``(``float``) -- The driving speed
+* ``speed`` (``float``) -- The driving speed
 * ``drivingStyle`` (``int``) -- Driving mode, `Driving Style calculator`_  
 
 .. _Driving Style calculator: https://vespura.com/fivem/drivingstyle/
@@ -13332,14 +14133,14 @@ Makes a ped follow the targetVehicle with <minDistance> in between.
   * ``3`` = back left  
   * ``4`` = back right  
 
-* ``speed``(``float``) -- The driving speed
+* ``speed`` (``float``) -- The driving speed
 * ``drivingStyle`` (``int``) -- Driving mode, `Driving Style calculator`_  
-* ``minDistance``(``float``) -- The minimum distance between ped vehicle and target vehicle
+* ``minDistance`` (``float``) -- The minimum distance between ped vehicle and target vehicle
 
   * ``minDistance`` is ignored if drivingstyle is Avoiding Traffic, but Rushed is fine.  
 
 * ``p7`` (``int``) -- Unknwn
-* ``noRoadsDistance``(``float``) -- If the target is closer than noRoadsDistance, the driver will ignore pathing/roads and follow it direct.
+* ``noRoadsDistance`` (``float``) -- If the target is closer than noRoadsDistance, the driver will ignore pathing/roads and follow it direct.
 
 .. _Driving Style calculator: https://vespura.com/fivem/drivingstyle/
 
@@ -13376,9 +14177,9 @@ Makes a ped in a vehicle follow an entity.
 * ``ped`` (``Ped``) -- Ped object
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
 * ``targetEntity`` (``Entity``) -- The target entity ID
-* ``speed``(``float``) -- The driving speed
+* ``speed`` (``float``) -- The driving speed
 * ``drivingStyle`` (``int``) -- Driving mode, `Driving Style calculator`_  
-* ``minDistance``(``float``) -- The minimum distance between ped vehicle and target vehicle
+* ``minDistance`` (``float``) -- The minimum distance between ped vehicle and target vehicle
 
   * ``minDistance`` is ignored if drivingstyle is Avoiding Traffic, but Rushed is fine.  
 
@@ -13787,8 +14588,8 @@ Play a specified sound.
 * ``p4`` (``Any``) -- Unknown
 * ``p5`` (``bool``) -- Unknown
 
-  * You can read more about audio names & refs `<here https://wiki.rage.mp/index.php?title=Sounds>`__.
-  * `<Also here https://pastebin.com/A8Ny8AHZ>`__
+  * You can read more about audio names & refs `here <https://wiki.rage.mp/index.php?title=Sounds>`__.
+  * `Also here <https://pastebin.com/A8Ny8AHZ>`__
    
 **Returns:**
 

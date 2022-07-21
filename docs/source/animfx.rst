@@ -5,8 +5,11 @@ List of screen FX effects
 
   Some effects are looped even with ``false`` and need to be stopped forcefully
     
-  rage.gameplay.start_screen_effect(effectName, 0, false)
-  rage.gameplay.stop_screen_effect(effectName)
+  .. code-block:: lua
+    :linenos:
+    
+    rage.gameplay.start_screen_effect(effectName, 0, false)
+    rage.gameplay.stop_screen_effect(effectName)
 
 
 * ``SwitchHudIn``

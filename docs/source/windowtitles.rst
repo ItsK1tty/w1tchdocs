@@ -1,6 +1,7 @@
 Window Titles
 ===================================
 Window titles are used to display on-screen keyboards in the game.
+
 Current available window titles are:
 
 * ``CELL_EMAIL_BOD`` = *Enter your Eyefind message*

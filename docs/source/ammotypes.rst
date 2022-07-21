@@ -1,6 +1,7 @@
 Ammo types
 ===================================
 Tasks are used to configure weapons in-game
+
 Current available ammo types are:
 
 * ``AMMO_PISTOL`` = ``0x743D4F54``

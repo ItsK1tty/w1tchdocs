@@ -1,6 +1,7 @@
 Explosion Types
 ===================================
 Explosion types are used to configure the spawned explosions in the game.
+
 Current available explosion types are:
 
 * Grenade = ``0``

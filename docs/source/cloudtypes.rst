@@ -1,6 +1,7 @@
 Clouds Types
 ===================================
 Clouds types are used to set the clouds in the game.
+
 Current available clouds types are:
 
 * ``Cloudy 01``

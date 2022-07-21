@@ -1,6 +1,7 @@
 Text Flags
 ===================================
 Text flags are used to control the position of the drawn text in draw_text()
+
 Current available text flags are:
 
 * ``Default`` = ``0``,

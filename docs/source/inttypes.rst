@@ -1,6 +1,7 @@
 Interior Types
 ===================================
 Interior types are used to manage the interior objects in the game.
+
 Current available interior types are:
 
 * ``hei_dlc_apart_high_new``

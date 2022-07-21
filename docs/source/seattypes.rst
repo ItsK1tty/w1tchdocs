@@ -1,6 +1,7 @@
 Seat types
 ===================================
 Seat IDs are used to make NPCs sit in the vehicles in the game.
+
 Current available seat IDs are:
 
 * None = ``-3``

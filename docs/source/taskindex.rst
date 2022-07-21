@@ -1,6 +1,7 @@
 Task Index
 ===================================
 Tasks are used to manage the AI behavior in the game.
+
 Current Task Index list is: (Updated for build 2372)
 
 * ``CTaskHandsUp`` = ``0``
