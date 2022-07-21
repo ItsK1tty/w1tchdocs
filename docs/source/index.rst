@@ -39,3 +39,4 @@ Contents
    ammotypes
    animfx
    decor
+   scaleforms
