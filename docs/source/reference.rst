@@ -67,7 +67,7 @@ Ped
 Ped is an integer ID which represents the NPC in the game session. It's unique to each NPC, and it only lasts one session.
 Ped can be converted to Entity, hence it can be used with methods that take Entity as a parameter.
 
-* `<Peds https://wiki.rage.mp/index.php?title=Peds>`__
+* `Peds <https://wiki.rage.mp/index.php?title=Peds>`__
 
 ================================
 
@@ -3703,17 +3703,15 @@ Draws a text with the given color.
 
 *  ``hash`` (``string``) -- The hash of the text to draw. Hash is used to identify the text, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the text or not.
-
-  * ``True`` to draw the text
-  * ``false`` to not draw the text
+* * ``True`` to draw the text
+* * ``false`` to not draw the text
 *  ``text`` (``string``) -- The text to draw.
 *  ``x`` (``float``) -- The X coordinate of the text's center.
 *  ``y`` (``float``) -- The Y coordinate of the text's center.
 *  ``scale`` (``float``) -- The scale of the text.
 *  ``color`` (``ColorRGBA``) -- The color of the text. ``{R, G, B, A}``
 *  ``flags`` (``int``) -- The flags for the text. 
-
-  * Default is ``0``.
+* * Default is ``0``.
 
 More about text flags: :doc:`textflags`
 
@@ -3740,20 +3738,17 @@ Draws an image.
 *  ``path`` (``string``) -- The path of the image to draw.
 *  ``hash`` (``string``) -- The hash of the image to draw. Hash is used to identify the image, so it must be unique.
 *  ``draw`` (``bool``) -- Whether to draw the image or not.
-
-  * ``True`` to draw the image
-  * ``false`` to not draw the image
+* * ``True`` to draw the image
+* * ``false`` to not draw the image
 *  ``x`` (``float``) -- The X coordinate of the image's center.
 *  ``y`` (``float``) -- The Y coordinate of the image's center.
 *  ``w`` (``float``) -- The width of the image.
 *  ``h`` (``float``) -- The height of the image.
 *  ``color`` (``ColorRGBA``) -- The color of the image. ``{R, G, B, A}``
 *  ``rounding`` (``float``) -- The rounding of the image.
-
-  * Default is ``0``.
+* * Default is ``0``.
 *  ``rounding_flags`` (``int``) -- The flags for the rounding.
-
-  * Default is ``0``.
+* * Default is ``0``.
 
 **Returns:**
 
@@ -7367,12 +7362,10 @@ Set vehicle color (primary, secondary, pearlescence, wheels)
 **Parameters:**
 
 * ``v`` (``Vehicle``) -- Vehicle hash
-* ``primary`` (``int``) -- Primary `color ID`_
-* ``secondary`` (``int``) -- Secondary `color ID`_
-* ``pearl`` (``int``) -- Pearlescence `color ID`_ (if applicable)
-* ``wheel`` (``int``) -- Wheel `color ID`_
-  
-.. _color ID: https://wiki.rage.mp/index.php?title=Vehicle_Colors
+* ``primary`` (``int``) -- Primary `color ID <https://wiki.rage.mp/index.php?title=Vehicle_Colors>`__
+* ``secondary`` (``int``) -- Secondary `color ID <https://wiki.rage.mp/index.php?title=Vehicle_Colors>`__
+* ``pearl`` (``int``) -- Pearlescence `color ID <https://wiki.rage.mp/index.php?title=Vehicle_Colors>`__ (if applicable)
+* ``wheel`` (``int``) -- Wheel `color ID <https://wiki.rage.mp/index.php?title=Vehicle_Colors>`__
 
 **Returns:**
 
@@ -9170,22 +9163,36 @@ Applies a force to the specified entity.
 
 **Parameters:**
 
-* ``entity`` (``Entity``) --
-* ``forceFlags`` (``int``) --
+* ``entity`` (``Entity``) -- The entity ID
+* ``forceFlags`` (``int``) -- Commonly used values:
+
+  * MinForce = 0
+  * MaxForceRot = 1
+  * MinForce2 = 2
+  * MaxForceRot2 = 3
+  * ForceNoRot = 4
+  * ForceRotPlusForce = 5
+
 * ``x`` (``float``) -- Force amount (X)
 * ``y`` (``float``) -- Force amount (Y)
 * ``z`` (``float``) -- Force amount (Z)
-* ``offX``
-* ``offY``
-* ``offZ``
-* ``boneIndex``
-* ``isDirectionRel``
-* ``ignoreUpVec``
-* ``isForceRel``
-* ``p12``
-* ``p13``
+* ``offX`` (``float``) -- Rotation/offset force (X)
+* ``offY`` (``float``) -- Rotation/offset force (Y)
+* ``offZ`` (``float``) -- Rotation/offset force (Z)
+* ``boneIndex`` (``int``) -- (Often ``0``) Entity bone index
+* ``isDirectionRel`` (``bool``) -- (Usually ``false``) Vector defined in local (body-fixed) coordinate frame
+* ``ignoreUpVec`` (``bool``) -- Usually ``true``
+* ``isForceRel`` (``bool``) :
+
+  * ``true`` -- Force gets multiplied with the objects mass and different objects will have the same acceleration
+  * ``false`` -- Otherwise
+
+* ``p12`` (``bool``) -- Unknown, usually ``false``
+* ``p13`` (``bool``) -- Unknown, usually ``true``
 
 **Returns:**
+
+* None
 
 **Example:**
 
@@ -10753,9 +10760,8 @@ Set blip colour.
 **Parameters:**
 
 * ``blip`` (``Blip``) -- Blip
-* ``color`` (``int``) -- Blip `Color ID`_  
+* ``color`` (``int``) -- Blip `Color ID <https://wiki.rage.mp/index.php?title=Blips#Blip_colors>`__ 
 
-.. _Color ID: https://wiki.rage.mp/index.php?title=Blips#Blip_colors
 
 **Returns:**
 
