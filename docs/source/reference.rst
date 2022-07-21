@@ -15984,7 +15984,6 @@ Play a specified sound.
 * None
 
 **Example:**
-
 .. code-block:: lua
    :linenos:
 
