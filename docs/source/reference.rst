@@ -6,7 +6,7 @@ There are multiple namespaces & types in the current DIS2RBED LUA framework, eac
 .. _lua_types:
 
 Types in the LUA Engine
-######################
+##########################
 
 Types in the LUA Engine are defined in the following order:
 
@@ -3528,7 +3528,7 @@ Draws a circle with the given color.
 ================================
 
 draw_circle_filled(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color``, ``segments`` = ``16``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 Draws a filled circle with the given color.
@@ -5119,7 +5119,7 @@ Returns the player's status.
 ===============================
 
 get_player_vehicle_name(``player``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the player's vehicle name.
 
@@ -5234,7 +5234,7 @@ Returns the player's bank money.
 ================================
 
 get_player_money_wallet(``player``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the player's wallet money.
 
@@ -5303,7 +5303,7 @@ Returns the player's host token.
 ================================
 
 get_player_original_scid(``player``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the player's original SCID.
 
@@ -5399,7 +5399,7 @@ Sets the player's modder status.
 ================================
 
 set_player_selected(``player``, ``toggle``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sets the player as selected in the online menu.
 
@@ -7355,7 +7355,7 @@ Make a vehicle be max upgraded (only non-visible parts eg. engine, turbo...)
 ================================
 
 set_vehicle_color(``v``, ``primary``, ``secondary``, ``pearl``, ``wheel``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Set vehicle color (primary, secondary, pearlescence, wheels)
 
@@ -7846,7 +7846,7 @@ This namespace contains functions that are related to weapons and are used to ex
 ================================
 
 give_all_weapons(``ped``, ``maxAmmo`` = ``true``, ``maxComponents`` = ``true``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Give all weapons to a ped with toggable max ammo and max components.
 
@@ -7925,7 +7925,7 @@ Gives weapon to the player (self).
 ================================
 
 give_weapon(``ped``, ``weaponHash``, ``maxAmmo`` = ``true``, ``maxComponents`` = ``true``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Gives a weapon to ped with toggable max ammo and max components.
 
@@ -8865,7 +8865,7 @@ Returns the player name.
 ================================
 
 get_player_parachute_model_override(``player``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the hash of the parachute model.
 
@@ -8890,7 +8890,7 @@ Returns the hash of the parachute model.
 ================================
 
 get_player_ped_script_index(``player``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the Ped ID of the player's character.
 
@@ -8913,7 +8913,7 @@ Returns the Ped ID of the player's character.
 ================================
 
 get_player_team(``player``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the team ID the player is member of. Almost like :ref:`lobby_get_player_team`.
 
@@ -8955,7 +8955,7 @@ Returns the player's wanted level.
 ================================
 
 is_player_free_aiming(``player``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns whether the player is aiming.
 
@@ -8982,7 +8982,7 @@ Returns whether the player is aiming.
 ================================
 
 is_player_playing(``player``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns whether the wasted/busted screen is visible or not.
 
@@ -9000,7 +9000,7 @@ Returns whether the wasted/busted screen is visible or not.
 ================================
 
 is_player_pressing_horn(``player``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Checks whether the player is pressing the horn.
 
@@ -12491,7 +12491,7 @@ This namespace contains drawing-related game functions.
 ================================
 
 draw_sprite(``textureDict``, ``textureName``, ``screenX``, ``screenY``, ``width``, ``height``, ``heading``, ``red``, ``green``, ``blue``, ``alpha``, ``p11``, ``p12``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Draw a 2D sprite on the screen.  
 
@@ -14571,7 +14571,7 @@ Stop animation task.
 ================================
 
 task_aim_gun_at_coord(``ped``, ``x``, ``y``, ``z``, ``time``, ``p5``, ``p6``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Aim gun at coordinates.
 
@@ -14948,7 +14948,7 @@ Make the ped leave the vehicle with customizable flags.
 ================================
 
 task_open_vehicle_door(``ped``, ``vehicle``, ``timeOut``, ``seat``, ``speed``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Make the ped open the vehicle door of a specific seat, at given speed.
 
@@ -15993,7 +15993,7 @@ Play a specified sound.
 =================================
 
 play_sound_from_coord(``soundId``, ``audioName``, ``x``, ``y``, ``z``, ``audioRef``, ``isNetwork``, ``range``, ``p8``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Play a specified sound from a given position.
 

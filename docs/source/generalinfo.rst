@@ -1,10 +1,10 @@
 General Information
-=====
+======================
 
 .. _installation:
 
 Installation path
-------------
+--------------------------
 
 To install LUA scripts, you need to drop them into a directory that is ``%appdata%\DIS2RBED\Lua``:
 
@@ -15,7 +15,7 @@ Small LUA guide we recommend for new developers: `LUA guide`_. Credits to Tyler 
 .. _LUA guide: https://tylerneylon.com/a/learn-lua/
 
 Found a mistake in documentation?
-------------------------------
+--------------------------------------
 
 Feel free to contact us:
 
