@@ -9134,7 +9134,301 @@ Sets your targeting mode.
 Ped namespace
 ----------------------
 
-Functions here
+This namespace contains ped-related game functions.
+
+================================
+
+add_relationship_group(``name``, ``groupHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds ped to a relationship group.
+
+**Parameters:**
+
+* ``name`` (``string``) 
+* ``groupHash`` (``Hash``) -- The hash of the created relationship group is output in the second parameter.  
+
+**Returns:**
+
+* ``Any`` -- Can't select void. This function returns nothing.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+
+================================
+
+can_create_random_cops()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle ped can create random cops.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool`` -- Returns toggle status
+  
+  * ``true`` -- Ped can create random cops
+  * ``false`` -- Ped can't create random cops
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ped.can_create_random_cops()
+
+================================
+
+can_ped_ragdoll(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle ped ragdoll.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* ``bool`` -- Returns toggle status
+  
+  * ``true`` -- Ped ragdoll on
+  * ``false`` -- Ped ragdoll off (Example: prevent peds from falling when standing on moving vehicles)
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ped.can_ped_ragdoll(ped)
+
+================================
+
+clear_all_ped_props(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Clears all ped's props.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ped.clear_all_ped_props(ped)
+
+================================
+
+clear_ped_blood_damage(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Clears all ped's blood damage.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ped.clear_ped_blood_damage(ped)
+
+================================
+
+clear_ped_tasks_immediately(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Clears all ped's tasks immediately.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ped.clear_ped_tasks_immediately(ped)
+
+================================
+
+clear_relationship_between_groups(``relationship``, ``group1``, ``group2``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Clears the relationship between two groups. This should be called twice (once for each group).
+
+**Parameters:**
+
+* ``relationship`` (``int``) -- Relationship ID
+  
+  * Relationship types:
+
+  * ``0`` = Companion  
+  * ``1`` = Respect  
+  * ``2`` = Like  
+  * ``3`` = Neutral  
+  * ``4`` = Dislike  
+  * ``5`` = Hate  
+  * ``255`` = Pedestrians  
+
+* ``group1`` (``Hash``) -- Group 1 hash
+* ``group2`` (``Hash``) -- Group 2 hash
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ped.clear_relationship_between_groups((2, l_1017, 0xA49E591C))
+
+================================
+
+clone_ped(``ped``, ``isNetwork``, ``bScriptHostPed``, ``copyHeadBlendFlag``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates a copy of the passed ped, optionally setting it as local and/or shallow-copying the head blend data.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``isNetwork`` (``bool``) -- Whether or not the ped should be registered as a network object
+* ``bScriptHostPed`` (``bool``) -- Script host flag
+* ``copyHeadBlendFlag`` (``bool``) -- If true, head blend data is referenced, not copied
+
+**Returns:**
+
+* ``Ped`` -- A new ped handle representing the ped's copy
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ped.clone_ped(ped, false, false, true)
+
+================================
+
+create_group(``unused``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates a new ped group. Note: groups can contain up to 8 peds.
+
+**Parameters:**
+
+* ``unused`` (``int``) -- The parameter is unused
+
+**Returns:**
+
+* ``int`` -- Returns a handle to the created group, or 0 if a group couldn't be created
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ped.create_group()
+
+================================
+
+create_ped(``pedType``, ``modelHash``, ``x``, ``y``, ``z``, ``heading``, ``isNetwork``, ``bScriptHostPed``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates a ped (biped character, pedestrian, actor) with the specified model at the specified position and heading. This ped will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using streaming.request_model).
+
+**Parameters:**
+
+* ``pedType`` (``int``) -- Unused. Peds get set to CIVMALE/CIVFEMALE/etc. no matter the value specified
+* ``modelHash`` (``Hash``) -- The model of ped to spawn
+* ``x`` (``float``) -- Spawn coordinate X component
+* ``y`` (``float``) -- Spawn coordinate Y component
+* ``z`` (``float``) -- Spawn coordinate Z component
+* ``heading`` (``float``) -- Heading to face towards, in degrees
+* ``isNetwork`` (``bool``) -- Whether to create a network object for the ped
+
+  * ``true`` -- A network object is created for the ped
+  * ``false`` -- The ped exists only locally
+
+* ``bScriptHostPed`` (``bool``) -- Whether to register the ped as pinned to the script host in the R* network model
+
+**Returns:**
+
+* ``Ped`` -- Returns a script handle for the ped
+
+  * ``0`` -- Returned if the ped failed to be created
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ped.create_ped(ped, 420.12, 69.87, 56.17, 90, true, true)
+
+================================
+
+does_group_exist(``groupId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if a group exists.
+
+**Parameters:**
+
+* ``groupId`` (``int``) -- The group ID
+
+**Returns:**
+
+* ``bool`` -- Returns group status
+  
+  * ``true`` -- Group exists
+  * ``false`` -- Ped ragdoll off (Example: prevent peds from falling when standing on moving vehicles)
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ped.can_ped_ragdoll(ped)
 
 ================================
 
@@ -14011,6 +14305,10 @@ begin_scaleform_movie_method(``scaleform``, ``methodName``)
 
 Display a scaleform.
 
+.. note::
+   
+   This has to be called every frame.
+
 **Parameters:**
 
 * ``scaleform`` (``int``) -- Scaleform ID
@@ -14038,12 +14336,714 @@ For scaleform IDs and methods, go here: :doc:`scaleforms`
 
    scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
    rage.graphics.end_scaleform_movie_method()
-   rage.graphics.draw_scaleform_movie_fullscreen(scaleform, 255, 255, 255, 255, 0)
-   rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
-   rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
-   rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
-   rage.graphics.scaleform_movie_method_add_param_int(5)
+   kPressed = system.is_key_pressed("K")
+   while not kPressed do
+      rage.graphics.draw_scaleform_movie(scaleform, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
+      rage.graphics.scaleform_movie_method_add_param_int(5)
+      kPressed = system.is_key_pressed("K")
+      system.wait(-1)
+   end
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   return
+   
+
+================================
+
+create_checkpoint(``type``, ``posX1``, ``posY1``, ``posZ1``, ``posX2``, ``posY2``, ``posZ2``, ``diameter``, ``red``, ``green``, ``blue``, ``alpha``, ``reserved``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates a checkpoint.
+
+.. note::
+
+   20/03/17 : Attention, checkpoints are already handled by the game itself, so you must not loop it like markers.
+
+**Parameters:**
+
+* ``type`` (``int``)-- The type of checkpoint to create.
+
+  * ``0-4`` -- Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
+  * ``5-9`` -- Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
+  * ``10-14`` -- Ring: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
+  * ``15-19`` -- 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
+  * ``20-24`` -- Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
+  * ``25-29`` -- Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
+  * ``30-34`` -- Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
+  * ``35-38`` -- Ring: Airplane Up, Left, Right, UpsideDown
+  * ``39`` -- ?
+  * ``40`` -- Ring: just a ring
+  * ``41`` -- ?
+  * ``42-44`` -- Cylinder w/ number (uses 'reserved' parameter)
+  * ``45-47`` -- Cylinder no arrow or number
+* ``posX1`` (``float``) -- The X coordinate of the first checkpoint.
+* ``posY1`` (``float``) -- The Y coordinate of the first checkpoint.
+* ``posZ1`` (``float``) -- The Z coordinate of the first checkpoint.
+* ``posX2`` (``float``) -- The X coordinate of the second checkpoint.
+* ``posY2`` (``float``) -- The Y coordinate of the second checkpoint.
+* ``posZ2`` (``float``) -- The Z coordinate of the second checkpoint.
+* ``diameter`` (``float``) -- The diameter of the checkpoint.
+* ``red`` (``int``) -- The red color level of the checkpoint.
+* ``green`` (``int``) -- The green color level of the checkpoint.
+* ``blue`` (``int``) -- The blue color level of the checkpoint.
+* ``alpha`` (``int``) -- The transparency level of the checkpoint.
+* ``reserved`` -- Special parameter
+
+  * ``0-99`` -- Just numbers (0-99)
+  * ``100-109`` -- Arrow (0-9)
+  * ``110-119`` -- Two arrows (0-9)
+  * ``120-129`` -- Three arrows (0-9)
+  * ``130-139`` -- Circle (0-9)
+  * ``140-149`` -- CycleArrow (0-9)
+  * ``150-159`` -- Circle (0-9)
+  * ``160-169`` -- Circle w/ pointer (0-9)
+  * ``170-179`` -- Perforated ring (0-9)
+  * ``180-189`` -- Sphere (0-9)
+
+Checkpoint types with images `here <https://docs.fivem.net/docs/game-references/checkpoints/>`__.
+
+**Returns:**
+
+* ``int`` -- The handle of the checkpoint
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   coords1 = self.get_coords()
+   coords2 = self.get_coords_infront(100)
+
+   checkpoint = rage.graphics.create_checkpoint(42, coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 50, 255, 0, 0, 255, 120)
+ 
+
+================================
+
+delete_checkpoint(``checkpoint``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Deletes a checkpoint.
+
+**Parameters:**
+
+* ``checkpoint`` (``int``) -- The handle of the checkpoint
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   coords1 = self.get_coords()
+   coords2 = self.get_coords_infront(100)
+   checkpoint = rage.graphics.create_checkpoint(42, coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 50, 255, 0, 0, 255, 120)
+   rage.graphics.delete_checkpoint(checkpoint)
+
+================================
+
+draw_line(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``, ``red``, ``green``, ``blue``, ``alpha``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Draws a line from ``x1``, ``y1``, ``z1`` to ``x2``, ``y2``, ``z2``.
+
+.. note::
+
+   This has to be called every frame.
+
+**Parameters:**
+
+* ``x1`` (``float``) -- The X coordinate of the first point.
+* ``y1`` (``float``) -- The Y coordinate of the first point.
+* ``z1`` (``float``) -- The Z coordinate of the first point.
+* ``x2`` (``float``) -- The X coordinate of the second point.
+* ``y2`` (``float``) -- The Y coordinate of the second point.
+* ``z2`` (``float``) -- The Z coordinate of the second point.
+* ``red`` (``int``) -- The red color level of the line.
+* ``green`` (``int``) -- The green color level of the line.
+* ``blue`` (``int``) -- The blue color level of the line.
+* ``alpha`` (``int``) -- The transparency level of the line.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   coords1 = self.get_coords()
+   coords2 = self.get_coords_infront(100)
+   kPressed = system.is_key_pressed("K")
+   while not kPressed do
+      rage.graphics.draw_marker(1, coords1.x, coords1.y, coords1.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0, 5.0, 5.0, 255, 0, 0, 255, true, true, 2, true, "mpmissmarkers256", "capture_the_flag_base_icon", true)
+      kPressed = system.is_key_pressed("K")
+      system.wait(-1)
+   end
+   return
+
+================================
+
+draw_marker(``type``, ``posX``, ``posY``, ``posZ``, ``dirX``, ``dirY``, ``dirZ``, ``rotX``, ``rotY``, ``rotZ``, ``scaleX``, ``scaleY``, ``scaleZ``, ``red``, ``green``, ``blue``, ``alpha``, ``reserved``)
+
+Draws a marker with the specified appearance at the target location.
+
+.. note::
+
+   This has to be called every frame.
+
+**Parameters:**
+
+* ``type`` (``int``) -- The marker type to draw.
+
+  * You can read more about marker types `here <https://docs.fivem.net/docs/game-references/markers/>`__.
+* ``posX`` (``float``) -- The X coordinate to draw the marker at.
+* ``posY`` (``float``) -- The Y coordinate to draw the marker at.
+* ``posZ`` (``float``) -- The Z coordinate to draw the marker at.
+* ``dirX`` (``float``) -- The X component of the direction vector for the marker, or 0.0 to use rotX/Y/Z.
+* ``dirY`` (``float``) -- The Y component of the direction vector for the marker, or 0.0 to use rotX/Y/Z.
+* ``dirZ`` (``float``) -- The Z component of the direction vector for the marker, or 0.0 to use rotX/Y/Z.
+* ``rotX`` (``float``) -- The X rotation for the marker. Only used if the direction vector is 0.0.
+* ``rotY`` (``float``) -- The Y rotation for the marker. Only used if the direction vector is 0.0.
+* ``rotZ`` (``float``) -- The Z rotation for the marker. Only used if the direction vector is 0.0.
+* ``scaleX`` (``float``) -- The scale for the marker on the X axis.
+* ``scaleY`` (``float``) -- The scale for the marker on the Y axis.
+* ``scaleZ`` (``float``) -- The scale for the marker on the Z axis.
+* ``red`` (``int``) -- The red component of the marker color, on a scale from 0-255.
+* ``green`` (``int``) -- The green component of the marker color, on a scale from 0-255.
+* ``blue`` (``int``) -- The blue component of the marker color, on a scale from 0-255.
+* ``alpha`` (``int``) -- The alpha component of the marker color, on a scale from 0-255.
+* ``bobUpAndDown`` (``bool``) -- Whether or not the marker should slowly animate up/down.
+* ``faceCamera`` (``bool``) -- Whether the marker should be a 'billboard', as in, should constantly face the camera.
+* ``p19`` (``int``) -- Typically set to 2. Does not seem to matter directly.
+* ``rotate`` (``bool``) -- Rotations only apply to the heading.
+* ``textureDict`` (``string``) -- A texture dictionary to draw the marker with, or NULL. Example: 'GolfPutting'
+* ``textureName`` (``string``) -- A texture name in textureDict to draw the marker with, or NULL. Example: 'PuttingMarker'
+* ``drawOnEnts`` (``bool``) -- Whether or not the marker should draw on intersecting entities.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   coords1 = self.get_coords()
+   coords2 = self.get_coords_infront(100)
+   kPressed = system.is_key_pressed("K")
+   while not kPressed do
+      rage.graphics.draw_line(coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 255, 0, 0, 255)
+      kPressed = system.is_key_pressed("K")
+      system.wait(-1)
+   end
+
+================================
+
+draw_rect(``x``, ``y``, ``width``, ``height``, ``red``, ``green``, ``blue``, ``alpha``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Draws a rectangle on the screen. Similar to render.draw_box()
+
+.. note::
+
+   The total number of rectangles to be drawn in one frame is apparently limited to 399.
+
+.. note::
+
+   This has to be called every frame.
+
+**Parameters:**
+
+* ``x`` (``float``) -- The X coordinate of the top-left corner. (``0.0`` - ``1.0``, ``0.0`` is the left edge of the screen, ``1.0`` is the right edge of the screen) 
+* ``y`` (``float``) -- The Y coordinate of the top-left corner. (``0.0`` - ``1.0``, ``0.0`` is the top edge of the screen, ``1.0`` is the bottom edge of the screen)
+* ``width`` (``float``) -- The width of the rectangle. (``0.0`` - ``1.0``, ``1.0`` means the whole screen width)
+* ``height`` (``float``) -- The height of the rectangle. (``0.0`` - ``1.0``, ``1.0`` means the whole screen height)
+* ``red`` (``int``) -- The red part of the rectangle color (``0`` - ``255``)
+* ``green`` (``int``) -- The green part of the rectangle color (``0`` - ``255``)
+* ``blue`` (``int``) -- The blue part of the rectangle color (``0`` - ``255``)
+* ``alpha`` (``int``) -- The transparency of the rectangle color (``0`` - ``255``)
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   kPressed = system.is_key_pressed("K")
+   while not kPressed do
+      rage.graphics.draw_rect(0.5, 0.5, 0.5, 0.5, 255, 255, 255, 100)
+      kPressed = system.is_key_pressed("K")
+      system.wait(-1)
+   end
+
+================================
+
+
+draw_scaleform_movie(``scaleformHandle``, ``x``, ``y``, ``width``, ``height``, ``red``, ``green``, ``blue``, ``alpha``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Draw scaleform in the selected dimensions
+
+.. note::
+   
+   This has to be called every frame.
+
+**Parameters:**
+
+* ``scaleformHandle`` (``int``) -- The scaleform handle to draw.
+* ``x`` (``float``) -- The X coordinate to draw the scaleform at. (``0.0`` - ``1.0``, ``0.0`` is the left edge of the screen, ``1.0`` is the right edge of the screen)
+* ``y`` (``float``) -- The Y coordinate to draw the scaleform at. (``0.0`` - ``1.0``, ``0.0`` is the top edge of the screen, ``1.0`` is the bottom edge of the screen)
+* ``width`` (``float``) -- The width of the scaleform. (``0.0`` - ``1.0``, ``1.0`` means the whole screen width)
+* ``height`` (``float``) -- The height of the scaleform. (``0.0`` - ``1.0``, ``1.0`` means the whole screen height)
+* ``red`` (``int``) -- The red part of the scaleform color (``0`` - ``255``)
+* ``green`` (``int``) -- The green part of the scaleform color (``0`` - ``255``)
+* ``blue`` (``int``) -- The blue part of the scaleform color (``0`` - ``255``)
+* ``alpha`` (``int``) -- The transparency of the scaleform color (``0`` - ``255``)
+
+
+For scaleform IDs and methods, go here: :doc:`scaleforms`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
    rage.graphics.end_scaleform_movie_method()
+   kPressed = system.is_key_pressed("K")
+   while not kPressed do
+      rage.graphics.draw_scaleform_movie(scaleform, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
+      rage.graphics.scaleform_movie_method_add_param_int(5)
+      kPressed = system.is_key_pressed("K")
+      system.wait(-1)
+   end
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   return
+
+================================
+
+draw_scaleform_movie_fullscreen(``scaleformHandle``, ``red``, ``green``, ``blue``, ``alpha``, ``unk``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Draw a scaleform in fullscreen.
+
+.. note::
+   
+   This has to be called every frame.
+
+**Parameters:**
+
+* ``scaleformHandle`` (``int``) -- The scaleform handle to draw.
+* ``red`` (``int``) -- The red part of the scaleform color (``0`` - ``255``)
+* ``green`` (``int``) -- The green part of the scaleform color (``0`` - ``255``)
+* ``blue`` (``int``) -- The blue part of the scaleform color (``0`` - ``255``)
+* ``alpha`` (``int``) -- The transparency of the scaleform color (``0`` - ``255``)
+* ``unk`` (``int``) -- Unknown. Not used.
+
+For scaleform IDs and methods, go here: :doc:`scaleforms`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   rage.graphics.end_scaleform_movie_method()
+   kPressed = system.is_key_pressed("K")
+   while not kPressed do
+      rage.graphics.draw_scaleform_movie_fullscreen(scaleform, 255, 255, 255, 255, 0)
+      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
+      rage.graphics.scaleform_movie_method_add_param_int(5)
+      kPressed = system.is_key_pressed("K")
+      system.wait(-1)
+   end
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   return
+   
+================================
+
+enable_alien_blood_vfx(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates a motion-blur sort of effect. Doesn't seem to work, but if you use animpostfx_play() with ``DrugsMichaelAliensFight`` animfx, you should be able to get the intended effect
+
+**Parameters:**
+
+* ``toggle`` (``boolean``) -- Whether to enable the effect or not.
+
+  * ``true`` -- Enable the effect
+  * ``false`` -- Disable the effect
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   enable_alien_blood_vfx(true)
+   system.wait(1000)
+   enable_alien_blood_vfx(false)
+
+================================
+
+enable_clown_blood_vfx(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates cartoon effect when Michel smokes the weed.
+
+**Parameters:**
+
+* ``toggle`` (``boolean``) -- Whether to enable the effect or not.
+
+  * ``true`` -- Enable the effect
+  * ``false`` -- Disable the effect
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   enable_clown_blood_vfx(true)
+   system.wait(1000)
+   enable_clown_blood_vfx(false)
+
+================================
+
+end_scaleform_movie_method()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Finishes all scaleforms that are currently drawn.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   rage.graphics.end_scaleform_movie_method()
+   kPressed = system.is_key_pressed("K")
+   while not kPressed do
+      rage.graphics.draw_scaleform_movie_fullscreen(scaleform, 255, 255, 255, 255, 0)
+      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
+      rage.graphics.scaleform_movie_method_add_param_int(5)
+      kPressed = system.is_key_pressed("K")
+      system.wait(-1)
+   end
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   return
+   
+================================
+
+has_scaleform_movie_loaded(``scaleformHandle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if a scaleform was loaded.
+
+**Parameters:**
+
+* ``scaleformHandle`` (``int``) -- The scaleform handle to check.
+
+**Returns:**
+
+* ``boolean`` -- ``true`` if the scaleform was loaded, ``false`` otherwise.
+
+**Example:**
+
+   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   if rage.graphics.has_scaleform_movie_loaded(scaleform) then
+      print("scaleform loaded")
+   else
+      print("scaleform not loaded")
+   end
+
+================================
+
+remove_particle_fx(``ptfxHandle``, ``p1``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes a particle effect.
+
+**Parameters:**
+
+* ``ptfxHandle`` (``int``) -- The particle effect handle to remove.
+* ``p1`` (``bool``) -- Unknown. Seen to be ``false``.
+
+**Returns:**
+
+* None
+
+.. note::
+
+   PTFX spawning is not implemented yet, therefore no example.
+
+================================
+
+request_scaleform_movie(``scaleformName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Request a scaleform handle.
+
+**Parameters:**
+
+* ``scaleformName`` (``string``) -- The name of the scaleform to request.
+
+  * You can find the names of the scaleforms in :doc:`scaleforms`
+
+**Returns:**
+
+* ``int`` -- The scaleform handle.
+
+**Example:**
+
+   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   system.log_debug(scaleform)
+
+================================
+
+
+scaleform_movie_method_add_param_bool(``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pass a bool param to scaleform. The scaleform should be initialiazed already.
+
+**Parameters:**
+
+* ``value`` (``boolean``) -- The value to add.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. note::
+
+   I wasn't able to come up with a good example. If somebody can, please make a pull request.
+
+================================
+
+scaleform_movie_method_add_param_float(``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pass a float param to scaleform. The scaleform should be initialized already.
+
+**Parameters:**
+
+* ``value`` (``float``) -- The value to add.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   rage.graphics.end_scaleform_movie_method()
+   kPressed = system.is_key_pressed("K")
+   while not kPressed do
+      rage.graphics.draw_scaleform_movie(scaleform, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
+      rage.graphics.scaleform_movie_method_add_param_float(5.0)
+      kPressed = system.is_key_pressed("K")
+      system.wait(-1)
+   end
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   return
+
+================================
+
+scaleform_movie_method_add_param_int(``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pass an int param to scaleform. The scaleform should be initialized already.
+
+**Parameters:**
+
+* ``value`` (``int``) -- The value to add.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   rage.graphics.end_scaleform_movie_method()
+   kPressed = system.is_key_pressed("K")
+   while not kPressed do
+      rage.graphics.draw_scaleform_movie(scaleform, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
+      rage.graphics.scaleform_movie_method_add_param_int(5)
+      kPressed = system.is_key_pressed("K")
+      system.wait(-1)
+   end
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   return
+
+================================
+
+scaleform_movie_method_add_param_texture_name_string(``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pass a string param to scaleform. The scaleform should be initialized already.
+
+**Parameters:**
+
+* ``value`` (``string``) -- The value to add.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   rage.graphics.end_scaleform_movie_method()
+   kPressed = system.is_key_pressed("K")
+   while not kPressed do
+      rage.graphics.draw_scaleform_movie(scaleform, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
+      rage.graphics.scaleform_movie_method_add_param_int(5)
+      kPressed = system.is_key_pressed("K")
+      system.wait(-1)
+   end
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   return
+
+================================
+
+set_checkpoint_cylinder_height(``checkpoint``, ``nearHeight``, ``farHeight``, ``radius``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the height of the cylindrical checkpoint.
+
+**Parameters:**
+
+* ``checkpoint`` (``int``) -- The checkpoint handle.
+* ``nearHeight`` (``float``) -- The height of the checkpoint when inside of the radius.  
+* ``farHeight`` (``float``) -- The height of the checkpoint when outside of the radius.  
+* ``radius`` (``float``) -- The radius of the checkpoint.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+   coords1 = self.get_coords()
+   coords2 = self.get_coords_infront(100)
+   checkpoint = rage.graphics.create_checkpoint(45, coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 50, 255, 0, 0, 255, 120)
+   rage.graphics.set_checkpoint_cylinder_height(checkpoint, 0.0, 100.0, 50.0)
+
+================================
+
+set_checkpoint_rgba(``checkpoint``, ``red``, ``green``, ``blue``, ``alpha``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the RGBA of the checkpoint.
+
+**Parameters:**
+
+* ``checkpoint`` (``int``) -- The checkpoint handle.
+* ``red`` (``int``) -- The red value.
+* ``green`` (``int``) -- The green value.
+* ``blue`` (``int``) -- The blue value.
+* ``alpha`` (``int``) -- The alpha value.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+   coords1 = self.get_coords()
+   coords2 = self.get_coords_infront(100)
+   checkpoint = rage.graphics.create_checkpoint(45, coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 50, 255, 0, 0, 255, 120)
+   rage.graphics.set_checkpoint_rgba(checkpoint, 0, 255, 0, 255)
+
+================================
+
+set_scaleform_movie_as_no_longer_needed(``scaleformHandle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Deinitializes a scaleform object.
+
+**Parameters:**
+
+* ``scaleformHandle`` (``int``) -- The scaleform handle.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   rage.graphics.end_scaleform_movie_method()
+   kPressed = system.is_key_pressed("K")
+   while not kPressed do
+      rage.graphics.draw_scaleform_movie(scaleform, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
+      rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
+      rage.graphics.scaleform_movie_method_add_param_int(5)
+      kPressed = system.is_key_pressed("K")
+      system.wait(-1)
+   end
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   return
 
 
 ================================
