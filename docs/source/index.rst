@@ -29,3 +29,12 @@ Contents
    windows
    headlightscolor
    exptypes
+   inttypes
+   scenariogroups
+   scenariotypes
+   taskindex
+   animtypes
+   seattypes
+   firingpatterns
+   ammotypes
+   animfx

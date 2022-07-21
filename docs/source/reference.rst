@@ -16,13 +16,14 @@ Types in the LUA Engine are defined in the following order:
 * :ref:`Player` (int)
 * :ref:`Cam` (int)
 * :ref:`Blip` (int)
-* :ref:`Any` (int)
+* :ref:`Any`
 * :ref:`Vehicle` (int)
 * :ref:`Vector2` (float ``x``, float ``y``)
 * :ref:`Vector3` (float ``x``, float ``y``, float ``z``)
 * :ref:`ColorRGB` (int ``r``, int ``g``, int ``b``)
 * :ref:`ColorRGBA` (int ``r``, int ``g``, int ``b``, int ``a``)
 * :ref:`eSessionType` (int)
+* :ref:`Pickup` (int)
 
 ================================
 
@@ -30,7 +31,21 @@ Types in the LUA Engine are defined in the following order:
 
 Hash
 ----------------------
-Hash definition here
+
+Hash is a hash of a string that is encrypted using the Jenkins hash function. 
+It's an in-game identifier that is unique to each object and helps identify a gun or a vehicle.
+
+You can find a hash key using this function: rage.gameplay.get_hash_key("string"), where string is a game object name.
+
+You can find most of the game objects here:
+
+* `<Weapons https://wiki.rage.mp/index.php?title=Weapons>`__
+* `<Weapon Components https://wiki.rage.mp/index.php?title=Weapons_Components>`__
+* `<Vehicles https://wiki.rage.mp/index.php?title=Vehicles>`__
+* `<Peds https://wiki.rage.mp/index.php?title=Peds>`__
+* `<Blips https://wiki.rage.mp/index.php?title=Blips>`__
+* `<Props https://cdn.rage.mp/public/odb/index.html>`__
+
 
 ================================
 
@@ -38,7 +53,9 @@ Hash definition here
 
 Entity
 ----------------------
-Entity definition here
+
+Entity is an integer ID of an in-game object (don't mix up with the ``Hash``!). It's an integer that is unique to each object, and, unlike the ``Hash``, it only lasts one session.
+Entity can be used to identify a ped, a vehicle, an animal, a character. Entity is everything.
 
 ================================
 
@@ -46,7 +63,11 @@ Entity definition here
 
 Ped
 ----------------------
-Ped definition here
+
+Ped is an integer ID which represents the NPC in the game session. It's unique to each NPC, and it only lasts one session.
+Ped can be converted to Entity, hence it can be used with methods that take Entity as a parameter.
+
+* `<Peds https://wiki.rage.mp/index.php?title=Peds>`__
 
 ================================
 
@@ -54,7 +75,9 @@ Ped definition here
 
 Player
 ----------------------
-Player definition here
+
+Player is an integer ID that represents Player in the game session. It ranges from 0 to 32.
+Player ID helps identify a player in the game session. Always 0 in single player mode.
 
 ================================
 
@@ -62,7 +85,8 @@ Player definition here
 
 Cam
 ----------------------
-Cam definition here
+
+Cam ID represents the game camera. It's not used anywhere at the moment.
 
 ================================
 
@@ -70,7 +94,12 @@ Cam definition here
 
 Blip
 ----------------------
-Blip definition here
+
+Blip is an Integer ID that represents the mark object on the game map. You can spawn and manage different types of blips.
+
+You can find Blip types here:
+
+* `<Blips https://wiki.rage.mp/index.php?title=Blips>`__
 
 ================================
 
@@ -78,7 +107,9 @@ Blip definition here
 
 Any
 ----------------------
-Any type definition here
+
+Any is a type that's used in native methods, whose parameters weren't completely figured out.
+You can use ``false`` to represent it.
 
 ================================
 
@@ -86,7 +117,11 @@ Any type definition here
 
 Vehicle
 ----------------------
-Vehicle definition here
+
+Vehicle is an Integer Vehicle ID which represents the Vehicle in the game session. It's unique to each vehicle, and it only lasts one session.
+Vehicle can be converted to Entity, hence it can be used with methods that take Entity as a parameter.
+
+* `<Vehicles https://wiki.rage.mp/index.php?title=Vehicles>`__
 
 ================================
 
@@ -94,7 +129,9 @@ Vehicle definition here
 
 Vector2
 ----------------------
-Vector2 definition here
+
+Vector2 is a 2D vector, and is used to represent the coordinates on the screen. It contains two integer variables: ``x`` and ``y``
+Only used in :ref:`render` at the moment.
 
 ================================
 
@@ -102,7 +139,8 @@ Vector2 definition here
 
 Vector3
 ----------------------
-Vector3 definition here
+
+Vector3 is a 3D vector, and is used to represent the coordinates in the game world. It contains three integer variables: ``x``, ``y`` and ``z``
 
 ================================
 
@@ -110,7 +148,8 @@ Vector3 definition here
 
 ColorRGB
 ----------------------
-ColorRGB definition here
+
+ColorRGB represents a color in RGB format. It contains three integer variables: ``r``, ``g`` and ``b``.
 
 ================================
 
@@ -118,7 +157,8 @@ ColorRGB definition here
 
 ColorRGBA
 ----------------------
-ColorRGBA definition here
+
+ColorRGBA represents a color in RGBA format. It contains four integer variables: ``r``, ``g``, ``b`` and ``a``.
 
 ================================
 
@@ -126,8 +166,10 @@ ColorRGBA definition here
 
 eSessionType
 ----------------------
-eSessionType definition here
 
+eSessionType represents a session type that DIS2RBED uses to set up an online session.
+
+Current available session types are:
 
 * ``PublicJoin`` = ``0``
 * ``PublicStart`` = ``1``
@@ -3283,7 +3325,7 @@ Draws a box with the given color and rounding.
 *  ``y`` (``float``) -- The Y coordinate of the box's starting point.
 *  ``w`` (``float``) -- The width of the box (in pixels)
 *   ``h`` (``float``) -- The height of the box (in pixels)
-*   ``color`` (``vector<int>``) -- The color of the box. ``{R, G, B, A}``
+*   ``color`` (``ColorRGBA``) -- The color of the box. ``{R, G, B, A}``
 *   ``rounding`` (``float``) -- The rounding rule of the box.
 * *  Default is ``0``.
 *   ``rounding_flags`` (``int``) -- The rounding flags of the box. 
@@ -3320,7 +3362,7 @@ Draws a filled box with the given color and rounding.
 *  ``y`` (``float``) -- The Y coordinate of the box's starting point.
 *  ``w`` (``float``) -- The width of the box (in pixels)
 *   ``h`` (``float``) -- The height of the box (in pixels)
-*   ``color`` (``vector<int>``) -- The color of the box. ``{R, G, B, A}``
+*   ``color`` (``ColorRGBA``) -- The color of the box. ``{R, G, B, A}``
 *   ``rounding`` (``float``) -- The rounding rule of the box. 
 * * Default is ``0``.
 *   ``rounding_flags`` (``int``) -- The rounding flags of the box. 
@@ -3358,8 +3400,8 @@ Draws a filled border box with the given color and rounding.
 *  ``w`` (``float``) -- The width of the box (in pixels)
 *   ``h`` (``float``) -- The height of the box (in pixels)
 *   ``borderSize`` (``float``) -- The width of the border (in pixels)
-*   ``color`` (``vector<int>``) -- The color of the box. ``{R, G, B, A}``
-*   ``colorBorder`` (``vector<int>``) -- The color of the border. ``{R, G, B, A}``
+*   ``color`` (``ColorRGBA``) -- The color of the box. ``{R, G, B, A}``
+*   ``colorBorder`` (``ColorRGBA``) -- The color of the border. ``{R, G, B, A}``
 *   ``borderFilled`` (``bool``)
 * * ``True`` to fill the border
 * * ``false`` to not fill the border
@@ -3399,7 +3441,7 @@ Draws a circle with the given color.
 *  ``x`` (``float``) -- The X coordinate of the circle's center.
 *  ``y`` (``float``) -- The Y coordinate of the circle's center.
 *  ``radius`` (``float``) -- The radius of the circle (in pixels).
-*  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
+*  ``color`` (``ColorRGBA``) -- The color of the circle. ``{R, G, B, A}``
 *  ``segments`` (``int``) -- The number of segments of the circle. 
 * * Default is ``16``. 
 * * Better to keep between ``1-50``. Going further may cause the process to crash.
@@ -3433,7 +3475,7 @@ Draws a filled circle with the given color.
 *  ``x`` (``float``) -- The X coordinate of the circle's center.
 *  ``y`` (``float``) -- The Y coordinate of the circle's center.
 *  ``radius`` (``float``) -- The radius of the circle (in pixels).
-*  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
+*  ``color`` (``ColorRGBA``) -- The color of the circle. ``{R, G, B, A}``
 *  ``segments`` (``int``) -- The number of segments of the circle. 
 * * Default is ``16``. 
 * * Better to keep between ``1-50``. Going further may cause the process to crash.
@@ -3465,8 +3507,8 @@ Draws a filled border circle with the given color.
 *  ``x`` (``float``) -- The X coordinate of the circle's center.
 *  ``y`` (``float``) -- The Y coordinate of the circle's center.
 *  ``radius`` (``float``) -- The radius of the circle (in pixels).
-*  ``color`` (``vector<int>``) -- The color of the circle. ``{R, G, B, A}``
-*  ``colorBorder`` (``vector<int>``) -- The color of the border. ``{R, G, B, A}``
+*  ``color`` (``ColorRGBA``) -- The color of the circle. ``{R, G, B, A}``
+*  ``colorBorder`` (``ColorRGBA``) -- The color of the border. ``{R, G, B, A}``
 *  ``borderFilled`` (``bool``)
 * * ``True`` to fill the border
 * * ``false`` to not fill the border
@@ -3501,7 +3543,7 @@ Draws a triangle with the given color.
 * * ``false`` to not draw the triangle
 *  ``x`` (``float``) -- The X coordinate of the triangle's center.
 *  ``y`` (``float``) -- The Y coordinate of the triangle's center.
-*  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
+*  ``color`` (``ColorRGBA``) -- The color of the triangle. ``{R, G, B, A}``
 *  ``size`` (``float``) -- The size of the triangle (in pixels). 
 * * Default is ``1.1``.
 
@@ -3533,7 +3575,7 @@ Draws a filled triangle with the given color.
 * * ``false`` to not draw the triangle
 *  ``x`` (``float``) -- The X coordinate of the triangle's center.
 *  ``y`` (``float``) -- The Y coordinate of the triangle's center.
-*  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
+*  ``color`` (``ColorRGBA``) -- The color of the triangle. ``{R, G, B, A}``
 *  ``size`` (``float``) -- The size of the triangle (in pixels). 
 * * Default is ``1.1``.
 
@@ -3564,8 +3606,8 @@ Draws a filled border triangle with the given color.
 * * ``false`` to not draw the triangle
 *  ``x`` (``float``) -- The X coordinate of the triangle's center.
 *  ``y`` (``float``) -- The Y coordinate of the triangle's center.
-*  ``color`` (``vector<int>``) -- The color of the triangle. ``{R, G, B, A}``
-*  ``colorBorder`` (``vector<int>``) -- The color of the border. ``{R, G, B, A}``
+*  ``color`` (``ColorRGBA``) -- The color of the triangle. ``{R, G, B, A}``
+*  ``colorBorder`` (``ColorRGBA``) -- The color of the border. ``{R, G, B, A}``
 *  ``borderFilled`` (``bool``)
 
 * * ``True`` to fill the border (Default)
@@ -3600,7 +3642,7 @@ Draws a text with the given color.
 *  ``x`` (``float``) -- The X coordinate of the text's center.
 *  ``y`` (``float``) -- The Y coordinate of the text's center.
 *  ``scale`` (``float``) -- The scale of the text.
-*  ``color`` (``vector<int>``) -- The color of the text. ``{R, G, B, A}``
+*  ``color`` (``ColorRGBA``) -- The color of the text. ``{R, G, B, A}``
 *  ``flags`` (``int``) -- The flags for the text. 
 * * Default is ``0``.
 
@@ -7778,7 +7820,7 @@ Gives weapon to the player (self).
 .. code-block:: lua
    :linenos:
 
-   scripting.weapon.give_weapon_self(rage.gameplay.get_hash_key("MicroSMG")) -- Gives self the MicroSMG
+   scripting.weapon.give_weapon_self(rage.gameplay.get_hash_key("weapon_microsmg")) -- Gives self the MicroSMG
 
 ================================
 
@@ -7815,7 +7857,7 @@ Gives a weapon to ped with toggable max ammo and max components.
 .. code-block:: lua
    :linenos:
 
-   scripting.weapon.give_weapon(lobby.get_player_ped(lobby.get_host()), rage.gameplay.get_hash_key("MicroSMG"), true, true) -- Gives session host a fully loaded and upgraded MicroSMG
+   scripting.weapon.give_weapon(lobby.get_player_ped(lobby.get_host()), rage.gameplay.get_hash_key("weapon_microsmg"), true, true) -- Gives session host a fully loaded and upgraded MicroSMG
 
 ================================
 
@@ -7863,7 +7905,7 @@ Gives ammo for a precise weapon to a ped.
 .. code-block:: lua
    :linenos:
 
-   scripting.weapon.give_ammo_for_weapon(lobby.get_player_ped(lobby.get_host()), rage.gameplay.get_hash_key("MicroSMG")) -- Gives ammo to session host's MicroSMG
+   scripting.weapon.give_ammo_for_weapon(lobby.get_player_ped(lobby.get_host()), rage.gameplay.get_hash_key("weapon_microsmg")) -- Gives ammo to session host's MicroSMG
 
 ================================
 
@@ -9023,7 +9065,6 @@ This namespace contains object-related game functions.
 
 ================================
 
-
 create_object(``modelHash``, ``x``, ``y``, ``z``, ``isNetwork``, ``bScriptHostObj``, ``dynamic``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -9091,7 +9132,7 @@ Get ped max ammo for a weapon.
 .. code-block:: lua
    :linenos:
 
-   rage.weapon.get_max_ammo(lobby.get_player_ped(lobby.get_host()), rage.gameplay.get_hash_key("MicroSMG")) -- Gives session host a fully loaded MicroSMG
+   rage.weapon.get_max_ammo(lobby.get_player_ped(lobby.get_host()), rage.gameplay.get_hash_key("weapon_microsmg")) -- Gives session host a fully loaded MicroSMG
 
 ================================
 
@@ -9118,7 +9159,7 @@ Get ammo type from a specific weapon of a ped.
 
    ped = lobby.get_player_ped(lobby.get_host())
 
-   rage.weapon.get_ped_ammo_type_from_weapon(ped, rage.gameplay.get_hash_key("MicroSMG")) -- Gets ammo type from session's host MicroSMG
+   rage.weapon.get_ped_ammo_type_from_weapon(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Gets ammo type from session's host MicroSMG
 
 ================================
 
@@ -9145,7 +9186,7 @@ Get weapon tint ID from a ped.
 
    ped = lobby.get_player_ped(lobby.get_host())
 
-   rage.weapon.get_ped_weapon_tint_index(ped, rage.gameplay.get_hash_key("MicroSMG"), ) -- Gets weapon tint ID from session's host MicroSMG
+   rage.weapon.get_ped_weapon_tint_index(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Gets weapon tint ID from session's host MicroSMG
 
 ================================
 
@@ -9171,7 +9212,7 @@ Get weapon tint count.
 
    ped = lobby.get_player_ped(lobby.get_host())
 
-   rage.weapon.get_ped_weapon_tint_count(ped, rage.gameplay.get_hash_key("MicroSMG"), ) -- Gets weapon tint count from session's host MicroSMG
+   rage.weapon.get_ped_weapon_tint_count(rage.gameplay.get_hash_key("weapon_microsmg")) -- Gets weapon tint count from session's host MicroSMG
 
 ================================
 
@@ -9204,7 +9245,7 @@ Gives a weapon to PED with a delay.
 
    ped = lobby.get_player_ped(lobby.get_host())
    
-   weapon = rage.gameplay.get_hash_key("MicroSMG")
+   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
 
    rage.weapon.give_delayed_weapon_to_ped(ped, weapon, 100, true)
 
@@ -9235,9 +9276,9 @@ Give a weapon component to a ped.
 
    ped = lobby.get_player_ped(lobby.get_host())
    
-   weapon = rage.gameplay.get_hash_key("MicroSMG")
+   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.give_delayed_weapon_to_ped(ped, weapon, "0x10E6BA2B") -- Gives extended clip component to session host's MicroSMG
+   rage.weapon.give_delayed_weapon_to_ped(ped, weapon, rage.gameplay.get_hash_key("COMPONENT_MICROSMG_CLIP_02")) -- Gives extended clip component to session host's MicroSMG
 
 ================================
 
@@ -9268,7 +9309,7 @@ Check if a ped has got a weapon.
 
    ped = lobby.get_player_ped(lobby.get_host())
    
-   weapon = rage.gameplay.get_hash_key("MicroSMG")
+   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
 
    rage.weapon.has_ped_got_weapon(ped, weapon, true) -- Checks if session host has got MicroSMG
 
@@ -9302,9 +9343,9 @@ Check if a ped's weapon has got a component.
 
    ped = lobby.get_player_ped(lobby.get_host())
    
-   weapon = rage.gameplay.get_hash_key("MicroSMG")
+   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.has_ped_got_weapon_component(ped, weapon, "0x10E6BA2B") -- Checks if session host's MicroSMG has got Extended Clip
+   rage.weapon.has_ped_got_weapon_component(ped, weapon, rage.gameplay.get_hash_key("COMPONENT_MICROSMG_CLIP_02")) -- Checks if session host's MicroSMG has got Extended Clip
 
 ================================
 
@@ -9358,9 +9399,9 @@ Remove component from a ped's weapon.
 
    ped = lobby.get_player_ped(lobby.get_host())
 
-   weapon = rage.gameplay.get_hash_key("MicroSMG")
+   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.remove_weapon_component_from_ped(ped, weapon, "0x10E6BA2B") -- Removes Extended Clip from session host's MicroSMG
+   rage.weapon.remove_weapon_component_from_ped(ped, weapon, rage.gameplay.get_hash_key("COMPONENT_MICROSMG_CLIP_02")) -- Removes Extended Clip from session host's MicroSMG
 
 ================================
 
@@ -9387,9 +9428,9 @@ Remove a weapon from a ped.
 
    ped = lobby.get_player_ped(lobby.get_host())
 
-   weapon = rage.gameplay.get_hash_key("MicroSMG")
+   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.remove_weapon_from_ped(ped, weapon, "0x10E6BA2B") -- Removes MicroSMG from session host
+   rage.weapon.remove_weapon_from_ped(ped, weapon) -- Removes MicroSMG from session host
 
 ================================
 
@@ -9422,7 +9463,7 @@ Set ped ammo amount.
 
    ped = lobby.get_player_ped(lobby.get_host())
 
-   weapon = rage.gameplay.get_hash_key("MicroSMG")
+   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
 
    rage.weapon.set_ped_ammo(ped, weapon, 100, true)
 
@@ -9440,10 +9481,11 @@ Set ped ammo by type.
 **Parameters:**
 
 * ``ped`` (``Ped``) -- The ped
-* ``ammoTypeHash`` (``Hash``) -- Weapon ammo `Ahash`_  
+* ``ammoTypeHash`` (``Hash``) -- Weapon ammo hash
+
+  * You can read more about ammo types here: :doc:`ammotypes`
 * ``ammo`` (``int``) -- Ammo Type
-  
-.. _Ahash: https://gist.github.com/root-cause/faf41f59f7a6d818b7db0b839bd147c1
+
 
 **Returns:**
 
@@ -9457,7 +9499,7 @@ Set ped ammo by type.
    ped = lobby.get_player_ped(lobby.get_host())
    self = lobby.get_player_ped(self.get_ped)
 
-   ammoType = rage.weapon.get_ped_ammo_type_from_weapon(ped, rage.gameplay.get_hash_key("MicroSMG")) -- Get ammo type from session host's MicroSMG
+   ammoType = rage.weapon.get_ped_ammo_type_from_weapon(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Get ammo type from session host's MicroSMG
 
    rage.weapon.set_ped_ammo_by_type(self, ammoType, 100) -- Set self ammo type
 
@@ -9536,9 +9578,9 @@ Set ped weapon tint ID.
    ped = lobby.get_player_ped(lobby.get_host())
    self = lobby.get_player_ped(self.get_ped)
 
-   tint = rage.weapon.get_ped_weapon_tint_index(ped, rage.gameplay.get_hash_key("MicroSMG")) -- Gets weapon tint ID from session's host MicroSMG
+   tint = rage.weapon.get_ped_weapon_tint_index(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Gets weapon tint ID from session's host MicroSMG
 
-   rage.weapon.set_ped_weapon_tint_index(self, rage.gameplay.get_hash_key("MicroSMG"), tint) -- Sets self weapon tint
+   rage.weapon.set_ped_weapon_tint_index(self, rage.gameplay.get_hash_key("weapon_microsmg"), tint) -- Sets self weapon tint
 
 ================================
 
@@ -9573,7 +9615,7 @@ Add blip for given coordinates.
 
 **Returns:**
 
-* ``Blip`` -- Returns a blip at the specified coordinates.
+* ``Blip`` -- Returns a blip object at the specified coordinates.
 
 **Example:**
 
@@ -9595,7 +9637,7 @@ Add blip for given entity.
 
 **Returns:**
 
-* ``Blip`` -- Returns a blip at the specified entity.
+* ``Blip`` -- Returns a blip object at the specified entity.
 
 **Example:**
 
@@ -9615,11 +9657,11 @@ Add blip for given pickup.
 
 **Parameters:**
 
-* ``pickup`` (``Pickup``) -- Pickup to add the blip to
+* ``pickup`` (``Pickup``) -- Pickup item to add the blip to
 
 **Returns:**
 
-* ``Blip`` -- Returns a blip at the specified pickup.
+* ``Blip`` -- Returns a blip object
 
 **Example:**
 
@@ -9646,14 +9688,16 @@ Add blip for given coords with custom radius.
 
 **Returns:**
 
-* ``Blip`` -- Returns a blip at the specified pickup.
+* ``Blip`` -- Returns a blip object
 
 **Example:**
 
 .. code-block:: lua
    :linenos:
 
-   rage.ui.add_blip_for_radius(69.2, 54.8, 192.3, 20)
+   coords = lobby.get_player_coords(lobby.get_host())
+
+   rage.ui.add_blip_for_radius(coords.x, coords.y, coords.z, 20)
 
 ================================
 
@@ -9664,7 +9708,7 @@ Get coordinates for a blip.
 
 **Parameters:**
 
-* ``blip`` (``Blip``) -- Blip
+* ``blip`` (``Blip``) -- Blip object
 
 **Returns:**
 
@@ -9692,7 +9736,7 @@ Get blip from entity.
 
 **Returns:**
 
-* ``Blip`` -- Returns a blip
+* ``Blip`` -- Returns a blip ID
 
 **Example:**
 
@@ -9810,7 +9854,7 @@ Check if specified HUD (Heads-up Display) component is active.
 * ``bool`` -- Rerturns hud component status
 
   * ``true`` -- Hud component is active
-  * ``false`` -- Otherwise
+  * ``false`` -- Hud component is inactive
 
 **Example:**
 
@@ -9824,7 +9868,7 @@ Check if specified HUD (Heads-up Display) component is active.
 is_mission_creator_blip(``blip``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if blip is mission creator.
+Check if blip is a mission creator.
 
 **Parameters:**
 
@@ -9834,8 +9878,8 @@ Check if blip is mission creator.
 
 * ``bool`` -- Returns blip status
 
-  * ``true`` -- Blip is mission creator
-  * ``false`` -- Otherwise
+  * ``true`` -- Blip is a mission creator
+  * ``false`` -- Blip is not a mission creator
 
 **Example:**
 
@@ -9883,7 +9927,7 @@ Set blip as mission creator blip.
 * ``toggle`` (``bool``) -- Toggles blip settings
 
   * ``true`` -- Set blip as mission creator blip
-  * ``false`` -- Otherwise
+  * ``false`` -- Don't set blip as mission creator blip / remove mission creator blip
 
 **Returns:**
 
@@ -9950,7 +9994,9 @@ Set blip coordinates.
 
    blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
 
-   rage.ui.set_blip_coords(blip, 69.2, 54.8, 192.3)
+   coords = lobby.get_player_coords(lobby.get_host()) -- Gets host's coordinates
+
+   rage.ui.set_blip_coords(blip, coords.x, coords.y, coords.z)
 
 ================================
 
@@ -10042,7 +10088,7 @@ Set text centre.
 * ``align`` (``bool``) -- Toggle text alignment
 
   * ``true`` -- Text is aligned
-  * ``false`` -- Otherwise
+  * ``false`` -- Text is not aligned
 
 **Returns:**
 
@@ -10106,7 +10152,7 @@ Set text justification.
 
 .. note::
 
-    Right-Justify requires ``set_text_wrap()``, otherwise it will draw to the far right of the screen.
+   Right-Justify requires ``set_text_wrap()``, otherwise it will draw to the far right of the screen.
 
 **Returns:**
 
@@ -10305,10 +10351,10 @@ Draw a 2D sprite on the screen.
 * ``screenY`` (``float``) -- Screen offset (0.5 = center)  
 * ``width`` (``float``) -- Texture scaling. Negative values can be used to flip the texture on that axis. (0.5 = half)  
 * ``height`` (``float``) -- Texture scaling. Negative values can be used to flip the texture on that axis. (0.5 = half)  
-* ``heading`` (``float``) -- Texture rotation in degrees (default = 0.0) positive is clockwise, measured in degrees  
-* ``red`` (``int``) -- Sprite R color (default = 255)  
-* ``green`` (``int``) -- Sprite G color (default = 255)  
-* ``blue`` (``int``) -- Sprite B color (default = 255)  
+* ``heading`` (``float``) -- Texture rotation in degrees. Positive is clockwise, measured in degrees
+* ``red`` (``int``) -- Sprite R color
+* ``green`` (``int``) -- Sprite G color
+* ``blue`` (``int``) -- Sprite B color
 * ``alpha`` (``int``) -- Opacity level  
 * ``p11`` (``bool``) -- Unknown
 * ``p12`` (``Any``) -- Unknown
@@ -10395,7 +10441,7 @@ Get gameplay camera rotation
    :linenos:
 
    ggcr = rage.cam.get_gameplay_cam_rot(0) -- gets the rotation of the camera with the first rotation order.
-   system.log_debug("LocalPlayer pitch: " .. ggcr.x .. " roll: " .. ggcr.y .. " yaw: " .. ggcr.z)
+   system.log_debug("LocalPlayer pitch: " .. tostring(ggcr.x) .. " roll: " .. tostring(ggcr.y) .. " yaw: " .. tostring(ggcr.z))
 
 ================================
 
@@ -10819,7 +10865,7 @@ Loads the specified cloud hat.
 
 * ``name`` (``string``) -- The cloud type
 
-   * You can read more about cloud types here: :doc:`cloudtypes`
+  * You can read more about cloud types here: :doc:`cloudtypes`
 
 * ``transitionTime`` (``float``) -- The time to smoothly transit between the current cloud hat and the new cloud hat
 
@@ -10849,7 +10895,7 @@ Unloads the specified cloud hat.
 
 * ``name`` (``string``) -- The cloud type
 
-   * You can read more about cloud types here: :doc:`cloudtypes`
+  * You can read more about cloud types here: :doc:`cloudtypes`
 
 **Returns:**
 
@@ -10947,15 +10993,26 @@ Shoots a bullet from the first coordinates to the second coordinates
 
    coords1 = self.get_coords()
    coords2 = self.get_coords_infront(10)
-   rage.gameplay.shoot_single_bullet_between_coords(coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords3.z, 1000, true, rage.gameplay.get_hash_key("WEAPON_SAWNOFFSHOTGUN"), self.get_ped(), true, true, 50.0) -- shoot a bullet from player coords to 10 meters in front of them with a damage of 1000, with pinpoint accuracy, using the shotgun, the bullet owner is the player, the bullet is audible and invisible, and the bullet speed is 50.0
+   rage.gameplay.shoot_single_bullet_between_coords(coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 1000, true, rage.gameplay.get_hash_key("WEAPON_SAWNOFFSHOTGUN"), self.get_ped(), true, true, 50.0) -- shoot a bullet from player coords to 10 meters in front of them with a damage of 1000, with pinpoint accuracy, using the shotgun, the bullet owner is the player, the bullet is audible and invisible, and the bullet speed is 50.0
 
 
 update_onscreen_keyboard()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note::
-   
-   This method is not documented yet.
+Returns the current status of the onscreen input window
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- Status code
+
+  * ``-1`` The onscreen input window is not active
+  * ``0`` User still editing
+  * ``1`` User has finished editing
+  * ``2`` -- User has canceled editing
 
 ================================
 
@@ -11239,7 +11296,7 @@ Check if friend is online.
 network_is_session_started()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if session has started.
+Check if session has started - you're fully connected, can control your character, and not hanging in the clouds.
 
 **Parameters:**
 
@@ -11250,7 +11307,7 @@ Check if session has started.
 * ``bool``
 
   * ``true`` --  Session has started
-  * ``false`` -- Otherwise
+  * ``false`` -- Session hasn't started
 
 **Example:**
 
@@ -11696,7 +11753,109 @@ This function simulates player input.
 Graphics namespace
 ----------------------
 
-Functions here
+animpostfx_is_running(``effectName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if a postFX effect is running.
+
+**Parameters:**
+
+* ``effectName`` (``string``) -- Name of the animation postFX
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- Animation postFX is running
+  * ``false`` -- Animation postFX is not running
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   if rage.graphics.animpostfx_is_running("FocusIn") then
+      system.log_debug("Drugs is running")
+   end
+
+================================
+
+animpostfx_play(``effectName``, ``duration``, ``looped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Launches a postFX effect.
+
+**Parameters:**
+
+* ``effectName`` (``string``) -- Name of the postFX effect
+* ``duration`` (``int``) -- Duration of the postFX effect in milliseconds
+* ``looped`` (``bool``) -- If the postFX effect should be looped
+
+  * ``true`` -- PostFX effect will be looped
+  * ``false`` -- PostFX effect will not be looped
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.graphics.animpostfx_play("FocusIn", 10000, false) -- plays the FocusIn postFX for 10 seconds
+
+================================
+
+animpostfx_stop(``effectName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Stops a postFX effect.
+
+**Parameters:**
+
+* ``effectName`` (``string``) -- Name of the postFX effect
+
+  * ``true`` -- PostFX effect will be stopped
+  * ``false`` -- PostFX effect will not be stopped
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.graphics.animpostfx_stop("FocusIn") -- stops the FocusIn postFX
+
+================================
+
+animpostfix_stop_all()
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Stops all postFX effects.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+    rage.graphics.animpostfix_stop_all() -- stops all postFX effects
+
+================================
+
+begin_scaleform_movie_method(``scaleform``, ``methodName``)
+
 
 ================================
 
@@ -11807,7 +11966,1537 @@ Set the in-game time
 AI namespace
 ----------------------
 
-Functions here
+This namespace contains ai-related game functions. 
+
+================================
+
+does_scenario_group_exist(``scenarioGroup``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if a scenario group exists.
+
+**Parameters:**
+
+* ``scenarioGroup`` (``string``) -- Scenario group name
+  
+  * You can read more about scenario groups here: :doc:`scenariogroups`
+
+**Returns:**
+
+* ``bool`` -- Returns scenario group status check
+  
+  * ``true`` -- Scenario group exists
+  * ``false`` -- Scenario group does not exist
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ai.does_scenario_group_exist("SOLOMON_GATE")
+
+================================
+
+is_ped_active_in_scenario(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the ped is currently in any scenario.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+
+**Returns:**
+
+* ``bool`` -- Returns check status
+  
+  * ``true`` -- If the ped is currently in any scenario.
+  * ``false`` -- If the ped is not in any scenario.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ai.is_ped_active_in_scenario("ped")
+
+================================
+
+is_scenario_group_enabled(``scenarioGroup``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the scenario group is enabled.
+
+**Parameters:**
+
+* ``scenarioGroup`` (``string``) -- Scenario group name
+  
+  * You can read more about scenario groups here: :doc:`scenariogroups`
+
+**Returns:**
+
+* ``bool`` -- Returns scenario group status check
+  
+  * ``true`` -- Scenario group is enabled.
+  * ``false`` -- Scenario group is not enabled.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ai.is_scenario_group_enabled("SOLOMON_GATE")
+
+================================
+
+is_scenario_type_enabled(``scenarioType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the scenario type is enabled.
+
+**Parameters:**
+
+* ``scenarioType`` (``string``) -- Scenario type name
+  
+  * You can read more about scenario groups here: :doc:`scenariotypes`
+
+**Returns:**
+
+* ``bool`` -- Returns scenario type status check
+  
+  * ``true`` -- Scenario type is enabled.
+  * ``false`` -- Scenario type is not enabled.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ai.is_scenario_type_enabled("WORLD_HUMAN_DRINKING")
+
+================================
+
+get_is_task_active(``ped``, ``taskIndex``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the task is active.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``taskIndex`` (``int``) -- Task index enum
+
+**Returns:**
+
+* ``bool`` -- Returns task status check
+  
+  * ``true`` -- Task is active.
+  * ``false`` -- Task is not active.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ai.get_is_task_active(127) -- Checks if CTaskCrouch is active
+
+================================
+
+play_anim_on_running_scenario(``ped``, ``animDict``, ``animName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Play the animation on any running scenario.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``animDict`` (``string``) -- Animation dictionary
+* ``animName`` (``string``) -- Animation (clip) name
+
+  * You can read more about animations dicts and names here: :doc:`animtypes`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ai.play_anim_on_running_scenario(ped, "move_f@injured", "idle_intro")
+
+================================
+
+reset_exclusive_scenario_group()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Reset the exclusive scenario group.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ai.reset_exclusive_scenario_group()
+
+================================
+
+reset_scenario_groups_enabled()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Reset all the enabled scenario groups.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ai.reset_scenario_groups_enabled()
+
+================================
+
+reset_scenario_types_enabled()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Reset all the enabled scenario types.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ai.reset_scenario_types_enabled()
+
+================================
+
+set_exclusive_scenario_group(``scenarioGroup``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the scenario group as exclusive.
+
+**Parameters:**
+
+* ``scenarioGroup`` (``string``) -- Scenario group name
+  
+  * You can read more about scenario groups here: :doc:`scenariogroups`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ai.set_exclusive_scenario_group("SOLOMON_GATE")
+
+================================
+
+reset_exclusive_scenario_group()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Reset the exclusive scenario group(s).
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ai.reset_exclusive_scenario_group()
+
+================================
+
+set_parachute_task_target(``ped``, ``x``, ``y``, ``z``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make ped parachute to target
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``x`` (``string``) -- The ``X`` coordinate
+* ``y`` (``string``) -- The ``Y`` coordinate
+* ``z`` (``string``) -- The ``Z`` coordinate
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ai.set_parachute_task_target(ped, 60, 118, 12)
+
+================================
+
+set_parachute_task_thrust(``ped``, ``thrust``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the parachute task thrust.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``thrust`` (``float``) -- The thrust value
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ai.set_parachute_task_thrust(ped, 10)
+
+================================
+
+set_scenario_group_enabled(``scenarioGroup``, ``p1``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set scenario group as enabled.
+
+**Parameters:**
+
+* ``scenarioGroup`` (``string``) -- Scenario group name
+  
+  * You can read more about scenario groups here: :doc:`scenariogroups`
+
+* ``p1`` (``bool``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ai.set_scenario_group_enabled("SOLOMON_GATE")
+
+================================
+
+set_scenario_type_enabled(``scenarioType``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle the scenario type.
+
+**Parameters:**
+
+* ``scenarioType`` (``string``) -- Scenario type name
+  
+  * You can read more about scenario groups here: :doc:`scenariotypes`
+
+* ``toggle`` (``bool``) -- Toggle scenario type
+
+  * ``true`` -- Scenario type enabled
+  * ``false`` -- Scenario type not enabled
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ai.set_scenario_type_enabled("WORLD_HUMAN_DRINKING", true)
+
+================================
+
+stop_anim_task(``ped``, ``animDictionary``, ``animationName``, ``p3``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Stop animation task.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``animDictionary`` (``string``) -- Animation dictionary
+* ``animationName`` (``string``) -- Animation (clip) name
+
+  * You can read more about animations dicts and names here: :doc:`animtypes`
+
+* ``p3`` (``float``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ai.stop_anim_task(ped, "move_f@injured", "sprint")
+
+================================
+
+task_aim_gun_at_coord(``ped``, ``x``, ``y``, ``z``, ``time``, ``p5``, ``p6``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Aim gun at coordinates.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``x`` (``string``) -- The ``X`` coordinate
+* ``y`` (``string``) -- The ``Y`` coordinate
+* ``z`` (``string``) -- The ``Z`` coordinate
+* ``time`` (``int``) -- The time value
+* ``p5`` (``bool``) -- Unknown
+* ``p6`` (``bool``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ai.task_aim_gun_at_coord(ped, 60.12, 118.40, 12.28, 5)
+
+================================
+
+task_aim_gun_at_entity(``ped``, ``entity``, ``duration``, ``p3``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Aim gun at entity.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``entity`` (``Entity``) -- The entity ID
+* ``duration`` (``int``) -- The duration value
+* ``p3`` (``bool``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   entity = lobby.get_player_ped(lobby.get_host())
+
+   rage.ai.task_aim_gun_at_entity(ped, entity, 5)
+
+================================
+
+task_combat_ped(``ped``, ``targetPed``, ``p2``, ``p3``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes the specified ped attack the target ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``targetPed`` (``Ped``) -- Target ped object
+* ``p2`` (``int``) -- The duration value
+* ``p3`` (``int``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   targetPed = lobby.get_player_ped(lobby.get_host())
+
+   rage.ai.task_combat_ped(ped, targetPed) -- Self's ped will attack lobby host's ped
+
+================================
+
+task_enter_vehicle(``ped``, ``vehicle``, ``timeout``, ``seat``, ``speed``, ``flag``, ``p6``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes the specified ped enter the vehicle.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``vehicle`` (``Vehicle``) -- Vehicle ID
+* ``timeout`` (``int``) -- Animation timeout
+* ``seat`` (``int``) -- Seat type ID
+
+  * You can read more about seat types here: :doc:`seattypes`
+
+* ``speed`` (``float``) -- Ped speed
+  
+  * ``1.0`` = walk
+  * ``2.0`` = run
+
+* ``flag`` (``int``) -- Entering type
+  
+  * ``1`` = normal
+  * ``3`` = teleport to vehicle
+  * ``8`` = normal/carjack ped from seat
+  * ``16`` = teleport directly into vehicle
+
+* ``p6`` (``Any``) -- Always 0
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   vehicle = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.ai.task_enter_vehicle(ped, vehicle, 0, -1, 2.0, 1, 0) --  Ped will enter the Zentorno walking and sitting on driver seat.
+
+================================
+
+task_follow_to_offset_of_entity(``ped``, ``entity``, ``offsetX``, ``offsetY``, ``offsetZ``, ``movementSpeed``, ``timeout``, ``stoppingRange``, ``persistFollowing``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Follow to offset of the entity.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``entity`` (``Entity``) -- The entity ID
+* ``offsetX`` (``float``) -- Offset ``X`` position
+* ``offsetY`` (``float``) -- Offset ``Y`` position
+* ``offsetZ`` (``float``) -- Offset ``Z`` position
+* ``movementSpeed`` (``float``) -- Movement speed
+* ``timeout`` (``int``) -- Timeout
+* ``stoppingRange`` (``float``) -- Stopping range
+
+* ``persistFollowing`` (``bool``) -- Toggle persist following
+  
+  * ``true`` -- Persist following on
+  * ``false`` -- Persist following off
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   entity = lobby.get_player_ped(lobby.get_host())
+
+   rage.ai.task_follow_to_offset_of_entity(ped, entity, 5, 5, 1, 2, 0, 1, true)
+
+================================
+
+task_go_to_coord_while_aiming_at_coord(``ped``, ``x``, ``y``, ``z``, ``aimAtX``, ``aimAtY``, ``aimAtZ``, ``moveSpeed``, ``p8``, ``p9``, ``p10``, ``p11``, ``flags``, ``p13``, ``firingPattern``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make the ped move to a coordinate while aiming (and optionally shooting) at given coordinates.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``x`` (``float``) -- Destination ``X`` position
+* ``y`` (``float``) -- Destination ``Y`` position
+* ``z`` (``float``) -- Destination ``Z`` position
+* ``aimAtX`` (``float``) -- Aim at target ``X`` position
+* ``aimAtY`` (``float``) -- Aim at target ``Y`` position
+* ``aimAtZ`` (``float``) -- Aim at target ``Z`` position
+* ``moveSpeed`` (``float``) -- Movement speed
+
+* ``p8`` (``bool``) -- Toggle ped shooting
+  
+  * ``true`` -- Ped will shoot
+  * ``false`` -- Ped will not shoot
+  
+* ``p9`` (``float``) -- seen to be 2.0
+* ``p10`` (``float``) -- seen to be 0.5
+* ``p11`` (``bool``) 
+
+  * ``true`` -- ped will stay still
+  * ``false`` -- will not stay still
+* ``flags`` (``Any``) -- ``0`` / ``512`` / ``513``
+* ``p13`` (``bool``) -- Unknown
+* ``firingPattern`` (``Hash``) -- Firing pattern hash
+  
+  * Firing patterns can be found here: :doc:`firingpatterns`
+
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ai.task_go_to_coord_while_aiming_at_coord(ped, 5, 5, 1, 10, 10, 1, 2, true)
+
+================================
+
+task_go_to_coord_while_aiming_at_entity(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``, ``p10``, ``p11``, ``p12``, ``p13``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make the ped move to a coordinate while aiming (and optionally shooting) at given coordinates.
+
+**Parameters:**
+
+* ``p0`` (``Any``) -- Ped ID
+* ``p1`` (``float``) -- X coordinate to go to
+* ``p2`` (``float``) -- Y coordinate to go to
+* ``p3`` (``float``) -- Z coordinate to go to
+* ``p4`` (``Any``) -- Ped to aim on
+* ``p5`` (``float``) -- Unknown always seems to be ``2.0``
+* ``p6`` (``bool``) -- Unknown -- seen to be both ``false`` and ``true``
+* ``p7`` (``float``) -- Unknown -- let it be ``1.5``
+* ``p8`` (``float``) -- Unknown -- let it be ``1.5``
+* ``p9`` (``bool``) -- Unknown -- seen to be ``false``
+* ``p10`` (``Any``) -- Unknown -- seen to be ``false``
+* ``p11`` (``bool``) -- Unknown -- probably ``false``?
+* ``p12`` (``Any``) -- Firing pattern
+
+  * Firing patterns can be found here: :doc:`firingpatterns`
+* ``p13`` (``Any``) -- Unknown -- let it be 20000, noone knows what that is
+
+**Returns:**
+
+* None
+
+**Example:**
+
+   .. note::
+
+      This example was not tested.
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   ped2 = lobby.get_player_ped(lobby.get_host())
+
+   rage.ai.task_go_to_coord_while_aiming_at_entity(ped, 119.73, 65.30, 420.12, ped2, 2.0, false, 1.5, 1.5, false, false, false)
+
+================================
+
+task_go_to_entity_while_aiming_at_entity(``ped``, ``entityToWalkTo``, ``entityToAimAt``, ``speed``, ``shootatEntity``, ``p5``, ``p6``, ``p7``, ``p8``, ``firingPattern``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make the ped move to an entity while aiming and optionally shooting and optionally killing it.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``entityToWalkTo`` (``Entity``) -- Entity to walk to
+* ``entityToAimAt`` (``Entity``) -- Entity to aim at
+* ``speed`` (``float``) -- Speed
+* ``shootatEntity`` (``bool``) -- Toggle shoot at entity
+
+  * ``true`` -- Peds will shoot at Entity till it is dead.
+  * ``false`` -- Peds will just walk till they reach the entity and will cease shooting.
+
+* ``p5`` (``float``) -- Unknown
+* ``p6`` (``float``) -- Unknown
+* ``p7`` (``bool``) -- Unknown
+* ``p8`` (``bool``) -- Unknown
+* ``firingPattern`` (``Hash``) -- Firing pattern hash
+
+  * Firing patterns can be found here: :doc:`firingpatterns`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   entity = lobby.get_player_ped(lobby.get_host())
+
+   rage.ai.task_go_to_entity_while_aiming_at_entity(ped, entity, 5, 5, 1, 2, 0, 1, true)
+
+================================
+
+task_go_to_entity(``entity``, ``target``, ``duration``, ``distance``, ``speed``, ``p5``, ``p6``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make the entity move to a target until time is over (duration) or get in target's range (distance).
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity object
+* ``target`` (``Entity``) -- Target object
+* ``duration`` (``int``) -- Time available to complete the task
+
+  * ``duration`` = ``-1`` -- The task duration will be ignored
+
+* ``distance`` (``float``) -- Target's range
+* ``speed`` (``float``) -- Speed
+* ``p5`` (``float``) -- Unknown but can leave it ``1073741824`` or ``100`` or even ``0`` (no difference noticed)
+* ``p6`` (``bool``) -- Unknown but can leave it ``0``
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   pedHandle = self.get_ped()
+
+   vehicleHandle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ZENTORNO"), self.get_coords_infront(10), 30.0)
+
+   rage.ai.task_go_to_entity(pedHandle, vehicleHandle, 5000, 4.0, 100, 1073741824, 0) 
+   -- Ped will run towards the vehicle for 5 seconds and stop when time is over or when he gets 4 meters(?) around the vehicle
+
+================================
+
+task_leave_vehicle(``ped``, ``vehicle``, ``flags``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make the ped leave the vehicle with customizable flags.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``vehicle`` (``Vehicle``) -- Vehicle ID
+* ``flags`` (``int``) -- Vehicle leaving flags
+  
+  * ``0`` = normal exit and closes door
+  * ``1`` = normal exit and closes door
+  * ``16`` = teleports outside, door kept closed. (This flag does not seem to work for the front seats in buses, NPCs continue to exit normally)
+  * ``64`` = normal exit and closes door
+  * ``256`` = normal exit but does not close the door
+  * ``4160`` = ped is throwing himself out, even when the vehicle is still
+  * ``262144`` = ped moves to passenger seat first, then exits normally 
+  * Others to be tried out: ``320``, ``512``, ``131072``
+
+**Returns:**
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   vehicle = self.rage.ped.get_vehicle_ped_is_using(ped)
+
+   rage.ai.task_leave_vehicle(ped, vehicle, 1)
+
+================================
+
+task_open_vehicle_door(``ped``, ``vehicle``, ``timeOut``, ``seat``, ``speed``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make the ped open the vehicle door of a specific seat, at given speed.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``vehicle`` (``Vehicle``) -- Vehicle ID
+* ``timeOut`` (``int``) -- Task timeout
+* ``seat`` (``int``) -- Seat Index
+
+  * You can read more about seat indexes here: :doc:`seattypes`
+
+* ``speed`` (``float``) -- Speed to open the door
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+
+   vehicle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ZENTORNO"), self.get_coords_infront(10), 30.0)
+
+   rage.ai.task_open_vehicle_door(ped, vehicle, 100, 1, 2.0)
+
+================================
+
+task_parachute(``ped``, ``p1``, ``p2``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make the ped do a parachute jump
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``p1`` (``bool``) -- Unknown (unused)
+* ``p1`` (``bool``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+
+   rage.ai.task_parachute(ped)
+
+================================
+
+task_parachute_to_target(``ped``, ``x``, ``y``, ``z``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes the ped parachute to given coordinates.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``x`` (``float``) -- The ``X`` position
+* ``y`` (``float``) -- The ``Y`` position
+* ``z`` (``float``) -- The ``Z`` position
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+
+   rage.ai.task_parachute_to_target(ped, 69.5, 420.10, 57.91)
+
+================================
+
+task_play_anim(``ped``, ``animDictionary``, ``animationName``, ``blendInSpeed``, ``blendOutSpeed``, ``duration``, ``flag``, ``playbackRate``, ``lockX``, ``lockY``, ``lockZ``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes the ped play an animation with custom duration and flags.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``animDictionary`` (``string``) -- Animation dictionary
+* ``animationName`` (``string``) -- Animation (clip) name
+
+  * You can read more about animations dicts and names here: :doc:`animtypes`
+
+* ``blendInSpeed`` (``float``) -- Normal speed is ``8.0``
+* ``blendOutSpeed`` (``float``) -- Normal speed is ``8.0 ``
+* ``duration`` (``int``) -- Time in millisecond
+* ``flag`` (``int``) -- enum eAnimationFlags:
+  
+  * ANIM_FLAG_NORMAL = ``0``
+  * ANIM_FLAG_REPEAT = ``1``
+  * ANIM_FLAG_STOP_LAST_FRAME = ``2``
+  * ANIM_FLAG_UPPERBODY = ``16``
+  * ANIM_FLAG_ENABLE_PLAYER_CONTROL = ``32``
+  * ANIM_FLAG_CANCELABLE = ``120``
+
+* ``playbackRate`` (``float``) -- Values are between ``0.0`` and ``1.0``
+* ``lockX`` (``bool``) -- ``0`` in most case
+* ``lockY`` (``bool``) -- ``0`` in most case
+* ``lockZ`` (``bool``) -- ``0`` for singleplayer, can be ``1`` in multiplayer
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ai.task_play_anim(ped, "move_f@injured", "sprint", 8.0, 8.0, 5000, 0, 0.0, 0, 0, 1)
+
+================================
+
+task_rappel_from_heli(``ped``, ``minHeightAboveGround``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes the ped rappel from helicopter, with settable minimum height above the ground.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``minHeightAboveGround`` (``float``) -- Minimum helicopter height above the ground
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   rage.ai.task_rappel_from_heli(ped, 100)
+
+================================
+
+task_shoot_at_entity(``entity``, ``target``, ``duration``, ``firingPattern``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make the entity shoot at an entity targeted for a given duration and with custom firing pattern.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity object
+* ``target`` (``Entityt``) -- Target entity object
+* ``duration`` (``int``) -- Duration in milliseconds
+* ``firingPattern`` (``Hash``) -- Firing pattern hash
+
+  * Firing patterns can be found here: :doc:`firingpatterns`
+
+**Returns:**
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   targetEntity = lobby.get_player_ped(lobby.get_host())
+
+   rage.ai.task_shoot_at_entity(entity, targetEntity, 5000, 1)
+
+================================
+
+task_sky_dive(``ped``, ``p1``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes the ped sky-dive.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``p1`` (``bool``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+
+   rage.ai.task_sky_dive(ped)
+
+================================
+
+task_stand_guard(``ped``, ``x``, ``y``, ``z``, ``heading``, ``scenarioName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes the ped parachute to given coordinates.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``x`` (``float``) -- The ``X`` position
+* ``y`` (``float``) -- The ``Y`` position
+* ``z`` (``float``) -- The ``Z`` position
+* ``heading`` (``float``) -- The heading direction
+* ``scenarioName`` (``string``) -- The scenario name
+
+  * You can read more about scenario groups here: :doc:`scenariogroups`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+
+   rage.ai.task_parachute_to_target(ped, 69.5, 420.10, 57.91, 1, "WORLD_HUMAN_GUARD_STAND")
+
+================================
+
+task_start_scenario_at_position(``ped``, ``scenarioName``, ``x``, ``y``, ``z``, ``heading``, ``duration``, ``sittingScenario``, ``teleport``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes the ped start the scenario at a given position.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``scenarioName`` (``string``) -- The scenario name
+
+  * You can read more about scenario groups here: :doc:`scenariogroups`
+
+* ``x`` (``float``) -- The ``X`` position
+* ``y`` (``float``) -- The ``Y`` position
+* ``z`` (``float``) -- The ``Z`` position
+* ``heading`` (``float``) -- The heading direction
+* ``duration`` (``int``) -- Duration in milliseconds
+* ``sittingScenario`` (``bool``) -- Toggle sitting scenario
+
+  * ``true`` -- Sitting scenario on
+  * ``false`` -- Sitting scenario off
+
+* ``teleport`` (``bool``) -- Toggle teleport ped to the given position
+  
+  * ``true`` -- Teleport ped to coordinates
+  * ``false`` -- Do not teleport ped
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+
+   rage.ai.task_start_scenario_at_position(ped, "WORLD_HUMAN_GUARD_STAND", 69.5, 420.10, 57.91, 1, 5000, false, )
+
+================================
+
+task_start_scenario_in_place(``ped``, ``scenarioName``, ``unkDelay``, ``playEnterAnim``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Plays a scenario on a Ped at their current location.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``scenarioName`` (``string``) -- The scenario name
+
+  * You can read more about scenario groups here: :doc:`scenariogroups`
+
+* ``unkDelay`` (``int``) -- Usually 0 or -1, doesn't seem to have any effect.
+* ``playEnterAnim`` (``bool``) -- Scenarios that don't have any "Enter" anims won't play if this is set to true.
+
+  * ``true`` -- Plays the "Enter" anim
+  * ``false`` -- Plays the "Exit" anim
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+
+   rage.ai.task_start_scenario_in_place(ped, "WORLD_HUMAN_GUARD_STAND", 0, true)
+
+================================
+
+task_stay_in_cover(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes the ped stay in cover.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+
+   rage.ai.task_stay_in_cover(ped)
+
+================================
+
+task_turn_ped_to_face_entity(``ped``, ``entity``, ``duration``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Turn the ped to face towards the entity.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``entity`` (``Entity``) -- Entityd object
+* ``duration`` (``int``) -- The amount of time in milliseconds to do the task. 
+  
+  * ``-1`` will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+
+   entity = lobby.get_player_ped(lobby.get_host())
+
+   rage.ai.task_turn_ped_to_face_entity(ped, entity, 500)
+
+================================
+
+task_vehicle_aim_at_coord(``ped``, ``x``, ``y``, ``z``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes ped vehicle aim at given coordinates.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``x`` (``float``) -- The ``X`` position
+* ``y`` (``float``) -- The ``Y`` position
+* ``z`` (``float``) -- The ``Z`` position
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+
+   rage.ai.task_vehicle_aim_at_coord(ped, 69.5, 420.10, 57.91)
+
+================================
+
+task_vehicle_aim_at_ped(``ped``, ``target``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes ped vehicle aim at a given ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``target`` (``Ped``) -- Target ped object
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+   
+   target = lobby.get_player_ped(lobby.get_host())
+
+   rage.ai.task_vehicle_aim_at_ped(ped, target)
+
+================================
+
+task_vehicle_chase(``driver``, ``targetEnt``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes ped driver chase a target entity.
+
+**Parameters:**
+
+* ``driver`` (``Ped``) -- Ped object (vehicle driver)
+* ``targetEnt`` (``Entity``) -- Target entity
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+   
+   targetEnt = lobby.get_player_ped(lobby.get_host())
+
+   rage.ai.task_vehicle_chase(ped, targetEnt)
+
+================================
+
+task_vehicle_drive_to_coord(``ped``, ``vehicle``, ``x``, ``y``, ``z``, ``speed``, ``p6``, ``vehicleModel``, ``drivingMode``, ``stopRange``, ``p10``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes ped drive the vehicle to given coordinates.
+
+**Parameters:**
+
+* ``driver`` (``Ped``) -- Ped object (vehicle driver)
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``x`` (``float``) -- The ``X`` position
+* ``y`` (``float``) -- The ``Y`` position
+* ``z`` (``float``) -- The ``Z`` position
+* ``speed``(``float``) -- The driving speed
+* ``p6`` (``Any``) -- Unknown
+* ``vehicleModel`` (``Hash``) -- The vehilemde ash 
+* ``drivingMode`` (``int``) -- Driving mode
+* ``stopRange`` (``float``) -- Stops in the specific range near the destination. ``20.0`` works fine.
+* ``p10`` (``float``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+   
+   zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.ai.task_vehicle_drive_to_coord(ped, 69.5, 420.10, 57.91, 100, zentornoHash, 1, 5)
+
+================================
+
+
+
+task_vehicle_drive_to_coord_longrange(``ped``, ``vehicle``, ``x``, ``y``, ``z``, ``speed``, ``driveMode``, ``stopRange``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes ped drive to the destination at set speed and driving style.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``x`` (``float``) -- The ``X`` position
+* ``y`` (``float``) -- The ``Y`` position
+* ``z`` (``float``) -- The ``Z`` position
+* ``speed``(``float``) -- The driving speed
+* ``driveMode`` (``int``) -- Driving mode, `Driving Style calculator`_  
+* ``stopRange`` (``float``) -- Stops in the specific range near the destination. ``20.0`` works fine
+
+.. _Driving Style calculator: https://vespura.com/fivem/drivingstyle/
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+   
+   zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.ai.task_vehicle_drive_to_coord_longrange(ped, 69.5, 420.10, 57.91, 100, zentornoHash, 1, 5)
+
+================================
+
+task_vehicle_drive_wander(``ped``, ``vehicle``, ``speed``, ``drivingStyle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes ped drive randomly with no destination set.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``speed``(``float``) -- The driving speed
+* ``drivingStyle`` (``int``) -- Driving mode, `Driving Style calculator`_  
+
+.. _Driving Style calculator: https://vespura.com/fivem/drivingstyle/
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+   
+   vehicle = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.ai.task_vehicle_drive_wander(ped, vehicle, 50, 6)
+
+================================
+
+task_vehicle_escort(``ped``, ``vehicle``, ``targetVehicle``, ``mode``, ``speed``, ``drivingStyle``, ``minDistance``, ``p7``, ``noRoadsDistance``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes a ped follow the targetVehicle with <minDistance> in between.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``targetVehicle`` (``Vehicle``) -- The target vehicle ID
+* ``mode`` (``int``) -- The mode defines the relative position to the targetVehicle. The ped will try to position its vehicle there.
+
+  * ``-1`` = behind  
+  * ``0`` = ahead  
+  * ``1`` = left  
+  * ``2`` = right  
+  * ``3`` = back left  
+  * ``4`` = back right  
+
+* ``speed``(``float``) -- The driving speed
+* ``drivingStyle`` (``int``) -- Driving mode, `Driving Style calculator`_  
+* ``minDistance``(``float``) -- The minimum distance between ped vehicle and target vehicle
+
+  * ``minDistance`` is ignored if drivingstyle is Avoiding Traffic, but Rushed is fine.  
+
+* ``p7`` (``int``) -- Unknwn
+* ``noRoadsDistance``(``float``) -- If the target is closer than noRoadsDistance, the driver will ignore pathing/roads and follow it direct.
+
+.. _Driving Style calculator: https://vespura.com/fivem/drivingstyle/
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. note::
+   
+   This example was not tested. It assumes that the host and the player are driving vehicles.
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+   veh = self.get_vehicle()
+
+   pedTarget = lobby.get_player_ped(lobby.get_host())
+   targetVehicle = rage.ped.get_vehicle_ped_is_using(pedTarget)
+   
+   rage.ai.task_vehicle_escort(ped, veh, targetVehicle, -1, 50, 6, 100) -- player will follow host with 100m in betweentask_vehicle_escorttargetVehicle, -150, 6, 10, 20
+
+================================
+
+task_vehicle_follow(``ped``, ``vehicle``, ``targetEntity``, ``speed``, ``drivingStyle``, ``minDistance``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes a ped in a vehicle follow an entity.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``targetEntity`` (``Entity``) -- The target entity ID
+* ``speed``(``float``) -- The driving speed
+* ``drivingStyle`` (``int``) -- Driving mode, `Driving Style calculator`_  
+* ``minDistance``(``float``) -- The minimum distance between ped vehicle and target vehicle
+
+  * ``minDistance`` is ignored if drivingstyle is Avoiding Traffic, but Rushed is fine.  
+
+.. _Driving Style calculator: https://vespura.com/fivem/drivingstyle/
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+
+   target =  lobby.get_player_ped()
+   
+   vehicle = rage.gameplay.get_hash_key("ZENTORNO")
+
+   rage.ai.task_vehicle_follow(ped, vehicle, target, 100, 6, 10)
+
+================================
+
+task_vehicle_shoot_at_coord(``ped``, ``x``, ``y``, ``z``, ``p4``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes a ped shoot at a coord from vehicle
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``x`` (``float``) -- X coord
+* ``y`` (``float``) -- Y coord
+* ``z`` (``float``) -- Z coord
+* ``p4`` (``int``) -- Unknown -- seen to be ``0.5``
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+   
+   coords = self.get_coords_infront(10)
+   coords2 = self.get_coords_infront(100)
+   veh = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ANNIHILATOR"), coords, 30)
+   clone = rage.ped.clone_ped(self.get_ped(), true, true, false)
+   rage.ai.task_enter_vehicle(clone, veh, 0, -1, 2.0, 1, 0)
+   rage.ai.task_vehicle_shoot_at_coord(clone, coords2.x, coords2.y, coords2.z, 0.5)
+   
+
+================================
+
+task_vehicle_shoot_at_ped(``ped``, ``target``, ``p2``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes a ped shoot another ped from vehicle.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``target`` (``Ped``) -- Target ped object
+* ``p2`` (``int``) -- either ``1101004800``, ``100``, or ``5``
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. note::
+
+  This example was not tested.
+
+
+.. code-block:: lua
+  :linenos:
+  
+  coords = self.get_coords_infront(10)
+  veh = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ANNIHILATOR"), coords, 30)
+  clone = rage.ped.clone_ped(self.get_ped(), true, true, false)
+  rage.ai.task_enter_vehicle(clone, veh, 0, -1, 2.0, 1, 0)
+  rage.ai.task_vehicle_shoot_at_ped(clone, self.get_ped(), 100)
+
+================================
+
+task_wander_standard(``ped``, ``p1``, ``p2``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes ped walk around the area.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped object
+* ``p1`` (``float``) -- Unknown
+* ``p2`` (``int``) -- Unknown
+
+.. note::
+
+  if ``p1`` and ``p2`` are ``10``, the ped will walk around the area without a duration, anywhere.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+   
+   rage.ai.task_wander_standard(ped, 10, 10) -- walk around the area without a duration, anywhere
 
 ================================
 
@@ -11816,7 +13505,176 @@ Functions here
 Decorator namespace
 ----------------------
 
-Functions here
+This namespace contains decoration-related game functions
+
+.. warning::
+
+  These functions are meant to be used by experienced users only.
+
+  There are no examples for this namespace, as advanced users will know how to use it.
+
+  *Sapienti sat*
+
+================================
+
+decor_get_bool(``entity``, ``propertyName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity object
+* ``propertyName`` (``string``) -- Property name
+
+**Returns:**
+
+* ``bool`` -- The value of the property
+
+================================
+
+decor_get_float(``entity``, ``propertyName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity object
+* ``propertyName`` (``string``) -- Property name
+
+**Returns:**
+
+* ``float`` -- The value of the property
+
+================================
+
+decor_get_int(``entity``, ``propertyName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity object
+* ``propertyName`` (``string``) -- Property name
+
+**Returns:**
+
+* ``int`` -- The value of the property
+
+================================
+
+decor_register(``propertyName``, ``type``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Register a property with the specified name and type.
+
+**Parameters:**
+
+* ``propertyName`` (``string``) -- Property name
+* ``type`` (``int``) -- Property type
+
+  * You can read more about property types here: :doc:`decor`
+
+**Returns:**
+
+* None
+
+================================
+
+decor_remove(``entity``, ``propertyName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove a property.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity object
+* ``propertyName`` (``string``) -- Property name
+
+**Returns:**
+
+* ``bool`` -- Whether the property was removed
+
+  * ``true`` -- the property was removed
+  * ``false`` -- the property was not found/was not removed/etc.
+
+================================
+
+decor_set_bool(``entity``, ``propertyName``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set a boolean property.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity object
+* ``propertyName`` (``string``) -- Property name
+* ``value`` (``bool``) -- Value to set
+
+**Returns:**
+
+* ``bool`` -- Whether the value was succesfully set
+  
+  * ``true`` -- the value was set
+  * ``false`` -- the value was not set.
+
+================================
+
+decor_set_float(``entity``, ``propertyName``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set a float property.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity object
+* ``propertyName`` (``string``) -- Property name
+* ``value`` (``float``) -- Value to set
+
+**Returns:**
+
+* ``bool`` -- Whether the value was succesfully set
+  
+  * ``true`` -- the value was set
+  * ``false`` -- the value was not set.
+
+================================
+
+
+decor_set_int(``entity``, ``propertyName``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set an integer property.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity object
+* ``propertyName`` (``string``) -- Property name
+* ``value`` (``int``) -- Value to set
+
+**Returns:**
+
+* ``bool`` -- Whether the value was succesfully set
+  
+  * ``true`` -- the value was set
+  * ``false`` -- the value was not set.
+
+  
+================================
+
+decor_set_time(``entity``, ``propertyName``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set a time property.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity object
+* ``propertyName`` (``string``) -- Property name
+* ``value`` (``int``) -- Value to set
+
+**Returns:**
+
+* ``bool`` -- Whether the value was succesfully set
+  
+  * ``true`` -- the value was set
+  * ``false`` -- the value was not set.
 
 ================================
 
@@ -11825,7 +13683,84 @@ Functions here
 Interior namespace
 ----------------------
 
-Functions here
+This namespace contains interior-related game functions. 
+
+================================
+
+get_interior_at_coords_with_type(``x``, ``y``, ``z``, ``interiorType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the interior ID representing the requested interior at that location (if found?). The supplied interior string is not the same as the one used to load the interior.  
+
+**Parameters:**
+
+* ``x`` (``float``) -- The X position
+* ``y`` (``float``) -- The Y position
+* ``z`` (``float``) -- The Z position
+* ``interiorType`` (``string``) -- The interior type
+
+  * You can read more about interior types here: :doc:`inttypes`
+
+**Returns:**
+
+* ``int`` -- Returns interior ID.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.interior.get_interior_at_coords_with_type(-163.3628, -2385.161, 5.999994, "v_lesters")
+
+================================
+
+get_interior_from_entity(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get the handle of the interior that the entity is in. Returns 0 if outside.  
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity
+
+**Returns:**
+
+* ``int`` -- Returns interior ID.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.interior.get_interior_from_entity(entity)
+
+================================
+
+refresh_interior(``interior``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Refresh a given interior.
+
+**Parameters:**
+
+* ``interior`` (``int``) -- The interior ID.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   interior = rage.interior.get_interior_from_entity(entity)
+
+   rage.interior.refresh_interior(interior) -- Refreshes interior that the self's ped is in.
 
 ================================
 
@@ -11838,9 +13773,158 @@ This namespace contains audio-related game functions.
 
 =================================
 
-f
+play_sound(``soundId``, ``audioName``, ``audioRef``, ``p3``, ``p4``, ``p5``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Play a specified sound.
+
+**Parameters:**
+
+* ``soundId`` (``int``) -- Sound ID, it seems
+* ``audioName`` (``string``) -- Sound name
+* ``audioRef`` (``string``) -- Sound reference 
+* ``p3`` (``bool``) -- Unknown
+* ``p4`` (``Any``) -- Unknown
+* ``p5`` (``bool``) -- Unknown
+
+  * You can read more about audio names & refs `<here https://wiki.rage.mp/index.php?title=Sounds>`__.
+  * `<Also here https://pastebin.com/A8Ny8AHZ>`__
+   
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.audio.play_sound(v_18, "Garage_Open", "CAR_STEAL_2_SOUNDSET", 1, 0, 1) -- Plays garage opening sound
+
+=================================
+
+play_sound_from_coord(``soundId``, ``audioName``, ``x``, ``y``, ``z``, ``audioRef``, ``isNetwork``, ``range``, ``p8``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Play a specified sound from a given position.
+
+**Parameters:**
+
+* ``soundId`` (``int``) -- Sound ID, it seems
+* ``audioName`` (``string``) -- Sound name
+* ``x`` (``float``) -- X position
+* ``y`` (``float``) -- Y position
+* ``z`` (``float``) -- Z position
+* ``audioRef`` (``string``) -- Sound reference
+* ``isNetwork`` (``bool``) -- Make it networked so other players could also hear it (untested)
+* ``range`` (``int``) -- Range of the sound
+* ``p8`` (``bool``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Useful links:**
+
+* `This <https://pastebin.com/eeFc5DiW>`__
+* `This <https://gtaforums.com/topic/795622-audio-for-mods>`__
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   coords = self.get_coords_infront(100)
+   rage.audio.play_sound_from_coord(-1, "Gas_Explosion", coords.x, coords.y, coords.z, "ARM_2_REPO_SOUNDS", 0, 0, 0) -- Plays gas explosion sound from 100m in front of the player.
+
+=================================
+
+play_sound_from_entity(``soundId``, ``audioName``, ``entity``, ``audioRef``, ``isNetwork``, ``p5``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Play a specified sound from a given entity.
+
+**Parameters:**
+
+* ``soundId`` (``int``) -- Sound ID, it seems
+* ``audioName`` (``string``) -- Sound name
+* ``entity`` (``Entity``) -- Entity to play sound from
+* ``audioRef`` (``string``) -- Sound reference
+* ``isNetwork`` (``bool``) -- Make it networked so other players could also hear it (untested)
+* ``p5`` (``int``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Useful links:**
+
+* `This <https://pastebin.com/f2A7vTj0>`__
+* `This <https://gtaforums.com/topic/795622-audio-for-mods>`__
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+   rage.audio.play_sound_from_entity(-1, "Gas_Tanker_Explosion", entity, "BIG_SCORE_3A_SOUNDS", 0, 0)
 
 ================================
+
+play_sound_frontend(``soundId``, ``audioName``, ``audioRef``, ``p3``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Play a specified sound from the frontend.
+
+**Parameters:**
+
+* ``soundId`` (``int``) -- Sound ID, it seems
+* ``audioName`` (``string``) -- Sound name
+* ``audioRef`` (``string``) -- Sound reference
+* ``p3`` (``bool``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Useful links:**
+
+* `This <https://pastebin.com/DCeRiaLJ>`__
+* `This <https://gist.github.com/Sainan/021bd2f48f1c68d3eb002caab635b5a4>`__
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.audio.play_sound_frontend(-1, "Garage_Door_Open", "GTAO_Script_Doors_Faded_Screen_Sounds", true) -- Plays garage opening sound
+
+================================
+
+
+stop_sound(``soundId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Stop a specified sound.
+
+**Parameters:**
+
+* ``soundId`` (``int``) -- Sound ID, it seems
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.audio.stop_sound(v_18) -- Stops garage opening sound
+
+=================================
+
 
 .. _rope:
 
@@ -11851,6 +13935,391 @@ This namespace contains rope-related game functions.
 
 ================================
 
-Functions here
+activate_physics(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Activate physics for entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.rope.activate_physics(entity)
+
+================================
+
+add_rope(``x``, ``y``, ``z``, ``rotX``, ``rotY``, ``rotZ``, ``length``, ``ropeType``, ``maxLength``, ``minLength``, ``windingSpeed``, ``p11``, ``p12``, ``rigid``, ``p14``, ``breakWhenShot``, ``unkPtr``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates a rope at the specific position, that extends in the specified direction when not attached to any entities.  
+
+.. note::
+   Rope does NOT interact with anything you attach it to, in some cases it make interact with the world AFTER it breaks (seems to occur if you set the type to -1).  
+   Rope will sometimes contract and fall to the ground like you'd expect it to, but since it doesn't interact with the world the effect is just jaring.  
+
+**Parameters:**
+
+* ``x`` (``float``) -- Spawn coordinate X component.
+* ``y`` (``float``) -- Spawn coordinate Y component.
+* ``z`` (``float``) -- Spawn coordinate Z component.
+* ``rotX`` (``float``) -- Rotation X component.
+* ``rotY`` (``float``) -- Rotation Y component.
+* ``rotZ`` (``float``) -- Rotation Z component.
+* ``length`` (``float``) -- The initial length of the rope.
+* ``ropeType`` (``int``) -- The rope type
+
+  * ``0`` -- Thick, metal rope.
+  * ``1`` -- Thin, twine rope.
+  * ``2`` -- Thick , twine rope.
+  * ``3`` -- See ``0``
+  * ``4`` -- Thin, metal rope.
+  * ``5`` -- Super thin, metal rope.
+  * ``6`` -- See ``0``
+  * ``7`` -- Game crashes
+* ``maxLength`` (``float``) -- The maximum length the rope can drop.
+* ``minLength`` (``float``) -- The minimum length the rope can be.
+* ``windingSpeed`` (``float``) -- The speed in which the rope will wind if winding is started.
+* ``p11`` (``bool``) -- Whether the rope should have collision. In original scripts this is followed by a LoadRopeData call when set.
+* ``p12`` (``bool``) -- If max length is zero, and this is set to false the rope will become rigid (it will force a specific distance, what ever length is, between the objects).
+* ``p14`` (``float``) -- The speed as which physics should run at. 1.0f is normal, 2.0f is twice as fast, -1.0f is time going backwards. This can affect gravity, etc.
+* ``breakWhenShot`` (``bool``) -- Whether shooting the rope will break it.
+* ``unkPtr`` (``Any``) -- Unknown pointer, always 0 in original scrips.
+
+**Returns:**
+
+* ``int`` -- Returns rope ID.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true) -- Creates a rope with a length of 100 meters, and a minimum length of 5 meters.
+
+================================
+
+attach_entities_to_rope(``ropeId``, ``ent1``, ``ent2``, ``ent1_x``, ``ent1_y``, ``ent1_z``, ``ent2_X``, ``ent2_Y``, ``ent2_Z``, ``length``, ``p10``, ``p11``, ``p12``, ``p13``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Attaches entity 1 to entity 2 through a rope.
+
+.. note::The position supplied can be anywhere, and the entity should anchor relative to that point from it's origin.  
+
+**Parameters:**
+
+* ``ropeId`` (``int``) -- The rope ID
+* ``ent1`` (``Entity``) -- Entity 1
+* ``ent2`` (``Entity``) -- Entity 2
+* ``ent1_x`` (``float``) -- Entity 1 ``X`` coordinate.
+* ``ent1_y`` (``float``) -- Entity 1 ``Y`` coordinate.
+* ``ent1_z`` (``float``) -- Entity 1 ``Z`` coordinate.
+* ``ent2_x`` (``float``) -- Entity 2 ``X`` coordinate.
+* ``ent2_y`` (``float``) -- Entity 2 ``Y`` coordinate.
+* ``ent2_z`` (``float``) -- Entity 2 ``Z`` coordinate.
+* ``length`` (``float``) -- The initial length of the rope.
+* ``p10`` (``bool``) -- Unknown.
+* ``p11`` (``bool``) -- Unknown.
+* ``p12`` (``Any``) -- Unknown.
+* ``p13`` (``Any``) -- Unknown.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. note::
+
+   This example was not tested.
+
+.. code-block:: lua
+   :linenos:
+
+   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+
+   entity1 = self.get_ped()
+
+   entity2 = lobby.get_player_ped(lobby.get_host())
+
+   rope = rage.rope.attach_entities_to_rope(rope, entity1, entity2, 79, 420, 69, 59, 420, 69, 10)
+
+================================
+
+delete_rope(``ropeId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Delete a rope.
+
+**Parameters:**
+
+* ``ropeId`` (``int``) -- The rope ID to delete.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+
+   rage.rope.delete_rope(rope)
+
+================================
+
+detach_rope_from_entity(``ropeId``, ``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Detach a rope from entity.
+
+**Parameters:**
+
+* ``ropeId`` (``int``) -- The rope ID to delete.
+* ``entity`` (``Entity``) -- The Entity to detach
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+
+   entity = self.get_ped()
+
+   rage.rope.detach_rope_from_entity(rope, entity)
+
+================================
+
+does_rope_exist(``ropeId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if a rope exists.
+
+**Parameters:**
+
+* ``ropeId`` (``int``) -- The rope ID to check.
+
+**Returns:**
+
+* ``bool`` -- Returns the status of the check:
+
+  * ``true`` -- Rope exists
+  * ``false`` -- Rope does not exist
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+
+   rage.rope.does_rope_exist(rope)
+
+================================
+
+rope_are_textures_loaded()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if rope textures are loaded.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``bool`` -- Returns the status of the check:
+
+  * ``true`` -- Rope textures are loaded
+  * ``false`` -- Rope textures are not loaded
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.rope.rope_are_textures_loaded()
+
+================================
+
+rope_force_length(``ropeId``, ``length``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Forces a rope to a certain length.
+
+**Parameters:**
+
+* ``ropeId`` (``int``) -- The rope ID
+* ``length`` (``float``) -- The rope length
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+
+   rage.rope.rope_force_length(rope, 50) -- Reduces the rope length from 100 to 50
+
+================================
+
+rope_load_textures()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Loads rope textures for all ropes in the current scene.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.rope.rope_load_textures()
+
+================================
+
+rope_unload_textures()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Unloads rope textures for all ropes in the current scene.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.rope.rope_unload_textures()
+
+================================
+
+start_rope_unwinding_front(``ropeId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Start rope unwinding from the front.
+
+**Parameters:**
+
+* ``ropeId`` (``int``) -- The rope ID.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+
+   rage.rope.start_rope_unwinding_front(rope)
+
+================================
+
+start_rope_winding(``ropeId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Start rope winding.
+
+**Parameters:**
+
+* ``ropeId`` (``int``) -- The rope ID.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+
+   rage.rope.start_rope_winding(rope)
+
+================================
+
+stop_rope_unwinding_front(``ropeId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Stop rope unwinding from the front.
+
+**Parameters:**
+
+* ``ropeId`` (``int``) -- The rope ID.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+
+   rage.rope.stop_rope_unwinding_front(rope)
+
+================================
+
+stop_rope_winding(``ropeId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Stop rope winding.
+
+**Parameters:**
+
+* ``ropeId`` (``int``) -- The rope ID.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+
+   rage.rope.stop_rope_winding(rope)
 
 ================================
