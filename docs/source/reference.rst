@@ -10530,6 +10530,8 @@ Toggle the visibility of a given entity.
   * ``true`` -- Entity is visible
   * ``false`` -- Entity is not visible
 
+* Always 0 in scripts
+
 **Returns:**
 
 * None
