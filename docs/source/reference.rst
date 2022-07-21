@@ -3731,7 +3731,7 @@ More about text flags: :doc:`textflags`
 draw_image(``path``, ``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0.f``, ``rounding_flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Draws an image.
+Draws an image. Supports PNG & JPEG files.
 
 **Parameters:**
 
@@ -9199,6 +9199,1204 @@ Applies a force to the specified entity.
 .. code-block:: lua
    :linenos:
 
+   entity = self.get_ped()
+
+   rage.entity.apply_force_to_entity(entity, 1, 10, 10, 10, 0, 0, 0, 0, false, true, true, false, true)
+
+================================
+
+attach_entity_to_entity(``entity1``, ``entity2``, ``boneIndex``, ``xPos``, ``yPos``, ``zPos``, ``xRot``, ``yRot``, ``zRot``, ``p``9, ``useSoftPinning``, ``collision``, ``isPed``, ``vertexIndex``, ``fixedRot``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Attach an entity to the specified entity.
+
+**Parameters:**
+
+* ``entity1`` (``Entity``) -- The entity ID.
+* ``entity2`` (``Entity``) -- Entity ID to attach entity1 with.
+* ``boneIndex`` (``int``) -- This is different to boneID, use ``get_ped_bone_index`` to get the index from the ID. use the index for attaching to specific bones. entity1 will be attached to the center of entity2 if bone index given doesn't correspond to bone indexes for that entity type.
+* ``xPos`` (``float``) -- X-axis offset from the center of entity2.
+* ``yPos`` (``float``) -- Y-axis offset from the center of entity2.
+* ``zPos`` (``float``) -- Z-axis offset from the center of entity2.
+* ``xRot`` (``float``) -- X-axis rotation.
+* ``yRot`` (``float``) -- Y-axis rotation.
+* ``zRot`` (``float``) -- Z-axis rotation.
+* ``p9`` (``bool``) -- Unknown. Does not seem to have any effect.
+* ``useSoftPinning`` (``bool``) -- If set to false attached entity will not detach when fixed.
+* ``collision`` (``bool``) -- Controls collision between the two entities
+  
+  * ``true`` -- Collision enabled
+  * ``false`` -- Collision disabled
+
+* ``isPed`` (``bool``) -- Pitch doesnt work when false and roll will only work on negative numbers (only peds)
+* ``vertexIndex`` (``int``) -- The order in which the rotation is applied.
+* ``fixedRot`` (``bool``) -- If false it ignores entity vector.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   entity2 = lobby.get_player_ped(lobby.get_host())
+
+   boneIndex = get_ped_bone_index(entity2, 1)
+
+   rage.entity.attach_entity_to_entity(entity, entity2, boneIndex, 10, 10, 10, 1, 1, 0, false, true, true, 1, true)
+
+================================
+
+delete_entity(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Deletes a specified entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.delete_entity(entity)
+
+================================
+
+detach_entity(``entity``, ``dynamic``, ``collision``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Detaches a specified entity, with toggable options.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``dynamic`` (``bool``) --
+* ``collision`` (``bool``) --
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.detach_entity(entity)
+
+================================
+
+does_entity_have_drawable(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if entity has a drawable.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity drawable status
+
+  * ``true`` -- Entity has a drawable
+  * ``false`` -- Entity does not have a drawable
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.does_entity_have_drawable(entity)
+
+================================
+
+does_entity_have_physics(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if entity has physics enabled.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity physics status
+
+  * ``true`` -- Entity has physics enabled
+  * ``false`` -- Entity does not have physics enabled
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.does_entity_have_physics(entity)
+
+================================
+
+freeze_entity_position(``entity``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles freeze entity position.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``toggle`` (``bool``) -- Toggle freeze entity position
+
+  * ``true`` -- Freeze entity position on
+  * ``true`` -- Freeze entity position off
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.freeze_entity_position(entity, true)
+
+================================
+
+get_entity_attached_to(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity that this entity is attached to.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``Entity`` -- The attached entity handle. ``0`` returned if the entity is not attached.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_attached_to(entity)
+
+================================
+
+get_entity_bone_index_by_name(``entity``, ``boneName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity bone ID by name.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``boneName`` (``string``) -- Bone name
+
+**Returns:**
+
+* ``int`` -- Returns the index of the bone.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_bone_index_by_name(entity, "SKEL_L_Forearm")
+
+================================
+
+get_entity_coords(``entity``, ``alive``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the current coordinates for a specified entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``alive`` (``bool``) -- Check if entity is alive
+
+  * ``true`` -- Entity is alive
+  * ``false`` -- Otherwise
+
+**Returns:**
+
+* ``Vector3`` -- Returns the current entity coordinates.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_coords(entity, true)
+
+================================
+
+get_entity_forward_vector(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity's forward vector.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``Vector3`` -- Returns the forward vector.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_forward_vector(entity)
+
+================================
+
+get_entity_heading(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity's heading.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``float`` -- Returns the entity's heading.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_heading(entity)
+
+================================
+
+get_entity_physics_heading(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity's physics heading.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``float`` -- Returns the entity's physics heading.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_physics_heading(entity)
+
+================================
+
+get_entity_pitch(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity's pitch.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``float`` -- Returns the entity's pitch.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_pitch(entity)
+
+================================
+
+get_entity_population_type(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity's population type.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``int`` -- Returns the entity's population type
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_population_type(entity)
+
+================================
+
+get_entity_roll(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity's roll.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``float`` -- Returns the entity's roll
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_roll(entity)
+
+================================
+
+get_entity_rotation(``entity``, ``rotationOrder``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity rotation.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``rotationOrder`` (``int``) -- The order yaw, pitch and roll is applied. Usually ``2``.
+
+**Returns:**
+
+* ``Vector3`` -- Returns a vector where the Z coordinate is the yaw.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_rotation(entity, 2)
+
+================================
+
+get_entity_rotation_velocity(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity rotation velocity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``Vector3`` -- Returns a vector where the Z coordinate is the rotation velocity.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_rotation_velocity(entity, 2)
+
+================================
+
+get_entity_speed(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity's speed.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``float`` -- Returns the entity's speed
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_speed(entity)
+
+================================
+
+get_entity_submerged_level(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity's submerged level.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``float`` -- Returns the entity's submerged level
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_submerged_level(entity)
+
+================================
+
+get_entity_type(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity type.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``int`` -- Returns the entity type ID as following:
+
+  * ``0`` = no entity
+  * ``1`` = ped
+  * ``2`` = vehicle
+  * ``3`` = object
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_type(entity) -- Will return 1 since entity is a ped
+
+================================
+
+get_entity_velocity(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the entity elocity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``Vector3`` -- Returns a vector where the Z coordinate is the velocity.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.get_entity_velocity(entity)
+
+================================
+
+has_entity_been_damaged_by_any_object(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity has been damaged by any object.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity damage status
+  
+  * ``true`` -- Entity has been damaged by an object
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.has_entity_been_damaged_by_any_object(entity)
+
+================================
+
+has_entity_been_damaged_by_any_ped(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity has been damaged by any ped.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity damage status
+  
+  * ``true`` -- Entity has been damaged by a ped
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.has_entity_been_damaged_by_any_ped(entity)
+
+================================
+
+has_entity_been_damaged_by_any_vehicle(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity has been damaged by any vehicle.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity damage status
+  
+  * ``true`` -- Entity has been damaged by a vehicle
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.has_entity_been_damaged_by_any_vehicle(entity)
+
+================================
+
+has_entity_been_damaged_by_entity(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity has been damaged by another entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity damage status
+  
+  * ``true`` -- Entity has been damaged by another entity
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.has_entity_been_damaged_by_entity(entity)
+
+================================
+
+has_entity_collided_with_anything(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity has collided with anything.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity collision status
+  
+  * ``true`` -- Entity has collided with anything
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.has_entity_collided_with_anything(entity)
+
+================================
+
+is_an_entity(``handle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the ScrHandle is an entity.
+
+**Parameters:**
+
+* ``handle`` (``ScrHandle``) -- The handle ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- The ScrHandle is an entity
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.entity.is_an_entity(handle)
+
+================================
+
+is_entity_a_ped(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity is a ped.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- Entity is a ped
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.is_entity_a_ped(entity)
+
+================================
+
+is_entity_a_vehicle(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity is a vehicle.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- Entity is a vehicle
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.is_entity_a_vehicle(entity)
+
+================================
+
+is_entity_an_object(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity is an object.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- Entity is an object
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.is_entity_an_object(entity)
+
+================================
+
+is_entity_attached(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity is attached to anything.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- Entity is attached
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.is_entity_attached(entity)
+
+================================
+
+is_entity_dead(``entity``, ``p1``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity is dead.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``p1`` (``bool``) -- Unknown
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- Entity is dead
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.is_entity_dead(entity)
+
+================================
+
+is_entity_in_air(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity is in air.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- Entity is in air
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.is_entity_in_air(entity)
+
+================================
+
+is_entity_in_water(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity is in water.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- Entity is in water
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.is_entity_in_water(entity)
+
+================================
+
+is_entity_in_zone(``entity``, ``zone``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity is in a specified zone
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``zone`` (``string``) -- The zone name
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- Entity is in the specified zone
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.is_entity_in_zone(entity, "ALTA")
+
+================================
+
+is_entity_on_fire(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity is on fire.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- Entity is on fire
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.is_entity_on_fire(entity)
+
+================================
+
+is_entity_static(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity is static.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- Entity is static
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.is_entity_static(entity)
+
+================================
+
+is_entity_upright(``entity``, ``angle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if entity is upright a specified angle.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``angle`` (``float``) -- The angle value
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- Entity is upright at the specified angle
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.is_entity_upright(entity, 90.0)
+
+================================
+
+is_entity_visible(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks if the entity is visible.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``bool`` -- Returns entity status
+  
+  * ``true`` -- Entity is visible
+  * ``false`` -- Otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.is_entity_visible(entity)
+
+================================
+
+reset_entity_alpha(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Reset's given entity alpha.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.reset_entity_alpha(entity)
+
+================================
+
+set_entity_alpha(``entity``, ``alphaLevel``, ``skin``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Reset's given entity alpha.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``alphaLevel`` (``int``) -- The alpha level ranges from ``0`` to ``255``, but changes occur every 20% (every 51).
+* ``skin`` (``bool``) -- Whether or not to change the alpha of the entity's skin.
+
+  * ``true`` -- Change alpha of the entity's skin
+  * ``false`` -- Do not change alpha of the entity's skin
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.set_entity_alpha(entity, 51, false)
+
+================================
+
+set_entity_as_mission_entity(``entity``, ``p1``, ``p2``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Makes the specified entity (ped, vehicle or object) persistent. Persistent entities will not automatically be removed by the engine.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``p1`` (``bool``) -- Unknown.
+* ``p2`` (``bool``) -- Unknown.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.set_entity_as_mission_entity(entity)
+
+================================
+
+set_entity_as_no_longer_needed(``entity``, ``xPos``, ``yPos``, ``zPos``, ``xAxis``, ``yAxis``, ``zAxis``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the coordinates (world position) for a specified entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``xPos`` (``float``) -- The X coordinate
+* ``yPos`` (``float``) -- The Y coordinate
+* ``zPos`` (``float``) -- The Z coordinate
+* ``xAxis`` (``bool``) -- Toggle X axis on/off
+* ``yAxis`` (``bool``) -- Toggle Y axis on/off
+* ``zAxis`` (``bool``) -- Toggle Z axis on/off
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.set_entity_as_no_longer_needed(entity, 420.82, 69.53, 58, true, true, true)
+
+================================
+
+set_entity_heading(``entity``, ``heading``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the heading of an entity in degrees also known as "Yaw".
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``xPos`` (``float``) -- The heading in degrees.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.set_entity_heading(entity, 90)
+
+================================
+
+set_entity_heading(``entity``, ``heading``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the heading of an entity in degrees also known as "Yaw".
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``xPos`` (``float``) -- The heading in degrees.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.set_entity_heading(entity, 90)
 
 ================================
 
@@ -12639,7 +13837,7 @@ Stops a postFX effect.
 
 ================================
 
-animpostfix_stop_all()
+animpostfx_stop_all()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Stops all postFX effects.
@@ -12662,6 +13860,43 @@ Stops all postFX effects.
 ================================
 
 begin_scaleform_movie_method(``scaleform``, ``methodName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Display a scaleform.
+
+**Parameters:**
+
+* ``scaleform`` (``int``) -- Scaleform ID
+* ``methodName`` (``string``) -- Name of the scaleform method
+
+For scaleform IDs and methods, go here: :doc:`scaleforms`
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- Scaleform is displayed
+  * ``false`` -- Scaleform is not displayed
+
+**Example:**
+
+.. note::
+
+   This should be called each frame.
+
+   request_scaleform_movie() should be called to prepare a scaleform.
+
+.. code-block:: lua
+   :linenos:
+
+   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   rage.graphics.end_scaleform_movie_method()
+   rage.graphics.draw_scaleform_movie_fullscreen(scaleform, 255, 255, 255, 255, 0)
+   rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+   rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
+   rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
+   rage.graphics.scaleform_movie_method_add_param_int(5)
+   rage.graphics.end_scaleform_movie_method()
 
 
 ================================
