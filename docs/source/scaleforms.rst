@@ -1,25 +1,25 @@
 
 Decompiled Scaleforms
-#####################
+#########################
 
-frontend
-#########
+ frontend
+=========
 
-AP_ICON
-========
+ AP_ICON
+^^^^^^^^
 
 * AP_ICON()
 
-CREW_TAG_MOVIECLIP
-===================
+ CREW_TAG_MOVIECLIP
+^^^^^^^^^^^^^^^^^^^
 
 * CREW_TAG_MOVIECLIP()
 * SET_CREW_TAG(crewTypeIsPrivate, crewTagContainsRockstar, crewTag, founderOrRank, crewColour)
 * UNPACK_CREW_TAG(crewStr)
 * debug()
 
-FEED_AWARD
-===========
+ FEED_AWARD
+^^^^^^^^^^^
 
 * FEED_AWARD()
 * INITIALISE(bgR, bgG, bgB, _flashAlpha, _flashRate, _bIsWideScreen, _bIsAsianLanguage, bgColor)
@@ -27,23 +27,23 @@ FEED_AWARD
 * hasPendingImage()
 * CLEAR_TXD()
 
-FEED_CREW_RANKUP
-=================
+ FEED_CREW_RANKUP
+^^^^^^^^^^^^^^^^^
 
 * FEED_CREW_RANKUP()
 * SET_FEED_COMPONENT(chTitle, chSubitle, chTXD, chTXN, bIsImportant)
 * hasPendingImage()
 
-FEED_CREW_TAG
-==============
+ FEED_CREW_TAG
+^^^^^^^^^^^^^^
 
 * FEED_CREW_TAG()
 * SET_FEED_COMPONENT(crewTypeIsPrivate, crewTagContainsRockstar, crewTag, rank, hasFounderStatus, bodyStr, isImportant, txd, imgStr, gamerStr, crewPackedStr)
 * hasPendingImage()
 * CLEAR_TXD()
 
-FEED_MESSAGE_TEXT
-==================
+ FEED_MESSAGE_TEXT
+^^^^^^^^^^^^^^^^^^
 
 * FEED_MESSAGE_TEXT()
 * SET_FEED_COMPONENT(bodyStr, txd, txn, isImportant, iconEnum, nameStr, subtitleStr, crewPackedStr, icon2Enum, bTrimBody, iTextColor)
@@ -53,8 +53,8 @@ FEED_MESSAGE_TEXT
 * CLEAR_TXD()
 * getContentLength()
 
-FEED_REPLAY
-============
+ FEED_REPLAY
+^^^^^^^^^^^^
 
 * FEED_REPLAY()
 * INITIALISE(bgR, bgG, bgB, _flashAlpha, _flashRate, _bIsWideScreen, _bIsAsianLanguage, bgColor)
@@ -65,8 +65,8 @@ FEED_REPLAY
 * lineToPtOnWheel(angle)
 * onCleanup()
 
-FEED_STATS
-===========
+ FEED_STATS
+^^^^^^^^^^^
 
 * FEED_STATS()
 * SET_FEED_COMPONENT(statTitleStr, statBodyStr, iconEnum, stepVal, barValue, isImportant, txd, txn)
@@ -77,23 +77,23 @@ FEED_STATS
 * CLEAR_TXD()
 * onCleanup()
 
-FEED_TICKER
-============
+ FEED_TICKER
+^^^^^^^^^^^^
 
 * FEED_TICKER()
 * SET_FEED_COMPONENT(sBody, bIsImportant, bHasTokens, numIconFlashes)
 * toggleIconVisibility(numFlashesLeft)
 
-FEED_TOOLTIPS
-==============
+ FEED_TOOLTIPS
+^^^^^^^^^^^^^^
 
 * FEED_TOOLTIPS()
 * INITIALISE(bgR, bgG, bgB, _flashAlpha, _flashRate, _bIsWideScreen, _bIsAsianLanguage, bgColor)
 * SET_FEED_COMPONENT(bodyStr, isImportant)
 * CLEAR_TXD()
 
-FEED_UNLOCK
-============
+ FEED_UNLOCK
+^^^^^^^^^^^^
 
 * FEED_UNLOCK()
 * INITIALISE(bgR, bgG, bgB, _flashAlpha, _flashRate, _bIsWideScreen, _bIsAsianLanguage, bgColor)
@@ -101,16 +101,16 @@ FEED_UNLOCK
 * flashOn()
 * flashOff()
 
-FEED_VERSUS
-============
+ FEED_VERSUS
+^^^^^^^^^^^^
 
 * FEED_VERSUS()
 * INITIALISE(bgR, bgG, bgB, _flashAlpha, _flashRate, _bIsWideScreen, _bIsAsianLanguage, bgColor)
 * SET_FEED_COMPONENT(ch1TXD, ch1TXN, val1, ch2TXD, ch2TXN, val2, vsStr, color1, color2)
 * loadImg(sTXD, sTXN, imgMC)
 
-GAME_STREAM
-============
+ GAME_STREAM
+^^^^^^^^^^^^
 
 * GAME_STREAM()
 * INITIALISE(mc)
@@ -148,13 +148,13 @@ GAME_STREAM
 * ENABLE_SHOW_DEBUG_BOUNDS(isEnabled)
 * repositionDebugLines()
 
-GAME_STREAM_ENUMS
-==================
+ GAME_STREAM_ENUMS
+^^^^^^^^^^^^^^^^^^
 
 * GAME_STREAM_ENUMS()
 
-GTAV_ONLINE
-============
+ GTAV_ONLINE
+^^^^^^^^^^^^
 
 * GTAV_ONLINE()
 * INITIALISE(mc)
@@ -186,8 +186,8 @@ GTAV_ONLINE
 * fadeImgIn()
 * fadeImgOut()
 
-INSTRUCTIONAL_BUTTONS
-======================
+ INSTRUCTIONAL_BUTTONS
+^^^^^^^^^^^^^^^^^^^^^^
 
 * INSTRUCTIONAL_BUTTONS()
 * CONSTRUCTION_INNARDS()
@@ -235,8 +235,8 @@ INSTRUCTIONAL_BUTTONS
 * SET_HIT_AREA_VISIBLE(isVisible)
 * debug()
 
-LANDING_PAGE
-=============
+ LANDING_PAGE
+^^^^^^^^^^^^^
 
 * LANDING_PAGE()
 * debug()
@@ -247,8 +247,8 @@ LANDING_PAGE
 * initButtons(dataArray)
 * alignElements()
 
-LOADINGSCREEN_NEWGAME
-======================
+ LOADINGSCREEN_NEWGAME
+^^^^^^^^^^^^^^^^^^^^^^
 
 * LOADINGSCREEN_NEWGAME()
 * INITIALISE(mc)
@@ -259,8 +259,8 @@ LOADINGSCREEN_NEWGAME
 * debug()
 * getKeys()
 
-LOADINGSCREEN_STARTUP
-======================
+ LOADINGSCREEN_STARTUP
+^^^^^^^^^^^^^^^^^^^^^^
 
 * LOADINGSCREEN_STARTUP()
 * INITIALISE(mc)
@@ -328,21 +328,21 @@ LOADINGSCREEN_STARTUP
 * createOverlay(parentMc)
 * cleanUpTransition()
 
-MOUSE_EVENTS
-=============
+ MOUSE_EVENTS
+^^^^^^^^^^^^^
 
 * MOUSE_EVENTS()
 * triggerEvent(params)
 
-MOUSE_POINTER
-==============
+ MOUSE_POINTER
+^^^^^^^^^^^^^^
 
 * MOUSE_POINTER()
 * INITIALISE(mc)
 * SET_SCREEN_ASPECT(fPhysicalDifference, fLogicalDifference)
 
-ONLINE_POLICIES
-================
+ ONLINE_POLICIES
+^^^^^^^^^^^^^^^^
 
 * ONLINE_POLICIES(mc)
 * SET_SUBMIT_BUTTON(btnMc, btnText, rawText)
@@ -395,8 +395,8 @@ ONLINE_POLICIES
 * SET_MC_HUDCOLOUR(mc, hudColourId)
 * GET_ROOT_DISPLAY_OBJECT()
 
-OPENING_CREDITS
-================
+ OPENING_CREDITS
+^^^^^^^^^^^^^^^^
 
 * OPENING_CREDITS(mc)
 * INITIALISE(mc)
@@ -426,8 +426,8 @@ OPENING_CREDITS
 * getObjectFromMcName(mcName)
 * stringInArray(input, what)
 
-PAUSE_MENU_BAR
-===============
+ PAUSE_MENU_BAR
+^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_BAR()
 * INITIALISE(mc)
@@ -453,8 +453,8 @@ PAUSE_MENU_BAR
 * SET_CODE_MENU_INDEX(rollOverIndex)
 * SET_CODE_MENU_SELECT()
 
-PAUSE_MENU_CALIBRATION
-=======================
+ PAUSE_MENU_CALIBRATION
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_CALIBRATION()
 * INITIALISE(mc)
@@ -462,8 +462,8 @@ PAUSE_MENU_CALIBRATION
 * SET_BUTTONS()
 * onMouseEvent(evtType, targetMC, args)
 
-PAUSE_MENU_CONFIGURATION_LIST
-==============================
+ PAUSE_MENU_CONFIGURATION_LIST
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_CONFIGURATION_LIST()
 * INITIALISE(mc)
@@ -476,8 +476,8 @@ PAUSE_MENU_CONFIGURATION_LIST
 * SET_KEY_CONFIG_COLUMN(colIndex)
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MENU_FREE_MODE
-=====================
+ PAUSE_MENU_FREE_MODE
+^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_FREE_MODE()
 * INITIALISE(mc)
@@ -501,8 +501,8 @@ PAUSE_MENU_FREE_MODE
 * getVisibleHeight()
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MENU_FREEMODE_DETAILS
-============================
+ PAUSE_MENU_FREEMODE_DETAILS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_FREEMODE_DETAILS()
 * INITIALISE(mc)
@@ -521,8 +521,8 @@ PAUSE_MENU_FREEMODE_DETAILS
 * TXD_ALREADY_LOADED(textureDict, uniqueID)
 * ADD_TXD_REF_RESPONSE(textureDict, uniqueID, success)
 
-PAUSE_MENU_HEADER
-==================
+ PAUSE_MENU_HEADER
+^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_HEADER()
 * INITIALISE(mc)
@@ -561,15 +561,15 @@ PAUSE_MENU_HEADER
 * TXD_HAS_LOADED(txd, success, strRef)
 * TXD_ALREADY_LOADED(txd, strRef)
 
-PAUSE_MENU_INSTRUCTIONAL_BUTTONS
-=================================
+ PAUSE_MENU_INSTRUCTIONAL_BUTTONS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_INSTRUCTIONAL_BUTTONS()
 * SET_PADDING(_padding)
 * INITIALISE(mc)
 
-PAUSE_MENU_KEYMAP_CATEGORY
-===========================
+ PAUSE_MENU_KEYMAP_CATEGORY
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_KEYMAP_CATEGORY()
 * INITIALISE(mc)
@@ -587,22 +587,22 @@ PAUSE_MENU_KEYMAP_CATEGORY
 * getVisibleHeight()
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MENU_PAGES_KEYMAP
-========================
+ PAUSE_MENU_PAGES_KEYMAP
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_KEYMAP()
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_SETTINGS
-==========================
+ PAUSE_MENU_PAGES_SETTINGS
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_SETTINGS()
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_SETTINGS
-====================
+ PAUSE_MENU_SETTINGS
+^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_SETTINGS()
 * INITIALISE(mc)
@@ -625,8 +625,8 @@ PAUSE_MENU_SETTINGS
 * SET_INPUT_EVENT(direction)
 * SET_HIGHLIGHT(i)
 
-PAUSE_MENU_SP_CONTENT
-======================
+ PAUSE_MENU_SP_CONTENT
+^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_SP_CONTENT()
 * INITIALISE(mc)
@@ -714,8 +714,8 @@ PAUSE_MENU_SP_CONTENT
 * ADD_TXD_REF_RESPONSE(textureDict, uniqueID, success)
 * onWarningImgLoaded()
 
-PAUSE_MENU_TEXT_LIST_DOUBLE
-============================
+ PAUSE_MENU_TEXT_LIST_DOUBLE
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_TEXT_LIST_DOUBLE()
 * INITIALISE(mc)
@@ -724,16 +724,16 @@ PAUSE_MENU_TEXT_LIST_DOUBLE
 * SET_FOCUS(isFocused)
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MENU_VERTICAL_LIST
-=========================
+ PAUSE_MENU_VERTICAL_LIST
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_VERTICAL_LIST()
 * INITIALISE(mc)
 * SET_HIGHLIGHT(i)
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MP_MENU_FRIENDS_LIST
-===========================
+ PAUSE_MP_MENU_FRIENDS_LIST
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MP_MENU_FRIENDS_LIST()
 * INITIALISE(mc)
@@ -746,8 +746,8 @@ PAUSE_MP_MENU_FRIENDS_LIST
 * SET_INPUT_EVENT(direction)
 * ON_DESTROY()
 
-PAUSE_MP_MENU_PLAYER_MODEL
-===========================
+ PAUSE_MP_MENU_PLAYER_MODEL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MP_MENU_PLAYER_MODEL()
 * INITIALISE(mc)
@@ -758,8 +758,8 @@ PAUSE_MP_MENU_PLAYER_MODEL
 * ON_DESTROY()
 * SET_INPUT_EVENT(direction)
 
-POPUP_WARNING
-==============
+ POPUP_WARNING
+^^^^^^^^^^^^^^
 
 * POPUP_WARNING()
 * INITIALISE(mc)
@@ -776,19 +776,19 @@ POPUP_WARNING
 * SET_ALERT_IMAGE_WITH_GANG_HIGHLIGHT(txd, texture, gangEnum, r, g, b)
 * loadTextureIntoMovieClip(txd, texture, targetLoadedInto)
 
-ROCKSTAR_VERIFIED
-==================
+ ROCKSTAR_VERIFIED
+^^^^^^^^^^^^^^^^^^
 
 * ROCKSTAR_VERIFIED()
 * SET_VERIFIED(type, colourEnum)
 
-RP_ICON
-========
+ RP_ICON
+^^^^^^^^
 
 * RP_ICON()
 
-SOCIAL_CLUB2
-=============
+ SOCIAL_CLUB2
+^^^^^^^^^^^^^
 
 * SOCIAL_CLUB2(mc)
 * RESET_MENU()
@@ -924,11 +924,11 @@ SOCIAL_CLUB2
 * DISPOSE_BUTTONS()
 * GET_ROOT_DISPLAY_OBJECT()
 
-generic
-########
+ generic
+========
 
-AIRCRAFT_DIALS
-===============
+ AIRCRAFT_DIALS
+^^^^^^^^^^^^^^^
 
 * AIRCRAFT_DIALS()
 * INITIALISE(mc)
@@ -939,8 +939,8 @@ AIRCRAFT_DIALS
 * percFromRad(input)
 * debug()
 
-AMBIENT_CLIP
-=============
+ AMBIENT_CLIP
+^^^^^^^^^^^^^
 
 * AMBIENT_CLIP()
 * SET_TEXT_WITH_WIDTH(str, bgWidth, showFadeOut)
@@ -951,12 +951,12 @@ AMBIENT_CLIP
 * onReleaseOutside()
 * sendMouseEvent(evt)
 
-AMMO_MASTER
-============
+ AMMO_MASTER
+^^^^^^^^^^^^
 
 
-APP_JOB_LIST
-=============
+ APP_JOB_LIST
+^^^^^^^^^^^^^
 
 * APP_JOB_LIST()
 * INITIALISE(mc)
@@ -965,8 +965,8 @@ APP_JOB_LIST
 * setState(item, isActive)
 * parseForGamerName(TF, str)
 
-APP_MISSION_STATS_VIEW
-=======================
+ APP_MISSION_STATS_VIEW
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * APP_MISSION_STATS_VIEW()
 * INITIALISE(mc)
@@ -974,8 +974,8 @@ APP_MISSION_STATS_VIEW
 * populateContent()
 * CLEAN_UP_DATA()
 
-APP_NUMBERPAD
-==============
+ APP_NUMBERPAD
+^^^^^^^^^^^^^^
 
 * APP_NUMBERPAD()
 * INITIALISE(mc)
@@ -986,8 +986,8 @@ APP_NUMBERPAD
 * GET_CURRENT_SELECTION()
 * setState(item, isActive)
 
-APP_SECUROSERV_HACKING
-=======================
+ APP_SECUROSERV_HACKING
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * APP_SECUROSERV_HACKING()
 * INITIALISE(mc)
@@ -1004,8 +1004,8 @@ APP_SECUROSERV_HACKING
 * initMessage(label, isLiteral)
 * flashMessage()
 
-APP_TODO_LIST
-==============
+ APP_TODO_LIST
+^^^^^^^^^^^^^^
 
 * APP_TODO_LIST()
 * INITIALISE(mc)
@@ -1013,8 +1013,8 @@ APP_TODO_LIST
 * populateContent()
 * setState(item, isActive)
 
-APP_TODO_VIEW
-==============
+ APP_TODO_VIEW
+^^^^^^^^^^^^^^
 
 * APP_TODO_VIEW()
 * INITIALISE(mc)
@@ -1022,8 +1022,8 @@ APP_TODO_VIEW
 * populateContent()
 * CLEAN_UP_DATA()
 
-APP_TRACKIFY
-=============
+ APP_TRACKIFY
+^^^^^^^^^^^^^
 
 * APP_TRACKIFY()
 * INITIALISE(mc)
@@ -1048,8 +1048,8 @@ APP_TRACKIFY
 * showHackingAppState(buttonLabel, isActive)
 * checkAndSetText(TF, textLabel)
 
-ARCADE_BUSINESS_HUB
-====================
+ ARCADE_BUSINESS_HUB
+^^^^^^^^^^^^^^^^^^^^
 
 * ARCADE_BUSINESS_HUB()
 * initialise(mc)
@@ -1072,8 +1072,8 @@ ARCADE_BUSINESS_HUB
 * updateButtons()
 * TXD_HAS_LOADED(txd, success, id)
 
-ARCADE_MANAGEMENT
-==================
+ ARCADE_MANAGEMENT
+^^^^^^^^^^^^^^^^^^
 
 * ARCADE_MANAGEMENT()
 * initialise(mc)
@@ -1101,8 +1101,8 @@ ARCADE_MANAGEMENT
 * TXD_HAS_LOADED(txd, success, id)
 * setSelectedCabinet(cabinetID)
 
-ARENA_CAREER_WALL
-==================
+ ARENA_CAREER_WALL
+^^^^^^^^^^^^^^^^^^
 
 * ARENA_CAREER_WALL()
 * initialise(mc)
@@ -1114,8 +1114,8 @@ ARENA_CAREER_WALL
 * showScreen(screenID)
 * TXD_HAS_LOADED(txd, success, id)
 
-ARENA_GUN_CAM
-==============
+ ARENA_GUN_CAM
+^^^^^^^^^^^^^^
 
 * ARENA_GUN_CAM()
 * INITIALISE(mc)
@@ -1123,8 +1123,8 @@ ARENA_GUN_CAM
 * SET_WEAPON_VALUES(machineGunVal, missileVal, pilotMissileVal)
 * SET_ZOOM_VISIBLE(isVisible)
 
-ARROW_WITH_EVENTS
-==================
+ ARROW_WITH_EVENTS
+^^^^^^^^^^^^^^^^^^
 
 * ARROW_WITH_EVENTS()
 * onPress()
@@ -1134,8 +1134,8 @@ ARROW_WITH_EVENTS
 * onReleaseOutside()
 * sendMouseEvent(evt)
 
-ATM
-====
+ ATM
+^^^^
 
 * ATM()
 * INITIALISE(mc)
@@ -1169,8 +1169,8 @@ ATM
 * setState(item, isActive)
 * UPDATE_TEXT()
 
-AUDIO_CLIP
-===========
+ AUDIO_CLIP
+^^^^^^^^^^^
 
 * AUDIO_CLIP()
 * SET_TEXT_WITH_WIDTH(str, bgWidth, showFadeOut)
@@ -1182,14 +1182,14 @@ AUDIO_CLIP
 * onReleaseOutside()
 * sendMouseEvent(evt)
 
-BANK_JOB_LOGIN
-===============
+ BANK_JOB_LOGIN
+^^^^^^^^^^^^^^^
 
 * BANK_JOB_LOGIN()
 * initialise(mc)
 
-BIKER_BUSINESSES
-=================
+ BIKER_BUSINESSES
+^^^^^^^^^^^^^^^^^
 
 * BIKER_BUSINESSES()
 * initialise(mc)
@@ -1222,8 +1222,8 @@ BIKER_BUSINESSES
 * quit()
 * TXD_HAS_LOADED(txd, success, id)
 
-BIKER_MISSION_WALL
-===================
+ BIKER_MISSION_WALL
+^^^^^^^^^^^^^^^^^^^
 
 * BIKER_MISSION_WALL()
 * initialise(mc)
@@ -1240,15 +1240,15 @@ BIKER_MISSION_WALL
 * dispose()
 * setLocalisedText(tf, label)
 
-BINOCULARS
-===========
+ BINOCULARS
+^^^^^^^^^^^
 
 * BINOCULARS()
 * INITIALISE(mc)
 * initScreenLayout()
 
-BLIMP_TEXT
-===========
+ BLIMP_TEXT
+^^^^^^^^^^^
 
 * BLIMP_TEXT()
 * initialise(mc)
@@ -1257,8 +1257,8 @@ BLIMP_TEXT
 * SET_MESSAGE(message)
 * startScroll(goalX, duration)
 
-BOSS_JOB_LIST
-==============
+ BOSS_JOB_LIST
+^^^^^^^^^^^^^^
 
 * BOSS_JOB_LIST()
 * construct()
@@ -1267,16 +1267,16 @@ BOSS_JOB_LIST
 * setupJob(selected)
 * parseForGamerName(TF, str)
 
-BOSS_JOB_LIST_VIEW
-===================
+ BOSS_JOB_LIST_VIEW
+^^^^^^^^^^^^^^^^^^^
 
 * BOSS_JOB_LIST_VIEW()
 * construct()
 * populateContent()
 * setupMessageBody()
 
-BREAKING_NEWS
-==============
+ BREAKING_NEWS
+^^^^^^^^^^^^^^
 
 * BREAKING_NEWS()
 * INITIALISE(mc)
@@ -1289,8 +1289,8 @@ BREAKING_NEWS
 * getTicker(slot)
 * SHOW_STATIC(staticType)
 
-CALLSCREEN
-===========
+ CALLSCREEN
+^^^^^^^^^^^
 
 * CALLSCREEN()
 * construct()
@@ -1303,8 +1303,8 @@ CALLSCREEN
 * CLOSE_APP()
 * parseForGamerName(TF, str)
 
-CAMERA_GALLERY
-===============
+ CAMERA_GALLERY
+^^^^^^^^^^^^^^^
 
 * CAMERA_GALLERY()
 * INITIALISE(mc)
@@ -1320,8 +1320,8 @@ CAMERA_GALLERY
 * CLOSE_THEN_OPEN_SHUTTER()
 * goTo(whichFrame)
 
-CAMERA_SHUTTER
-===============
+ CAMERA_SHUTTER
+^^^^^^^^^^^^^^^
 
 * CAMERA_SHUTTER(mc)
 * OPEN_SHUTTER()
@@ -1329,8 +1329,8 @@ CAMERA_SHUTTER
 * CLOSE_THEN_OPEN_SHUTTER()
 * goTo(whichFrame)
 
-CASINO_HEIST_BOARD_FINALE
-==========================
+ CASINO_HEIST_BOARD_FINALE
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * CASINO_HEIST_BOARD_FINALE()
 * initialise(mc)
@@ -1365,8 +1365,8 @@ CASINO_HEIST_BOARD_FINALE
 * updateButtons()
 * TXD_HAS_LOADED(txd, success, id)
 
-CASINO_HEIST_BOARD_PREP
-========================
+ CASINO_HEIST_BOARD_PREP
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * CASINO_HEIST_BOARD_PREP()
 * initialise(mc)
@@ -1404,8 +1404,8 @@ CASINO_HEIST_BOARD_PREP
 * updateButtons()
 * TXD_HAS_LOADED(txd, success, id)
 
-CASINO_HEIST_BOARD_SETUP
-=========================
+ CASINO_HEIST_BOARD_SETUP
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * CASINO_HEIST_BOARD_SETUP()
 * initialise(mc)
@@ -1438,16 +1438,16 @@ CASINO_HEIST_BOARD_SETUP
 * updateButtons()
 * TXD_HAS_LOADED(txd, success, id)
 
-CELLPHONE_ALERT_POPUP
-======================
+ CELLPHONE_ALERT_POPUP
+^^^^^^^^^^^^^^^^^^^^^^
 
 * CELLPHONE_ALERT_POPUP()
 * INITIALISE(mc)
 * CREATE_ALERT(iconID, newX, newY, titleString)
 * CLEAR_ALL()
 
-CELLPHONE_BADGER
-=================
+ CELLPHONE_BADGER
+^^^^^^^^^^^^^^^^^
 
 * CELLPHONE_BADGER()
 * INITIALISE(mc)
@@ -1486,15 +1486,15 @@ CELLPHONE_BADGER
 * createTransition(previousClip, currentClip)
 * parseForGamerName(TF, str)
 
-CELLPHONE_CUTSCENE
-===================
+ CELLPHONE_CUTSCENE
+^^^^^^^^^^^^^^^^^^^
 
 * CELLPHONE_CUTSCENE()
 * INITIALISE(mc)
 * DISPLAY_VIEW(viewID)
 
-CELLPHONE_FACADE
-=================
+ CELLPHONE_FACADE
+^^^^^^^^^^^^^^^^^
 
 * CELLPHONE_FACADE()
 * INITIALISE(mc)
@@ -1531,8 +1531,8 @@ CELLPHONE_FACADE
 * createTransition(previousClip, currentClip)
 * parseForGamerName(TF, str)
 
-CELLPHONE_IFRUIT
-=================
+ CELLPHONE_IFRUIT
+^^^^^^^^^^^^^^^^^
 
 * CELLPHONE_IFRUIT()
 * INITIALISE(mc)
@@ -1572,8 +1572,8 @@ CELLPHONE_IFRUIT
 * IFRUIT_TRANSITION_IN(currentClip)
 * parseForGamerName(TF, str)
 
-CELLPHONE_PROLOGUE
-===================
+ CELLPHONE_PROLOGUE
+^^^^^^^^^^^^^^^^^^^
 
 * CELLPHONE_PROLOGUE()
 * INITIALISE(mc)
@@ -1603,8 +1603,8 @@ CELLPHONE_PROLOGUE
 * createPrologueTransition(previousClip, currentClip)
 * toggleCellphoneButtonsVisible(isVisible)
 
-CLIP_EDIT_TIMELINE
-===================
+ CLIP_EDIT_TIMELINE
+^^^^^^^^^^^^^^^^^^^
 
 * CLIP_EDIT_TIMELINE()
 * onPress()
@@ -1614,36 +1614,36 @@ CLIP_EDIT_TIMELINE
 * onReleaseOutside()
 * sendMouseEvent(evt)
 
-CLIP_EDIT_TIMELINE_CLICK_REGION
-================================
+ CLIP_EDIT_TIMELINE_CLICK_REGION
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-CLUBHOUSE_NAME
-===============
+ CLUBHOUSE_NAME
+^^^^^^^^^^^^^^^
 
 * CLUBHOUSE_NAME()
 * INITIALISE(mc)
 * SET_CLUBHOUSE_NAME(str, colourIndex, fontIndex)
 
-COL_TYPE_BASIC_PAGE
-====================
+ COL_TYPE_BASIC_PAGE
+^^^^^^^^^^^^^^^^^^^^
 
 * COL_TYPE_BASIC_PAGE()
 * clearBlipLayer()
 
-COL_TYPE_IMG_PROJ_INFO
-=======================
+ COL_TYPE_IMG_PROJ_INFO
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * COL_TYPE_IMG_PROJ_INFO()
 
-COL_TYPE_IMG_TWELVE
-====================
+ COL_TYPE_IMG_TWELVE
+^^^^^^^^^^^^^^^^^^^^
 
 * COL_TYPE_IMG_TWELVE()
 * loadCompleted()
 
-COL_TYPE_LIST
-==============
+ COL_TYPE_LIST
+^^^^^^^^^^^^^^
 
 * COL_TYPE_LIST()
 * initColours(receivedColours)
@@ -1666,23 +1666,23 @@ COL_TYPE_LIST
 * onReleaseOutside()
 * sendMouseEvent(evt)
 
-COL_TYPE_LIST_HELP
-===================
+ COL_TYPE_LIST_HELP
+^^^^^^^^^^^^^^^^^^^
 
 * COL_TYPE_LIST_HELP()
 * initColours(receivedColours)
 * clearBlipLayer()
 
-COL_TYPE_LIST_LONG_AUDIO
-=========================
+ COL_TYPE_LIST_LONG_AUDIO
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * COL_TYPE_LIST_LONG_AUDIO()
 * SetAnimatedAudioVisibility(isVisible)
 * SetAnimatedAudioPlaying(isPlaying)
 * SetAsSelected(isSelected)
 
-COL_TYPE_LIST_PROJECT_SIZE
-===========================
+ COL_TYPE_LIST_PROJECT_SIZE
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * COL_TYPE_LIST_PROJECT_SIZE()
 * initColors(receivedColours)
@@ -1690,8 +1690,8 @@ COL_TYPE_LIST_PROJECT_SIZE
 * setHelpTopVisibility(isVisible)
 * clearBlipLayer()
 
-COL_TYPE_LIST_SCROLL
-=====================
+ COL_TYPE_LIST_SCROLL
+^^^^^^^^^^^^^^^^^^^^^
 
 * COL_TYPE_LIST_SCROLL()
 * INIT_LIST_SCROLL_BUTTONS()
@@ -1700,12 +1700,12 @@ COL_TYPE_LIST_SCROLL
 * onMouseRelease(dir)
 * sendMouseEvent(evt, dir)
 
-COL_TYPE_LIST_SCROLL_AUDIO
-===========================
+ COL_TYPE_LIST_SCROLL_AUDIO
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-COL_TYPE_LOAD_PROJ_INFO
-========================
+ COL_TYPE_LOAD_PROJ_INFO
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * COL_TYPE_LOAD_PROJ_INFO()
 * updateUploadProgress(label)
@@ -1714,13 +1714,13 @@ COL_TYPE_LOAD_PROJ_INFO
 * showUploadProgress(isVisible)
 * shortenAndSetStr(str, tf, maxChars)
 
-COL_TYPE_TEXT_PLACEMENT
-========================
+ COL_TYPE_TEXT_PLACEMENT
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * COL_TYPE_TEXT_PLACEMENT()
 
-COLOUR_SWITCHER
-================
+ COLOUR_SWITCHER
+^^^^^^^^^^^^^^^^
 
 * COLOUR_SWITCHER()
 * INITIALISE(mc)
@@ -1730,8 +1730,8 @@ COLOUR_SWITCHER
 * SET_TITLE(str)
 * itemSetData(i, cMC, cData)
 
-CONTACTLIST
-============
+ CONTACTLIST
+^^^^^^^^^^^^
 
 * CONTACTLIST()
 * construct()
@@ -1751,8 +1751,8 @@ CONTACTLIST
 * REMOVE()
 * CLOSE_APP()
 
-CONTROLLER_TEST
-================
+ CONTROLLER_TEST
+^^^^^^^^^^^^^^^^
 
 * CONTROLLER_TEST()
 * INITIALISE(mc)
@@ -1772,8 +1772,8 @@ CONTROLLER_TEST
 * drawMouseWheel()
 * clamp(value, min, max)
 
-COUNTDOWN
-==========
+ COUNTDOWN
+^^^^^^^^^^
 
 * COUNTDOWN()
 * INITIALISE(mc)
@@ -1787,8 +1787,8 @@ COUNTDOWN
 * initCountdown()
 * setCountdownLights(value)
 
-COVERT_OPS
-===========
+ COVERT_OPS
+^^^^^^^^^^^
 
 * COVERT_OPS()
 * initialise(mc)
@@ -1809,8 +1809,8 @@ COVERT_OPS
 * showScreen(screenID)
 * TXD_HAS_LOADED(txd, success, id)
 
-CUSTOM_WARNING_SCREEN
-======================
+ CUSTOM_WARNING_SCREEN
+^^^^^^^^^^^^^^^^^^^^^^
 
 * CUSTOM_WARNING_SCREEN()
 * INITIALISE(mc)
@@ -1819,8 +1819,8 @@ CUSTOM_WARNING_SCREEN
 * SET_SELECTED_INDEX()
 * debug()
 
-DASHBOARD
-==========
+ DASHBOARD
+^^^^^^^^^^
 
 * DASHBOARD()
 * INITIALISE(mc)
@@ -1834,8 +1834,8 @@ DASHBOARD
 * initScrollingTextfield(tf, text)
 * debug()
 
-DESKTOP_PC
-===========
+ DESKTOP_PC
+^^^^^^^^^^^
 
 * DESKTOP_PC()
 * INITIALISE(mc)
@@ -1870,123 +1870,123 @@ DESKTOP_PC
 * closeApp(id)
 * RESTART_MOVIE()
 
-DIAL_BANSHEE
-=============
+ DIAL_BANSHEE
+^^^^^^^^^^^^^
 
 * DIAL_BANSHEE(mc)
 
-DIAL_BOBCAT
-============
+ DIAL_BOBCAT
+^^^^^^^^^^^^
 
 * DIAL_BOBCAT(mc)
 
-DIAL_CAVALCADE
-===============
+ DIAL_CAVALCADE
+^^^^^^^^^^^^^^^
 
 * DIAL_CAVALCADE(mc)
 
-DIAL_COMET
-===========
+ DIAL_COMET
+^^^^^^^^^^^
 
 * DIAL_COMET(mc)
 
-DIAL_DUKES
-===========
+ DIAL_DUKES
+^^^^^^^^^^^
 
 * DIAL_DUKES(mc)
 
-DIAL_FACTION
-=============
+ DIAL_FACTION
+^^^^^^^^^^^^^
 
 * DIAL_FACTION(mc)
 
-DIAL_FELTZER
-=============
+ DIAL_FELTZER
+^^^^^^^^^^^^^
 
 * DIAL_FELTZER(mc)
 
-DIAL_FEROCI
-============
+ DIAL_FEROCI
+^^^^^^^^^^^^
 
 * DIAL_FEROCI(mc)
 
-DIAL_FUTO
-==========
+ DIAL_FUTO
+^^^^^^^^^^
 
 * DIAL_FUTO(mc)
 
-DIAL_GENTAXI
-=============
+ DIAL_GENTAXI
+^^^^^^^^^^^^^
 
 * DIAL_GENTAXI(mc)
 
-DIAL_INFERNUS
-==============
+ DIAL_INFERNUS
+^^^^^^^^^^^^^^
 
 * DIAL_INFERNUS(mc)
 
-DIAL_MAVERICK
-==============
+ DIAL_MAVERICK
+^^^^^^^^^^^^^^
 
 * DIAL_MAVERICK(mc)
 
-DIAL_MOTORBIKE
-===============
+ DIAL_MOTORBIKE
+^^^^^^^^^^^^^^^
 
 * DIAL_MOTORBIKE(mc)
 
-DIAL_PEYOTE
-============
+ DIAL_PEYOTE
+^^^^^^^^^^^^
 
 * DIAL_PEYOTE(mc)
 
-DIAL_RACE
-==========
+ DIAL_RACE
+^^^^^^^^^^
 
 * DIAL_RACE(mc)
 
-DIAL_RUINER
-============
+ DIAL_RUINER
+^^^^^^^^^^^^
 
 * DIAL_RUINER(mc)
 
-DIAL_SPEEDO
-============
+ DIAL_SPEEDO
+^^^^^^^^^^^^
 
 * DIAL_SPEEDO(mc)
 
-DIAL_SULTAN
-============
+ DIAL_SULTAN
+^^^^^^^^^^^^
 
 * DIAL_SULTAN(mc)
 
-DIAL_SUPERGT
-=============
+ DIAL_SUPERGT
+^^^^^^^^^^^^^
 
 * DIAL_SUPERGT(mc)
 
-DIAL_TAILGATER
-===============
+ DIAL_TAILGATER
+^^^^^^^^^^^^^^^
 
 * DIAL_TAILGATER(mc)
 
-DIAL_TRUCK
-===========
+ DIAL_TRUCK
+^^^^^^^^^^^
 
 * DIAL_TRUCK(mc)
 
-DIAL_TRUCKDIGI
-===============
+ DIAL_TRUCKDIGI
+^^^^^^^^^^^^^^^
 
 * DIAL_TRUCKDIGI(mc)
 
-DIAL_ZTYPE
-===========
+ DIAL_ZTYPE
+^^^^^^^^^^^
 
 * DIAL_ZTYPE(mc)
 
-DIGISCANNER
-============
+ DIGISCANNER
+^^^^^^^^^^^^
 
 * DIGISCANNER()
 * INITIALISE(mc)
@@ -1997,8 +1997,8 @@ DIGISCANNER
 * flashOff(mc)
 * stopFlash()
 
-DIGITAL_CAMERA
-===============
+ DIGITAL_CAMERA
+^^^^^^^^^^^^^^^
 
 * DIGITAL_CAMERA()
 * INITIALISE(mc)
@@ -2014,8 +2014,8 @@ DIGITAL_CAMERA
 * CLOSE_THEN_OPEN_SHUTTER()
 * goTo(whichFrame)
 
-DISRUPTION_LOGISTICS
-=====================
+ DISRUPTION_LOGISTICS
+^^^^^^^^^^^^^^^^^^^^^
 
 * DISRUPTION_LOGISTICS()
 * initialise(mc)
@@ -2047,13 +2047,13 @@ DISRUPTION_LOGISTICS
 * enableAllButtons()
 * TXD_HAS_LOADED(txd, success, id)
 
-DJ
-===
+ DJ
+^^^
 
 * DJ()
 
-DRILLING
-=========
+ DRILLING
+^^^^^^^^^
 
 * DRILLING()
 * INITIALISE(mc)
@@ -2061,8 +2061,8 @@ DRILLING
 * SET_DEPTH(depth)
 * SET_TEMPERATURE(temperature)
 
-DRONE_CAM
-==========
+ DRONE_CAM
+^^^^^^^^^^
 
 * DRONE_CAM()
 * INITIALISE(mc)
@@ -2096,8 +2096,8 @@ DRONE_CAM
 * SET_RETICLE_STATE(state)
 * SET_WARNING_FLASH_RATE(normRate)
 
-ECG_MONITOR
-============
+ ECG_MONITOR
+^^^^^^^^^^^^
 
 * ECG_MONITOR()
 * INITIALISE(mc)
@@ -2108,8 +2108,8 @@ ECG_MONITOR
 * SET_ECG_HEALTH(amount)
 * SET_COLOUR(r, g, b)
 
-ECOMMERCE_STORE
-================
+ ECOMMERCE_STORE
+^^^^^^^^^^^^^^^^
 
 * ECOMMERCE_STORE()
 * INITIALISE(mc)
@@ -2154,8 +2154,8 @@ ECOMMERCE_STORE
 * ADD_TXD_REF_RESPONSE(textureDict, uniqueID, success)
 * traceOut(str)
 
-EDITOR_SHUTTER
-===============
+ EDITOR_SHUTTER
+^^^^^^^^^^^^^^^
 
 * EDITOR_SHUTTER()
 * OPEN_SHUTTER()
@@ -2163,24 +2163,24 @@ EDITOR_SHUTTER
 * CLOSE_THEN_OPEN_SHUTTER()
 * goTo(whichFrame)
 
-EMAIL_LIST
-===========
+ EMAIL_LIST
+^^^^^^^^^^^
 
 * EMAIL_LIST()
 * construct()
 * populateContent()
 * setState(item, isActive)
 
-EMAIL_RESPONSE
-===============
+ EMAIL_RESPONSE
+^^^^^^^^^^^^^^^
 
 * EMAIL_RESPONSE()
 * construct()
 * populateContent()
 * setState(item, isActive)
 
-EMAIL_VIEW
-===========
+ EMAIL_VIEW
+^^^^^^^^^^^
 
 * EMAIL_VIEW()
 * construct()
@@ -2192,8 +2192,8 @@ EMAIL_VIEW
 * onLoadInit(target_mc)
 * CLEAN_UP_DATA()
 
-GRID_LAYOUT
-============
+ GRID_LAYOUT
+^^^^^^^^^^^^
 
 * GRID_LAYOUT(mc)
 * INITIALISE(mc)
@@ -2201,8 +2201,8 @@ GRID_LAYOUT
 * SET_SAFE(i)
 * SET_SCALE(i)
 
-HACKER_TRUCK_DESKTOP
-=====================
+ HACKER_TRUCK_DESKTOP
+^^^^^^^^^^^^^^^^^^^^^
 
 * HACKER_TRUCK_DESKTOP()
 * initialise(mc)
@@ -2227,8 +2227,8 @@ HACKER_TRUCK_DESKTOP
 * updateButtons()
 * TXD_HAS_LOADED(txd, success, id)
 
-HACKING_PC
-===========
+ HACKING_PC
+^^^^^^^^^^^
 
 * HACKING_PC()
 * INITIALISE(mc)
@@ -2284,8 +2284,8 @@ HACKING_PC
 * onLoadInit(target_mc)
 * SHUTDOWN_MOVIE()
 
-HANGAR_CARGO
-=============
+ HANGAR_CARGO
+^^^^^^^^^^^^^
 
 * HANGAR_CARGO()
 * initialise(mc)
@@ -2309,8 +2309,8 @@ HANGAR_CARGO
 * showScreen(screenID)
 * updateButtons()
 
-HEIST_AGENCY
-=============
+ HEIST_AGENCY
+^^^^^^^^^^^^^
 
 * HEIST_AGENCY()
 * INITIALISE(mc)
@@ -2325,8 +2325,8 @@ HEIST_AGENCY
 * RegisterHeistAsset(enum, mc)
 * SHOW_HEIST_ASSET(enum, visible, frame, x, y)
 
-HEIST_DOCKS
-============
+ HEIST_DOCKS
+^^^^^^^^^^^^
 
 * HEIST_DOCKS()
 * INITIALISE(mc)
@@ -2340,8 +2340,8 @@ HEIST_DOCKS
 * RegisterHeistAsset(enum, mc)
 * SHOW_HEIST_ASSET(enum, visible, frame, x, y)
 
-HEIST_ENDSCREEN
-================
+ HEIST_ENDSCREEN
+^^^^^^^^^^^^^^^^
 
 * HEIST_ENDSCREEN()
 * INITIALISE(mc)
@@ -2350,8 +2350,8 @@ HEIST_ENDSCREEN
 * SET_PIE_CHART()
 * drawArc(pieMC, rotation, percent, pieNumber, _r, _g, _b)
 
-HEIST_FINALE
-=============
+ HEIST_FINALE
+^^^^^^^^^^^^^
 
 * HEIST_FINALE()
 * INITIALISE(mc)
@@ -2365,8 +2365,8 @@ HEIST_FINALE
 * RegisterHeistAsset(enum, mc)
 * SHOW_HEIST_ASSET(enum, visible, frame, x, y)
 
-HEIST_JEWELLERY
-================
+ HEIST_JEWELLERY
+^^^^^^^^^^^^^^^^
 
 * HEIST_JEWELLERY()
 * INITIALISE(mc)
@@ -2380,8 +2380,8 @@ HEIST_JEWELLERY
 * RegisterHeistAsset(enum, mc)
 * SHOW_HEIST_ASSET(enum, visible, frame, x, y)
 
-HEIST_PALETO
-=============
+ HEIST_PALETO
+^^^^^^^^^^^^^
 
 * HEIST_PALETO()
 * INITIALISE(mc)
@@ -2395,8 +2395,8 @@ HEIST_PALETO
 * RegisterHeistAsset(enum, mc)
 * SHOW_HEIST_ASSET(enum, visible, frame, x, y)
 
-HEIST2_CELEBRATION
-===================
+ HEIST2_CELEBRATION
+^^^^^^^^^^^^^^^^^^^
 
 * HEIST2_CELEBRATION()
 * INITIALISE(mc, type)
@@ -2426,8 +2426,8 @@ HEIST2_CELEBRATION
 * getLocalisedText(label)
 * getColourFromId(id)
 
-HELI_CAM
-=========
+ HELI_CAM
+^^^^^^^^^
 
 * HELI_CAM()
 * INITIALISE(mc)
@@ -2440,21 +2440,21 @@ HELI_CAM
 * SET_CAM_LOGO(value)
 * SET_AUDIO_STATES(smallLine, mediumLine, largeLine)
 
-HELP_TEXT
-==========
+ HELP_TEXT
+^^^^^^^^^^
 
 * HELP_TEXT()
 
-HELPTEXT
-=========
+ HELPTEXT
+^^^^^^^^^
 
 
-HOMEMENU
-=========
+ HOMEMENU
+^^^^^^^^^
 
 
-HOMEMENU_BADGER
-================
+ HOMEMENU_BADGER
+^^^^^^^^^^^^^^^^
 
 * HOMEMENU_BADGER()
 * construct()
@@ -2464,8 +2464,8 @@ HOMEMENU_BADGER
 * setIcon(target, menuIconFrameEnum, iconAlpha)
 * setState(item, isActive)
 
-HOMEMENU_FACADE
-================
+ HOMEMENU_FACADE
+^^^^^^^^^^^^^^^^
 
 * HOMEMENU_FACADE()
 * construct()
@@ -2475,8 +2475,8 @@ HOMEMENU_FACADE
 * setIcon(target, menuIconFrameEnum, iconAlpha)
 * setState(item, isActive)
 
-HOMEMENU_IFRUIT
-================
+ HOMEMENU_IFRUIT
+^^^^^^^^^^^^^^^^
 
 * HOMEMENU_IFRUIT()
 * construct()
@@ -2486,8 +2486,8 @@ HOMEMENU_IFRUIT
 * setIcon(target, menuIconFrameEnum, iconAlpha)
 * setState(item, isActive)
 
-HUD_AREA_NAME
-==============
+ HUD_AREA_NAME
+^^^^^^^^^^^^^^
 
 * HUD_AREA_NAME()
 * READY(id)
@@ -2498,8 +2498,8 @@ HUD_AREA_NAME
 * HIDE()
 * REMOVE()
 
-HUD_AREA_VEHICLE_STREET_NAME
-=============================
+ HUD_AREA_VEHICLE_STREET_NAME
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * HUD_AREA_VEHICLE_STREET_NAME()
 * INITIALISE(mc)
@@ -2514,8 +2514,8 @@ HUD_AREA_VEHICLE_STREET_NAME
 * HIDE()
 * REMOVE()
 
-HUD_CASH
-=========
+ HUD_CASH
+^^^^^^^^^
 
 * HUD_CASH()
 * INITIALISE(mc)
@@ -2535,8 +2535,8 @@ HUD_CASH
 * SET_PLAYER_CASH_CHANGE(params)
 * SET_MP_MESSAGE(params)
 
-HUD_CASH_CHANGE
-================
+ HUD_CASH_CHANGE
+^^^^^^^^^^^^^^^^
 
 * HUD_CASH_CHANGE()
 * INITIALISE(mc)
@@ -2547,12 +2547,12 @@ HUD_CASH_CHANGE
 * HIDE()
 * REMOVE()
 
-HUD_CASH_CHANGED
-=================
+ HUD_CASH_CHANGED
+^^^^^^^^^^^^^^^^^
 
 
-HUD_CHIPS
-==========
+ HUD_CHIPS
+^^^^^^^^^^
 
 * HUD_CHIPS()
 * INITIALISE(mc)
@@ -2573,12 +2573,12 @@ HUD_CHIPS
 * SET_PLAYER_CHIP_CHANGE(params)
 * SET_MP_MESSAGE(params)
 
-HUD_CHIPS_CHANGED
-==================
+ HUD_CHIPS_CHANGED
+^^^^^^^^^^^^^^^^^^
 
 
-HUD_COMPONENT
-==============
+ HUD_COMPONENT
+^^^^^^^^^^^^^^
 
 * HUD_COMPONENT()
 * INITIALISE(mc)
@@ -2588,8 +2588,8 @@ HUD_COMPONENT
 * SET_HUD(hud)
 * destroy()
 
-HUD_DIRECTOR_MODE
-==================
+ HUD_DIRECTOR_MODE
+^^^^^^^^^^^^^^^^^^
 
 * HUD_DIRECTOR_MODE()
 * INITIALISE(mc)
@@ -2602,8 +2602,8 @@ HUD_DIRECTOR_MODE
 * REMOVE()
 * getBottomCompOffset()
 
-HUD_DISTRICT_NAME
-==================
+ HUD_DISTRICT_NAME
+^^^^^^^^^^^^^^^^^^
 
 * HUD_DISTRICT_NAME()
 * READY(id)
@@ -2614,15 +2614,15 @@ HUD_DISTRICT_NAME
 * HIDE()
 * REMOVE()
 
-HUD_DRUGS_PURSE
-================
+ HUD_DRUGS_PURSE
+^^^^^^^^^^^^^^^^
 
 * HUD_DRUGS_PURSE()
 * SET_DRUG_AMOUNT_AND_TYPE(params)
 * REMOVE_DRUG_PURSE()
 
-HUD_FLOATING_HELP_TEXT
-=======================
+ HUD_FLOATING_HELP_TEXT
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * HUD_FLOATING_HELP_TEXT()
 * INITIALISE(mc)
@@ -2644,19 +2644,19 @@ HUD_FLOATING_HELP_TEXT
 * COORDS_TO_SCREEN(posX, posY)
 * clamp(value, min, max)
 
-HUD_FLOATING_HELP_TEXT_1
-=========================
+ HUD_FLOATING_HELP_TEXT_1
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * HUD_FLOATING_HELP_TEXT_1()
 * INITIALISE(mc)
 
-HUD_FLOATING_HELP_TEXT_2
-=========================
+ HUD_FLOATING_HELP_TEXT_2
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * HUD_FLOATING_HELP_TEXT_2()
 
-HUD_HELP_TEXT
-==============
+ HUD_HELP_TEXT
+^^^^^^^^^^^^^^
 
 * HUD_HELP_TEXT()
 * INITIALISE(mc)
@@ -2678,12 +2678,12 @@ HUD_HELP_TEXT
 * UNLOAD_MOVIE()
 * logHelpTextDisplayStatus(Name)
 
-HUD_HELP_TEXT_BIG
-==================
+ HUD_HELP_TEXT_BIG
+^^^^^^^^^^^^^^^^^^
 
 
-HUD_MISSION_PASSED_MESSAGE
-===========================
+ HUD_MISSION_PASSED_MESSAGE
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * HUD_MISSION_PASSED_MESSAGE()
 * READY(id)
@@ -2693,8 +2693,8 @@ HUD_MISSION_PASSED_MESSAGE
 * HIDE()
 * REMOVE()
 
-HUD_MP_CASH
-============
+ HUD_MP_CASH
+^^^^^^^^^^^^
 
 * HUD_MP_CASH()
 * INITIALISE(mc)
@@ -2706,8 +2706,8 @@ HUD_MP_CASH
 * HIDE()
 * REMOVE()
 
-HUD_MP_INVENTORY
-=================
+ HUD_MP_INVENTORY
+^^^^^^^^^^^^^^^^^
 
 * HUD_MP_INVENTORY()
 * INITIALISE(mc)
@@ -2715,8 +2715,8 @@ HUD_MP_INVENTORY
 * SHOW_MP_INVENTORY_ITEM(params)
 * REMOVE_MP_INVENTORY_ITEM()
 
-HUD_MP_MESSAGE
-===============
+ HUD_MP_MESSAGE
+^^^^^^^^^^^^^^^
 
 * HUD_MP_MESSAGE()
 * READY(id)
@@ -2726,8 +2726,8 @@ HUD_MP_MESSAGE
 * HIDE()
 * REMOVE()
 
-HUD_MULTIPLAYER_CHAT
-=====================
+ HUD_MULTIPLAYER_CHAT
+^^^^^^^^^^^^^^^^^^^^^
 
 * HUD_MULTIPLAYER_CHAT()
 * INITIALISE(mc)
@@ -2744,8 +2744,8 @@ HUD_MULTIPLAYER_CHAT
 * HIDE()
 * REMOVE()
 
-HUD_PLAYER_SWITCH_ALERT
-========================
+ HUD_PLAYER_SWITCH_ALERT
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * HUD_PLAYER_SWITCH_ALERT()
 * INITIALISE(mc)
@@ -2762,8 +2762,8 @@ HUD_PLAYER_SWITCH_ALERT
 * DESTROY()
 * debug()
 
-HUD_RADIO_STATIONS_WHEEL
-=========================
+ HUD_RADIO_STATIONS_WHEEL
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * HUD_RADIO_STATIONS_WHEEL()
 * INITIALISE(mc)
@@ -2783,12 +2783,12 @@ HUD_RADIO_STATIONS_WHEEL
 * HIDE_RADIO_STATIONS()
 * REMOVE()
 
-HUD_RADIO_WHEEL
-================
+ HUD_RADIO_WHEEL
+^^^^^^^^^^^^^^^^
 
 
-HUD_RETICLE
-============
+ HUD_RETICLE
+^^^^^^^^^^^^
 
 * HUD_RETICLE()
 * READY(id)
@@ -2840,8 +2840,8 @@ HUD_RETICLE
 * getDialAngle(minRot, maxRot, scale, isClockwise)
 * REMOVE()
 
-HUD_SAVING
-===========
+ HUD_SAVING
+^^^^^^^^^^^
 
 * HUD_SAVING()
 * INITIALISE(mc)
@@ -2853,8 +2853,8 @@ HUD_SAVING
 * HIDE_SAVING()
 * REMOVE()
 
-HUD_STREET_NAME
-================
+ HUD_STREET_NAME
+^^^^^^^^^^^^^^^^
 
 * HUD_STREET_NAME()
 * READY(id)
@@ -2865,8 +2865,8 @@ HUD_STREET_NAME
 * HIDE()
 * REMOVE()
 
-HUD_SUBTITLE_TEXT
-==================
+ HUD_SUBTITLE_TEXT
+^^^^^^^^^^^^^^^^^^
 
 * HUD_SUBTITLE_TEXT()
 * INITIALISE(mc)
@@ -2878,12 +2878,12 @@ HUD_SUBTITLE_TEXT
 * REMOVE()
 * parseForGamerTag(str, size, textField)
 
-HUD_SUBTITLE_TEXT_BIG
-======================
+ HUD_SUBTITLE_TEXT_BIG
+^^^^^^^^^^^^^^^^^^^^^^
 
 
-HUD_VEHICLE_NAME
-=================
+ HUD_VEHICLE_NAME
+^^^^^^^^^^^^^^^^^
 
 * HUD_VEHICLE_NAME()
 * READY(id)
@@ -2894,8 +2894,8 @@ HUD_VEHICLE_NAME
 * HIDE()
 * REMOVE()
 
-HUD_WANTED_STARS
-=================
+ HUD_WANTED_STARS
+^^^^^^^^^^^^^^^^^
 
 * HUD_WANTED_STARS()
 * INITIALISE(mc)
@@ -2908,8 +2908,8 @@ HUD_WANTED_STARS
 * STAY_OFF_SCREEN()
 * REMOVE()
 
-HUD_WEAPON_ICON
-================
+ HUD_WEAPON_ICON
+^^^^^^^^^^^^^^^^
 
 * HUD_WEAPON_ICON()
 * INITIALISE(mc)
@@ -2931,8 +2931,8 @@ HUD_WEAPON_ICON
 * REMOVE()
 * setAsActive()
 
-HUD_WEAPON_WHEEL
-=================
+ HUD_WEAPON_WHEEL
+^^^^^^^^^^^^^^^^^
 
 * HUD_WEAPON_WHEEL()
 * INITIALISE(mc)
@@ -2966,8 +2966,8 @@ HUD_WEAPON_WHEEL
 * SET_WHEEL_IN_CAR_MODE(params)
 * hideArrows()
 
-HUD_WEAPON_WHEEL_STATS
-=======================
+ HUD_WEAPON_WHEEL_STATS
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * HUD_WEAPON_WHEEL_STATS()
 * INITIALISE(mc)
@@ -2980,8 +2980,8 @@ HUD_WEAPON_WHEEL_STATS
 * CLEAR_STATS_LABELS_AND_VALUES()
 * SET_STATS_VISIBILITY(params)
 
-IAA_HEIST_BOARD
-================
+ IAA_HEIST_BOARD
+^^^^^^^^^^^^^^^^
 
 * IAA_HEIST_BOARD()
 * initialise(mc)
@@ -3029,8 +3029,8 @@ IAA_HEIST_BOARD
 * setLocalisedText(tf, label)
 * setEllipsis(label, tf)
 
-IMPORT_EXPORT_WAREHOUSE
-========================
+ IMPORT_EXPORT_WAREHOUSE
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * IMPORT_EXPORT_WAREHOUSE()
 * initialise(mc)
@@ -3057,8 +3057,8 @@ IMPORT_EXPORT_WAREHOUSE
 * getCollectionFromStaticDataById(id)
 * createVehicleClasses()
 
-JOB_LIST
-=========
+ JOB_LIST
+^^^^^^^^^
 
 * JOB_LIST()
 * construct()
@@ -3067,16 +3067,16 @@ JOB_LIST
 * setupJob(selected)
 * parseForGamerName(TF, str)
 
-LESTER_HACK_PC
-===============
+ LESTER_HACK_PC
+^^^^^^^^^^^^^^^
 
 * LESTER_HACK_PC()
 * INITIALISE(mc)
 * SHOW_IFINDER_POPUP()
 * HIDE_IFINDER_POPUP()
 
-LETTER_SCRAPS
-==============
+ LETTER_SCRAPS
+^^^^^^^^^^^^^^
 
 * LETTER_SCRAPS()
 * INITIALISE(mc)
@@ -3084,20 +3084,20 @@ LETTER_SCRAPS
 * ADD_TO_LETTER_TEXT(str)
 * SET_BG_VISIBILITY(value)
 
-MARKER
-=======
+ MARKER
+^^^^^^^
 
 
-MARKER_LEFT
-============
+ MARKER_LEFT
+^^^^^^^^^^^^
 
 
-MARKER_RIGHT
-=============
+ MARKER_RIGHT
+^^^^^^^^^^^^^
 
 
-MESSAGE_LIST
-=============
+ MESSAGE_LIST
+^^^^^^^^^^^^^
 
 * MESSAGE_LIST()
 * construct()
@@ -3105,8 +3105,8 @@ MESSAGE_LIST
 * setState(item, isActive)
 * parseForGamerName(TF, str)
 
-MESSAGE_VIEW
-=============
+ MESSAGE_VIEW
+^^^^^^^^^^^^^
 
 * MESSAGE_VIEW()
 * construct()
@@ -3118,8 +3118,8 @@ MESSAGE_VIEW
 * onLoadInit(target_mc)
 * CLEAN_UP_DATA()
 
-MIDSIZED_MESSAGE
-=================
+ MIDSIZED_MESSAGE
+^^^^^^^^^^^^^^^^^
 
 * MIDSIZED_MESSAGE()
 * INITIALISE(mc)
@@ -3132,8 +3132,8 @@ MIDSIZED_MESSAGE
 * parseForGamerTagTitleFonts(tf, str, stdPtSize)
 * getFontSizeFit(gamerName, fontSize, widthToFit)
 
-MISSION_COMPLETE
-=================
+ MISSION_COMPLETE
+^^^^^^^^^^^^^^^^^
 
 * MISSION_COMPLETE()
 * INITIALISE(mc)
@@ -3152,8 +3152,8 @@ MISSION_COMPLETE
 * animateInComplete()
 * resizeBackground()
 
-MISSION_QUIT
-=============
+ MISSION_QUIT
+^^^^^^^^^^^^^
 
 * MISSION_QUIT()
 * INITIALISE(mc)
@@ -3162,16 +3162,16 @@ MISSION_QUIT
 * TRANSITION_OUT(duration)
 * _handleTransitionOutComplete()
 
-MISSION_REPEAT_LIST
-====================
+ MISSION_REPEAT_LIST
+^^^^^^^^^^^^^^^^^^^^
 
 * MISSION_REPEAT_LIST()
 * construct()
 * populateContent()
 * setState(item, isActive)
 
-MISSION_TARGET_COMPLETE
-========================
+ MISSION_TARGET_COMPLETE
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * MISSION_TARGET_COMPLETE()
 * INITIALISE(mc)
@@ -3181,15 +3181,15 @@ MISSION_TARGET_COMPLETE
 * onShow()
 * HIDE(_fadeTime)
 
-MORGUE_LAPTOP
-==============
+ MORGUE_LAPTOP
+^^^^^^^^^^^^^^
 
 * MORGUE_LAPTOP()
 * initialise(mc)
 * SET_PROGRESS_PERCENT(percent)
 
-MP_AWARD_BASE
-==============
+ MP_AWARD_BASE
+^^^^^^^^^^^^^^
 
 * MP_AWARD_BASE()
 * SET_DISPLAY_CONFIG(_screenWidthPixels, _screenHeightPixels, _safeTopPercent, _safeBottomPercent, _safeLeftPercent, _safeRightPercent, _isWideScreen, _isHiDef)
@@ -3201,8 +3201,8 @@ MP_AWARD_BASE
 * OVERRIDE_Y_POSITION(newYPosition)
 * debug()
 
-MP_AWARD_FREEMODE
-==================
+ MP_AWARD_FREEMODE
+^^^^^^^^^^^^^^^^^^
 
 * MP_AWARD_FREEMODE()
 * INITIALISE(mc, fileName)
@@ -3212,8 +3212,8 @@ MP_AWARD_FREEMODE
 * ADD_TXD_REF_RESPONSE(textureDict, uniqueStr, success)
 * debug()
 
-MP_BIG_MESSAGE_FREEMODE
-========================
+ MP_BIG_MESSAGE_FREEMODE
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * MP_BIG_MESSAGE_FREEMODE()
 * INITIALISE(mc)
@@ -3277,8 +3277,8 @@ MP_BIG_MESSAGE_FREEMODE
 * saveStrapStateOnAnimate()
 * debug()
 
-MP_BOUNTY_BOARD
-================
+ MP_BOUNTY_BOARD
+^^^^^^^^^^^^^^^^
 
 * MP_BOUNTY_BOARD()
 * INITIALISE(mc)
@@ -3286,8 +3286,8 @@ MP_BOUNTY_BOARD
 * loadComponent(txd, texture)
 * TXD_HAS_LOADED(textureDict, success)
 
-MP_CAR_STATS
-=============
+ MP_CAR_STATS
+^^^^^^^^^^^^^
 
 * MP_CAR_STATS()
 * INITIALISE(mc, fileName)
@@ -3297,8 +3297,8 @@ MP_CAR_STATS
 * loadTexture(txd, texture)
 * debug()
 
-MP_CELEBRATION
-===============
+ MP_CELEBRATION
+^^^^^^^^^^^^^^^
 
 * MP_CELEBRATION()
 * SET_DISPLAY_CONFIG(_screenWidthPixels, _screenHeightPixels, _safeTopPercent, _safeBottomPercent, _safeLeftPercent, _safeRightPercent, _isWideScreen, _isHiDef)
@@ -3385,8 +3385,8 @@ MP_CELEBRATION
 * syncPointClear()
 * createDelegate(scope, method)
 
-MP_CORONA_PLAYER_INFO
-======================
+ MP_CORONA_PLAYER_INFO
+^^^^^^^^^^^^^^^^^^^^^^
 
 * MP_CORONA_PLAYER_INFO()
 * INITIALISE(mc)
@@ -3398,23 +3398,23 @@ MP_CORONA_PLAYER_INFO
 * checkForCollisions()
 * checkCollisionAgainst(itemMC)
 
-MP_CREW_TAG
-============
+ MP_CREW_TAG
+^^^^^^^^^^^^
 
 * MP_CREW_TAG()
 * INITIALISE(mc)
 * SET_CREW_TAG(crewTypeIsPrivate, crewTagContainsRockstar, crewTag, founderOrRank)
 * debug()
 
-MP_FREEMODE_CHECKPOINT_BASE
-============================
+ MP_FREEMODE_CHECKPOINT_BASE
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * MP_FREEMODE_CHECKPOINT_BASE()
 * INITIALISE(mc)
 * SET_CHECKPOINT_TEXT(str)
 
-MP_FREEMODE_PLAYER_LIST
-========================
+ MP_FREEMODE_PLAYER_LIST
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * MP_FREEMODE_PLAYER_LIST()
 * INITIALISE(mc)
@@ -3439,15 +3439,15 @@ MP_FREEMODE_PLAYER_LIST
 * ADD_TXD_REF_RESPONSE(textureDict, uniqueID, success)
 * ON_DESTROY()
 
-MP_GAMER_INFO
-==============
+ MP_GAMER_INFO
+^^^^^^^^^^^^^^
 
 * MP_GAMER_INFO()
 * SET_GAMERNAME_AND_PACKED_CREW_TAG(gamerName, crewTag)
 * debug()
 
-MP_MATCHMAKING_CARD
-====================
+ MP_MATCHMAKING_CARD
+^^^^^^^^^^^^^^^^^^^^
 
 * MP_MATCHMAKING_CARD()
 * INITIALISE(mc)
@@ -3467,8 +3467,8 @@ MP_MATCHMAKING_CARD
 * ADD_TXD_REF_RESPONSE(textureDict, uniqueID, success)
 * ON_DESTROY()
 
-MP_MATCHMAKING_SELECTOR
-========================
+ MP_MATCHMAKING_SELECTOR
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * MP_MATCHMAKING_SELECTOR()
 * INITIALISE(mc)
@@ -3491,8 +3491,8 @@ MP_MATCHMAKING_SELECTOR
 * SET_COLOUR(colour)
 * SET_COLOUR_TYPE(colourType)
 
-MP_MATCHMAKING_VEHICLE_INFO
-============================
+ MP_MATCHMAKING_VEHICLE_INFO
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * MP_MATCHMAKING_VEHICLE_INFO()
 * INITIALISE(mc)
@@ -3503,8 +3503,8 @@ MP_MATCHMAKING_VEHICLE_INFO
 * TXD_ALREADY_LOADED(textureDict, uniqueID)
 * resizeBG()
 
-MP_MENU_GLARE
-==============
+ MP_MENU_GLARE
+^^^^^^^^^^^^^^
 
 * MP_MENU_GLARE()
 * INITIALISE(mc)
@@ -3513,8 +3513,8 @@ MP_MENU_GLARE
 * SET_DATA_SLOT(angle, triggerGlintAni)
 * _updateDisplay()
 
-MP_MISSION_NAME_FREEMODE
-=========================
+ MP_MISSION_NAME_FREEMODE
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * MP_MISSION_NAME_FREEMODE()
 * INITIALISE(mc)
@@ -3524,8 +3524,8 @@ MP_MISSION_NAME_FREEMODE
 * centreInformation(hasName, mc)
 * debug()
 
-MP_MM_CARD_FREEMODE
-====================
+ MP_MM_CARD_FREEMODE
+^^^^^^^^^^^^^^^^^^^^
 
 * MP_MM_CARD_FREEMODE()
 * INITIALISE(mc)
@@ -3543,8 +3543,8 @@ MP_MM_CARD_FREEMODE
 * TXD_ALREADY_LOADED(textureDict, uniqueID)
 * ADD_TXD_REF_RESPONSE(textureDict, uniqueID, success)
 
-MP_NEXT_JOB_SELECTION
-======================
+ MP_NEXT_JOB_SELECTION
+^^^^^^^^^^^^^^^^^^^^^^
 
 * MP_NEXT_JOB_SELECTION()
 * INITIALISE(mc)
@@ -3569,8 +3569,8 @@ MP_NEXT_JOB_SELECTION
 * CLEANUP_MOVIE()
 * SET_ITEMS_GREYED_OUT(value)
 
-MP_PLAYER_CARD
-===============
+ MP_PLAYER_CARD
+^^^^^^^^^^^^^^^
 
 * MP_PLAYER_CARD()
 * DISPLAY_VIEW()
@@ -3580,8 +3580,8 @@ MP_PLAYER_CARD
 * SET_DESCRIPTION(descStr, descType, crewTagStr)
 * SET_DATA_SLOT_EMPTY()
 
-MP_RANK_BAR
-============
+ MP_RANK_BAR
+^^^^^^^^^^^^
 
 * MP_RANK_BAR()
 * INITIALISE()
@@ -3608,8 +3608,8 @@ MP_RANK_BAR
 * REMOVE()
 * debug()
 
-MP_RESULTS_PANEL
-=================
+ MP_RESULTS_PANEL
+^^^^^^^^^^^^^^^^^
 
 * MP_RESULTS_PANEL()
 * INITIALISE(mc)
@@ -3623,8 +3623,8 @@ MP_RESULTS_PANEL
 * updateDisplay()
 * ApplyHudColourToTF(tf, colourId)
 
-MP_SPECTATOR_CARD
-==================
+ MP_SPECTATOR_CARD
+^^^^^^^^^^^^^^^^^^
 
 * MP_SPECTATOR_CARD()
 * INITIALISE(mc)
@@ -3652,8 +3652,8 @@ MP_SPECTATOR_CARD
 * REMOVE_FROM_SESSION_BY_ID(id)
 * SET_TIME_BY_ID(id, time)
 
-MP_SPECTATOR_OVERLAY
-=====================
+ MP_SPECTATOR_OVERLAY
+^^^^^^^^^^^^^^^^^^^^^
 
 * MP_SPECTATOR_OVERLAY()
 * INITIALISE(mc)
@@ -3676,8 +3676,8 @@ MP_SPECTATOR_OVERLAY
 * _positionLowerThird()
 * _howWide(target)
 
-MP_UNLOCKS_FREEMODE
-====================
+ MP_UNLOCKS_FREEMODE
+^^^^^^^^^^^^^^^^^^^^
 
 * MP_UNLOCKS_FREEMODE()
 * INITIALISE(mc, fileName)
@@ -3687,15 +3687,15 @@ MP_UNLOCKS_FREEMODE
 * SHOW_BRIDGES_KNIVES_PROGRESS(title, totalToDo, message, info, completed)
 * debug()
 
-MUGSHOT_BOARD
-==============
+ MUGSHOT_BOARD
+^^^^^^^^^^^^^^
 
 * MUGSHOT_BOARD()
 * INITIALISE(mc)
 * SET_BOARD(headerStr, numStr, footerStr, importedStr, importCol, rankNum, rankCol)
 
-MULTIPLAYER_CHAT
-=================
+ MULTIPLAYER_CHAT
+^^^^^^^^^^^^^^^^^
 
 * MULTIPLAYER_CHAT()
 * INITIALISE(mc)
@@ -3720,8 +3720,8 @@ MULTIPLAYER_CHAT
 * PAGE_DOWN()
 * RESET()
 
-NEW_EDITOR
-===========
+ NEW_EDITOR
+^^^^^^^^^^^
 
 * NEW_EDITOR()
 * SET_DISPLAY_CONFIG(_screenWidthPixels, _screenHeightPixels, _safeTopPercent, _safeBottomPercent, _safeLeftPercent, _safeRightPercent, _isWideScreen, _isHiDef, _isAsian)
@@ -3782,8 +3782,8 @@ NEW_EDITOR
 * SET_PLAYBACK_MENU_VISIBLE(isVisible)
 * initColourGrabbing()
 
-NEW_HUD
-========
+ NEW_HUD
+^^^^^^^^
 
 * NEW_HUD()
 * SET_CHARACTER_COLOUR(colourEnum)
@@ -3802,8 +3802,8 @@ NEW_HUD
 * reorderList(listID)
 * createComponentMovieClip(currentComp)
 
-NIGHTCLUB
-==========
+ NIGHTCLUB
+^^^^^^^^^^
 
 * NIGHTCLUB()
 * initialise(mc)
@@ -3838,16 +3838,16 @@ NIGHTCLUB
 * updateButtons()
 * TXD_HAS_LOADED(txd, success, id)
 
-OBSERVATORY_SCOPE
-==================
+ OBSERVATORY_SCOPE
+^^^^^^^^^^^^^^^^^^
 
 * OBSERVATORY_SCOPE()
 * INITIALISE(mc)
 * SET_DISPLAY_CONFIG(_screenWidthPixels, _screenHeightPixels, _safeTopPercent, _safeBottomPercent, _safeLeftPercent, _safeRightPercent, _isWideScreen, _isHiDef, _isAsian)
 * initScreenLayout()
 
-OPEN_WHEEL_HEALTH_INDICATOR
-============================
+ OPEN_WHEEL_HEALTH_INDICATOR
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * OPEN_WHEEL_HEALTH_INDICATOR()
 * colorDestroyedPart(mc, isDestroyed)
@@ -3855,8 +3855,8 @@ OPEN_WHEEL_HEALTH_INDICATOR
 * SET_PART_TO_DESTROYED(part, isDestroyed)
 * SET_WHEEL_DAMAGE(setWheel, setDmg)
 
-ORBITAL_CANNON_CAM
-===================
+ ORBITAL_CANNON_CAM
+^^^^^^^^^^^^^^^^^^^
 
 * ORBITAL_CANNON_CAM()
 * INITIALISE(mc)
@@ -3881,8 +3881,8 @@ ORBITAL_CANNON_CAM
 * clamp(value, min, max)
 * setLocalisedText(tf, label)
 
-ORBITAL_CANNON_MAP
-===================
+ ORBITAL_CANNON_MAP
+^^^^^^^^^^^^^^^^^^^
 
 * ORBITAL_CANNON_MAP()
 * initialise(mc)
@@ -3894,16 +3894,16 @@ ORBITAL_CANNON_MAP
 * CANCEL_ANIMATION()
 * update()
 
-ORGANISATION_NAME
-==================
+ ORGANISATION_NAME
+^^^^^^^^^^^^^^^^^^
 
 * ORGANISATION_NAME()
 * INITIALISE(mc)
 * SET_ORGANISATION_NAME(str, styleIndex, colourIndex, fontIndex)
 * debug()
 
-OVERVIEW_BACKGROUND
-====================
+ OVERVIEW_BACKGROUND
+^^^^^^^^^^^^^^^^^^^^
 
 * OVERVIEW_BACKGROUND()
 * onPress()
@@ -3913,8 +3913,8 @@ OVERVIEW_BACKGROUND
 * onReleaseOutside()
 * sendMouseEvent(evt)
 
-OVERVIEW_SCROLLER
-==================
+ OVERVIEW_SCROLLER
+^^^^^^^^^^^^^^^^^^
 
 * OVERVIEW_SCROLLER()
 * onPress()
@@ -3924,8 +3924,8 @@ OVERVIEW_SCROLLER
 * onReleaseOutside()
 * sendMouseEvent(evt)
 
-PARTY_BUS
-==========
+ PARTY_BUS
+^^^^^^^^^^
 
 * PARTY_BUS()
 * INITIALISE(mc)
@@ -3942,8 +3942,8 @@ PARTY_BUS
 * SHOW_ANIMATION(index, showImmediately)
 * STROBE(normRate)
 
-PAUSE_MENU_AWARDS
-==================
+ PAUSE_MENU_AWARDS
+^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_AWARDS()
 * INITIALISE(mc)
@@ -3954,16 +3954,16 @@ PAUSE_MENU_AWARDS
 * SET_DATA_SLOT_EMPTY(viewIndex, itemIndex)
 * ON_DESTROY()
 
-PAUSE_MENU_BODY_CONFIG_LIST
-============================
+ PAUSE_MENU_BODY_CONFIG_LIST
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_BODY_CONFIG_LIST()
 * INITIALISE(mc)
 * SET_INPUT_EVENT(direction)
 * SET_HIGHLIGHT(i)
 
-PAUSE_MENU_CHARACTER_CARD
-==========================
+ PAUSE_MENU_CHARACTER_CARD
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_CHARACTER_CARD()
 * INITIALISE(mc)
@@ -3975,8 +3975,8 @@ PAUSE_MENU_CHARACTER_CARD
 * SET_TITLE(titleStr, desc)
 * SET_DESCRIPTION(helpStr, flashHelp)
 
-PAUSE_MENU_CHARACTER_SELECT
-============================
+ PAUSE_MENU_CHARACTER_SELECT
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_CHARACTER_SELECT()
 * INITIALISE(mc)
@@ -3987,14 +3987,14 @@ PAUSE_MENU_CHARACTER_SELECT
 * ON_DESTROY()
 * SetCharacterProperties(index, visible, highlight)
 
-PAUSE_MENU_CREW_COMPARISON_CARD
-================================
+ PAUSE_MENU_CREW_COMPARISON_CARD
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_CREW_COMPARISON_CARD()
 * INITIALISE(mc)
 
-PAUSE_MENU_CREW_RANKS
-======================
+ PAUSE_MENU_CREW_RANKS
+^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_CREW_RANKS()
 * INITIALISE(mc)
@@ -4004,8 +4004,8 @@ PAUSE_MENU_CREW_RANKS
 * getKeys()
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MENU_CREWS_CARD
-======================
+ PAUSE_MENU_CREWS_CARD
+^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_CREWS_CARD()
 * INITIALISE(mc, collapse)
@@ -4019,8 +4019,8 @@ PAUSE_MENU_CREWS_CARD
 * getKeys()
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MENU_CREWS_LIST
-======================
+ PAUSE_MENU_CREWS_LIST
+^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_CREWS_LIST()
 * INITIALISE(mc)
@@ -4033,8 +4033,8 @@ PAUSE_MENU_CREWS_LIST
 * SET_INPUT_EVENT(direction)
 * SET_DATA_SLOT_EMPTY(viewIndex, itemIndex)
 
-PAUSE_MENU_DIALOGUE_LIST
-=========================
+ PAUSE_MENU_DIALOGUE_LIST
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_DIALOGUE_LIST()
 * INITIALISE(mc)
@@ -4044,8 +4044,8 @@ PAUSE_MENU_DIALOGUE_LIST
 * DISPLAY_VIEW(viewIndex, itemIndex)
 * ON_DESTROY()
 
-PAUSE_MENU_FEED
-================
+ PAUSE_MENU_FEED
+^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_FEED()
 * INITIALISE(mc)
@@ -4056,15 +4056,15 @@ PAUSE_MENU_FEED
 * SET_DATA_SLOT_EMPTY(viewIndex, itemIndex)
 * ON_DESTROY()
 
-PAUSE_MENU_FREEMODE_MAP
-========================
+ PAUSE_MENU_FREEMODE_MAP
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_FREEMODE_MAP()
 * INITIALISE(mc)
 * SET_TITLE()
 
-PAUSE_MENU_FRIENDS_STATS_SP
-============================
+ PAUSE_MENU_FRIENDS_STATS_SP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_FRIENDS_STATS_SP()
 * INITIALISE(mc)
@@ -4074,8 +4074,8 @@ PAUSE_MENU_FRIENDS_STATS_SP
 * getKeys()
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MENU_GALLERY
-===================
+ PAUSE_MENU_GALLERY
+^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_GALLERY()
 * INITIALISE(mc)
@@ -4092,8 +4092,8 @@ PAUSE_MENU_GALLERY
 * SET_COMPONENT_HIDDEN()
 * SET_FOCUS(isFocused)
 
-PAUSE_MENU_HAIR_COLOUR_LIST
-============================
+ PAUSE_MENU_HAIR_COLOUR_LIST
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_HAIR_COLOUR_LIST()
 * INITIALISE(mc)
@@ -4110,8 +4110,8 @@ PAUSE_MENU_HAIR_COLOUR_LIST
 * UPDATE_SLOT(_viewIndex, _slotIndex)
 * SET_HIGHLIGHT(index)
 
-PAUSE_MENU_HERITAGE_CARD
-=========================
+ PAUSE_MENU_HERITAGE_CARD
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_HERITAGE_CARD()
 * INITIALISE(mc)
@@ -4123,8 +4123,8 @@ PAUSE_MENU_HERITAGE_CARD
 * getVisibleHeight()
 * ON_DESTROY()
 
-PAUSE_MENU_MAP
-===============
+ PAUSE_MENU_MAP
+^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_MAP()
 * INITIALISE(mc)
@@ -4138,8 +4138,8 @@ PAUSE_MENU_MAP
 * SET_SCROLL_BAR(currentPosition, maxPosition, maxVisible, caption)
 * updateScroll()
 
-PAUSE_MENU_MISSION_HELP_LIST
-=============================
+ PAUSE_MENU_MISSION_HELP_LIST
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_MISSION_HELP_LIST()
 * INITIALISE(mc)
@@ -4150,8 +4150,8 @@ PAUSE_MENU_MISSION_HELP_LIST
 * SET_FOCUS(isFocused)
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MENU_MISSION_REPLAY_CARD
-===============================
+ PAUSE_MENU_MISSION_REPLAY_CARD
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_MISSION_REPLAY_CARD()
 * INITIALISE(mc)
@@ -4165,8 +4165,8 @@ PAUSE_MENU_MISSION_REPLAY_CARD
 * SET_MEDAL(medalColourEnum)
 * resizeBackground()
 
-PAUSE_MENU_NEWSWIRE
-====================
+ PAUSE_MENU_NEWSWIRE
+^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_NEWSWIRE()
 * INITIALISE()
@@ -4174,85 +4174,85 @@ PAUSE_MENU_NEWSWIRE
 * rollOut()
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MENU_PAGES_AWARDS
-========================
+ PAUSE_MENU_PAGES_AWARDS
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_AWARDS()
 * setupPage()
 * stateChanged(id)
 * onPageExit()
 
-PAUSE_MENU_PAGES_CHAR_MOM_DAD
-==============================
+ PAUSE_MENU_PAGES_CHAR_MOM_DAD
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_CHAR_MOM_DAD()
 * setupPage()
 * setupColumns()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_CHAR_SELECT
-=============================
+ PAUSE_MENU_PAGES_CHAR_SELECT
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_CHAR_SELECT()
 * INITIALISE(mc)
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_CORONA
-========================
+ PAUSE_MENU_PAGES_CORONA
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_CORONA()
 * setupPage()
 * stateChanged(id)
 * onPageExit()
 
-PAUSE_MENU_PAGES_CORONA_LOBBY
-==============================
+ PAUSE_MENU_PAGES_CORONA_LOBBY
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_CORONA_LOBBY()
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_CORONA_PLAYERS
-================================
+ PAUSE_MENU_PAGES_CORONA_PLAYERS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_CORONA_PLAYERS()
 * setupPage()
 * stateChanged(id)
 * onPageExit()
 
-PAUSE_MENU_PAGES_CORONA_RACE
-=============================
+ PAUSE_MENU_PAGES_CORONA_RACE
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_CORONA_RACE()
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_CREWS
-=======================
+ PAUSE_MENU_PAGES_CREWS
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_CREWS()
 * setupPage()
 * stateChanged(id)
 * onPageExit()
 
-PAUSE_MENU_PAGES_FRIENDS
-=========================
+ PAUSE_MENU_PAGES_FRIENDS
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_FRIENDS()
 * setupPage()
 * stateChanged(id)
 * onPageExit()
 
-PAUSE_MENU_PAGES_FRIENDS_MP
-============================
+ PAUSE_MENU_PAGES_FRIENDS_MP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_FRIENDS_MP()
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_GALLERY
-=========================
+ PAUSE_MENU_PAGES_GALLERY
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_GALLERY()
 * INITIALISE(mc)
@@ -4260,22 +4260,22 @@ PAUSE_MENU_PAGES_GALLERY
 * stateChanged(id)
 * onPageExit()
 
-PAUSE_MENU_PAGES_GAME
-======================
+ PAUSE_MENU_PAGES_GAME
+^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_GAME()
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_INFO
-======================
+ PAUSE_MENU_PAGES_INFO
+^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_INFO()
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_MAP
-=====================
+ PAUSE_MENU_PAGES_MAP
+^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_MAP()
 * setupPage()
@@ -4283,43 +4283,43 @@ PAUSE_MENU_PAGES_MAP
 * setScaledContent()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_MISSIONCREATOR
-================================
+ PAUSE_MENU_PAGES_MISSIONCREATOR
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_MISSIONCREATOR()
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_SAVE
-======================
+ PAUSE_MENU_PAGES_SAVE
+^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_SAVE()
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_STATS
-=======================
+ PAUSE_MENU_PAGES_STATS
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_STATS()
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_STORE
-=======================
+ PAUSE_MENU_PAGES_STORE
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_STORE()
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_PAGES_WEAPONS
-=========================
+ PAUSE_MENU_PAGES_WEAPONS
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_PAGES_WEAPONS()
 * setupPage()
 * stateChanged(id)
 
-PAUSE_MENU_REPLAY_LIST
-=======================
+ PAUSE_MENU_REPLAY_LIST
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_REPLAY_LIST()
 * INITIALISE(mc)
@@ -4328,8 +4328,8 @@ PAUSE_MENU_REPLAY_LIST
 * SET_DATA_SLOT_EMPTY(viewIndex, itemIndex)
 * DISPLAY_VIEW(viewIndex, itemIndex)
 
-PAUSE_MENU_SPCHAR_OVERLAYS
-===========================
+ PAUSE_MENU_SPCHAR_OVERLAYS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_SPCHAR_OVERLAYS()
 * INITIALISE(mc)
@@ -4341,8 +4341,8 @@ PAUSE_MENU_SPCHAR_OVERLAYS
 * TXD_HAS_LOADED(textureDict, success, uniqueID)
 * TXD_ALREADY_LOADED(textureDict, uniqueID)
 
-PAUSE_MENU_STATS_LIST
-======================
+ PAUSE_MENU_STATS_LIST
+^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_STATS_LIST()
 * INITIALISE(mc)
@@ -4354,22 +4354,22 @@ PAUSE_MENU_STATS_LIST
 * SET_FOCUS(isFocused)
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MENU_STATS_VERTICAL_LIST
-===============================
+ PAUSE_MENU_STATS_VERTICAL_LIST
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_STATS_VERTICAL_LIST()
 * INITIALISE(mc)
 * SET_HIGHLIGHT(i)
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MENU_STORE_NEWS
-======================
+ PAUSE_MENU_STORE_NEWS
+^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_STORE_NEWS()
 * INITIALISE(mc)
 
-PAUSE_MENU_TEXT_LIST_FULL
-==========================
+ PAUSE_MENU_TEXT_LIST_FULL
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_TEXT_LIST_FULL()
 * INITIALISE(mc)
@@ -4378,8 +4378,8 @@ PAUSE_MENU_TEXT_LIST_FULL
 * getKeys()
 * SET_INPUT_EVENT(direction)
 
-PAUSE_MENU_WEAPONS
-===================
+ PAUSE_MENU_WEAPONS
+^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MENU_WEAPONS()
 * INITIALISE(mc)
@@ -4389,15 +4389,15 @@ PAUSE_MENU_WEAPONS
 * DISPLAY_VIEW(viewIndex, itemIndex)
 * UPDATE_DATA_SLOT(_viewIndex, _slotIndex)
 
-PAUSE_MP_MENU_PLAYER_COMPARISON_CARD
-=====================================
+ PAUSE_MP_MENU_PLAYER_COMPARISON_CARD
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PAUSE_MP_MENU_PLAYER_COMPARISON_CARD()
 * INITIALISE(mc)
 * SET_TITLE(title)
 
-PLAYBACK_PANEL
-===============
+ PLAYBACK_PANEL
+^^^^^^^^^^^^^^^
 
 * PLAYBACK_PANEL()
 * SET_DISPLAY_CONFIG(screenWidthPixels, screenHeightPixels, safeTopPercent, safeBottomPercent, safeLeftPercent, safeRightPercent, isWideScreen, isHiDef, isAsian)
@@ -4408,8 +4408,8 @@ PLAYBACK_PANEL
 * updateButtonsPosition()
 * repositionButton(button)
 
-PLAYER_NAME
-============
+ PLAYER_NAME
+^^^^^^^^^^^^
 
 * PLAYER_NAME()
 * INITIALISE(mc)
@@ -4417,8 +4417,8 @@ PLAYER_NAME
 * SET_SPEAKER_STATE(state)
 * debug()
 
-PLAYER_SWITCH
-==============
+ PLAYER_SWITCH
+^^^^^^^^^^^^^^
 
 * PLAYER_SWITCH()
 * INITIALISE(mc, fileName)
@@ -4440,8 +4440,8 @@ PLAYER_SWITCH
 * setupMasking()
 * debug()
 
-PLAYER_SWITCH_STATS_PANEL
-==========================
+ PLAYER_SWITCH_STATS_PANEL
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * PLAYER_SWITCH_STATS_PANEL()
 * INITIALISE(mc)
@@ -4449,13 +4449,13 @@ PLAYER_SWITCH_STATS_PANEL
 * SHOW()
 * HIDE()
 
-PLAYHEAD_MARKER
-================
+ PLAYHEAD_MARKER
+^^^^^^^^^^^^^^^^
 
 * PLAYHEAD_MARKER()
 
-POWER_PLAY
-===========
+ POWER_PLAY
+^^^^^^^^^^^
 
 * POWER_PLAY()
 * INITIALISE(mc)
@@ -4472,8 +4472,8 @@ POWER_PLAY
 * SET_MESSAGE_VISIBILITY(isVisible)
 * log(str)
 
-POWER_PLAY_BIKER
-=================
+ POWER_PLAY_BIKER
+^^^^^^^^^^^^^^^^^
 
 * POWER_PLAY_BIKER()
 * INITIALISE(mc)
@@ -4487,8 +4487,8 @@ POWER_PLAY_BIKER
 * SET_MESSAGE_VISIBILITY(isVisible)
 * log(str)
 
-POWER_PLAY_DAY_NIGHT
-=====================
+ POWER_PLAY_DAY_NIGHT
+^^^^^^^^^^^^^^^^^^^^^
 
 * POWER_PLAY_DAY_NIGHT()
 * INITIALISE(mc)
@@ -4501,8 +4501,8 @@ POWER_PLAY_DAY_NIGHT
 * ACTIVATE_ICON(iconID, titleText, strapText, greyOtherIcons, teamColourID)
 * loop()
 
-POWER_PLAY_GENERIC
-===================
+ POWER_PLAY_GENERIC
+^^^^^^^^^^^^^^^^^^^
 
 * POWER_PLAY_GENERIC()
 * INITIALISE(mc)
@@ -4520,8 +4520,8 @@ POWER_PLAY_GENERIC
 * updateLayout()
 * layoutIconRow(iconDiameter, y, startIndex, endIndex)
 
-POWER_PLAY_SPECIAL_RACES
-=========================
+ POWER_PLAY_SPECIAL_RACES
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * POWER_PLAY_SPECIAL_RACES()
 * INITIALISE(mc)
@@ -4539,8 +4539,8 @@ POWER_PLAY_SPECIAL_RACES
 * SET_MESSAGE_VISIBILITY(isVisible)
 * initIcons(teamOneColourHex, teamTwoColourHex, teamThreeColourHex, teamFourColourHex)
 
-POWER_PLAY_TURF
-================
+ POWER_PLAY_TURF
+^^^^^^^^^^^^^^^^
 
 * POWER_PLAY_TURF()
 * INITIALISE(mc)
@@ -4558,8 +4558,8 @@ POWER_PLAY_TURF
 * SET_MESSAGE_VISIBILITY(isVisible)
 * log(str)
 
-POWER_PLAY_VEHICLE
-===================
+ POWER_PLAY_VEHICLE
+^^^^^^^^^^^^^^^^^^^
 
 * POWER_PLAY_VEHICLE()
 * INITIALISE(mc)
@@ -4574,15 +4574,15 @@ POWER_PLAY_VEHICLE
 * surpressIcons()
 * animateIcon(iconID, style)
 
-PSYCHOLOGY_REPORT
-==================
+ PSYCHOLOGY_REPORT
+^^^^^^^^^^^^^^^^^^
 
 * PSYCHOLOGY_REPORT()
 * INITIALISE(mc)
 * SET_PLAYER_NAME(gamerTitle, gamerTag, crewtag)
 
-RACE_MESSAGE
-=============
+ RACE_MESSAGE
+^^^^^^^^^^^^^
 
 * RACE_MESSAGE()
 * INITIALISE(mc)
@@ -4595,8 +4595,8 @@ RACE_MESSAGE
 * SET_MESSAGE_VISIBILITY(isVisible)
 * log(str)
 
-RACE_POSITION
-==============
+ RACE_POSITION
+^^^^^^^^^^^^^^
 
 * RACE_POSITION()
 * INITIALISE(mc)
@@ -4614,8 +4614,8 @@ RACE_POSITION
 * SET_RACE_RESULTS(_index, _position, _racer, _time)
 * SHOW_RACE_RESULTS(vis)
 
-RAMPAGE
-========
+ RAMPAGE
+^^^^^^^^
 
 * RAMPAGE()
 * INITIALISE(mc)
@@ -4628,8 +4628,8 @@ RAMPAGE
 * swapAlpha(_mc1, _mc2)
 * bounceBack(duration, _mc)
 
-REMOTE_SNIPER_HUD
-==================
+ REMOTE_SNIPER_HUD
+^^^^^^^^^^^^^^^^^^
 
 * REMOTE_SNIPER_HUD()
 * INITIALISE(mc)
@@ -4642,20 +4642,20 @@ REMOTE_SNIPER_HUD
 * SET_COMPASS(a)
 * setCompassPointPos(mc, a, index)
 
-REMOTE_SNIPER_LOADING
-======================
+ REMOTE_SNIPER_LOADING
+^^^^^^^^^^^^^^^^^^^^^^
 
 * REMOTE_SNIPER_LOADING()
 * INITIALISE(mc)
 * START_LOADING()
 
-ROUND_DECIMAL_PLACES
-=====================
+ ROUND_DECIMAL_PLACES
+^^^^^^^^^^^^^^^^^^^^^
 
 * ROUND_DECIMAL_PLACES()
 
-SAVING_FOOTER
-==============
+ SAVING_FOOTER
+^^^^^^^^^^^^^^
 
 * SAVING_FOOTER()
 * INITIALISE(mc)
@@ -4664,12 +4664,12 @@ SAVING_FOOTER
 * setSaveText(str)
 * setDropShadow()
 
-SCORE_CLIP
-===========
+ SCORE_CLIP
+^^^^^^^^^^^
 
 
-SECURITY_CAM
-=============
+ SECURITY_CAM
+^^^^^^^^^^^^^
 
 * SECURITY_CAM()
 * INITIALISE(mc)
@@ -4680,16 +4680,16 @@ SECURITY_CAM
 * SET_DETAILS(details)
 * SET_TIME(hh, mm, ss, tt)
 
-SECURITY_CAMERA
-================
+ SECURITY_CAMERA
+^^^^^^^^^^^^^^^^
 
 * SECURITY_CAMERA()
 * INITIALISE(mc)
 * SHOW_CAMERA_OVERLAY()
 * SHOW_STATIC()
 
-SECUROSERV
-===========
+ SECUROSERV
+^^^^^^^^^^^
 
 * SECUROSERV()
 * initialise(mc)
@@ -4720,8 +4720,8 @@ SECUROSERV
 * quit()
 * TXD_HAS_LOADED(txd, success, id)
 
-SETTINGS
-=========
+ SETTINGS
+^^^^^^^^^
 
 * SETTINGS()
 * construct()
@@ -4729,8 +4729,8 @@ SETTINGS
 * setIcon(target, menuIconFrameEnum)
 * setState(item, isActive)
 
-SHOP_MENU
-==========
+ SHOP_MENU
+^^^^^^^^^^
 
 * SHOP_MENU()
 * INITIALISE(mc)
@@ -4745,8 +4745,8 @@ SHOP_MENU
 * SHOW_SCROLL_HINTS(show)
 * SET_INPUT_EVENT(direction)
 
-SHOP_MENU_DLC
-==============
+ SHOP_MENU_DLC
+^^^^^^^^^^^^^^
 
 * SHOP_MENU_DLC()
 * INITIALISE(mc)
@@ -4763,8 +4763,8 @@ SHOP_MENU_DLC
 * SHOW_SCROLL_HINTS()
 * SET_INPUT_EVENT(direction)
 
-SHUTTER
-========
+ SHUTTER
+^^^^^^^^
 
 * SHUTTER()
 * construct()
@@ -4772,8 +4772,8 @@ SHUTTER
 * CLEAN_UP_DATA()
 * CLOSE_APP()
 
-SLOT_MACHINE
-=============
+ SLOT_MACHINE
+^^^^^^^^^^^^^
 
 * SLOT_MACHINE()
 * initialise(mc)
@@ -4786,8 +4786,8 @@ SLOT_MACHINE
 * colorSlotNumbers(colorValue)
 * resizeAsianText(tf)
 
-SOCIAL_CLUB_TV
-===============
+ SOCIAL_CLUB_TV
+^^^^^^^^^^^^^^^
 
 * SOCIAL_CLUB_TV()
 * INITIALISE(mc)
@@ -4803,8 +4803,8 @@ SOCIAL_CLUB_TV
 * _positionLowerThird()
 * _howWide(target)
 
-SP_PLAYER_CARD
-===============
+ SP_PLAYER_CARD
+^^^^^^^^^^^^^^^
 
 * SP_PLAYER_CARD()
 * INITIALISE(mc)
@@ -4816,21 +4816,21 @@ SP_PLAYER_CARD
 * lineToPtOnWheel(angle)
 * SET_DATA_SLOT_EMPTY()
 
-SP_PLAYER_COMPARISON_CARD
-==========================
+ SP_PLAYER_COMPARISON_CARD
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * SP_PLAYER_COMPARISON_CARD()
 * getMovieID()
 
-SPEED_INDICATOR
-================
+ SPEED_INDICATOR
+^^^^^^^^^^^^^^^^
 
 * SPEED_INDICATOR()
 * INIT_SPEED_INDICATOR(stateId, width)
 * DISPOSE()
 
-SPLASH_TEXT
-============
+ SPLASH_TEXT
+^^^^^^^^^^^^
 
 * SPLASH_TEXT()
 * INITIALISE(mc)
@@ -4843,12 +4843,12 @@ SPLASH_TEXT
 * _handleTransitionOutComplete()
 * IS_SPLASH_TEXT_VISIBLE()
 
-SPPED_INDICATOR
-================
+ SPPED_INDICATOR
+^^^^^^^^^^^^^^^^
 
 
-STAGE
-======
+ STAGE
+^^^^^^
 
 * STAGE()
 * SET_STAGE_TEXT(str)
@@ -4858,12 +4858,12 @@ STAGE
 * onReleaseOutside()
 * sendMouseEvent(evt)
 
-STAGE_CLIP
-===========
+ STAGE_CLIP
+^^^^^^^^^^^
 
 
-STARTER_PACK_BROWSER
-=====================
+ STARTER_PACK_BROWSER
+^^^^^^^^^^^^^^^^^^^^^
 
 * STARTER_PACK_BROWSER()
 * initialise(mc)
@@ -4886,8 +4886,8 @@ STARTER_PACK_BROWSER
 * delegate(scope, method)
 * playSound(soundName)
 
-STORE_BACKGROUND
-=================
+ STORE_BACKGROUND
+^^^^^^^^^^^^^^^^^
 
 * STORE_BACKGROUND()
 * INITIALISE(mc)
@@ -4896,8 +4896,8 @@ STORE_BACKGROUND
 * scrollUp(mc, _speed)
 * scrollDown(mc, _speed)
 
-STORE_BLACKOUT
-===============
+ STORE_BLACKOUT
+^^^^^^^^^^^^^^^
 
 * STORE_BLACKOUT()
 * INITIALISE(mc)
@@ -4906,8 +4906,8 @@ STORE_BLACKOUT
 * FADE_TO_TRANSPARENT(_speed)
 * CALL_FADETOTRANSPARENT_COMPLETED()
 
-STORE_CONTENTIMAGE_LIST
-========================
+ STORE_CONTENTIMAGE_LIST
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * STORE_CONTENTIMAGE_LIST()
 * SETUP_COLUMN(mc, _menuBgCol, _blackCol, _whiteCol)
@@ -4926,8 +4926,8 @@ STORE_CONTENTIMAGE_LIST
 * SET_FOCUS(isFocused)
 * CURRENT_COLUMN(_column)
 
-STORE_DETAILS_LIST
-===================
+ STORE_DETAILS_LIST
+^^^^^^^^^^^^^^^^^^^
 
 * STORE_DETAILS_LIST()
 * SETUP_COLUMN(mc, _menuBgCol, _blackCol, _whiteCol)
@@ -4946,8 +4946,8 @@ STORE_DETAILS_LIST
 * CURRENT_COLUMN(_column)
 * parseLinebreaks(str)
 
-STORE_VERTICAL_LIST
-====================
+ STORE_VERTICAL_LIST
+^^^^^^^^^^^^^^^^^^^^
 
 * STORE_VERTICAL_LIST()
 * SETUP_COLUMN(mc, _menuBgCol, _blackCol, _whiteCol)
@@ -4962,8 +4962,8 @@ STORE_VERTICAL_LIST
 * SET_FOCUS(isFocused)
 * CURRENT_COLUMN(_column)
 
-STRENGTH_TEST_SCORE
-====================
+ STRENGTH_TEST_SCORE
+^^^^^^^^^^^^^^^^^^^^
 
 * STRENGTH_TEST_SCORE()
 * initialise(mc)
@@ -4972,8 +4972,8 @@ STRENGTH_TEST_SCORE
 * SET_HIGH_SCORE(value, countUpDuration, holdDuration, countDownDuration)
 * SET_INSTANT_HIGH_SCORE(value)
 
-STUNT_JUMPS
-============
+ STUNT_JUMPS
+^^^^^^^^^^^^
 
 * STUNT_JUMPS()
 * INITIALISE(mc)
@@ -4986,8 +4986,8 @@ STUNT_JUMPS
 * SHARD_SET_TEXT(bigText, msgText)
 * SHARD_ANIM_OUT(colID, animTime)
 
-SUB_CAM
-========
+ SUB_CAM
+^^^^^^^^
 
 * SUB_CAM()
 * INITIALISE(mc)
@@ -5000,8 +5000,8 @@ SUB_CAM
 * SET_CAM_ALT(a)
 * SET_CAM_CURSOR_POS(x, y)
 
-SUB_PC
-=======
+ SUB_PC
+^^^^^^^
 
 * SUB_PC()
 * INITIALISE(mc)
@@ -5038,8 +5038,8 @@ SUB_PC
 * TRIGGER_WARNING(num)
 * SET_BUTTON_ACTIVE(buttonEnum, isActive)
 
-TATTOO_BUTTONS
-===============
+ TATTOO_BUTTONS
+^^^^^^^^^^^^^^^
 
 * TATTOO_BUTTONS()
 * INITIALISE(mc)
@@ -5051,8 +5051,8 @@ TATTOO_BUTTONS
 * SET_STICK_POINTER_ANGLE(arAngle, color)
 * HIDE_STICK_POINTER()
 
-TAXI_DISPLAY
-=============
+ TAXI_DISPLAY
+^^^^^^^^^^^^^
 
 * TAXI_DISPLAY()
 * INITIALISE(mc)
@@ -5065,8 +5065,8 @@ TAXI_DISPLAY
 * UPDATE_DATA_SLOT(_slotIndex)
 * SET_DATA_SLOT_EMPTY()
 
-TEETH_PULLING
-==============
+ TEETH_PULLING
+^^^^^^^^^^^^^^
 
 * TEETH_PULLING()
 * INITIALISE(mc)
@@ -5078,8 +5078,8 @@ TEETH_PULLING
 * SET_TEETH_DEPTH(amount)
 * CLEANUP_MOVIE()
 
-TEXT_CANVAS
-============
+ TEXT_CANVAS
+^^^^^^^^^^^^
 
 * TEXT_CANVAS()
 * INITIALISE(mc)
@@ -5092,8 +5092,8 @@ TEXT_CANVAS
 * DISPOSE()
 * initCustomTemplate(templateTypeId)
 
-TEXT_CLIP
-==========
+ TEXT_CLIP
+^^^^^^^^^^
 
 * TEXT_CLIP()
 * SET_TEXT_WITH_WIDTH(str, bgWidth, showFadeOut)
@@ -5104,8 +5104,8 @@ TEXT_CLIP
 * onReleaseOutside()
 * sendMouseEvent(evt)
 
-TEXT_INPUT_BOX
-===============
+ TEXT_INPUT_BOX
+^^^^^^^^^^^^^^^
 
 * TEXT_INPUT_BOX()
 * INITIALISE(mc)
@@ -5122,16 +5122,16 @@ TEXT_INPUT_BOX
 * onMouseMove()
 * dispatchCursorLocationChange(bForceDispatch)
 
-TEXT_MESSAGE_LIST
-==================
+ TEXT_MESSAGE_LIST
+^^^^^^^^^^^^^^^^^^
 
 
-TEXT_MESSAGE_VIEW
-==================
+ TEXT_MESSAGE_VIEW
+^^^^^^^^^^^^^^^^^^
 
 
-TEXTFIELD
-==========
+ TEXTFIELD
+^^^^^^^^^^
 
 * TEXTFIELD()
 * INITIALISE(mc)
@@ -5143,27 +5143,27 @@ TEXTFIELD
 * startNewTextureLoad(txd, txn)
 * resizeBackground()
 
-THUMBNAIL_CLIP
-===============
+ THUMBNAIL_CLIP
+^^^^^^^^^^^^^^^
 
 
-TIMECODE_MC
-============
+ TIMECODE_MC
+^^^^^^^^^^^^
 
 * TIMECODE_MC()
 * SET_TIMECODE(str)
 * SET_RADIO_TRIMMING_LINE_VISIBILITY(isLineVisible, isIconVisible)
 
-TIMECODE_NEW
-=============
+ TIMECODE_NEW
+^^^^^^^^^^^^^
 
 
-TIMELINE_PANEL
-===============
+ TIMELINE_PANEL
+^^^^^^^^^^^^^^^
 
 
-TRAFFIC_CAM
-============
+ TRAFFIC_CAM
+^^^^^^^^^^^^
 
 * TRAFFIC_CAM()
 * INITIALISE(mc)
@@ -5175,8 +5175,8 @@ TRAFFIC_CAM
 * SET_CAM_DATE(day, hrs, min)
 * SET_DISPLAY_CONFIG(_screenWidthPixels, _screenHeightPixels, _safeTopPercent, _safeBottomPercent, _safeLeftPercent, _safeRightPercent, _isWideScreen, _isCircleAccept)
 
-TURRET_CAM
-===========
+ TURRET_CAM
+^^^^^^^^^^^
 
 * TURRET_CAM()
 * INITIALISE(mc)
@@ -5188,16 +5188,16 @@ TURRET_CAM
 * SET_ALT_FOV_HEADING(a, f, h)
 * SET_CAM_LOGO(value)
 
-TV_FRAME
-=========
+ TV_FRAME
+^^^^^^^^^
 
 * TV_FRAME()
 * INITIALISE(mc)
 * initScreenLayout()
 * SET_DISPLAY_CONFIG(_screenWidthPixels, _screenHeightPixels, _safeTopPercent, _safeBottomPercent, _safeLeftPercent, _safeRightPercent, _isWideScreen, _isHiDef, _isAsian)
 
-VAULT_DRILL
-============
+ VAULT_DRILL
+^^^^^^^^^^^^
 
 * VAULT_DRILL()
 * INITIALISE(mc)
@@ -5222,8 +5222,8 @@ VAULT_DRILL
 * flashDiscHighlight()
 * showNumber(value, view)
 
-VAULT_LASER
-============
+ VAULT_LASER
+^^^^^^^^^^^^
 
 * VAULT_LASER()
 * INITIALISE(mc)
@@ -5248,13 +5248,13 @@ VAULT_LASER
 * flashDiscHighlight()
 * showNumber(value, view)
 
-VIDEO_BUTTON_TYPES
-===================
+ VIDEO_BUTTON_TYPES
+^^^^^^^^^^^^^^^^^^^
 
 * VIDEO_BUTTON_TYPES()
 
-VIDEO_CLIP
-===========
+ VIDEO_CLIP
+^^^^^^^^^^^
 
 * VIDEO_CLIP()
 * onPress()
@@ -5264,8 +5264,8 @@ VIDEO_CLIP
 * onReleaseOutside()
 * sendMouseEvent(evt)
 
-WAREHOUSE
-==========
+ WAREHOUSE
+^^^^^^^^^^
 
 * WAREHOUSE()
 * initialise(mc)
@@ -5283,8 +5283,8 @@ WAREHOUSE
 * SET_MOUSE_INPUT(x, y)
 * TXD_HAS_LOADED(txd, success, id)
 
-WATERMARK
-==========
+ WATERMARK
+^^^^^^^^^^
 
 * WATERMARK()
 * SET_DISPLAY_CONFIG(_screenWidthPixels, _screenHeightPixels, _safeTopPercent, _safeBottomPercent, _safeLeftPercent, _safeRightPercent, isWideScreen, _isHiDef, _isAsian)
@@ -5300,8 +5300,8 @@ WATERMARK
 * resetMasksAndCounter()
 * calculatePercentageDifference(valueA, valueB)
 
-WIND_METER
-===========
+ WIND_METER
+^^^^^^^^^^^
 
 * WIND_METER()
 * INITIALISE(_mc)
@@ -5312,8 +5312,8 @@ WIND_METER
 * setCompass(a)
 * setCompassPoint(mc, a, index)
 
-XYZ
-====
+ XYZ
+^^^^
 
 * XYZ()
 * construct()
@@ -5321,24 +5321,24 @@ XYZ
 * populateContent()
 * CLOSE_APP()
 
-YACHT_NAME
-===========
+ YACHT_NAME
+^^^^^^^^^^^
 
 * YACHT_NAME()
 * INITIALISE(mc)
 * SET_YACHT_NAME(str, isWhiteText, country)
 * debug()
 
-YACHT_NAME_STERN
-=================
+ YACHT_NAME_STERN
+^^^^^^^^^^^^^^^^^
 
 * YACHT_NAME_STERN()
 * INITIALISE(mc)
 * SET_YACHT_NAME(str, isWhiteText, country)
 * debug()
 
-YOGA_BUTTONS
-=============
+ YOGA_BUTTONS
+^^^^^^^^^^^^^
 
 * YOGA_BUTTONS()
 * INITIALISE(mc)
@@ -5362,11 +5362,11 @@ YOGA_BUTTONS
 * SET_STICK_POINTER_HIGHLIGHT_ANGLE(buttonID, arAngle)
 * HIDE_STICK_POINTER(buttonID)
 
-generic_2
-##########
+ generic_2
+==========
 
-DIGITAL_SAFE_DISPLAY
-=====================
+ DIGITAL_SAFE_DISPLAY
+^^^^^^^^^^^^^^^^^^^^^
 
 * DIGITAL_SAFE_DISPLAY()
 * initialise(mc)
@@ -5380,8 +5380,8 @@ DIGITAL_SAFE_DISPLAY
 * clamp(value, min, max)
 * setChar(display, char)
 
-ISLAND_HEIST_BOARD
-===================
+ ISLAND_HEIST_BOARD
+^^^^^^^^^^^^^^^^^^^
 
 * ISLAND_HEIST_BOARD()
 * initialise(mc)
@@ -5417,8 +5417,8 @@ ISLAND_HEIST_BOARD
 * updateButtons(activeButtonIndex)
 * TXD_HAS_LOADED(txd, success, id)
 
-SUBMARINE_MISSILES
-===================
+ SUBMARINE_MISSILES
+^^^^^^^^^^^^^^^^^^^
 
 * SUBMARINE_MISSILES()
 * INITIALISE(mc)
@@ -5430,11 +5430,11 @@ SUBMARINE_MISSILES
 * updateFlash()
 * setLocalisedText(tf, label, letterSpacing)
 
-heist_mp
-#########
+ heist_mp
+=========
 
-HACKING_MESSAGE
-================
+ HACKING_MESSAGE
+^^^^^^^^^^^^^^^^
 
 * HACKING_MESSAGE()
 * INITIALISE(mc)
@@ -5444,8 +5444,8 @@ HACKING_MESSAGE
 * playUnlockSound()
 * initLesterBounce()
 
-HEIST_CELEBRATION
-==================
+ HEIST_CELEBRATION
+^^^^^^^^^^^^^^^^^^
 
 * HEIST_CELEBRATION()
 * INITIALISE(mc, type)
@@ -5475,8 +5475,8 @@ HEIST_CELEBRATION
 * getLocalisedText(label)
 * getColourFromId(id)
 
-HEIST_MP
-=========
+ HEIST_MP
+^^^^^^^^^
 
 * HEIST_MP()
 * INITIALISE(mc)
@@ -5543,14 +5543,14 @@ HEIST_MP
 * HIDE_ALL_TEXT()
 * CLEANUP()
 
-HEIST_PRE
-==========
+ HEIST_PRE
+^^^^^^^^^^
 
 * HEIST_PRE()
 * INITIALISE(mc)
 
-HEISTMAP_MP
-============
+ HEISTMAP_MP
+^^^^^^^^^^^^
 
 * HEISTMAP_MP()
 * INITIALISE(mc)
@@ -5593,16 +5593,16 @@ HEISTMAP_MP
 * checkIfMapIsStillDrawing()
 * executeZoomTrue()
 
-INTERIORS
-==========
+ INTERIORS
+^^^^^^^^^^
 
 * INTERIORS(TIMELINE)
 
-minigames
-##########
+ minigames
+==========
 
-AXE_OF_FURY
-============
+ AXE_OF_FURY
+^^^^^^^^^^^^
 
 * AXE_OF_FURY()
 * initialise(mc)
@@ -5620,8 +5620,8 @@ AXE_OF_FURY
 * FLASH_METER()
 * SET_IS_KEYBOARD_CONTROL(isKeyboard)
 
-DANCER
-=======
+ DANCER
+^^^^^^^
 
 * DANCER()
 * initialise(mc)
@@ -5645,8 +5645,8 @@ DANCER
 * fadePulse()
 * setIcon()
 
-DARTS_SCOREBOARD
-=================
+ DARTS_SCOREBOARD
+^^^^^^^^^^^^^^^^^
 
 * DARTS_SCOREBOARD()
 * INITIALISE(mc)
@@ -5660,8 +5660,8 @@ DARTS_SCOREBOARD
 * CLEAR_SCORES(playerID)
 * resetRow(playerID)
 
-DARTS_SCOREBOARD_BIKER
-=======================
+ DARTS_SCOREBOARD_BIKER
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * DARTS_SCOREBOARD_BIKER()
 * INITIALISE(mc)
@@ -5675,8 +5675,8 @@ DARTS_SCOREBOARD_BIKER
 * CLEAR_SCORES(playerID)
 * resetRow(playerID)
 
-DONT_CROSS_THE_LINE
-====================
+ DONT_CROSS_THE_LINE
+^^^^^^^^^^^^^^^^^^^^
 
 * DONT_CROSS_THE_LINE()
 * initialise(mc)
@@ -5701,8 +5701,8 @@ DONT_CROSS_THE_LINE
 * hudColourIsValid(hudColour)
 * setMic(mc, iconEnum)
 
-GOLF
-=====
+ GOLF
+^^^^^
 
 * GOLF()
 * INITIALISE(mc)
@@ -5734,8 +5734,8 @@ GOLF
 * SWING_METER_TRANSITION_IN()
 * SWING_METER_TRANSITION_OUT(duration)
 
-GOLF_FLOATING_UI
-=================
+ GOLF_FLOATING_UI
+^^^^^^^^^^^^^^^^^
 
 * GOLF_FLOATING_UI()
 * INITIALISE(mc)
@@ -5748,8 +5748,8 @@ GOLF_FLOATING_UI
 * TRANSITION_OUT(duration)
 * _handleTransitionOutComplete()
 
-HORSE_RACING_CONSOLE
-=====================
+ HORSE_RACING_CONSOLE
+^^^^^^^^^^^^^^^^^^^^^
 
 * HORSE_RACING_CONSOLE()
 * initialise(mc)
@@ -5781,8 +5781,8 @@ HORSE_RACING_CONSOLE
 * truncate(tf, txt, autoSize, letterSpacing)
 * playSound(soundName, soundSet)
 
-HORSE_RACING_WALL
-==================
+ HORSE_RACING_WALL
+^^^^^^^^^^^^^^^^^^
 
 * HORSE_RACING_WALL()
 * HORSE_RACING()
@@ -5810,8 +5810,8 @@ HORSE_RACING_WALL
 * resizeAsianText(tf)
 * playSound(soundName, soundSet)
 
-SC_LEADERBOARD
-===============
+ SC_LEADERBOARD
+^^^^^^^^^^^^^^^
 
 * SC_LEADERBOARD()
 * SCLeaderboard()
@@ -5831,8 +5831,8 @@ SC_LEADERBOARD
 * canUseFixedWidthNumbers(str, validChars)
 * updateDisplay()
 
-SPIN_THE_WHEEL
-===============
+ SPIN_THE_WHEEL
+^^^^^^^^^^^^^^^
 
 * SPIN_THE_WHEEL()
 * initialise(mc)
@@ -5841,8 +5841,8 @@ SPIN_THE_WHEEL
 * SPIN_WHEEL(targetSegment, numFullSpins, totalDuration, winPauseDuration, winIcon, winMessage)
 * SET_LABEL_TEXT(text, isRedText)
 
-TENNIS
-=======
+ TENNIS
+^^^^^^^
 
 * TENNIS()
 * INITIALISE(mc)
@@ -5867,40 +5867,40 @@ TENNIS
 * SWING_METER_TRANSITION_IN()
 * SWING_METER_TRANSITION_OUT(duration)
 
-minimap
-########
+ minimap
+========
 
-FOG_MC
-=======
+ FOG_MC
+^^^^^^^
 
 
-GOLF_COURSE
-============
+ GOLF_COURSE
+^^^^^^^^^^^^
 
 * GOLF_COURSE(TIMELINE)
 
-GREEN_AND_FRIENDLY
-===================
+ GREEN_AND_FRIENDLY
+^^^^^^^^^^^^^^^^^^^
 
 * GREEN_AND_FRIENDLY()
 
-GREEN_AND_NET_PLAYER1
-======================
+ GREEN_AND_NET_PLAYER1
+^^^^^^^^^^^^^^^^^^^^^^
 
 * GREEN_AND_NET_PLAYER1()
 
-GREEN_AND_NET_PLAYER2
-======================
+ GREEN_AND_NET_PLAYER2
+^^^^^^^^^^^^^^^^^^^^^^
 
 * GREEN_AND_NET_PLAYER2()
 
-GREEN_AND_NET_PLAYER3
-======================
+ GREEN_AND_NET_PLAYER3
+^^^^^^^^^^^^^^^^^^^^^^
 
 * GREEN_AND_NET_PLAYER3()
 
-MINIMAP
-========
+ MINIMAP
+^^^^^^^^
 
 * MINIMAP(mc)
 * REGISTER_HEALTH_ARMOUR(_healthContainer)
@@ -5971,8 +5971,8 @@ MINIMAP
 * SET_MP_PROPERTY_OWNER(propertyID, owner, owner2, owner3)
 * CYCLE_GANG_COLOURS(mc, propertyID, currentOwner, ownerArray)
 
-MINIMAP_MAIN_MAP
-=================
+ MINIMAP_MAIN_MAP
+^^^^^^^^^^^^^^^^^
 
 * MINIMAP_MAIN_MAP(mc)
 * REGISTER_MAP_LAYER(_MAP)
@@ -5984,25 +5984,25 @@ MINIMAP_MAIN_MAP
 * SET_BITMAP_MAP_ON(txd, xpos, ypos)
 * SET_BITMAP_MAP_OFF(txd)
 
-NET_PLAYER1_AND_NET_PLAYER2
-============================
+ NET_PLAYER1_AND_NET_PLAYER2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * NET_PLAYER1_AND_NET_PLAYER2()
 
-NET_PLAYER1_AND_NET_PLAYER3
-============================
+ NET_PLAYER1_AND_NET_PLAYER3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * NET_PLAYER1_AND_NET_PLAYER3()
 
-TXD_MC
-=======
+ TXD_MC
+^^^^^^^
 
 
-platform_pc
-############
+ platform_pc
+============
 
-GAMEPAD_CALIBRATION
-====================
+ GAMEPAD_CALIBRATION
+^^^^^^^^^^^^^^^^^^^^
 
 * GAMEPAD_CALIBRATION()
 * INITIALISE(mc)
@@ -6013,8 +6013,8 @@ GAMEPAD_CALIBRATION
 * SET_BUTTON_PRESS_STATE(isPressed, prompt)
 * END_CALIBRATION()
 
-LANGUAGE_SELECT
-================
+ LANGUAGE_SELECT
+^^^^^^^^^^^^^^^^
 
 * LANGUAGE_SELECT()
 * INITIALISE(mc)
@@ -6025,13 +6025,13 @@ LANGUAGE_SELECT
 * SET_LANGUAGES()
 * SET_HIGHLIGHT()
 
-PC_KEY
-=======
+ PC_KEY
+^^^^^^^
 
 * PC_KEY()
 
-TATTOO_KEYS
-============
+ TATTOO_KEYS
+^^^^^^^^^^^^
 
 * TATTOO_KEYS()
 * INITIALISE(mc)
@@ -6042,23 +6042,23 @@ TATTOO_KEYS
 * SET_STICK_POINTER_ANGLE(arAngle, color)
 * HIDE_STICK_POINTER()
 
-TEXTBTN_996
-============
+ TEXTBTN_996
+^^^^^^^^^^^^
 
 
-TEXTBTN_997
-============
+ TEXTBTN_997
+^^^^^^^^^^^^
 
 
-TEXTBTN_999
-============
+ TEXTBTN_999
+^^^^^^^^^^^^
 
 
-web
-####
+ web
+====
 
-FORECLOSURES_MAZE_D_BANK_COM
-=============================
+ FORECLOSURES_MAZE_D_BANK_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * FORECLOSURES_MAZE_D_BANK_COM()
 * POPULATE_TEXT(pageName, searchArgs, newPage)
@@ -6099,8 +6099,8 @@ FORECLOSURES_MAZE_D_BANK_COM
 * INITIALISE(mc)
 * setPage(pageName, PageClass)
 
-FORECLOSURES_MAZE_D_BANK_COM_WRAPPER
-=====================================
+ FORECLOSURES_MAZE_D_BANK_COM_WRAPPER
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * FORECLOSURES_MAZE_D_BANK_COM_WRAPPER()
 * TXD_HAS_LOADED(txd, success, id)
@@ -6116,35 +6116,35 @@ FORECLOSURES_MAZE_D_BANK_COM_WRAPPER
 * handleMouseClick(inputIsMouseClick)
 * handleMouseRelease()
 
-FORMAT_COLUMN
-==============
+ FORMAT_COLUMN
+^^^^^^^^^^^^^^
 
 * FORMAT_COLUMN()
 
-GENERIC_WEBSITE_SCRIPT
-=======================
+ GENERIC_WEBSITE_SCRIPT
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * GENERIC_WEBSITE_SCRIPT()
 * READY()
 * POPULATE_TEXT(pageName)
 
-MYSTOCKS_BUTTON
-================
+ MYSTOCKS_BUTTON
+^^^^^^^^^^^^^^^^
 
 
-STOCKLIST_BUTTON
-=================
+ STOCKLIST_BUTTON
+^^^^^^^^^^^^^^^^^
 
 
-TICKERTAPE
-===========
+ TICKERTAPE
+^^^^^^^^^^^
 
 * TICKERTAPE()
 * SET_TICKER_TEXT(scrollSpeed, displyText)
 * Scroll(speed)
 
-WEB_BROWSER
-============
+ WEB_BROWSER
+^^^^^^^^^^^^
 
 * WEB_BROWSER()
 * INITIALISE(mc)
@@ -6265,21 +6265,21 @@ WEB_BROWSER
 * ENABLE_ALL_BUTTONS()
 * setTextWithTranslation(TF, label)
 
-WEB_BROWSER_PARENT
-===================
+ WEB_BROWSER_PARENT
+^^^^^^^^^^^^^^^^^^^
 
 * WEB_BROWSER_PARENT()
 
-WWW_ACCEPT_D_THE_D_CHAOS_COM
-=============================
+ WWW_ACCEPT_D_THE_D_CHAOS_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_ACCEPT_D_THE_D_CHAOS_COM()
 * READY()
 * goToAnchor(AnchorLink)
 * POPULATE_TEXT(pageName)
 
-WWW_ARENAWAR_TV
-================
+ WWW_ARENAWAR_TV
+^^^^^^^^^^^^^^^^
 
 * WWW_ARENAWAR_TV()
 * INITIALISE(mc)
@@ -6313,8 +6313,8 @@ WWW_ARENAWAR_TV
 * dispatchPropertySelections()
 * setPageHeight(height)
 
-WWW_BAWSAQ_COM
-===============
+ WWW_BAWSAQ_COM
+^^^^^^^^^^^^^^^
 
 * WWW_BAWSAQ_COM()
 * READY()
@@ -6340,8 +6340,8 @@ WWW_BAWSAQ_COM
 * setAndPositionLogo(companyAbv)
 * set_price_text(TF, price)
 
-WWW_BENNYSORIGINALMOTORWORKS_COM
-=================================
+ WWW_BENNYSORIGINALMOTORWORKS_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_BENNYSORIGINALMOTORWORKS_COM()
 * INITIALISE(mc)
@@ -6376,8 +6376,8 @@ WWW_BENNYSORIGINALMOTORWORKS_COM
 * initOptions(page)
 * updateBackground(contentItem, page)
 
-WWW_BLEETER_BIZ
-================
+ WWW_BLEETER_BIZ
+^^^^^^^^^^^^^^^^
 
 * WWW_BLEETER_BIZ()
 * READY()
@@ -6390,23 +6390,23 @@ WWW_BLEETER_BIZ
 * TXD_HAS_LOADED(textureDict, success, uniqueID)
 * CLEANUP()
 
-WWW_CASHFORDEADDREAMS_COM
-==========================
+ WWW_CASHFORDEADDREAMS_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_CASHFORDEADDREAMS_COM()
 * READY()
 * goToAnchor(AnchorLink)
 * POPULATE_TEXT(pageName)
 
-WWW_CLASSICVINEWOOD_COM
-========================
+ WWW_CLASSICVINEWOOD_COM
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_CLASSICVINEWOOD_COM()
 * READY()
 * POPULATE_TEXT(pageName)
 
-WWW_CREDITCARDCONSOLIDATIONKINGS_COM
-=====================================
+ WWW_CREDITCARDCONSOLIDATIONKINGS_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_CREDITCARDCONSOLIDATIONKINGS_COM()
 * INITIALISE(mc)
@@ -6416,12 +6416,12 @@ WWW_CREDITCARDCONSOLIDATIONKINGS_COM
 * POPULATE_TEXT(pageName)
 * addCommas(val)
 
-WWW_CULTSTOPPERS_COM
-=====================
+ WWW_CULTSTOPPERS_COM
+^^^^^^^^^^^^^^^^^^^^^
 
 
-WWW_DOCKTEASE_COM
-==================
+ WWW_DOCKTEASE_COM
+^^^^^^^^^^^^^^^^^^
 
 * WWW_DOCKTEASE_COM()
 * filterVehicles()
@@ -6501,15 +6501,15 @@ WWW_DOCKTEASE_COM
 * CLEANUP()
 * disposeTweens()
 
-WWW_DOCKTEASE_COM_PARENT
-=========================
+ WWW_DOCKTEASE_COM_PARENT
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_DOCKTEASE_COM_PARENT()
 * handleLB()
 * handleRB()
 
-WWW_DYNASTY8EXECUTIVEREALTY_COM
-================================
+ WWW_DYNASTY8EXECUTIVEREALTY_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_DYNASTY8EXECUTIVEREALTY_COM()
 * POPULATE_TEXT(pageName, searchArgs, newPage)
@@ -6538,8 +6538,8 @@ WWW_DYNASTY8EXECUTIVEREALTY_COM
 * setPage(pageName, PageClass)
 * logState()
 
-WWW_DYNASTY8REALESTATE_COM
-===========================
+ WWW_DYNASTY8REALESTATE_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_DYNASTY8REALESTATE_COM()
 * READY()
@@ -6557,8 +6557,8 @@ WWW_DYNASTY8REALESTATE_COM
 * randRange(min, max, blacklist)
 * CLEANUP()
 
-WWW_EGOCHASERENERGYBAR_COM
-===========================
+ WWW_EGOCHASERENERGYBAR_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_EGOCHASERENERGYBAR_COM()
 * READY()
@@ -6566,12 +6566,12 @@ WWW_EGOCHASERENERGYBAR_COM
 * POPULATE_TEXT(pageName)
 * scan_and_set_localised_text(scope)
 
-WWW_ELECTROTOKESYSTEM_COM
-==========================
+ WWW_ELECTROTOKESYSTEM_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-WWW_ELITASTRAVEL_COM
-=====================
+ WWW_ELITASTRAVEL_COM
+^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_ELITASTRAVEL_COM()
 * filterVehicles()
@@ -6586,8 +6586,8 @@ WWW_ELITASTRAVEL_COM
 * initBuyItNowDetailsPage(id, currentVehicle, newPage, frame)
 * displayImage(vehicle, container)
 
-WWW_EPSILONPROGRAM_COM
-=======================
+ WWW_EPSILONPROGRAM_COM
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_EPSILONPROGRAM_COM()
 * READY()
@@ -6600,8 +6600,8 @@ WWW_EPSILONPROGRAM_COM
 * set_robes_ad_text()
 * SET_MOVIECLIP_VISIBILITY(isVisible, instanceEnum)
 
-WWW_EYEFIND_INFO
-=================
+ WWW_EYEFIND_INFO
+^^^^^^^^^^^^^^^^^
 
 * WWW_EYEFIND_INFO()
 * READY()
@@ -6628,20 +6628,20 @@ WWW_EYEFIND_INFO
 * UPDATE_TICKERTAPE(speed)
 * CLEANUP()
 
-WWW_FAMEORSHAME_NET
-====================
+ WWW_FAMEORSHAME_NET
+^^^^^^^^^^^^^^^^^^^^
 
 * WWW_FAMEORSHAME_NET()
 * DISABLE_VIDEO(disableVideo)
 * POPULATE_TEXT(pageName)
 
-WWW_FLEECA_COM
-===============
+ WWW_FLEECA_COM
+^^^^^^^^^^^^^^^
 
 * WWW_FLEECA_COM()
 
-WWW_HUSHSMUSH_COM
-==================
+ WWW_HUSHSMUSH_COM
+^^^^^^^^^^^^^^^^^^
 
 * WWW_HUSHSMUSH_COM()
 * READY()
@@ -6652,8 +6652,8 @@ WWW_HUSHSMUSH_COM
 * displayProfiles(scope, index)
 * getProfileIndex(profileID)
 
-WWW_IWILLSURVIVEITALL_COM
-==========================
+ WWW_IWILLSURVIVEITALL_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_IWILLSURVIVEITALL_COM()
 * READY()
@@ -6663,15 +6663,15 @@ WWW_IWILLSURVIVEITALL_COM
 * addCommas(val)
 * CLEANUP()
 
-WWW_JACKHOWITZER_COM
-=====================
+ WWW_JACKHOWITZER_COM
+^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_JACKHOWITZER_COM()
 * DISABLE_VIDEO(disableVideo)
 * POPULATE_TEXT(pageName)
 
-WWW_JOCKCRANLEY_COM
-====================
+ WWW_JOCKCRANLEY_COM
+^^^^^^^^^^^^^^^^^^^^
 
 * WWW_JOCKCRANLEY_COM()
 * READY()
@@ -6679,15 +6679,15 @@ WWW_JOCKCRANLEY_COM
 * POPULATE_TEXT(pageName)
 * ADD_TEXT(numberOfSlots)
 
-WWW_KUNGFURAINBOWLAZERFORCE_COM
-================================
+ WWW_KUNGFURAINBOWLAZERFORCE_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_KUNGFURAINBOWLAZERFORCE_COM()
 * DISABLE_VIDEO(disableVideo)
 * POPULATE_TEXT(pageName)
 
-WWW_LCN_D_EXCHANGE_COM
-=======================
+ WWW_LCN_D_EXCHANGE_COM
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_LCN_D_EXCHANGE_COM()
 * READY()
@@ -6714,8 +6714,8 @@ WWW_LCN_D_EXCHANGE_COM
 * set_price_text(TF, price)
 * setTextWithTranslation(TF, label)
 
-WWW_LEGENDARYMOTORSPORT_NET
-============================
+ WWW_LEGENDARYMOTORSPORT_NET
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_LEGENDARYMOTORSPORT_NET()
 * filterVehicles()
@@ -6733,13 +6733,13 @@ WWW_LEGENDARYMOTORSPORT_NET
 * goToAnchor(link)
 * setOptionsButtons(selectedOption)
 
-WWW_LEGENDARYMOTORSPORT_NET_WRAPPER
-====================================
+ WWW_LEGENDARYMOTORSPORT_NET_WRAPPER
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_LEGENDARYMOTORSPORT_NET_WRAPPER()
 
-WWW_LENNYAVERY_D_REALTY_COM
-============================
+ WWW_LENNYAVERY_D_REALTY_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_LENNYAVERY_D_REALTY_COM()
 * READY()
@@ -6750,8 +6750,8 @@ WWW_LENNYAVERY_D_REALTY_COM
 * CLEANUP()
 * createContentLOS_D_SANTOS()
 
-WWW_LIFEINVADER_COM
-====================
+ WWW_LIFEINVADER_COM
+^^^^^^^^^^^^^^^^^^^^
 
 * WWW_LIFEINVADER_COM()
 * READY()
@@ -6763,21 +6763,21 @@ WWW_LIFEINVADER_COM
 * randRange(min, max)
 * CLEANUP()
 
-WWW_MAZE_D_BANK_COM
-====================
+ WWW_MAZE_D_BANK_COM
+^^^^^^^^^^^^^^^^^^^^
 
 * WWW_MAZE_D_BANK_COM()
 
-WWW_MINISTERINMINUTES_COM
-==========================
+ WWW_MINISTERINMINUTES_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_MINISTERINMINUTES_COM()
 * READY()
 * goToAnchor(AnchorLink)
 * POPULATE_TEXT(pageName)
 
-WWW_MONETARYSCIENCE_US
-=======================
+ WWW_MONETARYSCIENCE_US
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_MONETARYSCIENCE_US()
 * READY()
@@ -6787,8 +6787,8 @@ WWW_MONETARYSCIENCE_US
 * goToAnchor(AnchorLink)
 * POPULATE_TEXT(pageName)
 
-WWW_MYDIVINEWITHIN_COM
-=======================
+ WWW_MYDIVINEWITHIN_COM
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_MYDIVINEWITHIN_COM()
 * READY()
@@ -6797,20 +6797,20 @@ WWW_MYDIVINEWITHIN_COM
 * POPULATE_TEXT(pageName)
 * scan_and_set_localised_text(scope)
 
-WWW_PANDMCYCLES_COM
-====================
+ WWW_PANDMCYCLES_COM
+^^^^^^^^^^^^^^^^^^^^
 
 * WWW_PANDMCYCLES_COM()
 * filterVehicles()
 * setCommonPageIDs()
 * updateBackground(contentItem, page)
 
-WWW_PRINCESSROBOTBUBBLEGUM_COM
-===============================
+ WWW_PRINCESSROBOTBUBBLEGUM_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-WWW_PROPOSITION43_ORG
-======================
+ WWW_PROPOSITION43_ORG
+^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_PROPOSITION43_ORG()
 * READY()
@@ -6822,8 +6822,8 @@ WWW_PROPOSITION43_ORG
 * goToAnchor(AnchorLink)
 * POPULATE_TEXT(pageName)
 
-WWW_PSYCHICSHOUTOUT_COM
-========================
+ WWW_PSYCHICSHOUTOUT_COM
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_PSYCHICSHOUTOUT_COM()
 * READY()
@@ -6837,22 +6837,22 @@ WWW_PSYCHICSHOUTOUT_COM
 * goToAnchor(AnchorLink)
 * POPULATE_TEXT(pageName)
 
-WWW_REPUBLICANSPACERANGERS_COM
-===============================
+ WWW_REPUBLICANSPACERANGERS_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_REPUBLICANSPACERANGERS_COM()
 * DISABLE_VIDEO(disableVideo)
 * POPULATE_TEXT(pageName)
 
-WWW_RIGHTEOUSSLAUGHTER7_COM
-============================
+ WWW_RIGHTEOUSSLAUGHTER7_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_RIGHTEOUSSLAUGHTER7_COM()
 * DISABLE_VIDEO(disableVideo)
 * POPULATE_TEXT(pageName)
 
-WWW_SANANDREASDMV_COM
-======================
+ WWW_SANANDREASDMV_COM
+^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_SANANDREASDMV_COM()
 * READY()
@@ -6867,19 +6867,19 @@ WWW_SANANDREASDMV_COM
 * goToAnchor(AnchorLink)
 * POPULATE_TEXT(pageName)
 
-WWW_SAWATERANDPOWER_COM
-========================
+ WWW_SAWATERANDPOWER_COM
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_SAWATERANDPOWER_COM()
 * DISABLE_VIDEO(disableVideo)
 * POPULATE_TEXT(pageName)
 
-WWW_SIXFIGURETEMPS_COM
-=======================
+ WWW_SIXFIGURETEMPS_COM
+^^^^^^^^^^^^^^^^^^^^^^^
 
 
-WWW_SOUTHERNSANANDREASSUPERAUTOS_COM
-=====================================
+ WWW_SOUTHERNSANANDREASSUPERAUTOS_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_SOUTHERNSANANDREASSUPERAUTOS_COM()
 * filterVehicles()
@@ -6896,18 +6896,18 @@ WWW_SOUTHERNSANANDREASSUPERAUTOS_COM
 * initNormalPriceButtons(page, numOptions)
 * initBuyItNowPriceButtons(page, numOptions)
 
-WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_WRAPPER
-=============================================
+ WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_WRAPPER
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_WRAPPER()
 
-WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_WRAPPER_WRAPPER
-=====================================================
+ WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_WRAPPER_WRAPPER
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_WRAPPER_WRAPPER()
 
-WWW_TACO_D_BOMB_COM
-====================
+ WWW_TACO_D_BOMB_COM
+^^^^^^^^^^^^^^^^^^^^
 
 * WWW_TACO_D_BOMB_COM()
 * READY()
@@ -6923,13 +6923,13 @@ WWW_TACO_D_BOMB_COM
 * goToAnchor(AnchorLink)
 * POPULATE_TEXT(pageName)
 
-WWW_THEBANKOFLIBERTY_COM
-=========================
+ WWW_THEBANKOFLIBERTY_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_THEBANKOFLIBERTY_COM()
 
-WWW_THECHILDRENOFTHEMOUNTAIN_COM
-=================================
+ WWW_THECHILDRENOFTHEMOUNTAIN_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_THECHILDRENOFTHEMOUNTAIN_COM()
 * READY()
@@ -6962,8 +6962,8 @@ WWW_THECHILDRENOFTHEMOUNTAIN_COM
 * initQuestion(scope, questionNumber)
 * answerQuestion(scope, questionNumber, responseWasTrue)
 
-WWW_THEDIAMONDCASINOANDRESORT_COM
-==================================
+ WWW_THEDIAMONDCASINOANDRESORT_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_THEDIAMONDCASINOANDRESORT_COM()
 * INITIALISE(mc)
@@ -7006,23 +7006,23 @@ WWW_THEDIAMONDCASINOANDRESORT_COM
 * dispatchSuiteSelections()
 * setPageHeight(height)
 
-WWW_THEINTERNETISAHELLHOLE_COM
-===============================
+ WWW_THEINTERNETISAHELLHOLE_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_THEINTERNETISAHELLHOLE_COM()
 * READY()
 * POPULATE_TEXT(pageName)
 
-WWW_THEPOWCLEANSE_COM
-======================
+ WWW_THEPOWCLEANSE_COM
+^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_THEPOWCLEANSE_COM()
 * READY()
 * goToAnchor(AnchorLink)
 * POPULATE_TEXT(pageName)
 
-WWW_THEREALITYMILL_COM
-=======================
+ WWW_THEREALITYMILL_COM
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_THEREALITYMILL_COM()
 * READY()
@@ -7030,8 +7030,8 @@ WWW_THEREALITYMILL_COM
 * POPULATE_TEXT(pageName)
 * displayPurchasedText()
 
-WWW_TOESHOESUSA_COM
-====================
+ WWW_TOESHOESUSA_COM
+^^^^^^^^^^^^^^^^^^^^
 
 * WWW_TOESHOESUSA_COM()
 * READY()
@@ -7039,8 +7039,8 @@ WWW_TOESHOESUSA_COM
 * slideToNextImage()
 * goToAnchor(AnchorLink)
 
-WWW_VINEWOODLOGLINEGENERATOR_COM
-=================================
+ WWW_VINEWOODLOGLINEGENERATOR_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_VINEWOODLOGLINEGENERATOR_COM()
 * READY()
@@ -7059,12 +7059,12 @@ WWW_VINEWOODLOGLINEGENERATOR_COM
 * goToAnchor(AnchorLink)
 * POPULATE_TEXT(pageName)
 
-WWW_VISITTHEALAMOSEA_COM
-=========================
+ WWW_VISITTHEALAMOSEA_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM
-=======================================
+ WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM()
 * INITIALISE(mc)
@@ -7166,29 +7166,29 @@ WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM
 * initOutcomePage(headerText, bodyText, soldLabel)
 * formatNumber(value)
 
-WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM_WRAPPER
-===============================================
+ WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM_WRAPPER
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM_WRAPPER()
 
-WWW_WHOKILLEDLEONORAJOHNSON_COM
-================================
+ WWW_WHOKILLEDLEONORAJOHNSON_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_WHOKILLEDLEONORAJOHNSON_COM()
 * READY()
 * POPULATE_TEXT(pageName)
 * scan_and_set_localised_text(scope)
 
-WWW_YOURDEADFAMILY_COM
-=======================
+ WWW_YOURDEADFAMILY_COM
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_YOURDEADFAMILY_COM()
 * READY()
 * goToAnchor(AnchorLink)
 * POPULATE_TEXT(pageName)
 
-WWW_YOURNEWBABYSNAME_COM
-=========================
+ WWW_YOURNEWBABYSNAME_COM
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * WWW_YOURNEWBABYSNAME_COM()
 * READY()

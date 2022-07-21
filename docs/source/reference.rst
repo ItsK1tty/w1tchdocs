@@ -10530,7 +10530,7 @@ Toggle the visibility of a given entity.
   * ``true`` -- Entity is visible
   * ``false`` -- Entity is not visible
 
-* Always 0 in scripts
+* ``unk`` (``bool``) -- Always 0 in scripts
 
 **Returns:**
 
@@ -10543,7 +10543,7 @@ Toggle the visibility of a given entity.
 
    entity = self.get_ped()
 
-   rage.entity.set_entity_lights(entity, true)
+   rage.entity.set_entity_visible(entity, true)
 
 ================================
 
