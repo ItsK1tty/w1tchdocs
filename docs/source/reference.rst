@@ -9173,8 +9173,8 @@ Applies a force to the specified entity.
 * ``entity`` (``Entity``) --
 * ``forceFlags`` (``int``) --
 * ``x`` (``float``) -- Force amount (X)
-* ``y``
-* ``z``
+* ``y`` (``float``) -- Force amount (Y)
+* ``z`` (``float``) -- Force amount (Z)
 * ``offX``
 * ``offY``
 * ``offZ``
