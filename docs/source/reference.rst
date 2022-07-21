@@ -10375,15 +10375,18 @@ Set the heading of an entity in degrees also known as "Yaw".
 
 ================================
 
-set_entity_heading(``entity``, ``heading``)
+set_entity_lights(``entity``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set the heading of an entity in degrees also known as "Yaw".
+Toggle entity's lights on/off.
 
 **Parameters:**
 
 * ``entity`` (``Entity``) -- The entity ID
-* ``xPos`` (``float``) -- The heading in degrees.
+* ``toggle`` (``bool``) -- The entity's lights toggle
+  
+  * ``true`` -- Lights on
+  * ``false`` -- Lights off
 
 **Returns:**
 
@@ -10396,7 +10399,149 @@ Set the heading of an entity in degrees also known as "Yaw".
 
    entity = self.get_ped()
 
-   rage.entity.set_entity_heading(entity, 90)
+   rage.entity.set_entity_lights(entity, true)
+
+================================
+
+set_entity_max_speed(``entity``, ``speed``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the entity's max speed.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``speed`` (``float``) -- The max speed to set for the entity
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.set_entity_max_speed(entity, 250)
+
+================================
+
+set_entity_no_collision_entity(``entity1``, ``entity1``, ``thisFrameOnly``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set disabled collision between two entities.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``speed`` (``Entity``) -- The max speed to set for the entity
+* ``thisFrameOnly`` (``bool``) -- Decides when to disable the collision
+
+  * ``true`` -- Disabled until it is turned back on
+  * ``false`` -- Disabled just this frame
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   entity2 = lobby.get_player_ped(lobby.get_host())
+
+   rage.entity.set_entity_no_collision_entity(entity, entity2, true)
+
+================================
+
+set_entity_rotation(``entity``, ``pitch``, ``roll``, ``yaw``, ``rotationOrder``, ``p5``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set the entity's rotation with customizable options.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``pitch`` (``float``) -- Rotation pitch
+* ``roll`` (``float``) -- Rotation roll
+* ``yaw`` (``float``) -- Rotation yaw
+* ``rotationOrder`` (``int``) -- Ratation order
+* ``p5`` (``bool``) -- Unknown
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.set_entity_rotation(entity, 10, 2, 5, 1)
+
+================================
+
+set_entity_velocity(``entity``, ``x``, ``y``, ``z``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the entity velocity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``x`` (``float``) -- The ``X`` coordinate
+* ``y`` (``float``) -- The ``Y`` coordinate
+* ``z`` (``float``) -- The ``Z`` coordinate
+ 
+  * Note that ``z`` is "up and down" with positive numbers encouraging upwards movement.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.set_entity_velocity(entity, 420.82, 69.53, 58, true, true, true)
+
+================================
+
+set_entity_visible(``entity``, ``toggle``, ``unk``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggle the visibility of a given entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+* ``toggle`` (``bool``) -- Whether or not the entity will be visible
+  
+  * ``true`` -- Entity  on
+  * ``false`` -- Lights off
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   rage.entity.set_entity_lights(entity, true)
 
 ================================
 
