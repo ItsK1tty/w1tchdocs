@@ -10527,8 +10527,8 @@ Toggle the visibility of a given entity.
 * ``entity`` (``Entity``) -- The entity ID
 * ``toggle`` (``bool``) -- Whether or not the entity will be visible
   
-  * ``true`` -- Entity  on
-  * ``false`` -- Lights off
+  * ``true`` -- Entity is visible
+  * ``false`` -- Entity is not visible
 
 **Returns:**
 
