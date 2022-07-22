@@ -1474,7 +1474,7 @@ Returns the value of an option.
 
 **Returns:**
 
-* ``float`` -- Returns option value.
+* ``float`` -- Option value.
 
 **Example:**
 
@@ -1497,7 +1497,7 @@ Returns the option text.
 
 **Returns:**
 
-* ``string`` -- Returns option text.
+* ``string`` -- Option text.
 
 **Example:**
 
@@ -3052,7 +3052,7 @@ Triggers a script event.
 is_script_running(``scriptName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if a script is running.
+Checks whether a script is running.
 
 **Parameters:**
 
@@ -3889,7 +3889,7 @@ Returns the process window's border size.
 .. code-block:: lua
    :linenos:
       
-   borderSize = render.get_border_size() -- Gets the border size.
+   borderSize = render.get_border_size() -- Returns the border size.
    system.log_info("The border size is " .. tostring(borderSize) .. ".") -- Prints the border size.
 
 ================================
@@ -3912,7 +3912,7 @@ Returns the current FPS.
 .. code-block:: lua
    :linenos:
       
-   fps = render.get_fps() -- Gets the FPS.
+   fps = render.get_fps() -- Returns the FPS.
    system.log_info("The FPS is " .. tostring(fps) .. ".") -- Prints the FPS.
 
 ================================
@@ -3935,7 +3935,7 @@ Returns the menu's rounding.
 .. code-block:: lua
    :linenos:
       
-   rounding = render.get_menu_rounding() -- Gets the rounding.
+   rounding = render.get_menu_rounding() -- Returns the rounding.
    system.log_info("The rounding is " .. tostring(rounding) .. ".") -- Prints the rounding.
 
 ================================
@@ -3958,7 +3958,7 @@ Returns the menu's width.
 .. code-block:: lua
    :linenos:
       
-   width = render.get_menu_width() -- Gets the width.
+   width = render.get_menu_width() -- Returns the width.
    system.log_info("The width is " .. tostring(width) .. ".") -- Prints the width.
 
 ================================
@@ -3981,7 +3981,7 @@ Returns the font header size.
 .. code-block:: lua
    :linenos:
       
-   headerSize = render.get_font_header_size() -- Gets the header size.
+   headerSize = render.get_font_header_size() -- Returns the header size.
    system.log_info("The header size is " .. tostring(headerSize) .. ".") -- Prints the header size.
 
 ================================
@@ -4004,7 +4004,7 @@ Returns the font helper size.
 .. code-block:: lua
    :linenos:
       
-   helperSize = render.get_font_helper_size() -- Gets the helper size.
+   helperSize = render.get_font_helper_size() -- Returns the helper size.
    system.log_info("The helper size is " .. tostring(helperSize) .. ".") -- Prints the helper size.
 
 ================================
@@ -4027,7 +4027,7 @@ Returns the font option size.
 .. code-block:: lua
    :linenos:
       
-   optionSize = render.get_font_option_size() -- Gets the option size.
+   optionSize = render.get_font_option_size() -- Returns the option size.
    system.log_info("The option size is " .. tostring(optionSize) .. ".") -- Prints the option size.
 
 ================================
@@ -4050,7 +4050,7 @@ Returns the font warning size.
 .. code-block:: lua
    :linenos:
       
-   warningSize = render.get_font_warning_size() -- Gets the warning size.
+   warningSize = render.get_font_warning_size() -- Returns the warning size.
    system.log_info("The warning size is " .. tostring(warningSize) .. ".") -- Prints the warning size.
 
 ================================
@@ -4073,7 +4073,7 @@ Returns the cursor position.
 .. code-block:: lua
    :linenos:
       
-   cursorPos = render.get_menu_cursor_pos() -- Gets the cursor position.
+   cursorPos = render.get_menu_cursor_pos() -- Returns the cursor position.
    system.log_info("The cursor position is " .. tostring(cursorPos.x) .. ".") -- Prints the cursor X position coordinate.
    system.log_info("The cursor position is " .. tostring(cursorPos.y) .. ".") -- Prints the cursor Y position coordinate.
 
@@ -4098,7 +4098,7 @@ Returns the menu position.
 .. code-block:: lua
    :linenos:
       
-   menuPos = render.get_menu_position() -- Gets the menu position.
+   menuPos = render.get_menu_position() -- Returns the menu position.
    system.log_info("The menu position is " .. tostring(menuPos.x) .. ".") -- Prints the menu X position coordinate.
    system.log_info("The menu position is " .. tostring(menuPos.y) .. ".") -- Prints the menu Y position coordinate.
 
@@ -4122,7 +4122,7 @@ Returns the menu total size.
 .. code-block:: lua
    :linenos:
       
-   totalSize = render.get_menu_total_size() -- Gets the menu total size.
+   totalSize = render.get_menu_total_size() -- Returns the menu total size.
    system.log_info("The menu total size is " .. tostring(totalSize.x) .. ".") -- Prints the menu total X size.
    system.log_info("The menu total size is " .. tostring(totalSize.y) .. ".") -- Prints the menu total Y size.
 
@@ -4146,7 +4146,7 @@ Returns the screen resolution.
 .. code-block:: lua
    :linenos:
       
-   screenRes = render.get_screen_resolution() -- Gets the screen resolution.
+   screenRes = render.get_screen_resolution() -- Returns the screen resolution.
    system.log_info("The screen resolution is " .. tostring(screenRes.x) .. ".") -- Prints the screen X resolution.
    system.log_info("The screen resolution is " .. tostring(screenRes.y) .. ".") -- Prints the screen Y resolution.
 
@@ -4336,7 +4336,7 @@ Returns the user's character's ID.
 .. code-block:: lua
    :linenos:
    
-   id = self.get_id() -- Gets the user's character's ID.
+   id = self.get_id() -- Returns the user's character's ID.
    system.log_info("The character ID is " .. tostring(id) .. ".")
 
 ======================
@@ -4469,7 +4469,7 @@ Returns coordinates in front of your character.
 
 **Returns:**
 
-* ``Vector3`` -- Returns coordinates in Vector3 form.
+* ``Vector3`` -- Coordinates in front of self.
 
 **Example:**
 
@@ -4492,7 +4492,7 @@ Returns your current vehicle's ID.
 
 **Returns:**
 
-* ``Vehicle`` -- Returns vehicle ID.
+* ``Vehicle`` -- Vehicle handle.
 
 **Example:**
 
@@ -4812,7 +4812,7 @@ Returns a number of all active players.
 .. code-block:: lua
    :linenos:
    
-   activePlayers = lobby.get_active_players() -- Gets a number of all active players.
+   activePlayers = lobby.get_active_players() -- Returns a number of all active players.
    system.log_info("There are " .. tostring(activePlayers) .. " active players.")
 
 ================================
@@ -4835,7 +4835,7 @@ Returns a number of connected players.
 .. code-block:: lua
    :linenos:
    
-   connectedPlayers = lobby.get_connected_players() -- Gets a number of connected players.
+   connectedPlayers = lobby.get_connected_players() -- Returns a number of connected players.
    system.log_info("There are " .. tostring(connectedPlayers) .. " connected players.")
 
 ================================
@@ -4858,7 +4858,7 @@ Returns the player's armour health.
 .. code-block:: lua
    :linenos:
    
-   armour = lobby.get_player_armour(lobby.get_host()) -- Gets the player's armour ID.
+   armour = lobby.get_player_armour(lobby.get_host()) -- Returns the player's armour ID.
    if armour == 0 then -- If the player has no armour.
       system.log_info("The player has no armour.")
    end
@@ -4883,7 +4883,7 @@ Returns the player's health.
 .. code-block:: lua
    :linenos:
    
-   health = lobby.get_player_health(lobby.get_host()) -- Gets the host's health.
+   health = lobby.get_player_health(lobby.get_host()) -- Returns the host's health.
    if health == 100 then -- If the host has full health.
       system.log_info("The host has full health.")
    end
@@ -4909,8 +4909,8 @@ Returns the player's maximum health.
 .. code-block:: lua
    :linenos:
    
-   maxHealth = lobby.get_player_max_health(lobby.get_host()) -- Gets the host's maximum health.
-   health = lobby.get_player_health(lobby.get_host()) -- Gets the host's health.
+   maxHealth = lobby.get_player_max_health(lobby.get_host()) -- Returns the host's maximum health.
+   health = lobby.get_player_health(lobby.get_host()) -- Returns the host's health.
    if maxHealth == health then -- If the host has full health.
       system.log_info("The host has full health.")
    end
@@ -4952,7 +4952,7 @@ Returns the player's ped.
 .. code-block:: lua
    :linenos:
    
-   ped = lobby.get_player_ped(lobby.get_host()) -- Gets the host's ped.
+   ped = lobby.get_player_ped(lobby.get_host()) -- Returns the host's ped.
    if rage.ped.is_ped_a_player(ped) then -- If the ped is a player.
       system.log_info("The ped is a player.")
    end
@@ -4977,7 +4977,7 @@ Returns the host player ID.
 .. code-block:: lua
    :linenos:
    
-   host = lobby.get_host() -- Gets the host player ID.
+   host = lobby.get_host() -- Returns the host player ID.
    system.log_debug("The host is " .. get_player_name(host) .. ".")
 
 ================================
@@ -5000,7 +5000,7 @@ Returns the next host player ID.
 .. code-block:: lua
    :linenos:
    
-   nextHost = lobby.get_next_host() -- Gets the next host player ID.
+   nextHost = lobby.get_next_host() -- Returns the next host player ID.
    system.log_debug("The next host is " .. get_player_name(nextHost) .. ".")
 
 ================================
@@ -5038,7 +5038,7 @@ Returns the player's coordinates as a string.
 .. code-block:: lua
    :linenos:
    
-   coords = lobby.get_player_coords_str(lobby.get_host()) -- Gets the host's coordinates.
+   coords = lobby.get_player_coords_str(lobby.get_host()) -- Returns the host's coordinates.
    system.log_debug("The host is at " .. coords .. ".")
 
 ================================
@@ -5061,7 +5061,7 @@ Returns the player's IP.
 .. code-block:: lua
    :linenos:
    
-   ip = lobby.get_player_ip(lobby.get_host()) -- Gets the host's IP.
+   ip = lobby.get_player_ip(lobby.get_host()) -- Returns the host's IP.
    system.log_debug("The host's IP is " .. ip .. ".")
 
 ================================
@@ -5084,7 +5084,7 @@ Returns the player's name.
 .. code-block:: lua
    :linenos:
    
-   name = lobby.get_player_name(lobby.get_host()) -- Gets the host's name.
+   name = lobby.get_player_name(lobby.get_host()) -- Returns the host's name.
    system.log_debug("The host's name is " .. name .. ".")
 
 ================================
@@ -5113,7 +5113,7 @@ Returns the player's status.
 .. code-block:: lua
    :linenos:
    
-   status = lobby.get_player_status(lobby.get_selected_player()) -- Gets the selected player's status.
+   status = lobby.get_player_status(lobby.get_selected_player()) -- Returns the selected player's status.
    system.log_debug("The selected player's status is " .. status .. ".")
 
 ===============================
@@ -5136,7 +5136,7 @@ Returns the player's vehicle name.
 .. code-block:: lua
    :linenos:
    
-   vehicleName = lobby.get_player_vehicle_name(lobby.get_host()) -- Gets the host's vehicle name.
+   vehicleName = lobby.get_player_vehicle_name(lobby.get_host()) -- Returns the host's vehicle name.
    system.log_debug("The host's vehicle name is " .. vehicleName .. ".")
 
 ================================
@@ -5159,7 +5159,7 @@ Returns the total player's deaths.
 .. code-block:: lua
    :linenos:
    
-   deaths = lobby.get_player_deaths(lobby.get_host()) -- Gets the host's deaths.
+   deaths = lobby.get_player_deaths(lobby.get_host()) -- Returns the host's deaths.
    system.log_debug("The host has died " .. tostring(deaths) .. " times.")
 
 ================================
@@ -5182,7 +5182,7 @@ Returns the total player's kills.
 .. code-block:: lua
    :linenos:
    
-   kills = lobby.get_player_kills(lobby.get_host()) -- Gets the host's kills.
+   kills = lobby.get_player_kills(lobby.get_host()) -- Returns the host's kills.
    system.log_debug("The host has killed " .. tostring(kills) .. " people.")
 
 ================================
@@ -5205,7 +5205,7 @@ Returns the player's level.
 .. code-block:: lua
    :linenos:
    
-   level = lobby.get_player_level(lobby.get_host()) -- Gets the host's level.
+   level = lobby.get_player_level(lobby.get_host()) -- Returns the host's level.
    system.log_debug("The host's level is " .. tostring(level) .. ".")
 
 ================================
@@ -5228,7 +5228,7 @@ Returns the player's bank money.
 .. code-block:: lua
    :linenos:
    
-   money = lobby.get_player_money_bank(lobby.get_host()) -- Gets the host's bank money.
+   money = lobby.get_player_money_bank(lobby.get_host()) -- Returns the host's bank money.
    system.log_debug("The host has $" .. tostring(money) .. " in the bank.")
 
 ================================
@@ -5251,7 +5251,7 @@ Returns the player's wallet money.
 .. code-block:: lua
    :linenos:
    
-   money = lobby.get_player_money_wallet(lobby.get_host()) -- Gets the host's wallet money.
+   money = lobby.get_player_money_wallet(lobby.get_host()) -- Returns the host's wallet money.
    system.log_debug("The host has $" .. tostring(money) .. " in the wallet.")
 
 ================================
@@ -5274,7 +5274,7 @@ Returns the player's RP points.
 .. code-block:: lua
    :linenos:
    
-   rp = lobby.get_player_rp(lobby.get_host()) -- Gets the host's RP.
+   rp = lobby.get_player_rp(lobby.get_host()) -- Returns the host's RP.
    system.log_debug("The host has " .. tostring(rp) .. " RP.")
 
 ================================
@@ -5297,7 +5297,7 @@ Returns the player's host token.
 .. code-block:: lua
    :linenos:
    
-   token = lobby.get_player_host_token(lobby.get_host()) -- Gets the host's host token.
+   token = lobby.get_player_host_token(lobby.get_host()) -- Returns the host's host token.
    system.log_debug("The host's host token is " .. token .. ".")
 
 ================================
@@ -5320,7 +5320,7 @@ Returns the player's original SCID.
 .. code-block:: lua
    :linenos:
    
-   scid = lobby.get_player_original_scid(lobby.get_host()) -- Gets the host's original SCID.
+   scid = lobby.get_player_original_scid(lobby.get_host()) -- Returns the host's original SCID.
    system.log_debug("The host's original SCID is " .. scid .. ".")
 
 ================================
@@ -5343,7 +5343,7 @@ Returns the player's SCID.
 .. code-block:: lua
    :linenos:
    
-   scid = lobby.get_player_scid(lobby.get_host()) -- Gets the host's SCID.
+   scid = lobby.get_player_scid(lobby.get_host()) -- Returns the host's SCID.
    system.log_debug("The host's SCID is " .. scid .. ".")
 
 ================================
@@ -5366,7 +5366,7 @@ Returns the player's coordinates.
 .. code-block:: lua
    :linenos:
    
-   coords = lobby.get_player_coords(lobby.get_host()) -- Gets the host's coordinates.
+   coords = lobby.get_player_coords(lobby.get_host()) -- Returns the host's coordinates.
    system.log_debug("The host is at " .. tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z) .. " .")
 
 ================================
@@ -5465,7 +5465,7 @@ This namespace contains functions related to text manipulation.
 contains(``source``, ``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if string contains character/word.
+Checks whether a string contains character/word.
 
 **Parameters:**
 
@@ -5493,7 +5493,7 @@ Check if string contains character/word.
 is_float(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if string is ``float`` type.
+Checks whether a string is ``float`` type.
 
 **Parameters:**
 
@@ -5519,7 +5519,7 @@ Check if string is ``float`` type.
 is_number(``data``)
 ^^^^^^^^^^^^^^^^^^^^^
 
-Check if string is a number.
+Checks whether a string is a number.
 
 **Parameters:**
 
@@ -5692,7 +5692,7 @@ Cuts string from the left
 
 **Returns:**
 
-* ``string`` -- Returns the new string.
+* ``string`` -- The new string.
 
 **Example:**
 
@@ -5721,7 +5721,7 @@ Cuts string from the right.
 
 **Returns:**
 
-* ``string`` -- Returns the new string.
+* ``string`` -- The new string.
 
 **Example:**
 
@@ -6764,7 +6764,7 @@ This namespace contains functions that are related to vehicle mods and are used 
 get_name_from_hash(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the name of the vehicle based on its hash.
+Returns the name of the vehicle based on its hash.
 
 **Parameters:**
 
@@ -6787,7 +6787,7 @@ Gets the name of the vehicle based on its hash.
 get_personal_vehicle()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the personal vehicle ID.
+Returns the personal vehicle ID.
 
 **Parameters:**
 
@@ -7801,7 +7801,7 @@ Spawns a vehicle in a given position and heading.
 
 **Returns:**
 
-* ``Vehicle`` -- Returns the spawned vehicle.
+* ``Vehicle`` -- The spawned vehicle handle.
 
 **Example:**
 
@@ -7825,7 +7825,7 @@ Spawns a personal vehicle.
 
 **Returns:**
 
-* ``Vehicle`` -- Returns the spawned vehicle.
+* ``Vehicle`` -- The spawned vehicle handle.
 
 **Example:**
 
@@ -9141,29 +9141,32 @@ This namespace contains ped-related game functions.
 add_relationship_group(``name``, ``groupHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adds ped to a relationship group.
+Adds a new ped relationship group.
 
 **Parameters:**
 
-* ``name`` (``string``) 
+* ``name`` (``string``) -- The name of the relationship group
 * ``groupHash`` (``Hash``) -- The hash of the created relationship group is output in the second parameter.  
 
 **Returns:**
 
-* ``Any`` -- Can't select void. This function returns nothing.
+* ``Any`` -- This function returns nothing.
 
 **Example:**
 
 .. code-block:: lua
    :linenos:
 
+   groupHash = 0
+   rage.ped.add_relationship_group("COPS", groupHash)
+   system.log_debug("Group hash: " .. tostring(groupHash))
 
 ================================
 
 can_create_random_cops()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Toggle ped can create random cops.
+Checks whether a Ped can summon random cops.
 
 **Parameters:**
 
@@ -9171,17 +9174,17 @@ Toggle ped can create random cops.
 
 **Returns:**
 
-* ``bool`` -- Returns toggle status
+* ``bool``
   
-  * ``true`` -- Ped can create random cops
-  * ``false`` -- Ped can't create random cops
+  * ``true`` -- Ped can summon random cops
+  * ``false`` -- Ped can't summon random cops
 
 **Example:**
 
 .. code-block:: lua
    :linenos:
 
-   rage.ped.can_create_random_cops()
+   system.log_debug(tostring(rage.ped.can_create_random_cops()))
 
 ================================
 
@@ -9196,7 +9199,7 @@ Toggle ped ragdoll.
 
 **Returns:**
 
-* ``bool`` -- Returns toggle status
+* ``bool``
   
   * ``true`` -- Ped ragdoll on
   * ``false`` -- Ped ragdoll off (Example: prevent peds from falling when standing on moving vehicles)
@@ -9208,7 +9211,7 @@ Toggle ped ragdoll.
 
    ped = self.get_ped()
 
-   rage.ped.can_ped_ragdoll(ped)
+   system.log_debug(tostring(rage.ped.can_ped_ragdoll(ped)))
 
 ================================
 
@@ -9239,7 +9242,7 @@ Clears all ped's props.
 clear_ped_blood_damage(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Clears all ped's blood damage.
+Clears the blood on a ped.
 
 **Parameters:**
 
@@ -9263,7 +9266,7 @@ Clears all ped's blood damage.
 clear_ped_tasks_immediately(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Clears all ped's tasks immediately.
+Clears all ped's tasks.
 
 **Parameters:**
 
@@ -9315,7 +9318,8 @@ Clears the relationship between two groups. This should be called twice (once fo
 .. code-block:: lua
    :linenos:
 
-   rage.ped.clear_relationship_between_groups((2, l_1017, 0xA49E591C))
+   rage.ped.clear_relationship_between_groups((2, rage.gameplay.get_hash_key("GANG_1"), rage.gameplay.get_hash_key("COP")))
+   rage.ped.clear_relationship_between_groups((2, rage.gameplay.get_hash_key("COP"), rage.gameplay.get_hash_key("GANG_1")))
 
 ================================
 
@@ -9351,13 +9355,17 @@ create_group(``unused``)
 
 Creates a new ped group. Note: groups can contain up to 8 peds.
 
+.. note::
+
+   Groups can contain up to 8 peds.
+
 **Parameters:**
 
 * ``unused`` (``int``) -- The parameter is unused
 
 **Returns:**
 
-* ``int`` -- Returns a handle to the created group, or 0 if a group couldn't be created
+* ``int`` -- A handle to the created group, or 0 if a group couldn't be created
 
 **Example:**
 
@@ -9371,12 +9379,14 @@ Creates a new ped group. Note: groups can contain up to 8 peds.
 create_ped(``pedType``, ``modelHash``, ``x``, ``y``, ``z``, ``heading``, ``isNetwork``, ``bScriptHostPed``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Creates a ped (biped character, pedestrian, actor) with the specified model at the specified position and heading. This ped will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using streaming.request_model).
+Spawns a ped (biped character, pedestrian, actor) with the specified model at the specified position and heading. This ped will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using streaming.request_model).
 
 **Parameters:**
 
 * ``pedType`` (``int``) -- Unused. Peds get set to CIVMALE/CIVFEMALE/etc. no matter the value specified
 * ``modelHash`` (``Hash``) -- The model of ped to spawn
+
+  * `Ped Models <https://wiki.rage.mp/index.php?title=Peds>`__
 * ``x`` (``float``) -- Spawn coordinate X component
 * ``y`` (``float``) -- Spawn coordinate Y component
 * ``z`` (``float``) -- Spawn coordinate Z component
@@ -9390,25 +9400,25 @@ Creates a ped (biped character, pedestrian, actor) with the specified model at t
 
 **Returns:**
 
-* ``Ped`` -- Returns a script handle for the ped
+* ``Ped`` -- A script handle for the ped
 
-  * ``0`` -- Returned if the ped failed to be created
+  * ``0`` -- The ped spawn failed
 
 **Example:**
 
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   coords = self.get_coords_infront(20)
 
-   rage.ped.create_ped(ped, 420.12, 69.87, 56.17, 90, true, true)
+   rage.ped.create_ped(rage.gameplay.get_hash_key("csb_mp_agent14"), coords.x, coords.y, coords.z, 90, true, true)
 
 ================================
 
 does_group_exist(``groupId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if a group exists.
+Checks whether a group exists.
 
 **Parameters:**
 
@@ -9416,10 +9426,10 @@ Check if a group exists.
 
 **Returns:**
 
-* ``bool`` -- Returns group status
+* ``bool`` -- Group status
   
   * ``true`` -- Group exists
-  * ``false`` -- Ped ragdoll off (Example: prevent peds from falling when standing on moving vehicles)
+  * ``false`` -- Group does not exist
 
 **Example:**
 
@@ -9457,15 +9467,15 @@ Applies a force to the specified entity.
 
 **Parameters:**
 
-* ``entity`` (``Entity``) -- The entity ID
+* ``entity`` (``Entity``) -- The entity handle
 * ``forceFlags`` (``int``) -- Commonly used values:
 
-  * MinForce = 0
-  * MaxForceRot = 1
-  * MinForce2 = 2
-  * MaxForceRot2 = 3
-  * ForceNoRot = 4
-  * ForceRotPlusForce = 5
+  * ``MinForce`` = ``0``
+  * ``MaxForceRot`` = ``1``
+  * ``MinForce2`` = ``2``
+  * ``MaxForceRot2`` = ``3``
+  * ``ForceNoRot`` = ``4``
+  * ``ForceRotPlusForce`` = ``5``
 
 * ``x`` (``float``) -- Force amount (X)
 * ``y`` (``float``) -- Force amount (Y)
@@ -9473,12 +9483,12 @@ Applies a force to the specified entity.
 * ``offX`` (``float``) -- Rotation/offset force (X)
 * ``offY`` (``float``) -- Rotation/offset force (Y)
 * ``offZ`` (``float``) -- Rotation/offset force (Z)
-* ``boneIndex`` (``int``) -- (Often ``0``) Entity bone index
-* ``isDirectionRel`` (``bool``) -- (Usually ``false``) Vector defined in local (body-fixed) coordinate frame
+* ``boneIndex`` (``int``) -- Entity bone index (Often ``0``) 
+* ``isDirectionRel`` (``bool``) -- Vector defined in local (body-fixed) coordinate frame (Usually ``false``)
 * ``ignoreUpVec`` (``bool``) -- Usually ``true``
 * ``isForceRel`` (``bool``) :
 
-  * ``true`` -- Force gets multiplied with the objects mass and different objects will have the same acceleration
+  * ``true`` -- Force Returns multiplied with the objects mass and different objects will have the same acceleration
   * ``false`` -- Otherwise
 
 * ``p12`` (``bool``) -- Unknown, usually ``false``
@@ -9506,7 +9516,7 @@ Attach an entity to the specified entity.
 
 **Parameters:**
 
-* ``entity1`` (``Entity``) -- The entity ID.
+* ``entity1`` (``Entity``) -- The entity handle.
 * ``entity2`` (``Entity``) -- Entity ID to attach entity1 with.
 * ``boneIndex`` (``int``) -- This is different to boneID, use ``get_ped_bone_index`` to get the index from the ID. use the index for attaching to specific bones. entity1 will be attached to the center of entity2 if bone index given doesn't correspond to bone indexes for that entity type.
 * ``xPos`` (``float``) -- X-axis offset from the center of entity2.
@@ -9516,15 +9526,15 @@ Attach an entity to the specified entity.
 * ``yRot`` (``float``) -- Y-axis rotation.
 * ``zRot`` (``float``) -- Z-axis rotation.
 * ``p9`` (``bool``) -- Unknown. Does not seem to have any effect.
-* ``useSoftPinning`` (``bool``) -- If set to false attached entity will not detach when fixed.
+* ``useSoftPinning`` (``bool``) -- If set to ``false`` attached entity will not detach when fixed.
 * ``collision`` (``bool``) -- Controls collision between the two entities
   
   * ``true`` -- Collision enabled
   * ``false`` -- Collision disabled
 
-* ``isPed`` (``bool``) -- Pitch doesnt work when false and roll will only work on negative numbers (only peds)
+* ``isPed`` (``bool``) -- Pitch doesnt work when ``false`` and roll will only work on negative numbers (only peds)
 * ``vertexIndex`` (``int``) -- The order in which the rotation is applied.
-* ``fixedRot`` (``bool``) -- If false it ignores entity vector.
+* ``fixedRot`` (``bool``) -- If ``false``, it ignores entity vector.
 
 **Returns:**
 
@@ -9577,8 +9587,11 @@ Detaches a specified entity, with toggable options.
 **Parameters:**
 
 * ``entity`` (``Entity``) -- The entity ID
-* ``dynamic`` (``bool``) --
-* ``collision`` (``bool``) --
+* ``dynamic`` (``bool``) -- no effect
+* ``collision`` (``bool``)
+
+  * ``true`` -- both entities won't collide with each other until the distance between is 4 meters or more. (may not work with some entities)
+  * ``false`` -- entities will collide with each other.
 
 **Returns:**
 
@@ -9591,14 +9604,18 @@ Detaches a specified entity, with toggable options.
 
    entity = self.get_ped()
 
-   rage.entity.detach_entity(entity)
+   rage.entity.detach_entity(entity, false, true)
 
 ================================
 
 does_entity_have_drawable(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if entity has a drawable.
+Checks whether an entity has a drawable (weapon?).
+
+.. note::
+
+   Seems to be always returning 0 no matter what the entity is or does it have a weapon (could be even a car, still ``true``.)
 
 **Parameters:**
 
@@ -9606,10 +9623,10 @@ Checks if entity has a drawable.
 
 **Returns:**
 
-* ``bool`` -- Returns entity drawable status
+* ``bool`` -- Entity drawable (weapon?) status
 
-  * ``true`` -- Entity has a drawable
-  * ``false`` -- Entity does not have a drawable
+  * ``true`` -- Entity has a drawable weapon (always?)
+  * ``false`` -- Entity does not have a drawable weapon
 
 **Example:**
 
@@ -9618,14 +9635,14 @@ Checks if entity has a drawable.
 
    entity = self.get_ped()
 
-   rage.entity.does_entity_have_drawable(entity)
+   system.log_debug(tostring(rage.entity.does_entity_have_drawable(entity)))
 
 ================================
 
 does_entity_have_physics(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if entity has physics enabled.
+Checks whether an entity has physics enabled.
 
 **Parameters:**
 
@@ -9633,7 +9650,7 @@ Checks if entity has physics enabled.
 
 **Returns:**
 
-* ``bool`` -- Returns entity physics status
+* ``bool`` -- Entity physics status
 
   * ``true`` -- Entity has physics enabled
   * ``false`` -- Entity does not have physics enabled
@@ -9645,7 +9662,7 @@ Checks if entity has physics enabled.
 
    entity = self.get_ped()
 
-   rage.entity.does_entity_have_physics(entity)
+   system.log_debug(tostring(rage.entity.does_entity_have_physics(entity)))
 
 ================================
 
@@ -9657,10 +9674,10 @@ Toggles freeze entity position.
 **Parameters:**
 
 * ``entity`` (``Entity``) -- The entity ID
-* ``toggle`` (``bool``) -- Toggle freeze entity position
+* ``toggle`` (``bool``) -- Toggle
 
   * ``true`` -- Freeze entity position on
-  * ``true`` -- Freeze entity position off
+  * ``false`` -- Freeze entity position off
 
 **Returns:**
 
@@ -9680,7 +9697,7 @@ Toggles freeze entity position.
 get_entity_attached_to(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity that this entity is attached to.
+Returns the entity that this entity is attached to.
 
 **Parameters:**
 
@@ -9697,23 +9714,25 @@ Gets the entity that this entity is attached to.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_attached_to(entity)
+   system.log_debug(tostring(rage.entity.get_entity_attached_to(entity)))
 
 ================================
 
 get_entity_bone_index_by_name(``entity``, ``boneName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity bone ID by name.
+Returns the entity bone ID by name.
 
 **Parameters:**
 
 * ``entity`` (``Entity``) -- The entity ID
-* ``boneName`` (``string``) -- Bone name
+* ``boneName`` (``string``) -- Bone identifier
+
+  * You can find out more about bones here: :ref:`bones`
 
 **Returns:**
 
-* ``int`` -- Returns the index of the bone.
+* ``int`` -- The index of the bone.
 
 **Example:**
 
@@ -9722,42 +9741,43 @@ Gets the entity bone ID by name.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_bone_index_by_name(entity, "SKEL_L_Forearm")
+   system.log_debug(tostring(rage.entity.get_entity_bone_index_by_name(entity, "SKEL_L_Forearm")))
 
 ================================
 
 get_entity_coords(``entity``, ``alive``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the current coordinates for a specified entity.
+Returns the current coordinates for a specified entity.
 
 **Parameters:**
 
 * ``entity`` (``Entity``) -- The entity ID
-* ``alive`` (``bool``) -- Check if entity is alive
+* ``alive`` (``bool``) -- Checks whether an entity is alive
 
-  * ``true`` -- Entity is alive
-  * ``false`` -- Otherwise
+  * ``true`` -- Entity is alive (optional)
+  * ``false`` -- Entity is dead
 
 **Returns:**
 
-* ``Vector3`` -- Returns the current entity coordinates.
+* ``Vector3`` -- The current entity coordinates.
 
 **Example:**
 
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   coords = rage.entity.get_entity_coords(self.get_ped())
+   system.log_debug(tostring(coords.x) .. " " .. tostring(coords.y) .. " " .. tostring(coords.z))
 
-   rage.entity.get_entity_coords(entity, true)
+
 
 ================================
 
 get_entity_forward_vector(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity's forward vector.
+Returns the entity's forward vector.
 
 **Parameters:**
 
@@ -9765,7 +9785,7 @@ Gets the entity's forward vector.
 
 **Returns:**
 
-* ``Vector3`` -- Returns the forward vector.
+* ``Vector3`` -- The forward vector. ``X``, ``Y`` and ``Z`` range from ``-1`` to ``1``.
 
 **Example:**
 
@@ -9774,14 +9794,14 @@ Gets the entity's forward vector.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_forward_vector(entity)
+   system.log_debug(tostring(rage.entity.get_entity_forward_vector(entity)))
 
 ================================
 
 get_entity_heading(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity's heading.
+Returns the entity's heading.
 
 **Parameters:**
 
@@ -9789,7 +9809,7 @@ Gets the entity's heading.
 
 **Returns:**
 
-* ``float`` -- Returns the entity's heading.
+* ``float`` -- The entity's heading. 
 
 **Example:**
 
@@ -9798,14 +9818,14 @@ Gets the entity's heading.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_heading(entity)
+   system.log_debug(tostring(rage.entity.get_entity_heading(entity)))
 
 ================================
 
 get_entity_physics_heading(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity's physics heading.
+Returns the entity's physics heading.
 
 **Parameters:**
 
@@ -9813,7 +9833,7 @@ Gets the entity's physics heading.
 
 **Returns:**
 
-* ``float`` -- Returns the entity's physics heading.
+* ``float`` -- The entity's physics heading. 
 
 **Example:**
 
@@ -9822,14 +9842,14 @@ Gets the entity's physics heading.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_physics_heading(entity)
+   system.log_debug(tostring(rage.entity.get_entity_physics_heading(entity)))
 
 ================================
 
 get_entity_pitch(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity's pitch.
+Returns the entity's pitch.
 
 **Parameters:**
 
@@ -9837,7 +9857,7 @@ Gets the entity's pitch.
 
 **Returns:**
 
-* ``float`` -- Returns the entity's pitch.
+* ``float`` -- The entity's pitch.
 
 **Example:**
 
@@ -9846,14 +9866,14 @@ Gets the entity's pitch.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_pitch(entity)
+   system.log_debug(tostring(rage.entity.get_entity_pitch(entity)))
 
 ================================
 
 get_entity_population_type(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity's population type.
+Returns the entity's population type.
 
 **Parameters:**
 
@@ -9861,8 +9881,19 @@ Gets the entity's population type.
 
 **Returns:**
 
-* ``int`` -- Returns the entity's population type
+* ``int`` -- the entity's population type
 
+  * ``POPTYPE_UNKNOWN`` = ``0``
+  * ``POPTYPE_RANDOM_PERMANENT`` = ``1``
+  * ``POPTYPE_RANDOM_PARKED`` = ``2``
+  * ``POPTYPE_RANDOM_PATROL`` = ``3``
+  * ``POPTYPE_RANDOM_SCENARIO`` = ``4``
+  * ``POPTYPE_RANDOM_AMBIENT`` = ``5``
+  * ``POPTYPE_PERMANENT`` = ``6``
+  * ``POPTYPE_MISSION`` = ``7``
+  * ``POPTYPE_REPLAY`` = ``8``
+  * ``POPTYPE_CACHE`` = ``9``
+  * ``POPTYPE_TOOL`` = ``10``
 **Example:**
 
 .. code-block:: lua
@@ -9870,14 +9901,14 @@ Gets the entity's population type.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_population_type(entity)
+   system.log_debug(tostring(rage.entity.get_entity_population_type(entity)))
 
 ================================
 
 get_entity_roll(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity's roll.
+Returns the entity's roll.
 
 **Parameters:**
 
@@ -9885,7 +9916,8 @@ Gets the entity's roll.
 
 **Returns:**
 
-* ``float`` -- Returns the entity's roll
+* ``float`` -- The entity's roll
+
 
 **Example:**
 
@@ -9894,14 +9926,14 @@ Gets the entity's roll.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_roll(entity)
+   system.log_debug(tostring(rage.entity.get_entity_roll(entity)))
 
 ================================
 
 get_entity_rotation(``entity``, ``rotationOrder``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity rotation.
+Returns the entity rotation.
 
 **Parameters:**
 
@@ -9910,7 +9942,7 @@ Gets the entity rotation.
 
 **Returns:**
 
-* ``Vector3`` -- Returns a vector where the Z coordinate is the yaw.
+* ``Vector3`` -- A vector where the Z coordinate is the yaw.
 
 **Example:**
 
@@ -9919,14 +9951,16 @@ Gets the entity rotation.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_rotation(entity, 2)
+   rot = rage.entity.get_entity_rotation(entity, 2)
+
+   system.log_debug(tostring(rot.x) .. " " .. tostring(rot.y) .. " " .. tostring(rot.z))
 
 ================================
 
 get_entity_rotation_velocity(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity rotation velocity.
+Returns the entity rotation velocity.
 
 **Parameters:**
 
@@ -9934,7 +9968,7 @@ Gets the entity rotation velocity.
 
 **Returns:**
 
-* ``Vector3`` -- Returns a vector where the Z coordinate is the rotation velocity.
+* ``Vector3`` -- A vector where the Z coordinate is the rotation velocity.
 
 **Example:**
 
@@ -9943,14 +9977,16 @@ Gets the entity rotation velocity.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_rotation_velocity(entity, 2)
+   rot = rage.entity.get_entity_rotation_velocity(entity, 2)
+   
+   system.log_debug(tostring(rot.x) .. " " .. tostring(rot.y) .. " " .. tostring(rot.z))
 
 ================================
 
 get_entity_speed(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity's speed.
+Returns the entity's speed.
 
 **Parameters:**
 
@@ -9958,7 +9994,7 @@ Gets the entity's speed.
 
 **Returns:**
 
-* ``float`` -- Returns the entity's speed
+* ``float`` -- The entity's speed
 
 **Example:**
 
@@ -9967,14 +10003,14 @@ Gets the entity's speed.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_speed(entity)
+   system.log_debug(tostring(rage.entity.get_entity_speed(entity)))
 
 ================================
 
 get_entity_submerged_level(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity's submerged level.
+Returns the entity's submerged level.
 
 **Parameters:**
 
@@ -9982,7 +10018,7 @@ Gets the entity's submerged level.
 
 **Returns:**
 
-* ``float`` -- Returns the entity's submerged level
+* ``float`` -- The entity's submerged level
 
 **Example:**
 
@@ -9991,14 +10027,14 @@ Gets the entity's submerged level.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_submerged_level(entity)
+   system.log_debug(tostring(rage.entity.get_entity_submerged_level(entity)))
 
 ================================
 
 get_entity_type(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity type.
+Returns the entity type.
 
 **Parameters:**
 
@@ -10006,7 +10042,7 @@ Gets the entity type.
 
 **Returns:**
 
-* ``int`` -- Returns the entity type ID as following:
+* ``int`` -- The entity type ID as following:
 
   * ``0`` = no entity
   * ``1`` = ped
@@ -10020,14 +10056,14 @@ Gets the entity type.
 
    entity = self.get_ped()
 
-   rage.entity.get_entity_type(entity) -- Will return 1 since entity is a ped
+   system.log_debug(tostring(rage.entity.get_entity_type(entity)))
 
 ================================
 
 get_entity_velocity(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the entity elocity.
+Returns the entity velocity.
 
 **Parameters:**
 
@@ -10035,7 +10071,7 @@ Gets the entity elocity.
 
 **Returns:**
 
-* ``Vector3`` -- Returns a vector where the Z coordinate is the velocity.
+* ``Vector3`` -- A vector where the Z coordinate is the velocity.
 
 **Example:**
 
@@ -10043,15 +10079,16 @@ Gets the entity elocity.
    :linenos:
 
    entity = self.get_ped()
+   data = rage.entity.get_entity_velocity(entity)
 
-   rage.entity.get_entity_velocity(entity)
+   system.log_debug(tostring(data.x) .. " " .. tostring(data.y) .. " " .. tostring(data.z))
 
 ================================
 
 has_entity_been_damaged_by_any_object(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity has been damaged by any object.
+Checks whether an entity has been damaged by any object.
 
 **Parameters:**
 
@@ -10059,10 +10096,10 @@ Checks if the entity has been damaged by any object.
 
 **Returns:**
 
-* ``bool`` -- Returns entity damage status
+* ``bool`` -- The entity damage status
   
   * ``true`` -- Entity has been damaged by an object
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity has not been damaged by an object
 
 **Example:**
 
@@ -10071,14 +10108,14 @@ Checks if the entity has been damaged by any object.
 
    entity = self.get_ped()
 
-   rage.entity.has_entity_been_damaged_by_any_object(entity)
+   system.log_debug(tostring(rage.entity.has_entity_been_damaged_by_any_object(entity)))
 
 ================================
 
 has_entity_been_damaged_by_any_ped(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity has been damaged by any ped.
+Checks whether an entity has been damaged by any ped.
 
 **Parameters:**
 
@@ -10086,10 +10123,10 @@ Checks if the entity has been damaged by any ped.
 
 **Returns:**
 
-* ``bool`` -- Returns entity damage status
+* ``bool`` -- The entity damage status
   
   * ``true`` -- Entity has been damaged by a ped
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity has not been damaged by a ped
 
 **Example:**
 
@@ -10098,14 +10135,14 @@ Checks if the entity has been damaged by any ped.
 
    entity = self.get_ped()
 
-   rage.entity.has_entity_been_damaged_by_any_ped(entity)
+   system.log_debug(tostring(rage.entity.has_entity_been_damaged_by_any_ped(entity)))
 
 ================================
 
 has_entity_been_damaged_by_any_vehicle(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity has been damaged by any vehicle.
+Checks whether an entity has been damaged by any vehicle.
 
 **Parameters:**
 
@@ -10113,10 +10150,10 @@ Checks if the entity has been damaged by any vehicle.
 
 **Returns:**
 
-* ``bool`` -- Returns entity damage status
+* ``bool`` -- Entity damage status
   
   * ``true`` -- Entity has been damaged by a vehicle
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity has not been damaged by a vehicle
 
 **Example:**
 
@@ -10125,14 +10162,14 @@ Checks if the entity has been damaged by any vehicle.
 
    entity = self.get_ped()
 
-   rage.entity.has_entity_been_damaged_by_any_vehicle(entity)
+   system.log_debug(tostring(rage.entity.has_entity_been_damaged_by_any_vehicle(entity)))
 
 ================================
 
 has_entity_been_damaged_by_entity(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity has been damaged by another entity.
+Checks whether an entity has been damaged by another entity.
 
 **Parameters:**
 
@@ -10140,10 +10177,10 @@ Checks if the entity has been damaged by another entity.
 
 **Returns:**
 
-* ``bool`` -- Returns entity damage status
+* ``bool`` -- Entity damage status
   
   * ``true`` -- Entity has been damaged by another entity
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity has not been damaged by another entity
 
 **Example:**
 
@@ -10152,14 +10189,14 @@ Checks if the entity has been damaged by another entity.
 
    entity = self.get_ped()
 
-   rage.entity.has_entity_been_damaged_by_entity(entity)
+   system.log_debug(tostring(rage.entity.has_entity_been_damaged_by_entity(entity)))
 
 ================================
 
 has_entity_collided_with_anything(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity has collided with anything.
+Checks whether an entity has collided with anything.
 
 **Parameters:**
 
@@ -10167,10 +10204,10 @@ Checks if the entity has collided with anything.
 
 **Returns:**
 
-* ``bool`` -- Returns entity collision status
+* ``bool`` -- Entity collision status
   
   * ``true`` -- Entity has collided with anything
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity has not collided with anything
 
 **Example:**
 
@@ -10179,14 +10216,14 @@ Checks if the entity has collided with anything.
 
    entity = self.get_ped()
 
-   rage.entity.has_entity_collided_with_anything(entity)
+   system.log_debug(tostring(rage.entity.has_entity_collided_with_anything(entity)))
 
 ================================
 
 is_an_entity(``handle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the ScrHandle is an entity.
+Checks whether an ScrHandle is an entity.
 
 **Parameters:**
 
@@ -10194,24 +10231,24 @@ Checks if the ScrHandle is an entity.
 
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- The ScrHandle is an entity
-  * ``false`` -- Otherwise
+  * ``false`` -- The ScrHandle is not an entity
 
 **Example:**
 
 .. code-block:: lua
    :linenos:
 
-   rage.entity.is_an_entity(handle)
+   system.log_debug(tostring(rage.entity.is_an_entity(self.get_ped())))
 
 ================================
 
 is_entity_a_ped(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity is a ped.
+Checks whether an entity is a ped.
 
 **Parameters:**
 
@@ -10219,10 +10256,10 @@ Checks if the entity is a ped.
 
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- Entity is a ped
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity is not a ped
 
 **Example:**
 
@@ -10231,14 +10268,14 @@ Checks if the entity is a ped.
 
    entity = self.get_ped()
 
-   rage.entity.is_entity_a_ped(entity)
+   system.log_debug(tostring(rage.entity.is_entity_a_ped(entity)))
 
 ================================
 
 is_entity_a_vehicle(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity is a vehicle.
+Checks whether an entity is a vehicle.
 
 **Parameters:**
 
@@ -10246,10 +10283,10 @@ Checks if the entity is a vehicle.
 
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- Entity is a vehicle
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity is not a vehicle
 
 **Example:**
 
@@ -10258,14 +10295,14 @@ Checks if the entity is a vehicle.
 
    entity = self.get_ped()
 
-   rage.entity.is_entity_a_vehicle(entity)
+   system.log_debug(tostring(rage.entity.is_entity_a_vehicle(entity)))
 
 ================================
 
 is_entity_an_object(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity is an object.
+Checks whether an entity is an object.
 
 **Parameters:**
 
@@ -10273,10 +10310,10 @@ Checks if the entity is an object.
 
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- Entity is an object
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity is not an object
 
 **Example:**
 
@@ -10285,14 +10322,14 @@ Checks if the entity is an object.
 
    entity = self.get_ped()
 
-   rage.entity.is_entity_an_object(entity)
+   system.log_debug(tostring(rage.entity.is_entity_an_object(entity)))
 
 ================================
 
 is_entity_attached(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity is attached to anything.
+Checks whether an entity is attached to anything.
 
 **Parameters:**
 
@@ -10300,10 +10337,10 @@ Checks if the entity is attached to anything.
 
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- Entity is attached
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity is not attached
 
 **Example:**
 
@@ -10312,14 +10349,14 @@ Checks if the entity is attached to anything.
 
    entity = self.get_ped()
 
-   rage.entity.is_entity_attached(entity)
+   system.log_debug(tostring(rage.entity.is_entity_attached(entity)))
 
 ================================
 
 is_entity_dead(``entity``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity is dead.
+Checks whether an entity is dead.
 
 **Parameters:**
 
@@ -10328,10 +10365,10 @@ Checks if the entity is dead.
 
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- Entity is dead
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity is alive
 
 **Example:**
 
@@ -10340,14 +10377,14 @@ Checks if the entity is dead.
 
    entity = self.get_ped()
 
-   rage.entity.is_entity_dead(entity)
+   system.log_debug(tostring(rage.entity.is_entity_dead(entity)))
 
 ================================
 
 is_entity_in_air(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity is in air.
+Checks whether an entity is in air.
 
 **Parameters:**
 
@@ -10355,10 +10392,10 @@ Checks if the entity is in air.
 
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- Entity is in air
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity is not in air
 
 **Example:**
 
@@ -10367,14 +10404,14 @@ Checks if the entity is in air.
 
    entity = self.get_ped()
 
-   rage.entity.is_entity_in_air(entity)
+   system.log_debug(tostring(rage.entity.is_entity_in_air(entity)))
 
 ================================
 
 is_entity_in_water(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity is in water.
+Checks whether an entity is in water.
 
 **Parameters:**
 
@@ -10382,10 +10419,10 @@ Checks if the entity is in water.
 
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- Entity is in water
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity is not in water
 
 **Example:**
 
@@ -10394,26 +10431,28 @@ Checks if the entity is in water.
 
    entity = self.get_ped()
 
-   rage.entity.is_entity_in_water(entity)
+   system.log_debug(tostring(rage.entity.is_entity_in_water(entity)))
 
 ================================
 
 is_entity_in_zone(``entity``, ``zone``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity is in a specified zone
+Checks whether an entity is in a specified zone
 
 **Parameters:**
 
 * ``entity`` (``Entity``) -- The entity ID
 * ``zone`` (``string``) -- The zone name
 
+  * You can read more about zone names here: :doc:`zones`
+
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- Entity is in the specified zone
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity is not in the specified zone
 
 **Example:**
 
@@ -10422,14 +10461,14 @@ Checks if the entity is in a specified zone
 
    entity = self.get_ped()
 
-   rage.entity.is_entity_in_zone(entity, "ALTA")
+   system.log_debug(tostring(rage.entity.is_entity_in_zone(entity, "AirP")))
 
 ================================
 
 is_entity_on_fire(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity is on fire.
+Checks whether an entity is on fire.
 
 **Parameters:**
 
@@ -10437,10 +10476,10 @@ Checks if the entity is on fire.
 
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- Entity is on fire
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity is not on fire
 
 **Example:**
 
@@ -10449,14 +10488,19 @@ Checks if the entity is on fire.
 
    entity = self.get_ped()
 
-   rage.entity.is_entity_on_fire(entity)
+   system.log_debug(tostring(rage.entity.is_entity_on_fire(entity)))
 
 ================================
 
 is_entity_static(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity is static.
+Checks whether an entity is static.
+
+.. note::
+
+   A static ped will not react to native functions like ``rage.entity.apply_force_to_entity`` or ``rage.entity.set_entity_velocity``. The only way to make them react to something is to ragdoll them or use ``rage.ped.clear_ped_tasks_immediately``.
+   Static peds include almost all far-away peds, beach-combers, peds in certain scenarios, peds crossing a crosswalk, peds walking to get back into their cars, and others.
 
 **Parameters:**
 
@@ -10464,10 +10508,10 @@ Checks if the entity is static.
 
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- Entity is static
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity is not static
 
 **Example:**
 
@@ -10476,14 +10520,14 @@ Checks if the entity is static.
 
    entity = self.get_ped()
 
-   rage.entity.is_entity_static(entity)
+   system.log_debug(tostring(rage.entity.is_entity_static(entity)))
 
 ================================
 
 is_entity_upright(``entity``, ``angle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if entity is upright a specified angle.
+Checks whether an entity is upright a specified angle.
 
 **Parameters:**
 
@@ -10492,10 +10536,10 @@ Checks if entity is upright a specified angle.
 
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- Entity is upright at the specified angle
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity is not upright at the specified angle
 
 **Example:**
 
@@ -10504,14 +10548,14 @@ Checks if entity is upright a specified angle.
 
    entity = self.get_ped()
 
-   rage.entity.is_entity_upright(entity, 90.0)
+   system.log_debug(tostring(rage.entity.is_entity_upright(entity, 90.0)))
 
 ================================
 
 is_entity_visible(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if the entity is visible.
+Checks whether an entity is visible.
 
 **Parameters:**
 
@@ -10519,10 +10563,10 @@ Checks if the entity is visible.
 
 **Returns:**
 
-* ``bool`` -- Returns entity status
+* ``bool`` -- Entity status
   
   * ``true`` -- Entity is visible
-  * ``false`` -- Otherwise
+  * ``false`` -- Entity is not visible
 
 **Example:**
 
@@ -10531,14 +10575,14 @@ Checks if the entity is visible.
 
    entity = self.get_ped()
 
-   rage.entity.is_entity_visible(entity)
+   system.log_debug(tostring(rage.entity.is_entity_visible(entity)))
 
 ================================
 
 reset_entity_alpha(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Reset's given entity alpha.
+Resets given entity alpha.
 
 **Parameters:**
 
@@ -10562,7 +10606,7 @@ Reset's given entity alpha.
 set_entity_alpha(``entity``, ``alphaLevel``, ``skin``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Reset's given entity alpha.
+Sets the entity's alpha level.
 
 **Parameters:**
 
@@ -10596,8 +10640,8 @@ Makes the specified entity (ped, vehicle or object) persistent. Persistent entit
 **Parameters:**
 
 * ``entity`` (``Entity``) -- The entity ID
-* ``p1`` (``bool``) -- Unknown.
-* ``p2`` (``bool``) -- Unknown.
+* ``p1`` (``bool``) -- Unknown. Doesn't seem to do anything.
+* ``p2`` (``bool``) -- Unknown. Doesn't seem to do anything.
 
 **Returns:**
 
@@ -10617,7 +10661,12 @@ Makes the specified entity (ped, vehicle or object) persistent. Persistent entit
 set_entity_as_no_longer_needed(``entity``, ``xPos``, ``yPos``, ``zPos``, ``xAxis``, ``yAxis``, ``zAxis``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sets the coordinates (world position) for a specified entity.
+Marks the specified entity (ped, vehicle or object) as no longer needed.  
+
+.. note::
+
+   Entities marked as no longer needed, will be deleted as the engine sees fit.  
+
 
 **Parameters:**
 
@@ -10647,7 +10696,7 @@ Sets the coordinates (world position) for a specified entity.
 set_entity_heading(``entity``, ``heading``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set the heading of an entity in degrees also known as "Yaw".
+Sets the heading of an entity in degrees also known as "Yaw".
 
 **Parameters:**
 
@@ -10672,12 +10721,12 @@ Set the heading of an entity in degrees also known as "Yaw".
 set_entity_lights(``entity``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Toggle entity's lights on/off.
+Toggles entity's lights on/off.
 
 **Parameters:**
 
 * ``entity`` (``Entity``) -- The entity ID
-* ``toggle`` (``bool``) -- The entity's lights toggle
+* ``toggle`` (``bool``) -- Toggle
   
   * ``true`` -- Lights on
   * ``false`` -- Lights off
@@ -10700,7 +10749,7 @@ Toggle entity's lights on/off.
 set_entity_max_speed(``entity``, ``speed``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set the entity's max speed.
+Sets the entity's max speed.
 
 **Parameters:**
 
@@ -10725,7 +10774,7 @@ Set the entity's max speed.
 set_entity_no_collision_entity(``entity1``, ``entity1``, ``thisFrameOnly``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set disabled collision between two entities.
+Sets disabled collision between two entities.
 
 **Parameters:**
 
@@ -10756,7 +10805,7 @@ Set disabled collision between two entities.
 set_entity_rotation(``entity``, ``pitch``, ``roll``, ``yaw``, ``rotationOrder``, ``p5``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set the entity's rotation with customizable options.
+Sets the entity's rotation with customizable options.
 
 **Parameters:**
 
@@ -10764,8 +10813,13 @@ Set the entity's rotation with customizable options.
 * ``pitch`` (``float``) -- Rotation pitch
 * ``roll`` (``float``) -- Rotation roll
 * ``yaw`` (``float``) -- Rotation yaw
-* ``rotationOrder`` (``int``) -- Ratation order
-* ``p5`` (``bool``) -- Unknown
+* ``rotationOrder`` (``int``) -- Rotation order
+* ``p5`` (``bool``) -- Unknown, usually set to ``true``
+
+.. note::
+
+   What you use for rotationOrder when setting must be the same as rotationOrder when getting the rotation. 
+   For the most part R* uses 1 or 2 as the order, overall value ranges from 0 to 5.
 
 **Returns:**
 
@@ -10790,9 +10844,9 @@ Sets the entity velocity.
 **Parameters:**
 
 * ``entity`` (``Entity``) -- The entity ID
-* ``x`` (``float``) -- The ``X`` coordinate
-* ``y`` (``float``) -- The ``Y`` coordinate
-* ``z`` (``float``) -- The ``Z`` coordinate
+* ``x`` (``float``) -- The ``X`` vector coordinate
+* ``y`` (``float``) -- The ``Y`` vector coordinate
+* ``z`` (``float``) -- The ``Z`` vector coordinate
  
   * Note that ``z`` is "up and down" with positive numbers encouraging upwards movement.
 
@@ -10897,7 +10951,7 @@ This namespace contains weapon-related game functions.
 get_max_ammo(``ped``, ``weaponHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get ped max ammo for a weapon.
+Gets ped max ammo for a weapon.
 
 **Parameters:**
 
@@ -10924,7 +10978,7 @@ Get ped max ammo for a weapon.
 get_ped_ammo_type_from_weapon(``ped``, ``weaponHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get ammo type from a specific weapon of a ped.
+Gets ammo type from a specific weapon of a ped.
 
 **Parameters:**
 
@@ -10935,7 +10989,7 @@ Get ammo type from a specific weapon of a ped.
 
 **Returns:**
 
-* ``Hash`` -- Returns ammo type hash
+* ``Hash`` -- Ammo type hash
 
 **Example:**
 
@@ -10944,14 +10998,14 @@ Get ammo type from a specific weapon of a ped.
 
    ped = lobby.get_player_ped(lobby.get_host())
 
-   rage.weapon.get_ped_ammo_type_from_weapon(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Gets ammo type from session's host MicroSMG
+   rage.weapon.get_ped_ammo_type_from_weapon(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Returns ammo type from session's host MicroSMG
 
 ================================
 
 get_ped_weapon_tint_index(``ped``, ``weaponHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get weapon tint ID from a ped.
+Gets weapon tint ID from a ped.
 
 **Parameters:**
 
@@ -10962,7 +11016,7 @@ Get weapon tint ID from a ped.
 
 **Returns:**
 
-* ``int`` -- Returns weapon tint ID
+* ``int`` -- Weapon tint ID
 
 **Example:**
 
@@ -10971,14 +11025,14 @@ Get weapon tint ID from a ped.
 
    ped = lobby.get_player_ped(lobby.get_host())
 
-   rage.weapon.get_ped_weapon_tint_index(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Gets weapon tint ID from session's host MicroSMG
+   rage.weapon.get_ped_weapon_tint_index(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Returns weapon tint ID from session's host MicroSMG
 
 ================================
 
 get_ped_weapon_tint_count(``weaponHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get weapon tint count.
+Gets weapon tint count.
 
 **Parameters:**
 
@@ -10988,7 +11042,7 @@ Get weapon tint count.
 
 **Returns:**
 
-* ``int`` -- Returns weapon tint count
+* ``int`` -- Weapon tint count
 
 **Example:**
 
@@ -10997,7 +11051,7 @@ Get weapon tint count.
 
    ped = lobby.get_player_ped(lobby.get_host())
 
-   rage.weapon.get_ped_weapon_tint_count(rage.gameplay.get_hash_key("weapon_microsmg")) -- Gets weapon tint count from session's host MicroSMG
+   rage.weapon.get_ped_weapon_tint_count(rage.gameplay.get_hash_key("weapon_microsmg")) -- Returns weapon tint count from session's host MicroSMG
 
 ================================
 
@@ -11015,7 +11069,7 @@ Gives a weapon to PED with a delay.
 * ``bForceInHand`` (``bool``) -- Togglable force in hand
 
   * ``true`` -- Equip now
-  * ``false`` -- Don't equp
+  * ``false`` -- Don't equip
   
 .. _Whash: https://wiki.rage.mp/index.php?title=Weapons
 
@@ -11070,7 +11124,7 @@ Give a weapon component to a ped.
 has_ped_got_weapon(``ped``, ``weaponHash``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if a ped has got a weapon.
+Checks whether a ped has got a weapon.
 
 **Parameters:**
 
@@ -11096,14 +11150,14 @@ Check if a ped has got a weapon.
    
    weapon = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.has_ped_got_weapon(ped, weapon, true) -- Checks if session host has got MicroSMG
+   rage.weapon.has_ped_got_weapon(ped, weapon, true) -- Checks whether the session host has got MicroSMG
 
 ================================
 
 has_ped_got_weapon_component(``ped``, ``weaponHash``, ``componentHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if a ped's weapon has got a component.
+Checks whether a ped's weapon has got a component.
 
 **Parameters:**
 
@@ -11130,7 +11184,7 @@ Check if a ped's weapon has got a component.
    
    weapon = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.has_ped_got_weapon_component(ped, weapon, rage.gameplay.get_hash_key("COMPONENT_MICROSMG_CLIP_02")) -- Checks if session host's MicroSMG has got Extended Clip
+   rage.weapon.has_ped_got_weapon_component(ped, weapon, rage.gameplay.get_hash_key("COMPONENT_MICROSMG_CLIP_02")) -- Checks whether the session host's MicroSMG has got Extended Clip
 
 ================================
 
@@ -11363,7 +11417,7 @@ Set ped weapon tint ID.
    ped = lobby.get_player_ped(lobby.get_host())
    self = lobby.get_player_ped(self.get_ped)
 
-   tint = rage.weapon.get_ped_weapon_tint_index(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Gets weapon tint ID from session's host MicroSMG
+   tint = rage.weapon.get_ped_weapon_tint_index(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Returns weapon tint ID from session's host MicroSMG
 
    rage.weapon.set_ped_weapon_tint_index(self, rage.gameplay.get_hash_key("weapon_microsmg"), tint) -- Sets self weapon tint
 
@@ -11381,7 +11435,7 @@ This namespace contains ui-related game functions.
 has_anim_dict_loaded(``animDict``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if animation dictionary is loaded.
+Checks whether an animation dictionary is loaded.
 
 **Parameters:**
 
@@ -11391,24 +11445,24 @@ Check if animation dictionary is loaded.
 
 **Returns:**
 
-* ``bool`` -- Returns anim dict status
+* ``bool`` -- Animation dictionary status
   
-  * ``true`` -- Animation dict is loaded
-  * ``false`` -- Animation dict is not loaded
+  * ``true`` -- Animation dictionary is loaded
+  * ``false`` -- Animation dictionary is not loaded
 
 **Example:**
 
 .. code-block:: lua
    :linenos:
 
-   rage.streaming.has_anim_dict_loaded("move_f@injured")
+   system.log_debug(tostring(rage.streaming.has_anim_dict_loaded("move_f@injured")))
 
 ================================
 
 has_anim_set_loaded(``animSet``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if animation set is loaded.
+Checks whether an animation set is loaded.
 
 **Parameters:**
 
@@ -11418,7 +11472,7 @@ Check if animation set is loaded.
 
 **Returns:**
 
-* ``bool`` -- Returns anim set status
+* ``bool`` -- Animation set status
   
   * ``true`` -- Animation set is loaded
   * ``false`` -- Animation set is not loaded
@@ -11428,14 +11482,14 @@ Check if animation set is loaded.
 .. code-block:: lua
    :linenos:
 
-   rage.streaming.has_anim_set_loaded("idle_intro")
+   system.log_debug(tostring(rage.streaming.has_anim_set_loaded("idle_intro")))
 
 ================================
 
 has_model_loaded(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if animation set is loaded.
+Checks whether a specified model has loaded into memory.
 
 **Parameters:**
 
@@ -11443,7 +11497,7 @@ Check if animation set is loaded.
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is loaded
   * ``false`` -- Model is not loaded
@@ -11455,14 +11509,14 @@ Check if animation set is loaded.
 
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.has_model_loaded(hashKey)
+   system.log_debug(tostring(rage.streaming.has_model_loaded(hashKey)))
 
 ================================
 
 has_named_ptfx_asset_loaded(``fxName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if a particles effect is loaded.
+Checks whether a particles effect is loaded.
 
 **Parameters:**
 
@@ -11470,7 +11524,7 @@ Check if a particles effect is loaded.
 
 **Returns:**
 
-* ``bool`` -- Returns effect status
+* ``bool`` -- Effect status
   
   * ``true`` -- Effect is loaded
   * ``false`` -- Effect is not loaded
@@ -11480,14 +11534,14 @@ Check if a particles effect is loaded.
 .. code-block:: lua
    :linenos:
 
-   rage.streaming.has_named_ptfx_asset_loaded("blood_stab")
+   system.log_debug(tostring(rage.streaming.has_named_ptfx_asset_loaded("blood_stab")))
 
 ================================
 
 is_this_model_a_bicycle(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is a bicycle.
+Checks whether the model is a bicycle.
 
 **Parameters:**
 
@@ -11495,7 +11549,7 @@ Check if the model is a bicycle.
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is a bicycle
   * ``false`` -- Model is not a bicycle
@@ -11507,14 +11561,14 @@ Check if the model is a bicycle.
 
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.is_this_model_a_bicycle(hashKey)
+   system.log_debug(tostring(rage.streaming.is_this_model_a_bicycle(hashKey)))
 
 ================================
 
 is_this_model_a_bike(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is a bike.
+Checks whether the model is a bike.
 
 **Parameters:**
 
@@ -11522,7 +11576,7 @@ Check if the model is a bike.
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is a bike
   * ``false`` -- Model is not a bike
@@ -11534,14 +11588,14 @@ Check if the model is a bike.
 
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.is_this_model_a_bike(hashKey)
+   system.log_debug(tostring(rage.streaming.is_this_model_a_bike(hashKey)))
 
 ================================
 
 is_this_model_a_boat(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is a boat.
+Checks whether the model is a boat.
 
 **Parameters:**
 
@@ -11549,7 +11603,7 @@ Check if the model is a boat.
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is a boat
   * ``false`` -- Model is not a boat
@@ -11561,14 +11615,14 @@ Check if the model is a boat.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.is_this_model_a_boat(hashKey)
+   system.log_debug(tostring(rage.streaming.is_this_model_a_boat(hashKey)))
 
 ================================
 
 is_this_model_a_car(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is a car.
+Checks whether the model is a car.
 
 **Parameters:**
 
@@ -11576,7 +11630,7 @@ Check if the model is a car.
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is a car
   * ``false`` -- Model is not a car
@@ -11588,14 +11642,14 @@ Check if the model is a car.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.is_this_model_a_car(hashKey) -- Returns true
+   system.log_debug(tostring(rage.streaming.is_this_model_a_car(hashKey))) -- Returns true
 
 ================================
 
 is_this_model_a_heli(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is a helicopter.
+Checks whether the model is a helicopter.
 
 **Parameters:**
 
@@ -11603,7 +11657,7 @@ Check if the model is a helicopter.
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is a helicopter
   * ``false`` -- Model is not a helicopter
@@ -11615,14 +11669,14 @@ Check if the model is a helicopter.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.is_this_model_a_heli(hashKey)
+   system.log_debug(tostring(rage.streaming.is_this_model_a_heli(hashKey)))
 
 ================================
 
 is_model_a_ped(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is a ped.
+Checks whether the model is a ped.
 
 **Parameters:**
 
@@ -11630,7 +11684,7 @@ Check if the model is a ped.
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is a ped
   * ``false`` -- Model is not a ped
@@ -11642,14 +11696,14 @@ Check if the model is a ped.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.is_model_a_ped(hashKey) -- Returns false
+   system.log_debug(tostring(rage.streaming.is_model_a_ped(hashKey)))
 
 ================================
 
 is_this_model_a_plane(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is a plane.
+Checks whether the model is a plane.
 
 **Parameters:**
 
@@ -11657,7 +11711,7 @@ Check if the model is a plane.
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is a plane
   * ``false`` -- Model is not a plane
@@ -11669,14 +11723,14 @@ Check if the model is a plane.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.is_this_model_a_plane(hashKey)
+   system.log_debug(tostring(rage.streaming.is_this_model_a_plane(hashKey)))
 
 ================================
 
 is_this_model_a_quadbike(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is a quadbike.
+Checks whether the model is a quadbike.
 
 **Parameters:**
 
@@ -11684,7 +11738,7 @@ Check if the model is a quadbike.
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is a quadbike
   * ``false`` -- Model is not a quadbike
@@ -11696,14 +11750,14 @@ Check if the model is a quadbike.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.is_this_model_a_quadbike(hashKey)
+   system.log_debug(tostring(rage.streaming.is_this_model_a_quadbike(hashKey)))
 
 ================================
 
 is_this_model_a_train(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is a train.
+Checks whether the model is a train.
 
 **Parameters:**
 
@@ -11711,7 +11765,7 @@ Check if the model is a train.
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is a train
   * ``false`` -- Model is not a train
@@ -11723,14 +11777,14 @@ Check if the model is a train.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.is_this_model_a_train(hashKey)
+   system.log_debug(tostring(rage.streaming.is_this_model_a_train(hashKey)))
 
 ================================
 
 is_model_a_vehicle(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is a vehicle.
+Checks whether the model is a vehicle.
 
 **Parameters:**
 
@@ -11738,7 +11792,7 @@ Check if the model is a vehicle.
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is a vehicle
   * ``false`` -- Model is not a vehicle
@@ -11750,14 +11804,14 @@ Check if the model is a vehicle.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.is_model_a_vehicle(hashKey)
+   system.log_debug(tostring(rage.streaming.is_model_a_vehicle(hashKey)))
 
 ================================
 
 is_model_in_cdimage(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is in cdimage (rpf).
+Checks whether the model is in cdimage (rpf).
 
 **Parameters:**
 
@@ -11765,7 +11819,7 @@ Check if the model is in cdimage (rpf).
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is in cdimage
   * ``false`` -- Model is not in cdimage
@@ -11784,7 +11838,7 @@ Check if the model is in cdimage (rpf).
 is_model_valid(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is valid.
+Checks whether the specified model exists in the game.
 
 **Parameters:**
 
@@ -11792,7 +11846,7 @@ Check if the model is valid.
 
 **Returns:**
 
-* ``bool`` -- Returns Model status
+* ``bool`` -- Model status
   
   * ``true`` -- Model is valid
   * ``false`` -- Model is not valid
@@ -11804,7 +11858,7 @@ Check if the model is valid.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.is_model_valid(hashKey)
+   system.log_debug(tostring(rage.streaming.is_model_valid(hashKey)))
 
 ================================
 
@@ -11973,7 +12027,7 @@ Requests the IPL.
 request_model(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is valid.
+Requests a model to be loaded into memory.
 
 **Parameters:**
 
@@ -12019,7 +12073,12 @@ Requests the named particle effects asset.
 set_model_as_no_longer_needed(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the model is valid.
+Sets the model as no longer needed.
+
+.. note::
+
+   Unloads model from memory. Engine unloads this later as seems fit.
+
 
 **Parameters:**
 
@@ -12062,7 +12121,7 @@ Add blip for given coordinates.
 
 **Returns:**
 
-* ``Blip`` -- Returns a blip object at the specified coordinates.
+* ``Blip`` -- A blip object at the specified coordinates.
 
 **Example:**
 
@@ -12084,7 +12143,7 @@ Add blip for given entity.
 
 **Returns:**
 
-* ``Blip`` -- Returns a blip object at the specified entity.
+* ``Blip`` -- A blip object at the specified entity.
 
 **Example:**
 
@@ -12108,7 +12167,7 @@ Add blip for given pickup.
 
 **Returns:**
 
-* ``Blip`` -- Returns a blip object
+* ``Blip`` -- A blip object
 
 **Example:**
 
@@ -12135,7 +12194,7 @@ Add blip for given coords with custom radius.
 
 **Returns:**
 
-* ``Blip`` -- Returns a blip object
+* ``Blip`` -- A blip object
 
 **Example:**
 
@@ -12151,7 +12210,7 @@ Add blip for given coords with custom radius.
 get_blip_coords(``blip``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get coordinates for a blip.
+Gets coordinates for a blip.
 
 **Parameters:**
 
@@ -12159,7 +12218,7 @@ Get coordinates for a blip.
 
 **Returns:**
 
-* ``Vector3`` -- Returns blip coords in Vector3 format
+* ``Vector3`` -- Blip coords
 
 **Example:**
 
@@ -12175,7 +12234,7 @@ Get coordinates for a blip.
 get_blip_from_entity(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get blip from entity.
+Gets blip from entity.
 
 **Parameters:**
 
@@ -12183,7 +12242,7 @@ Get blip from entity.
 
 **Returns:**
 
-* ``Blip`` -- Returns a blip ID
+* ``Blip`` -- A blip ID
 
 **Example:**
 
@@ -12199,7 +12258,7 @@ Get blip from entity.
 get_label_text(``labelName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get label text from label name.
+Gets label text from label name.
 
 **Parameters:**
 
@@ -12207,7 +12266,7 @@ Get label text from label name.
 
 **Returns:**
 
-* ``string`` -- Returns label text
+* ``string`` -- Label text
 
 **Example:**
 
@@ -12290,7 +12349,7 @@ Hide specified HUD (Heads-up Display) component.
 is_hud_component_active(``id``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if specified HUD (Heads-up Display) component is active.
+Checks whether specified HUD (Heads-up Display) component is active.
 
 **Parameters:**
 
@@ -12308,14 +12367,14 @@ Check if specified HUD (Heads-up Display) component is active.
 .. code-block:: lua
    :linenos:
 
-   rage.ui.is_hud_component_active(19) -- Checks if Weapon Wheel is active
+   rage.ui.is_hud_component_active(19) -- Checks whether the Weapon Wheel is active
 
 ================================
 
 is_mission_creator_blip(``blip``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if blip is a mission creator.
+Checks whether a blip is a mission creator.
 
 **Parameters:**
 
@@ -12323,7 +12382,7 @@ Check if blip is a mission creator.
 
 **Returns:**
 
-* ``bool`` -- Returns blip status
+* ``bool`` -- Blip status
 
   * ``true`` -- Blip is a mission creator
   * ``false`` -- Blip is not a mission creator
@@ -12440,7 +12499,7 @@ Set blip coordinates.
 
    blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
 
-   coords = lobby.get_player_coords(lobby.get_host()) -- Gets host's coordinates
+   coords = lobby.get_player_coords(lobby.get_host()) -- Returns host's coordinates
 
    rage.ui.set_blip_coords(blip, coords.x, coords.y, coords.z)
 
@@ -12830,7 +12889,7 @@ This namespace contains draw-related game functions.
 get_gameplay_cam_relative_pitch()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get gameplay camera relative pitch.
+Gets gameplay camera relative pitch.
 
 **Parameters:**
 
@@ -12838,7 +12897,7 @@ Get gameplay camera relative pitch.
 
 **Returns:**
 
-* ``float`` -- Returns cam relative pitch value
+* ``float`` -- Cam's relative pitch value
 
 **Example:**
 
@@ -12858,7 +12917,7 @@ get_gameplay_cam_rot(``rotationOrder``)
 
    This function requires proper documentation & testing.
 
-Get gameplay camera rotation
+Gets gameplay camera rotation
 
 **Parameters:**
 
@@ -12879,14 +12938,14 @@ Get gameplay camera rotation
 
 **Returns:**
 
-* ``Vector3`` -- Returns coordinates in Vector3 form
+* ``Vector3`` -- Camera rotation data
 
 **Example:**
 
 .. code-block:: lua
    :linenos:
 
-   ggcr = rage.cam.get_gameplay_cam_rot(0) -- gets the rotation of the camera with the first rotation order.
+   ggcr = rage.cam.get_gameplay_cam_rot(0) -- Returns the rotation of the camera with the first rotation order.
    system.log_debug("LocalPlayer pitch: " .. tostring(ggcr.x) .. " roll: " .. tostring(ggcr.y) .. " yaw: " .. tostring(ggcr.z))
 
 ================================
@@ -13527,7 +13586,7 @@ Start fire on entity.
 
 **Returns:**
 
-``int`` -- Returns a value which represents how many times the fire was applied
+``int`` -- A value which represents how many times the fire was applied
 
 **Example:**
 
@@ -13576,7 +13635,7 @@ This namespace contains network-related game functions.
 network_get_friend_count()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get friend count.
+Gets friend count.
 
 **Parameters:**
 
@@ -13584,7 +13643,7 @@ Get friend count.
 
 **Returns:**
 
-* ``int`` -- Returns friend count
+* ``int`` -- Friend count
 
 **Example:**
 
@@ -13598,7 +13657,7 @@ Get friend count.
 network_get_host_of_this_script()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get ID of the player host of this script.
+Gets ID of the player host of this script.
 
 **Parameters:**
 
@@ -13606,7 +13665,7 @@ Get ID of the player host of this script.
 
 **Returns:**
 
-* ``Player`` -- Returns Player ID
+* ``Player`` -- Player ID
 
 **Example:**
 
@@ -13620,7 +13679,7 @@ Get ID of the player host of this script.
 network_get_max_friends()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get max friends.
+Gets max friends.
 
 **Parameters:**
 
@@ -13628,7 +13687,7 @@ Get max friends.
 
 **Returns:**
 
-* ``int`` -- Returns max friends
+* ``int`` -- Max friends
 
 **Example:**
 
@@ -13669,7 +13728,7 @@ Check network control of entity.
 network_is_friend_in_multiplayer(``friendName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if friend is in multiplayer.
+Checks whether a friend is in multiplayer.
 
 **Parameters:**
 
@@ -13698,7 +13757,7 @@ network_is_friend_index_online(``friendIndex``)
 
    This function is poorly documented. It requires testing.
 
-Check if friend is online by friend index.
+Checks whether a friend is online by friend index.
 
 **Parameters:**
 
@@ -13717,7 +13776,7 @@ Check if friend is online by friend index.
 network_is_friend_online(``name``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if friend is online.
+Checks whether a friend is online.
 
 **Parameters:**
 
@@ -13742,7 +13801,7 @@ Check if friend is online.
 network_is_session_started()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if session has started - you're fully connected, can control your character, and not hanging in the clouds.
+Checks whether a session has started - you're fully connected, can control your character, and not hanging in the clouds.
 
 **Parameters:**
 
@@ -13767,7 +13826,7 @@ Check if session has started - you're fully connected, can control your characte
 network_hash_from_player_handle(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get hash from player handle.
+Gets hash from player handle.
 
 **Parameters:**
 
@@ -13775,7 +13834,7 @@ Get hash from player handle.
 
 **Returns:**
 
-* ``Hash`` -- Returns hash from player handle.
+* ``Hash`` -- Hash from player handle.
 
 **Example:**
 
@@ -13876,7 +13935,7 @@ This namespace contains cutscene-related game functions.
 is_cutscene_active()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if a cutscene is active.
+Checks whether a cutscene is active.
 
 **Parameters:**
 
@@ -13901,7 +13960,7 @@ Checks if a cutscene is active.
 is_cutscene_playing()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if a cutscene is playing.
+Checks whether a cutscene is playing.
 
 **Parameters:**
 
@@ -14105,7 +14164,7 @@ is_control_pressed(``padIndex``, ``control``)
 is_disabled_control_just_pressed(``padIndex``, ``control``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if a disabled control is just pressed.
+Checks whether a disabled control is just pressed.
 
 **Parameters:**
 
@@ -14134,7 +14193,7 @@ Check if a disabled control is just pressed.
 is_disabled_control_pressed(``padIndex``, ``control``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if a disabled control is pressed.
+Checks whether a disabled control is pressed.
 
 **Parameters:**
 
@@ -14146,7 +14205,7 @@ Check if a disabled control is pressed.
 
 **Returns:**
 
-* ``bool`` -- Returns control status
+* ``bool`` -- Control status
 
   * ``true`` -- Control is pressed
   * ``false`` -- Control is not pressed
@@ -14202,7 +14261,7 @@ Graphics namespace
 animpostfx_is_running(``effectName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if a postFX effect is running.
+Checks whether a postFX effect is running.
 
 **Parameters:**
 
@@ -14774,7 +14833,7 @@ Finishes all scaleforms that are currently drawn.
 has_scaleform_movie_loaded(``scaleformHandle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks if a scaleform was loaded.
+Checks whether a scaleform was loaded.
 
 **Parameters:**
 
@@ -14982,6 +15041,9 @@ Set the height of the cylindrical checkpoint.
 
 **Example:**
 
+.. code-block:: lua
+   :linenos:
+
    coords1 = self.get_coords()
    coords2 = self.get_coords_infront(100)
    checkpoint = rage.graphics.create_checkpoint(45, coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 50, 255, 0, 0, 255, 120)
@@ -15008,6 +15070,10 @@ Set the RGBA of the checkpoint.
 
 **Example:**
 
+.. code-block:: lua
+   :linenos:
+
+
    coords1 = self.get_coords()
    coords2 = self.get_coords_infront(100)
    checkpoint = rage.graphics.create_checkpoint(45, coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 50, 255, 0, 0, 255, 120)
@@ -15029,6 +15095,9 @@ Deinitializes a scaleform object.
 * None
 
 **Example:**
+
+.. code-block:: lua
+   :linenos:
 
    scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
    rage.graphics.end_scaleform_movie_method()
@@ -15060,7 +15129,7 @@ This namespace contains time-related game functions.
 get_clock_hours()
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the current in-game hour
+Returns the current in-game hour
 
 **Parameters:**
 
@@ -15083,7 +15152,7 @@ Gets the current in-game hour
 get_current_minutes()
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the current in-game minute
+Returns the current in-game minute
 
 **Parameters:**
 
@@ -15106,7 +15175,7 @@ Gets the current in-game minute
 get_current_seconds()
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Gets the current in-game second
+Returns the current in-game second
 
 **Parameters:**
 
@@ -15162,7 +15231,7 @@ This namespace contains ai-related game functions.
 does_scenario_group_exist(``scenarioGroup``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if a scenario group exists.
+Checks whether a scenario group exists.
 
 **Parameters:**
 
@@ -15172,7 +15241,7 @@ Check if a scenario group exists.
 
 **Returns:**
 
-* ``bool`` -- Returns scenario group status check
+* ``bool`` -- Scenario group status check
   
   * ``true`` -- Scenario group exists
   * ``false`` -- Scenario group does not exist
@@ -15182,14 +15251,14 @@ Check if a scenario group exists.
 .. code-block:: lua
    :linenos:
 
-   rage.ai.does_scenario_group_exist("SOLOMON_GATE")
+   system.log_debug(tostring(rage.ai.does_scenario_group_exist("SOLOMON_GATE")))
 
 ================================
 
 is_ped_active_in_scenario(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the ped is currently in any scenario.
+Checks whether the ped is currently in any scenario.
 
 **Parameters:**
 
@@ -15197,7 +15266,7 @@ Check if the ped is currently in any scenario.
 
 **Returns:**
 
-* ``bool`` -- Returns check status
+* ``bool`` -- Check status
   
   * ``true`` -- If the ped is currently in any scenario.
   * ``false`` -- If the ped is not in any scenario.
@@ -15209,14 +15278,14 @@ Check if the ped is currently in any scenario.
 
    ped = self.get_ped()
 
-   rage.ai.is_ped_active_in_scenario("ped")
+   system.log_debug(tostring(rage.ai.is_ped_active_in_scenario(ped)))
 
 ================================
 
 is_scenario_group_enabled(``scenarioGroup``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the scenario group is enabled.
+Checks whether the scenario group is enabled.
 
 **Parameters:**
 
@@ -15226,7 +15295,7 @@ Check if the scenario group is enabled.
 
 **Returns:**
 
-* ``bool`` -- Returns scenario group status check
+* ``bool`` -- Scenario group status
   
   * ``true`` -- Scenario group is enabled.
   * ``false`` -- Scenario group is not enabled.
@@ -15236,14 +15305,14 @@ Check if the scenario group is enabled.
 .. code-block:: lua
    :linenos:
 
-   rage.ai.is_scenario_group_enabled("SOLOMON_GATE")
+   system.log_debug(tostring(rage.ai.is_scenario_group_enabled("SOLOMON_GATE")))
 
 ================================
 
 is_scenario_type_enabled(``scenarioType``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the scenario type is enabled.
+Checks whether the scenario type is enabled.
 
 **Parameters:**
 
@@ -15253,7 +15322,7 @@ Check if the scenario type is enabled.
 
 **Returns:**
 
-* ``bool`` -- Returns scenario type status check
+* ``bool`` -- Scenario type status check
   
   * ``true`` -- Scenario type is enabled.
   * ``false`` -- Scenario type is not enabled.
@@ -15263,14 +15332,14 @@ Check if the scenario type is enabled.
 .. code-block:: lua
    :linenos:
 
-   rage.ai.is_scenario_type_enabled("WORLD_HUMAN_DRINKING")
+   system.log_debug(tostring(rage.ai.is_scenario_type_enabled("WORLD_HUMAN_DRINKING")))
 
 ================================
 
 get_is_task_active(``ped``, ``taskIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if the task is active.
+Checks whether the task is active.
 
 **Parameters:**
 
@@ -15279,7 +15348,7 @@ Check if the task is active.
 
 **Returns:**
 
-* ``bool`` -- Returns task status check
+* ``bool`` -- Task status check
   
   * ``true`` -- Task is active.
   * ``false`` -- Task is not active.
@@ -15289,7 +15358,7 @@ Check if the task is active.
 .. code-block:: lua
    :linenos:
 
-   rage.ai.get_is_task_active(127) -- Checks if CTaskCrouch is active
+   system.log_debug(tostring(rage.ai.get_is_task_active(self.get_ped(), 127))) -- Checks whether the CTaskCrouch is active
 
 ================================
 
@@ -15522,7 +15591,7 @@ Toggle the scenario type.
   
   * You can read more about scenario groups here: :doc:`scenariotypes`
 
-* ``toggle`` (``bool``) -- Toggle scenario type
+* ``toggle`` (``bool``) -- Toggle
 
   * ``true`` -- Scenario type enabled
   * ``false`` -- Scenario type not enabled
@@ -15908,7 +15977,7 @@ Make the entity move to a target until time is over (duration) or get in target'
    vehicleHandle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ZENTORNO"), self.get_coords_infront(10), 30.0)
 
    rage.ai.task_go_to_entity(pedHandle, vehicleHandle, 5000, 4.0, 100, 1073741824, 0) 
-   -- Ped will run towards the vehicle for 5 seconds and stop when time is over or when he gets 4 meters(?) around the vehicle
+   -- Ped will run towards the vehicle for 5 seconds and stop when time is over or when he Returns 4 meters(?) around the vehicle
 
 ================================
 
@@ -16892,7 +16961,7 @@ Returns the interior ID representing the requested interior at that location (if
 
 **Returns:**
 
-* ``int`` -- Returns interior ID.
+* ``int`` -- Interior ID.
 
 **Example:**
 
@@ -16906,7 +16975,7 @@ Returns the interior ID representing the requested interior at that location (if
 get_interior_from_entity(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get the handle of the interior that the entity is in. Returns 0 if outside.  
+Gets the handle of the interior that the entity is in. Returns 0 if outside.  
 
 **Parameters:**
 
@@ -16914,7 +16983,7 @@ Get the handle of the interior that the entity is in. Returns 0 if outside.
 
 **Returns:**
 
-* ``int`` -- Returns interior ID.
+* ``int`` -- Interior ID.
 
 **Example:**
 
@@ -17186,7 +17255,7 @@ Creates a rope at the specific position, that extends in the specified direction
 
 **Returns:**
 
-* ``int`` -- Returns rope ID.
+* ``int`` -- Rope ID.
 
 **Example:**
 
@@ -17298,7 +17367,7 @@ Detach a rope from entity.
 does_rope_exist(``ropeId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if a rope exists.
+Checks whether a rope exists.
 
 **Parameters:**
 
@@ -17306,7 +17375,7 @@ Check if a rope exists.
 
 **Returns:**
 
-* ``bool`` -- Returns the status of the check:
+* ``bool`` -- The status of the check:
 
   * ``true`` -- Rope exists
   * ``false`` -- Rope does not exist
@@ -17325,7 +17394,7 @@ Check if a rope exists.
 rope_are_textures_loaded()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check if rope textures are loaded.
+Checks whether rope textures are loaded.
 
 **Parameters:**
 
@@ -17333,7 +17402,7 @@ Check if rope textures are loaded.
 
 **Returns:**
 
-* ``bool`` -- Returns the status of the check:
+* ``bool`` -- The status of the check:
 
   * ``true`` -- Rope textures are loaded
   * ``false`` -- Rope textures are not loaded

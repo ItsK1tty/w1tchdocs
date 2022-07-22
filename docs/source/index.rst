@@ -40,3 +40,5 @@ Contents
    animfx
    decor
    scaleforms
+   relationship
+   bones
