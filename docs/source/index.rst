@@ -44,3 +44,11 @@ Contents
    bones
    ptfx
    zones
+   pedCompID
+   pedPropID
+   pedOverlayID
+   formation
+   combat_attributes
+   combat_movements
+   combat_ranges
+   pedConfigs

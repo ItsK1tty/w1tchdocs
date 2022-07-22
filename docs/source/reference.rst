@@ -39,6 +39,8 @@ You can find a hash key using this function: rage.gameplay.get_hash_key("string"
 
 You can find most of the game objects here:
 
+Menu button & children hashes can be anything you want, but they have to be unique.
+
 * `Weapons <https://wiki.rage.mp/index.php?title=Weapons>`__
 * `Weapon Components <https://wiki.rage.mp/index.php?title=Weapons_Components>`__
 * `Vehicles <https://wiki.rage.mp/index.php?title=Vehicles>`__
@@ -573,7 +575,9 @@ Converts a string key to a key hash.
 .. code-block:: lua
    :linenos:
 
-   system.log_info(tostring(system.string_to_key("HOME"))) -- get "HOME" key hash
+   key = system.string_to_key("HOME")
+
+   system.log_info(tostring(key)) -- get "HOME" key hash
 
 ================================
 
@@ -595,7 +599,8 @@ Converts a key hash to a string key.
 .. code-block:: lua
    :linenos:
 
-   system.log_info(tostring(system.key_to_string(36))) -- get "HOME" key hash
+   key = system.key_to_string(36)
+   system.log_info(tostring(key)) -- get "HOME" key hash
 
    -- why 36, you ask? See this: https://www.oreilly.com/library/view/javascript-dhtml/9780596514082/apb.html
 
@@ -788,7 +793,7 @@ Adds a slider menu option.
 * ``value`` (``float``) -- The option default value.
 * ``min`` (``float``) -- Minimum slider value.
 * ``max`` (``float``) -- Maximum slider value.
-* ``mod`` (``float``) -- Step of value increase.
+* ``mod`` (``float``) -- Delimeter of value increase.
 * ``parent`` (``int``) -- The parent section.
 * ``fn`` (``function``) -- Function to call.
 
@@ -803,7 +808,7 @@ Adds a slider menu option.
 
    parent = menu.add_parent("My parent section")
 
-   menu.add_option_slider("Slider Option", "luaOptDummyToggle", 10, 0, 100, 1, parent, function())
+   menu.add_option_slider("Slider Option", "luaOptDummyToggle", 10, 0, 100, 3, parent, function()) -- makes a slider with 3 possible values: on 2, 4, and 6
 
 ======================
 
@@ -834,7 +839,7 @@ Adds a toggable slider menu option.
 
    parent = menu.add_parent("My parent section")
 
-   menu.add_option_slider_toggle("Toggable Slider Option", "luaOptDummyToggle", 10, 0, 100, 1, parent, function())
+   menu.add_option_slider_toggle("Toggable Slider Option", "luaOptDummyToggle", 10, 0, 100, 10, parent, function())  -- makes a slider with 10 possible values: on 10, 20, and so on.
 
 ======================
 
@@ -853,7 +858,7 @@ Adds a menu option with a pre-set value
 * ``mod`` (``float``) -- Step of value increase.
 * ``parent`` (``int``) -- The parent section.
 * ``valueSuffix`` (``string``) -- The value suffix text (e.g. ``m/s``)
-* ``fn`` (``function``) -- Function to call.
+* ``fn`` (``function``) -- Function to call. (optional)
 
 **Returns:**
 
@@ -1145,7 +1150,7 @@ Adds a player menu slider option in the selected player section.
 .. code-block:: lua
    :linenos:
 
-   menu.add_player_option_slider("Slider Player Option", "luaOptDummyToggle", 10, 0, 100, 1, function())
+   menu.add_player_option_slider("Slider Player Option", "luaOptDummyToggle", 10, 0, 100, 10, function())  -- makes a slider with 10 possible values: on 10, 20, 30, and so on.
 
 ======================
 
@@ -1173,7 +1178,7 @@ Adds a toggable slider player menu option in the selected player section.
 .. code-block:: lua
    :linenos:
 
-   menu.add_player_option_slider_toggle("Toggable Slider Player Option", "luaOptDummyToggle", 10, 0, 100, 1, function())
+   menu.add_player_option_slider_toggle("Toggable Slider Player Option", "luaOptDummyToggle", 10, 0, 100, 10, function()) --  -- makes a slider with 10 possible values: on 10, 20, 30, and so on.
 
 ======================
 
@@ -3382,6 +3387,11 @@ draw_box(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding``
 
 Draws a box with the given color and rounding.
 
+.. note::
+
+   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   
+
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the box to draw. Hash is used to identify the box, so it must be unique.
@@ -3419,6 +3429,11 @@ draw_box_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rou
 
 Draws a filled box with the given color and rounding.
 
+.. note::
+
+   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   
+
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the box to draw. Hash is used to identify the box, so it must be unique.
@@ -3455,6 +3470,11 @@ draw_box_border_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``borderS
 
 
 Draws a filled border box with the given color and rounding.
+
+.. note::
+
+   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   
 
 **Parameters:**
 
@@ -3495,10 +3515,13 @@ More about rounding flags: :doc:`roundingflags`
 draw_circle(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color``, ``segments`` = ``16``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-
 Draws a circle with the given color.
 
+
+.. note::
+
+   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the circle to draw. Hash is used to identify the circle, so it must be unique.
@@ -3533,6 +3556,11 @@ draw_circle_filled(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color``, ``se
 
 Draws a filled circle with the given color.
 
+.. note::
+
+   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   
+
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the circle to draw. Hash is used to identify the circle, so it must be unique.
@@ -3564,6 +3592,11 @@ draw_circle_border_filled(``hash``, ``draw``, ``x``, ``y``, ``radius``, ``color`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Draws a filled border circle with the given color.
+
+.. note::
+
+   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   
 
 **Parameters:**
 
@@ -3602,6 +3635,11 @@ draw_triangle(``hash``, ``draw``, ``x``, ``y``, ``color``, ``size`` = ``1.1``)
 
 Draws a triangle with the given color.
 
+.. note::
+
+   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   
+
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the triangle to draw. Hash is used to identify the triangle, so it must be unique.
@@ -3632,6 +3670,11 @@ draw_triangle_filled(``hash``, ``draw``, ``x``, ``y``, ``color``, ``size`` = ``1
 
 
 Draws a filled triangle with the given color.
+
+.. note::
+
+   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   
 
 **Parameters:**
 
@@ -3665,6 +3708,11 @@ draw_triangle_border_filled(``hash``, ``draw``, ``x``, ``y``, ``color``, ``color
 
 Draws a filled border triangle with the given color.
 
+.. note::
+
+   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   
+
 **Parameters:**
 
 *  ``hash`` (``string``) -- The hash of the triangle to draw. Hash is used to identify the triangle, so it must be unique.
@@ -3696,6 +3744,10 @@ Draws a filled border triangle with the given color.
 draw_text(``hash``, ``draw``, ``text``, ``x``, ``y``, ``scale``, ``color``, ``flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. note::
+
+   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   
 
 Draws a text with the given color.
 
@@ -3730,6 +3782,11 @@ More about text flags: :doc:`textflags`
 
 draw_image(``path``, ``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0.f``, ``rounding_flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   
 
 Draws an image. Supports PNG & JPEG files.
 
@@ -9210,8 +9267,9 @@ Toggle ped ragdoll.
    :linenos:
 
    ped = self.get_ped()
+   data = rage.ped.can_ped_ragdoll(ped)
 
-   system.log_debug(tostring(rage.ped.can_ped_ragdoll(ped)))
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -9442,6 +9500,1369 @@ Checks whether a group exists.
 
 ================================
 
+does_relationship_group_exist(groupHash)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether a relationship group exists.
+
+**Parameters:**
+
+* ``groupHash`` (``Hash``) -- The group hash
+
+**Returns:**
+
+* ``bool`` -- Group status
+  
+  * ``true`` -- Group exists
+  * ``false`` -- Group does not exist
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   data1 = rage.ped.does_relationship_group_exist(rage.gameplay.get_hash_key("PLAYER") -- true
+   data2 = rage.ped.does_relationship_group_exist(0x6F0783F5) -- true
+   data3 = rage.ped.does_relationship_group_exist("") -- false
+
+   system.log_debug(tostring(data1)))
+   system.log_debug(tostring(data2))
+   system.log_debug(tostring(data3))
+
+
+================================
+
+get_current_ped_weapon(``ped``, ``p2``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns hash of the ped's active weapon
+
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``p2`` (``bool``) -- Always seems to be ``true``
+
+
+**Returns:**
+
+* ``Hash`` -- The current weapon hash
+
+  * Find out more about weapon hashes `here <https://wiki.rage.mp/index.php?title=Weapons>`__
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   
+   data = rage.ped.get_current_ped_weapon(ped, true)
+
+   system.log_debug(tostring(data))
+
+================================
+
+get_group_size(``groupId``, ``unknown``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns ped group size.
+
+**Parameters:**
+
+* ``groupId`` (``int``) -- The group ID
+* ``unknown`` (``Any``) -- Unknown, seems to be a boolean that represents if the group exists at all
+
+**Returns:**
+
+* ``int`` -- The group member count
+
+**Example:**
+
+
+.. note::
+
+   This example was not tested.
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+   ped = rage.ped.clone_ped(entity, false, false, true)
+   group = rage.ped.create_group()
+   rage.ped.set_ped_as_group_leader(entity, group)
+   rage.ped.set_ped_as_group_member(ped, group)
+   data = rage.ped.get_group_size(group, true)
+   system.log_debug(tostring(data)) -- should return 2
+
+================================
+
+get_number_of_ped_drawable_variations(``ped``, ``componentID``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the number of drawable variations for the specified body part.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``componentID`` (``int``) -- The component ID / body part ID
+
+  * You can find the component IDs here: :doc:`pedCompID`
+
+**Returns:**
+
+* ``int`` -- The number of drawable variations
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.get_number_of_ped_drawable_variations(ped, 0)
+   system.log_debug(tostring(data)) -- drawable variations number for head
+
+================================
+
+get_number_of_ped_prop_drawable_variations(``ped``, ``propID``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the number of drawable variations for the specified prop.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``propID`` (``int``) -- The prop ID
+
+  * You can find the prop IDs here: :doc:`pedPropID`
+
+**Returns:**
+
+* ``int`` -- The number of drawable variations
+
+**Example:**
+
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+
+   -- делать так:
+
+   data = tostring(rage.ped.get_number_of_ped_prop_drawable_variations(ped, 0))
+   system.log_debug(data)
+
+   -- или вот так?
+
+   data = rage.ped.get_number_of_ped_prop_drawable_variations(ped, 0)
+   system.log_debug(tostring(data))
+
+================================
+
+get_number_of_ped_prop_texture_variations(``ped``, ``propID``, ``drawableID``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+      
+   this funciton is not yet documented.
+
+================================
+
+get_number_of_ped_texture_variations(``ped``, ``componentID``, ``drawableID``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+      
+   this function is not yet documented.
+
+================================
+
+get_ped_bone_index(``ped``, ``boneID``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the bone name for the specified bone ID.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``boneID`` (``int``) -- The bone ID
+
+   * You can find the bone IDs here: :doc:`bones`
+
+**Returns:**
+
+* ``string`` -- The bone name
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   data1 = rage.ped.get_ped_bone_index(entity, 0)
+   data2 = rage.ped.get_ped_bone_index(entity, 1356)
+   data3 = rage.ped.get_ped_bone_index(entity, 2108)
+
+   system.log_debug(tostring(data)) -- 0
+   system.log_debug(tostring(data)) -- -1
+   system.log_debug(tostring(data)) -- 5
+
+================================
+
+get_ped_drawable_variation(``ped``, ``componentID``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get variation ID based on component ID.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``componentID`` (``int``) -- The component ID / body part ID
+
+  * You can find the component IDs here: :doc:`pedCompID`
+
+**Returns:**
+
+* ``int`` -- The variation ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.get_ped_drawable_variation(ped, 0) -- variations count for head
+   system.log_debug(tostring(data))
+
+================================
+
+get_ped_eye_color(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the eye color of the specified ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* ``int`` -- The eye color
+
+  * For eye colors list, see this: :doc:`eyecolors`
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.get_ped_eye_color(ped)
+   system.log_debug(tostring(data))
+
+================================
+
+get_ped_group_index(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the group id of which the specified ped is a member of.  
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* ``int`` -- The group id
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+   group = rage.ped.create_group()
+   rage.ped.set_ped_as_group_leader(entity, group)
+   rage.ped.get_ped_group_index(entity)
+   system.log_debug(tostring(data))
+
+================================
+
+get_ped_head_blend_data(``ped``, ``headBlendData``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is not yet documented and is not yet available to use in Lua.
+
+Returns face shape data of the specified ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``headBlendData`` (``int``) -- The head blend data
+
+  * ``shapeFirst`` -- dad shape
+  * ``shapeSecond`` -- mom shape
+  * ``shapeThird`` -- third shape (unused)
+  * ``skinFirst`` -- dad skin color
+  * ``skinSecond`` -- mom skin color
+  * ``skinThird`` -- third skin color (unused)
+  * ``shapeMix`` -- shape mix
+  * ``skinMix`` -- skin mix
+  * ``thirdMix`` -- third mix (unused)
+
+**Returns:**
+
+* ``bool`` -- Unknown
+
+
+
+================================
+
+
+get_ped_head_overlay_value(``ped``, ``overlayID``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the setting of the specified head part (makeup, complexion, etc.)
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``overlayID`` (``int``) -- The overlay ID
+
+  * You can find the overlay IDs here: :doc:`pedOverlayID`
+
+**Returns:**
+
+* ``int`` -- The overlay value
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.get_ped_head_overlay_value(ped, 0) -- get Blemishes overlay value
+   system.log_debug(tostring(data))
+
+================================
+
+get_ped_max_health(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the maximum health of the specified ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* ``int`` -- The maximum health
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.get_ped_max_health(ped)
+   system.log_debug(tostring(data))
+
+
+================================
+
+get_ped_prop_index(``ped``, ``componentID``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Returns a ped's prop index (identifier) based on component ID.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``componentID`` (``int``) -- The component ID / body part ID
+
+  * You can find the component IDs here: :doc:`pedPropID`
+
+**Returns:**
+
+* ``int`` -- The prop index
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.get_ped_prop_index(ped, 0) -- get helmet prop index
+   system.log_debug(tostring(data))
+
+================================
+
+get_ped_prop_texture_index(``ped``, ``componentID``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Returns a ped's prop texture index (identifier) based on component ID.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``componentID`` (``int``) -- The component ID / body part ID
+
+  * You can find the component IDs here: :doc:`pedPropID`
+
+**Returns:**
+
+* ``int`` -- The prop texture index
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.get_ped_prop_texture_index(ped, 0) -- get helmet prop texture index
+   system.log_debug(tostring(data))
+
+================================
+
+get_ped_relationship_group_hash(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a ped's relationship group hash.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* ``int`` -- The relationship group hash
+
+  * You can find the relationship group hashes here: :doc:`relationship`
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.get_ped_relationship_group_hash(ped)
+   system.log_debug(tostring(data))
+
+================================
+
+get_ped_texture_variation(``ped``, ``componentID``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a ped's texture variation (identifier) based on component ID.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``componentID`` (``int``) -- The component ID / body part ID
+
+  * You can find the component IDs here: :doc:`pedCompID`
+
+
+**Returns:**
+
+* ``int`` -- The texture variation ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.get_ped_texture_variation(ped, 0) -- get helmet texture variation
+   system.log_debug(tostring(data))
+
+================================
+
+get_vehicle_ped_is_using(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the vehicle that the specified ped is in.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* ``Vehicle`` -- The vehicle handle
+
+  * If the ped is not in a vehicle, the handle will be 0.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.get_vehicle_ped_is_using(ped)
+   platetext = rage.vehicle.get_vehicle_number_plate_text(data)
+   system.log_debug(tostring(platetext))
+
+================================
+
+is_ped_a_player(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the specified ped is a player.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* ``bool`` 
+
+  * ``true`` -- the ped is a player
+  * ``false`` -- the ped is not a player
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.is_ped_a_player(ped)
+   system.log_debug(tostring(data))
+
+================================
+
+is_ped_group_member(``ped``, ``group``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``group`` (``Group``) -- The group ID
+
+**Returns:**
+
+* ``bool`` 
+
+  * ``true`` -- the ped is a member of the group
+  * ``false`` -- the ped is not a member of the group
+
+**Example:**   
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   group = rage.ped.create_group()
+   data = rage.ped.is_ped_group_member(ped, group)
+   if data then
+      system.log_debug("Ped is a member of group " .. tostring(group))
+   else
+      system.log_debug("Ped is not a member of group " .. tostring(group))
+   end
+
+================================
+
+is_ped_in_any_vehicle(``ped``, ``atGetIn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Whether or not the specified ped is in any vehicle.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``atGetIn`` (``bool``) -- Whether or not to check if the ped is currently in the process of entering a vehicle
+
+  * ``true`` -- Check if the ped is in the process of entering a vehicle
+  * ``false`` -- Check if the ped is in any vehicle
+
+**Returns:**
+
+
+* ``bool``
+
+  * ``true`` -- the ped is in any vehicle (or is in the process of entering a vehicle)
+  * ``false`` -- the ped is not in any vehicle (or is not in the process of entering a vehicle)
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.is_ped_in_any_vehicle(ped, true)
+   if data then
+      system.log_debug("Ped is going to enter or already is in the vehicle")
+   else
+      system.log_debug("Ped is not going to enter or is not in the vehicle")
+   end
+
+================================
+
+is_ped_ragdoll(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the ragdoll is toggled on for the specified ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* ``bool`` 
+
+  * ``true`` -- the ragdoll is toggled on
+  * ``false`` -- the ragdoll is toggled off
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.is_ped_ragdoll(ped)
+   if data then
+      system.log_debug("Ped has ragdoll toggled on")
+   else
+      system.log_debug("Ragdoll is toggled off for this ped")
+   end
+
+================================
+
+is_ped_shooting(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the specified ped is shooting.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* ``bool`` 
+
+  * ``true`` -- the ped is shooting
+  * ``false`` -- the ped is not shooting
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.is_ped_shooting(ped)
+   if data then
+      system.log_debug("Ped is shooting")
+   else
+      system.log_debug("Ped is not shooting")
+   end
+
+================================
+
+is_ped_wimming(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the specified ped is swimming.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* ``bool`` 
+
+  * ``true`` -- the ped is swimming
+  * ``false`` -- the ped is not swimming
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.is_ped_wimming(ped)
+   if data then
+      system.log_debug("Ped is swimming")
+   else
+      system.log_debug("Ped is not swimming")
+   end
+
+================================
+
+is_ped_using_any_scenario(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the specified ped is using any scenario.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* ``bool`` 
+
+  * ``true`` -- the ped is using any scenario
+  * ``false`` -- the ped is not using any scenario
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.is_ped_using_any_scenario(ped)
+   if data then
+      system.log_debug("Ped is using any scenario")
+   else
+      system.log_debug("Ped is not using any scenario")
+   end
+
+================================
+
+remove_group(``groupId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes a ped group from the game session.
+
+**Parameters:**
+
+* ``groupId`` (``Group``) -- The group ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   group = rage.ped.create_group()
+   rage.ped.remove_group(group)
+   system.log_debug("Group " .. tostring(group) .. " removed")
+
+================================
+
+remove_ped_from_group(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes a ped from its group.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.remove_ped_from_group(ped)
+   system.log_debug("Ped " .. tostring(ped) .. " removed from group")
+
+================================
+
+remove_relationship_group(``groupHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes a relationship group from the game session.
+
+**Parameters:**
+
+* ``groupHash`` (``Hash``) -- The relationship group hash
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ped.remove_relationship_group(0xA49E591C)
+   system.log_debug("Relationship group COP removed")
+
+================================
+
+reset_group_formation_default_spacing(``group``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Resets group formation settings.
+
+**Parameters:**
+
+* ``group`` (``Group``) -- The group ID
+
+**Returns:**
+
+* None
+
+.. note::
+
+   This example was not tested.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   group = rage.ped.create_group()
+   rage.ped.reset_group_formation_default_spacing(group)
+   system.log_debug("Group formation settings reset")
+
+================================
+
+reset_ped_movement_clipset(``ped``, ``p1``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Resets the ped movement animation set.
+
+.. note::
+
+   Seems to only work with player peds. Needs more testing with ordinary peds.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``p1`` (``float``) -- Unknown
+   
+  * If ``p1`` is ``0.0``, you are back to normal.
+  * If ``p1`` is ``1.0``, it looks like you can only rotate the ped, not walk.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.reset_ped_movement_clipset(ped, 0.0)
+   system.log_debug("Ped movement clipset reset")
+
+================================
+
+resurrect_ped(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Resurrects a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   deadPed = rage.ped.clone_ped(ped, false, false, true)
+
+   -- imagine your clone gets killed
+
+   rage.ped.resurrect_ped(deadPed)
+   system.log_debug("Clone resurrected")
+
+================================
+
+
+set_can_attack_friendly(``ped``, ``bool``, ``p2``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets whether the ped can attack friendly peds.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``bool`` (``bool``) -- Whether the ped can attack friendly peds
+* ``p2`` (``bool``) -- Unknown. Use ``false``, as setting it to ``true`` doesn't let you attack friends.
+
+**Returns:**
+
+* None
+
+.. note::
+
+   This example was not tested.
+
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.set_can_attack_friendly(ped, true, false)
+   system.log_debug("Ped can now attack friendly peds")
+
+====================================
+
+set_create_random_cops(``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets whether random cops can be summoned
+
+**Parameters:**
+
+* ``toggle`` (``bool``) -- Whether random cops can be summoned
+
+  * ``true`` -- random cops can be summoned
+  * ``false`` -- random cops can't be summoned
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ped.set_create_random_cops(true)
+   system.log_debug("Random cops can now be summoned")
+
+====================================
+
+set_group_formation(``group``, ``formationType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the group formation type.
+
+**Parameters:**
+
+* ``group`` (``Group``) -- The group ID
+* ``formationType`` (``int``) -- The formation type
+
+  * You can find formation types here: :doc:`formation`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   group = rage.ped.create_group()
+   rage.ped.set_group_formation(group, 1)
+   system.log_debug("Group formation set to formation type Circle Around Leader")
+
+====================================
+
+set_group_formation_spacing(``group``, ``p1``, ``p2``, ``p3``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the group formation spacing.
+
+**Parameters:**
+
+* ``group`` (``Group``) -- The group ID
+* ``p1`` (``float``) -- The spacing between members (in meters)
+* ``p2`` (``float``) -- Unknown. Seen to be ``-1``
+* ``p3`` (``float``) -- Unknown. Seen to be ``-1``
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   group = rage.ped.create_group()
+   rage.ped.set_group_formation_spacing(group, 10, -1, -1)
+   system.log_debug("Group formation spacing set to 10 meters")
+
+====================================
+
+set_ped_accuracy(``ped``, ``accuracy``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the ped shooting accuracy.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``accuracy`` (``int``) -- Accuracy rate (0-100)
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.set_ped_accuracy(ped, 100)
+   system.log_debug("Ped accuracy set to 100")
+
+====================================
+
+set_ped_as_group_leader(``ped``, ``groupId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the ped as a ped group leader.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``groupId`` (``int``) -- The group ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   group = rage.ped.create_group()
+   ped = self.get_ped()
+   rage.ped.set_ped_as_group_leader(ped, group)
+   system.log_debug("Ped set as group leader")
+
+====================================
+
+set_ped_as_group_member(``ped``, ``groupId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the ped as a ped group member.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``groupId`` (``int``) -- The group ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   group = rage.ped.create_group()
+   ped = self.get_ped()
+   clone = rage.ped.clone_ped(ped, false, false, true)
+   rage.ped.set_ped_as_group_leader(ped, group)
+   rage.ped.set_ped_as_group_member(clone, group)
+   system.log_debug("Clone set as group member")
+
+====================================
+
+set_ped_can_ragdoll(``ped``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles the ragdoll for a ped
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``toggle`` (``bool``) -- Ragdoll toggle
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   clone = rage.ped.clone_ped(ped, false, false, true)
+   rage.ped.set_ped_can_ragdoll(clone, true)
+   system.log_debug("Clone's ragdoll is now on")
+
+====================================
+
+set_ped_combat_ability(``ped``, ``abilityLevel``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets combat ability level for a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``abilityLevel`` (``int``) -- The ability level
+
+  * ``100`` = attack
+  * less than ``50`` -ish would mean run away
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   clone = rage.ped.clone_ped(ped, false, false, true)
+   rage.ped.set_ped_combat_ability(Clone, 100)
+   system.log_debug("Clone combat ability set to Trevor level")
+
+====================================
+
+set_ped_combat_attributes(``ped``, ``attributeId``, ``enabled``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configures various combat attributes for a ped
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``attributeId`` (``int``) -- The attribute ID
+
+  * You can find attribute IDs here: :doc:`combat_attributes`
+* ``enabled`` (``bool``) -- Whether the attribute is enabled
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   clone = rage.ped.clone_ped(ped, false, false, true)
+   rage.ped.set_ped_combat_attributes(clone, 1, true)
+   system.log_debug("Clone combat attributes set to 1 (BF_CanUseVehicles)")
+
+
+====================================
+
+set_ped_combat_movement(``ped``, ``combatMovement``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the combat movement rule for a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``combatMovement`` (``int``) -- The combat movement rule
+
+  * You can find combat movement rules here: :doc:`combat_movements`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   clone = rage.ped.clone_ped(ped, false, false, true)
+   rage.ped.set_ped_combat_movement(clone, 2)
+   system.log_debug("Clone combat movement set to 2 (Offensive)")
+
+====================================
+
+set_ped_combat_range(``ped``, ``combatRange``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the combat range for a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``combatRange`` (``int``) -- The combat range
+
+  * You can find combat ranges here: :doc:`combat_ranges`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   clone = rage.ped.clone_ped(ped, false, false, true)
+   rage.ped.set_ped_combat_range(clone, 1)
+   system.log_debug("Clone combat range set to 1 (Medium)")
+
+====================================
+
+set_ped_component_variation(``ped``, ``componentId``, ``drawableId``, ``textureId``, ``paletteId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the component variation for a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``componentId`` (``int``) -- The component ID
+
+   * You can find component IDs here: :doc:`pedCompID`
+* ``drawableId`` (``int``) -- The drawable ID
+* ``textureId`` (``int``) -- The texture ID
+* ``paletteId`` (``int``) -- The palette ID
+  
+  * Can be from ``0`` to ``3``.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   componentID = 0  -- face
+   drawableId = rage.ped.get_number_of_ped_drawable_variations(ped, componentID) -- face drawable count
+   textureId = rage.ped.get_number_of_ped_texture_variations(ped, componentID, 0) -- face texture count
+   rage.ped.set_ped_component_variation(ped, componentID, drawableId, textureId, 2)
+
+   system.log_debug("Manipulated face components.")
+
+====================================
+
+set_ped_config_flag(``ped``, ``flagId``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a ped config flag.
+
+.. note::
+
+   #. When ``flagId`` is set to ``33`` and the bool value to ``true``, peds will die by ragdolling, so you should set this flag to false when you resurrect a ped.
+   #. When ``flagId`` is set to ``62`` and the bool value to ``false``, peds may jump out of their vehicles and never return.
+
+   Config flags changes during game session:
+
+   * Jumping: changes ``60``, ``61``, ``104`` to ``false``.
+   * Being in water (swimming): changes ``60``, ``61`` to ``false`` and ``65``, ``66``, ``168`` to ``true``.
+   * Falling: changes ``60``, ``61``, ``104``, ``276`` to ``false`` and ``76`` to ``true``.
+   * Dying: changes ``60``, ``61``, ``104``, ``276`` to ``false``.
+   * Being in a car: changes ``60``, ``79``, ``104`` to ``false`` and ``62`` to ``true``.
+
+   Maximum value for ``flagId`` is 426. FlagId ``240`` appears to be somewhat special.
+
+
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``flagId`` (``int``) -- The flag ID
+
+  * You can find flag IDs here: :doc:`pedConfigs`
+* ``value`` (``bool``) -- The flag value
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.set_ped_config_flag(ped, 149, false)
+   system.log_debug("Damage reduced for self.")
+
+====================================
+
+set_ped_default_component_variation(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Resets ped clothes to default
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   clone = rage.ped.clone_ped(ped, false, false, true)
+   rage.ped.set_ped_default_component_variation(clone)
+   system.log_debug("Clone's clothes set to default.")
+
+====================================
+
+set_ped_density_multiplier_this_frame(``multiplier``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the ped density on the streets.
+
+.. note::
+
+   Use this inside a loop.
+
+**Parameters:**
+
+* ``multiplier`` (``float``) -- The density multiplier
+
+  * ``0.0`` -- no peds on streets
+  * ``1.0`` -- normal peds amount on streets
+  * ``2.0+`` -- ???
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   while 1 do
+      rage.ped.set_ped_density_multiplier_this_frame(0.0)
+      system.log_debug("Peds density set to 0.")
+   end
+
+====================================
+
+set_ped_eye_color(``ped``, ``index``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* For eye colors list, see this: :doc:`eyecolors`
+================================
+
 .. _vehicleNSR:
 
 Vehicle namespace
@@ -9634,8 +11055,9 @@ Checks whether an entity has a drawable (weapon?).
    :linenos:
 
    entity = self.get_ped()
+   data = rage.entity.does_entity_have_drawable(entity)
 
-   system.log_debug(tostring(rage.entity.does_entity_have_drawable(entity)))
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -9661,8 +11083,8 @@ Checks whether an entity has physics enabled.
    :linenos:
 
    entity = self.get_ped()
-
-   system.log_debug(tostring(rage.entity.does_entity_have_physics(entity)))
+   data = rage.entity.does_entity_have_physics(entity)
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -9714,7 +11136,9 @@ Returns the entity that this entity is attached to.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.get_entity_attached_to(entity)))
+   data = rage.entity.get_entity_attached_to(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -9741,7 +11165,9 @@ Returns the entity bone ID by name.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.get_entity_bone_index_by_name(entity, "SKEL_L_Forearm")))
+   data = rage.entity.get_entity_bone_index_by_name(entity, "SKEL_L_Forearm")
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -9794,7 +11220,9 @@ Returns the entity's forward vector.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.get_entity_forward_vector(entity)))
+   data = rage.entity.get_entity_forward_vector(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -9818,7 +11246,9 @@ Returns the entity's heading.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.get_entity_heading(entity)))
+   data = rage.entity.get_entity_heading(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -9842,7 +11272,9 @@ Returns the entity's physics heading.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.get_entity_physics_heading(entity)))
+   data = rage.entity.get_entity_physics_heading(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -9866,7 +11298,9 @@ Returns the entity's pitch.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.get_entity_pitch(entity)))
+   data = rage.entity.get_entity_pitch(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -9901,7 +11335,9 @@ Returns the entity's population type.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.get_entity_population_type(entity)))
+   data = rage.entity.get_entity_population_type(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -9926,7 +11362,9 @@ Returns the entity's roll.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.get_entity_roll(entity)))
+   data = rage.entity.get_entity_roll(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10003,7 +11441,9 @@ Returns the entity's speed.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.get_entity_speed(entity)))
+   data = rage.entity.get_entity_speed(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10026,8 +11466,8 @@ Returns the entity's submerged level.
    :linenos:
 
    entity = self.get_ped()
-
-   system.log_debug(tostring(rage.entity.get_entity_submerged_level(entity)))
+   data = rage.entity.get_entity_submerged_level(entity)
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10055,8 +11495,9 @@ Returns the entity type.
    :linenos:
 
    entity = self.get_ped()
+   data = rage.entity.get_entity_type(entity)
 
-   system.log_debug(tostring(rage.entity.get_entity_type(entity)))
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10107,8 +11548,8 @@ Checks whether an entity has been damaged by any object.
    :linenos:
 
    entity = self.get_ped()
-
-   system.log_debug(tostring(rage.entity.has_entity_been_damaged_by_any_object(entity)))
+   data = rage.entity.has_entity_been_damaged_by_any_object(entity)
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10134,8 +11575,9 @@ Checks whether an entity has been damaged by any ped.
    :linenos:
 
    entity = self.get_ped()
+   data = rage.entity.has_entity_been_damaged_by_any_ped(entity)
 
-   system.log_debug(tostring(rage.entity.has_entity_been_damaged_by_any_ped(entity)))
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10162,7 +11604,9 @@ Checks whether an entity has been damaged by any vehicle.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.has_entity_been_damaged_by_any_vehicle(entity)))
+   data = rage.entity.has_entity_been_damaged_by_any_vehicle(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10189,7 +11633,8 @@ Checks whether an entity has been damaged by another entity.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.has_entity_been_damaged_by_entity(entity)))
+   data = rage.entity.has_entity_been_damaged_by_entity(entity)
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10216,7 +11661,9 @@ Checks whether an entity has collided with anything.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.has_entity_collided_with_anything(entity)))
+   data = rage.entity.has_entity_collided_with_anything(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10241,7 +11688,11 @@ Checks whether an ScrHandle is an entity.
 .. code-block:: lua
    :linenos:
 
-   system.log_debug(tostring(rage.entity.is_an_entity(self.get_ped())))
+   entity = self.get_ped()
+
+   data = rage.entity.is_an_entity(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10268,7 +11719,10 @@ Checks whether an entity is a ped.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.is_entity_a_ped(entity)))
+   data = rage.entity.is_entity_a_ped(entity)
+
+   system.log_debug(tostring(data))
+
 
 ================================
 
@@ -10295,7 +11749,9 @@ Checks whether an entity is a vehicle.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.is_entity_a_vehicle(entity)))
+   data = rage.entity.is_entity_a_vehicle(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10322,7 +11778,9 @@ Checks whether an entity is an object.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.is_entity_an_object(entity)))
+   data = rage.entity.is_entity_an_object(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10349,7 +11807,9 @@ Checks whether an entity is attached to anything.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.is_entity_attached(entity)))
+   data = rage.entity.is_entity_attached(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10377,7 +11837,9 @@ Checks whether an entity is dead.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.is_entity_dead(entity)))
+   data = rage.entity.is_entity_dead(entity, true)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10404,7 +11866,10 @@ Checks whether an entity is in air.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.is_entity_in_air(entity)))
+   data = rage.entity.is_entity_in_air(entity)
+
+   system.log_debug(tostring(data))
+
 
 ================================
 
@@ -10431,7 +11896,9 @@ Checks whether an entity is in water.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.is_entity_in_water(entity)))
+   data = rage.entity.is_entity_in_water(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10461,7 +11928,10 @@ Checks whether an entity is in a specified zone
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.is_entity_in_zone(entity, "AirP")))
+   data = rage.entity.is_entity_in_zone(entity, "AirP")
+
+   system.log_debug(tostring(data))
+
 
 ================================
 
@@ -10488,7 +11958,9 @@ Checks whether an entity is on fire.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.is_entity_on_fire(entity)))
+   data = rage.entity.is_entity_on_fire(entity)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10520,7 +11992,10 @@ Checks whether an entity is static.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.is_entity_static(entity)))
+   data = rage.entity.is_entity_static(entity)
+
+   system.log_debug(tostring(data))
+
 
 ================================
 
@@ -10548,7 +12023,9 @@ Checks whether an entity is upright a specified angle.
 
    entity = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.is_entity_upright(entity, 90.0)))
+   data = rage.entity.is_entity_upright(entity, 0.0)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -10658,7 +12135,7 @@ Makes the specified entity (ped, vehicle or object) persistent. Persistent entit
 
 ================================
 
-set_entity_as_no_longer_needed(``entity``, ``xPos``, ``yPos``, ``zPos``, ``xAxis``, ``yAxis``, ``zAxis``)
+set_entity_as_no_longer_needed(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Marks the specified entity (ped, vehicle or object) as no longer needed.  
@@ -10689,7 +12166,7 @@ Marks the specified entity (ped, vehicle or object) as no longer needed.
 
    entity = self.get_ped()
 
-   rage.entity.set_entity_as_no_longer_needed(entity, 420.82, 69.53, 58, true, true, true)
+   rage.entity.set_entity_as_no_longer_needed(entity)
 
 ================================
 
@@ -11455,7 +12932,9 @@ Checks whether an animation dictionary is loaded.
 .. code-block:: lua
    :linenos:
 
-   system.log_debug(tostring(rage.streaming.has_anim_dict_loaded("move_f@injured")))
+   data = rage.streaming.has_anim_dict_loaded("move_f@injured")
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11482,7 +12961,9 @@ Checks whether an animation set is loaded.
 .. code-block:: lua
    :linenos:
 
-   system.log_debug(tostring(rage.streaming.has_anim_set_loaded("idle_intro")))
+   data = rage.streaming.has_anim_set_loaded("idle_intro")
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11509,7 +12990,9 @@ Checks whether a specified model has loaded into memory.
 
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   system.log_debug(tostring(rage.streaming.has_model_loaded(hashKey)))
+   data = rage.streaming.has_model_loaded(hashKey)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11534,7 +13017,9 @@ Checks whether a particles effect is loaded.
 .. code-block:: lua
    :linenos:
 
-   system.log_debug(tostring(rage.streaming.has_named_ptfx_asset_loaded("blood_stab")))
+   data = rage.streaming.has_named_ptfx_asset_loaded("blood_stab")
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11561,7 +13046,9 @@ Checks whether the model is a bicycle.
 
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   system.log_debug(tostring(rage.streaming.is_this_model_a_bicycle(hashKey)))
+   data = rage.streaming.is_this_model_a_bicycle(hashKey)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11588,7 +13075,9 @@ Checks whether the model is a bike.
 
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   system.log_debug(tostring(rage.streaming.is_this_model_a_bike(hashKey)))
+   data = rage.streaming.is_this_model_a_bike(hashKey)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11615,7 +13104,9 @@ Checks whether the model is a boat.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   system.log_debug(tostring(rage.streaming.is_this_model_a_boat(hashKey)))
+   data = rage.streaming.is_this_model_a_boat(hashKey)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11642,7 +13133,9 @@ Checks whether the model is a car.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   system.log_debug(tostring(rage.streaming.is_this_model_a_car(hashKey))) -- Returns true
+   data = rage.streaming.is_this_model_a_car(hashKey)
+
+   system.log_debug(tostring(data)) -- Returns true
 
 ================================
 
@@ -11669,7 +13162,9 @@ Checks whether the model is a helicopter.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   system.log_debug(tostring(rage.streaming.is_this_model_a_heli(hashKey)))
+   data = rage.streaming.is_this_model_a_heli(hashKey)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11696,7 +13191,9 @@ Checks whether the model is a ped.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   system.log_debug(tostring(rage.streaming.is_model_a_ped(hashKey)))
+   data = rage.streaming.is_model_a_ped(hashKey)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11723,7 +13220,9 @@ Checks whether the model is a plane.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   system.log_debug(tostring(rage.streaming.is_this_model_a_plane(hashKey)))
+   data = rage.streaming.is_this_model_a_plane(hashKey)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11750,7 +13249,9 @@ Checks whether the model is a quadbike.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   system.log_debug(tostring(rage.streaming.is_this_model_a_quadbike(hashKey)))
+   data = rage.streaming.is_this_model_a_quadbike(hashKey)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11777,7 +13278,9 @@ Checks whether the model is a train.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   system.log_debug(tostring(rage.streaming.is_this_model_a_train(hashKey)))
+   data = rage.streaming.is_this_model_a_train(hashKey)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11804,7 +13307,9 @@ Checks whether the model is a vehicle.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   system.log_debug(tostring(rage.streaming.is_model_a_vehicle(hashKey)))
+   data = rage.streaming.is_model_a_vehicle(hashKey)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -11858,7 +13363,9 @@ Checks whether the specified model exists in the game.
    
    hashKey = rage.gameplay.get_hash_key("ZENTORNO")
 
-   system.log_debug(tostring(rage.streaming.is_model_valid(hashKey)))
+   data = rage.streaming.is_model_valid(hashKey)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -14280,7 +15787,7 @@ Checks whether a postFX effect is running.
    :linenos:
 
    if rage.graphics.animpostfx_is_running("FocusIn") then
-      system.log_debug("Drugs is running")
+      system.log_debug("Drugs effect is running")
    end
 
 ================================
@@ -15251,7 +16758,9 @@ Checks whether a scenario group exists.
 .. code-block:: lua
    :linenos:
 
-   system.log_debug(tostring(rage.ai.does_scenario_group_exist("SOLOMON_GATE")))
+   data = rage.ai.does_scenario_group_exist("SOLOMON_GATE")
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -15278,7 +16787,9 @@ Checks whether the ped is currently in any scenario.
 
    ped = self.get_ped()
 
-   system.log_debug(tostring(rage.ai.is_ped_active_in_scenario(ped)))
+   data = rage.ai.is_ped_active_in_scenario(ped)
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -15305,7 +16816,9 @@ Checks whether the scenario group is enabled.
 .. code-block:: lua
    :linenos:
 
-   system.log_debug(tostring(rage.ai.is_scenario_group_enabled("SOLOMON_GATE")))
+   data = rage.ai.is_scenario_group_enabled("SOLOMON_GATE")
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -15332,7 +16845,9 @@ Checks whether the scenario type is enabled.
 .. code-block:: lua
    :linenos:
 
-   system.log_debug(tostring(rage.ai.is_scenario_type_enabled("WORLD_HUMAN_DRINKING")))
+   data = rage.ai.is_scenario_type_enabled("WORLD_HUMAN_DRINKING")
+
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -15358,7 +16873,8 @@ Checks whether the task is active.
 .. code-block:: lua
    :linenos:
 
-   system.log_debug(tostring(rage.ai.get_is_task_active(self.get_ped(), 127))) -- Checks whether the CTaskCrouch is active
+   data = rage.ai.get_is_task_active(self.get_ped(), 127)  -- Checks whether the CTaskCrouch is active
+   system.log_debug(tostring(data))
 
 ================================
 
@@ -17251,7 +18767,7 @@ Creates a rope at the specific position, that extends in the specified direction
 * ``p12`` (``bool``) -- If max length is zero, and this is set to false the rope will become rigid (it will force a specific distance, what ever length is, between the objects).
 * ``p14`` (``float``) -- The speed as which physics should run at. 1.0f is normal, 2.0f is twice as fast, -1.0f is time going backwards. This can affect gravity, etc.
 * ``breakWhenShot`` (``bool``) -- Whether shooting the rope will break it.
-* ``unkPtr`` (``Any``) -- Unknown pointer, always 0 in original scrips.
+* ``unkPtr`` (``Any``) -- Unknown parameter, always 0 in original scripts.
 
 **Returns:**
 
