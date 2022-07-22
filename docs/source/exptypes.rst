@@ -1,89 +1,90 @@
-Explosion Types
-===================================
+Explosion types
+================
+
 Explosion types are used to configure the spawned explosions in the game.
 
 Current available explosion types are:
 
-* Grenade = ``0``
-* Grenade Launcher = ``1``
-* Sticky Bomb = ``2``
-* Molotov = ``3``
-* Rocket = ``4``
-* Tank Shell = ``5``
-* High Octane = ``6``
-* Car = ``7``
-* Plane = ``8``
-* Petrol Pump = ``9``
-* Bike = ``10``
-* Directional Steam = ``11``
-* Directional Flame = ``12``
-* Directional Water Hydrant = ``13``
-* Directional Gas Canister = ``14``
-* Boat = ``15``
-* Ship Destroy = ``16``
-* Truck = ``17``
-* Bullet = ``18``
-* Smoke Grenade Launcher = ``19``
-* Smoke Grenade = ``20``
-* BZ Gas = ``21``
-* Flare = ``22``
-* Gas Canister = ``23``
-* Extinguisher = ``24``
-* PROGRAMMABLEAR = ``25``
-* Exp Tag Train = ``26``
-* Exp Tag Barrel = ``27``
-* Exp Tag Propane = ``28``
-* Exp Tag Blimp = ``29``
-* Exp Tag Dir Flame Explode = ``30``
-* Exp Tag Tanker = ``31``
-* Plane Rocket = ``32``
-* Exp Tag Vehicle Bullet = ``33``
-* Exp Tag Gas Tank = ``34``
-* Exp Tag Bird Crap = ``35``
-* Exp Tag Railgun = ``36``
-* Exp Tag Blimp2 = ``37``
-* Exp Tag Firework = ``38``
-* Exp Tag Snowball = ``39``
-* Exp Tag Prox Mine = ``40``
-* Exp Tag Valkyrie Cannon = ``41``
-* Exp Tag Air Defence = ``42``
-* Exp Tag Pipebomb = ``43``
-* Exp Tag Vehicle Mine = ``44``
-* Exp Tag Explosive Ammo = ``45``
-* Exp Tag APC Shell = ``46``
-* Exp Tag Bomb Cluster = ``47``
-* Exp Tag Bomb Gas = ``48``
-* Exp Tag Bomb Incendiary = ``49``
-* Exp Tag Bomb Standard = ``50``
-* Exp Tag Torpedo = ``51``
-* Exp Tag Torpedo Underwater = ``52``
-* Exp Tag Bombushka Cannon = ``53``
-* Exp Tag Bomb Cluster Secondary = ``54``
-* Exp Tag Hunter Barrage = ``55``
-* Exp Tag Hunter Cannon = ``56``
-* Exp Tag Rogue Cannon = ``57``
-* Exp Tag Mine Underwater = ``58``
-* Exp Tag Orbital Cannon = ``59``
-* Exp Tag Bomb Standard Wide = ``60``
-* Exp Tag Explosive Ammo Shotgun = ``61``
-* Exp Tag Oppressor2 Cannon = ``62``
-* Exp Tag Mortar Kinetic = ``63``
-* Exp Tag Vehicle Mine Kinetic = ``64``
-* Exp Tag Vehicle Mine EMP = ``65``
-* Exp Tag Vehicle Mine Spike = ``66``
-* Exp Tag Vehicle Mine Slick = ``67``
-* Exp Tag Vehicle Mine Tar = ``68``
-* Exp Tag Script Drone = ``69``
-* Exp Tag Raygun = ``70``
-* Exp Tag Buried Mine = ``71``
-* Exp Tag Script Missile = ``72``
-* Exp Tag RCTank Rocket = ``73``
-* Exp Tag Bomb Water = ``74``
-* Exp Tag Bomb Water Secondary = ``75``
-* _0xF728C4A9 = ``76``
-* _0xBAEC056F = ``77``
-* Exp Tag Flash Grenade = ``78``
-* Exp Tag Stun Grenade = ``79``
-* _0x763D3B3B = ``80``
-* Exp Tag Script Missile Large = ``81``
-* Exp Tag Submarine Big = ``82``
+===================
+
+* ``EXP_TAG_AIR_DEFENCE``
+* ``EXP_TAG_APCSHELL``
+* ``EXP_TAG_BARREL``
+* ``EXP_TAG_BIKE``
+* ``EXP_TAG_BIRD_CRAP``
+* ``EXP_TAG_BLIMP``
+* ``EXP_TAG_BLIMP2``
+* ``EXP_TAG_BOAT``
+* ``EXP_TAG_BOMB_CLUSTER``
+* ``EXP_TAG_BOMB_CLUSTER_SECONDARY``
+* ``EXP_TAG_BOMB_GAS``
+* ``EXP_TAG_BOMB_INCENDIARY``
+* ``EXP_TAG_BOMB_STANDARD``
+* ``EXP_TAG_BOMB_STANDARD_WIDE``
+* ``EXP_TAG_BOMB_WATER``
+* ``EXP_TAG_BOMB_WATER_SECONDARY``
+* ``EXP_TAG_BOMBUSHKA_CANNON``
+* ``EXP_TAG_BULLET``
+* ``EXP_TAG_BURIEDMINE``
+* ``EXP_TAG_BZGAS``
+* ``EXP_TAG_CAR``
+* ``EXP_TAG_DIR_FLAME``
+* ``EXP_TAG_DIR_FLAME_EXPLODE``
+* ``EXP_TAG_DIR_GAS_CANISTER``
+* ``EXP_TAG_DIR_STEAM``
+* ``EXP_TAG_DIR_WATER_HYDRANT``
+* ``EXP_TAG_EMPLAUNCHER_EMP``
+* ``EXP_TAG_EXPLOSIVEAMMO``
+* ``EXP_TAG_EXPLOSIVEAMMO_SHOTGUN``
+* ``EXP_TAG_EXTINGUISHER``
+* ``EXP_TAG_FIREWORK``
+* ``EXP_TAG_FLARE``
+* ``EXP_TAG_GAS_CANISTER``
+* ``EXP_TAG_GAS_TANK``
+* ``EXP_TAG_GRENADE``
+* ``EXP_TAG_GRENADELAUNCHER``
+* ``EXP_TAG_HI_OCTANE``
+* ``EXP_TAG_HUNTER_BARRAGE``
+* ``EXP_TAG_HUNTER_CANNON``
+* ``EXP_TAG_MINE_UNDERWATER``
+* ``EXP_TAG_MOLOTOV``
+* ``EXP_TAG_MORTAR_KINETIC``
+* ``EXP_TAG_OPPRESSOR2_CANNON``
+* ``EXP_TAG_ORBITAL_CANNON``
+* ``EXP_TAG_PETROL_PUMP``
+* ``EXP_TAG_PIPEBOMB``
+* ``EXP_TAG_PLANE``
+* ``EXP_TAG_PLANE_ROCKET``
+* ``EXP_TAG_PROGRAMMABLEAR``
+* ``EXP_TAG_PROPANE``
+* ``EXP_TAG_PROXMINE``
+* ``EXP_TAG_RAILGUN``
+* ``EXP_TAG_RAYGUN``
+* ``EXP_TAG_RCTANK_ROCKET``
+* ``EXP_TAG_ROCKET``
+* ``EXP_TAG_ROGUE_CANNON``
+* ``EXP_TAG_SCRIPT_DRONE``
+* ``EXP_TAG_SCRIPT_MISSILE``
+* ``EXP_TAG_SCRIPT_MISSILE_LARGE``
+* ``EXP_TAG_SHIP_DESTROY``
+* ``EXP_TAG_SMOKEGRENADE``
+* ``EXP_TAG_SMOKEGRENADELAUNCHER``
+* ``EXP_TAG_SNOWBALL``
+* ``EXP_TAG_STICKYBOMB``
+* ``EXP_TAG_SUBMARINE_BIG``
+* ``EXP_TAG_TANKER``
+* ``EXP_TAG_TANKSHELL``
+* ``EXP_TAG_TORPEDO``
+* ``EXP_TAG_TORPEDO_UNDERWATER``
+* ``EXP_TAG_TRAIN``
+* ``EXP_TAG_TRUCK``
+* ``EXP_TAG_VALKYRIE_CANNON``
+* ``EXP_TAG_VEHICLE_BULLET``
+* ``EXP_TAG_VEHICLEMINE``
+* ``EXP_TAG_VEHICLEMINE_EMP``
+* ``EXP_TAG_VEHICLEMINE_KINETIC``
+* ``EXP_TAG_VEHICLEMINE_SLICK``
+* ``EXP_TAG_VEHICLEMINE_SPIKE``
+* ``EXP_TAG_VEHICLEMINE_TAR``
+
+===================

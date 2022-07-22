@@ -42,3 +42,5 @@ Contents
    scaleforms
    relationship
    bones
+   ptfx
+   zones
