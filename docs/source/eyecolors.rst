@@ -1,32 +1,38 @@
-green 0
-emerald 1
-light blue 2
-ocean blue 3
-light brown4
-dark brown5
-hazel6
-dark gray7
-light gray8
-pink9
-yellow10
-purple11
-blackout12
-shades of gray13
-tequila sunrise14
-atomic15
-warp16
-ecola17
-space ranger18
-ying yang19
-bullseye20
-lizard21
-dragon22
-extra terrestrial 23
-goat24
-smiley25
-possessed26
-demon27
-infected28
-alien29
-undead30
-zombie31
+Ped eye colors
+=====================
+
+Can also be acquired in a barber shop.
+
+
+* ``0`` = Green -- default for new MP characters
+* ``1`` = Emerald
+* ``2`` = Light Blue
+* ``3`` = Ocean Blue
+* ``4`` = Light Brown
+* ``5`` = Dark Brown
+* ``6`` = Hazel
+* ``7`` = Dark Gray
+* ``8`` = Light Gray
+* ``9`` = Pink
+* ``10`` = Yellow
+* ``11`` = Purple
+* ``12`` = Blackout
+* ``13`` = Shades of Gray
+* ``14`` = Tequila Sunrise
+* ``15`` = Atomic
+* ``16`` = Warp
+* ``17`` = Ecola
+* ``18`` = Space Ranger
+* ``19`` = Ying Yang
+* ``20`` = Bullseye
+* ``21`` = Lizard
+* ``22`` = Dragon
+* ``23`` = Extra terrestrial
+* ``24`` = Goat
+* ``25`` = Smiley
+* ``26`` = Possessed
+* ``27`` = Demon
+* ``28`` = Infected
+* ``29`` = Alien
+* ``30`` = Undead
+* ``31`` = Zombie

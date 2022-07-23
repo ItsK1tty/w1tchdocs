@@ -69,6 +69,8 @@ Ped
 Ped is an integer ID which represents the NPC in the game session. It's unique to each NPC, and it only lasts one session.
 Ped can be converted to Entity, hence it can be used with methods that take Entity as a parameter.
 
+Easiest way to acquire a ped handle is to call ``self.get_ped()`` function that returns a Ped object of your character. Or spawn it through ``rage.ped.create_ped()``.
+
 * `Peds <https://wiki.rage.mp/index.php?title=Peds>`__
 
 ================================
@@ -122,6 +124,8 @@ Vehicle
 
 Vehicle is an Integer Vehicle ID which represents the Vehicle in the game session. It's unique to each vehicle, and it only lasts one session.
 Vehicle can be converted to Entity, hence it can be used with methods that take Entity as a parameter.
+
+Easiest way to acquire a vehicle handle is to call ``self.get_vehicle()`` function that returns a Vehicle object of your vehicle. Or spawn it through ``scripting.spawn.spawn_vehicle()``.
 
 * `Vehicles <https://wiki.rage.mp/index.php?title=Vehicles>`__
 
@@ -3009,6 +3013,8 @@ Sends a notification in the bottom-left corner of the screen.
    :linenos:
 
    notify.above_map("Hello world!")
+
+
 
 ================================
 
@@ -9248,7 +9254,7 @@ Checks whether a Ped can summon random cops.
 can_ped_ragdoll(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Toggle ped ragdoll.
+Check if ragdoll is enabled for this ped
 
 **Parameters:**
 
@@ -9259,7 +9265,7 @@ Toggle ped ragdoll.
 * ``bool``
   
   * ``true`` -- Ped ragdoll on
-  * ``false`` -- Ped ragdoll off (Example: prevent peds from falling when standing on moving vehicles)
+  * ``false`` -- Ped ragdoll off
 
 **Example:**
 
@@ -9354,15 +9360,7 @@ Clears the relationship between two groups. This should be called twice (once fo
 
 * ``relationship`` (``int``) -- Relationship ID
   
-  * Relationship types:
-
-  * ``0`` = Companion  
-  * ``1`` = Respect  
-  * ``2`` = Like  
-  * ``3`` = Neutral  
-  * ``4`` = Dislike  
-  * ``5`` = Hate  
-  * ``255`` = Pedestrians  
+  * Relationship types here: :doc:`relationship`
 
 * ``group1`` (``Hash``) -- Group 1 hash
 * ``group2`` (``Hash``) -- Group 2 hash
@@ -9688,7 +9686,7 @@ Returns the bone name for the specified bone ID.
 * ``ped`` (``Ped``) -- The ped ID
 * ``boneID`` (``int``) -- The bone ID
 
-   * You can find the bone IDs here: :doc:`bones`
+  * You can find the bone IDs here: :doc:`bones`
 
 **Returns:**
 
@@ -10107,7 +10105,7 @@ Whether or not the specified ped is in any vehicle.
 is_ped_ragdoll(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks whether the ragdoll is toggled on for the specified ped.
+Checks whether the ragdoll is currently active for this ped
 
 **Parameters:**
 
@@ -10117,8 +10115,8 @@ Checks whether the ragdoll is toggled on for the specified ped.
 
 * ``bool`` 
 
-  * ``true`` -- the ragdoll is toggled on
-  * ``false`` -- the ragdoll is toggled off
+  * ``true`` -- the ragdoll is active
+  * ``false`` -- the ragdoll is inactive
 
 **Example:**
 
@@ -10128,9 +10126,9 @@ Checks whether the ragdoll is toggled on for the specified ped.
    ped = self.get_ped()
    data = rage.ped.is_ped_ragdoll(ped)
    if data then
-      system.log_debug("Ped has ragdoll toggled on")
+      system.log_debug("Ped ragdoll active")
    else
-      system.log_debug("Ragdoll is toggled off for this ped")
+      system.log_debug("Ragdoll inactive")
    end
 
 ================================
@@ -10330,7 +10328,7 @@ Resets group formation settings.
 reset_ped_movement_clipset(``ped``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Resets the ped movement animation set.
+Resets the ped movement clip set (walking animation set).
 
 .. note::
 
@@ -10729,7 +10727,7 @@ Sets the component variation for a ped.
 * ``ped`` (``Ped``) -- The ped ID
 * ``componentId`` (``int``) -- The component ID
 
-   * You can find component IDs here: :doc:`pedCompID`
+  * You can find component IDs here: :doc:`pedCompID`
 * ``drawableId`` (``int``) -- The drawable ID
 * ``textureId`` (``int``) -- The texture ID
 * ``paletteId`` (``int``) -- The palette ID
@@ -10767,11 +10765,11 @@ Sets a ped config flag.
 
    Config flags changes during game session:
 
-   * Jumping: changes ``60``, ``61``, ``104`` to ``false``.
-   * Being in water (swimming): changes ``60``, ``61`` to ``false`` and ``65``, ``66``, ``168`` to ``true``.
-   * Falling: changes ``60``, ``61``, ``104``, ``276`` to ``false`` and ``76`` to ``true``.
-   * Dying: changes ``60``, ``61``, ``104``, ``276`` to ``false``.
-   * Being in a car: changes ``60``, ``79``, ``104`` to ``false`` and ``62`` to ``true``.
+  * Jumping: changes ``60``, ``61``, ``104`` to ``false``.
+  * Being in water (swimming): changes ``60``, ``61`` to ``false`` and ``65``, ``66``, ``168`` to ``true``.
+  * Falling: changes ``60``, ``61``, ``104``, ``276`` to ``false`` and ``76`` to ``true``.
+  * Dying: changes ``60``, ``61``, ``104``, ``276`` to ``false``.
+  * Being in a car: changes ``60``, ``79``, ``104`` to ``false`` and ``62`` to ``true``.
 
    Maximum value for ``flagId`` is 426. FlagId ``240`` appears to be somewhat special.
 
@@ -10832,15 +10830,11 @@ Sets the ped density on the streets.
 
 .. note::
 
-   Use this inside a loop.
+   You have to call this every frame, so use this inside a loop.
 
 **Parameters:**
 
-* ``multiplier`` (``float``) -- The density multiplier
-
-  * ``0.0`` -- no peds on streets
-  * ``1.0`` -- normal peds amount on streets
-  * ``2.0+`` -- ???
+* ``multiplier`` (``float``) -- The density multiplier (should be between ``0`` and ``1``)
 
 **Returns:**
 
@@ -10851,16 +10845,462 @@ Sets the ped density on the streets.
 .. code-block:: lua
    :linenos:
 
-   while 1 do
+   function nopeds()
       rage.ped.set_ped_density_multiplier_this_frame(0.0)
-      system.log_debug("Peds density set to 0.")
    end
+
+   system.add_task("task", "t", -1, nopeds)
 
 ====================================
 
 set_ped_eye_color(``ped``, ``index``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* For eye colors list, see this: :doc:`eyecolors`
+
+Sets the eye color for a ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``index`` (``int``) -- The eye color index
+
+  * For eye colors list, see this: :doc:`eyecolors`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.set_ped_eye_color(ped, 1)
+   system.log_debug("Ped's eye color set to Emerald.")
+
+====================================
+
+set_ped_head_blend_data(``ped``, ``shapeFirst``, ``shapeSecond``, ``shapeThird``, ``skinFirst``, ``skinSecond``, ``skinThird``, ``shapeMix``, ``skinMix``, ``thirdMix``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the face shape settings for the selected ped.
+
+.. note::
+
+   This function is often called prior to ``set_ped_head_overlay_color`` and ``set_ped_head_overlay`` native functions.
+
+**Parameters:**
+
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``shapeFirst`` (``int``) -- dad shape
+* ``shapeSecond`` (``int``) -- mom shape
+* ``shapeThird`` (``int``) -- third shape (unused)
+* ``skinFirst`` (``int``) -- dad skin color
+* ``skinSecond`` (``int``) -- mom skin color
+* ``skinThird`` (``int``) -- third skin color (unused)
+* ``shapeMix`` (``float``) -- shape mix (``0.0`` - ``1.0`` of whose characteristics to take: Mother -> Father)
+* ``skinMix`` (``float``) -- skin mix (``0.0`` - ``1.0`` of whose characteristics to take: Mother -> Father)
+* ``thirdMix`` (``float``) -- third mix (unused)
+* ``isParent`` (``bool``) -- usually ``false``
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. note::
+
+   This example was not tested, and there are no lists of possible input values.
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.set_ped_head_blend_data(ped, 0, 0, 0, 0, 0, 0, 0, 0, 0, false)
+
+====================================
+
+set_ped_head_overlay(``ped``, ``overlayID``, ``index``, ``opacity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the setting of the specified head part (makeup, complexion, etc.)
+
+.. note::
+
+   You may need to call ``set_ped_head_blend_data`` for this to work.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``overlayID`` (``int``) -- The overlay ID
+* ``index`` (``int``) -- The overlay index
+
+  * You can find overlay ID data here: :doc:`pedOverlayID`
+* ``opacity`` (``float``) -- The overlay opacity (``0.0`` - ``1.0``)
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.set_ped_head_overlay(ped, 8, 1, 0.5)
+   system.log_debug("Ped's lipstick set to 1, half opacity.")
+
+====================================
+
+set_ped_head_overlay_color(``ped``, ``overlayID``, ``colorType``, ``colorID``, ``secondColorID``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the color of the specified head part (lipstick, beards, eyebrows, chest hair.)
+
+.. note:: 
+
+   You may need to call ``set_ped_head_blend_data`` for this to work.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``overlayID`` (``int``) -- The overlay ID
+
+  * You can find overlay ID data here: :doc:`pedOverlayID`
+* ``colorType`` (``int``) -- The color type
+
+  * ``1`` for eyebrows, beards and chest hair.
+  * ``2`` for lipstick and blush.
+* ``colorID`` (``int``) -- The color ID
+
+  * For color ID list, see this: :doc:`pedOverlayID`
+* ``secondColorID`` (``int``) -- The second color ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.set_ped_head_overlay_color(ped, 8, 1, 1, 1)
+   system.log_debug("Ped's lIpstick set to red.")
+
+====================================
+
+set_ped_into_vehicle(``ped``, ``vehicle``, ``seatIndex``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warps the ped into a vehicle.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``seatIndex`` (``int``) -- The seat index
+
+  * For seat index list, see this: :doc:`seattypes`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- assuming you are already in a vehicle
+   ped = self.get_ped()
+   clone = rage.ped.clone_ped(ped, false, false, true)
+   vehicle = self.get_vehicle()
+   rage.ped.set_ped_into_vehicle(clone, vehicle, 0)
+   system.log_debug("Ped warped into vehicle, right front seat.")
+
+====================================
+
+set_ped_max_health(``ped``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the maximum health for the ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``value`` (``int``) -- The maximum health
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.set_ped_max_health(ped, 100000)
+   system.log_debug("Doomguy mode activated.")
+
+====================================
+
+set_ped_movement_clipset(``ped``, ``clipset``, ``transitionSpeed``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the movement clipset (walking animation set) for the ped.
+
+.. note::
+
+   You have to request an animation set before using this.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``clipset`` (``string``) -- The movement clipset name
+
+  * For a list of movement clipsets, see this: :doc:`pedMovements`
+* ``transitionSpeed`` (``float``) -- The speed of transtition between two clipsets
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.streaming.request_anim_set("MOVE_M@DRUNK@VERYDRUNK")
+   rage.ped.set_ped_movement_clipset(ped, "MOVE_M@DRUNK@VERYDRUNK", 5.0)
+
+====================================
+
+set_ped_never_leaves_group(``ped``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets whether the ped can leave a ped group or not.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``toggle`` (``bool``) -- Toggle
+  
+  * ``true`` to not let the ped be able leave the group
+  * ``false`` to let him leave the group
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   clone = rage.ped.clone_ped(ped, false, false, true)
+   group = rage.ped.create_group()
+
+   rage.ped.set_ped_as_group_leader(ped, group)
+   rage.ped.set_ped_as_group_member(clone, group)
+
+   rage.ped.set_ped_never_leaves_group(clone, true)
+   system.log_debug("Clone can't leave group.")
+
+====================================
+
+set_ped_prop_index(``ped``, ``componentID``, ``drawableID``, ``textureID``, ``attach``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set prop variation on a ped. Components, drawables and textures IDs are related to the ped model.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``componentID`` (``int``) -- The component ID
+
+  * For component ID list, see this: :doc:`pedPropID`
+* ``drawableID`` (``int``) -- The drawable ID
+* ``textureID`` (``int``) -- The texture ID
+* ``attach`` (``bool``) -- Attach the prop to the ped
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. note::
+
+   This example was not tested.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.set_ped_prop_index(ped, 0, 51, 0, true) -- places a black helmet
+   system.log_debug("Ped's helmet set to 0, 51, 0.")
+
+====================================
+
+set_ped_random_component_variation(``ped``, ``p1``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a random component variation for the ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``p1`` (``int``) -- Seems to be always 0, unused anyway.
+
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.set_ped_random_component_variation(ped, 0)
+   system.log_debug("Ped's component variation set.")
+
+====================================
+
+set_ped_relationship_group_hash(``ped``, ``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the relationship group for the ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``hash`` (``int``) -- The relationship group hash
+
+  * For a list of relationship group hashes, see this: :doc:`relationship`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.set_ped_relationship_group_hash(ped, 0xA49E591C)
+   system.log_debug("Ped's relationship group set to COP.")
+
+====================================
+
+set_ped_to_ragdoll(``ped``, ``time1``, ``time2``, ``ragdollType``, ``p4``, ``p5``, ``p6``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Forces the ped to ragdoll.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``time1`` (``int``) -- The time ped is in ragdoll state (in ms)
+* ``time2`` (``int``) -- The time ped needs to stand up (in ms)
+* ``ragdollType`` (``int``) -- The ragdoll type
+
+  * ``0`` -- Normal ragdoll
+  * ``1`` -- Falls with stiff legs/body
+  * ``2`` -- Narrow leg stumble(may not fall)
+  * ``3`` -- Wide leg stumble(may not fall)
+* ``p4`` (``int``) -- Unknown, seems to be always ``true``
+* ``p5`` (``int``) -- Unknown, seems to be always ``true``
+* ``p6`` (``int``) -- Unknown, seen to be both ``true`` and ``false``
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   rage.ped.set_ped_to_ragdoll(ped, 10000, 3000, 0, true, true, false)
+   system.log_debug("Ped ragdolled.")
+
+
+===================================
+
+set_relationship_between_groups(``relationship``, ``group1``, ``group2``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the relationship between two groups.
+
+.. note::
+
+   This should be called twice (once for each group).
+
+**Parameters:**
+
+* ``relationship`` (``int``) -- The relationship type
+* ``group1`` (``Hash``) -- The first group hash
+* ``group2`` (``Hash``) -- The second group hash
+
+  * For relationship groups and types, see this: :doc:`relationship`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.ped.set_relationship_between_groups(1, 0xA49E591C, 0x6F0783F5)
+   rage.ped.set_relationship_between_groups(1, 0x6F0783F5, 0xA49E591C)
+   system.log_debug("Set respect relationship between cops and player")
+
+===================================
+
+set_scenario_ped_density_multiplier_this_frame(``p0``, ``p1``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets ped density during scenarios
+
+.. note::
+
+   You have to call this every frame, so use this inside a loop.
+
+**Parameters:**
+
+* ``p0`` (``float``) -- The density multiplier (should be between ``0`` and ``1``)
+* ``p1`` (``float``) -- Should be the same as ``p0``
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   function halfpeds()
+      rage.ped.set_scenario_ped_density_multiplier_this_frame(0.5, 0.5)-- thanos moment 
+   end
+   system.add_task("half", "thanos", -1, halfpeds)
+
 ================================
 
 .. _vehicleNSR:
@@ -10868,9 +11308,2490 @@ set_ped_eye_color(``ped``, ``index``)
 Vehicle namespace
 ----------------------
 
-Functions here
+This namepsace contains vehicle-related game functions.
+
+====================================
+
+add_vehicle_phone_explosive_device(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a phone explosive device to the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.add_vehicle_phone_explosive_device(vehicle)
+
+====================================
+
+clear_vehicle_custom_primary_colour(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Resets the vehicle's primary custom colour to it's real primary one.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.clear_vehicle_custom_primary_colour(vehicle)
+   system.log_debug("Vehicle's primary custom colour reset.")
+
+====================================
+
+clear_vehicle_custom_secondary_colour(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Resets the vehicle's secondary custom colour to it's real secondary one.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.clear_vehicle_custom_secondary_colour(vehicle)
+   system.log_debug("Vehicle's secondary custom colour reset.")
+
+====================================
+
+control_landing_gear(``vehicle``, ``state``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Switches the landing gear of the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``state`` (``int``) -- The gear state
+
+  * ``0`` -- Deployed
+  * ``1`` -- Closing  
+  * ``2`` -- Opening
+  * ``3`` -- Retracted
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- assuming you're in a plane or a helicopter
+   vehicle = self.get_vehicle()
+   rage.vehicle.control_landing_gear(vehicle, 0)
+   system.log_debug("Landing gear deployed.")
+
+====================================
+
+create_vehicle(``modelHash``, ``x``, ``y``, ``z``, ``heading``, ``isNetwork``, ``bScriptHostVeh``, ``p7``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates a vehicle.
+
+.. note::
+
+   You have to load the model first before creating a vehicle.
+
+**Parameters:**
+
+* ``modelHash`` (``Hash``) -- The vehicle model hash
+* ``x`` (``float``) -- Spawn coordinate X component
+* ``y`` (``float``) -- Spawn coordinate Y component
+* ``z`` (``float``) -- Spawn coordinate Z component
+* ``heading`` (``float``) -- Spawn heading (to face towards, degrees)
+* ``isNetwork`` (``bool``) -- Whether to create a network object for the vehicle. 
+  
+  * ``true`` -- Create a network object for the vehicle. Other players will be able to see it.
+  * ``false`` -- the vehicle exists only locally.
+* ``bScriptHostVeh`` (``bool``) -- Whether to register the vehicle as pinned to the script host in the R* network model.
+* ``p7`` (``bool``) -- Unknown
+
+**Returns:**
+
+* ``Vehicle`` -- The vehicle ID
+
+  ``0`` -- The vehicle couldn't be created.
+
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+   coords = self.get_coords_infront(10)
+
+   rage.streaming.request_model(zentornoHash)
+   vehicle = rage.vehicle.create_vehicle(zentornoHash, coords.x, coords.y, coords.z, 0, true, false, false)
+   if not vehicle == 0 then
+      system.log_debug("Created vehicle.")
+   end
+   rage.streaming.set_model_as_no_longer_needed(zentornoHash)
+
+====================================
+
+detonate_vehicle_phone_explosive_device()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Detonates a previously-added phone explosive device.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- assuming you're in a vehicle
+
+   vehicle = self.get_vehicle()
+
+   rage.vehicle.add_vehicle_phone_explosive_device(vehicle)
+   rage.vehicle.detonate_vehicle_phone_explosive_device()
+   system.log_debug("Detonated phone explosive device.")
+
+====================================
+
+does_extra_exist(``vehicle``, ``extraId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is not yet documented.
+
+====================================
+
+network_explode_vehicle(``vehicle``, ``isAudible``, ``isInvisible``, ``netId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is not yet documented because it requires a native that was not yet added.
+
+====================================
+
+explode_vehicle(``vehicle``, ``isAudible``, ``isInvisible``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Explode a vehicle
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``isAudible`` (``bool``) -- Whether the explosion is audible
+* ``isInvisible`` (``bool``) -- Whether the explosion is invisible
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ZENTORNO"), self.get_coords_infront(10), 30.0)
+   rage.vehicle.explode_vehicle(vehicle, true, false)
+
+====================================
+
+get_all_vehicles()
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is not yet documented.
+
+====================================
+
+get_convertible_roof_state(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the state of the vehicle's convertible roof.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``int`` -- The roof state
+
+  * For the list of roof states, see this: :doc:`roofstate`
+  * ``0`` if not in a vehicle
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   roofState = rage.vehicle.get_convertible_roof_state(vehicle)
+   system.log_debug("Vehicle's roof state is " .. roofState) --assuming the roof is closed, or you're on a bike
+
+====================================
+
+get_landing_gear_state(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the state of the vehicle's landing gear.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``int`` -- The gear state
+
+* ``0`` - Down
+* ``1`` - Raising
+* ``3`` - Lowering 
+* ``4`` - Up
+* ``5`` - Broken
+
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   gearState = rage.vehicle.get_landing_gear_state(vehicle)
+   system.log_debug("Vehicle's gear state is " .. gearState)
 
 ================================
+
+get_livery_name(``vehicle``, ``liveryIndex``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns vehicle livery name
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``liveryIndex`` (``int``) -- The livery index
+
+**Returns:**
+
+* ``string`` -- The livery name
+
+**Example:**
+
+.. note::
+
+   Additionally, you can get localized livery name using ``get_label_text``
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   count = rage.vehicle.get_vehicle_livery_count(vehicle)
+   for i = 0, count do
+      liveryName = rage.vehicle.get_livery_name(vehicle, i)
+      system.log_debug("Livery " .. i .. ": " .. liveryName)
+   end
+
+   -- or
+
+   vehicle = self.get_vehicle()
+
+   liveryIndex = rage.vehicle.get_vehicle_livery(vehicle)
+
+   livery_name = rage.vehicle.get_livery_name(vehicle, liveryIndex)
+   system.log_debug("Livery name: " .. livery_name)
+   
+   -- or
+
+   vehicle = self.get_vehicle()
+
+   liveryIndex = rage.vehicle.get_vehicle_livery(vehicle)
+
+   livery_name = rage.vehicle.get_livery_name(vehicle, liveryIndex)
+
+   livery_label = rage.vehicle.get_label_text(livery_name)
+
+   system.log_debug("Livery name: " .. livery_label)
+
+====================================
+
+get_mod_slot_name(``vehicle``, ``modType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the name for the type of vehicle mod(Armour, engine etc)
+
+.. note::
+
+   Unrealiable. Sometimes returns "".
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``modType`` (``int``) -- The mod type
+
+  * For the list of mod types, see this: :doc:`modTypes`
+
+**Returns:**
+
+* ``string`` -- The mod type name
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   modType = rage.vehicle.get_mod_slot_name(vehicle, 0)
+   system.log_debug("Type: " .. modType)
+
+====================================
+
+get_mod_text_label(``vehicle``, ``modType``, ``modValue``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the label name for the type of vehicle mod(Armour, engine etc)
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``modType`` (``int``) -- The mod type
+
+  * For the list of mod types, see this: :doc:`modTypes`
+* ``modValue`` (``int``) -- The mod value
+
+**Returns:**
+
+* ``string`` -- The mod label name
+
+
+**Example:**
+
+
+.. note::
+
+   Additionally, you can get localized mod name using ``get_label_text``
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   value = rage.vehicle.get_vehicle_mod(vehicle, 0) -- get spoiler installed
+   modLabel = rage.vehicle.get_mod_text_label(vehicle, 0, value)
+   system.log_debug("Spoiler: " .. modLabel)
+
+====================================
+
+get_num_vehicle_mods(``vehicle``, ``modType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the number of possible mod variations for the type of vehicle mod(Armour, engine etc)
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``modType`` (``int``) -- The mod type
+
+  * For the list of mod types, see this: :doc:`modTypes`
+
+**Returns:**
+
+* ``int`` -- The number of mod variations
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   count = rage.vehicle.get_num_vehicle_mods(vehicle, 0) -- spoiler possible variations
+   system.log_debug("Spoiler count: " .. count)
+
+====================================
+
+get_ped_in_vehicle_seat(``vehicle``, ``seat``, ``p2``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Ped handle of the ped in the specified vehicle seat.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``seat`` (``int``) -- The seat ID
+
+  * For the list of seat IDs, see this: :doc:`seattypes`
+* ``p2`` (``int``) -- Unknown (unused)
+
+**Returns:**
+
+* ``Ped`` -- The ped handle
+
+  * If no ped is in the seat, returns ``0``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   ped = rage.vehicle.get_ped_in_vehicle_seat(vehicle, 0)
+   system.log_debug("Ped in a right front seat: " .. ped)
+
+====================================
+
+get_vehicle_class(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the class of the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``int`` -- The class of the vehicle
+
+  * For vehicle classes, see this: :doc: `vehicleClasses`
+
+**Example:**
+
+.. note::
+
+   Additionally, you can get localized class name using ``get_label_text``
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   class = rage.vehicle.get_vehicle_class(vehicle)
+   className = rage.vehicle.get_label_text("VEH_CLASS_" .. tostring(class))
+   system.log_debug("Vehicle class: " .. className)
+
+====================================
+
+get_vehicle_custom_primary_colour(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the custom primary colour of the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``ColorRGB`` -- The custom primary colour
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   colour = rage.vehicle.get_vehicle_custom_primary_colour(vehicle)
+   r = colour.r
+   g = colour.g
+   b = colour.b
+   system.log_debug("Custom primary colour: " .. tostring(r) .. " " .. tostring(g) .. " " .. tostring(b))
+
+====================================
+
+get_vehicle_custom_secondary_colour(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the custom secondary colour of the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``ColorRGB`` -- The custom secondary colour
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   colour = rage.vehicle.get_vehicle_custom_secondary_colour(vehicle)
+   r = colour.r
+   g = colour.g
+   b = colour.b
+   system.log_debug("Custom secondary colour: " .. tostring(r) .. " " .. tostring(g) .. " " .. tostring(b))
+
+====================================
+
+get_vehicle_doors_locked_for_player(``vehicle``, ``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns whether the vehicle doors are locked for the specified player.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``player`` (``Player``) -- The player handle
+
+**Returns:**
+
+* ``bool`` -- Whether the vehicle doors are locked
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   player = self.get_player()
+   doorsLocked = rage.vehicle.get_vehicle_doors_locked_for_player(vehicle, player)
+   system.log_debug("Vehicle doors locked: " .. tostring(doorsLocked)) -- 100% false if the vehicle is personal
+
+====================================
+
+get_vehicle_estimated_max_speed(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns max vehicle speed
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``float`` -- The estimated max speed of the vehicle
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   speed = rage.vehicle.get_vehicle_estimated_max_speed(vehicle)
+   system.log_debug("Vehicle max speed: " .. tostring(speed))
+
+====================================
+
+get_vehicle_livery(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the livery index of the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``int`` -- The livery index
+
+  * ``-1`` means no livery
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   livery = rage.vehicle.get_vehicle_livery(vehicle)
+   system.log_debug("Vehicle livery: " .. tostring(livery))
+
+====================================
+
+get_vehicle_livery_count(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the number of livery variations for the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``int`` -- The number of livery variations
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   count = rage.vehicle.get_vehicle_livery_count(vehicle)
+   system.log_debug("Vehicle livery count: " .. tostring(count))
+
+====================================
+
+get_vehicle_max_number_of_passengers(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the maximum number of passengers for the vehicle.
+
+.. note::
+
+   This does not include a driver.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``int`` -- The maximum number of passengers
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   maxPassengers = rage.vehicle.get_vehicle_max_number_of_passengers(vehicle)
+   system.log_debug("Vehicle max passengers: " .. tostring(maxPassengers))
+
+====================================
+
+get_vehicle_mod(``vehicle``, ``modType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the vehicle mod variation ID
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``modType`` (``int``) -- The mod type
+
+  * For mod types, see this: :doc: `modTypes`
+
+**Returns:**
+
+* ``int`` -- The mod variation ID
+
+  * ``-1`` means mod is stock
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   modValue = rage.vehicle.get_vehicle_mod(vehicle, 0) -- get spoiler installed
+   system.log_debug("Vehicle engine mod: " .. tostring(modValue))
+
+====================================
+
+get_vehicle_model_number_of_seats(``modelHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the number of seats for the specified vehicle model.
+
+**Parameters:**
+
+* ``modelHash`` (``int``) -- The model hash
+
+**Returns:**
+
+* ``int`` -- The number of seats
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   modelHash = GetHashKey("ZENTORNO")
+   seats = rage.vehicle.get_vehicle_model_number_of_seats(modelHash)
+   system.log_debug("Vehicle seats: " .. tostring(seats)) -- 2
+
+====================================
+
+get_vehicle_number_of_passengers(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the number of passengers for the vehicle, not including the driver.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``int`` -- The number of passengers
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   passengers = rage.vehicle.get_vehicle_number_of_passengers(vehicle)
+   system.log_debug("Vehicle passengers: " .. tostring(passengers))
+
+====================================
+
+get_vehicle_number_plate_text(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the number plate text of the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``string`` -- The number plate text
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   plate = rage.vehicle.get_vehicle_number_plate_text(vehicle)
+   system.log_debug("Vehicle plate: " .. tostring(plate))
+
+====================================
+
+get_vehicle_roof_livery_count(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a number of available rooftop liveries
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``int`` -- The number of available livery variations
+  
+  * ``-1`` if vehicle has no rooftop liveries available.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   count = rage.vehicle.get_vehicle_roof_livery_count(vehicle)
+   system.log_debug("Vehicle roof livery count: " .. tostring(count))
+
+
+====================================
+
+get_vehicle_wheel_type(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the wheel type of the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``int`` -- The wheel type
+
+  * For wheel types, see this: :doc: `wheelTypes`
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   wheelType = rage.vehicle.get_vehicle_wheel_type(vehicle)
+   system.log_debug("Vehicle wheel type: " .. tostring(wheelType))
+
+====================================
+
+get_vehicle_window_tint(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the window tint color of the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``int`` -- The window tint color
+
+  * For window tint colors, see this: :doc: `windowTints`
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   tint = rage.vehicle.get_vehicle_window_tint(vehicle)
+   system.log_debug("Vehicle window tint: " .. tostring(tint))
+
+====================================
+
+has_vehicle_phone_explosive_device(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the vehicle has a phone explosive device.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- the vehicle has a phone explosive device
+  * ``false`` -- the vehicle does not have a phone explosive device
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   hasDevice = rage.vehicle.has_vehicle_phone_explosive_device(vehicle)
+   system.log_debug("Vehicle has explosive device: " .. tostring(hasDevice))
+
+====================================
+
+is_taxi_light_on(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the taxi light is on.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``bool`` -- ``true`` if the taxi light is on, ``false`` otherwise
+
+  * ``true`` -- the taxi light is on
+  * ``false`` -- the taxi light is off
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   isOn = rage.vehicle.is_taxi_light_on(vehicle)
+   system.log_debug("Taxi light is on: " .. tostring(isOn))
+
+====================================
+
+is_toggle_mod_on(``vehicle``, ``modType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the vehicle mod is turned on (xenon, for example)
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``modType`` (``int``) -- The mod type
+
+  * For mod types, see this: :doc: `modTypes`
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- the mod is turned on
+  * ``false`` -- the mod is turned off
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   modType = 22 -- xenon
+   isOn = rage.vehicle.is_toggle_mod_on(vehicle, modType)
+   system.log_debug("Mod is on: " .. tostring(isOn))
+
+====================================
+
+is_vehicle_a_convertible(``vehicle``, ``p1``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the vehicle is a convertible.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``p1`` (``bool``) -- Unknown parameter
+
+  * If ``false``, the function will only return true, when the roof is convertible while pressing ``INPUT_VEH_ROOF`` (roof switch button)
+  * If ``true``, the function will always return true.
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- the vehicle is a convertible
+  * ``false`` -- the vehicle is not a convertible
+
+====================================
+
+get_is_vehicle_engine_running(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the vehicle engine is running.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- the engine is running
+  * ``false`` -- the engine is not running
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   isRunning = rage.vehicle.get_is_vehicle_engine_running(vehicle)
+   system.log_debug("Vehicle engine is running: " .. tostring(isRunning))
+
+====================================
+
+is_vehicle_extra_turned_on(``vehicle``, ``extraId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is not yet documented.
+
+====================================
+
+is_vehicle_model(``vehicle``, ``model``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the model specified is a vehicle model.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``model`` (``Hash``) -- The model hash
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- the model is a vehicle model
+  * ``false`` -- the model is not a vehicle model
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   model = rage.gameplay.get_hash_key("ZENTORNO")
+   isModel = rage.vehicle.is_vehicle_model(vehicle, model) -- true
+   system.log_debug("Vehicle model is: " .. tostring(isModel))
+
+====================================
+
+is_vehicle_neon_light_enabled(``vehicle``, ``index``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the neon light is enabled on the specified vehicle and side.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``index`` (``int``) -- The vehicle side index
+
+  * ``0`` = Left
+  * ``1`` = Right
+  * ``2`` = Front
+  * ``3`` = Back
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- the neon light is enabled
+  * ``false`` -- the neon light is not enabled
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   isOn = rage.vehicle.is_vehicle_neon_light_enabled(vehicle, 0) -- left
+   system.log_debug("Vehicle neon light is on: " .. tostring(isOn)) -- a stock car will always return false
+
+====================================
+
+is_vehicle_on_all_wheels(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the vehicle is on all wheels.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- the vehicle is on all wheels
+  * ``false`` -- the vehicle is not on all wheels
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   isOnWheels = rage.vehicle.is_vehicle_on_all_wheels(vehicle)
+   system.log_debug("Is vehicle on all wheels: " .. tostring(isOnWheel))
+
+====================================
+
+get_is_vehicle_primary_colour_custom(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is not yet documented.
+
+====================================
+
+is_vehicle_rocket_boost_active(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the vehicle rocket boost is active.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- the rocket boost is active
+  * ``false`` -- the rocket boost is not active
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   isActive = rage.vehicle.is_vehicle_rocket_boost_active(vehicle)
+   system.log_debug("Rocket boost is active: " .. tostring(isActive))
+
+====================================
+
+get_is_vehicle_secondary_colour_custom(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is not yet documented.
+
+====================================
+
+is_vehicle_stopped(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the vehicle is stopped, not moving.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- the vehicle is stopped
+  * ``false`` -- the vehicle is not stopped
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   isStopped = rage.vehicle.is_vehicle_stopped(vehicle)
+   system.log_debug("Vehicle is stopped: " .. tostring(isStopped))
+
+
+====================================
+
+is_vehicle_stuck_on_roof(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the vehicle is stuck on the roof, upside down.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- the vehicle is stuck on the roof
+  * ``false`` -- the vehicle is not stuck on the roof
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   isStuck = rage.vehicle.is_vehicle_stuck_on_roof(vehicle)
+   system.log_debug("Vehicle is stuck on roof: " .. tostring(isStuck))
+
+====================================
+
+modify_vehicle_top_speed(``vehicle``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Changes the top speed of the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``value`` (``float``) -- The new top speed
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.modify_vehicle_top_speed(vehicle, 1000.0)
+
+====================================
+
+set_ambient_vehicle_range_multiplier_this_frame(``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the density on vehicles that are pulling out of driveways and parking spots, crossroads too.
+
+.. note::
+
+   This function has to be called every frame. Use this in a looped function, or use add_task().
+
+**Parameters:**
+
+* ``value`` (``float``) -- The density multiplier
+
+  * ``0.0`` = No cars
+  * ``1.0`` = Normal density
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   function nocars()
+      rage.vehicle.set_ambient_vehicle_range_multiplier_this_frame(0.0)
+   end
+
+   system.add_task("No Cars", "NC", -1, nocars)
+
+====================================
+
+set_convertible_roof(``vehicle``, ``p1``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Extend or retract the roof of a convertible vehicle.
+
+.. note::
+
+   Seems to only extend the roof, not retract it.
+
+   Has to be called every frame.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``p1`` (``bool``) -- Whether to extend or retract the roof (seems to be unused)
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_convertible_roof(vehicle) -- Extend
+
+
+====================================
+
+set_heli_blades_full_speed(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the helicopter blades to full speed.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- assuming you're in a helicopter
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_heli_blades_full_speed(vehicle)
+
+====================================
+
+set_heli_blades_speed(``vehicle``, ``speed``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the helicopter blades speed.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``speed`` (``float``) -- The speed of the blades (``0`` - ``100``)
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- assuming you're in a helicopter
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_heli_blades_speed(vehicle, 50.0) -- halfspeed 
+
+====================================
+
+set_parked_vehicle_density_multiplier_this_frame(``multiplier``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the density for parked vehicles.
+
+.. note::
+
+   This function has to be called every frame. Use this in a looped function, or use add_task().
+
+
+**Parameters:**
+
+* ``multiplier`` (``float``) -- The density multiplier
+
+  * ``0.0`` = No cars parked
+  * ``1.0`` = Normal density
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.vehicle.set_parked_vehicle_density_multiplier_this_frame(0.0) -- no cars
+
+====================================
+
+set_random_vehicle_density_multiplier_this_frame(``multiplier``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the density for random vehicles on the streets.
+
+.. note::
+
+   This function has to be called every frame. Use this in a looped function, or use add_task().
+
+
+**Parameters:**
+
+* ``multiplier`` (``float``) -- The density multiplier
+
+  * ``0.0`` = No cars on the roads
+  * ``1.0`` = Normal density
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   rage.vehicle.set_random_vehicle_density_multiplier_this_frame(0.0) -- no cars
+
+====================================
+
+set_taxi_lights(``vehicle``, ``state``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the taxi lights for a vehicle.
+
+.. note::
+
+   Doesn't seem to work. 
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``state`` (``bool``)
+
+  * ``true`` = On
+  * ``false`` = Off
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_taxi_lights(vehicle, true) -- taxi lights should be on now
+
+====================================
+
+set_vehicle_brake_lights(``vehicle``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the brake lights for a vehicle.
+
+.. note::
+
+   Doesn't seem to work. Should be used every frame.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``toggle`` (``bool``)
+
+  * ``true`` = On
+  * ``false`` = Off
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   function lights()
+      vehicle = self.get_vehicle()
+      rage.vehicle.set_vehicle_brake_lights(vehicle, true)
+      system.wait(-1)
+   end
+
+   parent = menu.add_parent("My Lua Script")
+   menu.add_option("brake lights ON", "light", parent, lights)
+
+====================================
+
+set_vehicle_can_be_locked_on(``vehicle``, ``canBeLockedOn``, ``unk``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets whether a vehicle can be locked on.
+
+.. note::
+
+   Doesn't seem to work.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``canBeLockedOn`` (``bool``) -- Whether the vehicle can be locked on
+* ``unk`` (``bool``) -- Unknown
+
+**Returns:**
+
+* None
+
+====================================
+
+set_vehicle_can_be_visibly_damaged(``vehicle``, ``state``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets whether the vehicle can be visibly damaged
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``state`` (``bool``) -- Whether the vehicle can be damaged
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_can_be_visibly_damaged(vehicle, false) -- vehicle can't be visibly damaged now
+
+====================================
+
+set_vehicle_custom_primary_colour(``vehicle``, ``r``, ``g``, ``b``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the primary custom colour for a vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``r`` (``int``) -- The red colour value
+* ``g`` (``int``) -- The green colour value
+* ``b`` (``int``) -- The blue colour value
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_custom_primary_colour(vehicle, 255, 0, 0) -- vehicle is now red
+
+====================================
+
+set_vehicle_custom_secondary_colour(``vehicle``, ``r``, ``g``, ``b``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the secondary custom colour for a vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``r`` (``int``) -- The red colour value
+* ``g`` (``int``) -- The green colour value
+* ``b`` (``int``) -- The blue colour value
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_custom_secondary_colour(vehicle, 0, 255, 0) -- secondary vehicle color is now green
+
+====================================
+
+set_vehicle_deformation_fixed(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle deformation to 0.
+
+.. note::
+
+   This does not repair a vehicle, only restore the texture to its original state.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_deformation_fixed(vehicle) -- vehicle deformation is now 0
+
+
+====================================
+
+set_vehicle_door_open(``vehicle``, ``door``, ``loose``, ``openInstantly``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a vehicle door to open.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``door`` (``int``) -- The door ID
+
+  * You can find door IDs here: :doc:`doors`
+* ``loose`` (``bool``) -- Whether the door is loose. In this case, the door won't close itself after a while.
+* ``openInstantly`` (``bool``) -- Whether the door should open instantly.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_door_open(vehicle, 5, true, false) -- open the trunt
+
+====================================
+
+set_vehicle_doors_locked(``vehicle``, ``doorLockStatus``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle doors lock to a certain state.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``doorLockStatus`` (``int``) -- The door lock status
+
+  * You can find door lock status here: :doc:`doors`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_doors_locked(vehicle, 1) -- vehicle doors are now unlocked
+
+====================================
+
+set_vehicle_doors_locked_for_all_players(``vehicle``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets whether the vehicle doors are locked for all players.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``toggle`` (``bool``) -- Whether the vehicle doors are locked for all players
+
+  * ``true`` -- vehicle doors are locked for all players
+  * ``false`` -- vehicle doors are not locked for all players
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_doors_locked_for_all_players(vehicle, true) -- vehicle doors are now locked for all players
+
+====================================
+
+set_vehicle_doors_locked_for_non_script_players(``vehicle``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets whether the vehicle doors are locked for non-script players.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``toggle`` (``bool``) -- Whether the vehicle doors are locked for non-script players
+
+  * ``true`` -- vehicle doors are locked for non-script players
+  * ``false`` -- vehicle doors are not locked for non-script players
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_doors_locked_for_non_script_players(vehicle, true) -- vehicle doors are now locked for non-script players
+
+====================================
+
+set_vehicle_doors_locked_for_player(``vehicle``, ``player``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Lokcs or unlocks the vehicle doors for a certain player.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``player`` (``Player``) -- The player ID
+* ``toggle`` (``bool``) -- Whether the vehicle doors are locked for the player
+
+  * ``true`` -- vehicle doors are locked for the player
+  * ``false`` -- vehicle doors are not locked for the player
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   player = self.get_player()
+   rage.vehicle.set_vehicle_doors_locked_for_player(vehicle, player, true) -- vehicle doors are now locked for the self
+
+====================================
+
+set_vehicle_doors_locked_for_team(``vehicle``, ``team``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Locks or unlocks the vehicle doors for a certain team.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``team`` (``int``) -- The team ID
+* ``toggle`` (``bool``) -- Whether the vehicle doors are locked for the team
+
+  * ``true`` -- vehicle doors are locked for the team
+  * ``false`` -- vehicle doors are not locked for the team
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   team = self.get_player_team()
+   rage.vehicle.set_vehicle_doors_locked_for_team(vehicle, team, false) -- vehicle doors are now unlocked for your team
+
+====================================
+
+set_vehicle_doors_shut(``vehicle``, ``closeInstantly``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Closes all vehicle doors.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``closeInstantly`` (``bool``) -- Whether the doors should close instantly.
+
+  * ``true`` -- doors close instantly
+  * ``false`` -- doors don't close instantly
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_doors_shut(vehicle, true) -- vehicle doors are now closed
+
+====================================
+
+set_vehicle_engine_health(``vehicle``, ``health``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle engine health.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``health`` (``float``) -- The engine health value
+
+  * For health values, see this: :doc:`vehicleHealth`
+
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_engine_health(vehicle, -4000) -- vehicle engine is now broken
+
+====================================
+
+set_vehicle_engine_on(``vehicle``, ``value``, ``instantly``, ``disableAutoStart``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle engine is on.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``value`` (``bool``) -- Whether the engine is on
+* ``instantly`` (``bool``) -- Whether the engine should be turned on instantly
+* ``disableAutoStart`` (``bool``) -- Disable the engine's ability to autostart.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_engine_on(vehicle, false, false, true) -- vehicle engine is now false
+
+====================================
+
+set_vehicle_extra(``vehicle``, ``extraId``, ``disable``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: 
+
+   This function is not yet documented.
+
+====================================
+
+set_vehicle_fixed(``vehicle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Repairs the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_fixed(vehicle) -- vehicle is now fixed
+
+====================================
+
+set_vehicle_forward_speed(``vehicle``, ``speed``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle forward speed (boost).
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``speed`` (``float``) -- The vehicle forward speed value
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_forward_speed(vehicle, 1000.0) -- vehicle forward speed is now 1000
+
+====================================
+
+set_vehicle_fullbeam(``vehicle``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Switches the vehicle's lights to fullbeam.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``toggle`` (``bool``) -- Toggle 
+
+  * ``true`` -- vehicle lights are in fullbeam mode
+  * ``false`` -- vehicle lights are in normal mode
+
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_fullbeam(vehicle, true) -- vehicle lights are now in fullbeam mode
+
+====================================
+
+set_vehicle_has_been_owned_by_player(``vehicle``, ``owned``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle as owned by the played
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``owned`` (``bool``) -- Whether the vehicle is owned by the player
+
+  * ``true`` -- vehicle is owned by the player
+  * ``false`` -- vehicle is not owned by the player
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_has_been_owned_by_player(vehicle, true) -- vehicle is now flagged as owned by the player
+
+====================================
+
+set_vehicle_indicator_lights(``vehicle``, ``turnSignal``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets vehicle's indicator lights on/off
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``turnSignal`` (``int``) -- The turn signal to set
+
+  * ``1`` -- Left turn signal
+  * ``0`` -- Right turn signal
+* ``toggle`` (``bool``) -- Toggle 
+   
+  * ``true`` -- turn signal is on
+  * ``false`` -- turn signal is off
+
+**Returns:**
+
+* None
+
+====================================
+
+
+set_vehicle_livery(``vehicle``, ``livery``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle livery.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``livery`` (``int``) -- The livery ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   livNum = rage.vehicle.get_vehicle_livery_count()
+   livery = math.random(livNum)
+   rage.vehicle.set_vehicle_livery(vehicle, livery) -- Random livery set
+
+====================================
+
+set_vehicle_mod(``vehicle``, ``modType``, ``modIndex``, ``customTires``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Modifies the vehicle.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``modType`` (``int``) -- The modification type
+
+  * For modification types, see this: :doc:`modTypes`
+* ``modIndex`` (``int``) -- The modification variation
+* ``customTires`` (``bool``) -- Whether the mod is a custom tire
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. note::
+
+   There's no mod variation list. Test, explore.
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_mod(vehicle, 0, 2, false) -- Vehicle spoiler variation 2 is now installed.
+
+====================================
+
+set_vehicle_neon_light_enabled(``vehicle``, ``index``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles neon light on/off
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``index`` (``int``) -- The vehicle side index
+
+  * ``0`` = Left
+  * ``1`` = Right
+  * ``2`` = Front
+  * ``3`` = Back
+* ``toggle`` (``bool``) -- Toggle
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_neon_light_enabled(vehicle, 0, true) -- Left neon light is now on
+
+====================================
+
+set_vehicle_number_plate_text(``vehicle``, ``plateText``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle number plate text.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``plateText`` (``string``) -- The number plate text
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_number_plate_text(vehicle, "JOHN117") -- Vehicle number plate is now "JOHN117"
+
+====================================
+
+set_vehicle_on_ground_properly(``vehicle``, ``p1``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a vehicle on the ground on all wheels.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``p1`` (``float``) -- Unknown. Set to ``5.0``.
+
+**Returns:**
+
+* ``bool`` -- Whether the vehicle was set on the ground succesfully
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_on_ground_properly(vehicle, 5.0) -- Vehicle is now on the ground
+
+====================================
+
+set_vehicle_out_of_control(``vehicle``, ``killDriver``, ``explodeOnImpact``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle out of control.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``killDriver`` (``bool``) -- Whether to kill the driver
+* ``explodeOnImpact`` (``bool``) -- Whether to explode the vehicle on impact
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_out_of_control(vehicle, true, true) -- Vehicle is now out of control with dead driver, set to explode on impact.
+
+====================================
+
+set_vehicle_parachute_active(``vehicle``, ``active``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle's parachute active. Ruiner 2000 is the only vehicle with the parachute.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``active`` (``bool``) -- Whether the parachute is active
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_parachute_active(vehicle, true) -- Parachute is now active
+
+====================================
+
+set_vehicle_parachute_model(``vehicle``, ``modelHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets parachute model for a vehicle
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``modelHash`` (``Hash``) -- The model hash
+
+  * ``sr_prop_specraces_para_s_01``
+  * ``imp_prop_impexp_para_s`` (SecuroServ; Default)
+  * Plus, many more props can be used as vehicle parachutes, like umbrellas (``prop_beach_parasol_03``)
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_parachute_model(vehicle, rage.gameplay.get_hash_key("prop_beach_parasol_03")) -- Parachute is now an umbrella
+
+====================================
+
+set_vehicle_reduce_grip(``vehicle``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle's grip to be significantly reduced.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``toggle`` (``bool``) -- Whether to reduce the grip or not
+
+  * ``true`` = Reduce the grip
+  * ``false`` = Don't reduce the grip
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_reduce_grip(vehicle, true) -- Vehicle grip is now reduced
+
+====================================
+
+set_vehicle_rocket_boost_active(``vehicle``, ``active``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle's rocket boost active.
+
+.. note::
+
+   Can only be used on the vehicles with rocket boosters.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``active`` (``bool``) -- Boost toggle
+
+  * ``true`` = Boost is active
+  * ``false`` = Boost is inactive
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_rocket_boost_active(vehicle, true) -- Rocket boost is now active
+
+====================================
+
+set_vehicle_rocket_boost_percentage(``vehicle``, ``percentage``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle's rocket boost fill percentage.
+.. note::
+
+   Can only be used on the vehicles with rocket boosters.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``percentage`` (``float``) -- The percentage of boost "progress"
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_rocket_boost_percentage(vehicle, 0.5) -- Rocket boost is now 50% filled
+
+====================================
+
+set_vehicle_rocket_boost_refill_time(``vehicle``, ``seconds``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle's rocket boost refill time.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``seconds`` (``float``) -- Time in seconds
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_rocket_boost_refill_time(vehicle, 0.5) -- Rocket boost will refill in a half a second
+
+====================================
+
+set_vehicle_steer_bias(``vehicle``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Locks the vehicle's steering to the desired angle.
+
+.. note::
+
+   Needs to be called every frame.
+
+   Steering is unlocked the moment the function stops being called on the vehicle.  
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``value`` (``float``) -- The steering angle
+
+  * ``-1.0`` -- full right  
+  * ``0.0`` -- centered steering  
+  * ``1.0`` -- full left  
+
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_steer_bias(vehicle, 1.0) -- Vehicle steering set to full left.
+
+====================================
+
+set_vehicle_timed_explosion(``vehicle``, ``ped``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a timed explosion for a vehicle
+
+.. note::
+
+   Doesn't seem to work.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``ped`` (``Ped``) -- The ped ID, probably driver
+* ``toggle`` (``bool``) -- Toggle timed explosion
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_timed_explosion(vehicle, self.get_ped(), true)
+
+====================================
+
+set_vehicle_undriveable(``vehicle``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a vehicle as undriveable.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``toggle`` (``bool``) -- Toggle
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_undriveable(vehicle, true) -- Vehicle is now undriveable
+
+====================================
+
+set_vehicle_wheel_type(``vehicle``, ``wheelType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle's wheel type.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``wheelType`` (``int``) -- The wheel type
+
+  * For wheel types, see :doc:`wheelTypes`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_wheel_type(vehicle, 0) -- vehicle now has sport wheel type
+
+====================================
+
+set_vehicle_window_tint(``vehicle``, ``tint``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle's window tint.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``tint`` (``int``) -- The tint ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.set_vehicle_window_tint(vehicle, 6) -- vehicle now has green tint
+
+====================================
+
+start_vehicle_horn(``vehicle``, ``duration``, ``mode``, ``forever``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sounds the horn for the specified vehicle.  
+
+.. note::
+
+   If a player is in the vehicle, it will only sound briefly. 
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``duration`` (``float``) -- The duration of the horn in seconds
+* ``mode`` (``Hash``) -- The horn mode
+
+  * ``NORMAL`` -- Normal horn
+  * ``HELDDOWN``
+  * ``0``
+* ``forever`` (``bool``) -- If ``true``, the horn will sound forever
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.start_vehicle_horn(vehicle, 10.0, rage.gameplay.get_hash_key("NORMAL"), false) -- vehicle now sounds its horn for 10 seconds
+
+====================================
+
+toggle_vehicle_mod(``vehicle``, ``modType``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles a vehicle mod on/off.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``modType`` (``int``) -- The mod type
+
+  * For mod types, see :doc:`modTypes`
+* ``toggle`` (``bool``) -- Toggle
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicle = self.get_vehicle()
+   rage.vehicle.toggle_vehicle_mod(vehicle, 22, true) -- xenon headlights on
+
+====================================
 
 .. _entityNSR:
 
@@ -10907,7 +13828,7 @@ Applies a force to the specified entity.
 * ``boneIndex`` (``int``) -- Entity bone index (Often ``0``) 
 * ``isDirectionRel`` (``bool``) -- Vector defined in local (body-fixed) coordinate frame (Usually ``false``)
 * ``ignoreUpVec`` (``bool``) -- Usually ``true``
-* ``isForceRel`` (``bool``) :
+* ``isForceRel`` (``bool``)
 
   * ``true`` -- Force Returns multiplied with the objects mass and different objects will have the same acceleration
   * ``false`` -- Otherwise
@@ -17489,8 +20410,9 @@ Make the entity move to a target until time is over (duration) or get in target'
    :linenos:
 
    pedHandle = self.get_ped()
+   coords = self.get_coords_infront(10)
 
-   vehicleHandle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ZENTORNO"), self.get_coords_infront(10), 30.0)
+   vehicleHandle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ZENTORNO"), coords, 30.0)
 
    rage.ai.task_go_to_entity(pedHandle, vehicleHandle, 5000, 4.0, 100, 1073741824, 0) 
    -- Ped will run towards the vehicle for 5 seconds and stop when time is over or when he Returns 4 meters(?) around the vehicle

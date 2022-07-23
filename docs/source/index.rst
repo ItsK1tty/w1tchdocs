@@ -52,3 +52,9 @@ Contents
    combat_movements
    combat_ranges
    pedConfigs
+   pedMovements
+   roofstate
+   modTypes
+   vehicleClasses
+   wheelTypes
+   windowTints
