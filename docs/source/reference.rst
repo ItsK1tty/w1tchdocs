@@ -227,6 +227,7 @@ Function namespaces in LUA Engine are defined in the following order:
 * :ref:`render`
 * :ref:`self`
 * :ref:`lobby`
+* :ref:`vehicleNS`
 * :ref:`text`
 * :ref:`fs`
 * :ref:`scripting`
@@ -3014,9 +3015,73 @@ Sends a notification in the bottom-left corner of the screen.
 
    notify.above_map("Hello world!")
 
+================================
 
+notify.info(``text``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends a blue-colored notification in the bottom-right corner of the screen.
+
+**Parameters:**
+
+* ``text`` (``string``) -- The text to display.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   notify.info("Hello world!")
 
 ================================
+
+notify.success(``text``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends a green-colored notification in the bottom-right corner of the screen.
+
+
+**Parameters:**
+
+* ``text`` (``string``) -- The text to display.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   notify.success("Hello world!")
+
+================================
+
+notify.warning(``text``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends a red-colored notification in the bottom-right corner of the screen.
+
+**Parameters:**
+
+* ``text`` (``string``) -- The text to display.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+================================
+
 
 .. _script:
 
@@ -5516,6 +5581,70 @@ Sets the player's staff status.
 
 ================================
 
+.. _vehicleNS:
+
+Vehicle namespace
+-----------------------
+
+This namespace contains functions related to vehicle manipulation
+
+================================
+
+get_vehicle_handling(``vehicle``, ``param``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the value for the specified handling parameter.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID.
+* ``param`` (``string``) -- The handling parameter.
+
+  * You can find a list of handling parameters here: :doc:`handling`.
+
+**Returns:**
+
+* ``float`` -- The value for the specified handling parameter.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   handling = lobby.get_vehicle_handling(self.get_vehicle(), "fBrakeForce") -- Returns the brake force of the vehicle.
+   system.log_debug("The player's vehicle has " .. tostring(handling) .. " brake force.")
+
+================================
+
+set_vehicle_handling(``vehicle``, ``param``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the value for the specified handling parameter.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID.
+* ``param`` (``string``) -- The handling parameter.
+
+  * You can find a list of handling parameters here: :doc:`handling`.
+* ``value`` (``float``) -- The value for the specified handling parameter.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   lobby.set_vehicle_handling(self.get_vehicle(), "fAcceleration", 100) -- Sets the acceleration of the vehicle to 100 points.
+   system.log_debug("The player's vehicle has been set to have 100 acceleration points.")
+
+
+================================
+
+
 .. _text:
 
 Text namespace
@@ -6019,6 +6148,122 @@ Copies a file.
    fs.file_copy("source.txt", "dest.txt")
    -- or
    fs.file_copy("files/source.txt", "files/dest.txt")
+
+
+================================
+
+get_dis2rbed_dir()
+^^^^^^^^^^^^^^^^^^^^^
+
+Returns the filepath for the DIS2RBED home directory.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``string`` -- The filepath for the DIS2RBED home directory
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   path = fs.get_dis2rbed_dir()
+   system.log_debug(path)
+
+================================
+
+get_fonts_dir()
+^^^^^^^^^^^^^^^^^
+
+Returns the filepath for the DIS2RBED fonts directory.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``string`` -- The filepath for the DIS2RBED fonts directory
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   path = fs.get_fonts_dir()
+   system.log_debug(path)
+
+================================
+
+get_themes_dir()
+^^^^^^^^^^^^^^^^^
+
+Returns the filepath for the DIS2RBED themes directory.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``string`` -- The filepath for the DIS2RBED themes directory
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   path = fs.get_themes_dir()
+   system.log_debug(path)
+
+================================
+
+get_locales_dir()
+^^^^^^^^^^^^^^^^^
+
+Returns the filepath for the DIS2RBED locales directory.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``string`` -- The filepath for the DIS2RBED locales directory
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   path = fs.get_locales_dir()
+   system.log_debug(path)
+
+================================
+
+get_lua_dir()
+^^^^^^^^^^^^^
+
+Returns the filepath for the DIS2RBED lua directory.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``string`` -- The filepath for the DIS2RBED lua directory
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   path = fs.get_lua_dir()
+   system.log_debug(path)
 
 ================================
 
@@ -11501,9 +11746,32 @@ does_extra_exist(``vehicle``, ``extraId``)
 network_explode_vehicle(``vehicle``, ``isAudible``, ``isInvisible``, ``netId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note::
+Explodes vehicle for everyone.
 
-   This function is not yet documented because it requires a native that was not yet added.
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``isAudible`` (``bool``) -- Whether the explosion is audible.
+* ``isInvisible`` (``bool``) -- Whether the explosion is invisible.
+* ``netId`` (``int``) -- The network ID of the vehicle.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+   coords = self.get_coords_infront(10)
+   heading = 30
+
+   veh = scripting.spawn.spawn_vehicle(zentornoHash, coords.x, coords.y, coords.z, heading)
+   netId = rage.network.network_get_network_id_from_entity(veh)
+   rage.vehicle.network_explode_vehicle(veh, true, false, netId)
+   system.log_debug("Vehicle exploded.")
 
 ====================================
 
@@ -13793,6 +14061,31 @@ Toggles a vehicle mod on/off.
 
 ====================================
 
+set_vehicle_cheat_power_increase(``vehicle``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the vehicle's torque value.
+
+.. note::
+
+   Negative values will cause the vehicle to go backwards instead of forwards while accelerating.
+
+   This has to be called every frame.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID
+* ``value`` (``float``) -- The torque value
+
+  * Less than ``1.0`` -- Decreased torque
+  * ``1.0`` -- Default torque
+  * More than ``1.0`` -- Increased torque
+
+
+**Returns:**
+
+====================================
+
 .. _entityNSR:
 
 Entity namespace
@@ -15266,7 +15559,7 @@ Sets the entity velocity.
 set_entity_visible(``entity``, ``toggle``, ``unk``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Toggle the visibility of a given entity.
+Toggles the visibility of a given entity.
 
 **Parameters:**
 
@@ -15290,6 +15583,35 @@ Toggle the visibility of a given entity.
    entity = self.get_ped()
 
    rage.entity.set_entity_visible(entity, true)
+
+================================
+
+get_entity_model(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the model hash of the given entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The entity ID
+
+**Returns:**
+
+* ``Hash`` -- The model hash
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   model = rage.entity.get_entity_model(entity)
+   freemodeModel = rage.gameplay.get_hash_key("mp_f_freemode_01")
+
+   if model == freemodeModel then
+      system.log_debug("This entity has a freemode model")
+   end
 
 ================================
 
@@ -18348,6 +18670,32 @@ Request control of entity.
    entity = self.get_ped()
 
    rage.network.network_request_control_of_entity(entity)
+
+================================
+
+network_get_network_id_from_entity(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns netId from the given entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- The Entity ID
+
+**Returns:**
+
+* ``int`` -- NetId
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   entity = self.get_ped()
+
+   id = rage.network.network_get_network_id_from_entity(entity)
+
+   system.log_debug("NetID = " .. id)
 
 ================================
 

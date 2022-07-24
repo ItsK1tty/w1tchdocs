@@ -33,7 +33,7 @@ Contents
    scenariogroups
    scenariotypes
    taskindex
-   animtypes
+   
    seattypes
    firingpatterns
    ammotypes
@@ -42,8 +42,7 @@ Contents
    scaleforms
    relationship
    bones
-   ptfx
-   zones
+   
    pedCompID
    pedPropID
    pedOverlayID
