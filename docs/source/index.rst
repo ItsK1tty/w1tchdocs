@@ -33,7 +33,6 @@ Contents
    scenariogroups
    scenariotypes
    taskindex
-   
    seattypes
    firingpatterns
    ammotypes
@@ -42,7 +41,6 @@ Contents
    scaleforms
    relationship
    bones
-   
    pedCompID
    pedPropID
    pedOverlayID
@@ -57,3 +55,8 @@ Contents
    vehicleClasses
    wheelTypes
    windowTints
+   :maxdepth: 1
+
+   animtypes
+   ptfx
+   zones
