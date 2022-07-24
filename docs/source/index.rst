@@ -17,6 +17,7 @@ Contents
 
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
 
    generalinfo
    gettingstarted
@@ -56,9 +57,6 @@ Contents
    wheelTypes
    windowTints
    handling
-   :glob:
-   :titlesonly:
-
    animtypes
    ptfx
    zones
