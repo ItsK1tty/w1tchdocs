@@ -55,6 +55,7 @@ Contents
    vehicleClasses
    wheelTypes
    windowTints
+   handling
    :maxdepth: 1
    animtypes
    ptfx
