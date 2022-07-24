@@ -56,7 +56,6 @@ Contents
    wheelTypes
    windowTints
    :maxdepth: 1
-
    animtypes
    ptfx
    zones
