@@ -56,7 +56,9 @@ Contents
    wheelTypes
    windowTints
    handling
-   :maxdepth: 1
+   :glob:
+   :titlesonly:
+
    animtypes
    ptfx
    zones

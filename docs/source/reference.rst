@@ -14144,7 +14144,7 @@ Applies a force to the specified entity.
 
 ================================
 
-attach_entity_to_entity(``entity1``, ``entity2``, ``boneIndex``, ``xPos``, ``yPos``, ``zPos``, ``xRot``, ``yRot``, ``zRot``, ``p``9, ``useSoftPinning``, ``collision``, ``isPed``, ``vertexIndex``, ``fixedRot``)
+attach_entity_to_entity(``entity1``, ``entity2``, ``boneIndex``, ``xPos``, ``yPos``, ``zPos``, ``xRot``, ``yRot``, ``zRot``, ``p9``, ``useSoftPinning``, ``collision``, ``isPed``, ``vertexIndex``, ``fixedRot``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Attach an entity to the specified entity.
@@ -21839,6 +21839,7 @@ Play a specified sound.
 * None
 
 **Example:**
+
 .. code-block:: lua
    :linenos:
 
