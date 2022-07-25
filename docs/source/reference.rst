@@ -39,7 +39,7 @@ You can find a hash key using this function: rage.gameplay.get_hash_key("string"
 
 You can find most of the game objects here:
 
-Menu button & children hashes can be anything you want, but they have to be unique.
+Menu button, children and task hashes can be anything you want, but they have to be unique.
 
 * `Weapons <https://wiki.rage.mp/index.php?title=Weapons>`__
 * `Weapon Components <https://wiki.rage.mp/index.php?title=Weapons_Components>`__
@@ -1078,6 +1078,36 @@ Adds a text option. (e.g. a note).
 
 ======================
 
+
+add_option_color(``name``, ``hash``, ``color``, ``parent``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a color selection button.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``color`` (``ColorRGBA``) -- The option default color.
+* ``parent`` (``int``) -- The parent section ID.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_color("Color option", "luaOptHashColor", {0, 0, 255, 255}, parent) -- Blue is the default color
+
+
+======================
+
+
 add_player_option(``name``, ``hash``, ``fn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1419,7 +1449,7 @@ Checks whether an option is toggled.
    :linenos:
 
    -- Get option state
-   optionToggled = "~rl~luaOptDummyToggle ~w~state is: ~g~" .. tostring(menu.is_option_toggled("luaOptDummyToggle"))
+   optionToggled = "Option toggled: " .. tostring(menu.is_option_toggled("luaOptDummyToggle"))
 
 ======================
 
@@ -1444,7 +1474,7 @@ Checks whether an option is visible.
 .. code-block:: lua
    :linenos:
 
-   optionVisible = "~rl~luaOptDummyToggle ~w~state is: ~g~" .. tostring(menu.is_option_visible("luaOptDummyToggle"))
+   optionVisible = "Option visibility state is: " .. tostring(menu.is_option_visible("luaOptDummyToggle"))
 
 ======================
 
@@ -1469,7 +1499,7 @@ Checks whether an option is enabled.
 .. code-block:: lua
    :linenos:
 
-   optionEnabled = "~rl~luaOptDummyToggle ~w~state is: ~g~" .. tostring(menu.is_option_enabled("luaOptDummyToggle"))
+   optionEnabled = "Option state is: " .. tostring(menu.is_option_enabled("luaOptDummyToggle"))
 
 ======================
 
@@ -1492,7 +1522,7 @@ Returns the value of an option.
    :linenos:
 
    -- Get option value
-   optionValue = "~rl~luaOptHashValue ~w~value is: ~g~" .. tostring(menu.get_option_value("luaOptHashValue"))
+   optionValue = "Option value is: " .. tostring(menu.get_option_value("luaOptHashValue"))
 
 ======================
 
@@ -1515,7 +1545,36 @@ Returns the option text.
    :linenos:
    
    -- Get option text
-   optionText = "~rl~luaOptHashText ~w~text is: ~g~" .. tostring(menu.get_option_text("luaOptHashText"))
+   optionText = "Option text is: " .. tostring(menu.get_option_text("luaOptHashText"))
+
+
+======================
+
+get_option_color(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the selected color of a color selection option.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+
+**Returns:**
+
+* ``ColorRGBA`` -- Option color.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   
+   parent = menu.add_parent("My parent section")
+
+   menu.add_option_color("Color option", "luaOptHashColor", {0, 0, 255, 255}, parent) -- Blue is the default color
+
+   optionColor = "Option color is: " .. tostring(menu.get_option_color("luaOptHashColor"))
+
 
 ======================
 
@@ -3017,7 +3076,7 @@ Sends a notification in the bottom-left corner of the screen.
 
 ================================
 
-notify.info(``text``)
+info(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sends a blue-colored notification in the bottom-right corner of the screen.
@@ -3039,7 +3098,7 @@ Sends a blue-colored notification in the bottom-right corner of the screen.
 
 ================================
 
-notify.success(``text``)
+success(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sends a green-colored notification in the bottom-right corner of the screen.
@@ -3062,7 +3121,7 @@ Sends a green-colored notification in the bottom-right corner of the screen.
 
 ================================
 
-notify.warning(``text``)
+warning(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sends a red-colored notification in the bottom-right corner of the screen.
@@ -3081,6 +3140,29 @@ Sends a red-colored notification in the bottom-right corner of the screen.
    :linenos:
 
 ================================
+
+lua(``text``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends a lime-colored notification in the bottom-right corner of the screen.
+
+**Parameters:**
+
+* ``text`` (``string``) -- The text to display.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   notify.lua("Hello world!")
+
+================================
+
 
 
 .. _script:
@@ -3877,6 +3959,7 @@ Draws an image. Supports PNG & JPEG files.
 * * Default is ``0``.
 *  ``rounding_flags`` (``int``) -- The flags for the rounding.
 * * Default is ``0``.
+* * More about rounding flags: :doc:`roundingflags`
 
 **Returns:**
 
@@ -3888,6 +3971,143 @@ Draws an image. Supports PNG & JPEG files.
    :linenos:
    
    render.draw_image("/path/to/image.png", "MyHash", true, 0, 0, 100, 100, { 255, 255, 255, 255 }, 0.f, 0)
+
+================================
+
+draw_atlas_frame(``hash``, ``atlasHash``, ``frameName``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0.0``, ``rounding_flags`` = ``0``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Draw an atlas texture frame.
+
+.. note::
+
+   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+
+**Parameters:**
+
+*  ``hash`` (``string``) -- The hash of the atlas texture frame to draw.
+*  ``atlasHash`` (``string``) -- The hash of the atlas texture.
+*  ``frameName`` (``string``) -- The name of the frame to draw.
+*  ``draw`` (``bool``) -- Whether to draw the atlas texture frame or not.
+* * ``True`` to draw the atlas texture frame
+* * ``false`` to not draw the atlas texture frame
+*  ``x`` (``float``) -- The X coordinate of the atlas texture frame
+*  ``y`` (``float``) -- The Y coordinate of the atlas texture frame
+*  ``w`` (``float``) -- The width of the atlas texture frame.
+*  ``h`` (``float``) -- The height of the atlas texture frame.
+*  ``color`` (``ColorRGBA``) -- The color of the atlas texture frame. ``{R, G, B, A}``
+*  ``rounding`` (``float``) -- The rounding of the atlas texture frame.
+* * Default is ``0``.
+*  ``rounding_flags`` (``int``) -- The flags for the rounding.
+* * Default is ``0``.
+* * More about rounding flags: :doc:`roundingflags`
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   --assuming there's a texture named "test" in the atlas
+   render.load_atlas("/path/to/atlas.png", "MyAtlas")
+   render.draw_atlas_frame("MyFrameHash", "MyAtlas", "test", true, 240, 15, 0, 0, { 255, 255, 255, 255 }, 0, 0)
+
+================================
+
+remove_draw_task(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove a draw task.
+
+**Parameters:**
+
+*  ``hash`` (``string``) -- The hash of the task to remove.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   render.remove_draw_task("MyTask")
+
+================================
+
+remove_draw_tasks_by_mask(``mask``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove multiple draw tasks with the same masks.
+
+**Parameters:**
+
+*  ``mask`` (``string``) -- The mask of the tasks to remove.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   render.remove_draw_tasks_by_mask("Task_*") -- Remove all tasks with the hash that starts with "Task_"
+
+
+
+================================
+
+load_atlas(``path``, ``atlasHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Load a texture atlas.
+
+**Parameters:**
+
+*  ``path`` (``string``) -- The path of the atlas to load.
+*  ``atlasHash`` (``string``) -- The atlas hash.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   render.load_atlas("/path/to/atlas.png", "MyAtlas")
+
+
+================================
+
+remove_atlas(``atlasHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Unload a texture atlas.
+
+**Parameters:**
+ 
+*  ``atlasHash`` (``string``) -- The atlas hash.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   render.load_atlas("/path/to/atlas.png", "MyAtlas")
+   render.remove_atlas("MyAtlas")
+
 
 ===============================
 
