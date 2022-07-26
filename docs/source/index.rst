@@ -17,8 +17,9 @@ Contents
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
 
    generalinfo
    gettingstarted
    reference
-   things/indexr
+   things/index
