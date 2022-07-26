@@ -16,9 +16,6 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 2
-   :hidden:
-   :titlesonly:
 
    generalinfo
    gettingstarted
