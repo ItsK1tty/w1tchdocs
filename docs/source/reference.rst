@@ -10135,9 +10135,28 @@ get_number_of_ped_prop_texture_variations(``ped``, ``propID``, ``drawableID``)
 get_number_of_ped_texture_variations(``ped``, ``componentID``, ``drawableID``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note::
-      
-   this function is not yet documented.
+Returns a number of possible texture variations for the specified component
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``componentID`` (``int``) -- The component ID / body part ID
+
+  * You can find the component IDs here: :doc:`pedPropID`
+* ``drawableID`` (``int``) -- The drawable ID
+
+**Returns:**
+
+* ``int`` -- The number of texture variations
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   data = rage.ped.get_number_of_ped_texture_variations(ped, 0, 0)
+   system.log_debug(tostring(data)) -- texture variations number for head
 
 ================================
 
@@ -11988,7 +12007,7 @@ Explodes vehicle for everyone.
    coords = self.get_coords_infront(10)
    heading = 30
 
-   veh = scripting.spawn.spawn_vehicle(zentornoHash, coords.x, coords.y, coords.z, heading)
+   veh = scripting.spawn.spawn_vehicle(zentornoHash, coords, heading)
    netId = rage.network.network_get_network_id_from_entity(veh)
    rage.vehicle.network_explode_vehicle(veh, true, false, netId)
    system.log_debug("Vehicle exploded.")
@@ -19066,7 +19085,7 @@ get_control_normal(``padIndex``, ``control``)
 
 .. note::
 
-   This function is poorly documented. It needs more testing and information.
+   This function needs more testing.
 
 **Parameters:**
 
@@ -19094,7 +19113,7 @@ is_control_just_pressed(``padIndex``, ``control``)
 
 .. note::
 
-   This function is poorly documented. It needs more testing and information.
+   This function needs more testing.
 
 
 **Parameters:**
@@ -19125,9 +19144,9 @@ is_control_pressed(``padIndex``, ``control``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-   .. note::
+.. note::
 
-   This function is poorly documented. It needs more testing and information.
+   This function needs more testing.
 
 .. note::
 
@@ -19222,7 +19241,7 @@ This function simulates player input.
 
 .. note::
 
-   This function is poorly documented. It needs more testing and information.
+   This function needs more testing.
 
 **Parameters:**
 
