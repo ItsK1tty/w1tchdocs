@@ -22,41 +22,4 @@ Contents
    generalinfo
    gettingstarted
    reference
-   a/roundingflags
-   a/textflags
-   a/cloudtypes
-   a/weathertypes
-   a/doors
-   a/windows
-   a/headlightscolor
-   a/exptypes
-   a/inttypes
-   a/scenariogroups
-   a/scenariotypes
-   a/taskindex
-   a/seattypes
-   a/firingpatterns
-   a/ammotypes
-   a/animfx
-   a/decor
-   a/scaleforms
-   a/relationship
-   a/bones
-   a/pedCompID
-   a/pedPropID
-   a/pedOverlayID
-   a/formation
-   a/combat_attributes
-   a/combat_movements
-   a/combat_ranges
-   a/pedConfigs
-   a/pedMovements
-   a/roofstate
-   a/modTypes
-   a/vehicleClasses
-   a/wheelTypes
-   a/windowTints
-   a/handling
-   a/animtypes
-   a/ptfx
-   a/zones
+   things/index
