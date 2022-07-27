@@ -35,6 +35,7 @@ Contents
 
 .. toctree::
    :glob:
+   :maxdepth: 1
    :caption: GTA V Dump data
 
    things/*
