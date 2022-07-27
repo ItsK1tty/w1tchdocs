@@ -18,6 +18,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     "myst_parser",
+    "sphinx_rtd_dark_mode",
 ]
 
 intersphinx_mapping = {
@@ -31,11 +32,10 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 #html_theme = 'sphinx_rtd_theme'
-html_theme = 'sphinx_pdj_theme'
+html_theme = 'sphinx-rtd-dark-mode'
 
-html_theme_options = {
-    'style': 'darker'
-}
+default_dark_mode = True
+
 
 
 # -- Options for EPUB output
