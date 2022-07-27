@@ -16,11 +16,12 @@ Contents
 --------
 
 .. toctree::
+   :glob:
 
    generalinfo
    gettingstarted
    reference
-   things/roundingflags
 
-       things/textflags
+   :caption: GTA V Dump data
    
+   things/*
