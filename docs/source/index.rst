@@ -16,12 +16,15 @@ Contents
 --------
 
 .. toctree::
-   :glob:
+   :maxdepth: 2
+   :caption: LUA Engine
 
    generalinfo
    gettingstarted
    reference
 
+.. toctree::
+   :glob:
    :caption: GTA V Dump data
-   
+
    things/*
