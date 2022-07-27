@@ -12,6 +12,7 @@ List of screen FX effects
     rage.gameplay.stop_screen_effect(effectName)
 
 ===================
+
 * ``ArenaEMP``
 * ``ArenaEMPOut``
 * ``ArenaWheelPurple``

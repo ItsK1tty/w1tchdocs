@@ -10810,7 +10810,7 @@ Resets group formation settings.
 ================================
 
 reset_ped_movement_clipset(``ped``, ``p1``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Resets the ped movement clip set (walking animation set).
 
@@ -12496,7 +12496,7 @@ Returns the maximum number of passengers for the vehicle.
 ====================================
 
 get_vehicle_mod(``vehicle``, ``modType``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the vehicle mod variation ID
 
@@ -12624,7 +12624,7 @@ Returns a number of available rooftop liveries
 ====================================
 
 get_vehicle_wheel_type(``vehicle``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the wheel type of the vehicle.
 
@@ -12761,7 +12761,7 @@ Checks whether the vehicle mod is turned on (xenon, for example)
 ====================================
 
 is_vehicle_a_convertible(``vehicle``, ``p1``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Checks whether the vehicle is a convertible.
 
@@ -13146,7 +13146,7 @@ Sets the helicopter blades speed.
 ====================================
 
 set_parked_vehicle_density_multiplier_this_frame(``multiplier``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sets the density for parked vehicles.
 
@@ -13176,7 +13176,7 @@ Sets the density for parked vehicles.
 ====================================
 
 set_random_vehicle_density_multiplier_this_frame(``multiplier``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sets the density for random vehicles on the streets.
 
