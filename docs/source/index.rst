@@ -12,6 +12,16 @@ Check out the :doc:`generalinfo` section for further information, as well as :do
 
    This project is under active development.
 
+
+Special thanks to:
+
+* Me (K1tty)
+* MrDario
+* Chiya
+* Antrix
+
+This wouldn't have been possible without you!
+
 Contents
 --------
 
