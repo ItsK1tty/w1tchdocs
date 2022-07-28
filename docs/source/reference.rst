@@ -136,8 +136,12 @@ Easiest way to acquire a vehicle handle is to call ``self.get_vehicle()`` functi
 Vector2
 ----------------------
 
-Vector2 is a 2D vector, and is used to represent the coordinates on the screen. It contains two integer variables: ``x`` and ``y``
+Vector2 is a 2D vector, and is used to represent the coordinates on the screen. It contains two float variables: ``x`` and ``y``
 Only used in :ref:`render` at the moment.
+
+You can initialize a Vector3 object with following code:
+
+``v2 = Vector2.new(x, y)``
 
 ================================
 
@@ -146,7 +150,11 @@ Only used in :ref:`render` at the moment.
 Vector3
 ----------------------
 
-Vector3 is a 3D vector, and is used to represent the coordinates in the game world. It contains three integer variables: ``x``, ``y`` and ``z``
+Vector3 is a 3D vector, and is used to represent the coordinates in the game world. It contains three float variables: ``x``, ``y`` and ``z``
+
+You can initialize vector3 with the following code:
+
+``myV3 = Vector3.new(x, y, z)``
 
 ================================
 
@@ -157,6 +165,10 @@ ColorRGB
 
 ColorRGB represents a color in RGB format. It contains three integer variables: ``r``, ``g`` and ``b``.
 
+You can initialize a ColorRGB object with the following code:
+
+``myColor = ColorRGB.new(r, g, b)``
+
 ================================
 
 .. _ColorRGBA:
@@ -165,6 +177,10 @@ ColorRGBA
 ----------------------
 
 ColorRGBA represents a color in RGBA format. It contains four integer variables: ``r``, ``g``, ``b`` and ``a``.
+
+You can initialize a ColorRGBA object with the following code:
+
+``myColor = ColorRGBA.new(r, g, b, a)``
 
 ================================
 
