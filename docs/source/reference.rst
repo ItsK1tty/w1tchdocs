@@ -3139,6 +3139,8 @@ Sends a red-colored notification in the bottom-right corner of the screen.
 .. code-block:: lua
    :linenos:
 
+   notify.warning("Hello world!")
+
 ================================
 
 lua(``text``)
