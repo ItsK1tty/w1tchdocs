@@ -578,6 +578,51 @@ Disconnects a chat listener for a certain task.
 
 ================================
 
+add_script_event(``name``, ``eventId``, ``args`` = ``{}``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add a script event into the protection blacklist.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the task.
+* ``eventId`` (``int``) -- The event ID to add.
+* ``args`` (``vector<int>``) -- The arguments to pass to the event. Default is an empty vector.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   system.add_script_event("CEO Kick", 1240068495)
+
+================================
+
+remove_script_event(``eventId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove a script event from the protection blacklist.
+
+**Parameters:**
+
+* ``eventId`` (``int``) -- The event ID to remove.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   system.remove_script_event("CEO Kick")
+
+================================
+
+
 string_to_key(``key``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1122,6 +1167,305 @@ Adds a color selection button.
 
 
 ======================
+======================
+
+
+update_option(``hash``, ``name``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updates a menu option.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``name`` (``string``) -- The name of the option.
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- A test function
+   function test()
+      log_info("Test function!")
+   end
+
+   menu.update_option("luaOptHash", "Lua Option", test)
+
+======================
+
+update_option_toggle(``hash``, ``name``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updates a toggable option.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``name`` (``string``) -- The name of the option.
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   -- A test function
+   function test()
+      log_info("Test function!")
+   end
+
+   menu.update_option_toggle("luaOptHash", "Lua Option", test)
+
+======================
+
+update_option_slider(``hash``, ``name``, ``value``, ``min``, ``max``, ``mod``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updates a slider option.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``name`` (``string``) -- The name of the option.
+* ``value`` (``float``) -- The option default value.
+* ``min`` (``float``) -- Minimum slider value.
+* ``max`` (``float``) -- Maximum slider value.
+* ``mod`` (``float``) -- Delimeter of value increase.
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.update_option_slider("luaOptDummyToggle", "Slider Option", 10, 0, 100, 3, function())
+
+======================
+
+update_option_slider_toggle(``hash``, ``name``, ``value``, ``min``, ``max``, ``mod``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updates a slider toggable option.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``name`` (``string``) -- The name of the option.
+* ``value`` (``float``) -- The option default value.
+* ``min`` (``float``) -- Minimum slider value.
+* ``max`` (``float``) -- Maximum slider value.
+* ``mod`` (``float``) -- Delimeter of value increase.
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.update_option_slider_toggle("luaOptDummyToggle", "Slider Toggable Option", 10, 0, 100, 3, function())
+
+======================
+
+update_option_value( ``hash``, ``name``, ``value``, ``min``, ``max``, ``mod``, ``valueSuffix``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updates a value option.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``name`` (``string``) -- The name of the option.
+* ``value`` (``float``) -- The option default value.
+* ``min`` (``float``) -- Minimum slider value.
+* ``max`` (``float``) -- Maximum slider value.
+* ``mod`` (``float``) -- Step of value increase.
+* ``valueSuffix`` (``string``) -- The value suffix text (e.g. ``m/s``)
+* ``fn`` (``function``) -- Function to call. (optional)
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.update_option_value("luaOptDummyToggle", "Lua option with value", 10, 0, 100, 1, "kb", function())
+
+======================
+
+update_option_value_toggle( ``hash``, ``name``, ``value``, ``min``, ``max``, ``mod``, ``valueSuffix``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updates a toggable menu value option.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``name`` (``string``) -- The name of the option.
+* ``value`` (``float``) -- The option default value.
+* ``min`` (``float``) -- Minimum slider value.
+* ``max`` (``float``) -- Maximum slider value.
+* ``mod`` (``float``) -- Step of value increase.
+* ``valueSuffix`` (``string``) -- The value suffix text (e.g. ``m/s``)
+* ``fn`` (``function``) -- Function to call. (optional)
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.update_option_value_toggle("luaOptDummyToggle", "Toggable Lua option with value values", 10, 0, 100, 1, "kb", function())
+
+======================
+
+update_option_value_str(``hash``, ``name``, ``value``, ``list``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updates a value string option.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``name`` (``string``) -- The name of the option.
+* ``value`` (``float``) -- The option default value.
+* ``list`` (``vector<string>``) -- The values list separated with a comma
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.update_option_value_str("luaOptDummyToggle", "Lua option with multiple values", 0, { "One", "Two", "Three" }, function())
+
+======================
+
+update_option_value_str_toggle(``hash``, ``name``, ``value``, ``list``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updates a toggable value string option.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``name`` (``string``) -- The name of the option.
+* ``value`` (``float``) -- The option default value.
+* ``list`` (``vector<string>``) -- The values list separated with a comma
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.update_option_value_str_toggle("luaOptDummyToggle", "Toggable Lua option with multiple values", 0, { "One", "Two", "Three" }, function())
+
+======================
+
+update_option_text(``hash``, ``name``, ``text``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updates a text option (e.g. a note).
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``name`` (``string``) -- The name of the option.
+* ``text`` (``string``) -- The displayed text to the right of the name.
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.update_option_text("luaOptHashText", "Just a text option", "Text", fn())
+
+======================
+
+update_option_info(``hash``, ``name``, ``info``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updates an info text option (e.g. a note).
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``name`` (``string``) -- The name of the option.
+* ``text`` (``string``) -- The displayed text to the right of the name.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.update_option_info("luaOptHashText", "Just a text option", "Some Info")
+
+======================
+
+update_option_color(``hash``, ``name``, ``color``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updates a color selection button.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``name`` (``string``) -- The name of the option.
+* ``color`` (``ColorRGBA``) -- The option default color.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.update_option_color("luaOptHashColor", "Color option", {0, 0, 255, 255})
+
+======================
 
 
 add_player_option(``name``, ``hash``, ``fn``)
@@ -1542,6 +1886,21 @@ Returns the value of an option.
 
 ======================
 
+get_option_value_str(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the value of an option as a string.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+
+**Returns:**
+
+* ``string`` -- Option value.
+
+======================
+
 get_option_text(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1787,7 +2146,28 @@ Returns the Online -> Players section ID.
 
 ======================
 
+section_online_all_players()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the Online -> All Players section ID.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- The ID of the menu section.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   menu.add_option("All Online Players", "optAllOnlPlayers", menu.section_online_all_players(), function())
+
 section_online_protex()
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the Online -> Protections section ID.
@@ -3396,6 +3776,22 @@ Returns a global string value.
 
 ================================
 
+get_global_addr(``global``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the memory address of a global.
+
+**Parameters:**
+
+* ``global`` (``uint64_t``) -- The name of the global value.
+
+**Returns:**
+
+* ``uint64_t`` -- The memory address of the global.
+
+================================
+
+
 .. _locals:
 
 Locals namespace
@@ -3540,6 +3936,21 @@ Returns a local string value.
 **Returns:**
 
 * ``string`` -- The local value.
+
+================================
+
+get_local_addr(``scriptName``, ``local``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Parameters:**
+
+* ``scriptName`` (``string``) -- The name of the script.
+* ``local`` (``uint64_t``) -- The name of the local value.
+
+
+**Returns:**
+
+* ``uint64_t`` -- The memory address of the local.
 
 ================================
 
@@ -6624,6 +7035,53 @@ Returns the coordinates above of the specified coordinates.
 
 ================================
 
+get_blip_coords(``sprite``, ``color``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the coordinates of the specified :ref:`blip`.
+
+**Parameters:**
+
+* ``sprite`` (``int``) -- Sprite of the blip
+* ``color`` (``int``) -- Color of the blip
+
+**Returns:**
+
+* ``Vector3`` -- Coordinates of the blip
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   coords = scripting.get_blip_coords(1, 1)
+   system.log_debug(tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z))
+
+================================
+
+get_ground_z(``coords``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the ground Z coordinate (height) of the specified coordinates.
+
+**Parameters:**
+
+* ``coords`` (``Vector3``) -- Coordinates to check
+
+**Returns:**
+
+* ``float`` -- Ground Z coordinate
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   coords = self.get_coords()
+   z = scripting.get_ground_z(coords)
+   system.log_debug(tostring(z))
+
+
 .. _playerNSS:
 
 Player namespace
@@ -7168,6 +7626,32 @@ Kills all nearby peds.
 
 ================================
 
+
+get_nearby_peds()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the array of the nearby peds' IDs
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``vector<Ped>`` -- The array of the nearby peds' IDs
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   peds = scripting.ped.get_nearby_peds()
+   for i, ped in ipairs(peds) do
+      system.log_debug("Ped " .. i .. ": " .. ped)
+   end
+
+================================
+
 .. _entityNSS:
 
 Entity namespace
@@ -7294,6 +7778,31 @@ Sets resistance to certain damage.
    entity = self.get_ped()
    scripting.entity.set_proofs(entity, true, true, true, true, true, true)
    system.log_debug("Nanomachines, son.")
+
+================================
+
+get_nearby_entities()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the array of the nearby entities' IDs
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``vector<Entity>`` -- The array of the nearby entities' IDs
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   entities = scripting.entity.get_nearby_entities()
+   for i, entity in ipairs(entities) do
+      system.log_debug("Entity " .. i .. ": " .. entity)
+   end
 
 ================================
 
@@ -8010,6 +8519,32 @@ Set windows opened on a vehicle.
    personal_vehicle = scripting.vehicle.get_personal_vehicle()
 
    scripting.vehicle.set_windows_opened(personal_vehicle, true, 1)
+
+================================
+
+get_nearby_vehicles()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the array of the nearby vehicles' IDs
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``vector<Vehicle>`` -- Array of nearby vehicles' IDs
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   vehicles = scripting.vehicle.get_nearby_vehicles()
+   for i, veh in ipairs(vehicles) do
+      system.log_debug("Vehicle " .. i .. ": " .. veh)
+   end
+
 
 ================================
 
