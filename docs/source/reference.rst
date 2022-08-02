@@ -234,6 +234,7 @@ Function namespaces in LUA Engine are defined in the following order:
 
 
 * :ref:`system`
+* :ref:`web`
 * :ref:`menu`
 * :ref:`stats`   
 * :ref:`notify`
@@ -702,6 +703,73 @@ Checks whether the key is pressed
 
 ================================
 
+.. _web:
+
+get(``url``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends a GET request to a web server.
+
+**Parameters:**
+
+* ``url`` (``string``) -- The URL to send the request to.
+
+**Returns:**
+
+* ``string`` -- The response from the server.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   system.log_warning("Test HTTP request GET")
+   result_get = web.get("http://ip-api.com/php/24.48.0.1")
+   system.log_warning(result_get)
+
+   --or
+
+   system.log_warning("Test HTTPS request GET")
+   result_get = web.get("https://ipapi.co/8.8.8.8/json/")
+   system.log_warning(result_get)
+
+================================
+
+post(``url``, ``data``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sends a POST request to a web server.
+
+**Parameters:**
+
+* ``url`` (``string``) -- The URL to send the request to.
+* ``data`` (``string``) -- The data to send.
+
+**Returns:**
+
+* ``string`` -- The response from the server.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   system.log_warning("Test HTTPS request GET, get website page")
+   result_get = web.get("https://www.w3.org/History/19921103-hypertext/hypertext/WWW/TheProject.html")
+   system.log_warning(result_get)
+
+   --or
+   
+   system.log_warning("Test HTTP request POST")
+   json_request = "[ {\"query\": \"208.80.152.201\", \"fields\": \"city,country,countryCode,query\", \"lang\": \"eu\"},  \"8.8.8.8\",  \"24.48.0.1\" ]"
+   result_post = web.post("http://ip-api.com/batch",json_request)
+   system.log_warning(result_post)
+
+
+================================
+
+================================
+
 .. _menu:
 
 Menu namespace
@@ -1079,6 +1147,8 @@ Adds a spawn option button.
    :linenos:
 
    parent = menu.add_parent("My parent section")
+
+   zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
    menu.add_option_spawn("Spawn Zentorno", zentornoHash, 0, parent) -- 0 is vehicle_spawn type
 
@@ -3990,7 +4060,7 @@ Draws a box with the given color and rounding.
 *   ``rounding_flags`` (``int``) -- The rounding flags of the box. 
 * * Default is ``0``.
 
-More about rounding flags: :doc:`roundingflags`
+More about rounding flags: :doc:`things/roundingflags`
 
 **Returns:**
 
@@ -12535,37 +12605,6 @@ does_extra_exist(``vehicle``, ``extraId``)
 
 ====================================
 
-network_explode_vehicle(``vehicle``, ``isAudible``, ``isInvisible``, ``netId``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Explodes vehicle for everyone.
-
-**Parameters:**
-
-* ``vehicle`` (``Vehicle``) -- The vehicle ID
-* ``isAudible`` (``bool``) -- Whether the explosion is audible.
-* ``isInvisible`` (``bool``) -- Whether the explosion is invisible.
-* ``netId`` (``int``) -- The network ID of the vehicle.
-
-**Returns:**
-
-* None
-
-**Example:**
-
-.. code-block:: lua
-   :linenos:
-
-   zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
-   coords = self.get_coords_infront(10)
-   heading = 30
-
-   veh = scripting.spawn.spawn_vehicle(zentornoHash, coords, heading)
-   netId = rage.network.network_get_network_id_from_entity(veh)
-   rage.vehicle.network_explode_vehicle(veh, true, false, netId)
-   system.log_debug("Vehicle exploded.")
-
-====================================
 
 explode_vehicle(``vehicle``, ``isAudible``, ``isInvisible``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
