@@ -705,6 +705,13 @@ Checks whether the key is pressed
 
 .. _web:
 
+Web namespace
+----------------------
+
+This namespace contains functions for sending web requests to external servers.
+
+================================
+
 get(``url``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -759,7 +766,7 @@ Sends a POST request to a web server.
    system.log_warning(result_get)
 
    --or
-   
+
    system.log_warning("Test HTTP request POST")
    json_request = "[ {\"query\": \"208.80.152.201\", \"fields\": \"city,country,countryCode,query\", \"lang\": \"eu\"},  \"8.8.8.8\",  \"24.48.0.1\" ]"
    result_post = web.post("http://ip-api.com/batch",json_request)
@@ -4102,7 +4109,7 @@ Draws a filled box with the given color and rounding.
 *   ``rounding_flags`` (``int``) -- The rounding flags of the box. 
 * * Default is ``0``.
 
-More about rounding flags: :doc:`roundingflags`
+More about rounding flags: :doc:`things/roundingflags`
 
 **Returns:**
 
@@ -4149,7 +4156,7 @@ Draws a filled border box with the given color and rounding.
 *   ``rounding_flags`` (``int``) -- The rounding flags of the box. 
 * * Default is ``0``.
 
-More about rounding flags: :doc:`roundingflags`
+More about rounding flags: :doc:`things/roundingflags`
 
 **Returns:**
 
@@ -4417,7 +4424,7 @@ Draws a text with the given color.
 *  ``flags`` (``int``) -- The flags for the text. 
 * * Default is ``0``.
 
-More about text flags: :doc:`textflags`
+More about text flags: :doc:`things/textflags`
 
 **Returns:**
 
@@ -4458,7 +4465,7 @@ Draws an image. Supports PNG & JPEG files.
 * * Default is ``0``.
 *  ``rounding_flags`` (``int``) -- The flags for the rounding.
 * * Default is ``0``.
-* * More about rounding flags: :doc:`roundingflags`
+* * More about rounding flags: :doc:`things/roundingflags`
 
 **Returns:**
 
@@ -4499,7 +4506,7 @@ Draw an atlas texture frame.
 * * Default is ``0``.
 *  ``rounding_flags`` (``int``) -- The flags for the rounding.
 * * Default is ``0``.
-* * More about rounding flags: :doc:`roundingflags`
+* * More about rounding flags: :doc:`things/roundingflags`
 
 **Returns:**
 
@@ -6319,7 +6326,7 @@ Returns the value for the specified handling parameter.
 * ``vehicle`` (``Vehicle``) -- The vehicle ID.
 * ``param`` (``string``) -- The handling parameter.
 
-  * You can find a list of handling parameters here: :doc:`handling`.
+  * You can find a list of handling parameters here: :doc:`things/handling`.
 
 **Returns:**
 
@@ -6345,7 +6352,7 @@ Sets the value for the specified handling parameter.
 * ``vehicle`` (``Vehicle``) -- The vehicle ID.
 * ``param`` (``string``) -- The handling parameter.
 
-  * You can find a list of handling parameters here: :doc:`handling`.
+  * You can find a list of handling parameters here: :doc:`things/handling`.
 * ``value`` (``float``) -- The value for the specified handling parameter.
 
 **Returns:**
@@ -8071,7 +8078,7 @@ Opens or closes the doors of the specified vehicle.
 
 * doorId (``int``) -- The door ID
 
-  * For door IDs, see this: :doc:`doors`
+  * For door IDs, see this: :doc:`things/doors`
 
 **Returns:**
 
@@ -8206,7 +8213,7 @@ Sets the headlight color of the specified vehicle.
 
 * ``color`` (``int``) -- The headlight color ID
 
-  * For color IDs, see this: :doc:`headlightcolor`
+  * For color IDs, see this: :doc:`things/headlightcolor`
 **Returns:**
 
 * None
@@ -8575,7 +8582,7 @@ Set windows opened on a vehicle.
 
 * ``windowId`` (``int``) -- Window ID to manipulate
 
-  * For window IDs, see this: :doc:`windows`
+  * For window IDs, see this: :doc:`things/windows`
 
 **Returns:**
 
@@ -9193,7 +9200,7 @@ Gives enhanced ammo (ammo that generate a particular explosion) to a ped.
   
 * ``explosionId`` (``int``) -- The explosion ID determinates the type of explosion to assign to the ammo.
 
-  * You can read more about explosion IDs here: :doc:`exptypes`
+  * You can read more about explosion IDs here: :doc:`things/exptypes`
 
 **Returns:**
 
@@ -9679,7 +9686,7 @@ Set weather type.
 
 * ``weatherType`` (``string``) -- The weather type
 
-  * For weather types, see this: :doc:`weathertypes`
+  * For weather types, see this: :doc:`things/weathertypes`
 
 **Returns:**
 
@@ -9703,7 +9710,7 @@ Set clouds type and their transition time.
 
 * ``cloudsType`` (``string``)  -- The clouds type
 
-  * For weather types, see this: :doc:`weathertypes`
+  * For weather types, see this: :doc:`things/weathertypes`
 * ``transitionTime`` (``float``)  -- The speed of clouds
 
 
@@ -10448,7 +10455,7 @@ Clears the relationship between two groups. This should be called twice (once fo
 
 * ``relationship`` (``int``) -- Relationship ID
   
-  * Relationship types here: :doc:`relationship`
+  * Relationship types here: :doc:`things/relationship`
 
 * ``group1`` (``Hash``) -- Group 1 hash
 * ``group2`` (``Hash``) -- Group 2 hash
@@ -10693,7 +10700,7 @@ Returns the number of drawable variations for the specified body part.
 * ``ped`` (``Ped``) -- The ped ID
 * ``componentID`` (``int``) -- The component ID / body part ID
 
-  * You can find the component IDs here: :doc:`pedCompID`
+  * You can find the component IDs here: :doc:`things/pedCompID`
 
 **Returns:**
 
@@ -10720,7 +10727,7 @@ Returns the number of drawable variations for the specified prop.
 * ``ped`` (``Ped``) -- The ped ID
 * ``propID`` (``int``) -- The prop ID
 
-  * You can find the prop IDs here: :doc:`pedPropID`
+  * You can find the prop IDs here: :doc:`things/pedPropID`
 
 **Returns:**
 
@@ -10765,7 +10772,7 @@ Returns a number of possible texture variations for the specified component
 * ``ped`` (``Ped``) -- The ped ID
 * ``componentID`` (``int``) -- The component ID / body part ID
 
-  * You can find the component IDs here: :doc:`pedPropID`
+  * You can find the component IDs here: :doc:`things/pedPropID`
 * ``drawableID`` (``int``) -- The drawable ID
 
 **Returns:**
@@ -10793,7 +10800,7 @@ Returns the bone name for the specified bone ID.
 * ``ped`` (``Ped``) -- The ped ID
 * ``boneID`` (``int``) -- The bone ID
 
-  * You can find the bone IDs here: :doc:`bones`
+  * You can find the bone IDs here: :doc:`things/bones`
 
 **Returns:**
 
@@ -10824,7 +10831,7 @@ Get variation ID based on component ID.
 * ``ped`` (``Ped``) -- The ped ID
 * ``componentID`` (``int``) -- The component ID / body part ID
 
-  * You can find the component IDs here: :doc:`pedCompID`
+  * You can find the component IDs here: :doc:`things/pedCompID`
 
 **Returns:**
 
@@ -10854,7 +10861,7 @@ Returns the eye color of the specified ped.
 
 * ``int`` -- The eye color
 
-  * For eye colors list, see this: :doc:`eyecolors`
+  * For eye colors list, see this: :doc:`things/eyecolors`
 
 **Example:**
 
@@ -10936,7 +10943,7 @@ Returns the setting of the specified head part (makeup, complexion, etc.)
 * ``ped`` (``Ped``) -- The ped ID
 * ``overlayID`` (``int``) -- The overlay ID
 
-  * You can find the overlay IDs here: :doc:`pedOverlayID`
+  * You can find the overlay IDs here: :doc:`things/pedOverlayID`
 
 **Returns:**
 
@@ -10989,7 +10996,7 @@ Returns a ped's prop index (identifier) based on component ID.
 * ``ped`` (``Ped``) -- The ped ID
 * ``componentID`` (``int``) -- The component ID / body part ID
 
-  * You can find the component IDs here: :doc:`pedPropID`
+  * You can find the component IDs here: :doc:`things/pedPropID`
 
 **Returns:**
 
@@ -11017,7 +11024,7 @@ Returns a ped's prop texture index (identifier) based on component ID.
 * ``ped`` (``Ped``) -- The ped ID
 * ``componentID`` (``int``) -- The component ID / body part ID
 
-  * You can find the component IDs here: :doc:`pedPropID`
+  * You can find the component IDs here: :doc:`things/pedPropID`
 
 **Returns:**
 
@@ -11047,7 +11054,7 @@ Returns a ped's relationship group hash.
 
 * ``int`` -- The relationship group hash
 
-  * You can find the relationship group hashes here: :doc:`relationship`
+  * You can find the relationship group hashes here: :doc:`things/relationship`
 
 **Example:**
 
@@ -11070,7 +11077,7 @@ Returns a ped's texture variation (identifier) based on component ID.
 * ``ped`` (``Ped``) -- The ped ID
 * ``componentID`` (``int``) -- The component ID / body part ID
 
-  * You can find the component IDs here: :doc:`pedCompID`
+  * You can find the component IDs here: :doc:`things/pedCompID`
 
 
 **Returns:**
@@ -11560,7 +11567,7 @@ Sets the group formation type.
 * ``group`` (``Group``) -- The group ID
 * ``formationType`` (``int``) -- The formation type
 
-  * You can find formation types here: :doc:`formation`
+  * You can find formation types here: :doc:`things/formation`
 
 **Returns:**
 
@@ -11748,7 +11755,7 @@ Configures various combat attributes for a ped
 * ``ped`` (``Ped``) -- The ped ID
 * ``attributeId`` (``int``) -- The attribute ID
 
-  * You can find attribute IDs here: :doc:`combat_attributes`
+  * You can find attribute IDs here: :doc:`things/combat_attributes`
 * ``enabled`` (``bool``) -- Whether the attribute is enabled
 
 **Returns:**
@@ -11778,7 +11785,7 @@ Sets the combat movement rule for a ped.
 * ``ped`` (``Ped``) -- The ped ID
 * ``combatMovement`` (``int``) -- The combat movement rule
 
-  * You can find combat movement rules here: :doc:`combat_movements`
+  * You can find combat movement rules here: :doc:`things/combat_movements`
 
 **Returns:**
 
@@ -11806,7 +11813,7 @@ Sets the combat range for a ped.
 * ``ped`` (``Ped``) -- The ped ID
 * ``combatRange`` (``int``) -- The combat range
 
-  * You can find combat ranges here: :doc:`combat_ranges`
+  * You can find combat ranges here: :doc:`things/combat_ranges`
 
 **Returns:**
 
@@ -11834,7 +11841,7 @@ Sets the component variation for a ped.
 * ``ped`` (``Ped``) -- The ped ID
 * ``componentId`` (``int``) -- The component ID
 
-  * You can find component IDs here: :doc:`pedCompID`
+  * You can find component IDs here: :doc:`things/pedCompID`
 * ``drawableId`` (``int``) -- The drawable ID
 * ``textureId`` (``int``) -- The texture ID
 * ``paletteId`` (``int``) -- The palette ID
@@ -11887,7 +11894,7 @@ Sets a ped config flag.
 * ``ped`` (``Ped``) -- The ped ID
 * ``flagId`` (``int``) -- The flag ID
 
-  * You can find flag IDs here: :doc:`pedConfigs`
+  * You can find flag IDs here: :doc:`things/pedConfigs`
 * ``value`` (``bool``) -- The flag value
 
 **Returns:**
@@ -11970,7 +11977,7 @@ Sets the eye color for a ped.
 * ``ped`` (``Ped``) -- The ped ID
 * ``index`` (``int``) -- The eye color index
 
-  * For eye colors list, see this: :doc:`eyecolors`
+  * For eye colors list, see this: :doc:`things/eyecolors`
 
 **Returns:**
 
@@ -12044,7 +12051,7 @@ Sets the setting of the specified head part (makeup, complexion, etc.)
 * ``overlayID`` (``int``) -- The overlay ID
 * ``index`` (``int``) -- The overlay index
 
-  * You can find overlay ID data here: :doc:`pedOverlayID`
+  * You can find overlay ID data here: :doc:`things/pedOverlayID`
 * ``opacity`` (``float``) -- The overlay opacity (``0.0`` - ``1.0``)
 
 **Returns:**
@@ -12076,14 +12083,14 @@ Sets the color of the specified head part (lipstick, beards, eyebrows, chest hai
 * ``ped`` (``Ped``) -- The ped ID
 * ``overlayID`` (``int``) -- The overlay ID
 
-  * You can find overlay ID data here: :doc:`pedOverlayID`
+  * You can find overlay ID data here: :doc:`things/pedOverlayID`
 * ``colorType`` (``int``) -- The color type
 
   * ``1`` for eyebrows, beards and chest hair.
   * ``2`` for lipstick and blush.
 * ``colorID`` (``int``) -- The color ID
 
-  * For color ID list, see this: :doc:`pedOverlayID`
+  * For color ID list, see this: :doc:`things/pedOverlayID`
 * ``secondColorID`` (``int``) -- The second color ID
 
 **Returns:**
@@ -12112,7 +12119,7 @@ Warps the ped into a vehicle.
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
 * ``seatIndex`` (``int``) -- The seat index
 
-  * For seat index list, see this: :doc:`seattypes`
+  * For seat index list, see this: :doc:`things/seattypes`
 
 **Returns:**
 
@@ -12171,7 +12178,7 @@ Sets the movement clipset (walking animation set) for the ped.
 * ``ped`` (``Ped``) -- The ped ID
 * ``clipset`` (``string``) -- The movement clipset name
 
-  * For a list of movement clipsets, see this: :doc:`pedMovements`
+  * For a list of movement clipsets, see this: :doc:`things/pedMovements`
 * ``transitionSpeed`` (``float``) -- The speed of transtition between two clipsets
 
 **Returns:**
@@ -12233,7 +12240,7 @@ Set prop variation on a ped. Components, drawables and textures IDs are related 
 * ``ped`` (``Ped``) -- The ped ID
 * ``componentID`` (``int``) -- The component ID
 
-  * For component ID list, see this: :doc:`pedPropID`
+  * For component ID list, see this: :doc:`things/pedPropID`
 * ``drawableID`` (``int``) -- The drawable ID
 * ``textureID`` (``int``) -- The texture ID
 * ``attach`` (``bool``) -- Attach the prop to the ped
@@ -12295,7 +12302,7 @@ Sets the relationship group for the ped.
 * ``ped`` (``Ped``) -- The ped ID
 * ``hash`` (``int``) -- The relationship group hash
 
-  * For a list of relationship group hashes, see this: :doc:`relationship`
+  * For a list of relationship group hashes, see this: :doc:`things/relationship`
 
 **Returns:**
 
@@ -12363,7 +12370,7 @@ Sets the relationship between two groups.
 * ``group1`` (``Hash``) -- The first group hash
 * ``group2`` (``Hash``) -- The second group hash
 
-  * For relationship groups and types, see this: :doc:`relationship`
+  * For relationship groups and types, see this: :doc:`things/relationship`
 
 **Returns:**
 
@@ -12653,7 +12660,7 @@ Returns the state of the vehicle's convertible roof.
 
 * ``int`` -- The roof state
 
-  * For the list of roof states, see this: :doc:`roofstate`
+  * For the list of roof states, see this: :doc:`things/roofstate`
   * ``0`` if not in a vehicle
 
 **Example:**
@@ -12765,7 +12772,7 @@ Returns the name for the type of vehicle mod(Armour, engine etc)
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
 * ``modType`` (``int``) -- The mod type
 
-  * For the list of mod types, see this: :doc:`modTypes`
+  * For the list of mod types, see this: :doc:`things/modTypes`
 
 **Returns:**
 
@@ -12792,7 +12799,7 @@ Returns the label name for the type of vehicle mod(Armour, engine etc)
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
 * ``modType`` (``int``) -- The mod type
 
-  * For the list of mod types, see this: :doc:`modTypes`
+  * For the list of mod types, see this: :doc:`things/modTypes`
 * ``modValue`` (``int``) -- The mod value
 
 **Returns:**
@@ -12827,7 +12834,7 @@ Returns the number of possible mod variations for the type of vehicle mod(Armour
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
 * ``modType`` (``int``) -- The mod type
 
-  * For the list of mod types, see this: :doc:`modTypes`
+  * For the list of mod types, see this: :doc:`things/modTypes`
 
 **Returns:**
 
@@ -12854,7 +12861,7 @@ Returns the Ped handle of the ped in the specified vehicle seat.
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
 * ``seat`` (``int``) -- The seat ID
 
-  * For the list of seat IDs, see this: :doc:`seattypes`
+  * For the list of seat IDs, see this: :doc:`things/seattypes`
 * ``p2`` (``int``) -- Unknown (unused)
 
 **Returns:**
@@ -14000,7 +14007,7 @@ Sets a vehicle door to open.
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
 * ``door`` (``int``) -- The door ID
 
-  * You can find door IDs here: :doc:`doors`
+  * You can find door IDs here: :doc:`things/doors`
 * ``loose`` (``bool``) -- Whether the door is loose. In this case, the door won't close itself after a while.
 * ``openInstantly`` (``bool``) -- Whether the door should open instantly.
 
@@ -14028,7 +14035,7 @@ Sets the vehicle doors lock to a certain state.
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
 * ``doorLockStatus`` (``int``) -- The door lock status
 
-  * You can find door lock status here: :doc:`doors`
+  * You can find door lock status here: :doc:`things/doors`
 
 **Returns:**
 
@@ -14193,7 +14200,7 @@ Sets the vehicle engine health.
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
 * ``health`` (``float``) -- The engine health value
 
-  * For health values, see this: :doc:`vehicleHealth`
+  * For health values, see this: :doc:`things/vehicleHealth`
 
 
 **Returns:**
@@ -14407,7 +14414,7 @@ Modifies the vehicle.
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
 * ``modType`` (``int``) -- The modification type
 
-  * For modification types, see this: :doc:`modTypes`
+  * For modification types, see this: :doc:`things/modTypes`
 * ``modIndex`` (``int``) -- The modification variation
 * ``customTires`` (``bool``) -- Whether the mod is a custom tire
 
@@ -14791,7 +14798,7 @@ Sets the vehicle's wheel type.
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
 * ``wheelType`` (``int``) -- The wheel type
 
-  * For wheel types, see :doc:`wheelTypes`
+  * For wheel types, see :doc:`things/wheelTypes`
 
 **Returns:**
 
@@ -14875,7 +14882,7 @@ Toggles a vehicle mod on/off.
 * ``vehicle`` (``Vehicle``) -- The vehicle ID
 * ``modType`` (``int``) -- The mod type
 
-  * For mod types, see :doc:`modTypes`
+  * For mod types, see :doc:`things/modTypes`
 * ``toggle`` (``bool``) -- Toggle
 
 **Returns:**
@@ -15957,7 +15964,7 @@ Checks whether an entity is in a specified zone
 * ``entity`` (``Entity``) -- The entity ID
 * ``zone`` (``string``) -- The zone name
 
-  * You can read more about zone names here: :doc:`zones`
+  * You can read more about zone names here: :doc:`things/zones`
 
 **Returns:**
 
@@ -16873,7 +16880,7 @@ Set ped ammo by type.
 * ``ped`` (``Ped``) -- The ped
 * ``ammoTypeHash`` (``Hash``) -- Weapon ammo hash
 
-  * You can read more about ammo types here: :doc:`ammotypes`
+  * You can read more about ammo types here: :doc:`things/ammotypes`
 * ``ammo`` (``int``) -- Ammo Type
 
 
@@ -16992,7 +16999,7 @@ Checks whether an animation dictionary is loaded.
 
 * ``animDict`` (``string``) -- Animation dictionary
 
-  * You can read more about animations dicts and names here: :doc:`animtypes`
+  * You can read more about animations dicts and names here: :doc:`things/animtypes`
 
 **Returns:**
 
@@ -17021,7 +17028,7 @@ Checks whether an animation set is loaded.
 
 * ``animSet`` (``string``) -- Animation set
 
-  * You can read more about animations dicts and names here: :doc:`animtypes`
+  * You can read more about animations dicts and names here: :doc:`things/animtypes`
 
 **Returns:**
 
@@ -17452,7 +17459,7 @@ Removes the animation dictionary.
 
 * ``animDict`` (``string``) -- Animation dictionary
 
-  * You can read more about animations dicts and names here: :doc:`animtypes`
+  * You can read more about animations dicts and names here: :doc:`things/animtypes`
 
 **Returns:**
 
@@ -17476,7 +17483,7 @@ Removes the animation set.
 
 * ``animSet`` (``string``) -- Animation set
 
-  * You can read more about animations dicts and names here: :doc:`animtypes`
+  * You can read more about animations dicts and names here: :doc:`things/animtypes`
 
 **Returns:**
 
@@ -17544,7 +17551,7 @@ Requests the animation dictionary.
 
 * ``animDict`` (``string``) -- Animation dictionary
 
-  * You can read more about animations dicts and names here: :doc:`animtypes`
+  * You can read more about animations dicts and names here: :doc:`things/animtypes`
 
 **Returns:**
 
@@ -17568,7 +17575,7 @@ Rquests the animation set.
 
 * ``animSet`` (``string``) -- Animation set
 
-  * You can read more about animations dicts and names here: :doc:`animtypes`
+  * You can read more about animations dicts and names here: :doc:`things/animtypes`
 
 **Returns:**
 
@@ -18923,7 +18930,7 @@ Preloads the specified cloud hat.
 
 * ``name`` (``string``) -- The cloud type
 
-  * You can read more about cloud types here: :doc:`cloudtypes`
+  * You can read more about cloud types here: :doc:`things/cloudtypes`
 
 **Returns:**
 
@@ -18951,7 +18958,7 @@ Loads the specified cloud hat.
 
 * ``name`` (``string``) -- The cloud type
 
-  * You can read more about cloud types here: :doc:`cloudtypes`
+  * You can read more about cloud types here: :doc:`things/cloudtypes`
 
 * ``transitionTime`` (``float``) -- The time to smoothly transit between the current cloud hat and the new cloud hat
 
@@ -18981,7 +18988,7 @@ Unloads the specified cloud hat.
 
 * ``name`` (``string``) -- The cloud type
 
-  * You can read more about cloud types here: :doc:`cloudtypes`
+  * You can read more about cloud types here: :doc:`things/cloudtypes`
 
 **Returns:**
 
@@ -19028,7 +19035,7 @@ Sets the weather to the specified weather type.
 
 * ``weatherType`` (``string``) -- The weather type
 
-  * You can read more about weather types here: :doc:`weathertypes`
+  * You can read more about weather types here: :doc:`things/weathertypes`
 
 **Returns:**
 
@@ -19123,7 +19130,7 @@ Add explosion in certain coordinates with multiple options.
 * ``z`` (``float``) -- Z position
 * ``explosionType`` (``int``) -- Explosion types
 
-  * Read more about explosion types    here: :doc:`exptypes`
+  * Read more about explosion types    here: :doc:`things/exptypes`
 * ``damageScale`` (``float``) -- Damage scale
 * ``isAudible`` (``bool``) -- Toggle explosion sound
 
@@ -19980,7 +19987,7 @@ Display a scaleform.
 * ``scaleform`` (``int``) -- Scaleform ID
 * ``methodName`` (``string``) -- Name of the scaleform method
 
-For scaleform IDs and methods, go here: :doc:`scaleforms`
+For scaleform IDs and methods, go here: :doc:`things/scaleforms`
 
 **Returns:**
 
@@ -20277,7 +20284,7 @@ Draw scaleform in the selected dimensions
 * ``alpha`` (``int``) -- The transparency of the scaleform color (``0`` - ``255``)
 
 
-For scaleform IDs and methods, go here: :doc:`scaleforms`
+For scaleform IDs and methods, go here: :doc:`things/scaleforms`
 
 **Returns:**
 
@@ -20323,7 +20330,7 @@ Draw a scaleform in fullscreen.
 * ``alpha`` (``int``) -- The transparency of the scaleform color (``0`` - ``255``)
 * ``unk`` (``int``) -- Unknown. Not used.
 
-For scaleform IDs and methods, go here: :doc:`scaleforms`
+For scaleform IDs and methods, go here: :doc:`things/scaleforms`
 
 **Returns:**
 
@@ -20490,7 +20497,7 @@ Request a scaleform handle.
 
 * ``scaleformName`` (``string``) -- The name of the scaleform to request.
 
-  * You can find the names of the scaleforms in :doc:`scaleforms`
+  * You can find the names of the scaleforms in :doc:`things/scaleforms`
 
 **Returns:**
 
@@ -20844,7 +20851,7 @@ Checks whether a scenario group exists.
 
 * ``scenarioGroup`` (``string``) -- Scenario group name
   
-  * You can read more about scenario groups here: :doc:`scenariogroups`
+  * You can read more about scenario groups here: :doc:`things/scenariogroups`
 
 **Returns:**
 
@@ -20902,7 +20909,7 @@ Checks whether the scenario group is enabled.
 
 * ``scenarioGroup`` (``string``) -- Scenario group name
   
-  * You can read more about scenario groups here: :doc:`scenariogroups`
+  * You can read more about scenario groups here: :doc:`things/scenariogroups`
 
 **Returns:**
 
@@ -20931,7 +20938,7 @@ Checks whether the scenario type is enabled.
 
 * ``scenarioType`` (``string``) -- Scenario type name
   
-  * You can read more about scenario groups here: :doc:`scenariotypes`
+  * You can read more about scenario groups here: :doc:`things/scenariotypes`
 
 **Returns:**
 
@@ -20989,7 +20996,7 @@ Play the animation on any running scenario.
 * ``animDict`` (``string``) -- Animation dictionary
 * ``animName`` (``string``) -- Animation (clip) name
 
-  * You can read more about animations dicts and names here: :doc:`animtypes`
+  * You can read more about animations dicts and names here: :doc:`things/animtypes`
 
 **Returns:**
 
@@ -21081,7 +21088,7 @@ Set the scenario group as exclusive.
 
 * ``scenarioGroup`` (``string``) -- Scenario group name
   
-  * You can read more about scenario groups here: :doc:`scenariogroups`
+  * You can read more about scenario groups here: :doc:`things/scenariogroups`
 
 **Returns:**
 
@@ -21179,7 +21186,7 @@ Set scenario group as enabled.
 
 * ``scenarioGroup`` (``string``) -- Scenario group name
   
-  * You can read more about scenario groups here: :doc:`scenariogroups`
+  * You can read more about scenario groups here: :doc:`things/scenariogroups`
 
 * ``p1`` (``bool``) -- Unknown
 
@@ -21205,7 +21212,7 @@ Toggle the scenario type.
 
 * ``scenarioType`` (``string``) -- Scenario type name
   
-  * You can read more about scenario groups here: :doc:`scenariotypes`
+  * You can read more about scenario groups here: :doc:`things/scenariotypes`
 
 * ``toggle`` (``bool``) -- Toggle
 
@@ -21236,7 +21243,7 @@ Stop animation task.
 * ``animDictionary`` (``string``) -- Animation dictionary
 * ``animationName`` (``string``) -- Animation (clip) name
 
-  * You can read more about animations dicts and names here: :doc:`animtypes`
+  * You can read more about animations dicts and names here: :doc:`things/animtypes`
 
 * ``p3`` (``float``) -- Unknown
 
@@ -21355,7 +21362,7 @@ Makes the specified ped enter the vehicle.
 * ``timeout`` (``int``) -- Animation timeout
 * ``seat`` (``int``) -- Seat type ID
 
-  * You can read more about seat types here: :doc:`seattypes`
+  * You can read more about seat types here: :doc:`things/seattypes`
 
 * ``speed`` (``float``) -- Ped speed
   
@@ -21457,7 +21464,7 @@ Make the ped move to a coordinate while aiming (and optionally shooting) at give
 * ``p13`` (``bool``) -- Unknown
 * ``firingPattern`` (``Hash``) -- Firing pattern hash
   
-  * Firing patterns can be found here: :doc:`firingpatterns`
+  * Firing patterns can be found here: :doc:`things/firingpatterns`
 
 
 **Returns:**
@@ -21496,7 +21503,7 @@ Make the ped move to a coordinate while aiming (and optionally shooting) at give
 * ``p11`` (``bool``) -- Unknown -- probably ``false``?
 * ``p12`` (``Any``) -- Firing pattern
 
-  * Firing patterns can be found here: :doc:`firingpatterns`
+  * Firing patterns can be found here: :doc:`things/firingpatterns`
 * ``p13`` (``Any``) -- Unknown -- let it be 20000, noone knows what that is
 
 **Returns:**
@@ -21542,7 +21549,7 @@ Make the ped move to an entity while aiming and optionally shooting and optional
 * ``p8`` (``bool``) -- Unknown
 * ``firingPattern`` (``Hash``) -- Firing pattern hash
 
-  * Firing patterns can be found here: :doc:`firingpatterns`
+  * Firing patterns can be found here: :doc:`things/firingpatterns`
 
 **Returns:**
 
@@ -21645,7 +21652,7 @@ Make the ped open the vehicle door of a specific seat, at given speed.
 * ``timeOut`` (``int``) -- Task timeout
 * ``seat`` (``int``) -- Seat Index
 
-  * You can read more about seat indexes here: :doc:`seattypes`
+  * You can read more about seat indexes here: :doc:`things/seattypes`
 
 * ``speed`` (``float``) -- Speed to open the door
 
@@ -21730,7 +21737,7 @@ Makes the ped play an animation with custom duration and flags.
 * ``animDictionary`` (``string``) -- Animation dictionary
 * ``animationName`` (``string``) -- Animation (clip) name
 
-  * You can read more about animations dicts and names here: :doc:`animtypes`
+  * You can read more about animations dicts and names here: :doc:`things/animtypes`
 
 * ``blendInSpeed`` (``float``) -- Normal speed is ``8.0``
 * ``blendOutSpeed`` (``float``) -- Normal speed is ``8.0``
@@ -21801,7 +21808,7 @@ Make the entity shoot at an entity targeted for a given duration and with custom
 * ``duration`` (``int``) -- Duration in milliseconds
 * ``firingPattern`` (``Hash``) -- Firing pattern hash
 
-  * Firing patterns can be found here: :doc:`firingpatterns`
+  * Firing patterns can be found here: :doc:`things/firingpatterns`
 
 **Returns:**
 
@@ -21857,7 +21864,7 @@ Makes the ped parachute to given coordinates.
 * ``heading`` (``float``) -- The heading direction
 * ``scenarioName`` (``string``) -- The scenario name
 
-  * You can read more about scenario groups here: :doc:`scenariogroups`
+  * You can read more about scenario groups here: :doc:`things/scenariogroups`
 
 **Returns:**
 
@@ -21884,7 +21891,7 @@ Makes the ped start the scenario at a given position.
 * ``ped`` (``Ped``) -- Ped object
 * ``scenarioName`` (``string``) -- The scenario name
 
-  * You can read more about scenario groups here: :doc:`scenariogroups`
+  * You can read more about scenario groups here: :doc:`things/scenariogroups`
 
 * ``x`` (``float``) -- The ``X`` position
 * ``y`` (``float``) -- The ``Y`` position
@@ -21926,7 +21933,7 @@ Plays a scenario on a Ped at their current location.
 * ``ped`` (``Ped``) -- Ped object
 * ``scenarioName`` (``string``) -- The scenario name
 
-  * You can read more about scenario groups here: :doc:`scenariogroups`
+  * You can read more about scenario groups here: :doc:`things/scenariogroups`
 
 * ``unkDelay`` (``int``) -- Usually 0 or -1, doesn't seem to have any effect.
 * ``playEnterAnim`` (``bool``) -- Scenarios that don't have any "Enter" anims won't play if this is set to true.
@@ -22444,7 +22451,7 @@ Register a property with the specified name and type.
 * ``propertyName`` (``string``) -- Property name
 * ``type`` (``int``) -- Property type
 
-  * You can read more about property types here: :doc:`decor`
+  * You can read more about property types here: :doc:`things/decor`
 
 **Returns:**
 
@@ -22574,7 +22581,7 @@ Returns the interior ID representing the requested interior at that location (if
 * ``z`` (``float``) -- The Z position
 * ``interiorType`` (``string``) -- The interior type
 
-  * You can read more about interior types here: :doc:`inttypes`
+  * You can read more about interior types here: :doc:`things/inttypes`
 
 **Returns:**
 
