@@ -6337,7 +6337,7 @@ Returns the value for the specified handling parameter.
 .. code-block:: lua
    :linenos:
    
-   handling = lobby.get_vehicle_handling(self.get_vehicle(), "fBrakeForce") -- Returns the brake force of the vehicle.
+   handling = vehicle.get_vehicle_handling(self.get_vehicle(), "fBrakeForce") -- Returns the brake force of the vehicle.
    system.log_debug("The player's vehicle has " .. tostring(handling) .. " brake force.")
 
 ================================
@@ -6364,7 +6364,7 @@ Sets the value for the specified handling parameter.
 .. code-block:: lua
    :linenos:
    
-   lobby.set_vehicle_handling(self.get_vehicle(), "fAcceleration", 100) -- Sets the acceleration of the vehicle to 100 points.
+   vehicle.set_vehicle_handling(self.get_vehicle(), "fAcceleration", 100) -- Sets the acceleration of the vehicle to 100 points.
    system.log_debug("The player's vehicle has been set to have 100 acceleration points.")
 
 
