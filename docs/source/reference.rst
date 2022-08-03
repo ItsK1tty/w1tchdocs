@@ -4048,7 +4048,7 @@ Draws a box with the given color and rounding.
 
 .. note::
 
-   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
    
 
 **Parameters:**
@@ -4090,7 +4090,7 @@ Draws a filled box with the given color and rounding.
 
 .. note::
 
-   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
    
 
 **Parameters:**
@@ -4132,7 +4132,7 @@ Draws a filled border box with the given color and rounding.
 
 .. note::
 
-   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
    
 
 **Parameters:**
@@ -4179,7 +4179,7 @@ Draws a circle with the given color.
 
 .. note::
 
-   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
    
 **Parameters:**
 
@@ -4217,7 +4217,7 @@ Draws a filled circle with the given color.
 
 .. note::
 
-   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
    
 
 **Parameters:**
@@ -4254,7 +4254,7 @@ Draws a filled border circle with the given color.
 
 .. note::
 
-   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
    
 
 **Parameters:**
@@ -4296,7 +4296,7 @@ Draws a triangle with the given color.
 
 .. note::
 
-   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
    
 
 **Parameters:**
@@ -4332,7 +4332,7 @@ Draws a filled triangle with the given color.
 
 .. note::
 
-   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
    
 
 **Parameters:**
@@ -4369,7 +4369,7 @@ Draws a filled border triangle with the given color.
 
 .. note::
 
-   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
    
 
 **Parameters:**
@@ -4405,7 +4405,7 @@ draw_text(``hash``, ``draw``, ``text``, ``x``, ``y``, ``scale``, ``color``, ``fl
 
 .. note::
 
-   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
    
 
 Draws a text with the given color.
@@ -4444,7 +4444,7 @@ draw_image(``path``, ``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, 
 
 .. note::
 
-   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
    
 
 Draws an image. Supports PNG & JPEG files.
@@ -4487,7 +4487,7 @@ Draw an atlas texture frame.
 
 .. note::
 
-   This has to be called every frame, so use it in a loop, a function managed by add_task() or a looped function.
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
 
 **Parameters:**
 
