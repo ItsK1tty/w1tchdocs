@@ -19735,7 +19735,9 @@ is_control_just_pressed(``padIndex``, ``control``)
 .. code-block:: lua
    :linenos:
 
-   rage.controls.is_control_just_pressed(21, 0)
+   if rage.controls.is_control_just_pressed(21, 0) == 1 then
+     notify.above_map("True")
+   end
 
 ================================
 
@@ -19771,7 +19773,9 @@ is_control_pressed(``padIndex``, ``control``)
 .. code-block:: lua
    :linenos:
 
-   rage.controls.is_control_pressed(21, 0)
+   if rage.controls.is_control_pressed(21, 0) == 1 then
+     notify.above_map("True")
+   end
 
 ================================
 
