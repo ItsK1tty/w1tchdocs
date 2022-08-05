@@ -14,12 +14,6 @@ Small LUA guide we recommend for new developers: `LUA guide`_. Credits to Tyler 
 
 .. _LUA guide: https://tylerneylon.com/a/learn-lua/
 
-Code snippets
----------------------------
-
-You can find code snippets for VS Code here: :download:`click <d2st.code-snippets>`
-
-To install code snippets, drop the file into the ``C:\Users\%username%\AppData\Roaming\Code\User\snippets`` directory.
 
 Found a mistake in documentation?
 --------------------------------------

@@ -22,6 +22,13 @@ Special thanks to:
 
 This wouldn't have been possible without you!
 
+Code snippets
+---------------------------
+
+You can find code snippets for VS Code here: :download:`click <d2st.code-snippets>`
+
+To install code snippets, drop the file into the ``C:\Users\%username%\AppData\Roaming\Code\User\snippets`` directory.
+
 Contents
 --------
 
