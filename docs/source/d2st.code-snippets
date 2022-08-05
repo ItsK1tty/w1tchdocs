@@ -1,0 +1,4064 @@
+{
+    "system.log_chat": {
+        "scope": "lua",
+        "prefix": "log_chat",
+        "body": "system.log_chat(${1:text})",
+        "description": "Sends a message to the log as ``[CHAT]``. Has a purple color."
+    },
+    "system.log_debug": {
+        "scope": "lua",
+        "prefix": "log_debug",
+        "body": "system.log_debug(${1:text})",
+        "description": "Sends a message to the log as ``[DEBUG]``. Has a grey color."
+    },
+    "system.log_info": {
+        "scope": "lua",
+        "prefix": "log_info",
+        "body": "system.log_info(${1:text})",
+        "description": "Sends a message to the log as ``[INFO]``. Has a blue color."
+    },
+    "system.log_online": {
+        "scope": "lua",
+        "prefix": "log_online",
+        "body": "system.log_online(${1:text})",
+        "description": "Sends a message to the log as ``[ONLINE]``. Has a bright yellow color."
+    },
+    "system.log_protex": {
+        "scope": "lua",
+        "prefix": "log_protex",
+        "body": "system.log_protex(${1:text})",
+        "description": "Sends a message to the log as ``[PROTEX]``. Has a light blue color."
+    },
+    "system.log_warning": {
+        "scope": "lua",
+        "prefix": "log_warning",
+        "body": "system.log_warning(${1:text})",
+        "description": "Sends a message to the log as ``[WARNING]``. Has a red color."
+    },
+    "system.wait": {
+        "scope": "lua",
+        "prefix": "wait",
+        "body": "system.wait(${1:ms})",
+        "description": "Waits for ``ms`` milliseconds."
+    },
+    "system.add_task": {
+        "scope": "lua",
+        "prefix": "add_task",
+        "body": "system.add_task(${1:name}, ${2:hash}, ${3:ms}, ${4:fn})",
+        "description": "Adds a task into the process's main loop."
+    },
+    "system.remove_task": {
+        "scope": "lua",
+        "prefix": "remove_task",
+        "body": "system.remove_task(${1:hash})",
+        "description": "Removes a task from the process's main loop."
+    },
+    "system.add_chat_listener": {
+        "scope": "lua",
+        "prefix": "add_chat_listener",
+        "body": "system.add_chat_listener(${1:name}, ${2:hash}, ${3:fn})",
+        "description": "Connects a chat listener that calls a task every time a message is sent in the chat."
+    },
+    "system.remove_chat_listener": {
+        "scope": "lua",
+        "prefix": "remove_chat_listener",
+        "body": "system.remove_chat_listener(${1:hash})",
+        "description": "Disconnects a chat listener for a certain task."
+    },
+    "system.add_script_event": {
+        "scope": "lua",
+        "prefix": "add_script_event",
+        "body": "system.add_script_event(${1:name}, ${2:eventId}, ${3:args = {}})",
+        "description": "Add a script event into the protection blacklist."
+    },
+    "system.remove_script_event": {
+        "scope": "lua",
+        "prefix": "remove_script_event",
+        "body": "system.remove_script_event(${1:eventId})",
+        "description": "Remove a script event from the protection blacklist."
+    },
+    "system.string_to_key": {
+        "scope": "lua",
+        "prefix": "string_to_key",
+        "body": "system.string_to_key(${1:key})",
+        "description": "Converts a string key to a key hash."
+    },
+    "system.key_to_string": {
+        "scope": "lua",
+        "prefix": "key_to_string",
+        "body": "system.key_to_string(${1:key})",
+        "description": "Converts a key hash to a string key."
+    },
+    "system.is_key_pressed": {
+        "scope": "lua",
+        "prefix": "is_key_pressed",
+        "body": "system.is_key_pressed(${1:key})",
+        "description": "Checks whether the key is pressed"
+    },
+    "web.get": {
+        "scope": "lua",
+        "prefix": "get",
+        "body": "web.get(${1:url})",
+        "description": "Sends a GET request to a web server."
+    },
+    "web.post": {
+        "scope": "lua",
+        "prefix": "post",
+        "body": "web.post(${1:url}, ${2:data})",
+        "description": "Sends a POST request to a web server."
+    },
+    "menu.add_parent": {
+        "scope": "lua",
+        "prefix": "add_parent",
+        "body": "menu.add_parent(${1:name})",
+        "description": "Adds a parent section into menu resolution."
+    },
+    "menu.add_child": {
+        "scope": "lua",
+        "prefix": "add_child",
+        "body": "menu.add_child(${1:name}, ${2:parent})",
+        "description": "Adds a child section to a parent section."
+    },
+    "menu.add_delimiter": {
+        "scope": "lua",
+        "prefix": "add_delimiter",
+        "body": "menu.add_delimiter(${1:name}, ${2:parent})",
+        "description": "Adds a delimiter to a section."
+    },
+    "menu.add_option": {
+        "scope": "lua",
+        "prefix": "add_option",
+        "body": "menu.add_option(${1:name}, ${2:hash}, ${3:parent}, ${4:fn})",
+        "description": "Adds a menu option button."
+    },
+    "menu.add_option_toggle": {
+        "scope": "lua",
+        "prefix": "add_option_toggle",
+        "body": "menu.add_option_toggle(${1:name}, ${2:hash}, ${3:parent}, ${4:fn})",
+        "description": "Adds a toggable menu option button."
+    },
+    "menu.add_option_slider": {
+        "scope": "lua",
+        "prefix": "add_option_slider",
+        "body": "menu.add_option_slider(${1:name}, ${2:hash}, ${3:value}, ${4:min}, ${5:max}, ${6:mod}, ${7:parent}, ${8:fn})",
+        "description": "Adds a slider menu option."
+    },
+    "menu.add_option_slider_toggle": {
+        "scope": "lua",
+        "prefix": "add_option_slider_toggle",
+        "body": "menu.add_option_slider_toggle(${1:name}, ${2:hash}, ${3:value}, ${4:min}, ${5:max}, ${6:mod}, ${7:parent}, ${8:fn})",
+        "description": "Adds a toggable slider menu option."
+    },
+    "menu.add_option_value": {
+        "scope": "lua",
+        "prefix": "add_option_value",
+        "body": "menu.add_option_value(${1:name}, ${2:hash}, ${3:value}, ${4:min}, ${5:max}, ${6:mod}, ${7:parent}, ${8:valueSuffix}, ${9:fn})",
+        "description": "Adds a menu option with a pre-set value"
+    },
+    "menu.add_option_value_toggle": {
+        "scope": "lua",
+        "prefix": "add_option_value_toggle",
+        "body": "menu.add_option_value_toggle(${1:name}, ${2:hash}, ${3:value}, ${4:min}, ${5:max}, ${6:mod}, ${7:parent}, ${8:valueSuffix}, ${9:fn})",
+        "description": "Adds a toggable menu option with a pre-set value."
+    },
+    "menu.add_option_value_str": {
+        "scope": "lua",
+        "prefix": "add_option_value_str",
+        "body": "menu.add_option_value_str(${1:name}, ${2:hash}, ${3:value}, ${4:parent}, ${5:list}, ${6:fn})",
+        "description": "Adds a menu option with multiple values."
+    },
+    "menu.add_option_value_str_toggle": {
+        "scope": "lua",
+        "prefix": "add_option_value_str_toggle",
+        "body": "menu.add_option_value_str_toggle(${1:name}, ${2:hash}, ${3:value}, ${4:parent}, ${5:list}, ${6:fn})",
+        "description": "Adds a toggable menu option with multiple values."
+    },
+    "menu.add_option_teleport": {
+        "scope": "lua",
+        "prefix": "add_option_teleport",
+        "body": "menu.add_option_teleport(${1:name}, ${2:coords}, ${3:parent})",
+        "description": "Adds a teleport option button."
+    },
+    "menu.add_option_spawn": {
+        "scope": "lua",
+        "prefix": "add_option_spawn",
+        "body": "menu.add_option_spawn(${1:name}, ${2:model}, ${3:type}, ${4:parent})",
+        "description": "Adds a spawn option button."
+    },
+    "menu.add_option_text": {
+        "scope": "lua",
+        "prefix": "add_option_text",
+        "body": "menu.add_option_text(${1:name}, ${2:hash}, ${3:text}, ${4:parent}, ${5:fn})",
+        "description": "Adds a text option (e.g. a note)."
+    },
+    "menu.add_option_info": {
+        "scope": "lua",
+        "prefix": "add_option_info",
+        "body": "menu.add_option_info(${1:name}, ${2:hash}, ${3:info}, ${4:parent})",
+        "description": "Adds a text option. (e.g. a note)."
+    },
+    "menu.add_option_color": {
+        "scope": "lua",
+        "prefix": "add_option_color",
+        "body": "menu.add_option_color(${1:name}, ${2:hash}, ${3:color}, ${4:parent})",
+        "description": "Adds a color selection button."
+    },
+    "menu.update_option": {
+        "scope": "lua",
+        "prefix": "update_option",
+        "body": "menu.update_option(${1:hash}, ${2:name}, ${3:fn})",
+        "description": "Updates a menu option."
+    },
+    "menu.update_option_toggle": {
+        "scope": "lua",
+        "prefix": "update_option_toggle",
+        "body": "menu.update_option_toggle(${1:hash}, ${2:name}, ${3:fn})",
+        "description": "Updates a toggable option."
+    },
+    "menu.update_option_slider": {
+        "scope": "lua",
+        "prefix": "update_option_slider",
+        "body": "menu.update_option_slider(${1:hash}, ${2:name}, ${3:value}, ${4:min}, ${5:max}, ${6:mod}, ${7:fn})",
+        "description": "Updates a slider option."
+    },
+    "menu.update_option_slider_toggle": {
+        "scope": "lua",
+        "prefix": "update_option_slider_toggle",
+        "body": "menu.update_option_slider_toggle(${1:hash}, ${2:name}, ${3:value}, ${4:min}, ${5:max}, ${6:mod}, ${7:fn})",
+        "description": "Updates a slider toggable option."
+    },
+    "menu.update_option_value": {
+        "scope": "lua",
+        "prefix": "update_option_value",
+        "body": "menu.update_option_value(${1:hash}, ${2:name}, ${3:value}, ${4:min}, ${5:max}, ${6:mod}, ${7:valueSuffix}, ${8:fn})",
+        "description": "Updates a value option."
+    },
+    "menu.update_option_value_toggle": {
+        "scope": "lua",
+        "prefix": "update_option_value_toggle",
+        "body": "menu.update_option_value_toggle(${1:hash}, ${2:name}, ${3:value}, ${4:min}, ${5:max}, ${6:mod}, ${7:valueSuffix}, ${8:fn})",
+        "description": "Updates a toggable menu value option."
+    },
+    "menu.update_option_value_str": {
+        "scope": "lua",
+        "prefix": "update_option_value_str",
+        "body": "menu.update_option_value_str(${1:hash}, ${2:name}, ${3:value}, ${4:list}, ${5:fn})",
+        "description": "Updates a value string option."
+    },
+    "menu.update_option_value_str_toggle": {
+        "scope": "lua",
+        "prefix": "update_option_value_str_toggle",
+        "body": "menu.update_option_value_str_toggle(${1:hash}, ${2:name}, ${3:value}, ${4:list}, ${5:fn})",
+        "description": "Updates a toggable value string option."
+    },
+    "menu.update_option_text": {
+        "scope": "lua",
+        "prefix": "update_option_text",
+        "body": "menu.update_option_text(${1:hash}, ${2:name}, ${3:text}, ${4:fn})",
+        "description": "Updates a text option (e.g. a note)."
+    },
+    "menu.update_option_info": {
+        "scope": "lua",
+        "prefix": "update_option_info",
+        "body": "menu.update_option_info(${1:hash}, ${2:name}, ${3:info})",
+        "description": "Updates an info text option (e.g. a note)."
+    },
+    "menu.update_option_color": {
+        "scope": "lua",
+        "prefix": "update_option_color",
+        "body": "menu.update_option_color(${1:hash}, ${2:name}, ${3:color})",
+        "description": "Updates a color selection button."
+    },
+    "menu.add_player_option": {
+        "scope": "lua",
+        "prefix": "add_player_option",
+        "body": "menu.add_player_option(${1:name}, ${2:hash}, ${3:fn})",
+        "description": "Adds a player menu option in the selected player section."
+    },
+    "menu.add_player_option_toggle": {
+        "scope": "lua",
+        "prefix": "add_player_option_toggle",
+        "body": "menu.add_player_option_toggle(${1:name}, ${2:hash}, ${3:fn})",
+        "description": "Adds a toggable player menu option in the selected player section."
+    },
+    "menu.add_player_option_slider": {
+        "scope": "lua",
+        "prefix": "add_player_option_slider",
+        "body": "menu.add_player_option_slider(${1:name}, ${2:hash}, ${3:value}, ${4:min}, ${5:max}, ${6:mod}, ${7:fn})",
+        "description": "Adds a player menu slider option in the selected player section."
+    },
+    "menu.add_player_option_slider_toggle": {
+        "scope": "lua",
+        "prefix": "add_player_option_slider_toggle",
+        "body": "menu.add_player_option_slider_toggle(${1:name}, ${2:hash}, ${3:value}, ${4:min}, ${5:max}, ${6:mod}, ${7:fn})",
+        "description": "Adds a toggable slider player menu option in the selected player section."
+    },
+    "menu.add_player_option_value": {
+        "scope": "lua",
+        "prefix": "add_player_option_value",
+        "body": "menu.add_player_option_value(${1:name}, ${2:hash}, ${3:value}, ${4:min}, ${5:max}, ${6:mod}, ${7:valueSuffix}, ${8:fn})",
+        "description": "Adds a player menu option with a set value in the selected player section."
+    },
+    "menu.add_player_option_value_toggle": {
+        "scope": "lua",
+        "prefix": "add_player_option_value_toggle",
+        "body": "menu.add_player_option_value_toggle(${1:name}, ${2:hash}, ${3:value}, ${4:min}, ${5:max}, ${6:mod}, ${7:valueSuffix}, ${8:fn})",
+        "description": "Adds a toggable player menu option with a set value in the selected player section."
+    },
+    "menu.add_player_option_value_str": {
+        "scope": "lua",
+        "prefix": "add_player_option_value_str",
+        "body": "menu.add_player_option_value_str(${1:name}, ${2:hash}, ${3:value}, ${4:list}, ${5:fn})",
+        "description": "Adds a player menu option with multiple values in the selected player section."
+    },
+    "menu.add_player_option_value_str_toggle": {
+        "scope": "lua",
+        "prefix": "add_player_option_value_str_toggle",
+        "body": "menu.add_player_option_value_str_toggle(${1:name}, ${2:hash}, ${3:value}, ${4:list}, ${5:fn})",
+        "description": "Adds a toggable player menu option with multiple values in the selected player section."
+    },
+    "menu.add_player_option_text": {
+        "scope": "lua",
+        "prefix": "add_player_option_text",
+        "body": "menu.add_player_option_text(${1:name}, ${2:hash}, ${3:text}, ${4:fn})",
+        "description": "Adds a player menu text option in the selected player section."
+    },
+    "menu.add_player_option_info": {
+        "scope": "lua",
+        "prefix": "add_player_option_info",
+        "body": "menu.add_player_option_info(${1:name}, ${2:hash}, ${3:info})",
+        "description": "Adds a text menu option in the selected player section."
+    },
+    "menu.update_root_parent": {
+        "scope": "lua",
+        "prefix": "update_root_parent",
+        "body": "menu.update_root_parent(${1:keepActiveOption = false})",
+        "description": "Updates the main section to display the created Lua section/option."
+    },
+    "menu.update_current_parent": {
+        "scope": "lua",
+        "prefix": "update_current_parent",
+        "body": "menu.update_current_parent(${1:keepActiveOption = false})",
+        "description": "Updates the current section to display the created Lua section/option."
+    },
+    "menu.is_option_toggled": {
+        "scope": "lua",
+        "prefix": "is_option_toggled",
+        "body": "menu.is_option_toggled(${1:hash})",
+        "description": "Checks whether an option is toggled."
+    },
+    "menu.is_option_visible": {
+        "scope": "lua",
+        "prefix": "is_option_visible",
+        "body": "menu.is_option_visible(${1:hash})",
+        "description": "Checks whether an option is visible."
+    },
+    "menu.is_option_enabled": {
+        "scope": "lua",
+        "prefix": "is_option_enabled",
+        "body": "menu.is_option_enabled(${1:hash})",
+        "description": "Checks whether an option is enabled."
+    },
+    "menu.get_option_value": {
+        "scope": "lua",
+        "prefix": "get_option_value",
+        "body": "menu.get_option_value(${1:hash})",
+        "description": "Returns the value of an option."
+    },
+    "menu.get_option_value_str": {
+        "scope": "lua",
+        "prefix": "get_option_value_str",
+        "body": "menu.get_option_value_str(${1:hash})",
+        "description": "Returns the value of an option as a string."
+    },
+    "menu.get_option_text": {
+        "scope": "lua",
+        "prefix": "get_option_text",
+        "body": "menu.get_option_text(${1:hash})",
+        "description": "Returns the option text."
+    },
+    "menu.get_option_color": {
+        "scope": "lua",
+        "prefix": "get_option_color",
+        "body": "menu.get_option_color(${1:hash})",
+        "description": "Returns the selected color of a color selection option."
+    },
+    "menu.remove_option": {
+        "scope": "lua",
+        "prefix": "remove_option",
+        "body": "menu.remove_option(${1:hash})",
+        "description": "Removes an option."
+    },
+    "menu.section_online_player": {
+        "scope": "lua",
+        "prefix": "section_online_player",
+        "body": "menu.section_online_player(${1:playerId})",
+        "description": "Returns the Online -> Player (specific) section ID."
+    },
+    "menu.menu_set_controls": {
+        "scope": "lua",
+        "prefix": "menu_set_controls",
+        "body": "menu.menu_set_controls(${1:toggle})",
+        "description": "Toggles menu controls on/off."
+    },
+    "menu.menu_set_mouse_controls": {
+        "scope": "lua",
+        "prefix": "menu_set_mouse_controls",
+        "body": "menu.menu_set_mouse_controls(${1:toggle})",
+        "description": "Toggles menu mouse controls on/off."
+    },
+    "stats.set_packed_bool": {
+        "scope": "lua",
+        "prefix": "set_packed_bool",
+        "body": "stats.set_packed_bool(${1:index}, ${2:value})",
+        "description": "Sets a packed boolean stat."
+    },
+    "stats.get_packed_bool": {
+        "scope": "lua",
+        "prefix": "get_packed_bool",
+        "body": "stats.get_packed_bool(${1:index})",
+        "description": "Returns a packed boolean stat."
+    },
+    "stats.set_mass_packed_bool": {
+        "scope": "lua",
+        "prefix": "set_mass_packed_bool",
+        "body": "stats.set_mass_packed_bool(${1:value}, ${2:min}, ${3:max})",
+        "description": "Sets a mass-packed boolean stat."
+    },
+    "stats.get_mass_packed_bool": {
+        "scope": "lua",
+        "prefix": "get_mass_packed_bool",
+        "body": "stats.get_mass_packed_bool(${1:min}, ${2:max})",
+        "description": ".. note::"
+    },
+    "stats.set_packed_int": {
+        "scope": "lua",
+        "prefix": "set_packed_int",
+        "body": "stats.set_packed_int(${1:index}, ${2:value})",
+        "description": "Sets a packed integer stat."
+    },
+    "stats.get_packed_int": {
+        "scope": "lua",
+        "prefix": "get_packed_int",
+        "body": "stats.get_packed_int(${1:index})",
+        "description": "Returns a packed integer stat."
+    },
+    "stats.get_mass_packed_int": {
+        "scope": "lua",
+        "prefix": "get_mass_packed_int",
+        "body": "stats.get_mass_packed_int(${1:min}, ${2:max})",
+        "description": ".. note::"
+    },
+    "stats.set_stat_bit": {
+        "scope": "lua",
+        "prefix": "set_stat_bit",
+        "body": "stats.set_stat_bit(${1:stat}, ${2:bit})",
+        "description": "Set a bit in a stat."
+    },
+    "stats.clear_stat_bit": {
+        "scope": "lua",
+        "prefix": "clear_stat_bit",
+        "body": "stats.clear_stat_bit(${1:stat}, ${2:bit})",
+        "description": "Clear a bit in a stat."
+    },
+    "stats.stat_get_int": {
+        "scope": "lua",
+        "prefix": "stat_get_int",
+        "body": "stats.stat_get_int(${1:stat})",
+        "description": "Returns an integer stat."
+    },
+    "stats.stat_set_int": {
+        "scope": "lua",
+        "prefix": "stat_set_int",
+        "body": "stats.stat_set_int(${1:stat}, ${2:value})",
+        "description": "**Parameters:**"
+    },
+    "stats.stat_get_bool": {
+        "scope": "lua",
+        "prefix": "stat_get_bool",
+        "body": "stats.stat_get_bool(${1:stat})",
+        "description": "Returns a boolean stat."
+    },
+    "stats.stat_set_bool": {
+        "scope": "lua",
+        "prefix": "stat_set_bool",
+        "body": "stats.stat_set_bool(${1:stat}, ${2:value})",
+        "description": "Sets a boolean stat."
+    },
+    "stats.stat_get_float": {
+        "scope": "lua",
+        "prefix": "stat_get_float",
+        "body": "stats.stat_get_float(${1:stat})",
+        "description": "Returns a float stat."
+    },
+    "stats.stat_set_float": {
+        "scope": "lua",
+        "prefix": "stat_set_float",
+        "body": "stats.stat_set_float(${1:stat}, ${2:value})",
+        "description": "Sets a float stat."
+    },
+    "notify.above_map": {
+        "scope": "lua",
+        "prefix": "above_map",
+        "body": "notify.above_map(${1:text})",
+        "description": "Sends a notification in the bottom-left corner of the screen."
+    },
+    "notify.info": {
+        "scope": "lua",
+        "prefix": "info",
+        "body": "notify.info(${1:text})",
+        "description": "Sends a message to the log as ``[INFO]``. Has a blue color."
+    },
+    "notify.lua": {
+        "scope": "lua",
+        "prefix": "lua",
+        "body": "notify.lua(${1:})",
+        "description": "Returns the Settings -> Lua section ID."
+    },
+    "notify.success": {
+        "scope": "lua",
+        "prefix": "success",
+        "body": "notify.success(${1:text})",
+        "description": "Sends a green-colored notification in the bottom-right corner of the screen."
+    },
+    "notify.warning": {
+        "scope": "lua",
+        "prefix": "warning",
+        "body": "notify.warning(${1:text})",
+        "description": "Sends a message to the log as ``[WARNING]``. Has a red color."
+    },
+    "script.is_script_running": {
+        "scope": "lua",
+        "prefix": "is_script_running",
+        "body": "script.is_script_running(${1:scriptName})",
+        "description": "Checks whether a script is running."
+    },
+    "script.execute_as_script": {
+        "scope": "lua",
+        "prefix": "execute_as_script",
+        "body": "script.execute_as_script(${1:scriptName}, ${2:fn})",
+        "description": "Execute function as script"
+    },
+    "script.trigger_script_event": {
+        "scope": "lua",
+        "prefix": "trigger_script_event",
+        "body": "script.trigger_script_event(${1:eventGroup}, ${2:args}, ${3:playerId})",
+        "description": "Triggers a script event."
+    },
+    "globals.set_global_int": {
+        "scope": "lua",
+        "prefix": "set_global_int",
+        "body": "globals.set_global_int(${1:global}, ${2:value})",
+        "description": "Sets a new global integer value."
+    },
+    "globals.set_global_float": {
+        "scope": "lua",
+        "prefix": "set_global_float",
+        "body": "globals.set_global_float(${1:global}, ${2:value})",
+        "description": "Sets a new global float value."
+    },
+    "globals.set_global_bool": {
+        "scope": "lua",
+        "prefix": "set_global_bool",
+        "body": "globals.set_global_bool(${1:global}, ${2:value})",
+        "description": "Sets a new global boolean value."
+    },
+    "globals.set_global_string": {
+        "scope": "lua",
+        "prefix": "set_global_string",
+        "body": "globals.set_global_string(${1:global}, ${2:value})",
+        "description": "Sets a new global string value."
+    },
+    "globals.get_global_int": {
+        "scope": "lua",
+        "prefix": "get_global_int",
+        "body": "globals.get_global_int(${1:global})",
+        "description": "Returns a global integer value."
+    },
+    "globals.get_global_float": {
+        "scope": "lua",
+        "prefix": "get_global_float",
+        "body": "globals.get_global_float(${1:global})",
+        "description": "Returns a global float value."
+    },
+    "globals.get_global_bool": {
+        "scope": "lua",
+        "prefix": "get_global_bool",
+        "body": "globals.get_global_bool(${1:global})",
+        "description": "Returns a global boolean value."
+    },
+    "globals.get_global_string": {
+        "scope": "lua",
+        "prefix": "get_global_string",
+        "body": "globals.get_global_string(${1:global})",
+        "description": "Returns a global string value."
+    },
+    "globals.get_global_addr": {
+        "scope": "lua",
+        "prefix": "get_global_addr",
+        "body": "globals.get_global_addr(${1:global})",
+        "description": "Returns the memory address of a global."
+    },
+    "locals.set_local_int": {
+        "scope": "lua",
+        "prefix": "set_local_int",
+        "body": "locals.set_local_int(${1:scriptName}, ${2:local}, ${3:value})",
+        "description": "Sets a new local integer value."
+    },
+    "locals.set_local_float": {
+        "scope": "lua",
+        "prefix": "set_local_float",
+        "body": "locals.set_local_float(${1:scriptName}, ${2:local}, ${3:value})",
+        "description": "Sets a new local float value."
+    },
+    "locals.set_local_bool": {
+        "scope": "lua",
+        "prefix": "set_local_bool",
+        "body": "locals.set_local_bool(${1:scriptName}, ${2:local}, ${3:value})",
+        "description": "Sets a new local boolean value."
+    },
+    "locals.set_local_string": {
+        "scope": "lua",
+        "prefix": "set_local_string",
+        "body": "locals.set_local_string(${1:scriptName}, ${2:local}, ${3:value})",
+        "description": "Sets a new local string value."
+    },
+    "locals.get_local_int": {
+        "scope": "lua",
+        "prefix": "get_local_int",
+        "body": "locals.get_local_int(${1:scriptName}, ${2:local})",
+        "description": "Returns a local integer value."
+    },
+    "locals.get_local_float": {
+        "scope": "lua",
+        "prefix": "get_local_float",
+        "body": "locals.get_local_float(${1:scriptName}, ${2:local})",
+        "description": "Returns a local float value."
+    },
+    "locals.get_local_bool": {
+        "scope": "lua",
+        "prefix": "get_local_bool",
+        "body": "locals.get_local_bool(${1:scriptName}, ${2:local})",
+        "description": "Returns a local boolean value."
+    },
+    "locals.get_local_string": {
+        "scope": "lua",
+        "prefix": "get_local_string",
+        "body": "locals.get_local_string(${1:scriptName}, ${2:local})",
+        "description": "Returns a local string value."
+    },
+    "locals.get_local_addr": {
+        "scope": "lua",
+        "prefix": "get_local_addr",
+        "body": "locals.get_local_addr(${1:scriptName}, ${2:local})",
+        "description": "**Parameters:**"
+    },
+    "render.draw_box": {
+        "scope": "lua",
+        "prefix": "draw_box",
+        "body": "render.draw_box(${1:hash}, ${2:draw}, ${3:x}, ${4:y}, ${5:w}, ${6:h}, ${7:color}, ${8:rounding = 0}, ${9:rounding_flags = 0})",
+        "description": "Draws a box with the given color and rounding."
+    },
+    "render.draw_box_filled": {
+        "scope": "lua",
+        "prefix": "draw_box_filled",
+        "body": "render.draw_box_filled(${1:hash}, ${2:draw}, ${3:x}, ${4:y}, ${5:w}, ${6:h}, ${7:color}, ${8:rounding = 0}, ${9:rounding_flags = 0})",
+        "description": "Draws a filled box with the given color and rounding."
+    },
+    "render.draw_box_border_filled": {
+        "scope": "lua",
+        "prefix": "draw_box_border_filled",
+        "body": "render.draw_box_border_filled(${1:hash}, ${2:draw}, ${3:x}, ${4:y}, ${5:w}, ${6:h}, ${7:borderSize}, ${8:color}, ${9:colorBorder}, ${10:borderFilled = true}, ${11:rounding = 0}, ${12:rounding_flags = 0})",
+        "description": "Draws a filled border box with the given color and rounding."
+    },
+    "render.draw_circle": {
+        "scope": "lua",
+        "prefix": "draw_circle",
+        "body": "render.draw_circle(${1:hash}, ${2:draw}, ${3:x}, ${4:y}, ${5:radius}, ${6:color}, ${7:segments = 16})",
+        "description": "Draws a circle with the given color."
+    },
+    "render.draw_circle_filled": {
+        "scope": "lua",
+        "prefix": "draw_circle_filled",
+        "body": "render.draw_circle_filled(${1:hash}, ${2:draw}, ${3:x}, ${4:y}, ${5:radius}, ${6:color}, ${7:segments = 16})",
+        "description": "Draws a filled circle with the given color."
+    },
+    "render.draw_circle_border_filled": {
+        "scope": "lua",
+        "prefix": "draw_circle_border_filled",
+        "body": "render.draw_circle_border_filled(${1:hash}, ${2:draw}, ${3:x}, ${4:y}, ${5:radius}, ${6:color}, ${7:colorBorder}, ${8:borderFilled = true}, ${9:segments = 16})",
+        "description": "Draws a filled border circle with the given color."
+    },
+    "render.draw_triangle": {
+        "scope": "lua",
+        "prefix": "draw_triangle",
+        "body": "render.draw_triangle(${1:hash}, ${2:draw}, ${3:x}, ${4:y}, ${5:color}, ${6:size = 1.1})",
+        "description": "Draws a triangle with the given color."
+    },
+    "render.draw_triangle_filled": {
+        "scope": "lua",
+        "prefix": "draw_triangle_filled",
+        "body": "render.draw_triangle_filled(${1:hash}, ${2:draw}, ${3:x}, ${4:y}, ${5:color}, ${6:size = 1.1})",
+        "description": "Draws a filled triangle with the given color."
+    },
+    "render.draw_triangle_border_filled": {
+        "scope": "lua",
+        "prefix": "draw_triangle_border_filled",
+        "body": "render.draw_triangle_border_filled(${1:hash}, ${2:draw}, ${3:x}, ${4:y}, ${5:color}, ${6:colorBorder}, ${7:borderFilled = true})",
+        "description": "Draws a filled border triangle with the given color."
+    },
+    "render.draw_text": {
+        "scope": "lua",
+        "prefix": "draw_text",
+        "body": "render.draw_text(${1:hash}, ${2:draw}, ${3:text}, ${4:x}, ${5:y}, ${6:scale}, ${7:color}, ${8:flags = 0})",
+        "description": ".. note::"
+    },
+    "render.draw_image": {
+        "scope": "lua",
+        "prefix": "draw_image",
+        "body": "render.draw_image(${1:path}, ${2:hash}, ${3:draw}, ${4:x}, ${5:y}, ${6:w}, ${7:h}, ${8:color}, ${9:rounding = 0.f}, ${10:rounding_flags = 0})",
+        "description": ".. note::"
+    },
+    "render.draw_atlas_frame": {
+        "scope": "lua",
+        "prefix": "draw_atlas_frame",
+        "body": "render.draw_atlas_frame(${1:hash}, ${2:atlasHash}, ${3:frameName}, ${4:draw}, ${5:x}, ${6:y}, ${7:w}, ${8:h}, ${9:color}, ${10:rounding = 0.0}, ${11:rounding_flags = 0})",
+        "description": "Draw an atlas texture frame."
+    },
+    "render.remove_draw_task": {
+        "scope": "lua",
+        "prefix": "remove_draw_task",
+        "body": "render.remove_draw_task(${1:hash})",
+        "description": "Remove a draw task."
+    },
+    "render.remove_draw_tasks_by_mask": {
+        "scope": "lua",
+        "prefix": "remove_draw_tasks_by_mask",
+        "body": "render.remove_draw_tasks_by_mask(${1:mask})",
+        "description": "Remove multiple draw tasks with the same masks."
+    },
+    "render.load_atlas": {
+        "scope": "lua",
+        "prefix": "load_atlas",
+        "body": "render.load_atlas(${1:path}, ${2:atlasHash})",
+        "description": "Load a texture atlas."
+    },
+    "render.remove_atlas": {
+        "scope": "lua",
+        "prefix": "remove_atlas",
+        "body": "render.remove_atlas(${1:atlasHash})",
+        "description": "Unload a texture atlas."
+    },
+    "render.set_warning": {
+        "scope": "lua",
+        "prefix": "set_warning",
+        "body": "render.set_warning(${1:message})",
+        "description": "Brings up a warning (as if a moderator was detected in a session)"
+    },
+    "self.get_coords_infront": {
+        "scope": "lua",
+        "prefix": "get_coords_infront",
+        "body": "self.get_coords_infront(${1:distance = 5.0})",
+        "description": "Returns coordinates in front of your character."
+    },
+    "lobby.is_player_active": {
+        "scope": "lua",
+        "prefix": "is_player_active",
+        "body": "lobby.is_player_active(${1:player})",
+        "description": "Checks whether the player is in active, in the session, is fully loaded, "
+    },
+    "lobby.is_player_connected": {
+        "scope": "lua",
+        "prefix": "is_player_connected",
+        "body": "lobby.is_player_connected(${1:player})",
+        "description": "Checks whether the player is connected."
+    },
+    "lobby.is_player_friend": {
+        "scope": "lua",
+        "prefix": "is_player_friend",
+        "body": "lobby.is_player_friend(${1:player})",
+        "description": "Checks whether the player is a friend."
+    },
+    "lobby.is_player_host": {
+        "scope": "lua",
+        "prefix": "is_player_host",
+        "body": "lobby.is_player_host(${1:player})",
+        "description": "Checks whether the player is the host."
+    },
+    "lobby.is_player_host_next": {
+        "scope": "lua",
+        "prefix": "is_player_host_next",
+        "body": "lobby.is_player_host_next(${1:player})",
+        "description": "Checks whether the player is the next script host."
+    },
+    "lobby.is_player_in_vehicle": {
+        "scope": "lua",
+        "prefix": "is_player_in_vehicle",
+        "body": "lobby.is_player_in_vehicle(${1:player})",
+        "description": "Checks whether the player is in a vehicle."
+    },
+    "lobby.is_player_modder": {
+        "scope": "lua",
+        "prefix": "is_player_modder",
+        "body": "lobby.is_player_modder(${1:player})",
+        "description": "Checks whether the player is a modder."
+    },
+    "lobby.is_player_selected": {
+        "scope": "lua",
+        "prefix": "is_player_selected",
+        "body": "lobby.is_player_selected(${1:player})",
+        "description": "Checks whether the player is selected in the menu's online section."
+    },
+    "lobby.is_player_staff": {
+        "scope": "lua",
+        "prefix": "is_player_staff",
+        "body": "lobby.is_player_staff(${1:player})",
+        "description": "Checks whether the player is a Rockstar staff member."
+    },
+    "lobby.is_player_valid": {
+        "scope": "lua",
+        "prefix": "is_player_valid",
+        "body": "lobby.is_player_valid(${1:player})",
+        "description": "Checks whether the player is valid - if it's connected to the session, fully loaded, and alive."
+    },
+    "lobby.get_player_armour": {
+        "scope": "lua",
+        "prefix": "get_player_armour",
+        "body": "lobby.get_player_armour(${1:player})",
+        "description": "Returns the player's armour health."
+    },
+    "lobby.get_player_health": {
+        "scope": "lua",
+        "prefix": "get_player_health",
+        "body": "lobby.get_player_health(${1:player})",
+        "description": "Returns the player's health."
+    },
+    "lobby.get_player_max_health": {
+        "scope": "lua",
+        "prefix": "get_player_max_health",
+        "body": "lobby.get_player_max_health(${1:player})",
+        "description": "Returns the player's maximum health."
+    },
+    "lobby.get_player_team": {
+        "scope": "lua",
+        "prefix": "get_player_team",
+        "body": "lobby.get_player_team(${1:player})",
+        "description": "Returns the player's team."
+    },
+    "lobby.get_player_ped": {
+        "scope": "lua",
+        "prefix": "get_player_ped",
+        "body": "lobby.get_player_ped(${1:player})",
+        "description": "Returns the player's ped."
+    },
+    "lobby.get_player_coords_str": {
+        "scope": "lua",
+        "prefix": "get_player_coords_str",
+        "body": "lobby.get_player_coords_str(${1:player})",
+        "description": "Returns the player's coordinates as a string."
+    },
+    "lobby.get_player_ip": {
+        "scope": "lua",
+        "prefix": "get_player_ip",
+        "body": "lobby.get_player_ip(${1:player})",
+        "description": "Returns the player's IP."
+    },
+    "lobby.get_player_name": {
+        "scope": "lua",
+        "prefix": "get_player_name",
+        "body": "lobby.get_player_name(${1:player})",
+        "description": "Returns the player's name."
+    },
+    "lobby.get_player_status": {
+        "scope": "lua",
+        "prefix": "get_player_status",
+        "body": "lobby.get_player_status(${1:player})",
+        "description": "Returns the player's status."
+    },
+    "lobby.get_player_vehicle_name": {
+        "scope": "lua",
+        "prefix": "get_player_vehicle_name",
+        "body": "lobby.get_player_vehicle_name(${1:player})",
+        "description": "Returns the player's vehicle name."
+    },
+    "lobby.get_player_deaths": {
+        "scope": "lua",
+        "prefix": "get_player_deaths",
+        "body": "lobby.get_player_deaths(${1:player})",
+        "description": "Returns the total player's deaths."
+    },
+    "lobby.get_player_kills": {
+        "scope": "lua",
+        "prefix": "get_player_kills",
+        "body": "lobby.get_player_kills(${1:player})",
+        "description": "Returns the total player's kills."
+    },
+    "lobby.get_player_level": {
+        "scope": "lua",
+        "prefix": "get_player_level",
+        "body": "lobby.get_player_level(${1:player})",
+        "description": "Returns the player's level."
+    },
+    "lobby.get_player_money_bank": {
+        "scope": "lua",
+        "prefix": "get_player_money_bank",
+        "body": "lobby.get_player_money_bank(${1:player})",
+        "description": "Returns the player's bank money."
+    },
+    "lobby.get_player_money_wallet": {
+        "scope": "lua",
+        "prefix": "get_player_money_wallet",
+        "body": "lobby.get_player_money_wallet(${1:player})",
+        "description": "Returns the player's wallet money."
+    },
+    "lobby.get_player_rp": {
+        "scope": "lua",
+        "prefix": "get_player_rp",
+        "body": "lobby.get_player_rp(${1:player})",
+        "description": "Returns the player's RP points."
+    },
+    "lobby.get_player_host_token": {
+        "scope": "lua",
+        "prefix": "get_player_host_token",
+        "body": "lobby.get_player_host_token(${1:player})",
+        "description": "Returns the player's host token."
+    },
+    "lobby.get_player_original_scid": {
+        "scope": "lua",
+        "prefix": "get_player_original_scid",
+        "body": "lobby.get_player_original_scid(${1:player})",
+        "description": "Returns the player's original SCID."
+    },
+    "lobby.get_player_scid": {
+        "scope": "lua",
+        "prefix": "get_player_scid",
+        "body": "lobby.get_player_scid(${1:player})",
+        "description": "Returns the player's SCID."
+    },
+    "lobby.get_player_coords": {
+        "scope": "lua",
+        "prefix": "get_player_coords",
+        "body": "lobby.get_player_coords(${1:player})",
+        "description": "Returns the player's coordinates."
+    },
+    "lobby.set_player_modder": {
+        "scope": "lua",
+        "prefix": "set_player_modder",
+        "body": "lobby.set_player_modder(${1:player}, ${2:toggle})",
+        "description": "Sets the player's modder status."
+    },
+    "lobby.set_player_selected": {
+        "scope": "lua",
+        "prefix": "set_player_selected",
+        "body": "lobby.set_player_selected(${1:player}, ${2:toggle})",
+        "description": "Sets the player as selected in the online menu."
+    },
+    "lobby.set_player_staff": {
+        "scope": "lua",
+        "prefix": "set_player_staff",
+        "body": "lobby.set_player_staff(${1:player}, ${2:toggle})",
+        "description": "Sets the player's staff status."
+    },
+    "vehicle.get_vehicle_handling": {
+        "scope": "lua",
+        "prefix": "get_vehicle_handling",
+        "body": "vehicle.get_vehicle_handling(${1:vehicle}, ${2:param})",
+        "description": "Returns the value for the specified handling parameter."
+    },
+    "vehicle.set_vehicle_handling": {
+        "scope": "lua",
+        "prefix": "set_vehicle_handling",
+        "body": "vehicle.set_vehicle_handling(${1:vehicle}, ${2:param}, ${3:value})",
+        "description": "Sets the value for the specified handling parameter."
+    },
+    "text.contains": {
+        "scope": "lua",
+        "prefix": "contains",
+        "body": "text.contains(${1:source}, ${2:data})",
+        "description": "Checks whether a string contains character/word."
+    },
+    "text.is_float": {
+        "scope": "lua",
+        "prefix": "is_float",
+        "body": "text.is_float(${1:data})",
+        "description": "Checks whether a string is ``float`` type."
+    },
+    "text.is_number": {
+        "scope": "lua",
+        "prefix": "is_number",
+        "body": "text.is_number(${1:data})",
+        "description": "Checks whether a string is a number."
+    },
+    "text.is_valid_ip4": {
+        "scope": "lua",
+        "prefix": "is_valid_ip4",
+        "body": "text.is_valid_ip4(${1:data})",
+        "description": "Checks whether the string is a valid IPv4."
+    },
+    "text.get_random_string": {
+        "scope": "lua",
+        "prefix": "get_random_string",
+        "body": "text.get_random_string(${1:length}, ${2:type})",
+        "description": "Generates a random string."
+    },
+    "text.remove_characters": {
+        "scope": "lua",
+        "prefix": "remove_characters",
+        "body": "text.remove_characters(${1:data}, ${2:word})",
+        "description": "Removes certain characters from string."
+    },
+    "text.replace_characters": {
+        "scope": "lua",
+        "prefix": "replace_characters",
+        "body": "text.replace_characters(${1:data}, ${2:first}, ${3:second})",
+        "description": "Replaces certain characters from string."
+    },
+    "text.resize_string_center": {
+        "scope": "lua",
+        "prefix": "resize_string_center",
+        "body": "text.resize_string_center(${1:data}, ${2:length})",
+        "description": "Cuts string from center."
+    },
+    "text.resize_string_left": {
+        "scope": "lua",
+        "prefix": "resize_string_left",
+        "body": "text.resize_string_left(${1:data}, ${2:length})",
+        "description": "Cuts string from the left"
+    },
+    "text.resize_string_right": {
+        "scope": "lua",
+        "prefix": "resize_string_right",
+        "body": "text.resize_string_right(${1:data}, ${2:length})",
+        "description": "Cuts string from the right."
+    },
+    "fs.dir_exist": {
+        "scope": "lua",
+        "prefix": "dir_exist",
+        "body": "fs.dir_exist(${1:dir})",
+        "description": "Checks whether the directory exists."
+    },
+    "fs.file_exist": {
+        "scope": "lua",
+        "prefix": "file_exist",
+        "body": "fs.file_exist(${1:file})",
+        "description": "Checks whether the file exists."
+    },
+    "fs.file_remove": {
+        "scope": "lua",
+        "prefix": "file_remove",
+        "body": "fs.file_remove(${1:file})",
+        "description": "Removes a file."
+    },
+    "fs.file_validate": {
+        "scope": "lua",
+        "prefix": "file_validate",
+        "body": "fs.file_validate(${1:file})",
+        "description": "Checks whether the file is corrupted, Checks whether the permissions are correct, if it's readable and if it's writable."
+    },
+    "fs.is_file_empty": {
+        "scope": "lua",
+        "prefix": "is_file_empty",
+        "body": "fs.is_file_empty(${1:file})",
+        "description": "Checks whether the file is empty."
+    },
+    "fs.dir_check": {
+        "scope": "lua",
+        "prefix": "dir_check",
+        "body": "fs.dir_check(${1:dir})",
+        "description": "Checks whether the directory exists, and if not, creates it."
+    },
+    "fs.dir_create": {
+        "scope": "lua",
+        "prefix": "dir_create",
+        "body": "fs.dir_create(${1:dir})",
+        "description": "Creates a directory."
+    },
+    "fs.file_copy": {
+        "scope": "lua",
+        "prefix": "file_copy",
+        "body": "fs.file_copy(${1:source}, ${2:dest})",
+        "description": "Copies a file."
+    },
+    "scripting.set_vehicle_bypass": {
+        "scope": "lua",
+        "prefix": "set_vehicle_bypass",
+        "body": "scripting.set_vehicle_bypass(${1:toggle})",
+        "description": "Checks whether the bypass for spawning Online cars in SinglePlayer is enabled."
+    },
+    "scripting.get_coords_infront_of_coords": {
+        "scope": "lua",
+        "prefix": "get_coords_infront_of_coords",
+        "body": "scripting.get_coords_infront_of_coords(${1:position}, ${2:rotation}, ${3:distance})",
+        "description": "Returns the coordinates in front of the specified coordinates."
+    },
+    "scripting.get_coords_above_of_coords": {
+        "scope": "lua",
+        "prefix": "get_coords_above_of_coords",
+        "body": "scripting.get_coords_above_of_coords(${1:position}, ${2:distance})",
+        "description": "Returns the coordinates above of the specified coordinates."
+    },
+    "scripting.get_blip_coords": {
+        "scope": "lua",
+        "prefix": "get_blip_coords",
+        "body": "scripting.get_blip_coords(${1:sprite}, ${2:color})",
+        "description": "Returns the coordinates of the specified :ref:`blip`."
+    },
+    "scripting.get_ground_z": {
+        "scope": "lua",
+        "prefix": "get_ground_z",
+        "body": "scripting.get_ground_z(${1:coords})",
+        "description": "Returns the ground Z coordinate (height) of the specified coordinates."
+    },
+    "scripting.player.set_force_field": {
+        "scope": "lua",
+        "prefix": "set_force_field",
+        "body": "scripting.player.set_force_field(${1:toggle}, ${2:type = 0})",
+        "description": "Toggles and configures the force field."
+    },
+    "scripting.player.set_god_mode": {
+        "scope": "lua",
+        "prefix": "set_god_mode",
+        "body": "scripting.player.set_god_mode(${1:toggle})",
+        "description": "Toggles god mode."
+    },
+    "scripting.player.set_infinite_stamina": {
+        "scope": "lua",
+        "prefix": "set_infinite_stamina",
+        "body": "scripting.player.set_infinite_stamina(${1:toggle})",
+        "description": "Toggles infinite stamina."
+    },
+    "scripting.player.set_invisibility": {
+        "scope": "lua",
+        "prefix": "set_invisibility",
+        "body": "scripting.player.set_invisibility(${1:toggle})",
+        "description": "Toggles invisibility."
+    },
+    "scripting.player.set_mobile_radio": {
+        "scope": "lua",
+        "prefix": "set_mobile_radio",
+        "body": "scripting.player.set_mobile_radio(${1:toggle})",
+        "description": "Toggles mobile radio."
+    },
+    "scripting.player.set_night_vision": {
+        "scope": "lua",
+        "prefix": "set_night_vision",
+        "body": "scripting.player.set_night_vision(${1:toggle})",
+        "description": "Toggles night vision."
+    },
+    "scripting.player.set_noclip": {
+        "scope": "lua",
+        "prefix": "set_noclip",
+        "body": "scripting.player.set_noclip(${1:toggle}, ${2:speed})",
+        "description": "Toggles noclip."
+    },
+    "scripting.player.set_ragdoll": {
+        "scope": "lua",
+        "prefix": "set_ragdoll",
+        "body": "scripting.player.set_ragdoll(${1:toggle})",
+        "description": "Toggles ragdoll."
+    },
+    "scripting.player.set_regeneration": {
+        "scope": "lua",
+        "prefix": "set_regeneration",
+        "body": "scripting.player.set_regeneration(${1:value})",
+        "description": "Sets the regeneration value."
+    },
+    "scripting.player.set_run_speed": {
+        "scope": "lua",
+        "prefix": "set_run_speed",
+        "body": "scripting.player.set_run_speed(${1:toggle}, ${2:value})",
+        "description": "Toggles and configures the walk & run speed."
+    },
+    "scripting.player.set_seatbelt": {
+        "scope": "lua",
+        "prefix": "set_seatbelt",
+        "body": "scripting.player.set_seatbelt(${1:toggle})",
+        "description": "Toggles seatbelt."
+    },
+    "scripting.player.set_super_run": {
+        "scope": "lua",
+        "prefix": "set_super_run",
+        "body": "scripting.player.set_super_run(${1:value})",
+        "description": "Toggles and configures super run mode."
+    },
+    "scripting.player.set_swim_speed": {
+        "scope": "lua",
+        "prefix": "set_swim_speed",
+        "body": "scripting.player.set_swim_speed(${1:toggle}, ${2:value})",
+        "description": "Toggles and configures the swim speed."
+    },
+    "scripting.player.set_thermal_vision": {
+        "scope": "lua",
+        "prefix": "set_thermal_vision",
+        "body": "scripting.player.set_thermal_vision(${1:toggle})",
+        "description": "Toggles thermal vision."
+    },
+    "scripting.player.set_walk_on_air": {
+        "scope": "lua",
+        "prefix": "set_walk_on_air",
+        "body": "scripting.player.set_walk_on_air(${1:toggle})",
+        "description": "Toggles walk on air."
+    },
+    "scripting.player.set_wanted_level": {
+        "scope": "lua",
+        "prefix": "set_wanted_level",
+        "body": "scripting.player.set_wanted_level(${1:value})",
+        "description": "Sets the wanted level."
+    },
+    "scripting.ped.clone_companion": {
+        "scope": "lua",
+        "prefix": "clone_companion",
+        "body": "scripting.ped.clone_companion(${1:owner}, ${2:target}, ${3:weaponHash})",
+        "description": "Clones the target ped and sets it as a companion of the owner."
+    },
+    "scripting.entity.is_entity_in_whitelist": {
+        "scope": "lua",
+        "prefix": "is_entity_in_whitelist",
+        "body": "scripting.entity.is_entity_in_whitelist(${1:entity})",
+        "description": ".. note::"
+    },
+    "scripting.entity.entity_add_to_whitelist": {
+        "scope": "lua",
+        "prefix": "entity_add_to_whitelist",
+        "body": "scripting.entity.entity_add_to_whitelist(${1:entity})",
+        "description": ".. note::"
+    },
+    "scripting.entity.entity_remove_from_whitelist": {
+        "scope": "lua",
+        "prefix": "entity_remove_from_whitelist",
+        "body": "scripting.entity.entity_remove_from_whitelist(${1:entity})",
+        "description": ".. note::"
+    },
+    "scripting.entity.set_proofs": {
+        "scope": "lua",
+        "prefix": "set_proofs",
+        "body": "scripting.entity.set_proofs(${1:entity}, ${2:bulletProof}, ${3:fireProof}, ${4:explosionProof}, ${5:collisionProof}, ${6:meleeProof}, ${7:drownProof})",
+        "description": "Sets resistance to certain damage."
+    },
+    "scripting.vehicle.get_name_from_hash": {
+        "scope": "lua",
+        "prefix": "get_name_from_hash",
+        "body": "scripting.vehicle.get_name_from_hash(${1:hash})",
+        "description": "Returns the name of the vehicle based on its hash."
+    },
+    "scripting.vehicle.set_air_vehicles_collision": {
+        "scope": "lua",
+        "prefix": "set_air_vehicles_collision",
+        "body": "scripting.vehicle.set_air_vehicles_collision(${1:toggle})",
+        "description": "Sets the air vehicles collision."
+    },
+    "scripting.vehicle.set_boost": {
+        "scope": "lua",
+        "prefix": "set_boost",
+        "body": "scripting.vehicle.set_boost(${1:vehicle}, ${2:speed})",
+        "description": "Sets the boost speed of the specified vehicle."
+    },
+    "scripting.vehicle.set_bulletproof_tires": {
+        "scope": "lua",
+        "prefix": "set_bulletproof_tires",
+        "body": "scripting.vehicle.set_bulletproof_tires(${1:toggle})",
+        "description": "Sets the bulletproof tires."
+    },
+    "scripting.vehicle.set_clean": {
+        "scope": "lua",
+        "prefix": "set_clean",
+        "body": "scripting.vehicle.set_clean(${1:})",
+        "description": "Cleans the character."
+    },
+    "scripting.vehicle.set_doors_opened": {
+        "scope": "lua",
+        "prefix": "set_doors_opened",
+        "body": "scripting.vehicle.set_doors_opened(${1:vehicle}, ${2:toggle}, ${3:doorId})",
+        "description": "Opens or closes the doors of the specified vehicle."
+    },
+    "scripting.vehicle.set_drift": {
+        "scope": "lua",
+        "prefix": "set_drift",
+        "body": "scripting.vehicle.set_drift(${1:toggle})",
+        "description": "Toggles the drift mode."
+    },
+    "scripting.vehicle.set_drive_on_air": {
+        "scope": "lua",
+        "prefix": "set_drive_on_air",
+        "body": "scripting.vehicle.set_drive_on_air(${1:vehicle}, ${2:toggle})",
+        "description": "Toggles the Drive on Air mode."
+    },
+    "scripting.vehicle.set_force_jump": {
+        "scope": "lua",
+        "prefix": "set_force_jump",
+        "body": "scripting.vehicle.set_force_jump(${1:toggle})",
+        "description": "Toggles the vehicle force jump mode."
+    },
+    "scripting.vehicle.set_god_mode": {
+        "scope": "lua",
+        "prefix": "set_god_mode",
+        "body": "scripting.vehicle.set_god_mode(${1:toggle})",
+        "description": "Toggles god mode."
+    },
+    "scripting.vehicle.set_headlight_color": {
+        "scope": "lua",
+        "prefix": "set_headlight_color",
+        "body": "scripting.vehicle.set_headlight_color(${1:color})",
+        "description": "Sets the headlight color of the specified vehicle."
+    },
+    "scripting.vehicle.set_invisibility": {
+        "scope": "lua",
+        "prefix": "set_invisibility",
+        "body": "scripting.vehicle.set_invisibility(${1:toggle})",
+        "description": "Toggles invisibility."
+    },
+    "scripting.vehicle.set_license_plate_madness": {
+        "scope": "lua",
+        "prefix": "set_license_plate_madness",
+        "body": "scripting.vehicle.set_license_plate_madness(${1:toggle})",
+        "description": "Toggle license plate madness."
+    },
+    "scripting.vehicle.set_license_plate_scrolling": {
+        "scope": "lua",
+        "prefix": "set_license_plate_scrolling",
+        "body": "scripting.vehicle.set_license_plate_scrolling(${1:toggle})",
+        "description": "Toggle license plate scrolling."
+    },
+    "scripting.vehicle.set_license_plate_speedo": {
+        "scope": "lua",
+        "prefix": "set_license_plate_speedo",
+        "body": "scripting.vehicle.set_license_plate_speedo(${1:toggle})",
+        "description": "Toggle license plate speedo mode."
+    },
+    "scripting.vehicle.set_rainbow_car": {
+        "scope": "lua",
+        "prefix": "set_rainbow_car",
+        "body": "scripting.vehicle.set_rainbow_car(${1:type})",
+        "description": "Toggle rainbow car mode."
+    },
+    "scripting.vehicle.set_stop": {
+        "scope": "lua",
+        "prefix": "set_stop",
+        "body": "scripting.vehicle.set_stop(${1:vehicle})",
+        "description": "Make a vehicle stop."
+    },
+    "scripting.vehicle.set_vehicle_clean_upgrade": {
+        "scope": "lua",
+        "prefix": "set_vehicle_clean_upgrade",
+        "body": "scripting.vehicle.set_vehicle_clean_upgrade(${1:vehicle})",
+        "description": "Make a vehicle be max upgraded (only non-visible parts eg. engine, turbo...)"
+    },
+    "scripting.vehicle.set_vehicle_color": {
+        "scope": "lua",
+        "prefix": "set_vehicle_color",
+        "body": "scripting.vehicle.set_vehicle_color(${1:v}, ${2:primary}, ${3:secondary}, ${4:pearl}, ${5:wheel})",
+        "description": "Set vehicle color (primary, secondary, pearlescence, wheels)"
+    },
+    "scripting.vehicle.set_vehicle_max_upgrade": {
+        "scope": "lua",
+        "prefix": "set_vehicle_max_upgrade",
+        "body": "scripting.vehicle.set_vehicle_max_upgrade(${1:vehicle})",
+        "description": "Make a vehicle be max upgraded."
+    },
+    "scripting.vehicle.set_waterproof": {
+        "scope": "lua",
+        "prefix": "set_waterproof",
+        "body": "scripting.vehicle.set_waterproof(${1:vehicle}, ${2:toggle})",
+        "description": "Set a vehicle waterproof."
+    },
+    "scripting.vehicle.set_windows_opened": {
+        "scope": "lua",
+        "prefix": "set_windows_opened",
+        "body": "scripting.vehicle.set_windows_opened(${1:vehicle}, ${2:toggle}, ${3:windowId})",
+        "description": "Set windows opened on a vehicle."
+    },
+    "scripting.online.set_off_radar": {
+        "scope": "lua",
+        "prefix": "set_off_radar",
+        "body": "scripting.online.set_off_radar(${1:toggle})",
+        "description": "Toggle the off radar feature."
+    },
+    "scripting.online.set_passive_mode": {
+        "scope": "lua",
+        "prefix": "set_passive_mode",
+        "body": "scripting.online.set_passive_mode(${1:toggle})",
+        "description": "Toggle the passive mode."
+    },
+    "scripting.online.set_spectating_mode": {
+        "scope": "lua",
+        "prefix": "set_spectating_mode",
+        "body": "scripting.online.set_spectating_mode(${1:toggle}, ${2:player})",
+        "description": "Toggle and configure the spectating mode."
+    },
+    "scripting.online.teleport_in_player_vehicle": {
+        "scope": "lua",
+        "prefix": "teleport_in_player_vehicle",
+        "body": "scripting.online.teleport_in_player_vehicle(${1:player})",
+        "description": "Teleports the player into specified player's vehicle."
+    },
+    "scripting.online.teleport_to_player": {
+        "scope": "lua",
+        "prefix": "teleport_to_player",
+        "body": "scripting.online.teleport_to_player(${1:player})",
+        "description": "Teleports the player to specified player."
+    },
+    "scripting.online.toggle_protex": {
+        "scope": "lua",
+        "prefix": "toggle_protex",
+        "body": "scripting.online.toggle_protex(${1:toggle})",
+        "description": "Toggle the online protections."
+    },
+    "scripting.network.session_manager": {
+        "scope": "lua",
+        "prefix": "session_manager",
+        "body": "scripting.network.session_manager(${1:id})",
+        "description": "Sends the player to the specified session."
+    },
+    "scripting.spawn.spawn_vehicle": {
+        "scope": "lua",
+        "prefix": "spawn_vehicle",
+        "body": "scripting.spawn.spawn_vehicle(${1:hash}, ${2:position}, ${3:heading})",
+        "description": "Spawns a vehicle in a given position and heading."
+    },
+    "scripting.spawn.spawn_vehicle_personal": {
+        "scope": "lua",
+        "prefix": "spawn_vehicle_personal",
+        "body": "scripting.spawn.spawn_vehicle_personal(${1:hash})",
+        "description": "Spawns a personal vehicle."
+    },
+    "scripting.weapon.give_all_weapons": {
+        "scope": "lua",
+        "prefix": "give_all_weapons",
+        "body": "scripting.weapon.give_all_weapons(${1:ped}, ${2:maxAmmo = true}, ${3:maxComponents = true})",
+        "description": "Give all weapons to a ped with toggable max ammo and max components."
+    },
+    "scripting.weapon.remove_all_weapons_from_ped": {
+        "scope": "lua",
+        "prefix": "remove_all_weapons_from_ped",
+        "body": "scripting.weapon.remove_all_weapons_from_ped(${1:ped})",
+        "description": "Removes all weapons from a ped."
+    },
+    "scripting.weapon.give_weapon_self": {
+        "scope": "lua",
+        "prefix": "give_weapon_self",
+        "body": "scripting.weapon.give_weapon_self(${1:weaponHash})",
+        "description": "Gives weapon to the player (self)."
+    },
+    "scripting.weapon.give_weapon": {
+        "scope": "lua",
+        "prefix": "give_weapon",
+        "body": "scripting.weapon.give_weapon(${1:ped}, ${2:weaponHash}, ${3:maxAmmo = true}, ${4:maxComponents = true})",
+        "description": "Gives a weapon to ped with toggable max ammo and max components."
+    },
+    "scripting.weapon.give_ammo": {
+        "scope": "lua",
+        "prefix": "give_ammo",
+        "body": "scripting.weapon.give_ammo(${1:ped})",
+        "description": "Gives ammo to a ped."
+    },
+    "scripting.weapon.give_ammo_for_weapon": {
+        "scope": "lua",
+        "prefix": "give_ammo_for_weapon",
+        "body": "scripting.weapon.give_ammo_for_weapon(${1:ped}, ${2:weaponHash})",
+        "description": "Gives ammo for a precise weapon to a ped."
+    },
+    "scripting.weapon.ammo_infinite": {
+        "scope": "lua",
+        "prefix": "ammo_infinite",
+        "body": "scripting.weapon.ammo_infinite(${1:ped})",
+        "description": "Gives infinite ammo to a ped."
+    },
+    "scripting.weapon.ammo_enhanced": {
+        "scope": "lua",
+        "prefix": "ammo_enhanced",
+        "body": "scripting.weapon.ammo_enhanced(${1:ped}, ${2:explosionId})",
+        "description": "Gives enhanced ammo (ammo that generate a particular explosion) to a ped."
+    },
+    "scripting.weapon.ammo_mega_damage": {
+        "scope": "lua",
+        "prefix": "ammo_mega_damage",
+        "body": "scripting.weapon.ammo_mega_damage(${1:ped})",
+        "description": "Gives mega damage ammo to a ped."
+    },
+    "scripting.teleport.to_blip": {
+        "scope": "lua",
+        "prefix": "to_blip",
+        "body": "scripting.teleport.to_blip(${1:sprite}, ${2:color = -1})",
+        "description": "Teleport to blip."
+    },
+    "scripting.teleport.to_entity": {
+        "scope": "lua",
+        "prefix": "to_entity",
+        "body": "scripting.teleport.to_entity(${1:ent})",
+        "description": "Teleport to entity."
+    },
+    "scripting.teleport.to_player": {
+        "scope": "lua",
+        "prefix": "to_player",
+        "body": "scripting.teleport.to_player(${1:player})",
+        "description": "Teleports the player to specified player."
+    },
+    "scripting.teleport.to_position": {
+        "scope": "lua",
+        "prefix": "to_position",
+        "body": "scripting.teleport.to_position(${1:coords})",
+        "description": "Teleport to position (through coordinates)."
+    },
+    "scripting.world.set_weather": {
+        "scope": "lua",
+        "prefix": "set_weather",
+        "body": "scripting.world.set_weather(${1:weatherType})",
+        "description": "Set weather type."
+    },
+    "scripting.world.set_clouds": {
+        "scope": "lua",
+        "prefix": "set_clouds",
+        "body": "scripting.world.set_clouds(${1:cloudsType}, ${2:transitionTime})",
+        "description": "Set clouds type and their transition time."
+    },
+    "scripting.world.set_rain_intensity": {
+        "scope": "lua",
+        "prefix": "set_rain_intensity",
+        "body": "scripting.world.set_rain_intensity(${1:value})",
+        "description": "Set the rain intensity."
+    },
+    "scripting.world.set_wind_speed": {
+        "scope": "lua",
+        "prefix": "set_wind_speed",
+        "body": "scripting.world.set_wind_speed(${1:value})",
+        "description": "Set the wind speed."
+    },
+    "scripting.world.set_waves_height": {
+        "scope": "lua",
+        "prefix": "set_waves_height",
+        "body": "scripting.world.set_waves_height(${1:value})",
+        "description": "Set the waves height."
+    },
+    "scripting.world.set_time": {
+        "scope": "lua",
+        "prefix": "set_time",
+        "body": "scripting.world.set_time(${1:hours}, ${2:minutes}, ${3:seconds})",
+        "description": "Set the in-game time."
+    },
+    "scripting.world.blackout": {
+        "scope": "lua",
+        "prefix": "blackout",
+        "body": "scripting.world.blackout(${1:toggle})",
+        "description": "Toggle blackout on/off."
+    },
+    "scripting.world.disable_phone": {
+        "scope": "lua",
+        "prefix": "disable_phone",
+        "body": "scripting.world.disable_phone(${1:toggle})",
+        "description": "Disable phone option"
+    },
+    "rage.player.get_player_group": {
+        "scope": "lua",
+        "prefix": "get_player_group",
+        "body": "rage.player.get_player_group(${1:player})",
+        "description": "Returns the group ID the player is member of. Used for :ref:`ai`."
+    },
+    "rage.player.get_player_name": {
+        "scope": "lua",
+        "prefix": "get_player_name",
+        "body": "rage.player.get_player_name(${1:player})",
+        "description": "Returns the player's name."
+    },
+    "rage.player.get_player_parachute_model_override": {
+        "scope": "lua",
+        "prefix": "get_player_parachute_model_override",
+        "body": "rage.player.get_player_parachute_model_override(${1:player})",
+        "description": "Returns the hash of the parachute model."
+    },
+    "rage.player.get_player_ped_script_index": {
+        "scope": "lua",
+        "prefix": "get_player_ped_script_index",
+        "body": "rage.player.get_player_ped_script_index(${1:player})",
+        "description": "Returns the Ped ID of the player's character."
+    },
+    "rage.player.get_player_team": {
+        "scope": "lua",
+        "prefix": "get_player_team",
+        "body": "rage.player.get_player_team(${1:player})",
+        "description": "Returns the player's team."
+    },
+    "rage.player.get_player_wanted_level": {
+        "scope": "lua",
+        "prefix": "get_player_wanted_level",
+        "body": "rage.player.get_player_wanted_level(${1:})",
+        "description": "Returns the player's wanted level."
+    },
+    "rage.player.is_player_free_aiming": {
+        "scope": "lua",
+        "prefix": "is_player_free_aiming",
+        "body": "rage.player.is_player_free_aiming(${1:player})",
+        "description": "Returns whether the player is aiming."
+    },
+    "rage.player.is_player_playing": {
+        "scope": "lua",
+        "prefix": "is_player_playing",
+        "body": "rage.player.is_player_playing(${1:player})",
+        "description": "Returns whether the wasted/busted screen is visible or not."
+    },
+    "rage.player.is_player_pressing_horn": {
+        "scope": "lua",
+        "prefix": "is_player_pressing_horn",
+        "body": "rage.player.is_player_pressing_horn(${1:player})",
+        "description": "Checks whether the player is pressing the horn."
+    },
+    "rage.player.set_player_model": {
+        "scope": "lua",
+        "prefix": "set_player_model",
+        "body": "rage.player.set_player_model(${1:player}, ${2:model})",
+        "description": "Sets the model for a specific player."
+    },
+    "rage.player.set_player_parachute_model_override": {
+        "scope": "lua",
+        "prefix": "set_player_parachute_model_override",
+        "body": "rage.player.set_player_parachute_model_override(${1:player}, ${2:model})",
+        "description": "Sets the parachute model for a player."
+    },
+    "rage.player.set_player_targeting_mode": {
+        "scope": "lua",
+        "prefix": "set_player_targeting_mode",
+        "body": "rage.player.set_player_targeting_mode(${1:targetMode})",
+        "description": "Sets your targeting mode."
+    },
+    "rage.ped.add_relationship_group": {
+        "scope": "lua",
+        "prefix": "add_relationship_group",
+        "body": "rage.ped.add_relationship_group(${1:name}, ${2:groupHash})",
+        "description": "Adds a new ped relationship group."
+    },
+    "rage.ped.can_ped_ragdoll": {
+        "scope": "lua",
+        "prefix": "can_ped_ragdoll",
+        "body": "rage.ped.can_ped_ragdoll(${1:ped})",
+        "description": "Check if ragdoll is enabled for this ped"
+    },
+    "rage.ped.clear_all_ped_props": {
+        "scope": "lua",
+        "prefix": "clear_all_ped_props",
+        "body": "rage.ped.clear_all_ped_props(${1:ped})",
+        "description": "Clears all ped's props."
+    },
+    "rage.ped.clear_ped_blood_damage": {
+        "scope": "lua",
+        "prefix": "clear_ped_blood_damage",
+        "body": "rage.ped.clear_ped_blood_damage(${1:ped})",
+        "description": "Clears the blood on a ped."
+    },
+    "rage.ped.clear_ped_tasks_immediately": {
+        "scope": "lua",
+        "prefix": "clear_ped_tasks_immediately",
+        "body": "rage.ped.clear_ped_tasks_immediately(${1:ped})",
+        "description": "Clears all ped's tasks."
+    },
+    "rage.ped.clear_relationship_between_groups": {
+        "scope": "lua",
+        "prefix": "clear_relationship_between_groups",
+        "body": "rage.ped.clear_relationship_between_groups(${1:relationship}, ${2:group1}, ${3:group2})",
+        "description": "Clears the relationship between two groups. This should be called twice (once for each group)."
+    },
+    "rage.ped.clone_ped": {
+        "scope": "lua",
+        "prefix": "clone_ped",
+        "body": "rage.ped.clone_ped(${1:ped}, ${2:isNetwork}, ${3:bScriptHostPed}, ${4:copyHeadBlendFlag})",
+        "description": "Creates a copy of the passed ped, optionally setting it as local and/or shallow-copying the head blend data."
+    },
+    "rage.ped.create_group": {
+        "scope": "lua",
+        "prefix": "create_group",
+        "body": "rage.ped.create_group(${1:unused})",
+        "description": "Creates a new ped group. Note: groups can contain up to 8 peds."
+    },
+    "rage.ped.create_ped": {
+        "scope": "lua",
+        "prefix": "create_ped",
+        "body": "rage.ped.create_ped(${1:pedType}, ${2:modelHash}, ${3:x}, ${4:y}, ${5:z}, ${6:heading}, ${7:isNetwork}, ${8:bScriptHostPed})",
+        "description": "Spawns a ped (biped character, pedestrian, actor) with the specified model at the specified position and heading. This ped will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using streaming.request_model)."
+    },
+    "rage.ped.does_group_exist": {
+        "scope": "lua",
+        "prefix": "does_group_exist",
+        "body": "rage.ped.does_group_exist(${1:groupId})",
+        "description": "Checks whether a group exists."
+    },
+    "rage.ped.does_relationship_group_exist": {
+        "scope": "lua",
+        "prefix": "does_relationship_group_exist",
+        "body": "rage.ped.does_relationship_group_exist(${1:`groupHash`})",
+        "description": "Checks whether a relationship group exists."
+    },
+    "rage.ped.get_current_ped_weapon": {
+        "scope": "lua",
+        "prefix": "get_current_ped_weapon",
+        "body": "rage.ped.get_current_ped_weapon(${1:ped}, ${2:p2})",
+        "description": "Returns hash of the ped's active weapon"
+    },
+    "rage.ped.get_group_size": {
+        "scope": "lua",
+        "prefix": "get_group_size",
+        "body": "rage.ped.get_group_size(${1:groupId}, ${2:unknown})",
+        "description": "Returns ped group size."
+    },
+    "rage.ped.get_number_of_ped_drawable_variations": {
+        "scope": "lua",
+        "prefix": "get_number_of_ped_drawable_variations",
+        "body": "rage.ped.get_number_of_ped_drawable_variations(${1:ped}, ${2:componentID})",
+        "description": "Returns the number of drawable variations for the specified body part."
+    },
+    "rage.ped.get_number_of_ped_prop_drawable_variations": {
+        "scope": "lua",
+        "prefix": "get_number_of_ped_prop_drawable_variations",
+        "body": "rage.ped.get_number_of_ped_prop_drawable_variations(${1:ped}, ${2:propID})",
+        "description": "Returns the number of drawable variations for the specified prop."
+    },
+    "rage.ped.get_number_of_ped_prop_texture_variations": {
+        "scope": "lua",
+        "prefix": "get_number_of_ped_prop_texture_variations",
+        "body": "rage.ped.get_number_of_ped_prop_texture_variations(${1:ped}, ${2:propID}, ${3:drawableID})",
+        "description": ".. note::"
+    },
+    "rage.ped.get_number_of_ped_texture_variations": {
+        "scope": "lua",
+        "prefix": "get_number_of_ped_texture_variations",
+        "body": "rage.ped.get_number_of_ped_texture_variations(${1:ped}, ${2:componentID}, ${3:drawableID})",
+        "description": "Returns a number of possible texture variations for the specified component"
+    },
+    "rage.ped.get_ped_bone_index": {
+        "scope": "lua",
+        "prefix": "get_ped_bone_index",
+        "body": "rage.ped.get_ped_bone_index(${1:ped}, ${2:boneID})",
+        "description": "Returns the bone name for the specified bone ID."
+    },
+    "rage.ped.get_ped_drawable_variation": {
+        "scope": "lua",
+        "prefix": "get_ped_drawable_variation",
+        "body": "rage.ped.get_ped_drawable_variation(${1:ped}, ${2:componentID})",
+        "description": "Get variation ID based on component ID."
+    },
+    "rage.ped.get_ped_eye_color": {
+        "scope": "lua",
+        "prefix": "get_ped_eye_color",
+        "body": "rage.ped.get_ped_eye_color(${1:ped})",
+        "description": "Returns the eye color of the specified ped."
+    },
+    "rage.ped.get_ped_group_index": {
+        "scope": "lua",
+        "prefix": "get_ped_group_index",
+        "body": "rage.ped.get_ped_group_index(${1:ped})",
+        "description": "Returns the group id of which the specified ped is a member of.  "
+    },
+    "rage.ped.get_ped_head_blend_data": {
+        "scope": "lua",
+        "prefix": "get_ped_head_blend_data",
+        "body": "rage.ped.get_ped_head_blend_data(${1:ped}, ${2:headBlendData})",
+        "description": ".. note::"
+    },
+    "rage.ped.get_ped_head_overlay_value": {
+        "scope": "lua",
+        "prefix": "get_ped_head_overlay_value",
+        "body": "rage.ped.get_ped_head_overlay_value(${1:ped}, ${2:overlayID})",
+        "description": "Returns the setting of the specified head part (makeup, complexion, etc.)"
+    },
+    "rage.ped.get_ped_max_health": {
+        "scope": "lua",
+        "prefix": "get_ped_max_health",
+        "body": "rage.ped.get_ped_max_health(${1:ped})",
+        "description": "Returns the maximum health of the specified ped."
+    },
+    "rage.ped.get_ped_prop_index": {
+        "scope": "lua",
+        "prefix": "get_ped_prop_index",
+        "body": "rage.ped.get_ped_prop_index(${1:ped}, ${2:componentID})",
+        "description": "Returns a ped's prop index (identifier) based on component ID."
+    },
+    "rage.ped.get_ped_prop_texture_index": {
+        "scope": "lua",
+        "prefix": "get_ped_prop_texture_index",
+        "body": "rage.ped.get_ped_prop_texture_index(${1:ped}, ${2:componentID})",
+        "description": "Returns a ped's prop texture index (identifier) based on component ID."
+    },
+    "rage.ped.get_ped_relationship_group_hash": {
+        "scope": "lua",
+        "prefix": "get_ped_relationship_group_hash",
+        "body": "rage.ped.get_ped_relationship_group_hash(${1:ped})",
+        "description": "Returns a ped's relationship group hash."
+    },
+    "rage.ped.get_ped_texture_variation": {
+        "scope": "lua",
+        "prefix": "get_ped_texture_variation",
+        "body": "rage.ped.get_ped_texture_variation(${1:ped}, ${2:componentID})",
+        "description": "Returns a ped's texture variation (identifier) based on component ID."
+    },
+    "rage.ped.get_vehicle_ped_is_using": {
+        "scope": "lua",
+        "prefix": "get_vehicle_ped_is_using",
+        "body": "rage.ped.get_vehicle_ped_is_using(${1:ped})",
+        "description": "Returns the vehicle that the specified ped is in."
+    },
+    "rage.ped.is_ped_a_player": {
+        "scope": "lua",
+        "prefix": "is_ped_a_player",
+        "body": "rage.ped.is_ped_a_player(${1:ped})",
+        "description": "Checks whether the specified ped is a player."
+    },
+    "rage.ped.is_ped_group_member": {
+        "scope": "lua",
+        "prefix": "is_ped_group_member",
+        "body": "rage.ped.is_ped_group_member(${1:ped}, ${2:group})",
+        "description": "**Parameters:**"
+    },
+    "rage.ped.is_ped_in_any_vehicle": {
+        "scope": "lua",
+        "prefix": "is_ped_in_any_vehicle",
+        "body": "rage.ped.is_ped_in_any_vehicle(${1:ped}, ${2:atGetIn})",
+        "description": "Whether or not the specified ped is in any vehicle."
+    },
+    "rage.ped.is_ped_ragdoll": {
+        "scope": "lua",
+        "prefix": "is_ped_ragdoll",
+        "body": "rage.ped.is_ped_ragdoll(${1:ped})",
+        "description": "Checks whether the ragdoll is currently active for this ped"
+    },
+    "rage.ped.is_ped_shooting": {
+        "scope": "lua",
+        "prefix": "is_ped_shooting",
+        "body": "rage.ped.is_ped_shooting(${1:ped})",
+        "description": "Checks whether the specified ped is shooting."
+    },
+    "rage.ped.is_ped_using_any_scenario": {
+        "scope": "lua",
+        "prefix": "is_ped_using_any_scenario",
+        "body": "rage.ped.is_ped_using_any_scenario(${1:ped})",
+        "description": "Checks whether the specified ped is using any scenario."
+    },
+    "rage.ped.remove_group": {
+        "scope": "lua",
+        "prefix": "remove_group",
+        "body": "rage.ped.remove_group(${1:groupId})",
+        "description": "Removes a ped group from the game session."
+    },
+    "rage.ped.remove_ped_from_group": {
+        "scope": "lua",
+        "prefix": "remove_ped_from_group",
+        "body": "rage.ped.remove_ped_from_group(${1:ped})",
+        "description": "Removes a ped from its group."
+    },
+    "rage.ped.remove_relationship_group": {
+        "scope": "lua",
+        "prefix": "remove_relationship_group",
+        "body": "rage.ped.remove_relationship_group(${1:groupHash})",
+        "description": "Removes a relationship group from the game session."
+    },
+    "rage.ped.reset_group_formation_default_spacing": {
+        "scope": "lua",
+        "prefix": "reset_group_formation_default_spacing",
+        "body": "rage.ped.reset_group_formation_default_spacing(${1:group})",
+        "description": "Resets group formation settings."
+    },
+    "rage.ped.reset_ped_movement_clipset": {
+        "scope": "lua",
+        "prefix": "reset_ped_movement_clipset",
+        "body": "rage.ped.reset_ped_movement_clipset(${1:ped}, ${2:p1})",
+        "description": "Resets the ped movement clip set (walking animation set)."
+    },
+    "rage.ped.resurrect_ped": {
+        "scope": "lua",
+        "prefix": "resurrect_ped",
+        "body": "rage.ped.resurrect_ped(${1:ped})",
+        "description": "Resurrects a ped."
+    },
+    "rage.ped.set_can_attack_friendly": {
+        "scope": "lua",
+        "prefix": "set_can_attack_friendly",
+        "body": "rage.ped.set_can_attack_friendly(${1:ped}, ${2:bool}, ${3:p2})",
+        "description": "Sets whether the ped can attack friendly peds."
+    },
+    "rage.ped.set_create_random_cops": {
+        "scope": "lua",
+        "prefix": "set_create_random_cops",
+        "body": "rage.ped.set_create_random_cops(${1:toggle})",
+        "description": "Sets whether random cops can be summoned"
+    },
+    "rage.ped.set_group_formation": {
+        "scope": "lua",
+        "prefix": "set_group_formation",
+        "body": "rage.ped.set_group_formation(${1:group}, ${2:formationType})",
+        "description": "Sets the group formation type."
+    },
+    "rage.ped.set_group_formation_spacing": {
+        "scope": "lua",
+        "prefix": "set_group_formation_spacing",
+        "body": "rage.ped.set_group_formation_spacing(${1:group}, ${2:p1}, ${3:p2}, ${4:p3})",
+        "description": "Sets the group formation spacing."
+    },
+    "rage.ped.set_ped_accuracy": {
+        "scope": "lua",
+        "prefix": "set_ped_accuracy",
+        "body": "rage.ped.set_ped_accuracy(${1:ped}, ${2:accuracy})",
+        "description": "Sets the ped shooting accuracy."
+    },
+    "rage.ped.set_ped_as_group_leader": {
+        "scope": "lua",
+        "prefix": "set_ped_as_group_leader",
+        "body": "rage.ped.set_ped_as_group_leader(${1:ped}, ${2:groupId})",
+        "description": "Sets the ped as a ped group leader."
+    },
+    "rage.ped.set_ped_as_group_member": {
+        "scope": "lua",
+        "prefix": "set_ped_as_group_member",
+        "body": "rage.ped.set_ped_as_group_member(${1:ped}, ${2:groupId})",
+        "description": "Sets the ped as a ped group member."
+    },
+    "rage.ped.set_ped_can_ragdoll": {
+        "scope": "lua",
+        "prefix": "set_ped_can_ragdoll",
+        "body": "rage.ped.set_ped_can_ragdoll(${1:ped}, ${2:toggle})",
+        "description": "Toggles the ragdoll for a ped"
+    },
+    "rage.ped.set_ped_combat_ability": {
+        "scope": "lua",
+        "prefix": "set_ped_combat_ability",
+        "body": "rage.ped.set_ped_combat_ability(${1:ped}, ${2:abilityLevel})",
+        "description": "Sets combat ability level for a ped."
+    },
+    "rage.ped.set_ped_combat_attributes": {
+        "scope": "lua",
+        "prefix": "set_ped_combat_attributes",
+        "body": "rage.ped.set_ped_combat_attributes(${1:ped}, ${2:attributeId}, ${3:enabled})",
+        "description": "Configures various combat attributes for a ped"
+    },
+    "rage.ped.set_ped_combat_movement": {
+        "scope": "lua",
+        "prefix": "set_ped_combat_movement",
+        "body": "rage.ped.set_ped_combat_movement(${1:ped}, ${2:combatMovement})",
+        "description": "Sets the combat movement rule for a ped."
+    },
+    "rage.ped.set_ped_combat_range": {
+        "scope": "lua",
+        "prefix": "set_ped_combat_range",
+        "body": "rage.ped.set_ped_combat_range(${1:ped}, ${2:combatRange})",
+        "description": "Sets the combat range for a ped."
+    },
+    "rage.ped.set_ped_component_variation": {
+        "scope": "lua",
+        "prefix": "set_ped_component_variation",
+        "body": "rage.ped.set_ped_component_variation(${1:ped}, ${2:componentId}, ${3:drawableId}, ${4:textureId}, ${5:paletteId})",
+        "description": "Sets the component variation for a ped."
+    },
+    "rage.ped.set_ped_config_flag": {
+        "scope": "lua",
+        "prefix": "set_ped_config_flag",
+        "body": "rage.ped.set_ped_config_flag(${1:ped}, ${2:flagId}, ${3:value})",
+        "description": "Sets a ped config flag."
+    },
+    "rage.ped.set_ped_default_component_variation": {
+        "scope": "lua",
+        "prefix": "set_ped_default_component_variation",
+        "body": "rage.ped.set_ped_default_component_variation(${1:ped})",
+        "description": "Resets ped clothes to default"
+    },
+    "rage.ped.set_ped_density_multiplier_this_frame": {
+        "scope": "lua",
+        "prefix": "set_ped_density_multiplier_this_frame",
+        "body": "rage.ped.set_ped_density_multiplier_this_frame(${1:multiplier})",
+        "description": "Sets the ped density on the streets."
+    },
+    "rage.ped.set_ped_eye_color": {
+        "scope": "lua",
+        "prefix": "set_ped_eye_color",
+        "body": "rage.ped.set_ped_eye_color(${1:ped}, ${2:index})",
+        "description": "Sets the eye color for a ped."
+    },
+    "rage.ped.set_ped_head_blend_data": {
+        "scope": "lua",
+        "prefix": "set_ped_head_blend_data",
+        "body": "rage.ped.set_ped_head_blend_data(${1:ped}, ${2:shapeFirst}, ${3:shapeSecond}, ${4:shapeThird}, ${5:skinFirst}, ${6:skinSecond}, ${7:skinThird}, ${8:shapeMix}, ${9:skinMix}, ${10:thirdMix})",
+        "description": "Sets the face shape settings for the selected ped."
+    },
+    "rage.ped.set_ped_head_overlay": {
+        "scope": "lua",
+        "prefix": "set_ped_head_overlay",
+        "body": "rage.ped.set_ped_head_overlay(${1:ped}, ${2:overlayID}, ${3:index}, ${4:opacity})",
+        "description": "Sets the setting of the specified head part (makeup, complexion, etc.)"
+    },
+    "rage.ped.set_ped_head_overlay_color": {
+        "scope": "lua",
+        "prefix": "set_ped_head_overlay_color",
+        "body": "rage.ped.set_ped_head_overlay_color(${1:ped}, ${2:overlayID}, ${3:colorType}, ${4:colorID}, ${5:secondColorID})",
+        "description": "Sets the color of the specified head part (lipstick, beards, eyebrows, chest hair.)"
+    },
+    "rage.ped.set_ped_into_vehicle": {
+        "scope": "lua",
+        "prefix": "set_ped_into_vehicle",
+        "body": "rage.ped.set_ped_into_vehicle(${1:ped}, ${2:vehicle}, ${3:seatIndex})",
+        "description": "Warps the ped into a vehicle."
+    },
+    "rage.ped.set_ped_max_health": {
+        "scope": "lua",
+        "prefix": "set_ped_max_health",
+        "body": "rage.ped.set_ped_max_health(${1:ped}, ${2:value})",
+        "description": "Sets the maximum health for the ped."
+    },
+    "rage.ped.set_ped_movement_clipset": {
+        "scope": "lua",
+        "prefix": "set_ped_movement_clipset",
+        "body": "rage.ped.set_ped_movement_clipset(${1:ped}, ${2:p1})",
+        "description": "Resets the ped movement clip set (walking animation set)."
+    },
+    "rage.ped.set_ped_never_leaves_group": {
+        "scope": "lua",
+        "prefix": "set_ped_never_leaves_group",
+        "body": "rage.ped.set_ped_never_leaves_group(${1:ped}, ${2:toggle})",
+        "description": "Sets whether the ped can leave a ped group or not."
+    },
+    "rage.ped.set_ped_prop_index": {
+        "scope": "lua",
+        "prefix": "set_ped_prop_index",
+        "body": "rage.ped.set_ped_prop_index(${1:ped}, ${2:componentID}, ${3:drawableID}, ${4:textureID}, ${5:attach})",
+        "description": "Set prop variation on a ped. Components, drawables and textures IDs are related to the ped model."
+    },
+    "rage.ped.set_ped_random_component_variation": {
+        "scope": "lua",
+        "prefix": "set_ped_random_component_variation",
+        "body": "rage.ped.set_ped_random_component_variation(${1:ped}, ${2:p1})",
+        "description": "Sets a random component variation for the ped."
+    },
+    "rage.ped.set_ped_relationship_group_hash": {
+        "scope": "lua",
+        "prefix": "set_ped_relationship_group_hash",
+        "body": "rage.ped.set_ped_relationship_group_hash(${1:ped}, ${2:hash})",
+        "description": "Sets the relationship group for the ped."
+    },
+    "rage.ped.set_ped_to_ragdoll": {
+        "scope": "lua",
+        "prefix": "set_ped_to_ragdoll",
+        "body": "rage.ped.set_ped_to_ragdoll(${1:ped}, ${2:time1}, ${3:time2}, ${4:ragdollType}, ${5:p4}, ${6:p5}, ${7:p6})",
+        "description": "Forces the ped to ragdoll."
+    },
+    "rage.ped.set_relationship_between_groups": {
+        "scope": "lua",
+        "prefix": "set_relationship_between_groups",
+        "body": "rage.ped.set_relationship_between_groups(${1:relationship}, ${2:group1}, ${3:group2})",
+        "description": "Sets the relationship between two groups."
+    },
+    "rage.ped.set_scenario_ped_density_multiplier_this_frame": {
+        "scope": "lua",
+        "prefix": "set_scenario_ped_density_multiplier_this_frame",
+        "body": "rage.ped.set_scenario_ped_density_multiplier_this_frame(${1:p0}, ${2:p1})",
+        "description": "Sets ped density during scenarios"
+    },
+    "rage.vehicle.add_vehicle_phone_explosive_device": {
+        "scope": "lua",
+        "prefix": "add_vehicle_phone_explosive_device",
+        "body": "rage.vehicle.add_vehicle_phone_explosive_device(${1:vehicle})",
+        "description": "Adds a phone explosive device to the vehicle."
+    },
+    "rage.vehicle.clear_vehicle_custom_primary_colour": {
+        "scope": "lua",
+        "prefix": "clear_vehicle_custom_primary_colour",
+        "body": "rage.vehicle.clear_vehicle_custom_primary_colour(${1:vehicle})",
+        "description": "Resets the vehicle's primary custom colour to it's real primary one."
+    },
+    "rage.vehicle.clear_vehicle_custom_secondary_colour": {
+        "scope": "lua",
+        "prefix": "clear_vehicle_custom_secondary_colour",
+        "body": "rage.vehicle.clear_vehicle_custom_secondary_colour(${1:vehicle})",
+        "description": "Resets the vehicle's secondary custom colour to it's real secondary one."
+    },
+    "rage.vehicle.control_landing_gear": {
+        "scope": "lua",
+        "prefix": "control_landing_gear",
+        "body": "rage.vehicle.control_landing_gear(${1:vehicle}, ${2:state})",
+        "description": "Switches the landing gear of the vehicle."
+    },
+    "rage.vehicle.create_vehicle": {
+        "scope": "lua",
+        "prefix": "create_vehicle",
+        "body": "rage.vehicle.create_vehicle(${1:modelHash}, ${2:x}, ${3:y}, ${4:z}, ${5:heading}, ${6:isNetwork}, ${7:bScriptHostVeh}, ${8:p7})",
+        "description": "Creates a vehicle."
+    },
+    "rage.vehicle.does_extra_exist": {
+        "scope": "lua",
+        "prefix": "does_extra_exist",
+        "body": "rage.vehicle.does_extra_exist(${1:vehicle}, ${2:extraId})",
+        "description": ".. note::"
+    },
+    "rage.vehicle.explode_vehicle": {
+        "scope": "lua",
+        "prefix": "explode_vehicle",
+        "body": "rage.vehicle.explode_vehicle(${1:vehicle}, ${2:isAudible}, ${3:isInvisible})",
+        "description": "Explode a vehicle"
+    },
+    "rage.vehicle.get_all_vehicles": {
+        "scope": "lua",
+        "prefix": "get_all_vehicles",
+        "body": "rage.vehicle.get_all_vehicles(${1:})",
+        "description": ".. note::"
+    },
+    "rage.vehicle.get_convertible_roof_state": {
+        "scope": "lua",
+        "prefix": "get_convertible_roof_state",
+        "body": "rage.vehicle.get_convertible_roof_state(${1:vehicle})",
+        "description": "Returns the state of the vehicle's convertible roof."
+    },
+    "rage.vehicle.get_landing_gear_state": {
+        "scope": "lua",
+        "prefix": "get_landing_gear_state",
+        "body": "rage.vehicle.get_landing_gear_state(${1:vehicle})",
+        "description": "Returns the state of the vehicle's landing gear."
+    },
+    "rage.vehicle.get_livery_name": {
+        "scope": "lua",
+        "prefix": "get_livery_name",
+        "body": "rage.vehicle.get_livery_name(${1:vehicle}, ${2:liveryIndex})",
+        "description": "Returns vehicle livery name"
+    },
+    "rage.vehicle.get_mod_slot_name": {
+        "scope": "lua",
+        "prefix": "get_mod_slot_name",
+        "body": "rage.vehicle.get_mod_slot_name(${1:vehicle}, ${2:modType})",
+        "description": "Returns the name for the type of vehicle mod(Armour, engine etc)"
+    },
+    "rage.vehicle.get_mod_text_label": {
+        "scope": "lua",
+        "prefix": "get_mod_text_label",
+        "body": "rage.vehicle.get_mod_text_label(${1:vehicle}, ${2:modType}, ${3:modValue})",
+        "description": "Returns the label name for the type of vehicle mod(Armour, engine etc)"
+    },
+    "rage.vehicle.get_num_vehicle_mods": {
+        "scope": "lua",
+        "prefix": "get_num_vehicle_mods",
+        "body": "rage.vehicle.get_num_vehicle_mods(${1:vehicle}, ${2:modType})",
+        "description": "Returns the number of possible mod variations for the type of vehicle mod(Armour, engine etc)"
+    },
+    "rage.vehicle.get_ped_in_vehicle_seat": {
+        "scope": "lua",
+        "prefix": "get_ped_in_vehicle_seat",
+        "body": "rage.vehicle.get_ped_in_vehicle_seat(${1:vehicle}, ${2:seat}, ${3:p2})",
+        "description": "Returns the Ped handle of the ped in the specified vehicle seat."
+    },
+    "rage.vehicle.get_vehicle_class": {
+        "scope": "lua",
+        "prefix": "get_vehicle_class",
+        "body": "rage.vehicle.get_vehicle_class(${1:vehicle})",
+        "description": "Returns the class of the vehicle."
+    },
+    "rage.vehicle.get_vehicle_custom_primary_colour": {
+        "scope": "lua",
+        "prefix": "get_vehicle_custom_primary_colour",
+        "body": "rage.vehicle.get_vehicle_custom_primary_colour(${1:vehicle})",
+        "description": "Returns the custom primary colour of the vehicle."
+    },
+    "rage.vehicle.get_vehicle_custom_secondary_colour": {
+        "scope": "lua",
+        "prefix": "get_vehicle_custom_secondary_colour",
+        "body": "rage.vehicle.get_vehicle_custom_secondary_colour(${1:vehicle})",
+        "description": "Returns the custom secondary colour of the vehicle."
+    },
+    "rage.vehicle.get_vehicle_doors_locked_for_player": {
+        "scope": "lua",
+        "prefix": "get_vehicle_doors_locked_for_player",
+        "body": "rage.vehicle.get_vehicle_doors_locked_for_player(${1:vehicle}, ${2:player})",
+        "description": "Returns whether the vehicle doors are locked for the specified player."
+    },
+    "rage.vehicle.get_vehicle_estimated_max_speed": {
+        "scope": "lua",
+        "prefix": "get_vehicle_estimated_max_speed",
+        "body": "rage.vehicle.get_vehicle_estimated_max_speed(${1:vehicle})",
+        "description": "Returns max vehicle speed"
+    },
+    "rage.vehicle.get_vehicle_livery": {
+        "scope": "lua",
+        "prefix": "get_vehicle_livery",
+        "body": "rage.vehicle.get_vehicle_livery(${1:vehicle})",
+        "description": "Returns the livery index of the vehicle."
+    },
+    "rage.vehicle.get_vehicle_livery_count": {
+        "scope": "lua",
+        "prefix": "get_vehicle_livery_count",
+        "body": "rage.vehicle.get_vehicle_livery_count(${1:vehicle})",
+        "description": "Returns the number of livery variations for the vehicle."
+    },
+    "rage.vehicle.get_vehicle_max_number_of_passengers": {
+        "scope": "lua",
+        "prefix": "get_vehicle_max_number_of_passengers",
+        "body": "rage.vehicle.get_vehicle_max_number_of_passengers(${1:vehicle})",
+        "description": "Returns the maximum number of passengers for the vehicle."
+    },
+    "rage.vehicle.get_vehicle_mod": {
+        "scope": "lua",
+        "prefix": "get_vehicle_mod",
+        "body": "rage.vehicle.get_vehicle_mod(${1:vehicle}, ${2:modType})",
+        "description": "Returns the vehicle mod variation ID"
+    },
+    "rage.vehicle.get_vehicle_model_number_of_seats": {
+        "scope": "lua",
+        "prefix": "get_vehicle_model_number_of_seats",
+        "body": "rage.vehicle.get_vehicle_model_number_of_seats(${1:modelHash})",
+        "description": "Returns the number of seats for the specified vehicle model."
+    },
+    "rage.vehicle.get_vehicle_number_of_passengers": {
+        "scope": "lua",
+        "prefix": "get_vehicle_number_of_passengers",
+        "body": "rage.vehicle.get_vehicle_number_of_passengers(${1:vehicle})",
+        "description": "Returns the number of passengers for the vehicle, not including the driver."
+    },
+    "rage.vehicle.get_vehicle_number_plate_text": {
+        "scope": "lua",
+        "prefix": "get_vehicle_number_plate_text",
+        "body": "rage.vehicle.get_vehicle_number_plate_text(${1:vehicle})",
+        "description": "Returns the number plate text of the vehicle."
+    },
+    "rage.vehicle.get_vehicle_roof_livery_count": {
+        "scope": "lua",
+        "prefix": "get_vehicle_roof_livery_count",
+        "body": "rage.vehicle.get_vehicle_roof_livery_count(${1:vehicle})",
+        "description": "Returns a number of available rooftop liveries"
+    },
+    "rage.vehicle.get_vehicle_wheel_type": {
+        "scope": "lua",
+        "prefix": "get_vehicle_wheel_type",
+        "body": "rage.vehicle.get_vehicle_wheel_type(${1:vehicle})",
+        "description": "Returns the wheel type of the vehicle."
+    },
+    "rage.vehicle.get_vehicle_window_tint": {
+        "scope": "lua",
+        "prefix": "get_vehicle_window_tint",
+        "body": "rage.vehicle.get_vehicle_window_tint(${1:vehicle})",
+        "description": "Returns the window tint color of the vehicle."
+    },
+    "rage.vehicle.is_taxi_light_on": {
+        "scope": "lua",
+        "prefix": "is_taxi_light_on",
+        "body": "rage.vehicle.is_taxi_light_on(${1:vehicle})",
+        "description": "Checks whether the taxi light is on."
+    },
+    "rage.vehicle.is_toggle_mod_on": {
+        "scope": "lua",
+        "prefix": "is_toggle_mod_on",
+        "body": "rage.vehicle.is_toggle_mod_on(${1:vehicle}, ${2:modType})",
+        "description": "Checks whether the vehicle mod is turned on (xenon, for example)"
+    },
+    "rage.vehicle.is_vehicle_a_convertible": {
+        "scope": "lua",
+        "prefix": "is_vehicle_a_convertible",
+        "body": "rage.vehicle.is_vehicle_a_convertible(${1:vehicle}, ${2:p1})",
+        "description": "Checks whether the vehicle is a convertible."
+    },
+    "rage.vehicle.get_is_vehicle_engine_running": {
+        "scope": "lua",
+        "prefix": "get_is_vehicle_engine_running",
+        "body": "rage.vehicle.get_is_vehicle_engine_running(${1:vehicle})",
+        "description": "Checks whether the vehicle engine is running."
+    },
+    "rage.vehicle.is_vehicle_extra_turned_on": {
+        "scope": "lua",
+        "prefix": "is_vehicle_extra_turned_on",
+        "body": "rage.vehicle.is_vehicle_extra_turned_on(${1:vehicle}, ${2:extraId})",
+        "description": ".. note::"
+    },
+    "rage.vehicle.is_vehicle_model": {
+        "scope": "lua",
+        "prefix": "is_vehicle_model",
+        "body": "rage.vehicle.is_vehicle_model(${1:vehicle}, ${2:model})",
+        "description": "Checks whether the model specified is a vehicle model."
+    },
+    "rage.vehicle.is_vehicle_neon_light_enabled": {
+        "scope": "lua",
+        "prefix": "is_vehicle_neon_light_enabled",
+        "body": "rage.vehicle.is_vehicle_neon_light_enabled(${1:vehicle}, ${2:index})",
+        "description": "Checks whether the neon light is enabled on the specified vehicle and side."
+    },
+    "rage.vehicle.is_vehicle_on_all_wheels": {
+        "scope": "lua",
+        "prefix": "is_vehicle_on_all_wheels",
+        "body": "rage.vehicle.is_vehicle_on_all_wheels(${1:vehicle})",
+        "description": "Checks whether the vehicle is on all wheels."
+    },
+    "rage.vehicle.get_is_vehicle_primary_colour_custom": {
+        "scope": "lua",
+        "prefix": "get_is_vehicle_primary_colour_custom",
+        "body": "rage.vehicle.get_is_vehicle_primary_colour_custom(${1:vehicle})",
+        "description": ".. note::"
+    },
+    "rage.vehicle.is_vehicle_rocket_boost_active": {
+        "scope": "lua",
+        "prefix": "is_vehicle_rocket_boost_active",
+        "body": "rage.vehicle.is_vehicle_rocket_boost_active(${1:vehicle})",
+        "description": "Checks whether the vehicle rocket boost is active."
+    },
+    "rage.vehicle.get_is_vehicle_secondary_colour_custom": {
+        "scope": "lua",
+        "prefix": "get_is_vehicle_secondary_colour_custom",
+        "body": "rage.vehicle.get_is_vehicle_secondary_colour_custom(${1:vehicle})",
+        "description": ".. note::"
+    },
+    "rage.vehicle.is_vehicle_stopped": {
+        "scope": "lua",
+        "prefix": "is_vehicle_stopped",
+        "body": "rage.vehicle.is_vehicle_stopped(${1:vehicle})",
+        "description": "Checks whether the vehicle is stopped, not moving."
+    },
+    "rage.vehicle.is_vehicle_stuck_on_roof": {
+        "scope": "lua",
+        "prefix": "is_vehicle_stuck_on_roof",
+        "body": "rage.vehicle.is_vehicle_stuck_on_roof(${1:vehicle})",
+        "description": "Checks whether the vehicle is stuck on the roof, upside down."
+    },
+    "rage.vehicle.modify_vehicle_top_speed": {
+        "scope": "lua",
+        "prefix": "modify_vehicle_top_speed",
+        "body": "rage.vehicle.modify_vehicle_top_speed(${1:vehicle}, ${2:value})",
+        "description": "Changes the top speed of the vehicle."
+    },
+    "rage.vehicle.set_ambient_vehicle_range_multiplier_this_frame": {
+        "scope": "lua",
+        "prefix": "set_ambient_vehicle_range_multiplier_this_frame",
+        "body": "rage.vehicle.set_ambient_vehicle_range_multiplier_this_frame(${1:value})",
+        "description": "Sets the density on vehicles that are pulling out of driveways and parking spots, crossroads too."
+    },
+    "rage.vehicle.set_convertible_roof": {
+        "scope": "lua",
+        "prefix": "set_convertible_roof",
+        "body": "rage.vehicle.set_convertible_roof(${1:vehicle}, ${2:p1})",
+        "description": "Extend or retract the roof of a convertible vehicle."
+    },
+    "rage.vehicle.set_heli_blades_full_speed": {
+        "scope": "lua",
+        "prefix": "set_heli_blades_full_speed",
+        "body": "rage.vehicle.set_heli_blades_full_speed(${1:vehicle})",
+        "description": "Sets the helicopter blades to full speed."
+    },
+    "rage.vehicle.set_heli_blades_speed": {
+        "scope": "lua",
+        "prefix": "set_heli_blades_speed",
+        "body": "rage.vehicle.set_heli_blades_speed(${1:vehicle}, ${2:speed})",
+        "description": "Sets the helicopter blades speed."
+    },
+    "rage.vehicle.set_parked_vehicle_density_multiplier_this_frame": {
+        "scope": "lua",
+        "prefix": "set_parked_vehicle_density_multiplier_this_frame",
+        "body": "rage.vehicle.set_parked_vehicle_density_multiplier_this_frame(${1:multiplier})",
+        "description": "Sets the density for parked vehicles."
+    },
+    "rage.vehicle.set_random_vehicle_density_multiplier_this_frame": {
+        "scope": "lua",
+        "prefix": "set_random_vehicle_density_multiplier_this_frame",
+        "body": "rage.vehicle.set_random_vehicle_density_multiplier_this_frame(${1:multiplier})",
+        "description": "Sets the density for random vehicles on the streets."
+    },
+    "rage.vehicle.set_taxi_lights": {
+        "scope": "lua",
+        "prefix": "set_taxi_lights",
+        "body": "rage.vehicle.set_taxi_lights(${1:vehicle}, ${2:state})",
+        "description": "Sets the taxi lights for a vehicle."
+    },
+    "rage.vehicle.set_vehicle_brake_lights": {
+        "scope": "lua",
+        "prefix": "set_vehicle_brake_lights",
+        "body": "rage.vehicle.set_vehicle_brake_lights(${1:vehicle}, ${2:toggle})",
+        "description": "Sets the brake lights for a vehicle."
+    },
+    "rage.vehicle.set_vehicle_can_be_locked_on": {
+        "scope": "lua",
+        "prefix": "set_vehicle_can_be_locked_on",
+        "body": "rage.vehicle.set_vehicle_can_be_locked_on(${1:vehicle}, ${2:canBeLockedOn}, ${3:unk})",
+        "description": "Sets whether a vehicle can be locked on."
+    },
+    "rage.vehicle.set_vehicle_can_be_visibly_damaged": {
+        "scope": "lua",
+        "prefix": "set_vehicle_can_be_visibly_damaged",
+        "body": "rage.vehicle.set_vehicle_can_be_visibly_damaged(${1:vehicle}, ${2:state})",
+        "description": "Sets whether the vehicle can be visibly damaged"
+    },
+    "rage.vehicle.set_vehicle_custom_primary_colour": {
+        "scope": "lua",
+        "prefix": "set_vehicle_custom_primary_colour",
+        "body": "rage.vehicle.set_vehicle_custom_primary_colour(${1:vehicle}, ${2:r}, ${3:g}, ${4:b})",
+        "description": "Sets the primary custom colour for a vehicle."
+    },
+    "rage.vehicle.set_vehicle_custom_secondary_colour": {
+        "scope": "lua",
+        "prefix": "set_vehicle_custom_secondary_colour",
+        "body": "rage.vehicle.set_vehicle_custom_secondary_colour(${1:vehicle}, ${2:r}, ${3:g}, ${4:b})",
+        "description": "Sets the secondary custom colour for a vehicle."
+    },
+    "rage.vehicle.set_vehicle_deformation_fixed": {
+        "scope": "lua",
+        "prefix": "set_vehicle_deformation_fixed",
+        "body": "rage.vehicle.set_vehicle_deformation_fixed(${1:vehicle})",
+        "description": "Sets the vehicle deformation to 0."
+    },
+    "rage.vehicle.set_vehicle_door_open": {
+        "scope": "lua",
+        "prefix": "set_vehicle_door_open",
+        "body": "rage.vehicle.set_vehicle_door_open(${1:vehicle}, ${2:door}, ${3:loose}, ${4:openInstantly})",
+        "description": "Sets a vehicle door to open."
+    },
+    "rage.vehicle.set_vehicle_doors_locked": {
+        "scope": "lua",
+        "prefix": "set_vehicle_doors_locked",
+        "body": "rage.vehicle.set_vehicle_doors_locked(${1:vehicle}, ${2:doorLockStatus})",
+        "description": "Sets the vehicle doors lock to a certain state."
+    },
+    "rage.vehicle.set_vehicle_doors_locked_for_all_players": {
+        "scope": "lua",
+        "prefix": "set_vehicle_doors_locked_for_all_players",
+        "body": "rage.vehicle.set_vehicle_doors_locked_for_all_players(${1:vehicle}, ${2:toggle})",
+        "description": "Sets whether the vehicle doors are locked for all players."
+    },
+    "rage.vehicle.set_vehicle_doors_locked_for_non_script_players": {
+        "scope": "lua",
+        "prefix": "set_vehicle_doors_locked_for_non_script_players",
+        "body": "rage.vehicle.set_vehicle_doors_locked_for_non_script_players(${1:vehicle}, ${2:toggle})",
+        "description": "Sets whether the vehicle doors are locked for non-script players."
+    },
+    "rage.vehicle.set_vehicle_doors_locked_for_player": {
+        "scope": "lua",
+        "prefix": "set_vehicle_doors_locked_for_player",
+        "body": "rage.vehicle.set_vehicle_doors_locked_for_player(${1:vehicle}, ${2:player}, ${3:toggle})",
+        "description": "Lokcs or unlocks the vehicle doors for a certain player."
+    },
+    "rage.vehicle.set_vehicle_doors_locked_for_team": {
+        "scope": "lua",
+        "prefix": "set_vehicle_doors_locked_for_team",
+        "body": "rage.vehicle.set_vehicle_doors_locked_for_team(${1:vehicle}, ${2:team}, ${3:toggle})",
+        "description": "Locks or unlocks the vehicle doors for a certain team."
+    },
+    "rage.vehicle.set_vehicle_doors_shut": {
+        "scope": "lua",
+        "prefix": "set_vehicle_doors_shut",
+        "body": "rage.vehicle.set_vehicle_doors_shut(${1:vehicle}, ${2:closeInstantly})",
+        "description": "Closes all vehicle doors."
+    },
+    "rage.vehicle.set_vehicle_engine_health": {
+        "scope": "lua",
+        "prefix": "set_vehicle_engine_health",
+        "body": "rage.vehicle.set_vehicle_engine_health(${1:vehicle}, ${2:health})",
+        "description": "Sets the vehicle engine health."
+    },
+    "rage.vehicle.set_vehicle_engine_on": {
+        "scope": "lua",
+        "prefix": "set_vehicle_engine_on",
+        "body": "rage.vehicle.set_vehicle_engine_on(${1:vehicle}, ${2:value}, ${3:instantly}, ${4:disableAutoStart})",
+        "description": "Sets the vehicle engine is on."
+    },
+    "rage.vehicle.set_vehicle_extra": {
+        "scope": "lua",
+        "prefix": "set_vehicle_extra",
+        "body": "rage.vehicle.set_vehicle_extra(${1:vehicle}, ${2:extraId}, ${3:disable})",
+        "description": ".. note:: "
+    },
+    "rage.vehicle.set_vehicle_fixed": {
+        "scope": "lua",
+        "prefix": "set_vehicle_fixed",
+        "body": "rage.vehicle.set_vehicle_fixed(${1:vehicle})",
+        "description": "Repairs the vehicle."
+    },
+    "rage.vehicle.set_vehicle_forward_speed": {
+        "scope": "lua",
+        "prefix": "set_vehicle_forward_speed",
+        "body": "rage.vehicle.set_vehicle_forward_speed(${1:vehicle}, ${2:speed})",
+        "description": "Sets the vehicle forward speed (boost)."
+    },
+    "rage.vehicle.set_vehicle_fullbeam": {
+        "scope": "lua",
+        "prefix": "set_vehicle_fullbeam",
+        "body": "rage.vehicle.set_vehicle_fullbeam(${1:vehicle}, ${2:toggle})",
+        "description": "Switches the vehicle's lights to fullbeam."
+    },
+    "rage.vehicle.set_vehicle_has_been_owned_by_player": {
+        "scope": "lua",
+        "prefix": "set_vehicle_has_been_owned_by_player",
+        "body": "rage.vehicle.set_vehicle_has_been_owned_by_player(${1:vehicle}, ${2:owned})",
+        "description": "Sets the vehicle as owned by the played"
+    },
+    "rage.vehicle.set_vehicle_indicator_lights": {
+        "scope": "lua",
+        "prefix": "set_vehicle_indicator_lights",
+        "body": "rage.vehicle.set_vehicle_indicator_lights(${1:vehicle}, ${2:turnSignal}, ${3:toggle})",
+        "description": "Sets vehicle's indicator lights on/off"
+    },
+    "rage.vehicle.set_vehicle_livery": {
+        "scope": "lua",
+        "prefix": "set_vehicle_livery",
+        "body": "rage.vehicle.set_vehicle_livery(${1:vehicle}, ${2:livery})",
+        "description": "Sets the vehicle livery."
+    },
+    "rage.vehicle.set_vehicle_mod": {
+        "scope": "lua",
+        "prefix": "set_vehicle_mod",
+        "body": "rage.vehicle.set_vehicle_mod(${1:vehicle}, ${2:modType}, ${3:modIndex}, ${4:customTires})",
+        "description": "Modifies the vehicle."
+    },
+    "rage.vehicle.set_vehicle_neon_light_enabled": {
+        "scope": "lua",
+        "prefix": "set_vehicle_neon_light_enabled",
+        "body": "rage.vehicle.set_vehicle_neon_light_enabled(${1:vehicle}, ${2:index}, ${3:toggle})",
+        "description": "Toggles neon light on/off"
+    },
+    "rage.vehicle.set_vehicle_number_plate_text": {
+        "scope": "lua",
+        "prefix": "set_vehicle_number_plate_text",
+        "body": "rage.vehicle.set_vehicle_number_plate_text(${1:vehicle}, ${2:plateText})",
+        "description": "Sets the vehicle number plate text."
+    },
+    "rage.vehicle.set_vehicle_on_ground_properly": {
+        "scope": "lua",
+        "prefix": "set_vehicle_on_ground_properly",
+        "body": "rage.vehicle.set_vehicle_on_ground_properly(${1:vehicle}, ${2:p1})",
+        "description": "Sets a vehicle on the ground on all wheels."
+    },
+    "rage.vehicle.set_vehicle_out_of_control": {
+        "scope": "lua",
+        "prefix": "set_vehicle_out_of_control",
+        "body": "rage.vehicle.set_vehicle_out_of_control(${1:vehicle}, ${2:killDriver}, ${3:explodeOnImpact})",
+        "description": "Sets the vehicle out of control."
+    },
+    "rage.vehicle.set_vehicle_parachute_active": {
+        "scope": "lua",
+        "prefix": "set_vehicle_parachute_active",
+        "body": "rage.vehicle.set_vehicle_parachute_active(${1:vehicle}, ${2:active})",
+        "description": "Sets the vehicle's parachute active. Ruiner 2000 is the only vehicle with the parachute."
+    },
+    "rage.vehicle.set_vehicle_parachute_model": {
+        "scope": "lua",
+        "prefix": "set_vehicle_parachute_model",
+        "body": "rage.vehicle.set_vehicle_parachute_model(${1:vehicle}, ${2:modelHash})",
+        "description": "Sets parachute model for a vehicle"
+    },
+    "rage.vehicle.set_vehicle_reduce_grip": {
+        "scope": "lua",
+        "prefix": "set_vehicle_reduce_grip",
+        "body": "rage.vehicle.set_vehicle_reduce_grip(${1:vehicle}, ${2:toggle})",
+        "description": "Sets the vehicle's grip to be significantly reduced."
+    },
+    "rage.vehicle.set_vehicle_rocket_boost_active": {
+        "scope": "lua",
+        "prefix": "set_vehicle_rocket_boost_active",
+        "body": "rage.vehicle.set_vehicle_rocket_boost_active(${1:vehicle}, ${2:active})",
+        "description": "Sets the vehicle's rocket boost active."
+    },
+    "rage.vehicle.set_vehicle_rocket_boost_percentage": {
+        "scope": "lua",
+        "prefix": "set_vehicle_rocket_boost_percentage",
+        "body": "rage.vehicle.set_vehicle_rocket_boost_percentage(${1:vehicle}, ${2:percentage})",
+        "description": "Sets the vehicle's rocket boost fill percentage."
+    },
+    "rage.vehicle.set_vehicle_rocket_boost_refill_time": {
+        "scope": "lua",
+        "prefix": "set_vehicle_rocket_boost_refill_time",
+        "body": "rage.vehicle.set_vehicle_rocket_boost_refill_time(${1:vehicle}, ${2:seconds})",
+        "description": "Sets the vehicle's rocket boost refill time."
+    },
+    "rage.vehicle.set_vehicle_steer_bias": {
+        "scope": "lua",
+        "prefix": "set_vehicle_steer_bias",
+        "body": "rage.vehicle.set_vehicle_steer_bias(${1:vehicle}, ${2:value})",
+        "description": "Locks the vehicle's steering to the desired angle."
+    },
+    "rage.vehicle.set_vehicle_timed_explosion": {
+        "scope": "lua",
+        "prefix": "set_vehicle_timed_explosion",
+        "body": "rage.vehicle.set_vehicle_timed_explosion(${1:vehicle}, ${2:ped}, ${3:toggle})",
+        "description": "Sets a timed explosion for a vehicle"
+    },
+    "rage.vehicle.set_vehicle_undriveable": {
+        "scope": "lua",
+        "prefix": "set_vehicle_undriveable",
+        "body": "rage.vehicle.set_vehicle_undriveable(${1:vehicle}, ${2:toggle})",
+        "description": "Sets a vehicle as undriveable."
+    },
+    "rage.vehicle.set_vehicle_wheel_type": {
+        "scope": "lua",
+        "prefix": "set_vehicle_wheel_type",
+        "body": "rage.vehicle.set_vehicle_wheel_type(${1:vehicle}, ${2:wheelType})",
+        "description": "Sets the vehicle's wheel type."
+    },
+    "rage.vehicle.set_vehicle_window_tint": {
+        "scope": "lua",
+        "prefix": "set_vehicle_window_tint",
+        "body": "rage.vehicle.set_vehicle_window_tint(${1:vehicle}, ${2:tint})",
+        "description": "Sets the vehicle's window tint."
+    },
+    "rage.vehicle.start_vehicle_horn": {
+        "scope": "lua",
+        "prefix": "start_vehicle_horn",
+        "body": "rage.vehicle.start_vehicle_horn(${1:vehicle}, ${2:duration}, ${3:mode}, ${4:forever})",
+        "description": "Sounds the horn for the specified vehicle.  "
+    },
+    "rage.vehicle.toggle_vehicle_mod": {
+        "scope": "lua",
+        "prefix": "toggle_vehicle_mod",
+        "body": "rage.vehicle.toggle_vehicle_mod(${1:vehicle}, ${2:modType}, ${3:toggle})",
+        "description": "Toggles a vehicle mod on/off."
+    },
+    "rage.entity.apply_force_to_entity": {
+        "scope": "lua",
+        "prefix": "apply_force_to_entity",
+        "body": "rage.entity.apply_force_to_entity(${1:entity}, ${2:forceFlags}, ${3:x}, ${4:y}, ${5:z}, ${6:offX}, ${7:offY}, ${8:offZ}, ${9:boneIndex}, ${10:isDirectionRel}, ${11:ignoreUpVec}, ${12:isForceRel}, ${13:p12}, ${14:p13})",
+        "description": "Applies a force to the specified entity."
+    },
+    "rage.entity.attach_entity_to_entity": {
+        "scope": "lua",
+        "prefix": "attach_entity_to_entity",
+        "body": "rage.entity.attach_entity_to_entity(${1:entity1}, ${2:entity2}, ${3:boneIndex}, ${4:xPos}, ${5:yPos}, ${6:zPos}, ${7:xRot}, ${8:yRot}, ${9:zRot}, ${10:p9}, ${11:useSoftPinning}, ${12:collision}, ${13:isPed}, ${14:vertexIndex}, ${15:fixedRot})",
+        "description": "Attach an entity to the specified entity."
+    },
+    "rage.entity.delete_entity": {
+        "scope": "lua",
+        "prefix": "delete_entity",
+        "body": "rage.entity.delete_entity(${1:entity})",
+        "description": "Deletes a specified entity."
+    },
+    "rage.entity.detach_entity": {
+        "scope": "lua",
+        "prefix": "detach_entity",
+        "body": "rage.entity.detach_entity(${1:entity}, ${2:dynamic}, ${3:collision})",
+        "description": "Detaches a specified entity, with toggable options."
+    },
+    "rage.entity.does_entity_have_drawable": {
+        "scope": "lua",
+        "prefix": "does_entity_have_drawable",
+        "body": "rage.entity.does_entity_have_drawable(${1:entity})",
+        "description": "Checks whether an entity has a drawable (weapon?)."
+    },
+    "rage.entity.does_entity_have_physics": {
+        "scope": "lua",
+        "prefix": "does_entity_have_physics",
+        "body": "rage.entity.does_entity_have_physics(${1:entity})",
+        "description": "Checks whether an entity has physics enabled."
+    },
+    "rage.entity.freeze_entity_position": {
+        "scope": "lua",
+        "prefix": "freeze_entity_position",
+        "body": "rage.entity.freeze_entity_position(${1:entity}, ${2:toggle})",
+        "description": "Toggles freeze entity position."
+    },
+    "rage.entity.get_entity_attached_to": {
+        "scope": "lua",
+        "prefix": "get_entity_attached_to",
+        "body": "rage.entity.get_entity_attached_to(${1:entity})",
+        "description": "Returns the entity that this entity is attached to."
+    },
+    "rage.entity.get_entity_bone_index_by_name": {
+        "scope": "lua",
+        "prefix": "get_entity_bone_index_by_name",
+        "body": "rage.entity.get_entity_bone_index_by_name(${1:entity}, ${2:boneName})",
+        "description": "Returns the entity bone ID by name."
+    },
+    "rage.entity.get_entity_coords": {
+        "scope": "lua",
+        "prefix": "get_entity_coords",
+        "body": "rage.entity.get_entity_coords(${1:entity}, ${2:alive})",
+        "description": "Returns the current coordinates for a specified entity."
+    },
+    "rage.entity.get_entity_forward_vector": {
+        "scope": "lua",
+        "prefix": "get_entity_forward_vector",
+        "body": "rage.entity.get_entity_forward_vector(${1:entity})",
+        "description": "Returns the entity's forward vector."
+    },
+    "rage.entity.get_entity_heading": {
+        "scope": "lua",
+        "prefix": "get_entity_heading",
+        "body": "rage.entity.get_entity_heading(${1:entity})",
+        "description": "Returns the entity's heading."
+    },
+    "rage.entity.get_entity_physics_heading": {
+        "scope": "lua",
+        "prefix": "get_entity_physics_heading",
+        "body": "rage.entity.get_entity_physics_heading(${1:entity})",
+        "description": "Returns the entity's physics heading."
+    },
+    "rage.entity.get_entity_pitch": {
+        "scope": "lua",
+        "prefix": "get_entity_pitch",
+        "body": "rage.entity.get_entity_pitch(${1:entity})",
+        "description": "Returns the entity's pitch."
+    },
+    "rage.entity.get_entity_population_type": {
+        "scope": "lua",
+        "prefix": "get_entity_population_type",
+        "body": "rage.entity.get_entity_population_type(${1:entity})",
+        "description": "Returns the entity's population type."
+    },
+    "rage.entity.get_entity_roll": {
+        "scope": "lua",
+        "prefix": "get_entity_roll",
+        "body": "rage.entity.get_entity_roll(${1:entity})",
+        "description": "Returns the entity's roll."
+    },
+    "rage.entity.get_entity_rotation": {
+        "scope": "lua",
+        "prefix": "get_entity_rotation",
+        "body": "rage.entity.get_entity_rotation(${1:entity}, ${2:rotationOrder})",
+        "description": "Returns the entity rotation."
+    },
+    "rage.entity.get_entity_rotation_velocity": {
+        "scope": "lua",
+        "prefix": "get_entity_rotation_velocity",
+        "body": "rage.entity.get_entity_rotation_velocity(${1:entity})",
+        "description": "Returns the entity rotation velocity."
+    },
+    "rage.entity.get_entity_speed": {
+        "scope": "lua",
+        "prefix": "get_entity_speed",
+        "body": "rage.entity.get_entity_speed(${1:entity})",
+        "description": "Returns the entity's speed."
+    },
+    "rage.entity.get_entity_submerged_level": {
+        "scope": "lua",
+        "prefix": "get_entity_submerged_level",
+        "body": "rage.entity.get_entity_submerged_level(${1:entity})",
+        "description": "Returns the entity's submerged level."
+    },
+    "rage.entity.get_entity_type": {
+        "scope": "lua",
+        "prefix": "get_entity_type",
+        "body": "rage.entity.get_entity_type(${1:entity})",
+        "description": "Returns the entity type."
+    },
+    "rage.entity.get_entity_velocity": {
+        "scope": "lua",
+        "prefix": "get_entity_velocity",
+        "body": "rage.entity.get_entity_velocity(${1:entity})",
+        "description": "Returns the entity velocity."
+    },
+    "rage.entity.has_entity_been_damaged_by_any_object": {
+        "scope": "lua",
+        "prefix": "has_entity_been_damaged_by_any_object",
+        "body": "rage.entity.has_entity_been_damaged_by_any_object(${1:entity})",
+        "description": "Checks whether an entity has been damaged by any object."
+    },
+    "rage.entity.has_entity_been_damaged_by_any_ped": {
+        "scope": "lua",
+        "prefix": "has_entity_been_damaged_by_any_ped",
+        "body": "rage.entity.has_entity_been_damaged_by_any_ped(${1:entity})",
+        "description": "Checks whether an entity has been damaged by any ped."
+    },
+    "rage.entity.has_entity_been_damaged_by_any_vehicle": {
+        "scope": "lua",
+        "prefix": "has_entity_been_damaged_by_any_vehicle",
+        "body": "rage.entity.has_entity_been_damaged_by_any_vehicle(${1:entity})",
+        "description": "Checks whether an entity has been damaged by any vehicle."
+    },
+    "rage.entity.has_entity_been_damaged_by_entity": {
+        "scope": "lua",
+        "prefix": "has_entity_been_damaged_by_entity",
+        "body": "rage.entity.has_entity_been_damaged_by_entity(${1:entity})",
+        "description": "Checks whether an entity has been damaged by another entity."
+    },
+    "rage.entity.has_entity_collided_with_anything": {
+        "scope": "lua",
+        "prefix": "has_entity_collided_with_anything",
+        "body": "rage.entity.has_entity_collided_with_anything(${1:entity})",
+        "description": "Checks whether an entity has collided with anything."
+    },
+    "rage.entity.is_an_entity": {
+        "scope": "lua",
+        "prefix": "is_an_entity",
+        "body": "rage.entity.is_an_entity(${1:handle})",
+        "description": "Checks whether an ScrHandle is an entity."
+    },
+    "rage.entity.is_entity_a_ped": {
+        "scope": "lua",
+        "prefix": "is_entity_a_ped",
+        "body": "rage.entity.is_entity_a_ped(${1:entity})",
+        "description": "Checks whether an entity is a ped."
+    },
+    "rage.entity.is_entity_a_vehicle": {
+        "scope": "lua",
+        "prefix": "is_entity_a_vehicle",
+        "body": "rage.entity.is_entity_a_vehicle(${1:entity})",
+        "description": "Checks whether an entity is a vehicle."
+    },
+    "rage.entity.is_entity_an_object": {
+        "scope": "lua",
+        "prefix": "is_entity_an_object",
+        "body": "rage.entity.is_entity_an_object(${1:entity})",
+        "description": "Checks whether an entity is an object."
+    },
+    "rage.entity.is_entity_attached": {
+        "scope": "lua",
+        "prefix": "is_entity_attached",
+        "body": "rage.entity.is_entity_attached(${1:entity})",
+        "description": "Checks whether an entity is attached to anything."
+    },
+    "rage.entity.is_entity_dead": {
+        "scope": "lua",
+        "prefix": "is_entity_dead",
+        "body": "rage.entity.is_entity_dead(${1:entity}, ${2:p1})",
+        "description": "Checks whether an entity is dead."
+    },
+    "rage.entity.is_entity_in_air": {
+        "scope": "lua",
+        "prefix": "is_entity_in_air",
+        "body": "rage.entity.is_entity_in_air(${1:entity})",
+        "description": "Checks whether an entity is in air."
+    },
+    "rage.entity.is_entity_in_water": {
+        "scope": "lua",
+        "prefix": "is_entity_in_water",
+        "body": "rage.entity.is_entity_in_water(${1:entity})",
+        "description": "Checks whether an entity is in water."
+    },
+    "rage.entity.is_entity_in_zone": {
+        "scope": "lua",
+        "prefix": "is_entity_in_zone",
+        "body": "rage.entity.is_entity_in_zone(${1:entity}, ${2:zone})",
+        "description": "Checks whether an entity is in a specified zone"
+    },
+    "rage.entity.is_entity_on_fire": {
+        "scope": "lua",
+        "prefix": "is_entity_on_fire",
+        "body": "rage.entity.is_entity_on_fire(${1:entity})",
+        "description": "Checks whether an entity is on fire."
+    },
+    "rage.entity.is_entity_static": {
+        "scope": "lua",
+        "prefix": "is_entity_static",
+        "body": "rage.entity.is_entity_static(${1:entity})",
+        "description": "Checks whether an entity is static."
+    },
+    "rage.entity.is_entity_upright": {
+        "scope": "lua",
+        "prefix": "is_entity_upright",
+        "body": "rage.entity.is_entity_upright(${1:entity}, ${2:angle})",
+        "description": "Checks whether an entity is upright a specified angle."
+    },
+    "rage.entity.is_entity_visible": {
+        "scope": "lua",
+        "prefix": "is_entity_visible",
+        "body": "rage.entity.is_entity_visible(${1:entity})",
+        "description": "Checks whether an entity is visible."
+    },
+    "rage.entity.reset_entity_alpha": {
+        "scope": "lua",
+        "prefix": "reset_entity_alpha",
+        "body": "rage.entity.reset_entity_alpha(${1:entity})",
+        "description": "Resets given entity alpha."
+    },
+    "rage.entity.set_entity_alpha": {
+        "scope": "lua",
+        "prefix": "set_entity_alpha",
+        "body": "rage.entity.set_entity_alpha(${1:entity})",
+        "description": "Resets given entity alpha."
+    },
+    "rage.entity.set_entity_as_mission_entity": {
+        "scope": "lua",
+        "prefix": "set_entity_as_mission_entity",
+        "body": "rage.entity.set_entity_as_mission_entity(${1:entity}, ${2:p1}, ${3:p2})",
+        "description": "Makes the specified entity (ped, vehicle or object) persistent. Persistent entities will not automatically be removed by the engine."
+    },
+    "rage.entity.set_entity_as_no_longer_needed": {
+        "scope": "lua",
+        "prefix": "set_entity_as_no_longer_needed",
+        "body": "rage.entity.set_entity_as_no_longer_needed(${1:entity})",
+        "description": "Marks the specified entity (ped, vehicle or object) as no longer needed.  "
+    },
+    "rage.entity.set_entity_heading": {
+        "scope": "lua",
+        "prefix": "set_entity_heading",
+        "body": "rage.entity.set_entity_heading(${1:entity}, ${2:heading})",
+        "description": "Sets the heading of an entity in degrees also known as \"Yaw\"."
+    },
+    "rage.entity.set_entity_lights": {
+        "scope": "lua",
+        "prefix": "set_entity_lights",
+        "body": "rage.entity.set_entity_lights(${1:entity}, ${2:toggle})",
+        "description": "Toggles entity's lights on/off."
+    },
+    "rage.entity.set_entity_max_speed": {
+        "scope": "lua",
+        "prefix": "set_entity_max_speed",
+        "body": "rage.entity.set_entity_max_speed(${1:entity}, ${2:speed})",
+        "description": "Sets the entity's max speed."
+    },
+    "rage.entity.set_entity_no_collision_entity": {
+        "scope": "lua",
+        "prefix": "set_entity_no_collision_entity",
+        "body": "rage.entity.set_entity_no_collision_entity(${1:entity1}, ${2:entity1}, ${3:thisFrameOnly})",
+        "description": "Sets disabled collision between two entities."
+    },
+    "rage.entity.set_entity_rotation": {
+        "scope": "lua",
+        "prefix": "set_entity_rotation",
+        "body": "rage.entity.set_entity_rotation(${1:entity}, ${2:pitch}, ${3:roll}, ${4:yaw}, ${5:rotationOrder}, ${6:p5})",
+        "description": "Sets the entity's rotation with customizable options."
+    },
+    "rage.entity.set_entity_velocity": {
+        "scope": "lua",
+        "prefix": "set_entity_velocity",
+        "body": "rage.entity.set_entity_velocity(${1:entity}, ${2:x}, ${3:y}, ${4:z})",
+        "description": "Sets the entity velocity."
+    },
+    "rage.entity.set_entity_visible": {
+        "scope": "lua",
+        "prefix": "set_entity_visible",
+        "body": "rage.entity.set_entity_visible(${1:entity}, ${2:toggle}, ${3:unk})",
+        "description": "Toggles the visibility of a given entity."
+    },
+    "rage.object.create_object": {
+        "scope": "lua",
+        "prefix": "create_object",
+        "body": "rage.object.create_object(${1:modelHash}, ${2:x}, ${3:y}, ${4:z}, ${5:isNetwork}, ${6:bScriptHostObj}, ${7:dynamic})",
+        "description": "Creates an object (prop) with the specified model at the specified position."
+    },
+    "rage.weapon.get_max_ammo": {
+        "scope": "lua",
+        "prefix": "get_max_ammo",
+        "body": "rage.weapon.get_max_ammo(${1:ped}, ${2:weaponHash})",
+        "description": "Gets ped max ammo for a weapon."
+    },
+    "rage.weapon.get_ped_ammo_type_from_weapon": {
+        "scope": "lua",
+        "prefix": "get_ped_ammo_type_from_weapon",
+        "body": "rage.weapon.get_ped_ammo_type_from_weapon(${1:ped}, ${2:weaponHash})",
+        "description": "Gets ammo type from a specific weapon of a ped."
+    },
+    "rage.weapon.get_ped_weapon_tint_index": {
+        "scope": "lua",
+        "prefix": "get_ped_weapon_tint_index",
+        "body": "rage.weapon.get_ped_weapon_tint_index(${1:ped}, ${2:weaponHash})",
+        "description": "Gets weapon tint ID from a ped."
+    },
+    "rage.weapon.give_delayed_weapon_to_ped": {
+        "scope": "lua",
+        "prefix": "give_delayed_weapon_to_ped",
+        "body": "rage.weapon.give_delayed_weapon_to_ped(${1:ped}, ${2:weaponHash}, ${3:ammoCount}, ${4:bForceInHand})",
+        "description": "Gives a weapon to PED with a delay."
+    },
+    "rage.weapon.give_weapon_component_to_ped": {
+        "scope": "lua",
+        "prefix": "give_weapon_component_to_ped",
+        "body": "rage.weapon.give_weapon_component_to_ped(${1:ped}, ${2:weaponHash}, ${3:componentHash})",
+        "description": "Give a weapon component to a ped."
+    },
+    "rage.weapon.has_ped_got_weapon": {
+        "scope": "lua",
+        "prefix": "has_ped_got_weapon",
+        "body": "rage.weapon.has_ped_got_weapon(${1:ped}, ${2:weaponHash}, ${3:p2})",
+        "description": "Checks whether a ped has got a weapon."
+    },
+    "rage.weapon.has_ped_got_weapon_component": {
+        "scope": "lua",
+        "prefix": "has_ped_got_weapon_component",
+        "body": "rage.weapon.has_ped_got_weapon_component(${1:ped}, ${2:weaponHash}, ${3:componentHash})",
+        "description": "Checks whether a ped's weapon has got a component."
+    },
+    "rage.weapon.remove_all_ped_weapons": {
+        "scope": "lua",
+        "prefix": "remove_all_ped_weapons",
+        "body": "rage.weapon.remove_all_ped_weapons(${1:ped}, ${2:p1})",
+        "description": "Remove all ped's weapons."
+    },
+    "rage.weapon.remove_weapon_component_from_ped": {
+        "scope": "lua",
+        "prefix": "remove_weapon_component_from_ped",
+        "body": "rage.weapon.remove_weapon_component_from_ped(${1:ped}, ${2:weaponHash}, ${3:componentHash})",
+        "description": "Remove component from a ped's weapon."
+    },
+    "rage.weapon.remove_weapon_from_ped": {
+        "scope": "lua",
+        "prefix": "remove_weapon_from_ped",
+        "body": "rage.weapon.remove_weapon_from_ped(${1:ped}, ${2:weaponHash})",
+        "description": "Remove a weapon from a ped."
+    },
+    "rage.weapon.set_ped_ammo": {
+        "scope": "lua",
+        "prefix": "set_ped_ammo",
+        "body": "rage.weapon.set_ped_ammo(${1:ped}, ${2:weaponHash}, ${3:ammo}, ${4:p3})",
+        "description": "Set ped ammo amount."
+    },
+    "rage.weapon.set_ped_ammo_by_type": {
+        "scope": "lua",
+        "prefix": "set_ped_ammo_by_type",
+        "body": "rage.weapon.set_ped_ammo_by_type(${1:ped}, ${2:ammoTypeHash}, ${3:ammo})",
+        "description": "Set ped ammo by type."
+    },
+    "rage.weapon.set_ped_weapon_tint_index": {
+        "scope": "lua",
+        "prefix": "set_ped_weapon_tint_index",
+        "body": "rage.weapon.set_ped_weapon_tint_index(${1:ped}, ${2:weaponHash}, ${3:tintIndex})",
+        "description": "Set ped weapon tint ID."
+    },
+    "rage.streaming.has_anim_dict_loaded": {
+        "scope": "lua",
+        "prefix": "has_anim_dict_loaded",
+        "body": "rage.streaming.has_anim_dict_loaded(${1:animDict})",
+        "description": "Checks whether an animation dictionary is loaded."
+    },
+    "rage.streaming.has_anim_set_loaded": {
+        "scope": "lua",
+        "prefix": "has_anim_set_loaded",
+        "body": "rage.streaming.has_anim_set_loaded(${1:animSet})",
+        "description": "Checks whether an animation set is loaded."
+    },
+    "rage.streaming.has_model_loaded": {
+        "scope": "lua",
+        "prefix": "has_model_loaded",
+        "body": "rage.streaming.has_model_loaded(${1:model})",
+        "description": "Checks whether a specified model has loaded into memory."
+    },
+    "rage.streaming.has_named_ptfx_asset_loaded": {
+        "scope": "lua",
+        "prefix": "has_named_ptfx_asset_loaded",
+        "body": "rage.streaming.has_named_ptfx_asset_loaded(${1:fxName})",
+        "description": "Checks whether a particles effect is loaded."
+    },
+    "rage.streaming.is_this_model_a_bicycle": {
+        "scope": "lua",
+        "prefix": "is_this_model_a_bicycle",
+        "body": "rage.streaming.is_this_model_a_bicycle(${1:model})",
+        "description": "Checks whether the model is a bicycle."
+    },
+    "rage.streaming.is_this_model_a_bike": {
+        "scope": "lua",
+        "prefix": "is_this_model_a_bike",
+        "body": "rage.streaming.is_this_model_a_bike(${1:model})",
+        "description": "Checks whether the model is a bike."
+    },
+    "rage.streaming.is_this_model_a_boat": {
+        "scope": "lua",
+        "prefix": "is_this_model_a_boat",
+        "body": "rage.streaming.is_this_model_a_boat(${1:model})",
+        "description": "Checks whether the model is a boat."
+    },
+    "rage.streaming.is_this_model_a_car": {
+        "scope": "lua",
+        "prefix": "is_this_model_a_car",
+        "body": "rage.streaming.is_this_model_a_car(${1:model})",
+        "description": "Checks whether the model is a car."
+    },
+    "rage.streaming.is_this_model_a_heli": {
+        "scope": "lua",
+        "prefix": "is_this_model_a_heli",
+        "body": "rage.streaming.is_this_model_a_heli(${1:model})",
+        "description": "Checks whether the model is a helicopter."
+    },
+    "rage.streaming.is_model_a_ped": {
+        "scope": "lua",
+        "prefix": "is_model_a_ped",
+        "body": "rage.streaming.is_model_a_ped(${1:model})",
+        "description": "Checks whether the model is a ped."
+    },
+    "rage.streaming.is_this_model_a_plane": {
+        "scope": "lua",
+        "prefix": "is_this_model_a_plane",
+        "body": "rage.streaming.is_this_model_a_plane(${1:model})",
+        "description": "Checks whether the model is a plane."
+    },
+    "rage.streaming.is_this_model_a_quadbike": {
+        "scope": "lua",
+        "prefix": "is_this_model_a_quadbike",
+        "body": "rage.streaming.is_this_model_a_quadbike(${1:model})",
+        "description": "Checks whether the model is a quadbike."
+    },
+    "rage.streaming.is_this_model_a_train": {
+        "scope": "lua",
+        "prefix": "is_this_model_a_train",
+        "body": "rage.streaming.is_this_model_a_train(${1:model})",
+        "description": "Checks whether the model is a train."
+    },
+    "rage.streaming.is_model_a_vehicle": {
+        "scope": "lua",
+        "prefix": "is_model_a_vehicle",
+        "body": "rage.streaming.is_model_a_vehicle(${1:model})",
+        "description": "Checks whether the model is a vehicle."
+    },
+    "rage.streaming.is_model_in_cdimage": {
+        "scope": "lua",
+        "prefix": "is_model_in_cdimage",
+        "body": "rage.streaming.is_model_in_cdimage(${1:model})",
+        "description": "Checks whether the model is in cdimage (rpf)."
+    },
+    "rage.streaming.is_model_valid": {
+        "scope": "lua",
+        "prefix": "is_model_valid",
+        "body": "rage.streaming.is_model_valid(${1:model})",
+        "description": "Checks whether the specified model exists in the game."
+    },
+    "rage.streaming.remove_anim_dict": {
+        "scope": "lua",
+        "prefix": "remove_anim_dict",
+        "body": "rage.streaming.remove_anim_dict(${1:animDict})",
+        "description": "Removes the animation dictionary."
+    },
+    "rage.streaming.remove_anim_set": {
+        "scope": "lua",
+        "prefix": "remove_anim_set",
+        "body": "rage.streaming.remove_anim_set(${1:animSet})",
+        "description": "Removes the animation set."
+    },
+    "rage.streaming.remove_ipl": {
+        "scope": "lua",
+        "prefix": "remove_ipl",
+        "body": "rage.streaming.remove_ipl(${1:iplName})",
+        "description": "Removes the IPL."
+    },
+    "rage.streaming.remove_named_ptfx_asset": {
+        "scope": "lua",
+        "prefix": "remove_named_ptfx_asset",
+        "body": "rage.streaming.remove_named_ptfx_asset(${1:fxName})",
+        "description": "Removes the named particle effects asset."
+    },
+    "rage.streaming.request_anim_dict": {
+        "scope": "lua",
+        "prefix": "request_anim_dict",
+        "body": "rage.streaming.request_anim_dict(${1:animDict})",
+        "description": "Requests the animation dictionary."
+    },
+    "rage.streaming.request_anim_set": {
+        "scope": "lua",
+        "prefix": "request_anim_set",
+        "body": "rage.streaming.request_anim_set(${1:animSet})",
+        "description": "Rquests the animation set."
+    },
+    "rage.streaming.request_ipl": {
+        "scope": "lua",
+        "prefix": "request_ipl",
+        "body": "rage.streaming.request_ipl(${1:iplName})",
+        "description": "Requests the IPL."
+    },
+    "rage.streaming.request_model": {
+        "scope": "lua",
+        "prefix": "request_model",
+        "body": "rage.streaming.request_model(${1:model})",
+        "description": "Requests a model to be loaded into memory."
+    },
+    "rage.streaming.request_named_ptfx_asset": {
+        "scope": "lua",
+        "prefix": "request_named_ptfx_asset",
+        "body": "rage.streaming.request_named_ptfx_asset(${1:fxName})",
+        "description": "Requests the named particle effects asset."
+    },
+    "rage.streaming.set_model_as_no_longer_needed": {
+        "scope": "lua",
+        "prefix": "set_model_as_no_longer_needed",
+        "body": "rage.streaming.set_model_as_no_longer_needed(${1:model})",
+        "description": "Sets the model as no longer needed."
+    },
+    "rage.ui.add_blip_for_coord": {
+        "scope": "lua",
+        "prefix": "add_blip_for_coord",
+        "body": "rage.ui.add_blip_for_coord(${1:x}, ${2:y}, ${3:z})",
+        "description": "Add blip for given coordinates."
+    },
+    "rage.ui.add_blip_for_entity": {
+        "scope": "lua",
+        "prefix": "add_blip_for_entity",
+        "body": "rage.ui.add_blip_for_entity(${1:entity})",
+        "description": "Add blip for given entity."
+    },
+    "rage.ui.add_blip_for_pickup": {
+        "scope": "lua",
+        "prefix": "add_blip_for_pickup",
+        "body": "rage.ui.add_blip_for_pickup(${1:pickup})",
+        "description": "Add blip for given pickup."
+    },
+    "rage.ui.add_blip_for_radius": {
+        "scope": "lua",
+        "prefix": "add_blip_for_radius",
+        "body": "rage.ui.add_blip_for_radius(${1:posX}, ${2:posY}, ${3:posZ}, ${4:radius})",
+        "description": "Add blip for given coords with custom radius."
+    },
+    "rage.ui.get_blip_coords": {
+        "scope": "lua",
+        "prefix": "get_blip_coords",
+        "body": "rage.ui.get_blip_coords(${1:sprite}, ${2:color})",
+        "description": "Returns the coordinates of the specified :ref:`blip`."
+    },
+    "rage.ui.get_blip_from_entity": {
+        "scope": "lua",
+        "prefix": "get_blip_from_entity",
+        "body": "rage.ui.get_blip_from_entity(${1:entity})",
+        "description": "Gets blip from entity."
+    },
+    "rage.ui.get_label_text": {
+        "scope": "lua",
+        "prefix": "get_label_text",
+        "body": "rage.ui.get_label_text(${1:labelName})",
+        "description": "Gets label text from label name."
+    },
+    "rage.ui.hide_hud_component_this_frame": {
+        "scope": "lua",
+        "prefix": "hide_hud_component_this_frame",
+        "body": "rage.ui.hide_hud_component_this_frame(${1:id})",
+        "description": "Hide specified HUD (Heads-up Display) component."
+    },
+    "rage.ui.is_hud_component_active": {
+        "scope": "lua",
+        "prefix": "is_hud_component_active",
+        "body": "rage.ui.is_hud_component_active(${1:id})",
+        "description": "Checks whether specified HUD (Heads-up Display) component is active."
+    },
+    "rage.ui.is_mission_creator_blip": {
+        "scope": "lua",
+        "prefix": "is_mission_creator_blip",
+        "body": "rage.ui.is_mission_creator_blip(${1:blip})",
+        "description": "Checks whether a blip is a mission creator."
+    },
+    "rage.ui.remove_blip": {
+        "scope": "lua",
+        "prefix": "remove_blip",
+        "body": "rage.ui.remove_blip(${1:blip})",
+        "description": "Removes a blip."
+    },
+    "rage.ui.set_blip_as_mission_creator_blip": {
+        "scope": "lua",
+        "prefix": "set_blip_as_mission_creator_blip",
+        "body": "rage.ui.set_blip_as_mission_creator_blip(${1:blip}, ${2:toggle})",
+        "description": "Set blip as mission creator blip."
+    },
+    "rage.ui.set_blip_colour": {
+        "scope": "lua",
+        "prefix": "set_blip_colour",
+        "body": "rage.ui.set_blip_colour(${1:blip}, ${2:color})",
+        "description": "Set blip colour."
+    },
+    "rage.ui.set_blip_coords": {
+        "scope": "lua",
+        "prefix": "set_blip_coords",
+        "body": "rage.ui.set_blip_coords(${1:blip}, ${2:posX}, ${3:posY}, ${4:posZ})",
+        "description": "Set blip coordinates."
+    },
+    "rage.ui.set_blip_route": {
+        "scope": "lua",
+        "prefix": "set_blip_route",
+        "body": "rage.ui.set_blip_route(${1:blip}, ${2:enabled})",
+        "description": "Set blip route, toggable."
+    },
+    "rage.ui.set_blip_sprite": {
+        "scope": "lua",
+        "prefix": "set_blip_sprite",
+        "body": "rage.ui.set_blip_sprite(${1:blip}, ${2:spriteId})",
+        "description": "Set blip sprite."
+    },
+    "rage.ui.set_new_waypoint": {
+        "scope": "lua",
+        "prefix": "set_new_waypoint",
+        "body": "rage.ui.set_new_waypoint(${1:x}, ${2:y})",
+        "description": "Set new waypoint to given coordinates."
+    },
+    "rage.ui.set_text_centre": {
+        "scope": "lua",
+        "prefix": "set_text_centre",
+        "body": "rage.ui.set_text_centre(${1:align})",
+        "description": "Set text centre."
+    },
+    "rage.ui.set_text_font": {
+        "scope": "lua",
+        "prefix": "set_text_font",
+        "body": "rage.ui.set_text_font(${1:fontType})",
+        "description": "Set text font."
+    },
+    "rage.ui.set_text_justification": {
+        "scope": "lua",
+        "prefix": "set_text_justification",
+        "body": "rage.ui.set_text_justification(${1:justifyType})",
+        "description": "Set text justification."
+    },
+    "rage.ui.set_text_right_justify": {
+        "scope": "lua",
+        "prefix": "set_text_right_justify",
+        "body": "rage.ui.set_text_right_justify(${1:toggle})",
+        "description": "Toggle set text right justify."
+    },
+    "rage.ui.set_text_scale": {
+        "scope": "lua",
+        "prefix": "set_text_scale",
+        "body": "rage.ui.set_text_scale(${1:scale}, ${2:size})",
+        "description": "Set text scale."
+    },
+    "rage.ui.set_text_wrap": {
+        "scope": "lua",
+        "prefix": "set_text_wrap",
+        "body": "rage.ui.set_text_wrap(${1:start}, ${2:end})",
+        "description": "Set the text in a specified box and wrap the text if it exceeds the boundries. Both values are for X axis. Useful when positioning text set to center or aligned to the right."
+    },
+    "rage.ui.show_hud_component_this_frame": {
+        "scope": "lua",
+        "prefix": "show_hud_component_this_frame",
+        "body": "rage.ui.show_hud_component_this_frame(${1:id})",
+        "description": "Show specified HUD (Heads-up Display) component."
+    },
+    "rage.draw.draw_sprite": {
+        "scope": "lua",
+        "prefix": "draw_sprite",
+        "body": "rage.draw.draw_sprite(${1:textureDict}, ${2:textureName}, ${3:screenX}, ${4:screenY}, ${5:width}, ${6:height}, ${7:heading}, ${8:red}, ${9:green}, ${10:blue}, ${11:alpha}, ${12:p11}, ${13:p12})",
+        "description": "Draw a 2D sprite on the screen.  "
+    },
+    "rage.cam.get_gameplay_cam_rot": {
+        "scope": "lua",
+        "prefix": "get_gameplay_cam_rot",
+        "body": "rage.cam.get_gameplay_cam_rot(${1:rotationOrder})",
+        "description": ".. note::"
+    },
+    "rage.gameplay.clear_area_of_cops": {
+        "scope": "lua",
+        "prefix": "clear_area_of_cops",
+        "body": "rage.gameplay.clear_area_of_cops(${1:x}, ${2:y}, ${3:z}, ${4:radius}, ${5:flags})",
+        "description": "Clear defined area of cops."
+    },
+    "rage.gameplay.clear_area_of_objects": {
+        "scope": "lua",
+        "prefix": "clear_area_of_objects",
+        "body": "rage.gameplay.clear_area_of_objects(${1:x}, ${2:y}, ${3:z}, ${4:radius}, ${5:flags})",
+        "description": "Clear defined area of props."
+    },
+    "rage.gameplay.clear_area_of_peds": {
+        "scope": "lua",
+        "prefix": "clear_area_of_peds",
+        "body": "rage.gameplay.clear_area_of_peds(${1:x}, ${2:y}, ${3:z}, ${4:radius}, ${5:flags})",
+        "description": "Clear defined area of peds."
+    },
+    "rage.gameplay.clear_area_of_vehicles": {
+        "scope": "lua",
+        "prefix": "clear_area_of_vehicles",
+        "body": "rage.gameplay.clear_area_of_vehicles(${1:x}, ${2:y}, ${3:z}, ${4:radius}, ${5:p4}, ${6:p5}, ${7:p6}, ${8:p7}, ${9:p8}, ${10:p9}, ${11:p10})",
+        "description": "Clear defined area of vehicles."
+    },
+    "rage.gameplay.display_onscreen_keyboard": {
+        "scope": "lua",
+        "prefix": "display_onscreen_keyboard",
+        "body": "rage.gameplay.display_onscreen_keyboard(${1:p0}, ${2:windowTitle}, ${3:p2}, ${4:defaultText}, ${5:defaultConcat1}, ${6:defaultConcat2}, ${7:defaultConcat3}, ${8:maxInputLength})",
+        "description": "Displays an onscreen input window."
+    },
+    "rage.gameplay.find_spawn_point_in_direction": {
+        "scope": "lua",
+        "prefix": "find_spawn_point_in_direction",
+        "body": "rage.gameplay.find_spawn_point_in_direction(${1:posX}, ${2:posY}, ${3:posZ}, ${4:fwdVecX}, ${5:fwdVecY}, ${6:fwdVecZ}, ${7:distance}, ${8:spawnPoint})",
+        "description": "Attempts to find a spawn point in the specified direction."
+    },
+    "rage.gameplay.get_hash_key": {
+        "scope": "lua",
+        "prefix": "get_hash_key",
+        "body": "rage.gameplay.get_hash_key(${1:string})",
+        "description": "Returns the hash key of the specified game object."
+    },
+    "rage.gameplay.preload_cloud_hat": {
+        "scope": "lua",
+        "prefix": "preload_cloud_hat",
+        "body": "rage.gameplay.preload_cloud_hat(${1:name})",
+        "description": "Preloads the specified cloud hat."
+    },
+    "rage.gameplay.load_cloud_hat": {
+        "scope": "lua",
+        "prefix": "load_cloud_hat",
+        "body": "rage.gameplay.load_cloud_hat(${1:name})",
+        "description": "Preloads the specified cloud hat."
+    },
+    "rage.gameplay.unload_cloud_hat": {
+        "scope": "lua",
+        "prefix": "unload_cloud_hat",
+        "body": "rage.gameplay.unload_cloud_hat(${1:name})",
+        "description": "Unloads the specified cloud hat."
+    },
+    "rage.gameplay.set_cloud_hat_opacity": {
+        "scope": "lua",
+        "prefix": "set_cloud_hat_opacity",
+        "body": "rage.gameplay.set_cloud_hat_opacity(${1:opacity})",
+        "description": "Sets the opacity of the current cloud hat."
+    },
+    "rage.gameplay.set_override_weather": {
+        "scope": "lua",
+        "prefix": "set_override_weather",
+        "body": "rage.gameplay.set_override_weather(${1:weatherType})",
+        "description": "Sets the weather to the specified weather type."
+    },
+    "rage.gameplay.shoot_single_bullet_between_coords": {
+        "scope": "lua",
+        "prefix": "shoot_single_bullet_between_coords",
+        "body": "rage.gameplay.shoot_single_bullet_between_coords(${1:x1}, ${2:y1}, ${3:z1}, ${4:x2}, ${5:y2}, ${6:z2}, ${7:damage}, ${8:p7}, ${9:weaponHash}, ${10:ownerPed}, ${11:isAudible}, ${12:isInvisible}, ${13:speed})",
+        "description": "Shoots a bullet from the first coordinates to the second coordinates"
+    },
+    "rage.fire.add_explosion": {
+        "scope": "lua",
+        "prefix": "add_explosion",
+        "body": "rage.fire.add_explosion(${1:x}, ${2:y}, ${3:z}, ${4:explosionType}, ${5:damageScale}, ${6:isAudible}, ${7:isInvisible}, ${8:cameraShake}, ${9:noDamage})",
+        "description": "Add explosion in certain coordinates with multiple options."
+    },
+    "rage.fire.start_entity_fire": {
+        "scope": "lua",
+        "prefix": "start_entity_fire",
+        "body": "rage.fire.start_entity_fire(${1:entity})",
+        "description": "Start fire on entity."
+    },
+    "rage.fire.stop_entity_fire": {
+        "scope": "lua",
+        "prefix": "stop_entity_fire",
+        "body": "rage.fire.stop_entity_fire(${1:entity})",
+        "description": "Stop fire on entity."
+    },
+    "rage.network.network_has_control_of_entity": {
+        "scope": "lua",
+        "prefix": "network_has_control_of_entity",
+        "body": "rage.network.network_has_control_of_entity(${1:entity})",
+        "description": "Check network control of entity."
+    },
+    "rage.network.network_is_friend_in_multiplayer": {
+        "scope": "lua",
+        "prefix": "network_is_friend_in_multiplayer",
+        "body": "rage.network.network_is_friend_in_multiplayer(${1:friendName})",
+        "description": "Checks whether a friend is in multiplayer."
+    },
+    "rage.network.network_is_friend_index_online": {
+        "scope": "lua",
+        "prefix": "network_is_friend_index_online",
+        "body": "rage.network.network_is_friend_index_online(${1:friendIndex})",
+        "description": ".. note::"
+    },
+    "rage.network.network_is_friend_online": {
+        "scope": "lua",
+        "prefix": "network_is_friend_online",
+        "body": "rage.network.network_is_friend_online(${1:name})",
+        "description": "Checks whether a friend is online."
+    },
+    "rage.network.network_hash_from_player_handle": {
+        "scope": "lua",
+        "prefix": "network_hash_from_player_handle",
+        "body": "rage.network.network_hash_from_player_handle(${1:player})",
+        "description": "Gets hash from player handle."
+    },
+    "rage.network.network_session_kick_player": {
+        "scope": "lua",
+        "prefix": "network_session_kick_player",
+        "body": "rage.network.network_session_kick_player(${1:player})",
+        "description": "Kick player out of the session."
+    },
+    "rage.network.network_request_control_of_entity": {
+        "scope": "lua",
+        "prefix": "network_request_control_of_entity",
+        "body": "rage.network.network_request_control_of_entity(${1:entity})",
+        "description": "Request control of entity."
+    },
+    "rage.network.network_get_network_id_from_entity": {
+        "scope": "lua",
+        "prefix": "network_get_network_id_from_entity",
+        "body": "rage.network.network_get_network_id_from_entity(${1:entity})",
+        "description": "Returns netId from the given entity."
+    },
+    "rage.controls.disable_control_action": {
+        "scope": "lua",
+        "prefix": "disable_control_action",
+        "body": "rage.controls.disable_control_action(${1:padIndex}, ${2:control}, ${3:disable})",
+        "description": "Disable control action."
+    },
+    "rage.controls.get_control_normal": {
+        "scope": "lua",
+        "prefix": "get_control_normal",
+        "body": "rage.controls.get_control_normal(${1:padIndex}, ${2:control})",
+        "description": ".. note::"
+    },
+    "rage.controls.is_control_just_pressed": {
+        "scope": "lua",
+        "prefix": "is_control_just_pressed",
+        "body": "rage.controls.is_control_just_pressed(${1:padIndex}, ${2:control})",
+        "description": ".. note::"
+    },
+    "rage.controls.is_control_pressed": {
+        "scope": "lua",
+        "prefix": "is_control_pressed",
+        "body": "rage.controls.is_control_pressed(${1:padIndex}, ${2:control})",
+        "description": ".. note::"
+    },
+    "rage.controls.is_disabled_control_just_pressed": {
+        "scope": "lua",
+        "prefix": "is_disabled_control_just_pressed",
+        "body": "rage.controls.is_disabled_control_just_pressed(${1:padIndex}, ${2:control})",
+        "description": "Checks whether a disabled control is just pressed."
+    },
+    "rage.controls.is_disabled_control_pressed": {
+        "scope": "lua",
+        "prefix": "is_disabled_control_pressed",
+        "body": "rage.controls.is_disabled_control_pressed(${1:padIndex}, ${2:control})",
+        "description": "Checks whether a disabled control is pressed."
+    },
+    "rage.controls.set_control_normal": {
+        "scope": "lua",
+        "prefix": "set_control_normal",
+        "body": "rage.controls.set_control_normal(${1:padIndex}, ${2:control}, ${3:amount})",
+        "description": "This function simulates player input."
+    },
+    "rage.graphics.animpostfx_is_running": {
+        "scope": "lua",
+        "prefix": "animpostfx_is_running",
+        "body": "rage.graphics.animpostfx_is_running(${1:effectName})",
+        "description": "Checks whether a postFX effect is running."
+    },
+    "rage.graphics.animpostfx_play": {
+        "scope": "lua",
+        "prefix": "animpostfx_play",
+        "body": "rage.graphics.animpostfx_play(${1:effectName}, ${2:duration}, ${3:looped})",
+        "description": "Launches a postFX effect."
+    },
+    "rage.graphics.animpostfx_stop": {
+        "scope": "lua",
+        "prefix": "animpostfx_stop",
+        "body": "rage.graphics.animpostfx_stop(${1:effectName})",
+        "description": "Stops a postFX effect."
+    },
+    "rage.graphics.begin_scaleform_movie_method": {
+        "scope": "lua",
+        "prefix": "begin_scaleform_movie_method",
+        "body": "rage.graphics.begin_scaleform_movie_method(${1:scaleform}, ${2:methodName})",
+        "description": "Display a scaleform."
+    },
+    "rage.graphics.create_checkpoint": {
+        "scope": "lua",
+        "prefix": "create_checkpoint",
+        "body": "rage.graphics.create_checkpoint(${1:type}, ${2:posX1}, ${3:posY1}, ${4:posZ1}, ${5:posX2}, ${6:posY2}, ${7:posZ2}, ${8:diameter}, ${9:red}, ${10:green}, ${11:blue}, ${12:alpha}, ${13:reserved})",
+        "description": "Creates a checkpoint."
+    },
+    "rage.graphics.delete_checkpoint": {
+        "scope": "lua",
+        "prefix": "delete_checkpoint",
+        "body": "rage.graphics.delete_checkpoint(${1:checkpoint})",
+        "description": "Deletes a checkpoint."
+    },
+    "rage.graphics.draw_line": {
+        "scope": "lua",
+        "prefix": "draw_line",
+        "body": "rage.graphics.draw_line(${1:x1}, ${2:y1}, ${3:z1}, ${4:x2}, ${5:y2}, ${6:z2}, ${7:red}, ${8:green}, ${9:blue}, ${10:alpha})",
+        "description": "Draws a line from ``x1``, ``y1``, ``z1`` to ``x2``, ``y2``, ``z2``."
+    },
+    "rage.graphics.draw_marker": {
+        "scope": "lua",
+        "prefix": "draw_marker",
+        "body": "rage.graphics.draw_marker(${1:type}, ${2:posX}, ${3:posY}, ${4:posZ}, ${5:dirX}, ${6:dirY}, ${7:dirZ}, ${8:rotX}, ${9:rotY}, ${10:rotZ}, ${11:scaleX}, ${12:scaleY}, ${13:scaleZ}, ${14:red}, ${15:green}, ${16:blue}, ${17:alpha}, ${18:reserved})",
+        "description": "Draws a marker with the specified appearance at the target location."
+    },
+    "rage.graphics.draw_rect": {
+        "scope": "lua",
+        "prefix": "draw_rect",
+        "body": "rage.graphics.draw_rect(${1:x}, ${2:y}, ${3:width}, ${4:height}, ${5:red}, ${6:green}, ${7:blue}, ${8:alpha})",
+        "description": "Draws a rectangle on the screen. Similar to render.draw_box()"
+    },
+    "rage.graphics.draw_scaleform_movie": {
+        "scope": "lua",
+        "prefix": "draw_scaleform_movie",
+        "body": "rage.graphics.draw_scaleform_movie(${1:scaleformHandle}, ${2:x}, ${3:y}, ${4:width}, ${5:height}, ${6:red}, ${7:green}, ${8:blue}, ${9:alpha})",
+        "description": "Draw scaleform in the selected dimensions"
+    },
+    "rage.graphics.draw_scaleform_movie_fullscreen": {
+        "scope": "lua",
+        "prefix": "draw_scaleform_movie_fullscreen",
+        "body": "rage.graphics.draw_scaleform_movie_fullscreen(${1:scaleformHandle}, ${2:red}, ${3:green}, ${4:blue}, ${5:alpha}, ${6:unk})",
+        "description": "Draw a scaleform in fullscreen."
+    },
+    "rage.graphics.enable_alien_blood_vfx": {
+        "scope": "lua",
+        "prefix": "enable_alien_blood_vfx",
+        "body": "rage.graphics.enable_alien_blood_vfx(${1:toggle})",
+        "description": "Creates a motion-blur sort of effect. Doesn't seem to work, but if you use animpostfx_play() with ``DrugsMichaelAliensFight`` animfx, you should be able to get the intended effect"
+    },
+    "rage.graphics.enable_clown_blood_vfx": {
+        "scope": "lua",
+        "prefix": "enable_clown_blood_vfx",
+        "body": "rage.graphics.enable_clown_blood_vfx(${1:toggle})",
+        "description": "Creates cartoon effect when Michel smokes the weed."
+    },
+    "rage.graphics.has_scaleform_movie_loaded": {
+        "scope": "lua",
+        "prefix": "has_scaleform_movie_loaded",
+        "body": "rage.graphics.has_scaleform_movie_loaded(${1:scaleformHandle})",
+        "description": "Checks whether a scaleform was loaded."
+    },
+    "rage.graphics.remove_particle_fx": {
+        "scope": "lua",
+        "prefix": "remove_particle_fx",
+        "body": "rage.graphics.remove_particle_fx(${1:ptfxHandle}, ${2:p1})",
+        "description": "Removes a particle effect."
+    },
+    "rage.graphics.request_scaleform_movie": {
+        "scope": "lua",
+        "prefix": "request_scaleform_movie",
+        "body": "rage.graphics.request_scaleform_movie(${1:scaleformName})",
+        "description": "Request a scaleform handle."
+    },
+    "rage.graphics.scaleform_movie_method_add_param_bool": {
+        "scope": "lua",
+        "prefix": "scaleform_movie_method_add_param_bool",
+        "body": "rage.graphics.scaleform_movie_method_add_param_bool(${1:value})",
+        "description": "Pass a bool param to scaleform. The scaleform should be initialiazed already."
+    },
+    "rage.graphics.scaleform_movie_method_add_param_float": {
+        "scope": "lua",
+        "prefix": "scaleform_movie_method_add_param_float",
+        "body": "rage.graphics.scaleform_movie_method_add_param_float(${1:value})",
+        "description": "Pass a float param to scaleform. The scaleform should be initialized already."
+    },
+    "rage.graphics.scaleform_movie_method_add_param_int": {
+        "scope": "lua",
+        "prefix": "scaleform_movie_method_add_param_int",
+        "body": "rage.graphics.scaleform_movie_method_add_param_int(${1:value})",
+        "description": "Pass an int param to scaleform. The scaleform should be initialized already."
+    },
+    "rage.graphics.scaleform_movie_method_add_param_texture_name_string": {
+        "scope": "lua",
+        "prefix": "scaleform_movie_method_add_param_texture_name_string",
+        "body": "rage.graphics.scaleform_movie_method_add_param_texture_name_string(${1:value})",
+        "description": "Pass a string param to scaleform. The scaleform should be initialized already."
+    },
+    "rage.graphics.set_checkpoint_cylinder_height": {
+        "scope": "lua",
+        "prefix": "set_checkpoint_cylinder_height",
+        "body": "rage.graphics.set_checkpoint_cylinder_height(${1:checkpoint}, ${2:nearHeight}, ${3:farHeight}, ${4:radius})",
+        "description": "Set the height of the cylindrical checkpoint."
+    },
+    "rage.graphics.set_checkpoint_rgba": {
+        "scope": "lua",
+        "prefix": "set_checkpoint_rgba",
+        "body": "rage.graphics.set_checkpoint_rgba(${1:checkpoint}, ${2:red}, ${3:green}, ${4:blue}, ${5:alpha})",
+        "description": "Set the RGBA of the checkpoint."
+    },
+    "rage.graphics.set_scaleform_movie_as_no_longer_needed": {
+        "scope": "lua",
+        "prefix": "set_scaleform_movie_as_no_longer_needed",
+        "body": "rage.graphics.set_scaleform_movie_as_no_longer_needed(${1:scaleformHandle})",
+        "description": "Deinitializes a scaleform object."
+    },
+    "rage.time.set_clock_time": {
+        "scope": "lua",
+        "prefix": "set_clock_time",
+        "body": "rage.time.set_clock_time(${1:hour}, ${2:minute}, ${3:second})",
+        "description": "Set the in-game time"
+    },
+    "rage.ai.does_scenario_group_exist": {
+        "scope": "lua",
+        "prefix": "does_scenario_group_exist",
+        "body": "rage.ai.does_scenario_group_exist(${1:scenarioGroup})",
+        "description": "Checks whether a scenario group exists."
+    },
+    "rage.ai.is_ped_active_in_scenario": {
+        "scope": "lua",
+        "prefix": "is_ped_active_in_scenario",
+        "body": "rage.ai.is_ped_active_in_scenario(${1:ped})",
+        "description": "Checks whether the ped is currently in any scenario."
+    },
+    "rage.ai.is_scenario_group_enabled": {
+        "scope": "lua",
+        "prefix": "is_scenario_group_enabled",
+        "body": "rage.ai.is_scenario_group_enabled(${1:scenarioGroup})",
+        "description": "Checks whether the scenario group is enabled."
+    },
+    "rage.ai.is_scenario_type_enabled": {
+        "scope": "lua",
+        "prefix": "is_scenario_type_enabled",
+        "body": "rage.ai.is_scenario_type_enabled(${1:scenarioType})",
+        "description": "Checks whether the scenario type is enabled."
+    },
+    "rage.ai.get_is_task_active": {
+        "scope": "lua",
+        "prefix": "get_is_task_active",
+        "body": "rage.ai.get_is_task_active(${1:ped}, ${2:taskIndex})",
+        "description": "Checks whether the task is active."
+    },
+    "rage.ai.play_anim_on_running_scenario": {
+        "scope": "lua",
+        "prefix": "play_anim_on_running_scenario",
+        "body": "rage.ai.play_anim_on_running_scenario(${1:ped}, ${2:animDict}, ${3:animName})",
+        "description": "Play the animation on any running scenario."
+    },
+    "rage.ai.set_exclusive_scenario_group": {
+        "scope": "lua",
+        "prefix": "set_exclusive_scenario_group",
+        "body": "rage.ai.set_exclusive_scenario_group(${1:})",
+        "description": "Reset the exclusive scenario group."
+    },
+    "rage.ai.set_parachute_task_target": {
+        "scope": "lua",
+        "prefix": "set_parachute_task_target",
+        "body": "rage.ai.set_parachute_task_target(${1:ped}, ${2:x}, ${3:y}, ${4:z})",
+        "description": "Make ped parachute to target"
+    },
+    "rage.ai.set_parachute_task_thrust": {
+        "scope": "lua",
+        "prefix": "set_parachute_task_thrust",
+        "body": "rage.ai.set_parachute_task_thrust(${1:ped}, ${2:thrust})",
+        "description": "Set the parachute task thrust."
+    },
+    "rage.ai.set_scenario_group_enabled": {
+        "scope": "lua",
+        "prefix": "set_scenario_group_enabled",
+        "body": "rage.ai.set_scenario_group_enabled(${1:scenarioGroup}, ${2:p1})",
+        "description": "Set scenario group as enabled."
+    },
+    "rage.ai.set_scenario_type_enabled": {
+        "scope": "lua",
+        "prefix": "set_scenario_type_enabled",
+        "body": "rage.ai.set_scenario_type_enabled(${1:scenarioType}, ${2:toggle})",
+        "description": "Toggle the scenario type."
+    },
+    "rage.ai.stop_anim_task": {
+        "scope": "lua",
+        "prefix": "stop_anim_task",
+        "body": "rage.ai.stop_anim_task(${1:ped}, ${2:animDictionary}, ${3:animationName}, ${4:p3})",
+        "description": "Stop animation task."
+    },
+    "rage.ai.task_aim_gun_at_coord": {
+        "scope": "lua",
+        "prefix": "task_aim_gun_at_coord",
+        "body": "rage.ai.task_aim_gun_at_coord(${1:ped}, ${2:x}, ${3:y}, ${4:z}, ${5:time}, ${6:p5}, ${7:p6})",
+        "description": "Aim gun at coordinates."
+    },
+    "rage.ai.task_aim_gun_at_entity": {
+        "scope": "lua",
+        "prefix": "task_aim_gun_at_entity",
+        "body": "rage.ai.task_aim_gun_at_entity(${1:ped}, ${2:entity}, ${3:duration}, ${4:p3})",
+        "description": "Aim gun at entity."
+    },
+    "rage.ai.task_combat_ped": {
+        "scope": "lua",
+        "prefix": "task_combat_ped",
+        "body": "rage.ai.task_combat_ped(${1:ped}, ${2:targetPed}, ${3:p2}, ${4:p3})",
+        "description": "Makes the specified ped attack the target ped."
+    },
+    "rage.ai.task_enter_vehicle": {
+        "scope": "lua",
+        "prefix": "task_enter_vehicle",
+        "body": "rage.ai.task_enter_vehicle(${1:ped}, ${2:vehicle}, ${3:timeout}, ${4:seat}, ${5:speed}, ${6:flag}, ${7:p6})",
+        "description": "Makes the specified ped enter the vehicle."
+    },
+    "rage.ai.task_follow_to_offset_of_entity": {
+        "scope": "lua",
+        "prefix": "task_follow_to_offset_of_entity",
+        "body": "rage.ai.task_follow_to_offset_of_entity(${1:ped}, ${2:entity}, ${3:offsetX}, ${4:offsetY}, ${5:offsetZ}, ${6:movementSpeed}, ${7:timeout}, ${8:stoppingRange}, ${9:persistFollowing})",
+        "description": "Follow to offset of the entity."
+    },
+    "rage.ai.task_go_to_coord_while_aiming_at_coord": {
+        "scope": "lua",
+        "prefix": "task_go_to_coord_while_aiming_at_coord",
+        "body": "rage.ai.task_go_to_coord_while_aiming_at_coord(${1:ped}, ${2:x}, ${3:y}, ${4:z}, ${5:aimAtX}, ${6:aimAtY}, ${7:aimAtZ}, ${8:moveSpeed}, ${9:p8}, ${10:p9}, ${11:p10}, ${12:p11}, ${13:flags}, ${14:p13}, ${15:firingPattern})",
+        "description": "Make the ped move to a coordinate while aiming (and optionally shooting) at given coordinates."
+    },
+    "rage.ai.task_go_to_coord_while_aiming_at_entity": {
+        "scope": "lua",
+        "prefix": "task_go_to_coord_while_aiming_at_entity",
+        "body": "rage.ai.task_go_to_coord_while_aiming_at_entity(${1:p0}, ${2:p1}, ${3:p2}, ${4:p3}, ${5:p4}, ${6:p5}, ${7:p6}, ${8:p7}, ${9:p8}, ${10:p9}, ${11:p10}, ${12:p11}, ${13:p12}, ${14:p13})",
+        "description": "Make the ped move to a coordinate while aiming (and optionally shooting) at given coordinates."
+    },
+    "rage.ai.task_go_to_entity_while_aiming_at_entity": {
+        "scope": "lua",
+        "prefix": "task_go_to_entity_while_aiming_at_entity",
+        "body": "rage.ai.task_go_to_entity_while_aiming_at_entity(${1:ped}, ${2:entityToWalkTo}, ${3:entityToAimAt}, ${4:speed}, ${5:shootatEntity}, ${6:p5}, ${7:p6}, ${8:p7}, ${9:p8}, ${10:firingPattern})",
+        "description": "Make the ped move to an entity while aiming and optionally shooting and optionally killing it."
+    },
+    "rage.ai.task_go_to_entity": {
+        "scope": "lua",
+        "prefix": "task_go_to_entity",
+        "body": "rage.ai.task_go_to_entity(${1:entity}, ${2:target}, ${3:duration}, ${4:distance}, ${5:speed}, ${6:p5}, ${7:p6})",
+        "description": "Make the entity move to a target until time is over (duration) or get in target's range (distance)."
+    },
+    "rage.ai.task_leave_vehicle": {
+        "scope": "lua",
+        "prefix": "task_leave_vehicle",
+        "body": "rage.ai.task_leave_vehicle(${1:ped}, ${2:vehicle}, ${3:flags})",
+        "description": "Make the ped leave the vehicle with customizable flags."
+    },
+    "rage.ai.task_open_vehicle_door": {
+        "scope": "lua",
+        "prefix": "task_open_vehicle_door",
+        "body": "rage.ai.task_open_vehicle_door(${1:ped}, ${2:vehicle}, ${3:timeOut}, ${4:seat}, ${5:speed})",
+        "description": "Make the ped open the vehicle door of a specific seat, at given speed."
+    },
+    "rage.ai.task_parachute": {
+        "scope": "lua",
+        "prefix": "task_parachute",
+        "body": "rage.ai.task_parachute(${1:ped}, ${2:p1}, ${3:p2})",
+        "description": "Make the ped do a parachute jump"
+    },
+    "rage.ai.task_parachute_to_target": {
+        "scope": "lua",
+        "prefix": "task_parachute_to_target",
+        "body": "rage.ai.task_parachute_to_target(${1:ped}, ${2:x}, ${3:y}, ${4:z})",
+        "description": "Makes the ped parachute to given coordinates."
+    },
+    "rage.ai.task_play_anim": {
+        "scope": "lua",
+        "prefix": "task_play_anim",
+        "body": "rage.ai.task_play_anim(${1:ped}, ${2:animDictionary}, ${3:animationName}, ${4:blendInSpeed}, ${5:blendOutSpeed}, ${6:duration}, ${7:flag}, ${8:playbackRate}, ${9:lockX}, ${10:lockY}, ${11:lockZ})",
+        "description": "Makes the ped play an animation with custom duration and flags."
+    },
+    "rage.ai.task_rappel_from_heli": {
+        "scope": "lua",
+        "prefix": "task_rappel_from_heli",
+        "body": "rage.ai.task_rappel_from_heli(${1:ped}, ${2:minHeightAboveGround})",
+        "description": "Makes the ped rappel from helicopter, with settable minimum height above the ground."
+    },
+    "rage.ai.task_shoot_at_entity": {
+        "scope": "lua",
+        "prefix": "task_shoot_at_entity",
+        "body": "rage.ai.task_shoot_at_entity(${1:entity}, ${2:target}, ${3:duration}, ${4:firingPattern})",
+        "description": "Make the entity shoot at an entity targeted for a given duration and with custom firing pattern."
+    },
+    "rage.ai.task_sky_dive": {
+        "scope": "lua",
+        "prefix": "task_sky_dive",
+        "body": "rage.ai.task_sky_dive(${1:ped}, ${2:p1})",
+        "description": "Makes the ped sky-dive."
+    },
+    "rage.ai.task_stand_guard": {
+        "scope": "lua",
+        "prefix": "task_stand_guard",
+        "body": "rage.ai.task_stand_guard(${1:ped}, ${2:x}, ${3:y}, ${4:z}, ${5:heading}, ${6:scenarioName})",
+        "description": "Makes the ped parachute to given coordinates."
+    },
+    "rage.ai.task_start_scenario_at_position": {
+        "scope": "lua",
+        "prefix": "task_start_scenario_at_position",
+        "body": "rage.ai.task_start_scenario_at_position(${1:ped}, ${2:scenarioName}, ${3:x}, ${4:y}, ${5:z}, ${6:heading}, ${7:duration}, ${8:sittingScenario}, ${9:teleport})",
+        "description": "Makes the ped start the scenario at a given position."
+    },
+    "rage.ai.task_start_scenario_in_place": {
+        "scope": "lua",
+        "prefix": "task_start_scenario_in_place",
+        "body": "rage.ai.task_start_scenario_in_place(${1:ped}, ${2:scenarioName}, ${3:unkDelay}, ${4:playEnterAnim})",
+        "description": "Plays a scenario on a Ped at their current location."
+    },
+    "rage.ai.task_stay_in_cover": {
+        "scope": "lua",
+        "prefix": "task_stay_in_cover",
+        "body": "rage.ai.task_stay_in_cover(${1:ped})",
+        "description": "Makes the ped stay in cover."
+    },
+    "rage.ai.task_turn_ped_to_face_entity": {
+        "scope": "lua",
+        "prefix": "task_turn_ped_to_face_entity",
+        "body": "rage.ai.task_turn_ped_to_face_entity(${1:ped}, ${2:entity}, ${3:duration})",
+        "description": "Turn the ped to face towards the entity."
+    },
+    "rage.ai.task_vehicle_aim_at_coord": {
+        "scope": "lua",
+        "prefix": "task_vehicle_aim_at_coord",
+        "body": "rage.ai.task_vehicle_aim_at_coord(${1:ped}, ${2:x}, ${3:y}, ${4:z})",
+        "description": "Makes ped vehicle aim at given coordinates."
+    },
+    "rage.ai.task_vehicle_aim_at_ped": {
+        "scope": "lua",
+        "prefix": "task_vehicle_aim_at_ped",
+        "body": "rage.ai.task_vehicle_aim_at_ped(${1:ped}, ${2:target})",
+        "description": "Makes ped vehicle aim at a given ped."
+    },
+    "rage.ai.task_vehicle_chase": {
+        "scope": "lua",
+        "prefix": "task_vehicle_chase",
+        "body": "rage.ai.task_vehicle_chase(${1:driver}, ${2:targetEnt})",
+        "description": "Makes ped driver chase a target entity."
+    },
+    "rage.ai.task_vehicle_drive_to_coord": {
+        "scope": "lua",
+        "prefix": "task_vehicle_drive_to_coord",
+        "body": "rage.ai.task_vehicle_drive_to_coord(${1:ped}, ${2:vehicle}, ${3:x}, ${4:y}, ${5:z}, ${6:speed}, ${7:p6}, ${8:vehicleModel}, ${9:drivingMode}, ${10:stopRange}, ${11:p10})",
+        "description": "Makes ped drive the vehicle to given coordinates."
+    },
+    "rage.ai.task_vehicle_drive_to_coord_longrange": {
+        "scope": "lua",
+        "prefix": "task_vehicle_drive_to_coord_longrange",
+        "body": "rage.ai.task_vehicle_drive_to_coord_longrange(${1:ped}, ${2:vehicle}, ${3:x}, ${4:y}, ${5:z}, ${6:speed}, ${7:driveMode}, ${8:stopRange})",
+        "description": "Makes ped drive to the destination at set speed and driving style."
+    },
+    "rage.ai.task_vehicle_drive_wander": {
+        "scope": "lua",
+        "prefix": "task_vehicle_drive_wander",
+        "body": "rage.ai.task_vehicle_drive_wander(${1:ped}, ${2:vehicle}, ${3:speed}, ${4:drivingStyle})",
+        "description": "Makes ped drive randomly with no destination set."
+    },
+    "rage.ai.task_vehicle_escort": {
+        "scope": "lua",
+        "prefix": "task_vehicle_escort",
+        "body": "rage.ai.task_vehicle_escort(${1:ped}, ${2:vehicle}, ${3:targetVehicle}, ${4:mode}, ${5:speed}, ${6:drivingStyle}, ${7:minDistance}, ${8:p7}, ${9:noRoadsDistance})",
+        "description": "Makes a ped follow the targetVehicle with <minDistance> in between."
+    },
+    "rage.ai.task_vehicle_follow": {
+        "scope": "lua",
+        "prefix": "task_vehicle_follow",
+        "body": "rage.ai.task_vehicle_follow(${1:ped}, ${2:vehicle}, ${3:targetEntity}, ${4:speed}, ${5:drivingStyle}, ${6:minDistance})",
+        "description": "Makes a ped in a vehicle follow an entity."
+    },
+    "rage.ai.task_vehicle_shoot_at_coord": {
+        "scope": "lua",
+        "prefix": "task_vehicle_shoot_at_coord",
+        "body": "rage.ai.task_vehicle_shoot_at_coord(${1:ped}, ${2:x}, ${3:y}, ${4:z}, ${5:p4})",
+        "description": "Makes a ped shoot at a coord from vehicle"
+    },
+    "rage.ai.task_vehicle_shoot_at_ped": {
+        "scope": "lua",
+        "prefix": "task_vehicle_shoot_at_ped",
+        "body": "rage.ai.task_vehicle_shoot_at_ped(${1:ped}, ${2:target}, ${3:p2})",
+        "description": "Makes a ped shoot another ped from vehicle."
+    },
+    "rage.ai.task_wander_standard": {
+        "scope": "lua",
+        "prefix": "task_wander_standard",
+        "body": "rage.ai.task_wander_standard(${1:ped}, ${2:p1}, ${3:p2})",
+        "description": "Makes ped walk around the area."
+    },
+    "rage.decorator.decor_get_bool": {
+        "scope": "lua",
+        "prefix": "decor_get_bool",
+        "body": "rage.decorator.decor_get_bool(${1:entity}, ${2:propertyName})",
+        "description": "**Parameters:**"
+    },
+    "rage.decorator.decor_get_float": {
+        "scope": "lua",
+        "prefix": "decor_get_float",
+        "body": "rage.decorator.decor_get_float(${1:entity}, ${2:propertyName})",
+        "description": "**Parameters:**"
+    },
+    "rage.decorator.decor_get_int": {
+        "scope": "lua",
+        "prefix": "decor_get_int",
+        "body": "rage.decorator.decor_get_int(${1:entity}, ${2:propertyName})",
+        "description": "**Parameters:**"
+    },
+    "rage.decorator.decor_register": {
+        "scope": "lua",
+        "prefix": "decor_register",
+        "body": "rage.decorator.decor_register(${1:propertyName}, ${2:type})",
+        "description": "Register a property with the specified name and type."
+    },
+    "rage.decorator.decor_remove": {
+        "scope": "lua",
+        "prefix": "decor_remove",
+        "body": "rage.decorator.decor_remove(${1:entity}, ${2:propertyName})",
+        "description": "Remove a property."
+    },
+    "rage.decorator.decor_set_bool": {
+        "scope": "lua",
+        "prefix": "decor_set_bool",
+        "body": "rage.decorator.decor_set_bool(${1:entity}, ${2:propertyName}, ${3:value})",
+        "description": "Set a boolean property."
+    },
+    "rage.decorator.decor_set_float": {
+        "scope": "lua",
+        "prefix": "decor_set_float",
+        "body": "rage.decorator.decor_set_float(${1:entity}, ${2:propertyName}, ${3:value})",
+        "description": "Set a float property."
+    },
+    "rage.decorator.decor_set_int": {
+        "scope": "lua",
+        "prefix": "decor_set_int",
+        "body": "rage.decorator.decor_set_int(${1:entity}, ${2:propertyName}, ${3:value})",
+        "description": "Set an integer property."
+    },
+    "rage.decorator.decor_set_time": {
+        "scope": "lua",
+        "prefix": "decor_set_time",
+        "body": "rage.decorator.decor_set_time(${1:entity}, ${2:propertyName}, ${3:value})",
+        "description": "Set a time property."
+    },
+    "rage.interior.get_interior_at_coords_with_type": {
+        "scope": "lua",
+        "prefix": "get_interior_at_coords_with_type",
+        "body": "rage.interior.get_interior_at_coords_with_type(${1:x}, ${2:y}, ${3:z}, ${4:interiorType})",
+        "description": "Returns the interior ID representing the requested interior at that location (if found?). The supplied interior string is not the same as the one used to load the interior.  "
+    },
+    "rage.interior.get_interior_from_entity": {
+        "scope": "lua",
+        "prefix": "get_interior_from_entity",
+        "body": "rage.interior.get_interior_from_entity(${1:entity})",
+        "description": "Gets the handle of the interior that the entity is in. Returns 0 if outside.  "
+    },
+    "rage.interior.refresh_interior": {
+        "scope": "lua",
+        "prefix": "refresh_interior",
+        "body": "rage.interior.refresh_interior(${1:interior})",
+        "description": "Refresh a given interior."
+    },
+    "rage.audio.play_sound": {
+        "scope": "lua",
+        "prefix": "play_sound",
+        "body": "rage.audio.play_sound(${1:soundId}, ${2:audioName}, ${3:audioRef}, ${4:p3}, ${5:p4}, ${6:p5})",
+        "description": "Play a specified sound."
+    },
+    "rage.audio.play_sound_from_coord": {
+        "scope": "lua",
+        "prefix": "play_sound_from_coord",
+        "body": "rage.audio.play_sound_from_coord(${1:soundId}, ${2:audioName}, ${3:x}, ${4:y}, ${5:z}, ${6:audioRef}, ${7:isNetwork}, ${8:range}, ${9:p8})",
+        "description": "Play a specified sound from a given position."
+    },
+    "rage.audio.play_sound_from_entity": {
+        "scope": "lua",
+        "prefix": "play_sound_from_entity",
+        "body": "rage.audio.play_sound_from_entity(${1:soundId}, ${2:audioName}, ${3:entity}, ${4:audioRef}, ${5:isNetwork}, ${6:p5})",
+        "description": "Play a specified sound from a given entity."
+    },
+    "rage.audio.play_sound_frontend": {
+        "scope": "lua",
+        "prefix": "play_sound_frontend",
+        "body": "rage.audio.play_sound_frontend(${1:soundId}, ${2:audioName}, ${3:audioRef}, ${4:p3})",
+        "description": "Play a specified sound from the frontend."
+    },
+    "rage.audio.stop_sound": {
+        "scope": "lua",
+        "prefix": "stop_sound",
+        "body": "rage.audio.stop_sound(${1:soundId})",
+        "description": "Stop a specified sound."
+    },
+    "rage.rope.activate_physics": {
+        "scope": "lua",
+        "prefix": "activate_physics",
+        "body": "rage.rope.activate_physics(${1:entity})",
+        "description": "Activate physics for entity."
+    },
+    "rage.rope.add_rope": {
+        "scope": "lua",
+        "prefix": "add_rope",
+        "body": "rage.rope.add_rope(${1:x}, ${2:y}, ${3:z}, ${4:rotX}, ${5:rotY}, ${6:rotZ}, ${7:length}, ${8:ropeType}, ${9:maxLength}, ${10:minLength}, ${11:windingSpeed}, ${12:p11}, ${13:p12}, ${14:rigid}, ${15:p14}, ${16:breakWhenShot}, ${17:unkPtr})",
+        "description": "Creates a rope at the specific position, that extends in the specified direction when not attached to any entities.  "
+    },
+    "rage.rope.attach_entities_to_rope": {
+        "scope": "lua",
+        "prefix": "attach_entities_to_rope",
+        "body": "rage.rope.attach_entities_to_rope(${1:ropeId}, ${2:ent1}, ${3:ent2}, ${4:ent1_x}, ${5:ent1_y}, ${6:ent1_z}, ${7:ent2_X}, ${8:ent2_Y}, ${9:ent2_Z}, ${10:length}, ${11:p10}, ${12:p11}, ${13:p12}, ${14:p13})",
+        "description": "Attaches entity 1 to entity 2 through a rope."
+    },
+    "rage.rope.delete_rope": {
+        "scope": "lua",
+        "prefix": "delete_rope",
+        "body": "rage.rope.delete_rope(${1:ropeId})",
+        "description": "Delete a rope."
+    },
+    "rage.rope.detach_rope_from_entity": {
+        "scope": "lua",
+        "prefix": "detach_rope_from_entity",
+        "body": "rage.rope.detach_rope_from_entity(${1:ropeId}, ${2:entity})",
+        "description": "Detach a rope from entity."
+    },
+    "rage.rope.does_rope_exist": {
+        "scope": "lua",
+        "prefix": "does_rope_exist",
+        "body": "rage.rope.does_rope_exist(${1:ropeId})",
+        "description": "Checks whether a rope exists."
+    },
+    "rage.rope.rope_force_length": {
+        "scope": "lua",
+        "prefix": "rope_force_length",
+        "body": "rage.rope.rope_force_length(${1:ropeId}, ${2:length})",
+        "description": "Forces a rope to a certain length."
+    },
+    "rage.rope.start_rope_unwinding_front": {
+        "scope": "lua",
+        "prefix": "start_rope_unwinding_front",
+        "body": "rage.rope.start_rope_unwinding_front(${1:ropeId})",
+        "description": "Start rope unwinding from the front."
+    },
+    "rage.rope.start_rope_winding": {
+        "scope": "lua",
+        "prefix": "start_rope_winding",
+        "body": "rage.rope.start_rope_winding(${1:ropeId})",
+        "description": "Start rope winding."
+    },
+    "rage.rope.stop_rope_unwinding_front": {
+        "scope": "lua",
+        "prefix": "stop_rope_unwinding_front",
+        "body": "rage.rope.stop_rope_unwinding_front(${1:ropeId})",
+        "description": "Stop rope unwinding from the front."
+    },
+    "rage.rope.stop_rope_winding": {
+        "scope": "lua",
+        "prefix": "stop_rope_winding",
+        "body": "rage.rope.stop_rope_winding(${1:ropeId})",
+        "description": "Stop rope winding."
+    }
+}
