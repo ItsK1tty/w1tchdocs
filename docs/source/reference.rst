@@ -1227,7 +1227,7 @@ Adds a text option. (e.g. a note).
 
    parent = menu.add_parent("My parent section")
 
-   menu.add_option_text("Just a text option", "luaOptHashInfo", "Some info", parent)
+   menu.add_option_info("Just an info option", "luaOptHashInfo", "Some info", parent)
 
 ======================
 
