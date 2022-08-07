@@ -703,6 +703,21 @@ Checks whether the key is pressed
 
 ================================
 
+reinitialize_d2ui()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Reinitializes DIS2RBED UI and Lua scripts.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+================================
+
 .. _web:
 
 Web namespace
@@ -3256,6 +3271,21 @@ Menu navigation action (**Up**).
 
 ======================
 
+get_current_option_hash()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the hash of the current option.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``string`` -- The hash of the current option
+
+======================
+
 .. _stats:
 
 Stats namespace
@@ -3638,6 +3668,20 @@ Sends a lime-colored notification in the bottom-right corner of the screen.
 
 ================================
 
+force_next_notify()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Disables antispam for the next notification.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* None
+
+================================
 
 
 .. _script:
@@ -8783,6 +8827,31 @@ Toggle and configure the spectating mode.
 
 ================================
 
+
+suicide()
+^^^^^^^^^^^^
+
+Kills the player.
+
+Parameters:
+
+* None
+
+Returns:
+
+* None
+
+Example:
+
+.. code-block:: lua
+   :linenos:
+
+   scripting.online.suicide()
+   system.log_debug("RIP, " .. rage.player.get_player_name(rage.player.player_id()))
+
+
+=====================
+
 teleport_in_player_vehicle(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -10371,6 +10440,30 @@ Check if ragdoll is enabled for this ped
    data = rage.ped.can_ped_ragdoll(ped)
 
    system.log_debug(tostring(data))
+
+================================
+
+clear_ped_prop(``ped``, ``propId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Clears the specified prop from the ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``propId`` (``int``) -- The prop ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   ped = self.get_ped()
+   rage.ped.clear_ped_prop(ped, 0) -- removes the hat
 
 ================================
 
@@ -16557,6 +16650,59 @@ Gets ammo type from a specific weapon of a ped.
    ped = lobby.get_player_ped(lobby.get_host())
 
    rage.weapon.get_ped_ammo_type_from_weapon(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Returns ammo type from session's host MicroSMG
+
+================================
+
+get_ammo_in_clip(``ped``, ``weaponHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns current ammo amount in the clip.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped ID
+* ``weaponHash`` (``Hash``) -- Game hash of the weapon
+
+**Returns:**
+
+* ``int`` -- ammo count
+
+**Example:*
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   weaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+   count = rage.weapon.get_ammo_in_clip(ped, weaponHash)
+   system.log_debug(tostring(count))
+
+================================
+
+get_ammo_in_ped_weapon(``ped``, ``weaponHash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns current ammo amount in the ped's weapon.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped ID
+* ``weaponHash`` (``Hash``) -- Game hash of the weapon
+
+**Returns:**
+
+* ``int`` -- ammo count
+
+**Example:*
+
+.. code-block:: lua
+   :linenos:
+
+   ped = self.get_ped()
+   weaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+   count = rage.weapon.get_ammo_in_ped_weapon(ped, weaponHash)
+   system.log_debug(tostring(count))
+
 
 ================================
 
