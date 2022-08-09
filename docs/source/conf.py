@@ -36,6 +36,9 @@ html_theme = 'sphinx-rtd-dark-mode'
 
 default_dark_mode = True
 
+html_context = {
+    'source_url_prefix': "https://gitlab.com/ItsK1tty/w1tchdocs/edit/main/docs/source/",
+}
 
 
 # -- Options for EPUB output
