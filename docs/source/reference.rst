@@ -1,3 +1,6 @@
+.. meta::
+   :github_url: https://github.com/ItsK1tty/w1tchdocs/edit/main/docs/source/reference.rst
+
 DIS2RBED LUA reference
 ========================
 
@@ -484,8 +487,8 @@ Adds a task into the process's main loop.
    --or
    function my_script_function()
         -- Test key press
-        bKeyPressed = system.is_key_pressed("F")
-        if bKeyPressed then
+        bIsKeyPressed = system.is_key_pressed("F")
+        if bIsKeyPressed then
             system.log_info("Pressed F to pay respect!")
         end
    end
@@ -695,8 +698,8 @@ Checks whether the key is pressed
    :linenos:
 
    function my_script_function(text)
-      kPressed = system.is_key_pressed("F")
-      if kPressed then
+      bIsKeyPressed = system.is_key_pressed("F")
+      if bIsKeyPressed then
          system.log_info("Hello World!")
       end
    end
@@ -746,14 +749,14 @@ Sends a GET request to a web server.
    :linenos:
 
    system.log_warning("Test HTTP request GET")
-   result_get = web.get("http://ip-api.com/php/24.48.0.1")
-   system.log_warning(result_get)
+   sRequestResult = web.get("http://ip-api.com/php/24.48.0.1")
+   system.log_warning(sRequestResult)
 
    --or
 
    system.log_warning("Test HTTPS request GET")
-   result_get = web.get("https://ipapi.co/8.8.8.8/json/")
-   system.log_warning(result_get)
+   sRequestResult = web.get("https://ipapi.co/8.8.8.8/json/")
+   system.log_warning(sRequestResult)
 
 ================================
 
@@ -776,19 +779,11 @@ Sends a POST request to a web server.
 .. code-block:: lua
    :linenos:
 
-   system.log_warning("Test HTTPS request GET, get website page")
-   result_get = web.get("https://www.w3.org/History/19921103-hypertext/hypertext/WWW/TheProject.html")
-   system.log_warning(result_get)
+   system.log_warning("Test HTTP request POST") -- https is supported too
+   sJSONRequest = "[ {\"query\": \"208.80.152.201\", \"fields\": \"city,country,countryCode,query\", \"lang\": \"eu\"},  \"8.8.8.8\",  \"24.48.0.1\" ]"
+   sRequestResult = web.post("http://ip-api.com/batch", sJSONRequest)
+   system.log_warning(sRequestResult)
 
-   --or
-
-   system.log_warning("Test HTTP request POST")
-   json_request = "[ {\"query\": \"208.80.152.201\", \"fields\": \"city,country,countryCode,query\", \"lang\": \"eu\"},  \"8.8.8.8\",  \"24.48.0.1\" ]"
-   result_post = web.post("http://ip-api.com/batch",json_request)
-   system.log_warning(result_post)
-
-
-================================
 
 ================================
 
@@ -847,9 +842,9 @@ Adds a child section to a parent section.
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   child = menu.add_child("Child section of my parent section", parent)
+   iChildID = menu.add_child("Child section of my parent section", iParentID)
 
 ======================
 
@@ -872,9 +867,9 @@ Adds a delimiter to a section.
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_delimiter("Just a delimiter...", parent)
+   menu.add_delimiter("Just a delimiter...", iParentID)
 
 ======================
 
@@ -901,12 +896,12 @@ Adds a menu option button.
 
    -- A test function
    function test()
-      log_info("Test function!")
+      system.log_info("Test function!")
    end
    
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option("Lua Option", "luaOptHash", parent, test)
+   menu.add_option("Lua Option", "luaOptHash", iParentID, test)
 
 ======================
 
@@ -931,9 +926,9 @@ Adds a toggable menu option button.
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_toggle("Toggle Option", "luaOptDummyToggle", parent, function())
+   menu.add_option_toggle("Toggle Option", "luaOptDummyToggle", iParentID, function())
 
 ======================
 
@@ -962,9 +957,9 @@ Adds a slider menu option.
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_slider("Slider Option", "luaOptDummyToggle", 10, 0, 100, 3, parent, function()) -- makes a slider with 3 possible values: on 2, 4, and 6
+   menu.add_option_slider("Slider Option", "luaOptDummyToggle", 10, 0, 100, 3, iParentID, function()) -- makes a slider with 3 possible values: on 2, 4, and 6
 
 ======================
 
@@ -993,9 +988,9 @@ Adds a toggable slider menu option.
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_slider_toggle("Toggable Slider Option", "luaOptDummyToggle", 10, 0, 100, 10, parent, function())  -- makes a slider with 10 possible values: on 10, 20, and so on.
+   menu.add_option_slider_toggle("Toggable Slider Option", "luaOptDummyToggle", 10, 0, 100, 10, iParentID, function())  -- makes a slider with 10 possible values: on 10, 20, and so on.
 
 ======================
 
@@ -1025,9 +1020,9 @@ Adds a menu option with a pre-set value
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_value("Lua option with value", "luaOptDummyToggle", 10, 0, 100, 1, parent, "kb", function())
+   menu.add_option_value("Lua option with value", "luaOptDummyToggle", 10, 0, 100, 1, iParentID, "kb", function())
 
 ======================
 
@@ -1057,9 +1052,9 @@ Adds a toggable menu option with a pre-set value.
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_value_toggle("Toggable Lua option with value", "luaOptDummyToggle", 10, 0, 100, 1, parent, "kb", function())
+   menu.add_option_value_toggle("Toggable Lua option with value", "luaOptDummyToggle", 10, 0, 100, 1, iParentID, "kb", function())
 
 ======================
 
@@ -1086,9 +1081,9 @@ Adds a menu option with multiple values.
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_value_str("Lua option with multiple values", "luaOptDummyToggle", 0, parent, { "One", "Two", "Three" }, function())
+   menu.add_option_value_str("Lua option with multiple values", "luaOptDummyToggle", 0, iParentID, { "One", "Two", "Three" }, function())
 
 ======================
 
@@ -1115,9 +1110,9 @@ Adds a toggable menu option with multiple values.
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_value_str("Toggable Lua option with multiple values", "luaOptDummyToggle", 0, parent, { "One", "Two", "Three" }, function())
+   menu.add_option_value_str("Toggable Lua option with multiple values", "luaOptDummyToggle", 0, iParentID, { "One", "Two", "Three" }, function())
 
 ======================
 
@@ -1141,9 +1136,9 @@ Adds a teleport option button.
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_teleport("Casino Entrance", { 922.680847, 47.205017, 81.106346 }, parent)
+   menu.add_option_teleport("Casino Entrance", { 922.680847, 47.205017, 81.106346 }, iParentID)
 
 ======================
 
@@ -1168,11 +1163,11 @@ Adds a spawn option button.
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   menu.add_option_spawn("Spawn Zentorno", zentornoHash, 0, parent) -- 0 is vehicle_spawn type
+   menu.add_option_spawn("Spawn Zentorno", uZentornoHash, 0, iParentID) -- 0 is vehicle_spawn type
 
 ======================
 
@@ -1198,9 +1193,9 @@ Adds a text option (e.g. a note).
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_text("Just a text option", "luaOptHashText", "Text", parent, foo)
+   menu.add_option_text("Just a text option", "luaOptHashText", "Text", iParentID, foo)
 
 ======================
 
@@ -1225,9 +1220,9 @@ Adds a text option. (e.g. a note).
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_info("Just an info option", "luaOptHashInfo", "Some info", parent)
+   menu.add_option_info("Just an info option", "luaOptHashInfo", "Some info", iParentID)
 
 ======================
 
@@ -1253,19 +1248,17 @@ Adds a color selection button.
 .. code-block:: lua
    :linenos:
 
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_color("Color option", "luaOptHashColor", {0, 0, 255, 255}, parent) -- Blue is the default color
+   menu.add_option_color("Color option", "luaOptHashColor", {0, 0, 255, 255}, iParentID) -- Blue is the default color
 
 
 ======================
-======================
-
 
 update_option(``hash``, ``name``, ``fn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Updates a menu option.
+Updates an existing menu option.
 
 **Parameters:**
 
@@ -1282,9 +1275,11 @@ Updates a menu option.
 .. code-block:: lua
    :linenos:
 
+   menu.add_option("luaOptHash", "Lua Option", iParentID, function())
+
    -- A test function
    function test()
-      log_info("Test function!")
+      system.log_info("Test function!")
    end
 
    menu.update_option("luaOptHash", "Lua Option", test)
@@ -1311,9 +1306,11 @@ Updates a toggable option.
 .. code-block:: lua
    :linenos:
 
+   menu.update_option_toggle("luaOptHash", "Lua Option", iParentID, test)
+   
    -- A test function
    function test()
-      log_info("Test function!")
+      system.log_info("Test function!")
    end
 
    menu.update_option_toggle("luaOptHash", "Lua Option", test)
@@ -1531,7 +1528,7 @@ Updates an info text option (e.g. a note).
 .. code-block:: lua
    :linenos:
 
-   menu.update_option_info("luaOptHashText", "Just a text option", "Some Info")
+   menu.update_option_info("luaOptHashText", "Just an info option", "Some Info")
 
 ======================
 
@@ -1901,7 +1898,7 @@ Checks whether an option is toggled.
    :linenos:
 
    -- Get option state
-   optionToggled = "Option toggled: " .. tostring(menu.is_option_toggled("luaOptDummyToggle"))
+   bIsOptionToggled = "Option toggled: " .. tostring(menu.is_option_toggled("luaOptDummyToggle"))
 
 ======================
 
@@ -1926,7 +1923,7 @@ Checks whether an option is visible.
 .. code-block:: lua
    :linenos:
 
-   optionVisible = "Option visibility state is: " .. tostring(menu.is_option_visible("luaOptDummyToggle"))
+   bIsOptionVisible = "Option visibility state is: " .. tostring(menu.is_option_visible("luaOptDummyToggle"))
 
 ======================
 
@@ -1951,7 +1948,7 @@ Checks whether an option is enabled.
 .. code-block:: lua
    :linenos:
 
-   optionEnabled = "Option state is: " .. tostring(menu.is_option_enabled("luaOptDummyToggle"))
+   bIsOptionEnabled = "Option state is: " .. tostring(menu.is_option_enabled("luaOptDummyToggle"))
 
 ======================
 
@@ -1974,7 +1971,7 @@ Returns the value of an option.
    :linenos:
 
    -- Get option value
-   optionValue = "Option value is: " .. tostring(menu.get_option_value("luaOptHashValue"))
+   fOptionValue = "Option value is: " .. tostring(menu.get_option_value("luaOptHashValue"))
 
 ======================
 
@@ -2012,7 +2009,7 @@ Returns the option text.
    :linenos:
    
    -- Get option text
-   optionText = "Option text is: " .. tostring(menu.get_option_text("luaOptHashText"))
+   fOptionText = "Option text is: " .. tostring(menu.get_option_text("luaOptHashText"))
 
 
 ======================
@@ -2036,11 +2033,11 @@ Returns the selected color of a color selection option.
    :linenos:
    
    
-   parent = menu.add_parent("My parent section")
+   iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_color("Color option", "luaOptHashColor", {0, 0, 255, 255}, parent) -- Blue is the default color
+   menu.add_option_color("Color option", "luaOptHashColor", {0, 0, 255, 255}, iParentID) -- Blue is the default color
 
-   optionColor = "Option color is: " .. tostring(menu.get_option_color("luaOptHashColor"))
+   crgbaOptionColor = "Option color is: " .. tostring(menu.get_option_color("luaOptHashColor"))
 
 
 ======================
@@ -2094,7 +2091,9 @@ Returns the Self Mods section ID.
 
    -- Let's add an option named "Useless Button" in the main Self Mods section.
 
-   menu.add_option("Useless Button", "optUselessBtn", menu.section_self_mods(), function())
+   iSelfModsSectionID = menu.section_self_mods()
+
+   menu.add_option("Useless Button", "optUselessBtn", iSelfModsSectionID, function())
 
 ======================
 
@@ -2116,9 +2115,11 @@ Returns the Self Mods -> Other section ID.
 .. code-block:: lua
    :linenos:
 
-   -- Let's add an option named "Other Option" in the Self Mods -> Other section.
+   -- Let's add an option named "Other Option" in the Self Mods -> Other section..
 
-   menu.add_option("Other Option", "optOtherOpt", menu.section_self_mods_other(), function())
+   iSelfModsOtherSectionID = menu.section_self_mods_other()
+
+   menu.add_option("Other Option", "optOtherOpt", iSelfModsOtherSectionID, function())
 
 ======================
 
@@ -2142,7 +2143,9 @@ Returns the Self Mods -> No Clip section ID.
 
    -- Let's add an option named "No Clip Plus" in the Self Mods -> No Clip section.
 
-   menu.add_option("No Clip Plus", "optNoclipPlus", menu.section_self_mods_no_clip(), function())
+   iSelfModsNoClipSectionID = menu.section_self_mods_no_clip()
+
+   menu.add_option("No Clip Plus", "optNoclipPlus", iSelfModsNoClipSectionID, function())
 
 ======================
 
@@ -2166,7 +2169,8 @@ Returns the Self Mods -> Invincibility section ID.
 
    -- Let's add an option named "Thanos Mode" in the Self Mods -> Invincibility section.
 
-   menu.add_option("Thanos Mode", "optThanosMode", menu.section_self_mods_invincibility(), function())
+   iSelfModsInvincibilitySectionID = menu.section_self_mods_invincibility()
+   menu.add_option("Thanos Mode", "optThanosMode", iSelfModsInvincibilitySectionID, function())
 
 ======================
 
@@ -2190,7 +2194,8 @@ Returns the Online section ID.
 
    -- Let's add an option named "Useless Button" in the Online section.
 
-   menu.add_option("Useless Button", "optUselessBtn2", menu.section_online(), function())
+   iOnlineSectionID = menu.section_online()
+   menu.add_option("Useless Button", "optUselessBtn2", iOnlineSectionID, function())
 
 ======================
 
@@ -2212,7 +2217,8 @@ Returns the Online -> Player (specific) section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Look Player", "optLookPlayer", menu.section_online_player(23), function())
+   iPlayerSectionID = menu.section_online_player(23)
+   menu.add_option("Look Player", "optLookPlayer", iPlayerSectionID, function())
 
 ======================
 
@@ -2234,7 +2240,8 @@ Returns the Online -> Players section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("All Online Players", "optAllOnlPlayers", menu.section_online_players(), function())
+   iPlayersSectionID = menu.section_online_players()
+   menu.add_option("All Online Players", "optAllOnlPlayers", iPlayersSectionID, function())
 
 ======================
 
@@ -2256,7 +2263,11 @@ Returns the Online -> All Players section ID.
 .. code-block:: lua
    :linenos:
    
-   menu.add_option("All Online Players", "optAllOnlPlayers", menu.section_online_all_players(), function())
+   iAllPlayersSectionID = menu.section_online_all_players()
+   menu.add_option("All Online Players", "optAllOnlPlayers", iAllPlayersSectionID, function())
+
+======================
+
 
 section_online_protex()
 
@@ -2277,7 +2288,8 @@ Returns the Online -> Protections section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Super Protex", "optSuperPrtx", menu.section_online_protex(), function())
+   iProtectionsSectionID = menu.section_online_protex()
+   menu.add_option("Super Protex", "optSuperPrtx", iProtectionsSectionID, function())
 
 ======================
 
@@ -2299,7 +2311,9 @@ Returns the Online -> Other section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Other Button", "optOtherBtn", menu.section_online_other(), function())
+
+   iOtherSectionID = menu.section_online_other()
+   menu.add_option("Other Button", "optOtherBtn", iOtherSectionID, function())
 
 ======================
 
@@ -2321,7 +2335,9 @@ Returns the Online -> Spoofing section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Spoof All", "optSpoofAll", menu.section_online_spoofer(), function())
+   iSpoofingSectionID = menu.section_online_spoofer()
+
+   menu.add_option("Spoof All", "optSpoofAll", iSpoofingSectionID, function())
 
 ======================
 
@@ -2343,7 +2359,8 @@ Returns the Online -> Network section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Disconnect", "optNtwrkDisconnect", menu.section_network(), function())
+   iNetworkSectionID = menu.section_network()
+   menu.add_option("Disconnect", "optNtwrkDisconnect", iNetworkSectionID, function())
 
 ======================
 
@@ -2365,13 +2382,9 @@ Returns the Recovery section ID.
 .. code-block:: lua
    :linenos:
 
-   -- Let's integrate Heist Control LUA in the Recovery section.
+   iRecoverySectionID = menu.section_recovery()
 
-   menu.add_delimiter("Heist Control v0.1", menu.section_recovery())
-
-   -- Child section for Cayo Perico Heist options.
-
-   CayoPericoHeist = menu.add_child("Cayo Perico Heist", menu.section_recovery())
+   iCayoPericoHeistSectionID = menu.add_child("Cayo Perico Heist", iRecoverySectionID)
 
 ======================
 
@@ -2393,7 +2406,8 @@ Returns the Recovery -> Bunker Options section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Sell Everything", "optSellEvery", menu.section_recovery_bunker(), function())
+   iBunkerSectionID = menu.section_recovery_bunker()
+   menu.add_option("Sell Everything", "optSellEvery", iBunkerSectionID, function())
 
 ======================
 
@@ -2415,9 +2429,9 @@ Returns the Recovery -> NightClub Options section ID.
 .. code-block:: lua
    :linenos:
 
-   -- Let's add a toggable option in memory of the 6 Mil NC Safe Loop, we miss you.
-
-   menu.add_option_toggle("Loop Nightclub Safe Cash", "optNcSafeLoop", menu.section_recovery_nightclub(), function())
+   
+   iNightClubSectionID = menu.section_recovery_night_club()
+   menu.add_option_toggle("Loop Nightclub Safe Cash", "optNcSafeLoop", iNightClubSectionID, function())
 
 ======================
 
@@ -2439,7 +2453,9 @@ Returns the Recovery -> Motorcycle Club Options section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Ride or Die", "optMcRideOrDie", menu.section_recovery_motorcycle_club(), function())
+
+   iMotorcycleClubSectionID = menu.section_recovery_motorcycle_club()
+   menu.add_option("Ride or Die", "optMcRideOrDie", iMotorcycleClubSectionID, function())
 
 ======================
 
@@ -2462,10 +2478,10 @@ Returns the Recovery -> Casino Options section ID.
    :linenos:
 
    function casinoJackpot()
-      log_warning("You hit the jackpot!!!")
+      system.log_warning("You hit the jackpot!!!")
    end
-
-   menu.add_option("Jackpot", "optCasinoJckpt", menu.section_recovery_casino(), casinoJackpot)
+   iCasinoSectionID = menu.section_recovery_casino()
+   menu.add_option("Jackpot", "optCasinoJckpt", iCasinoSectionID, casinoJackpot)
 
 ======================
 
@@ -2487,13 +2503,9 @@ Returns the Vehicle Spawn section ID.
 .. code-block:: lua
    :linenos:
 
-   -- Let's add Spawn Zentorno option to Vehicle Spawn section.
-
-   spawn = menu.section_vehicle_spawn()
-
+   iVehicleSpawnSectionID = menu.section_vehicle_spawn()
    zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
-
-   menu.add_option_spawn("Spawn Zentorno", zentornoHash, 0, spawn)
+   menu.add_option_spawn("Spawn Zentorno", zentornoHash, 0, iVehicleSpawnSectionID)
 
 ======================
 
@@ -2515,7 +2527,9 @@ Returns the Weapons section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Add Weapon", "optAddWeapon", menu.section_weapons(), function())
+   iWeaponsSectionID = menu.section_weapons()
+
+   menu.add_option("Add Weapon", "optAddWeapon", iWeaponsSectionID, function())
 
 ======================
 
@@ -2537,7 +2551,8 @@ Returns the Weapons -> Weapons Ammo section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Add Ammo", "optAddAmmo", menu.section_weapons_ammo(), function())
+   iWeaponsAmmoSectionID = menu.section_weapons_ammo()
+   menu.add_option("Add Ammo", "optAddAmmo", iWeaponsAmmoSectionID, function())
 
 ======================
 
@@ -2561,9 +2576,9 @@ Returns the Teleport section.
 
    -- Let's add a direct Casino Entrance teleport option, in the Teleport section.
 
-   teleport = menu.section_teleport()
+   iTeleportSectionID = menu.section_teleport()
 
-   menu.add_option_teleport("Casino Entrance", { 922.680847, 47.205017, 81.106346 }, teleport)
+   menu.add_option_teleport("Casino Entrance", { 922.680847, 47.205017, 81.106346 }, iTeleportSectionID)
 
 ======================
 
@@ -2585,7 +2600,8 @@ Returns the Teleport -> IPL section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Another IPL Teleport", "optAnotherIplTp", menu.section_teleport_ipl(), function())
+   iIplSectionID = menu.section_teleport_ipl()
+   menu.add_option("Another IPL Teleport", "optAnotherIplTp", iIplSectionID, function())
 
 ======================
 
@@ -2607,7 +2623,9 @@ Returns the Vehicle Mods section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Full Upgrade", "optFullUpgrade", menu.section_vehicle_mods(), function())
+   iVehicleModsSectionID = menu.section_vehicle_mods()
+
+   menu.add_option("Full Upgrade", "optFullUpgrade", iVehicleModsSectionID, function())
 
 ======================
 
@@ -2629,7 +2647,8 @@ Returns the LSC Mods section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Rainbow Color", "optLscRainbowClrs", menu.section_los_santos_customs(), function())
+   iLSCModsSectionID = menu.section_los_santos_customs()
+   menu.add_option("Rainbow Color", "optLscRainbowClrs", iLSCModsSectionID, function())
 
 ======================
 
@@ -2650,8 +2669,10 @@ Returns the Model Changer section ID.
 
 .. code-block:: lua
    :linenos:
+   
+   iModelChangerSectionID = menu.section_model_changer()
 
-   menu.add_option("Turn into a cat", "optModelBecomeCat", menu.section_model_changer(), function())
+   menu.add_option("Turn into a cat", "optModelBecomeCat", iModelChangerSectionID, function())
 
 ======================
 
@@ -2673,7 +2694,8 @@ Returns the Animations section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Dance2", "optAnimDance2", menu.section_animations(), function())
+   iAnimationsSectionID = menu.section_animations()
+   menu.add_option("Dance2", "optAnimDance2", iAnimationsSectionID, function())
 
 ======================
 
@@ -2695,7 +2717,8 @@ Returns the Model Swapper section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Swap Model", "optModelSwap", menu.section_model_swapper(), function())
+   iModelSwapperSectionID = menu.section_model_swapper()
+   menu.add_option("Swap Model", "optModelSwap", iModelSwapperSectionID, function())
 
 ======================
 
@@ -2717,13 +2740,9 @@ Returns the Crafting Workshop section ID.
 .. code-block:: lua
    :linenos:
 
-   -- Let's add a child section in Crafting Workshop section named "Spawnable Custom Workshops"
+   iCraftingWorkshopSectionID = menu.section_crafting_workshop()
 
-   spawnables = menu.add_child("Spawnable Custom Workshops", menu.section_crafting_workshop())
-
-   -- Inside we will have an option to spawn a custom made workshop preset.
-
-   menu.add_option("Spawn Flying Kosatka (Custom 1)", "optCraftingSpawnCustom1", spawnables, function())
+   menu.add_option("Foo", "optCraftingFoo", iCraftingWorkshopSectionID, function())
 
 ======================
 
@@ -2745,29 +2764,9 @@ Returns he Outfit Store section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Random Outfit", "optOutfitRandom", menu.section_outfit_store(), function())
+   iOutfitStoreSectionID = menu.section_outfit_store()
 
-======================
-
-section_outfit_store()
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Returns the Outfit Store section ID.
-
-**Parameters:**
-
-* None
-
-**Returns:**
-
-* ``int`` -- The ID of the parent menu section.
-
-**Example:**
-
-.. code-block:: lua
-   :linenos:
-
-   menu.add_option("Random Outfit", "optOutfitRandom", menu.section_outfit_store(), function())
+   menu.add_option("Random Outfit", "optOutfitRandom", iOutfitStoreSectionID, function())
 
 ======================
 
@@ -2789,7 +2788,8 @@ Returns the Settings section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Reset Settings", "optSettingsResetStngs", menu.section_settings(), function())
+   iSettingsSectionID = menu.section_settings()
+   menu.add_option("Reset Settings", "optSettingsResetStngs", iSettingsSectionID, function())
 
 ======================
 
@@ -2811,7 +2811,8 @@ Returns the Settings -> Lua section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Save Lua Settings", "optLuaSettingsSave", menu.section_settings_lua(), function())
+   iSettingsLuaSectionID = menu.section_settings_lua()
+   menu.add_option("Save Lua Settings", "optLuaSettingsSave", iSettingsLuaSectionID, function())
 
 ======================
 
@@ -2833,7 +2834,9 @@ Returns the Interface section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("Reset Theme", "optInterfaceResetTheme", menu.section_interface(), function())
+   iInterfaceSectionID = menu.section_interface()
+
+   menu.add_option("Reset Theme", "optInterfaceResetTheme", iInterfaceSectionID, function())
 
 ======================
 
@@ -2855,7 +2858,8 @@ Returns the World section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("World", "optWorld", menu.section_world(), function())
+   iWorldSectionID = menu.section_world()
+   menu.add_option("World", "optWorld", iWorldSectionID, function())
 
 ======================
 
@@ -2877,7 +2881,8 @@ Returns the About section ID.
 .. code-block:: lua
    :linenos:
 
-   menu.add_option("About Me", "optAboutAbtMe", menu.section_about(), function())
+   iAboutSectionID = menu.section_about()
+   menu.add_option("About Me", "optAboutAbtMe", iAboutSectionID, function())
 
 ======================
 
@@ -2902,7 +2907,10 @@ Checks whether the menu is active.
 .. code-block:: lua
    :linenos:
 
-   isMenuOpened = menu.is_menu_active()
+   bIsMenuOpened = menu.is_menu_active()
+   if bIsMenuOpened then
+      system.log_debug("The menu is opened")
+   end
 
 ======================
 
@@ -2927,7 +2935,10 @@ Checks whether the menu controls are active.
 .. code-block:: lua
    :linenos:
 
-   MenuControlsCheck = menu.is_menu_controls_active()
+   bIsMenuControlsActive = menu.is_menu_controls_active()
+   if bIsMenuControlsActive then
+      system.log_debug("The menu controls are active")
+   end
 
 ======================
 
@@ -2952,7 +2963,10 @@ Checks whether the menu mouse controls are active.
 .. code-block:: lua
    :linenos:
 
-   MouseControlsCheck = menu.is_menu_mouse_controls_active()
+   bIsMenuMouseActive = menu.is_menu_mouse_controls_active()
+   if bIsMenuMouseActive then
+      system.log_debug("The menu mouse controls are active")
+   end
 
 ======================
 
@@ -2977,7 +2991,8 @@ Toggles menu controls on/off.
 .. code-block:: lua
    :linenos:
 
-   controlsOn = menu.set_controls(true)
+   menu.set_controls(true)
+   system.log_debug("The menu controls are enabled")
 
 ======================
 
@@ -3002,14 +3017,15 @@ Toggles menu mouse controls on/off.
 .. code-block:: lua
    :linenos:
 
-   mouseControlsOn = menu.set_mouse_controls(true)
+   menu.set_mouse_controls(true)
+   system.log_debug("The menu mouse controls are active")
 
 ======================
 
 menu_set_value()
 ^^^^^^^^^^^^^^^^^^^^
 
-Menu action (Set Value).
+Brings up set value menu.
 
 **Parameters:**
 
@@ -3024,7 +3040,8 @@ Menu action (Set Value).
 .. code-block:: lua
    :linenos:
 
-   setValue = menu.set_value()
+   menu.set_value()
+
 
 ======================
 
@@ -3046,7 +3063,7 @@ Menu navigation action (Back).
 .. code-block:: lua
    :linenos:
 
-   menuBack = menu.menu_back()
+   menu.menu_back()
 
 ======================
 
@@ -3068,7 +3085,7 @@ Menu mouse navigation action (Back).
 .. code-block:: lua
    :linenos:
 
-   menuBackMouse = menu.menu_back_mouse()
+   menu.menu_back_mouse()
 
 ======================
 
@@ -3090,7 +3107,7 @@ Menu navigation action (Down).
 .. code-block:: lua
    :linenos:
 
-   menuDown = menu.menu_down()
+   menu.menu_down()
 
 ======================
 
@@ -3113,7 +3130,7 @@ Menu navigation action (Left).
 .. code-block:: lua
    :linenos:
 
-   menuLeft = menu.menu_left()
+   menu.menu_left()
 
 ======================
 
@@ -3135,7 +3152,7 @@ Menu action (Remove Hotkey).
 .. code-block:: lua
    :linenos:
 
-   menuRemHotkey = menu.menu_remove_hotkey()
+   menu.menu_remove_hotkey()
 
 ======================
 
@@ -3157,7 +3174,7 @@ Menu navigation action (Right).
 .. code-block:: lua
    :linenos:
 
-   menuRight = menu.menu_right()
+   menu.menu_right()
 
 ======================
 
@@ -3179,7 +3196,7 @@ Menu action (Save settings).
 .. code-block:: lua
    :linenos:
 
-   menuSave = menu.menu_save()
+   menu.menu_save()
 
 ======================
 
@@ -3201,7 +3218,7 @@ Menu navigation action (Select).
 .. code-block:: lua
    :linenos:
 
-   menuSelect = menu.menu_select()
+   menu.menu_select()
 
 ======================
 
@@ -3223,7 +3240,7 @@ Menu mouse navigation action (Select).
 .. code-block:: lua
    :linenos:
 
-   menuSelectMouse = menu.menu_select_mouse()
+   menu.menu_select_mouse()
 
 ======================
 
@@ -3245,7 +3262,7 @@ Menu navigation action (Toggle).
 .. code-block:: lua
    :linenos:
 
-   menuToggle = menu.menu_toggle()
+   menu.menu_toggle()
 
 ======================
 
@@ -3267,7 +3284,7 @@ Menu navigation action (**Up**).
 .. code-block:: lua
    :linenos:
 
-   menuUp = menu.menu_up()
+   menu.menu_up()
 
 ======================
 
@@ -4787,8 +4804,8 @@ Returns the process window's border size.
 .. code-block:: lua
    :linenos:
       
-   borderSize = render.get_border_size() -- Returns the border size.
-   system.log_info("The border size is " .. tostring(borderSize) .. ".") -- Prints the border size.
+   v3BorderSize = render.get_border_size() -- Returns the border size.
+   system.log_info("The border size is " .. tostring(v3BorderSize) .. ".") -- Prints the border size.
 
 ================================
 
@@ -4810,8 +4827,8 @@ Returns the current FPS.
 .. code-block:: lua
    :linenos:
       
-   fps = render.get_fps() -- Returns the FPS.
-   system.log_info("The FPS is " .. tostring(fps) .. ".") -- Prints the FPS.
+   fFPSCount = render.get_fps() -- Returns the FPS.
+   system.log_info("The FPS is " .. tostring(fFPSCount) .. ".") -- Prints the FPS.
 
 ================================
 
@@ -4833,8 +4850,8 @@ Returns the menu's rounding.
 .. code-block:: lua
    :linenos:
       
-   rounding = render.get_menu_rounding() -- Returns the rounding.
-   system.log_info("The rounding is " .. tostring(rounding) .. ".") -- Prints the rounding.
+   fMenuRounding = render.get_menu_rounding() -- Returns the rounding.
+   system.log_info("The rounding is " .. tostring(fMenuRounding) .. ".") -- Prints the rounding.
 
 ================================
 
@@ -4856,8 +4873,8 @@ Returns the menu's width.
 .. code-block:: lua
    :linenos:
       
-   width = render.get_menu_width() -- Returns the width.
-   system.log_info("The width is " .. tostring(width) .. ".") -- Prints the width.
+   fMenuWidth = render.get_menu_width() -- Returns the width.
+   system.log_info("The width is " .. tostring(fMenuWidth) .. ".") -- Prints the width.
 
 ================================
 
@@ -4879,8 +4896,8 @@ Returns the font header size.
 .. code-block:: lua
    :linenos:
       
-   headerSize = render.get_font_header_size() -- Returns the header size.
-   system.log_info("The header size is " .. tostring(headerSize) .. ".") -- Prints the header size.
+   fHeaderFontSize = render.get_font_header_size() -- Returns the header size.
+   system.log_info("The header size is " .. tostring(fHeaderFontSize) .. ".") -- Prints the header size.
 
 ================================
 
@@ -4902,8 +4919,8 @@ Returns the font helper size.
 .. code-block:: lua
    :linenos:
       
-   helperSize = render.get_font_helper_size() -- Returns the helper size.
-   system.log_info("The helper size is " .. tostring(helperSize) .. ".") -- Prints the helper size.
+   fHelperFontSize = render.get_font_helper_size() -- Returns the helper size.
+   system.log_info("The helper size is " .. tostring(fHelperFontSize) .. ".") -- Prints the helper size.
 
 ================================
 
@@ -4925,8 +4942,8 @@ Returns the font option size.
 .. code-block:: lua
    :linenos:
       
-   optionSize = render.get_font_option_size() -- Returns the option size.
-   system.log_info("The option size is " .. tostring(optionSize) .. ".") -- Prints the option size.
+   fOptionFontSize = render.get_font_option_size() -- Returns the option size.
+   system.log_info("The option size is " .. tostring(fOptionFontSize) .. ".") -- Prints the option size.
 
 ================================
 
@@ -4948,8 +4965,8 @@ Returns the font warning size.
 .. code-block:: lua
    :linenos:
       
-   warningSize = render.get_font_warning_size() -- Returns the warning size.
-   system.log_info("The warning size is " .. tostring(warningSize) .. ".") -- Prints the warning size.
+   fWarningFontSize = render.get_font_warning_size() -- Returns the warning size.
+   system.log_info("The warning size is " .. tostring(fWarningFontSize) .. ".") -- Prints the warning size.
 
 ================================
 
@@ -4971,9 +4988,9 @@ Returns the cursor position.
 .. code-block:: lua
    :linenos:
       
-   cursorPos = render.get_menu_cursor_pos() -- Returns the cursor position.
-   system.log_info("The cursor position is " .. tostring(cursorPos.x) .. ".") -- Prints the cursor X position coordinate.
-   system.log_info("The cursor position is " .. tostring(cursorPos.y) .. ".") -- Prints the cursor Y position coordinate.
+   v2CursorPos = render.get_menu_cursor_pos() -- Returns the cursor position.
+   system.log_info("The cursor position is " .. tostring(v2CursorPos.x) .. ".") -- Prints the cursor X position coordinate.
+   system.log_info("The cursor position is " .. tostring(v2CursorPos.y) .. ".") -- Prints the cursor Y position coordinate.
 
 
 ================================
@@ -4996,9 +5013,9 @@ Returns the menu position.
 .. code-block:: lua
    :linenos:
       
-   menuPos = render.get_menu_position() -- Returns the menu position.
-   system.log_info("The menu position is " .. tostring(menuPos.x) .. ".") -- Prints the menu X position coordinate.
-   system.log_info("The menu position is " .. tostring(menuPos.y) .. ".") -- Prints the menu Y position coordinate.
+   v2MenuPos = render.get_menu_position() -- Returns the menu position.
+   system.log_info("The menu position is " .. tostring(v2MenuPos.x) .. ".") -- Prints the menu X position coordinate.
+   system.log_info("The menu position is " .. tostring(v2MenuPos.y) .. ".") -- Prints the menu Y position coordinate.
 
 ================================
 
@@ -5020,9 +5037,9 @@ Returns the menu total size.
 .. code-block:: lua
    :linenos:
       
-   totalSize = render.get_menu_total_size() -- Returns the menu total size.
-   system.log_info("The menu total size is " .. tostring(totalSize.x) .. ".") -- Prints the menu total X size.
-   system.log_info("The menu total size is " .. tostring(totalSize.y) .. ".") -- Prints the menu total Y size.
+   v2TotalSize = render.get_menu_total_size() -- Returns the menu total size.
+   system.log_info("The menu total size is " .. tostring(v2TotalSize.x) .. ".") -- Prints the menu total X size.
+   system.log_info("The menu total size is " .. tostring(v2TotalSize.y) .. ".") -- Prints the menu total Y size.
 
 ================================
 
@@ -5044,9 +5061,9 @@ Returns the screen resolution.
 .. code-block:: lua
    :linenos:
       
-   screenRes = render.get_screen_resolution() -- Returns the screen resolution.
-   system.log_info("The screen resolution is " .. tostring(screenRes.x) .. ".") -- Prints the screen X resolution.
-   system.log_info("The screen resolution is " .. tostring(screenRes.y) .. ".") -- Prints the screen Y resolution.
+   v2ScreenRes = render.get_screen_resolution() -- Returns the screen resolution.
+   system.log_info("The screen resolution is " .. tostring(v2ScreenRes.x) .. ".") -- Prints the screen X resolution.
+   system.log_info("The screen resolution is " .. tostring(v2ScreenRes.y) .. ".") -- Prints the screen Y resolution.
 
 ================================
 
@@ -5065,10 +5082,10 @@ Brings up a warning (as if a moderator was detected in a session)
 
 **Example:**
 
-   .. code-block:: lua
-         :linenos:
-         
-         render.set_warning("This is a warning.") -- Brings up a warning.
+.. code-block:: lua
+   :linenos:
+   
+   render.set_warning("This is a warning.") -- Brings up a warning.
 
 ================================
 
@@ -5182,10 +5199,10 @@ Returns the online index of the user's character.
 .. code-block:: lua
    :linenos:
    
-   index = self.get_online_index() -- Returns the online index of the user's character.
-   if index == 0 then -- Checks whether the first character is used.
+   iOnlineIndex = self.get_online_index() -- Returns the online index of the user's character.
+   if iOnlineIndex == 0 then -- Checks whether the first character is used.
       system.log_info("The first character is used.")
-   elseif index == 1 then -- Checks whether the second character is used.
+   elseif iOnlineIndex == 1 then -- Checks whether the second character is used.
       system.log_info("The second character is used.")
    end
 
@@ -5209,8 +5226,8 @@ Returns the user's character's ped ID
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
-   if rage.ped.is_ped_a_player(ped) then -- If the ped is a player.
+   pSelfPed = self.get_ped()
+   if rage.ped.is_ped_a_player(pSelfPed) then -- If the ped is a player.
       system.log_info("The ped is a player.")
    end
 
@@ -5219,7 +5236,7 @@ Returns the user's character's ped ID
 get_id()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Returns the user's character's ID.
+Returns the player as a player handle
 
 **Parameters:**
 
@@ -5227,15 +5244,15 @@ Returns the user's character's ID.
 
 **Returns:**
 
-* ``int`` -- The user's character's ID.
+* ``int`` -- The player handle
 
 **Example:**
 
 .. code-block:: lua
    :linenos:
    
-   id = self.get_id() -- Returns the user's character's ID.
-   system.log_info("The character ID is " .. tostring(id) .. ".")
+   plHandle = self.get_id()
+   system.log_info("The character ID is " .. tostring(plHandle) .. ".")
 
 ======================
 
@@ -5257,8 +5274,8 @@ Returns your own username.
 .. code-block:: lua
    :linenos:
 
-   selfUsername = self.get_name()
-   system.log_info("My username is: " .. selfUsername)
+   sUsername = self.get_name()
+   system.log_info("My username is: " .. sUsername)
 
 ======================
 
@@ -5280,8 +5297,8 @@ Returns your SCID (Social Club ID).
 .. code-block:: lua
    :linenos:
 
-   selfOGscid = self.get_original_scid()
-   system.log_info("My original SCID is: " .. tostring(selfOGscid))
+   sMyRealSCID = self.get_original_scid()
+   system.log_info("My original SCID is: " .. tostring(sMySCID))
 
 ======================
 
@@ -5303,8 +5320,8 @@ Returns your current SCID (Social Club ID).
 .. code-block:: lua
    :linenos:
 
-   selfSCID = self.get_scid()
-   system.log_info("My current SCID is: " .. tostring(selfSCID))
+   sMySCID = self.get_scid()
+   system.log_info("My current SCID is: " .. tostring(sMySCID))
 
 ======================
 
@@ -5326,8 +5343,8 @@ Returns your saved SCID (Social Club ID).
 .. code-block:: lua
    :linenos:
 
-   selfSavedSCID = self.get_saved_scid()
-   system.log_info("My saved SCID is: " .. tostring(selfSavedSCID))
+   sMySavedSCID = self.get_saved_scid()
+   system.log_info("My saved SCID is: " .. tostring(sMySavedSCID))
 
 ======================
 
@@ -5349,8 +5366,8 @@ Returns your character's coordinates.
 .. code-block:: lua
    :linenos:
 
-   coords = self.get_coords()
-   system.log_info("I'm located at the following coords: " .. tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z) .. " .")
+   v3CurrentCoords = self.get_coords()
+   system.log_info("I'm located at the following coords: " .. tostring(v3CurrentCoords.x) .. ", " .. tostring(v3CurrentCoords.y) .. ", " .. tostring(v3CurrentCoords.z) .. " .")
 
 ======================
 
@@ -5374,8 +5391,8 @@ Returns coordinates in front of your character.
 .. code-block:: lua
    :linenos:
 
-   coords = self.get_coords_infront(5)
-   system.log_info("The coords in front of me are: " .. tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z) .. " .")
+   v3CoordsInfront = self.get_coords_infront(5)
+   system.log_info("The coords in front of me are: " .. tostring(v3CoordsInfront.x) .. ", " .. tostring(v3CoordsInfront.y) .. ", " .. tostring(v3CoordsInfront.z) .. " .")
 
 ======================
 
@@ -5397,8 +5414,8 @@ Returns your current vehicle's ID.
 .. code-block:: lua
    :linenos:
 
-   selfVehicle = self.get_vehicle()
-   system.log_info("You're riding vehicle ID: " .. tostring(selfVehicle))
+   vCurrentVehicle = self.get_vehicle()
+   system.log_info("You're riding vehicle ID: " .. tostring(vCurrentVehicle))
 
 ======================
 
@@ -5433,9 +5450,11 @@ connected, is in the same game mode as you (e.g. freemode)
 
 .. code-block:: lua
    :linenos:
+
+   plHostPlayer = lobby.get_host()
    
-   isActive = lobby.is_player_active(lobby.get_host()) -- Checks whether the player is active.
-   if isActive then -- If the player is active.
+   bIsActive = lobby.is_player_active(places) -- Checks whether the player is active.
+   if bIsActive then -- If the player is active.
       system.log_info("The player is active.")
    end
 
@@ -5459,8 +5478,9 @@ Checks whether the player is connected.
 .. code-block:: lua
    :linenos:
    
-   isConnected = lobby.is_player_connected(lobby.get_host()) -- Checks whether the player is connected.
-   if isConnected then -- If the player is connected.
+   plHostPlayer = lobby.get_host()
+   bIsConnected = lobby.is_player_connected(plHostPlayer) -- Checks whether the player is connected.
+   if bIsConnected then -- If the player is connected.
       system.log_info("The player is connected.")
    end
 
@@ -5484,8 +5504,9 @@ Checks whether the player is a friend.
 .. code-block:: lua
    :linenos:
    
-   isFriend = lobby.is_player_friend(lobby.get_host()) -- Checks whether the player is a friend.
-   if isFriend then -- If the player is a friend.
+   plHostPlayer = lobby.get_host()
+   bIsFriend = lobby.is_player_friend(plHostPlayer) -- Checks whether the session host is a friend.
+   if bIsFriend then -- If the player is a friend.
       system.log_info("The player is a friend.")
    end
 
@@ -5509,8 +5530,9 @@ Checks whether the player is the host.
 .. code-block:: lua
    :linenos:
    
-   isHost = lobby.is_player_host(lobby.get_host()) -- Checks whether the player is the host.
-   if isHost then -- If the player is the host.
+   plHostPlayer = lobby.get_host()
+   bIsHost = lobby.is_player_host(plHostPlayer) -- Checks whether the player is the host.
+   if bIsHost then -- If the player is the host.
       system.log_info("The player is the host.")
    end
 
@@ -5534,8 +5556,9 @@ Checks whether the player is the next script host.
 .. code-block:: lua
    :linenos:
    
-   isHostNext = lobby.is_player_host_next(lobby.get_host()) -- Checks whether the player is the next script host.
-   if isHostNext then -- If the player is the next script host.
+   plHostPlayer = lobby.get_host()
+   bIsNextHost = lobby.is_player_host_next(plHostPlayer) -- Checks whether the player is the next script host.
+   if bIsNextHost then -- If the player is the next script host.
       system.log_info("The player is the next script host.")
    end
 
@@ -5559,8 +5582,9 @@ Checks whether the player is in a vehicle.
 .. code-block:: lua
    :linenos:
    
-   isInVehicle = lobby.is_player_in_vehicle(lobby.get_host()) -- Checks whether the player is in a vehicle.
-   if isInVehicle then -- If the player is in a vehicle.
+   plHostPlayer = lobby.get_host()
+   bIsInVehicle = lobby.is_player_in_vehicle(plhostPlayer) -- Checks whether the player is in a vehicle.
+   if bIsInVehicle then -- If the player is in a vehicle.
       system.log_info("The player is in a vehicle.")
    end
 
@@ -5585,8 +5609,9 @@ Checks whether the player is a modder.
 .. code-block:: lua
    :linenos:
    
-   isModder = lobby.is_player_modder(lobby.get_host()) -- Checks whether the player is a modder.
-   if isModder then -- If the player is a modder.
+   plHostPlayer = lobby.get_host()
+   bIsModder = lobby.is_player_modder(plHostPlayer) -- Checks whether the player is a modder.
+   if bIsModder then -- If the player is a modder.
       system.log_info("The player is a modder.")
    end
 
@@ -5610,8 +5635,10 @@ Checks whether the player is selected in the menu's online section.
 .. code-block:: lua
    :linenos:
    
-   isSelected = lobby.is_player_selected(lobby.get_host()) -- Checks whether the player is selected.
-   if isSelected then -- If the player is selected.
+
+   plHostPlayer = lobby.get_host()
+   bIsSelected = lobby.is_player_selected(plHostPlayer) -- Checks whether the player is selected.
+   if bIsSelected then -- If the player is selected.
       system.log_info("The player is selected.")
    end
 
@@ -5635,8 +5662,10 @@ Checks whether the player is a Rockstar staff member.
 .. code-block:: lua
    :linenos:
    
-   isStaff = lobby.is_player_staff(lobby.get_host()) -- Checks whether the player is a Rockstar staff member.
-   if isStaff then -- If the player is a Rockstar staff member.
+
+   plHostPlayer = lobby.get_host()
+   bIsStaff = lobby.is_player_staff(plHostPlayer) -- Checks whether the player is a Rockstar staff member.
+   if bIsStaff then -- If the player is a Rockstar staff member.
       system.log_info("The player is a Rockstar staff member.")
    end
 
@@ -5660,8 +5689,9 @@ Checks whether the player is valid - if it's connected to the session, fully loa
 .. code-block:: lua
    :linenos:
    
-   isValid = lobby.is_player_valid(lobby.get_host()) -- Checks whether the player is valid.
-   if isValid then -- If the player is valid.
+   plHostPlayer = lobby.get_host()
+   bIsValid = lobby.is_player_valid(plHostPlayer) -- Checks whether the player is valid.
+   if bIsValid then -- If the player is valid.
       system.log_info("The player is valid.")
    end
 
@@ -5685,8 +5715,8 @@ Checks whether the session has started: returns true if it's fully loaded and yo
 .. code-block:: lua
    :linenos:
    
-   isStarted = lobby.is_session_started() -- Checks whether the session has started.
-   if isStarted then -- If the session has started.
+   bIsStarted = lobby.is_session_started() -- Checks whether the session has started.
+   if bIsStarted then -- If the session has started.
       system.log_info("The session has started.")
    end
 
@@ -5710,8 +5740,8 @@ Returns a number of all active players.
 .. code-block:: lua
    :linenos:
    
-   activePlayers = lobby.get_active_players() -- Returns a number of all active players.
-   system.log_info("There are " .. tostring(activePlayers) .. " active players.")
+   iActivePlayersCount = lobby.get_active_players() -- Returns a number of all active players.
+   system.log_info("There are " .. tostring(iActivePlayersCount) .. " active players.")
 
 ================================
 
@@ -5733,8 +5763,8 @@ Returns a number of connected players.
 .. code-block:: lua
    :linenos:
    
-   connectedPlayers = lobby.get_connected_players() -- Returns a number of connected players.
-   system.log_info("There are " .. tostring(connectedPlayers) .. " connected players.")
+   iConnectedPlayersCount = lobby.get_connected_players() -- Returns a number of connected players.
+   system.log_info("There are " .. tostring(iConnectedPlayersCount) .. " connected players.")
 
 ================================
 
@@ -5756,7 +5786,8 @@ Returns the player's armour health.
 .. code-block:: lua
    :linenos:
    
-   armour = lobby.get_player_armour(lobby.get_host()) -- Returns the player's armour ID.
+   plHandle = self.get_id()
+   iArmourHealth = lobby.get_player_armour(plHandle) -- Returns the player's armour health.
    if armour == 0 then -- If the player has no armour.
       system.log_info("The player has no armour.")
    end
@@ -5781,9 +5812,12 @@ Returns the player's health.
 .. code-block:: lua
    :linenos:
    
-   health = lobby.get_player_health(lobby.get_host()) -- Returns the host's health.
-   if health == 100 then -- If the host has full health.
-      system.log_info("The host has full health.")
+   plHandle = self.get_id()
+
+   iHealth = lobby.get_player_health(plHandle)
+   iMaxHealth = lobby.get_player_max_health(plHandle)
+   if iHealth == iMaxHealth then
+      system.log_info("The player has full health.")
    end
 
 
@@ -5806,11 +5840,13 @@ Returns the player's maximum health.
 
 .. code-block:: lua
    :linenos:
+
+   plHandle = self.get_id()
    
-   maxHealth = lobby.get_player_max_health(lobby.get_host()) -- Returns the host's maximum health.
-   health = lobby.get_player_health(lobby.get_host()) -- Returns the host's health.
-   if maxHealth == health then -- If the host has full health.
-      system.log_info("The host has full health.")
+   iMaxHealth = lobby.get_player_max_health(plHandle)
+   iHealth = lobby.get_player_health(plHandle)
+   if iMaxHealth == iHealth then
+      system.log_info("The player has full health.")
    end
 
 ================================
@@ -5829,6 +5865,18 @@ Returns the player's team.
 **Returns:**
 
 * ``int`` -- The player's team ID. -1 if the player is not in a team.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   plHandle = self.get_id()
+   
+   iTeam = lobby.get_player_team(plHandle)
+   if iTeam == -1 then -- If the player is not in a team.
+      system.log_info("The player is not in a team.")
+   end
 
 ================================
 
@@ -5850,8 +5898,9 @@ Returns the player's ped.
 .. code-block:: lua
    :linenos:
    
-   ped = lobby.get_player_ped(lobby.get_host()) -- Returns the host's ped.
-   if rage.ped.is_ped_a_player(ped) then -- If the ped is a player.
+   plHostPlayer = lobby.get_host()
+   pHostPed = lobby.get_player_ped(plHostPlayer) -- Returns the host's ped.
+   if rage.ped.is_ped_a_player(pHostPed) then -- If the ped is a player.
       system.log_info("The ped is a player.")
    end
 
@@ -5875,8 +5924,8 @@ Returns the host player ID.
 .. code-block:: lua
    :linenos:
    
-   host = lobby.get_host() -- Returns the host player ID.
-   system.log_debug("The host is " .. get_player_name(host) .. ".")
+   plHostPlayer = lobby.get_host() -- Returns the host player ID.
+   system.log_debug("The host is " .. get_player_name(plHostPlayer) .. ".")
 
 ================================
 
@@ -5898,8 +5947,8 @@ Returns the next host player ID.
 .. code-block:: lua
    :linenos:
    
-   nextHost = lobby.get_next_host() -- Returns the next host player ID.
-   system.log_debug("The next host is " .. get_player_name(nextHost) .. ".")
+   plNextHost = lobby.get_next_host() -- Returns the next host player ID.
+   system.log_debug("The next host is " .. get_player_name(plNextHost) .. ".")
 
 ================================
 
@@ -5936,8 +5985,10 @@ Returns the player's coordinates as a string.
 .. code-block:: lua
    :linenos:
    
-   coords = lobby.get_player_coords_str(lobby.get_host()) -- Returns the host's coordinates.
-   system.log_debug("The host is at " .. coords .. ".")
+   plHostPlayer = lobby.get_host()
+
+   v3PlayerCoords = lobby.get_player_coords_str(plHostPlayer) -- Returns the host's coordinates.
+   system.log_debug("The host is at " .. v3PlayerCoords .. ".")
 
 ================================
 
@@ -5959,8 +6010,10 @@ Returns the player's IP.
 .. code-block:: lua
    :linenos:
    
-   ip = lobby.get_player_ip(lobby.get_host()) -- Returns the host's IP.
-   system.log_debug("The host's IP is " .. ip .. ".")
+   plHostPlayer = lobby.get_host()
+
+   sIPAddress = lobby.get_player_ip(plHostPlayer) -- Returns the host's IP.
+   system.log_debug("The host's IP is " .. sIPAddress .. ".")
 
 ================================
 
@@ -5982,8 +6035,9 @@ Returns the player's name.
 .. code-block:: lua
    :linenos:
    
-   name = lobby.get_player_name(lobby.get_host()) -- Returns the host's name.
-   system.log_debug("The host's name is " .. name .. ".")
+   plHostPlayer = lobby.get_host()
+   sNickname = lobby.get_player_name(plHostPlayer) -- Returns the host's name.
+   system.log_debug("The host's name is " .. sNickname .. ".")
 
 ================================
 
@@ -6011,8 +6065,10 @@ Returns the player's status.
 .. code-block:: lua
    :linenos:
    
-   status = lobby.get_player_status(lobby.get_selected_player()) -- Returns the selected player's status.
-   system.log_debug("The selected player's status is " .. status .. ".")
+   plSelected = lobby.get_selected_player()
+
+   sPlayerStatus = lobby.get_player_status(plSelected) -- Returns the selected player's status.
+   system.log_debug("The selected player's status is " .. sPlayerStatus .. ".")
 
 ===============================
 
@@ -6034,8 +6090,9 @@ Returns the player's vehicle name.
 .. code-block:: lua
    :linenos:
    
-   vehicleName = lobby.get_player_vehicle_name(lobby.get_host()) -- Returns the host's vehicle name.
-   system.log_debug("The host's vehicle name is " .. vehicleName .. ".")
+   plHostPlayer = lobby.get_host()
+   sVehicleName = lobby.get_player_vehicle_name(plHostPlayer) -- Returns the host's vehicle name.
+   system.log_debug("The host's vehicle name is " .. sVehicleName .. ".")
 
 ================================
 
@@ -6057,8 +6114,9 @@ Returns the total player's deaths.
 .. code-block:: lua
    :linenos:
    
-   deaths = lobby.get_player_deaths(lobby.get_host()) -- Returns the host's deaths.
-   system.log_debug("The host has died " .. tostring(deaths) .. " times.")
+   plHostPlayer = lobby.get_host()
+   iDeathsCount = lobby.get_player_deaths(plHostPlayer) -- Returns the host's deaths.
+   system.log_debug("The host has died " .. tostring(iDeathsCount) .. " times.")
 
 ================================
 
@@ -6080,8 +6138,9 @@ Returns the total player's kills.
 .. code-block:: lua
    :linenos:
    
-   kills = lobby.get_player_kills(lobby.get_host()) -- Returns the host's kills.
-   system.log_debug("The host has killed " .. tostring(kills) .. " people.")
+   plHostPlayer = lobby.get_host()
+   iKillsCount = lobby.get_player_kills(plHostPlayer) -- Returns the host's kills.
+   system.log_debug("The host has killed " .. tostring(iKillsCount) .. " people.")
 
 ================================
 
@@ -6103,8 +6162,9 @@ Returns the player's level.
 .. code-block:: lua
    :linenos:
    
-   level = lobby.get_player_level(lobby.get_host()) -- Returns the host's level.
-   system.log_debug("The host's level is " .. tostring(level) .. ".")
+   plHostPlayer = lobby.get_host()
+   iLevel = lobby.get_player_level(plHostPlayer) -- Returns the host's level.
+   system.log_debug("The host's level is " .. tostring(iLevel) .. ".")
 
 ================================
 
@@ -6126,8 +6186,9 @@ Returns the player's bank money.
 .. code-block:: lua
    :linenos:
    
-   money = lobby.get_player_money_bank(lobby.get_host()) -- Returns the host's bank money.
-   system.log_debug("The host has $" .. tostring(money) .. " in the bank.")
+   plHostPlayer = lobby.get_host()
+   iBankMoneyAmount = lobby.get_player_money_bank(plHostPlayer) -- Returns the host's bank money.
+   system.log_debug("The host has $" .. tostring(iBankMoneyAmount) .. " in the bank.")
 
 ================================
 
@@ -6149,8 +6210,9 @@ Returns the player's wallet money.
 .. code-block:: lua
    :linenos:
    
-   money = lobby.get_player_money_wallet(lobby.get_host()) -- Returns the host's wallet money.
-   system.log_debug("The host has $" .. tostring(money) .. " in the wallet.")
+   plHostPlayer = lobby.get_host()
+   iWalletMoneyAmount = lobby.get_player_money_wallet(plHostPlayer) -- Returns the host's wallet money.
+   system.log_debug("The host has $" .. tostring(iWalletMoneyAmount) .. " in the wallet.")
 
 ================================
 
@@ -6172,8 +6234,9 @@ Returns the player's RP points.
 .. code-block:: lua
    :linenos:
    
-   rp = lobby.get_player_rp(lobby.get_host()) -- Returns the host's RP.
-   system.log_debug("The host has " .. tostring(rp) .. " RP.")
+   plHostPlayer = lobby.get_host()
+   iRPpoints = lobby.get_player_rp(plHostPlayer) -- Returns the host's RP.
+   system.log_debug("The host has " .. tostring(iRPpoints) .. " RP.")
 
 ================================
 
@@ -6195,8 +6258,9 @@ Returns the player's host token.
 .. code-block:: lua
    :linenos:
    
-   token = lobby.get_player_host_token(lobby.get_host()) -- Returns the host's host token.
-   system.log_debug("The host's host token is " .. token .. ".")
+   plHostPlayer = lobby.get_host()
+   sHostToken = lobby.get_player_host_token(plHostPlayer) -- Returns the host's host token.
+   system.log_debug("The host's host token is " .. sHostToken .. ".")
 
 ================================
 
@@ -6218,8 +6282,9 @@ Returns the player's original SCID.
 .. code-block:: lua
    :linenos:
    
-   scid = lobby.get_player_original_scid(lobby.get_host()) -- Returns the host's original SCID.
-   system.log_debug("The host's original SCID is " .. scid .. ".")
+   plHostPlayer = lobby.get_host()
+   sPlayerOriginalSCID = lobby.get_player_original_scid(plHostPlayer) -- Returns the host's original SCID.
+   system.log_debug("The host's original SCID is " .. sPlayerOriginalSCID .. ".")
 
 ================================
 
@@ -6241,8 +6306,9 @@ Returns the player's SCID.
 .. code-block:: lua
    :linenos:
    
-   scid = lobby.get_player_scid(lobby.get_host()) -- Returns the host's SCID.
-   system.log_debug("The host's SCID is " .. scid .. ".")
+   plHostPlayer = lobby.get_host()
+   sPlayerSCID = lobby.get_player_scid(plHostPlayer) -- Returns the host's SCID.
+   system.log_debug("The host's SCID is " .. sPlayerSCID .. ".")
 
 ================================
 
@@ -6264,8 +6330,9 @@ Returns the player's coordinates.
 .. code-block:: lua
    :linenos:
    
-   coords = lobby.get_player_coords(lobby.get_host()) -- Returns the host's coordinates.
-   system.log_debug("The host is at " .. tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z) .. " .")
+   plHostPlayer = lobby.get_host()
+   v3PlayerCoords = lobby.get_player_coords(plHostPlayer) -- Returns the host's coordinates.
+   system.log_debug("The host is at " .. tostring(v3PlayerCoords.x) .. ", " .. tostring(v3PlayerCoords.y) .. ", " .. tostring(v3PlayerCoords.z) .. " .")
 
 ================================
 
@@ -6290,9 +6357,11 @@ Sets the player's modder status.
 
 .. code-block:: lua
    :linenos:
+
+   plHostPlayer = lobby.get_host()
    
-   lobby.set_player_modder(lobby.get_host(), true) -- Sets the host as a modder.
-   system.log_debug("The host is a modder.")
+   lobby.set_player_modder(plHostPlayer, true) -- Sets the host as a modder.
+   system.log_debug("The host is now marked as a modder.")
 
 ================================
 
@@ -6318,7 +6387,8 @@ Sets the player as selected in the online menu.
 .. code-block:: lua
    :linenos:
    
-   lobby.set_player_selected(lobby.get_host(), true) -- Sets the host as selected.
+   plHostPlayer = lobby.get_host()
+   lobby.set_player_selected(plHostPlayer, true) -- Sets the host as selected.
    system.log_debug("The host is now selected.")
 
 ================================
@@ -6344,8 +6414,9 @@ Sets the player's staff status.
 
 .. code-block:: lua
    :linenos:
-   
-   lobby.set_player_staff(lobby.get_host(), true) -- Sets the host as a staff member.
+
+   plHostPlayer = lobby.get_host()
+   lobby.set_player_staff(plHostPlayer, true) -- Sets the host as a staff member.
    system.log_debug("The host is a staff member.")
 
 
@@ -6381,7 +6452,8 @@ Returns the value for the specified handling parameter.
 .. code-block:: lua
    :linenos:
    
-   handling = vehicle.get_vehicle_handling(self.get_vehicle(), "fBrakeForce") -- Returns the brake force of the vehicle.
+   vCurrentVehicle = self.get_vehicle()
+   handling = vehicle.get_vehicle_handling(vCurrentVehicle, "fBrakeForce") -- Returns the brake force of the vehicle.
    system.log_debug("The player's vehicle has " .. tostring(handling) .. " brake force.")
 
 ================================
@@ -6408,7 +6480,8 @@ Sets the value for the specified handling parameter.
 .. code-block:: lua
    :linenos:
    
-   vehicle.set_vehicle_handling(self.get_vehicle(), "fAcceleration", 100) -- Sets the acceleration of the vehicle to 100 points.
+   vCurrentVehicle = self.get_vehicle()
+   vehicle.set_vehicle_handling(vCurrentVehicle, "fAcceleration", 100) -- Sets the acceleration of the vehicle to 100 points.
    system.log_debug("The player's vehicle has been set to have 100 acceleration points.")
 
 
@@ -6446,9 +6519,13 @@ Checks whether a string contains character/word.
 .. code-block:: lua
    :linenos:
 	
-   loremIpsum = Lorem ipsum dolor sit amet
-   Contains = text.contains(loremIpsum, "Lorem")
-   system.log_debug(tostring(Contains))
+   sloremIpsum = "Lorem ipsum dolor sit amet"
+   bContains = text.contains(sloremIpsum, "Lorem")
+   if bContains then
+      system.log_debug("The string contains the word \"Lorem\".")
+   else
+      system.log_debug("The string does not contain the word \"Lorem\".")
+   end
 
 ======================
 
@@ -6473,8 +6550,12 @@ Checks whether a string is ``float`` type.
 .. code-block:: lua
    :linenos:
 
-   isFloat = text.is_float("10.1")
-   system.log_debug(tostring(isFloat))
+   bIsFloat = text.is_float("10.1")
+   if bIsFloat then
+      system.log_debug("The string is a float.")
+   else
+      system.log_debug("The string is not a float.")
+   end
 
 ======================
 
@@ -6499,15 +6580,19 @@ Checks whether a string is a number.
 .. code-block:: lua
    :linenos:
 
-   isNumber = text.is_number("10")
-   system.log_debug(tostring(isNumber))
+   bIsNumber = text.is_number("10")
+   if bIsNumber then
+      system.log_debug("The string is a number.")
+   else
+      system.log_debug("The string is not a number.")
+   end
 
 ======================
 
 is_valid_ip4(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks whether the string is a valid IPv4.
+Checks whether the string is a valid IPv4 address.
 
 **Parameters:**
 
@@ -6517,8 +6602,8 @@ Checks whether the string is a valid IPv4.
 
 * ``bool``
 
-  * ``true`` -- The data is a valid IPv4.
-  * ``false`` -- The data is not a valid IPv4.
+  * ``true`` -- The data is a valid IPv4 address.
+  * ``false`` -- The data is not a valid IPv4 address.
 
 
 **Example:**
@@ -6527,7 +6612,11 @@ Checks whether the string is a valid IPv4.
    :linenos:
    
    isValid = text.is_valid_ip4("1.1.1.1")
-   system.log_debug(tostring(isValid))
+   if isValid then
+      system.log_debug("The string is a valid IPv4 address.")
+   else
+      system.log_debug("The string is not a valid IPv4 address.")
+   end
 
 
 ======================
@@ -6558,8 +6647,8 @@ Generates a random string.
 .. code-block:: lua
    :linenos:
 
-   r = text.get_random_string(10, 2) -- Generates a random string made of digits
-   system.log_debug(r)
+   sRandom = text.get_random_string(10, 2) -- Generates a random string made of digits
+   system.log_debug(sRandom)
 
 ======================
 
@@ -6582,8 +6671,8 @@ Removes certain characters from string.
 .. code-block:: lua
    :linenos:
    
-   r = remove_characters("Road", "o")
-   system.log_debug(r)
+   sCutCharacters = remove_characters("Road", "o")
+   system.log_debug(sCutCharacters)
 
 ======================
 
@@ -6607,8 +6696,8 @@ Replaces certain characters from string.
 .. code-block:: lua
    :linenos:
 	
-   r = replace_characters("Mr. White", "White", "Black")
-   system.log_debug(r)
+   sReplacedCharacters = replace_characters("John", "hn", "e")
+   system.log_debug(sReplacedCharacters)
    
 ======================
 
@@ -6631,8 +6720,8 @@ Cuts string from center.
 .. code-block:: lua
    :linenos:
 
-   r = resize_string_center("Hello World", 5)
-   system.log_debug(r)
+   sResizedCenter = resize_string_center("Hello World", 5)
+   system.log_debug(sResizedCenter)
 
 **Output:**
 
@@ -6661,8 +6750,8 @@ Cuts string from the left
 .. code-block:: lua
    :linenos:
 
-   r = resize_string_left("Hello World", 5)
-   system.log_debug(r)
+   sResizedLeft = resize_string_left("Hello World", 5)
+   system.log_debug(sResizedLeft)
 **Output:**
 
 .. code-block:: lua
@@ -6690,8 +6779,8 @@ Cuts string from the right.
 .. code-block:: lua
    :linenos:
 
-   r = resize_string_right("Hello World", 5)
-   system.log_debug(r)
+   sResizedRight = resize_string_right("Hello World", 5)
+   system.log_debug(sResizedRight)
 
 **Output:**
 
@@ -6736,7 +6825,6 @@ Checks whether the directory exists.
    
    if fs.dir_exist("C:\Users\") then
       system.log_info("Directory exists.")
-
    end
 
 ================================
@@ -6817,7 +6905,7 @@ Checks whether the file is corrupted, Checks whether the permissions are correct
 .. code-block:: lua
    :linenos:
    
-   if fs.file_validate("/test.txt") then
+   if fs.file_validate("test.txt") then
       system.log_info("File is valid and ready.")
    end
 
@@ -6940,8 +7028,8 @@ Returns the filepath for the DIS2RBED home directory.
 .. code-block:: lua
    :linenos:
    
-   path = fs.get_dis2rbed_dir()
-   system.log_debug(path)
+   sDirectoryPath = fs.get_dis2rbed_dir()
+   system.log_debug(sDirectoryPath)
 
 ================================
 
@@ -6963,8 +7051,8 @@ Returns the filepath for the DIS2RBED fonts directory.
 .. code-block:: lua
    :linenos:
    
-   path = fs.get_fonts_dir()
-   system.log_debug(path)
+   sDirectoryPath = fs.get_fonts_dir()
+   system.log_debug(sDirectoryPath)
 
 ================================
 
@@ -6986,8 +7074,8 @@ Returns the filepath for the DIS2RBED themes directory.
 .. code-block:: lua
    :linenos:
    
-   path = fs.get_themes_dir()
-   system.log_debug(path)
+   sDirectoryPath = fs.get_themes_dir()
+   system.log_debug(sDirectoryPath)
 
 ================================
 
@@ -7009,8 +7097,8 @@ Returns the filepath for the DIS2RBED locales directory.
 .. code-block:: lua
    :linenos:
    
-   path = fs.get_locales_dir()
-   system.log_debug(path)
+   sDirectoryPath = fs.get_locales_dir()
+   system.log_debug(sDirectoryPath)
 
 ================================
 
@@ -7032,8 +7120,8 @@ Returns the filepath for the DIS2RBED lua directory.
 .. code-block:: lua
    :linenos:
    
-   path = fs.get_lua_dir()
-   system.log_debug(path)
+   sDirectoryPath = fs.get_lua_dir()
+   system.log_debug(sDirectoryPath)
 
 ================================
 
@@ -7127,8 +7215,9 @@ Returns the coordinates in front of the specified coordinates.
 .. code-block:: lua
    :linenos:
 
-   coords = scripting.get_coords_infront_of_coords(self.get_coords(), rage.entity.get_entity_rotation(self.get_ped(), 1), 10)
-   system.log_debug(tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z))
+   v3CurrentCoords = self.get_coords()
+   v3CoordsInfrontOfCoords = scripting.get_coords_infront_of_coords(v3CurrentCoords, rage.entity.get_entity_rotation(self.get_ped(), 1), 10)
+   system.log_debug(tostring(v3CoordsInfrontOfCoords.x) .. ", " .. tostring(v3CoordsInfrontOfCoords.y) .. ", " .. tostring(v3CoordsInfrontOfCoords.z))
 
 ================================
 
@@ -7151,8 +7240,9 @@ Returns the coordinates above of the specified coordinates.
 .. code-block:: lua
    :linenos:
    
-   coords = get_coords_above_of_coords(self.get_coords(), 10)
-   system.log_debug(tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z))
+   v3CurrentCoords = self.get_coords()
+   v3CoordsAboveCoords = get_coords_above_of_coords(v3CurrentCoords, 10)
+   system.log_debug(tostring(v3CoordsAboveCoords.x) .. ", " .. tostring(v3CoordsAboveCoords.y) .. ", " .. tostring(v3CoordsAboveCoords.z))
 
 ================================
 
@@ -7175,8 +7265,8 @@ Returns the coordinates of the specified :ref:`blip`.
 .. code-block:: lua
    :linenos:
    
-   coords = scripting.get_blip_coords(1, 1)
-   system.log_debug(tostring(coords.x) .. ", " .. tostring(coords.y) .. ", " .. tostring(coords.z))
+   v3BlipCoords = scripting.get_blip_coords(8, -1) -- waypoint blip
+   system.log_debug(tostring(v3BlipCoords.x) .. ", " .. tostring(v3BlipCoords.y) .. ", " .. tostring(v3BlipCoords.z))
 
 ================================
 
@@ -7198,9 +7288,9 @@ Returns the ground Z coordinate (height) of the specified coordinates.
 .. code-block:: lua
    :linenos:
    
-   coords = self.get_coords()
-   z = scripting.get_ground_z(coords)
-   system.log_debug(tostring(z))
+   v3CurrentCoords = self.get_coords()
+   fGroundZ = scripting.get_ground_z(v3CurrentCoords)
+   system.log_debug(tostring(fGroundZ))
 
 
 .. _playerNSS:
@@ -7694,8 +7784,8 @@ Clones the target ped and sets it as a companion of the owner.
 .. code-block:: lua
    :linenos:
    
-   player = self.get_ped()
-   scripting.ped.clone_companion(player, player, rage.gameplay.get_hash_key("Pistol"))
+   pSelfPed = self.get_ped()
+   scripting.ped.clone_companion(pSelfPed, pSelfPed, rage.gameplay.get_hash_key("weapon_pistol"))
    system.log_debug("Cloned player.")
    
 ================================
@@ -7766,8 +7856,8 @@ Returns the array of the nearby peds' IDs
 .. code-block:: lua
    :linenos:
    
-   peds = scripting.ped.get_nearby_peds()
-   for i, ped in ipairs(peds) do
+   vectPeds = scripting.ped.get_nearby_peds()
+   for i, ped in ipairs(vectPeds) do
       system.log_debug("Ped " .. i .. ": " .. ped)
    end
 
@@ -7808,9 +7898,9 @@ Checks whether the entity is in the whitelist.
 .. code-block:: lua
       :linenos:
       
-      entity = self.get_ped()
-      scripting.entity.is_entity_in_whitelist(entity)
-      system.log_debug("Entity is in whitelist: " .. tostring(entity_in_whitelist))
+      pSelfPed = self.get_ped()
+      bIsInWhitelist = scripting.entity.is_entity_in_whitelist(pSelfPed)
+      system.log_debug("Entity is in whitelist: " .. tostring(bIsInWhitelist))
 
 
 ================================
@@ -7837,8 +7927,8 @@ Adds the entity to the whitelist.
 .. code-block:: lua
    :linenos:
    
-   entity = self.get_ped()
-   scripting.entity.entity_add_to_whitelist(entity)
+   pSelfPed = self.get_ped()
+   scripting.entity.entity_add_to_whitelist(pSelfPed)
    system.log_debug("Entity added to whitelist.")
 
 ================================
@@ -7866,8 +7956,8 @@ Removes the entity from the whitelist.
 .. code-block:: lua
    :linenos:
    
-   entity = self.get_ped()
-   scripting.entity.entity_remove_from_whitelist(entity)
+   pSelfPed = self.get_ped()
+   scripting.entity.entity_remove_from_whitelist(pSelfPed)
    system.log_debug("Entity removed from whitelist.")
 
 ================================
@@ -7896,8 +7986,8 @@ Sets resistance to certain damage.
 .. code-block:: lua
    :linenos:
    
-   entity = self.get_ped()
-   scripting.entity.set_proofs(entity, true, true, true, true, true, true)
+   pSelfPed = self.get_ped()
+   scripting.entity.set_proofs(pSelfPed, true, true, true, true, true, true)
    system.log_debug("Nanomachines, son.")
 
 ================================
@@ -7920,8 +8010,8 @@ Returns the array of the nearby entities' IDs
 .. code-block:: lua
    :linenos:
    
-   entities = scripting.entity.get_nearby_entities()
-   for i, entity in ipairs(entities) do
+   vectEntities = scripting.entity.get_nearby_entities()
+   for i, entity in ipairs(vectEntities) do
       system.log_debug("Entity " .. i .. ": " .. entity)
    end
 
@@ -7955,8 +8045,9 @@ Returns the name of the vehicle based on its hash.
 .. code-block:: lua
    :linenos:
    
-   vehicle_name = scripting.vehicle.get_name_from_hash(rage.gameplay.get_hash_key("BMX"))
-   system.log_debug("Vehicle name: " .. vehicle_name)
+   uBMXHash = rage.gameplay.get_hash_key("BMX")
+   sVehicleName = scripting.vehicle.get_name_from_hash(uBMXHash)
+   system.log_debug("Vehicle name: " .. sVehicleName)
 
 ================================
 
@@ -7978,8 +8069,8 @@ Returns the personal vehicle ID.
 .. code-block:: lua
    :linenos:
    
-   personal_vehicle = scripting.vehicle.get_personal_vehicle()
-   system.log_debug("Personal vehicle: " .. tostring(personal_vehicle))
+   vPersonalVehicle = scripting.vehicle.get_personal_vehicle()
+   system.log_debug("Personal vehicle: " .. tostring(vPersonalVehicle))
 
 ================================
 
@@ -8051,8 +8142,8 @@ Sets the boost speed of the specified vehicle.
 .. code-block:: lua
    :linenos:
    
-   vehicle = self.get_vehicle()
-   scripting.vehicle.set_boost(vehicle, 50)
+   vCurrentVehicle = self.get_vehicle()
+   scripting.vehicle.set_boost(vCurrentVehicle, 50)
    system.log_debug("Boost speed set to 50 units.")
 
 ================================
@@ -8101,8 +8192,8 @@ Cleans the specified vehicle.
 .. code-block:: lua
    :linenos:
    
-   vehicle = self.get_vehicle()
-   scripting.vehicle.set_clean(vehicle)
+   vCurrentVehicle = self.get_vehicle()
+   scripting.vehicle.set_clean(vCurrentVehicle)
    system.log_debug("Vehicle cleaned.")
 
 ================================
@@ -8133,8 +8224,8 @@ Opens or closes the doors of the specified vehicle.
 .. code-block:: lua
    :linenos:
    
-   vehicle = self.get_vehicle()
-   scripting.vehicle.set_doors_opened(vehicle, true, 0)
+   vCurrentVehicle = self.get_vehicle()
+   scripting.vehicle.set_doors_opened(vCurrentVehicle, true, 0)
    system.log_debug("Door opened.")
 
 ================================
@@ -8188,8 +8279,8 @@ Toggles the Drive on Air mode.
 .. code-block:: lua
    :linenos:
    
-   vehicle = self.get_vehicle()
-   scripting.vehicle.set_drive_on_air(vehicle, true)
+   vCurrentVehicle = self.get_vehicle()
+   scripting.vehicle.set_drive_on_air(vCurrentVehicle, true)
    system.log_debug("Drive on Air mode is now enabled.")
 
 ================================
@@ -8500,9 +8591,9 @@ Make a vehicle stop.
 .. code-block:: lua
    :linenos:
 
-   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+   vCurrentVehicle = self.get_vehicle()
 
-   scripting.vehicle.set_stop(personal_vehicle)
+   scripting.vehicle.set_stop(vCurrentVehicle)
 
 ================================
 
@@ -8524,9 +8615,9 @@ Make a vehicle be max upgraded (only non-visible parts eg. engine, turbo...)
 .. code-block:: lua
    :linenos:
 
-   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+   vCurrentVehicle = self.get_vehicle()
 
-   scripting.vehicle.set_vehicle_clean_upgrade(personal_vehicle)
+   scripting.vehicle.set_vehicle_clean_upgrade(vCurrentVehicle)
 
 ================================
 
@@ -8552,9 +8643,9 @@ Set vehicle color (primary, secondary, pearlescence, wheels)
 .. code-block:: lua
    :linenos:
 
-   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+   vCurrentVehicle = self.get_vehicle()
 
-   scripting.vehicle.set_vehicle_color(personal_vehicle, 12, 28, 12)
+   scripting.vehicle.set_vehicle_color(vCurrentVehicle, 12, 28, 12)
 
 ================================
 
@@ -8576,9 +8667,9 @@ Make a vehicle be max upgraded.
 .. code-block:: lua
    :linenos:
 
-   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+   vCurrentVehicle = self.get_vehicle()
 
-   scripting.vehicle.set_vehicle_max_upgrade(personal_vehicle)
+   scripting.vehicle.set_vehicle_max_upgrade(vCurrentVehicle)
 
 ================================
 
@@ -8604,9 +8695,9 @@ Set a vehicle waterproof.
 .. code-block:: lua
    :linenos:
 
-   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+   vCurrentVehicle = self.get_vehicle()
 
-   scripting.vehicle.set_waterproof(personal_vehicle, true) -- Your vehicle can now swim
+   scripting.vehicle.set_waterproof(vCurrentVehicle, true) -- Your vehicle can now swim
 
 ================================
 
@@ -8637,9 +8728,9 @@ Set windows opened on a vehicle.
 .. code-block:: lua
    :linenos:
 
-   personal_vehicle = scripting.vehicle.get_personal_vehicle()
+   vCurrentVehicle = self.get_vehicle()
 
-   scripting.vehicle.set_windows_opened(personal_vehicle, true, 1)
+   scripting.vehicle.set_windows_opened(vCurrentVehicle, true, 1)
 
 ================================
 
@@ -8661,8 +8752,8 @@ Returns the array of the nearby vehicles' IDs
 .. code-block:: lua
    :linenos:
 
-   vehicles = scripting.vehicle.get_nearby_vehicles()
-   for i, veh in ipairs(vehicles) do
+   vectVehicles = scripting.vehicle.get_nearby_vehicles()
+   for i, veh in ipairs(vectVehicles) do
       system.log_debug("Vehicle " .. i .. ": " .. veh)
    end
 
@@ -8821,7 +8912,8 @@ Toggle and configure the spectating mode.
 .. code-block:: lua
    :linenos:
    
-   scripting.online.set_spectating_mode(true, lobby.get_host())
+   plHostPlayer = lobby.get_host()
+   scripting.online.set_spectating_mode(true, plHostPlayer)
    system.log_debug("Spectating mode enabled.")
 
 
@@ -8870,7 +8962,8 @@ Teleports the player into specified player's vehicle.
 .. code-block:: lua
    :linenos:
    
-   scripting.online.teleport_in_player_vehicle(lobby.get_host())
+   plHostPlayer = lobby.get_host()
+   scripting.online.teleport_in_player_vehicle(plHostPlayer)
    system.log_debug("Teleported into host's vehicle.")
 
 ================================
@@ -8893,7 +8986,8 @@ Teleports the player to specified player.
 .. code-block:: lua
    :linenos:
    
-   scripting.online.teleport_to_player(lobby.get_host())
+   plHostPlayer = lobby.get_host()
+   scripting.online.teleport_to_player(plHostPlayer)
    system.log_debug("Teleported to host.")
 
 ================================
@@ -9035,9 +9129,10 @@ Spawns a vehicle in a given position and heading.
 .. code-block:: lua
    :linenos:
    
-   zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+   v3CurrentCoords = self.get_coords()
 
-   scripting.spawn.spawn_vehicle(zentornoHash, self.get_coords(), 1)
+   scripting.spawn.spawn_vehicle(uZentornoHash, v3CurrentCoords, 1)
 
 ================================
 
@@ -9048,7 +9143,7 @@ Spawns a personal vehicle.
 
 **Parameters:**
 
-* ``hash`` (``Hash``)
+* ``hash`` (``Hash``) -- Vehicle hash
 
 **Returns:**
 
@@ -9059,7 +9154,8 @@ Spawns a personal vehicle.
 .. code-block:: lua
    :linenos:
 
-   scripting.spawn.spawn_vehicle_personal(rage.gameplay.get_hash_key("ZENTORNO"))
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+   scripting.spawn.spawn_vehicle_personal(uZentornoHash)
 
 ================================
 
@@ -9101,7 +9197,9 @@ Give all weapons to a ped with toggable max ammo and max components.
 .. code-block:: lua
    :linenos:
 
-   scripting.weapon.give_all_weapons(lobby.get_player_ped(lobby.get_host()), true, true) -- Gives all maxed and upgraded weapons to the session host.
+   pSelfPed = self.get_ped()
+
+   scripting.weapon.give_all_weapons(pSelfPed, true, true) -- Gives all maxed and upgraded weapons.
 
 ================================
 
@@ -9123,7 +9221,9 @@ Removes all weapons from a ped.
 .. code-block:: lua
    :linenos:
 
-   scripting.weapon.remove_all_weapons_from_ped(lobby.get_player_ped(lobby.get_host())) -- Removes all weapons from the session host
+   pSelfPed = self.get_ped()
+
+   scripting.weapon.remove_all_weapons_from_ped(pSelfPed) -- Removes all weapons
 
 ================================
 
@@ -9147,7 +9247,9 @@ Gives weapon to the player (self).
 .. code-block:: lua
    :linenos:
 
-   scripting.weapon.give_weapon_self(rage.gameplay.get_hash_key("weapon_microsmg")) -- Gives self the MicroSMG
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+
+   scripting.weapon.give_weapon_self(uWeaponHash) -- Gives self the MicroSMG
 
 ================================
 
@@ -9184,7 +9286,11 @@ Gives a weapon to ped with toggable max ammo and max components.
 .. code-block:: lua
    :linenos:
 
-   scripting.weapon.give_weapon(lobby.get_player_ped(lobby.get_host()), rage.gameplay.get_hash_key("weapon_microsmg"), true, true) -- Gives session host a fully loaded and upgraded MicroSMG
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+
+   pSelfPed = self.get_ped()
+
+   scripting.weapon.give_weapon(pSelfPed, uWeaponHash, true, true) -- Gives session host a fully loaded and upgraded MicroSMG
 
 ================================
 
@@ -9206,7 +9312,9 @@ Gives ammo to a ped.
 .. code-block:: lua
    :linenos:
 
-   scripting.weapon.give_ammo(lobby.get_player_ped(lobby.get_host())) -- Gives ammo to session host's weapons
+   pSelfPed = self.get_ped()
+
+   scripting.weapon.give_ammo(pSelfPed) -- Gives ammo to all your weapons
 
 ================================
 
@@ -9232,7 +9340,11 @@ Gives ammo for a precise weapon to a ped.
 .. code-block:: lua
    :linenos:
 
-   scripting.weapon.give_ammo_for_weapon(lobby.get_player_ped(lobby.get_host()), rage.gameplay.get_hash_key("weapon_microsmg")) -- Gives ammo to session host's MicroSMG
+   pSelfPed = self.get_ped()
+
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+   
+   scripting.weapon.give_ammo_for_weapon(pSelfPed, uWeaponHash) -- Gives ammo to your MicroSMG
 
 ================================
 
@@ -9254,14 +9366,15 @@ Gives infinite ammo to a ped.
 .. code-block:: lua
    :linenos:
 
-   scripting.weapon.ammo_infinite(lobby.get_player_ped(lobby.get_host())) -- Gives infinite ammo to session host
+   pSelfPed = self.get_ped()
+   scripting.weapon.ammo_infinite(pSelfPed) -- Gives infinite ammo
 
 ================================
 
 ammo_enhanced(``ped``, ``explosionId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gives enhanced ammo (ammo that generate a particular explosion) to a ped.
+Gives enhanced ammo (ammo that generates a particular explosion) to a ped.
 
 **Parameters:**
 
@@ -9280,7 +9393,8 @@ Gives enhanced ammo (ammo that generate a particular explosion) to a ped.
 .. code-block:: lua
    :linenos:
 
-   scripting.weapon.ammo_enhanced(lobby.get_player_ped(lobby.get_host()), 7) -- Gives EXPLOSION_CAR type ammo to session host
+   pSelfPed = self.get_ped()
+   scripting.weapon.ammo_enhanced(pSelfPed, 7) -- Sets EXPLOSION_CAR explosion type for ammo
 
 ================================
 
@@ -9302,7 +9416,9 @@ Gives mega damage ammo to a ped.
 .. code-block:: lua
    :linenos:
 
-   scripting.weapon.ammo_mega_damage(lobby.get_player_ped(lobby.get_host())) -- Gives mega damage ammo to Trevor
+   pSelfPed = self.get_ped()
+
+   scripting.weapon.ammo_mega_damage(pSelfPed) -- Gives mega damage ammo
 
 ================================
 
@@ -10062,8 +10178,9 @@ Returns the group ID the player is member of. Used for :ref:`ai`.
 .. code-block:: lua
    :linenos:
    
-   group = rage.player.get_player_group(rage.player.player_id())
-   system.log_debug("Player is member of group: " .. tostring(group))
+   plHandle = rage.player.player_id()
+   iPlayerGroup = rage.player.get_player_group(plHandle)
+   system.log_debug("Player is member of group: " .. tostring(iPlayerGroup))
 
 
 ================================
@@ -10086,8 +10203,9 @@ Returns the player name.
 .. code-block:: lua
    :linenos:
    
-   name = rage.player.get_player_name(rage.player.player_id())
-   system.log_debug("Player name: " .. tostring(name))
+   plHandle = rage.player.player_id()
+   sPlayerName = rage.player.get_player_name(plHandle)
+   system.log_debug("Player name: " .. tostring(sPlayerName))
 
 ================================
 
@@ -10109,8 +10227,9 @@ Returns the hash of the parachute model.
 .. code-block:: lua
    :linenos:
    
-   parachute_model = rage.player.get_player_parachute_model_override(rage.player.player_id())
-   system.log_debug("Player parachute model hash: " .. tostring(parachute_model))
+   plHandle = rage.player.player_id()
+   uPlayerParachuteModel = rage.player.get_player_parachute_model_override(plHandle)
+   system.log_debug("Player parachute model hash: " .. tostring(uPlayerParachuteModel))
 
 
 
@@ -10134,8 +10253,9 @@ Returns the Ped ID of the player's character.
 .. code-block:: lua
    :linenos:
    
-   ped = rage.player.get_player_ped_script_index(rage.player.player_id())
-   system.log_debug("Player ped: " .. tostring(ped))
+   plHandle = rage.player.player_id()
+   pSelfPed = rage.player.get_player_ped_script_index(plHandle)
+   system.log_debug("Player ped: " .. tostring(pSelfPed))
 
 ================================
 
@@ -10160,24 +10280,34 @@ Returns the team ID the player is member of. Almost like :ref:`lobby_get_player_
 
 .. code-block:: lua
    :linenos:
-   
-   team = rage.player.get_player_team(rage.player.player_id())
-   system.log_debug("Player is member of team: " .. tostring(team))
+
+   plHandle = rage.player.player_id()
+   iPlayerTeam = rage.player.get_player_team(plHandle)
+   system.log_debug("Player is member of team: " .. tostring(iPlayerTeam))
 
 ================================
 
-get_player_wanted_level()
+get_player_wanted_level1(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the player's wanted level.
 
 **Parameters:**
 
-* None
+* ``player`` (``Player``) -- The player ID
 
 **Returns:**
 
 * ``int`` -- Wanted level
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   plHandle = rage.player.player_id()
+   iPlayerWantedLevel = rage.player.get_player_wanted_level1(plHandle)
+   system.log_debug("Player wanted level: " .. tostring(iPlayerWantedLevel))
 
 ================================
 
@@ -10202,7 +10332,8 @@ Returns whether the player is aiming.
 .. code-block:: lua
    :linenos:
    
-   if rage.player.is_player_free_aiming(rage.player.player_id()) then
+   plHandle = rage.player.player_id()
+   if rage.player.is_player_free_aiming(plHandle) then
       system.log_debug("Player is aiming")
    end
 
@@ -10223,6 +10354,16 @@ Returns whether the wasted/busted screen is visible or not.
 
   * ``true`` -- the wasted/busted screen is visible
   * ``false`` -- the wasted/busted screen is not visible
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   plHandle = rage.player.player_id()
+   if rage.player.is_player_playing(plHandle) then
+      system.log_debug("Player is playing")
+   end
 
 ================================
 
@@ -10247,7 +10388,8 @@ Checks whether the player is pressing the horn.
 .. code-block:: lua
    :linenos:
    
-   if rage.player.is_player_pressing_horn(rage.player.player_id()) then
+   plHandle = rage.player.player_id()
+   if rage.player.is_player_pressing_horn(plHandle) then
       system.log_debug("Player is pressing the horn")
    end
 
@@ -10271,8 +10413,8 @@ Returns the player ID.
 .. code-block:: lua
    :linenos:
    
-   player = rage.player.player_id()
-   system.log_debug("Player ID: " .. tostring(player))
+   plHandle = rage.player.player_id()
+   system.log_debug("Player ID: " .. tostring(plHandle))
 
 ================================
 
@@ -10299,7 +10441,9 @@ Sets the model for a specific player.
 .. code-block:: lua
    :linenos:
    
-   rage.player.set_player_model(rage.player.player_id(), rage.gameplay.get_hash_key(ig_floyd))
+   plHandle = rage.player.player_id()
+   uModelHash = rage.gameplay.get_hash_key("ig_floyd")
+   rage.player.set_player_model(plHandle, uModelHash)
 
 
 ================================
@@ -10323,7 +10467,8 @@ Sets the parachute model for a player.
 .. code-block:: lua
    :linenos:
    
-   rage.player.set_player_parachute_model_override(rage.player.player_id(), 73268708)
+   plHandle = rage.player.player_id()
+   rage.player.set_player_parachute_model_override(plHandle, 73268708)
 
 ================================
 
@@ -10364,6 +10509,38 @@ Ped namespace
 This namespace contains ped-related game functions.
 
 ================================
+
+get_ped_config_flag(``ped``, ``flag``, ``p2``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns whether the ped has the specified configuration flag set or not.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID
+* ``flag`` (``int``) -- The flag to check
+
+  * You can check ped config flags here: :doc:`things/pedConfigs`
+* ``p2`` (``bool``) -- Unknown. Always ``1``.
+
+**Returns:**
+
+* ``bool``
+
+  * ``true`` -- The ped has the flag set
+  * ``false`` -- The ped does not have the flag set
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   plHandle = rage.player.player_id()
+   pSelfPed = rage.player.get_player_ped(plHandle)
+   if rage.ped.get_ped_config_flag(pSelfPed, 32, 1) then
+      system.log_debug("Ped can fly through the windscreen")
+   end
+
 
 add_relationship_group(``name``, ``groupHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -12226,8 +12403,8 @@ Warps the ped into a vehicle.
    -- assuming you are already in a vehicle
    ped = self.get_ped()
    clone = rage.ped.clone_ped(ped, false, false, true)
-   vehicle = self.get_vehicle()
-   rage.ped.set_ped_into_vehicle(clone, vehicle, 0)
+   vehicleHandle = self.get_vehicle()
+   rage.ped.set_ped_into_vehicle(clone, vehicleHandle, 0)
    system.log_debug("Ped warped into vehicle, right front seat.")
 
 ====================================
@@ -12537,8 +12714,8 @@ Adds a phone explosive device to the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.add_vehicle_phone_explosive_device(vehicle)
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.add_vehicle_phone_explosive_device(vehicleHandle)
 
 ====================================
 
@@ -12560,8 +12737,8 @@ Resets the vehicle's primary custom colour to it's real primary one.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.clear_vehicle_custom_primary_colour(vehicle)
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.clear_vehicle_custom_primary_colour(vehicleHandle)
    system.log_debug("Vehicle's primary custom colour reset.")
 
 ====================================
@@ -12584,8 +12761,8 @@ Resets the vehicle's secondary custom colour to it's real secondary one.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.clear_vehicle_custom_secondary_colour(vehicle)
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.clear_vehicle_custom_secondary_colour(vehicleHandle)
    system.log_debug("Vehicle's secondary custom colour reset.")
 
 ====================================
@@ -12615,8 +12792,8 @@ Switches the landing gear of the vehicle.
    :linenos:
 
    -- assuming you're in a plane or a helicopter
-   vehicle = self.get_vehicle()
-   rage.vehicle.control_landing_gear(vehicle, 0)
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.control_landing_gear(vehicleHandle, 0)
    system.log_debug("Landing gear deployed.")
 
 ====================================
@@ -12660,8 +12837,8 @@ Creates a vehicle.
    coords = self.get_coords_infront(10)
 
    rage.streaming.request_model(zentornoHash)
-   vehicle = rage.vehicle.create_vehicle(zentornoHash, coords.x, coords.y, coords.z, 0, true, false, false)
-   if not vehicle == 0 then
+   createdVehicle = rage.vehicle.create_vehicle(zentornoHash, coords.x, coords.y, coords.z, 0, true, false, false)
+   if createdVehicle ~= 0 then
       system.log_debug("Created vehicle.")
    end
    rage.streaming.set_model_as_no_longer_needed(zentornoHash)
@@ -12688,9 +12865,9 @@ Detonates a previously-added phone explosive device.
 
    -- assuming you're in a vehicle
 
-   vehicle = self.get_vehicle()
+   vehicleHandle = self.get_vehicle()
 
-   rage.vehicle.add_vehicle_phone_explosive_device(vehicle)
+   rage.vehicle.add_vehicle_phone_explosive_device(vehicleHandle)
    rage.vehicle.detonate_vehicle_phone_explosive_device()
    system.log_debug("Detonated phone explosive device.")
 
@@ -12726,8 +12903,10 @@ Explode a vehicle
 .. code-block:: lua
    :linenos:
 
-   vehicle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ZENTORNO"), self.get_coords_infront(10), 30.0)
-   rage.vehicle.explode_vehicle(vehicle, true, false)
+   v3CoordsInfront = self.get_coords_infront(10)
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+   vCreatedVehicle = scripting.spawn.spawn_vehicle(uZentornoHash, v3CoordsInfront, 30.0)
+   rage.vehicle.explode_vehicle(vCreatedVehicle, true, false)
 
 ====================================
 
@@ -12761,8 +12940,8 @@ Returns the state of the vehicle's convertible roof.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   roofState = rage.vehicle.get_convertible_roof_state(vehicle)
+   vehicleHandle = self.get_vehicle()
+   roofState = rage.vehicle.get_convertible_roof_state(vehicleHandle)
    system.log_debug("Vehicle's roof state is " .. roofState) --assuming the roof is closed, or you're on a bike
 
 ====================================
@@ -12792,8 +12971,8 @@ Returns the state of the vehicle's landing gear.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   gearState = rage.vehicle.get_landing_gear_state(vehicle)
+   vehicleHandle = self.get_vehicle()
+   gearState = rage.vehicle.get_landing_gear_state(vehicleHandle)
    system.log_debug("Vehicle's gear state is " .. gearState)
 
 ================================
@@ -12821,29 +13000,29 @@ Returns vehicle livery name
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   count = rage.vehicle.get_vehicle_livery_count(vehicle)
+   vehicleHandle = self.get_vehicle()
+   count = rage.vehicle.get_vehicle_livery_count(vehicleHandle)
    for i = 0, count do
-      liveryName = rage.vehicle.get_livery_name(vehicle, i)
+      liveryName = rage.vehicle.get_livery_name(vehicleHandle, i)
       system.log_debug("Livery " .. i .. ": " .. liveryName)
    end
 
    -- or
 
-   vehicle = self.get_vehicle()
+   vehicleHandle = self.get_vehicle()
 
-   liveryIndex = rage.vehicle.get_vehicle_livery(vehicle)
+   liveryIndex = rage.vehicle.get_vehicle_livery(vehicleHandle)
 
-   livery_name = rage.vehicle.get_livery_name(vehicle, liveryIndex)
+   livery_name = rage.vehicle.get_livery_name(vehicleHandle, liveryIndex)
    system.log_debug("Livery name: " .. livery_name)
    
    -- or
 
-   vehicle = self.get_vehicle()
+   vehicleHandle = self.get_vehicle()
 
-   liveryIndex = rage.vehicle.get_vehicle_livery(vehicle)
+   liveryIndex = rage.vehicle.get_vehicle_livery(vehicleHandle)
 
-   livery_name = rage.vehicle.get_livery_name(vehicle, liveryIndex)
+   livery_name = rage.vehicle.get_livery_name(vehicleHandle, liveryIndex)
 
    livery_label = rage.vehicle.get_label_text(livery_name)
 
@@ -12876,8 +13055,8 @@ Returns the name for the type of vehicle mod(Armour, engine etc)
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   modType = rage.vehicle.get_mod_slot_name(vehicle, 0)
+   vehicleHandle = self.get_vehicle()
+   modType = rage.vehicle.get_mod_slot_name(vehicleHandle, 0)
    system.log_debug("Type: " .. modType)
 
 ====================================
@@ -12910,9 +13089,9 @@ Returns the label name for the type of vehicle mod(Armour, engine etc)
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   value = rage.vehicle.get_vehicle_mod(vehicle, 0) -- get spoiler installed
-   modLabel = rage.vehicle.get_mod_text_label(vehicle, 0, value)
+   vehicleHandle = self.get_vehicle()
+   value = rage.vehicle.get_vehicle_mod(vehicleHandle, 0) -- get spoiler installed
+   modLabel = rage.vehicle.get_mod_text_label(vehicleHandle, 0, value)
    system.log_debug("Spoiler: " .. modLabel)
 
 ====================================
@@ -12938,8 +13117,8 @@ Returns the number of possible mod variations for the type of vehicle mod(Armour
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   count = rage.vehicle.get_num_vehicle_mods(vehicle, 0) -- spoiler possible variations
+   vehicleHandle = self.get_vehicle()
+   count = rage.vehicle.get_num_vehicle_mods(vehicleHandle, 0) -- spoiler possible variations
    system.log_debug("Spoiler count: " .. count)
 
 ====================================
@@ -12968,7 +13147,7 @@ Returns the Ped handle of the ped in the specified vehicle seat.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
+   vehicleHandle = self.get_vehicle()
    ped = rage.vehicle.get_ped_in_vehicle_seat(vehicle, 0)
    system.log_debug("Ped in a right front seat: " .. ped)
 
@@ -12998,10 +13177,10 @@ Returns the class of the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   class = rage.vehicle.get_vehicle_class(vehicle)
-   className = rage.vehicle.get_label_text("VEH_CLASS_" .. tostring(class))
-   system.log_debug("Vehicle class: " .. className)
+   vehicleHandle = self.get_vehicle()
+   vehicleClass = rage.vehicle.get_vehicle_class(vehicleHandle)
+   vehicleClassName = rage.vehicle.get_label_text("VEH_CLASS_" .. tostring(vehicleClass))
+   system.log_debug("Vehicle class: " .. vehicleClassName)
 
 ====================================
 
@@ -13023,8 +13202,8 @@ Returns the custom primary colour of the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   colour = rage.vehicle.get_vehicle_custom_primary_colour(vehicle)
+   vehicleHandle = self.get_vehicle()
+   colour = rage.vehicle.get_vehicle_custom_primary_colour(vehicleHandle)
    r = colour.r
    g = colour.g
    b = colour.b
@@ -13050,8 +13229,8 @@ Returns the custom secondary colour of the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   colour = rage.vehicle.get_vehicle_custom_secondary_colour(vehicle)
+   vehicleHandle = self.get_vehicle()
+   colour = rage.vehicle.get_vehicle_custom_secondary_colour(vehicleHandle)
    r = colour.r
    g = colour.g
    b = colour.b
@@ -13078,9 +13257,9 @@ Returns whether the vehicle doors are locked for the specified player.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   player = self.get_player()
-   doorsLocked = rage.vehicle.get_vehicle_doors_locked_for_player(vehicle, player)
+   vehicleHandle = self.get_vehicle()
+   playerHandle = self.get_player()
+   doorsLocked = rage.vehicle.get_vehicle_doors_locked_for_player(vehicleHandle, playerHandle)
    system.log_debug("Vehicle doors locked: " .. tostring(doorsLocked)) -- 100% false if the vehicle is personal
 
 ====================================
@@ -13103,7 +13282,7 @@ Returns max vehicle speed
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
+   vehicleHandle = self.get_vehicle()
    speed = rage.vehicle.get_vehicle_estimated_max_speed(vehicle)
    system.log_debug("Vehicle max speed: " .. tostring(speed))
 
@@ -13129,8 +13308,8 @@ Returns the livery index of the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   livery = rage.vehicle.get_vehicle_livery(vehicle)
+   vehicleHandle = self.get_vehicle()
+   livery = rage.vehicle.get_vehicle_livery(vehicleHandle)
    system.log_debug("Vehicle livery: " .. tostring(livery))
 
 ====================================
@@ -13153,8 +13332,8 @@ Returns the number of livery variations for the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   count = rage.vehicle.get_vehicle_livery_count(vehicle)
+   vehicleHandle = self.get_vehicle()
+   count = rage.vehicle.get_vehicle_livery_count(vehicleHandle)
    system.log_debug("Vehicle livery count: " .. tostring(count))
 
 ====================================
@@ -13181,8 +13360,8 @@ Returns the maximum number of passengers for the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   maxPassengers = rage.vehicle.get_vehicle_max_number_of_passengers(vehicle)
+   vehicleHandle = self.get_vehicle()
+   maxPassengers = rage.vehicle.get_vehicle_max_number_of_passengers(vehicleHandle)
    system.log_debug("Vehicle max passengers: " .. tostring(maxPassengers))
 
 ====================================
@@ -13210,8 +13389,8 @@ Returns the vehicle mod variation ID
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   modValue = rage.vehicle.get_vehicle_mod(vehicle, 0) -- get spoiler installed
+   vehicleHandle = self.get_vehicle()
+   modValue = rage.vehicle.get_vehicle_mod(vehicleHandle, 0) -- get spoiler installed
    system.log_debug("Vehicle engine mod: " .. tostring(modValue))
 
 ====================================
@@ -13258,8 +13437,8 @@ Returns the number of passengers for the vehicle, not including the driver.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   passengers = rage.vehicle.get_vehicle_number_of_passengers(vehicle)
+   vehicleHandle = self.get_vehicle()
+   passengers = rage.vehicle.get_vehicle_number_of_passengers(vehicleHandle)
    system.log_debug("Vehicle passengers: " .. tostring(passengers))
 
 ====================================
@@ -13282,8 +13461,8 @@ Returns the number plate text of the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   plate = rage.vehicle.get_vehicle_number_plate_text(vehicle)
+   vehicleHandle = self.get_vehicle()
+   plate = rage.vehicle.get_vehicle_number_plate_text(vehicleHandle)
    system.log_debug("Vehicle plate: " .. tostring(plate))
 
 ====================================
@@ -13308,8 +13487,8 @@ Returns a number of available rooftop liveries
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   count = rage.vehicle.get_vehicle_roof_livery_count(vehicle)
+   vehicleHandle = self.get_vehicle()
+   count = rage.vehicle.get_vehicle_roof_livery_count(vehicleHandle)
    system.log_debug("Vehicle roof livery count: " .. tostring(count))
 
 
@@ -13335,8 +13514,8 @@ Returns the wheel type of the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   wheelType = rage.vehicle.get_vehicle_wheel_type(vehicle)
+   vehicleHandle = self.get_vehicle()
+   wheelType = rage.vehicle.get_vehicle_wheel_type(vehicleHandle)
    system.log_debug("Vehicle wheel type: " .. tostring(wheelType))
 
 ====================================
@@ -13361,8 +13540,8 @@ Returns the window tint color of the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   tint = rage.vehicle.get_vehicle_window_tint(vehicle)
+   vehicleHandle = self.get_vehicle()
+   tint = rage.vehicle.get_vehicle_window_tint(vehicleHandle)
    system.log_debug("Vehicle window tint: " .. tostring(tint))
 
 ====================================
@@ -13388,8 +13567,8 @@ Checks whether the vehicle has a phone explosive device.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   hasDevice = rage.vehicle.has_vehicle_phone_explosive_device(vehicle)
+   vehicleHandle = self.get_vehicle()
+   hasDevice = rage.vehicle.has_vehicle_phone_explosive_device(vehicleHandle)
    system.log_debug("Vehicle has explosive device: " .. tostring(hasDevice))
 
 ====================================
@@ -13415,8 +13594,8 @@ Checks whether the taxi light is on.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   isOn = rage.vehicle.is_taxi_light_on(vehicle)
+   vehicleHandle = self.get_vehicle()
+   isOn = rage.vehicle.is_taxi_light_on(vehicleHandle)
    system.log_debug("Taxi light is on: " .. tostring(isOn))
 
 ====================================
@@ -13445,9 +13624,9 @@ Checks whether the vehicle mod is turned on (xenon, for example)
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
+   vehicleHandle = self.get_vehicle()
    modType = 22 -- xenon
-   isOn = rage.vehicle.is_toggle_mod_on(vehicle, modType)
+   isOn = rage.vehicle.is_toggle_mod_on(vehicleHandle, modType)
    system.log_debug("Mod is on: " .. tostring(isOn))
 
 ====================================
@@ -13495,8 +13674,8 @@ Checks whether the vehicle engine is running.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   isRunning = rage.vehicle.get_is_vehicle_engine_running(vehicle)
+   vehicleHandle = self.get_vehicle()
+   isRunning = rage.vehicle.get_is_vehicle_engine_running(vehicleHandle)
    system.log_debug("Vehicle engine is running: " .. tostring(isRunning))
 
 ====================================
@@ -13532,9 +13711,9 @@ Checks whether the model specified is a vehicle model.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
+   vehicleHandle = self.get_vehicle()
    model = rage.gameplay.get_hash_key("ZENTORNO")
-   isModel = rage.vehicle.is_vehicle_model(vehicle, model) -- true
+   isModel = rage.vehicle.is_vehicle_model(vehicleHandle, model) -- true
    system.log_debug("Vehicle model is: " .. tostring(isModel))
 
 ====================================
@@ -13566,8 +13745,8 @@ Checks whether the neon light is enabled on the specified vehicle and side.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   isOn = rage.vehicle.is_vehicle_neon_light_enabled(vehicle, 0) -- left
+   vehicleHandle = self.get_vehicle()
+   isOn = rage.vehicle.is_vehicle_neon_light_enabled(vehicleHandle, 0) -- left
    system.log_debug("Vehicle neon light is on: " .. tostring(isOn)) -- a stock car will always return false
 
 ====================================
@@ -13593,8 +13772,8 @@ Checks whether the vehicle is on all wheels.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   isOnWheels = rage.vehicle.is_vehicle_on_all_wheels(vehicle)
+   vehicleHandle  = self.get_vehicle()
+   isOnWheels = rage.vehicle.is_vehicle_on_all_wheels(vehicleHandle)
    system.log_debug("Is vehicle on all wheels: " .. tostring(isOnWheel))
 
 ====================================
@@ -13629,8 +13808,8 @@ Checks whether the vehicle rocket boost is active.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   isActive = rage.vehicle.is_vehicle_rocket_boost_active(vehicle)
+   vehicleHandle = self.get_vehicle()
+   isActive = rage.vehicle.is_vehicle_rocket_boost_active(vehicleHandle)
    system.log_debug("Rocket boost is active: " .. tostring(isActive))
 
 ====================================
@@ -13665,8 +13844,8 @@ Checks whether the vehicle is stopped, not moving.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   isStopped = rage.vehicle.is_vehicle_stopped(vehicle)
+   vehicleHandle = self.get_vehicle()
+   isStopped = rage.vehicle.is_vehicle_stopped(vehicleHandle)
    system.log_debug("Vehicle is stopped: " .. tostring(isStopped))
 
 
@@ -13693,8 +13872,8 @@ Checks whether the vehicle is stuck on the roof, upside down.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   isStuck = rage.vehicle.is_vehicle_stuck_on_roof(vehicle)
+   vehicleHandle = self.get_vehicle()
+   isStuck = rage.vehicle.is_vehicle_stuck_on_roof(vehicleHandle)
    system.log_debug("Vehicle is stuck on roof: " .. tostring(isStuck))
 
 ====================================
@@ -13718,8 +13897,8 @@ Changes the top speed of the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.modify_vehicle_top_speed(vehicle, 1000.0)
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.modify_vehicle_top_speed(vehicleHandle, 1000.0)
 
 ====================================
 
@@ -13781,8 +13960,8 @@ Extend or retract the roof of a convertible vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_convertible_roof(vehicle) -- Extend
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_convertible_roof(vehicleHandle) -- Extend
 
 
 ====================================
@@ -13806,8 +13985,8 @@ Sets the helicopter blades to full speed.
    :linenos:
 
    -- assuming you're in a helicopter
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_heli_blades_full_speed(vehicle)
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_heli_blades_full_speed(vehicleHandle)
 
 ====================================
 
@@ -13832,8 +14011,8 @@ Sets the helicopter blades speed.
 
    -- assuming you're in a helicopter
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_heli_blades_speed(vehicle, 50.0) -- halfspeed 
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_heli_blades_speed(vehicleHandle, 50.0) -- halfspeed 
 
 ====================================
 
@@ -13923,8 +14102,8 @@ Sets the taxi lights for a vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_taxi_lights(vehicle, true) -- taxi lights should be on now
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_taxi_lights(vehicleHandle, true) -- taxi lights should be on now
 
 ====================================
 
@@ -13955,13 +14134,13 @@ Sets the brake lights for a vehicle.
    :linenos:
 
    function lights()
-      vehicle = self.get_vehicle()
-      rage.vehicle.set_vehicle_brake_lights(vehicle, true)
+      vCurrentVehicle = self.get_vehicle()
+      rage.vehicle.set_vehicle_brake_lights(vCurrentVehicle, true)
       system.wait(-1)
    end
 
-   parent = menu.add_parent("My Lua Script")
-   menu.add_option("brake lights ON", "light", parent, lights)
+   iParentID = menu.add_parent("My Lua Script")
+   menu.add_option("brake lights ON", "light", iParentID, lights)
 
 ====================================
 
@@ -14005,8 +14184,8 @@ Sets whether the vehicle can be visibly damaged
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_can_be_visibly_damaged(vehicle, false) -- vehicle can't be visibly damaged now
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_can_be_visibly_damaged(vehicleHandle, false) -- vehicle can't be visibly damaged now
 
 ====================================
 
@@ -14031,8 +14210,8 @@ Sets the primary custom colour for a vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_custom_primary_colour(vehicle, 255, 0, 0) -- vehicle is now red
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_custom_primary_colour(vehicleHandle, 255, 0, 0) -- vehicle is now red
 
 ====================================
 
@@ -14057,8 +14236,8 @@ Sets the secondary custom colour for a vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_custom_secondary_colour(vehicle, 0, 255, 0) -- secondary vehicle color is now green
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_custom_secondary_colour(vehicleHandle, 0, 255, 0) -- secondary vehicle color is now green
 
 ====================================
 
@@ -14084,8 +14263,8 @@ Sets the vehicle deformation to 0.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_deformation_fixed(vehicle) -- vehicle deformation is now 0
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_deformation_fixed(vehicleHandle) -- vehicle deformation is now 0
 
 
 ====================================
@@ -14113,8 +14292,8 @@ Sets a vehicle door to open.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_door_open(vehicle, 5, true, false) -- open the trunt
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_door_open(vehicleHandle, 5, true, false) -- open the trunt
 
 ====================================
 
@@ -14139,8 +14318,8 @@ Sets the vehicle doors lock to a certain state.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_doors_locked(vehicle, 1) -- vehicle doors are now unlocked
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_doors_locked(vehicleHandle, 1) -- vehicle doors are now unlocked
 
 ====================================
 
@@ -14166,8 +14345,8 @@ Sets whether the vehicle doors are locked for all players.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_doors_locked_for_all_players(vehicle, true) -- vehicle doors are now locked for all players
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_doors_locked_for_all_players(vehicleHandle, true) -- vehicle doors are now locked for all players
 
 ====================================
 
@@ -14193,8 +14372,8 @@ Sets whether the vehicle doors are locked for non-script players.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_doors_locked_for_non_script_players(vehicle, true) -- vehicle doors are now locked for non-script players
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_doors_locked_for_non_script_players(vehicleHandle, true) -- vehicle doors are now locked for non-script players
 
 ====================================
 
@@ -14221,9 +14400,9 @@ Lokcs or unlocks the vehicle doors for a certain player.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
+   vehicleHandle = self.get_vehicle()
    player = self.get_player()
-   rage.vehicle.set_vehicle_doors_locked_for_player(vehicle, player, true) -- vehicle doors are now locked for the self
+   rage.vehicle.set_vehicle_doors_locked_for_player(vehicleHandle, player, true) -- vehicle doors are now locked for the self
 
 ====================================
 
@@ -14250,9 +14429,9 @@ Locks or unlocks the vehicle doors for a certain team.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
+   vehicleHandle = self.get_vehicle()
    team = self.get_player_team()
-   rage.vehicle.set_vehicle_doors_locked_for_team(vehicle, team, false) -- vehicle doors are now unlocked for your team
+   rage.vehicle.set_vehicle_doors_locked_for_team(vehicleHandle, team, false) -- vehicle doors are now unlocked for your team
 
 ====================================
 
@@ -14278,8 +14457,8 @@ Closes all vehicle doors.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_doors_shut(vehicle, true) -- vehicle doors are now closed
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_doors_shut(vehicleHandle, true) -- vehicle doors are now closed
 
 ====================================
 
@@ -14305,8 +14484,8 @@ Sets the vehicle engine health.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_engine_health(vehicle, -4000) -- vehicle engine is now broken
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_engine_health(vehicleHandle, -4000) -- vehicle engine is now broken
 
 ====================================
 
@@ -14331,8 +14510,8 @@ Sets the vehicle engine is on.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_engine_on(vehicle, false, false, true) -- vehicle engine is now false
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_engine_on(vehicleHandle, false, false, true) -- vehicle engine is now false
 
 ====================================
 
@@ -14363,8 +14542,8 @@ Repairs the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_fixed(vehicle) -- vehicle is now fixed
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_fixed(vehicleHandle) -- vehicle is now fixed
 
 ====================================
 
@@ -14387,8 +14566,8 @@ Sets the vehicle forward speed (boost).
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_forward_speed(vehicle, 1000.0) -- vehicle forward speed is now 1000
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_forward_speed(vehicleHandle, 1000.0) -- vehicle forward speed is now 1000
 
 ====================================
 
@@ -14415,8 +14594,8 @@ Switches the vehicle's lights to fullbeam.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_fullbeam(vehicle, true) -- vehicle lights are now in fullbeam mode
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_fullbeam(vehicleHandle, true) -- vehicle lights are now in fullbeam mode
 
 ====================================
 
@@ -14442,8 +14621,8 @@ Sets the vehicle as owned by the played
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_has_been_owned_by_player(vehicle, true) -- vehicle is now flagged as owned by the player
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_has_been_owned_by_player(vehicleHandle, true) -- vehicle is now flagged as owned by the player
 
 ====================================
 
@@ -14490,10 +14669,10 @@ Sets the vehicle livery.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   livNum = rage.vehicle.get_vehicle_livery_count()
+   vehicleHandle = self.get_vehicle()
+   livNum = rage.vehicle.get_vehicle_livery_count(vehicleHandle)
    livery = math.random(livNum)
-   rage.vehicle.set_vehicle_livery(vehicle, livery) -- Random livery set
+   rage.vehicle.set_vehicle_livery(vehicleHandle, livery) -- Random livery set
 
 ====================================
 
@@ -14524,8 +14703,8 @@ Modifies the vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_mod(vehicle, 0, 2, false) -- Vehicle spoiler variation 2 is now installed.
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_mod(vehicleHandle, 0, 2, false) -- Vehicle spoiler variation 2 is now installed.
 
 ====================================
 
@@ -14554,8 +14733,8 @@ Toggles neon light on/off
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_neon_light_enabled(vehicle, 0, true) -- Left neon light is now on
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_neon_light_enabled(vehicleHandle, 0, true) -- Left neon light is now on
 
 ====================================
 
@@ -14578,8 +14757,8 @@ Sets the vehicle number plate text.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_number_plate_text(vehicle, "JOHN117") -- Vehicle number plate is now "JOHN117"
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_number_plate_text(vehicleHandle, "JOHN117") -- Vehicle number plate is now "JOHN117"
 
 ====================================
 
@@ -14602,8 +14781,8 @@ Sets a vehicle on the ground on all wheels.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_on_ground_properly(vehicle, 5.0) -- Vehicle is now on the ground
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_on_ground_properly(vehicleHandle, 5.0) -- Vehicle is now on the ground
 
 ====================================
 
@@ -14627,8 +14806,8 @@ Sets the vehicle out of control.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_out_of_control(vehicle, true, true) -- Vehicle is now out of control with dead driver, set to explode on impact.
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_out_of_control(vehicleHandle, true, true) -- Vehicle is now out of control with dead driver, set to explode on impact.
 
 ====================================
 
@@ -14651,8 +14830,8 @@ Sets the vehicle's parachute active. Ruiner 2000 is the only vehicle with the pa
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_parachute_active(vehicle, true) -- Parachute is now active
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_parachute_active(vehicleHandle, true) -- Parachute is now active
 
 ====================================
 
@@ -14679,8 +14858,9 @@ Sets parachute model for a vehicle
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_parachute_model(vehicle, rage.gameplay.get_hash_key("prop_beach_parasol_03")) -- Parachute is now an umbrella
+   vehicleHandle = self.get_vehicle()
+   umbrellaHash = rage.gameplay.get_has_key("prop_beach_parasol_03")
+   rage.vehicle.set_vehicle_parachute_model(vehicleHandle, umbrellaHash) -- Parachute is now an umbrella
 
 ====================================
 
@@ -14706,8 +14886,8 @@ Sets the vehicle's grip to be significantly reduced.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_reduce_grip(vehicle, true) -- Vehicle grip is now reduced
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_reduce_grip(vehicleHandle, true) -- Vehicle grip is now reduced
 
 ====================================
 
@@ -14737,8 +14917,8 @@ Sets the vehicle's rocket boost active.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_rocket_boost_active(vehicle, true) -- Rocket boost is now active
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_rocket_boost_active(vehicleHandle, true) -- Rocket boost is now active
 
 ====================================
 
@@ -14764,8 +14944,8 @@ Sets the vehicle's rocket boost fill percentage.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_rocket_boost_percentage(vehicle, 0.5) -- Rocket boost is now 50% filled
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_rocket_boost_percentage(vehicleHandle, 0.5) -- Rocket boost is now 50% filled
 
 ====================================
 
@@ -14788,8 +14968,8 @@ Sets the vehicle's rocket boost refill time.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_rocket_boost_refill_time(vehicle, 0.5) -- Rocket boost will refill in a half a second
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_rocket_boost_refill_time(vehicleHandle, 0.5) -- Rocket boost will refill in a half a second
 
 ====================================
 
@@ -14823,8 +15003,8 @@ Locks the vehicle's steering to the desired angle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_steer_bias(vehicle, 1.0) -- Vehicle steering set to full left.
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_steer_bias(vehicleHandle, 1.0) -- Vehicle steering set to full left.
 
 ====================================
 
@@ -14852,8 +15032,9 @@ Sets a timed explosion for a vehicle
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_timed_explosion(vehicle, self.get_ped(), true)
+   vehicleHandle = self.get_vehicle()
+   selfPed = self.get_ped()
+   rage.vehicle.set_vehicle_timed_explosion(vehicleHandle, selfPed, true)
 
 ====================================
 
@@ -14876,8 +15057,8 @@ Sets a vehicle as undriveable.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_undriveable(vehicle, true) -- Vehicle is now undriveable
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_undriveable(vehicleHandle, true) -- Vehicle is now undriveable
 
 ====================================
 
@@ -14902,8 +15083,8 @@ Sets the vehicle's wheel type.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_wheel_type(vehicle, 0) -- vehicle now has sport wheel type
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_wheel_type(vehicleHandle, 0) -- vehicle now has sport wheel type
 
 ====================================
 
@@ -14926,8 +15107,8 @@ Sets the vehicle's window tint.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.set_vehicle_window_tint(vehicle, 6) -- vehicle now has green tint
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.set_vehicle_window_tint(vehicleHandle, 6) -- vehicle now has green tint
 
 ====================================
 
@@ -14960,8 +15141,9 @@ Sounds the horn for the specified vehicle.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.start_vehicle_horn(vehicle, 10.0, rage.gameplay.get_hash_key("NORMAL"), false) -- vehicle now sounds its horn for 10 seconds
+   vehicleHandle = self.get_vehicle()
+   modeHash = rage.gameplay.get_hash_key("NORMAL")
+   rage.vehicle.start_vehicle_horn(vehicleHandle, 10.0, modeHash, false) -- vehicle now sounds its horn for 10 seconds
 
 ====================================
 
@@ -14987,8 +15169,8 @@ Toggles a vehicle mod on/off.
 .. code-block:: lua
    :linenos:
 
-   vehicle = self.get_vehicle()
-   rage.vehicle.toggle_vehicle_mod(vehicle, 22, true) -- xenon headlights on
+   vehicleHandle = self.get_vehicle()
+   rage.vehicle.toggle_vehicle_mod(vehicleHandle, 22, true) -- xenon headlights on
 
 ====================================
 
@@ -15069,9 +15251,9 @@ Applies a force to the specified entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.apply_force_to_entity(entity, 1, 10, 10, 10, 0, 0, 0, 0, false, true, true, false, true)
+   rage.entity.apply_force_to_entity(pSelfPed, 1, 10, 10, 10, 0, 0, 0, 0, false, true, true, false, true)
 
 ================================
 
@@ -15111,13 +15293,13 @@ Attach an entity to the specified entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
+   plHostPlayer = lobby.get_host()
+   pHostPed = lobby.get_player_ped(plHostPlayer)
 
-   entity2 = lobby.get_player_ped(lobby.get_host())
+   iBoneIndex = get_ped_bone_index(entity2, 1)
 
-   boneIndex = get_ped_bone_index(entity2, 1)
-
-   rage.entity.attach_entity_to_entity(entity, entity2, boneIndex, 10, 10, 10, 1, 1, 0, false, true, true, 1, true)
+   rage.entity.attach_entity_to_entity(pSelfPed, pHostPed, iBoneIndex, 10, 10, 10, 1, 1, 0, false, true, true, 1, true)
 
 ================================
 
@@ -15139,9 +15321,9 @@ Deletes a specified entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.delete_entity(entity)
+   rage.entity.delete_entity(pSelfPed)
 
 ================================
 
@@ -15168,9 +15350,9 @@ Detaches a specified entity, with toggable options.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.detach_entity(entity, false, true)
+   rage.entity.detach_entity(pSelfPed, false, true)
 
 ================================
 
@@ -15199,10 +15381,10 @@ Checks whether an entity has a drawable (weapon?).
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
-   data = rage.entity.does_entity_have_drawable(entity)
+   pSelfPed = self.get_ped()
+   bDoesHaveDrawable = rage.entity.does_entity_have_drawable(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bDoesHaveDrawable))
 
 ================================
 
@@ -15227,9 +15409,9 @@ Checks whether an entity has physics enabled.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
-   data = rage.entity.does_entity_have_physics(entity)
-   system.log_debug(tostring(data))
+   pSelfPed = self.get_ped()
+   bDoesHavePhysics = rage.entity.does_entity_have_physics(pSelfPed)
+   system.log_debug(tostring(bDoesHavePhysics))
 
 ================================
 
@@ -15255,9 +15437,9 @@ Toggles freeze entity position.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.freeze_entity_position(entity, true)
+   rage.entity.freeze_entity_position(pSelfPed, true)
 
 ================================
 
@@ -15279,11 +15461,11 @@ Returns the entity that this entity is attached to.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.get_entity_attached_to(entity)
+   eAttached = rage.entity.get_entity_attached_to(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(eAttached))
 
 ================================
 
@@ -15308,11 +15490,11 @@ Returns the entity bone ID by name.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.get_entity_bone_index_by_name(entity, "SKEL_L_Forearm")
+   iBoneIndex = rage.entity.get_entity_bone_index_by_name(pSelfPed, "SKEL_L_Forearm")
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(iBoneIndex))
 
 ================================
 
@@ -15338,8 +15520,9 @@ Returns the current coordinates for a specified entity.
 .. code-block:: lua
    :linenos:
 
-   coords = rage.entity.get_entity_coords(self.get_ped())
-   system.log_debug(tostring(coords.x) .. " " .. tostring(coords.y) .. " " .. tostring(coords.z))
+   pSelfPed = self.get_ped()
+   v3EntityCoords = rage.entity.get_entity_coords(pSelfPed)
+   system.log_debug(tostring(v3EntityCoords.x) .. " " .. tostring(v3EntityCoords.y) .. " " .. tostring(v3EntityCoords.z))
 
 
 
@@ -15363,11 +15546,11 @@ Returns the entity's forward vector.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.get_entity_forward_vector(entity)
+   v3ForwardVector = rage.entity.get_entity_forward_vector(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(v3ForwardVector))
 
 ================================
 
@@ -15389,11 +15572,11 @@ Returns the entity's heading.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.get_entity_heading(entity)
+   fEntityHeading = rage.entity.get_entity_heading(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(fEntityHeading))
 
 ================================
 
@@ -15415,11 +15598,11 @@ Returns the entity's physics heading.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.get_entity_physics_heading(entity)
+   fEntityPhysicsHeading = rage.entity.get_entity_physics_heading(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(fEntityPhysicsHeading))
 
 ================================
 
@@ -15441,11 +15624,11 @@ Returns the entity's pitch.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.get_entity_pitch(entity)
+   fEntityPitch = rage.entity.get_entity_pitch(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(fEntityPitch))
 
 ================================
 
@@ -15478,11 +15661,11 @@ Returns the entity's population type.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.get_entity_population_type(entity)
+   bPopulationType = rage.entity.get_entity_population_type(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bPopulationType))
 
 ================================
 
@@ -15505,11 +15688,11 @@ Returns the entity's roll.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.get_entity_roll(entity)
+   fRoll = rage.entity.get_entity_roll(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(fRoll))
 
 ================================
 
@@ -15532,11 +15715,11 @@ Returns the entity rotation.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rot = rage.entity.get_entity_rotation(entity, 2)
+   v3EntityRotation = rage.entity.get_entity_rotation(pSelfPed, 2)
 
-   system.log_debug(tostring(rot.x) .. " " .. tostring(rot.y) .. " " .. tostring(rot.z))
+   system.log_debug(tostring(v3EntityRotation.x) .. " " .. tostring(v3EntityRotation.y) .. " " .. tostring(v3EntityRotation.z))
 
 ================================
 
@@ -15558,11 +15741,11 @@ Returns the entity rotation velocity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rot = rage.entity.get_entity_rotation_velocity(entity, 2)
+   v3EntityRotationVelocity = rage.entity.get_entity_rotation_velocity(entity, 2)
    
-   system.log_debug(tostring(rot.x) .. " " .. tostring(rot.y) .. " " .. tostring(rot.z))
+   system.log_debug(tostring(v3EntityRotationVelocity.x) .. " " .. tostring(v3EntityRotationVelocity.y) .. " " .. tostring(v3EntityRotationVelocity.z))
 
 ================================
 
@@ -15584,11 +15767,11 @@ Returns the entity's speed.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.get_entity_speed(entity)
+   fSpeed = rage.entity.get_entity_speed(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(fSpeed))
 
 ================================
 
@@ -15610,9 +15793,9 @@ Returns the entity's submerged level.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
-   data = rage.entity.get_entity_submerged_level(entity)
-   system.log_debug(tostring(data))
+   pSelfPed = self.get_ped()
+   fSubmergedLevel = rage.entity.get_entity_submerged_level(pSelfPed)
+   system.log_debug(tostring(fSubmergedLevel))
 
 ================================
 
@@ -15639,10 +15822,10 @@ Returns the entity type.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
-   data = rage.entity.get_entity_type(entity)
+   pSelfPed = self.get_ped()
+   iEntityType = rage.entity.get_entity_type(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(iEntityType))
 
 ================================
 
@@ -15664,10 +15847,10 @@ Returns the entity velocity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
-   data = rage.entity.get_entity_velocity(entity)
+   pSelfPed = self.get_ped()
+   v3EntityVelocity = rage.entity.get_entity_velocity(pSelfPed)
 
-   system.log_debug(tostring(data.x) .. " " .. tostring(data.y) .. " " .. tostring(data.z))
+   system.log_debug(tostring(v3EntityVelocity.x) .. " " .. tostring(v3EntityVelocity.y) .. " " .. tostring(v3EntityVelocity.z))
 
 ================================
 
@@ -15692,9 +15875,9 @@ Checks whether an entity has been damaged by any object.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
-   data = rage.entity.has_entity_been_damaged_by_any_object(entity)
-   system.log_debug(tostring(data))
+   pSelfPed = self.get_ped()
+   bHasBeenDamaged = rage.entity.has_entity_been_damaged_by_any_object(entity)
+   system.log_debug(tostring(bHasBeenDamaged))
 
 ================================
 
@@ -15719,10 +15902,10 @@ Checks whether an entity has been damaged by any ped.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
-   data = rage.entity.has_entity_been_damaged_by_any_ped(entity)
+   pSelfPed = self.get_ped()
+   bHasBeenDamagedByPed = rage.entity.has_entity_been_damaged_by_any_ped(bHasBeenDamaged)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bHasBeenDamagedByPed))
 
 ================================
 
@@ -15747,11 +15930,11 @@ Checks whether an entity has been damaged by any vehicle.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.has_entity_been_damaged_by_any_vehicle(entity)
+   bHasBeenDamagedByVehicle = rage.entity.has_entity_been_damaged_by_any_vehicle(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bHasBeenDamagedByVehicle))
 
 ================================
 
@@ -15776,10 +15959,10 @@ Checks whether an entity has been damaged by another entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.has_entity_been_damaged_by_entity(entity)
-   system.log_debug(tostring(data))
+   bHasBeenDamagedByEntity = rage.entity.has_entity_been_damaged_by_entity(pSelfPed)
+   system.log_debug(tostring(bHasBeenDamagedByEntity))
 
 ================================
 
@@ -15804,11 +15987,11 @@ Checks whether an entity has collided with anything.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.has_entity_collided_with_anything(entity)
+   bHasCollided = rage.entity.has_entity_collided_with_anything(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bHasCollided))
 
 ================================
 
@@ -15833,11 +16016,11 @@ Checks whether an ScrHandle is an entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.is_an_entity(entity)
+   bIsEntity = rage.entity.is_an_entity(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsEntity))
 
 ================================
 
@@ -15862,11 +16045,11 @@ Checks whether an entity is a ped.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.is_entity_a_ped(entity)
+   bIsPed = rage.entity.is_entity_a_ped(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsPed))
 
 
 ================================
@@ -15892,11 +16075,11 @@ Checks whether an entity is a vehicle.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.is_entity_a_vehicle(entity)
+   bIsVehicle = rage.entity.is_entity_a_vehicle(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsVehicle))
 
 ================================
 
@@ -15921,11 +16104,11 @@ Checks whether an entity is an object.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.is_entity_an_object(entity)
+   bIsObject = rage.entity.is_entity_an_object(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsObject))
 
 ================================
 
@@ -15950,11 +16133,11 @@ Checks whether an entity is attached to anything.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.is_entity_attached(entity)
+   bIsAttached = rage.entity.is_entity_attached(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsAttached))
 
 ================================
 
@@ -15980,11 +16163,11 @@ Checks whether an entity is dead.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.is_entity_dead(entity, true)
+   bIsDead = rage.entity.is_entity_dead(pSelfPed, true)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsDead))
 
 ================================
 
@@ -16009,11 +16192,11 @@ Checks whether an entity is in air.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.is_entity_in_air(entity)
+   bIsInAir = rage.entity.is_entity_in_air(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsInAir))
 
 
 ================================
@@ -16039,11 +16222,11 @@ Checks whether an entity is in water.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.is_entity_in_water(entity)
+   bIsInWater = rage.entity.is_entity_in_water(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsInWater))
 
 ================================
 
@@ -16071,11 +16254,11 @@ Checks whether an entity is in a specified zone
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.is_entity_in_zone(entity, "AirP")
+   bIsInZone = rage.entity.is_entity_in_zone(pSelfPed, "AirP")
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsInZone))
 
 
 ================================
@@ -16101,11 +16284,11 @@ Checks whether an entity is on fire.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.is_entity_on_fire(entity)
+   bIsOnFire = rage.entity.is_entity_on_fire(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsOnFire))
 
 ================================
 
@@ -16135,11 +16318,11 @@ Checks whether an entity is static.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.is_entity_static(entity)
+   bIsStatic = rage.entity.is_entity_static(pSelfPed)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsStatic))
 
 
 ================================
@@ -16166,11 +16349,11 @@ Checks whether an entity is upright a specified angle.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.entity.is_entity_upright(entity, 0.0)
+   bIsUpright = rage.entity.is_entity_upright(pSelfPed, 0.0)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsUpright))
 
 ================================
 
@@ -16195,9 +16378,11 @@ Checks whether an entity is visible.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   system.log_debug(tostring(rage.entity.is_entity_visible(entity)))
+   bIsVisible = rage.entity.is_entity_visible(pSelfPed)
+
+   system.log_debug(tostring(bIsVisible))
 
 ================================
 
@@ -16219,9 +16404,9 @@ Resets given entity alpha.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.reset_entity_alpha(entity)
+   rage.entity.reset_entity_alpha(pSelfPed)
 
 ================================
 
@@ -16248,9 +16433,9 @@ Sets the entity's alpha level.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.set_entity_alpha(entity, 51, false)
+   rage.entity.set_entity_alpha(pSelfPed, 51, false)
 
 ================================
 
@@ -16274,9 +16459,9 @@ Makes the specified entity (ped, vehicle or object) persistent. Persistent entit
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.set_entity_as_mission_entity(entity)
+   rage.entity.set_entity_as_mission_entity(pSelfPed)
 
 ================================
 
@@ -16309,9 +16494,9 @@ Marks the specified entity (ped, vehicle or object) as no longer needed.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.set_entity_as_no_longer_needed(entity)
+   rage.entity.set_entity_as_no_longer_needed(pSelfPed)
 
 ================================
 
@@ -16334,9 +16519,9 @@ Sets the heading of an entity in degrees also known as "Yaw".
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.set_entity_heading(entity, 90)
+   rage.entity.set_entity_heading(pSelfPed, 90)
 
 ================================
 
@@ -16362,9 +16547,9 @@ Toggles entity's lights on/off.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.set_entity_lights(entity, true)
+   rage.entity.set_entity_lights(pSelfPed, true)
 
 ================================
 
@@ -16387,21 +16572,21 @@ Sets the entity's max speed.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.set_entity_max_speed(entity, 250)
+   rage.entity.set_entity_max_speed(pSelfPed, 250)
 
 ================================
 
-set_entity_no_collision_entity(``entity1``, ``entity1``, ``thisFrameOnly``)
+set_entity_no_collision_entity(``entity1``, ``entity2``, ``thisFrameOnly``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sets disabled collision between two entities.
 
 **Parameters:**
 
-* ``entity`` (``Entity``) -- The entity ID
-* ``speed`` (``Entity``) -- The max speed to set for the entity
+* ``entity1`` (``Entity``) -- The first entity ID
+* ``entity2`` (``Entity``) -- The second entity ID
 * ``thisFrameOnly`` (``bool``) -- Decides when to disable the collision
 
   * ``true`` -- Disabled until it is turned back on
@@ -16416,11 +16601,11 @@ Sets disabled collision between two entities.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   entity2 = lobby.get_player_ped(lobby.get_host())
+   pHostPed = lobby.get_player_ped(lobby.get_host())
 
-   rage.entity.set_entity_no_collision_entity(entity, entity2, true)
+   rage.entity.set_entity_no_collision_entity(pSelfPed, pHostPed, true)
 
 ================================
 
@@ -16452,9 +16637,9 @@ Sets the entity's rotation with customizable options.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.set_entity_rotation(entity, 10, 2, 5, 1)
+   rage.entity.set_entity_rotation(pSelfPed, 10, 2, 5, 1)
 
 ================================
 
@@ -16481,9 +16666,9 @@ Sets the entity velocity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
-
-   rage.entity.set_entity_velocity(entity, 420.82, 69.53, 58, true, true, true)
+   pSelfPed = self.get_ped()
+   v3ForwardVector = rage.entity.get_entity_forward_vector(pSelfPed)
+   rage.entity.set_entity_velocity(pSelfPed, v3ForwardVector.x, v3ForwardVector.y, v3ForwardVector.z)
 
 ================================
 
@@ -16511,9 +16696,9 @@ Toggles the visibility of a given entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.entity.set_entity_visible(entity, true)
+   rage.entity.set_entity_visible(pSelfPed, true)
 
 ================================
 
@@ -16535,12 +16720,12 @@ Returns the model hash of the given entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   model = rage.entity.get_entity_model(entity)
-   freemodeModel = rage.gameplay.get_hash_key("mp_f_freemode_01")
+   uEntityModel = rage.entity.get_entity_model(pSelfPed)
+   uFreemodeModel = rage.gameplay.get_hash_key("mp_f_freemode_01")
 
-   if model == freemodeModel then
+   if uEntityModel == uFreemodeModel then
       system.log_debug("This entity has a freemode model")
    end
 
@@ -16584,8 +16769,9 @@ Creates an object (prop) with the specified model at the specified position.
 .. code-block:: lua
    :linenos:
    
-   object = rage.object.create_object(rage.gameplay.get_hash_key("apa_mp_apa_crashed_usaf_01a"), 0.0, 0.0, 0.0, true, false, false) -- Hash: 1925170211
-   system.log_debug("Object ID: " .. tostring(object))
+   uModelHash = rage.gameplay.get_hash_key("apa_mp_apa_crashed_usaf_01a") -- https://gta-objects.xyz/objects/apa_mp_apa_crashed_usaf_01a
+   oObjectID = rage.object.create_object(uModelHash, 0.0, 0.0, 0.0, true, false, false)
+   system.log_debug("Object ID: " .. tostring(oObjectID))
 
 
 ================================
@@ -16610,6 +16796,7 @@ Gets ped max ammo for a weapon.
 * ``weaponHash`` (``Hash``) -- Weapon `Whash`_ 
 
 .. _Whash: https://wiki.rage.mp/index.php?title=Weapons
+
 **Returns:**
 
 * ``bool``
@@ -16622,7 +16809,11 @@ Gets ped max ammo for a weapon.
 .. code-block:: lua
    :linenos:
 
-   rage.weapon.get_max_ammo(lobby.get_player_ped(lobby.get_host()), rage.gameplay.get_hash_key("weapon_microsmg")) -- Gives session host a fully loaded MicroSMG
+   pSelfPed = self.get_ped()
+
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+
+   rage.weapon.get_max_ammo(pSelfPed, uWeaponHash) -- Gives session host a fully loaded MicroSMG
 
 ================================
 
@@ -16647,9 +16838,12 @@ Gets ammo type from a specific weapon of a ped.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
+   plHostPlayer = lobby.get_host()
+   pHostPed = lobby.get_player_ped(plHostPlayer)
 
-   rage.weapon.get_ped_ammo_type_from_weapon(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Returns ammo type from session's host MicroSMG
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+
+   rage.weapon.get_ped_ammo_type_from_weapon(pHostPed, uWeaponHash) -- Returns ammo type from session's host MicroSMG
 
 ================================
 
@@ -16672,10 +16866,10 @@ Returns current ammo amount in the clip.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
-   weaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
-   count = rage.weapon.get_ammo_in_clip(ped, weaponHash)
-   system.log_debug(tostring(count))
+   pSelfPed = self.get_ped()
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+   iAmmoCount = rage.weapon.get_ammo_in_clip(pSelfPed, uWeaponHash)
+   system.log_debug(tostring(iAmmoCount))
 
 ================================
 
@@ -16698,10 +16892,10 @@ Returns current ammo amount in the ped's weapon.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
-   weaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
-   count = rage.weapon.get_ammo_in_ped_weapon(ped, weaponHash)
-   system.log_debug(tostring(count))
+   pSelfPed = self.get_ped()
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+   iAmmoCount = rage.weapon.get_ammo_in_ped_weapon(pSelfPed, uWeaponHash)
+   system.log_debug(tostring(iAmmoCount))
 
 
 ================================
@@ -16727,9 +16921,11 @@ Gets weapon tint ID from a ped.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
+   pSelfPed = self.get_ped()
 
-   rage.weapon.get_ped_weapon_tint_index(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Returns weapon tint ID from session's host MicroSMG
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+
+   rage.weapon.get_ped_weapon_tint_index(pSelfPed, uWeaponHash) -- Returns weapon tint ID from session's host MicroSMG
 
 ================================
 
@@ -16753,9 +16949,8 @@ Gets weapon tint count.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
-
-   rage.weapon.get_ped_weapon_tint_count(rage.gameplay.get_hash_key("weapon_microsmg")) -- Returns weapon tint count from session's host MicroSMG
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+   rage.weapon.get_ped_weapon_tint_count(uWeaponHash) -- Returns weapon tint count from session's host MicroSMG
 
 ================================
 
@@ -16786,11 +16981,11 @@ Gives a weapon to PED with a delay.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
+   pSelfPed = self.get_ped()
    
-   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.give_delayed_weapon_to_ped(ped, weapon, 100, true)
+   rage.weapon.give_delayed_weapon_to_ped(pSelfPed, uWeaponHash, 100, true)
 
 ================================
 
@@ -16817,11 +17012,13 @@ Give a weapon component to a ped.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
-   
-   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
+   pSelfPed = self.get_ped()
 
-   rage.weapon.give_delayed_weapon_to_ped(ped, weapon, rage.gameplay.get_hash_key("COMPONENT_MICROSMG_CLIP_02")) -- Gives extended clip component to session host's MicroSMG
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+
+   uComponentHash = rage.gameplay.get_hash_key("COMPONENT_MICROSMG_CLIP_02")
+
+   rage.weapon.give_delayed_weapon_to_ped(pSelfPed, uWeaponHash, uComponentHash) -- Gives extended clip component to your MicroSMG
 
 ================================
 
@@ -16850,11 +17047,11 @@ Checks whether a ped has got a weapon.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
+   pSelfPed = self.get_ped()
    
-   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.has_ped_got_weapon(ped, weapon, true) -- Checks whether the session host has got MicroSMG
+   rage.weapon.has_ped_got_weapon(pSelfPed, uWeaponHash, true) -- Checks whether the player has got MicroSMG
 
 ================================
 
@@ -16884,11 +17081,13 @@ Checks whether a ped's weapon has got a component.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
+   pSelfPed = self.get_ped()
    
-   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.has_ped_got_weapon_component(ped, weapon, rage.gameplay.get_hash_key("COMPONENT_MICROSMG_CLIP_02")) -- Checks whether the session host's MicroSMG has got Extended Clip
+   uComponentHash = rage.gameplay.get_hash_key("COMPONENT_MICROSMG_CLIP_02")
+
+   rage.weapon.has_ped_got_weapon_component(pSelfPed, uWeaponHash, uComponentHash) -- Checks whether your MicroSMG has got Extended Clip
 
 ================================
 
@@ -16911,9 +17110,9 @@ Remove all ped's weapons.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
+   pSelfPed = self.get_ped()
 
-   rage.weapon.remove_all_ped_weapons(ped, true) -- Removes all session host's weapons
+   rage.weapon.remove_all_ped_weapons(pSelfPed, true) -- Removes all your weapons
 
 ================================
 
@@ -16940,11 +17139,13 @@ Remove component from a ped's weapon.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
+   pSelfPed = self.get_ped()
 
-   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.remove_weapon_component_from_ped(ped, weapon, rage.gameplay.get_hash_key("COMPONENT_MICROSMG_CLIP_02")) -- Removes Extended Clip from session host's MicroSMG
+   uComponentHash = rage.gameplay.get_hash_key("COMPONENT_MICROSMG_CLIP_02")
+
+   rage.weapon.remove_weapon_component_from_ped(pSelfPed, uWeaponHash, uComponentHash) -- Removes Extended Clip from your MicroSMG
 
 ================================
 
@@ -16969,11 +17170,11 @@ Remove a weapon from a ped.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
+   pSelfPed = self.get_ped()
 
-   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.remove_weapon_from_ped(ped, weapon) -- Removes MicroSMG from session host
+   rage.weapon.remove_weapon_from_ped(pSelfPed, uWeaponHash) -- Removes MicroSMG
 
 ================================
 
@@ -17004,11 +17205,11 @@ Set ped ammo amount.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
+   pSelfPed = self.get_ped()
 
-   weapon = rage.gameplay.get_hash_key("weapon_microsmg")
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.set_ped_ammo(ped, weapon, 100, true)
+   rage.weapon.set_ped_ammo(pSelfPed, uWeaponHash, 100, true)
 
 ================================
 
@@ -17039,12 +17240,13 @@ Set ped ammo by type.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
-   self = lobby.get_player_ped(self.get_ped)
+   pSelfPed = lobby.get_player_ped(self.get_ped)
 
-   ammoType = rage.weapon.get_ped_ammo_type_from_weapon(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Get ammo type from session host's MicroSMG
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.set_ped_ammo_by_type(self, ammoType, 100) -- Set self ammo type
+   iAmmoType = rage.weapon.get_ped_ammo_type_from_weapon(pSelfPed, uWeaponHash) -- Get ammo type from MicroSMG
+
+   rage.weapon.set_ped_ammo_by_type(pSelfPed, iAmmoType, 100) -- Set self ammo type
 
 ================================
 
@@ -17118,12 +17320,13 @@ Set ped weapon tint ID.
 .. code-block:: lua
    :linenos:
 
-   ped = lobby.get_player_ped(lobby.get_host())
-   self = lobby.get_player_ped(self.get_ped)
+   pSelfPed = self.get_ped()
 
-   tint = rage.weapon.get_ped_weapon_tint_index(ped, rage.gameplay.get_hash_key("weapon_microsmg")) -- Returns weapon tint ID from session's host MicroSMG
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
 
-   rage.weapon.set_ped_weapon_tint_index(self, rage.gameplay.get_hash_key("weapon_microsmg"), tint) -- Sets self weapon tint
+   iTintID = rage.weapon.get_ped_weapon_tint_index(pSelfPed, uWeaponHash) -- Returns current weapon tint ID installed on MicroSMG
+
+   rage.weapon.set_ped_weapon_tint_index(pSelfPed, uWeaponHash, (iTintID + 1)) -- Sets next weapon tint
 
 ================================
 
@@ -17159,9 +17362,9 @@ Checks whether an animation dictionary is loaded.
 .. code-block:: lua
    :linenos:
 
-   data = rage.streaming.has_anim_dict_loaded("move_f@injured")
+   bHasAnimDictLoaded = rage.streaming.has_anim_dict_loaded("move_f@injured")
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bHasAnimDictLoaded))
 
 ================================
 
@@ -17188,9 +17391,9 @@ Checks whether an animation set is loaded.
 .. code-block:: lua
    :linenos:
 
-   data = rage.streaming.has_anim_set_loaded("idle_intro")
+   bHasAnimSetLoaded = rage.streaming.has_anim_set_loaded("idle_intro")
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bHasAnimSetLoaded))
 
 ================================
 
@@ -17215,11 +17418,11 @@ Checks whether a specified model has loaded into memory.
 .. code-block:: lua
    :linenos:
 
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   data = rage.streaming.has_model_loaded(hashKey)
+   bHasModelLoaded = rage.streaming.has_model_loaded(uZentornoHash)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bHasModelLoaded))
 
 ================================
 
@@ -17244,9 +17447,9 @@ Checks whether a particles effect is loaded.
 .. code-block:: lua
    :linenos:
 
-   data = rage.streaming.has_named_ptfx_asset_loaded("blood_stab")
+   bHasPTFXassetLoaded = rage.streaming.has_named_ptfx_asset_loaded("blood_stab")
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bHasPTFXassetLoaded))
 
 ================================
 
@@ -17271,11 +17474,11 @@ Checks whether the model is a bicycle.
 .. code-block:: lua
    :linenos:
 
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   data = rage.streaming.is_this_model_a_bicycle(hashKey)
+   bIsThisModelABicycle = rage.streaming.is_this_model_a_bicycle(uZentornoHash)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsThisModelABicycle))
 
 ================================
 
@@ -17300,11 +17503,11 @@ Checks whether the model is a bike.
 .. code-block:: lua
    :linenos:
 
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   data = rage.streaming.is_this_model_a_bike(hashKey)
+   bIsThisModelABike = rage.streaming.is_this_model_a_bike(uZentornoHash)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsThisModelABike))
 
 ================================
 
@@ -17329,11 +17532,11 @@ Checks whether the model is a boat.
 .. code-block:: lua
    :linenos:
    
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   data = rage.streaming.is_this_model_a_boat(hashKey)
+   bIsThisModelABoat = rage.streaming.is_this_model_a_boat(uZentornoHash)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsThisModelABoat))
 
 ================================
 
@@ -17358,11 +17561,11 @@ Checks whether the model is a car.
 .. code-block:: lua
    :linenos:
    
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   data = rage.streaming.is_this_model_a_car(hashKey)
+   bIsThisModelACar = rage.streaming.is_this_model_a_car(uZentornoHash)
 
-   system.log_debug(tostring(data)) -- Returns true
+   system.log_debug(tostring(bIsThisModelACar)) -- Returns true
 
 ================================
 
@@ -17387,11 +17590,11 @@ Checks whether the model is a helicopter.
 .. code-block:: lua
    :linenos:
    
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   data = rage.streaming.is_this_model_a_heli(hashKey)
+   bIsThisModelAHeli = rage.streaming.is_this_model_a_heli(uZentornoHash)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsThisAHeli))
 
 ================================
 
@@ -17416,11 +17619,11 @@ Checks whether the model is a ped.
 .. code-block:: lua
    :linenos:
    
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   data = rage.streaming.is_model_a_ped(hashKey)
+   bIsThisModelAPed = rage.streaming.is_model_a_ped(uZentornoHash)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsThisAPed))
 
 ================================
 
@@ -17445,11 +17648,11 @@ Checks whether the model is a plane.
 .. code-block:: lua
    :linenos:
    
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   data = rage.streaming.is_this_model_a_plane(hashKey)
+   bIsThisModelAPlane = rage.streaming.is_this_model_a_plane(uZentornoHash)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsThisModelAPlane))
 
 ================================
 
@@ -17474,11 +17677,11 @@ Checks whether the model is a quadbike.
 .. code-block:: lua
    :linenos:
    
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   data = rage.streaming.is_this_model_a_quadbike(hashKey)
+   bIsThisModelAQuadbike = rage.streaming.is_this_model_a_quadbike(uZentornoHash)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsThisModelAQuadbike))
 
 ================================
 
@@ -17503,11 +17706,11 @@ Checks whether the model is a train.
 .. code-block:: lua
    :linenos:
    
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   data = rage.streaming.is_this_model_a_train(hashKey)
+   bIsThisModelATrain = rage.streaming.is_this_model_a_train(uZentornoHash)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsThisModelATrain))
 
 ================================
 
@@ -17532,11 +17735,11 @@ Checks whether the model is a vehicle.
 .. code-block:: lua
    :linenos:
    
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   data = rage.streaming.is_model_a_vehicle(hashKey)
+   bIsThisModelAVehicle = rage.streaming.is_model_a_vehicle(uZentornoHash)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsThisModelAVehicle))
 
 ================================
 
@@ -17561,9 +17764,11 @@ Checks whether the model is in cdimage (rpf).
 .. code-block:: lua
    :linenos:
    
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.is_model_in_cdimage(hashKey)
+   bIsThisModelInCDImage = rage.streaming.is_model_in_cdimage(uZentornoHash)
+
+   system.log_debug(tostring(bIsThisModelInCDImage))
 
 ================================
 
@@ -17588,11 +17793,11 @@ Checks whether the specified model exists in the game.
 .. code-block:: lua
    :linenos:
    
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   data = rage.streaming.is_model_valid(hashKey)
+   bIsModelValid = rage.streaming.is_model_valid(uZentornoHash)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsModelValid))
 
 ================================
 
@@ -17776,9 +17981,9 @@ Requests a model to be loaded into memory.
 .. code-block:: lua
    :linenos:
    
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.request_model(hashKey)
+   rage.streaming.request_model(uZentornoHash)
 
 ================================
 
@@ -17827,9 +18032,9 @@ Sets the model as no longer needed.
 .. code-block:: lua
    :linenos:
    
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO")
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.streaming.set_model_as_no_longer_needed(hashKey)
+   rage.streaming.set_model_as_no_longer_needed(uZentornoHash)
 
 ================================
 
@@ -17862,7 +18067,8 @@ Add blip for given coordinates.
 .. code-block:: lua
    :linenos:
 
-   rage.ui.add_blip_for_coord(69.2, 54.8, 192.3)
+   v3CoordsInfront = self.get_coords_infront(100)
+   rage.ui.add_blip_for_coord(v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z)
 
 ================================
 
@@ -17884,9 +18090,9 @@ Add blip for given entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ui.add_blip_for_entity(entity) -- Adds a blip to self's ped location.
+   rage.ui.add_blip_for_entity(pSelfPed) -- Adds a blip to self's ped location.
 
 ================================
 
@@ -17908,9 +18114,9 @@ Add blip for given pickup.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ui.add_blip_for_pickup(entity)
+   rage.ui.add_blip_for_pickup(pSelfPed)
 
 ================================
 
@@ -17935,9 +18141,10 @@ Add blip for given coords with custom radius.
 .. code-block:: lua
    :linenos:
 
-   coords = lobby.get_player_coords(lobby.get_host())
+   plHostPlayer = lobby.get_host()
+   v3CurrentHostCoords = lobby.get_player_coords(plHostPlayer)
 
-   rage.ui.add_blip_for_radius(coords.x, coords.y, coords.z, 20)
+   rage.ui.add_blip_for_radius(v3CurrentHostCoords.x, v3CurrentHostCoords.y, v3CurrentHostCoords.z, 20)
 
 ================================
 
@@ -17959,9 +18166,10 @@ Gets coordinates for a blip.
 .. code-block:: lua
    :linenos:
 
-   blip = rage.ui.add_blip_for_entity(self.get_ped())
+   plHostPlayer = lobby.get_host()
+   blEntityBlip = rage.ui.add_blip_for_entity(plHostPlayer)
 
-   rage.ui.get_blip_coords(blip) -- Returns coords of precedently created self ped's blip
+   rage.ui.get_blip_coords(blEntityBlip) -- Returns coords of the created self ped's blip
 
 ================================
 
@@ -17983,9 +18191,9 @@ Gets blip from entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ui.get_blip_from_entity(entity)
+   rage.ui.get_blip_from_entity(pSelfPed)
 
 ================================
 
@@ -18007,7 +18215,8 @@ Gets label text from label name.
 .. code-block:: lua
    :linenos:
 
-   rage.ui.get_label_text("Label")
+   sBlipLabelText = rage.ui.get_label_text("Label")
+   system.log_debug("Label text: " .. sBlipLabelText)
 
 ================================
 
@@ -18101,7 +18310,8 @@ Checks whether specified HUD (Heads-up Display) component is active.
 .. code-block:: lua
    :linenos:
 
-   rage.ui.is_hud_component_active(19) -- Checks whether the Weapon Wheel is active
+   bIsWeaponWheelActive = rage.ui.is_hud_component_active(19) -- Checks whether the Weapon Wheel is active
+   system.log_debug("Weapon Wheel active: " .. tostring(bIsWeaponWheelActive))
 
 ================================
 
@@ -18126,9 +18336,10 @@ Checks whether a blip is a mission creator.
 .. code-block:: lua
    :linenos:
 
-   blip = rage.ui.add_blip_for_entity(self.get_ped())
+   pSelfPed = self.get_ped()
+   blEntityBlip = rage.ui.add_blip_for_entity(pSelfPed)
 
-   rage.ui.is_mission_creator_blip(blip)
+   rage.ui.is_mission_creator_blip(blEntityBlip)
 
 ================================
 
@@ -18150,9 +18361,10 @@ Removes a blip.
 .. code-block:: lua
    :linenos:
 
-   blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
+   pSelfPed = self.get_ped()
+   blEntityBlip = rage.ui.add_blip_for_entity(pSelfPed)
 
-   rage.ui.remove_blip(blip) -- Removes precedently added blip
+   rage.ui.remove_blip(blEntityBlip) -- Removes precedently added blip
    
 ================================
 
@@ -18178,9 +18390,10 @@ Set blip as mission creator blip.
 .. code-block:: lua
    :linenos:
 
-   blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
+   pSelfPed = self.get_ped()
+   blEntityBlip = rage.ui.add_blip_for_entity(pSelfPed)
 
-   rage.ui.set_blip_as_mission_creator_blip(blip, true) -- Sets precedently added blip as mission creator blip
+   rage.ui.set_blip_as_mission_creator_blip(blEntityBlip, true) -- Sets precedently added blip as mission creator blip
    
 ================================
 
@@ -18204,9 +18417,10 @@ Set blip colour.
 .. code-block:: lua
    :linenos:
 
-   blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
+   pSelfPed = self.get_ped()
+   blEntityBlip = rage.ui.add_blip_for_entity(pSelfPed)
 
-   rage.ui.set_blip_colour(blip, 38) -- Sets precedently added blip Blue
+   rage.ui.set_blip_colour(blEntityBlip, 38) -- Makes added blip Blue
    
 ================================
 
@@ -18231,11 +18445,14 @@ Set blip coordinates.
 .. code-block:: lua
    :linenos:
 
-   blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
+   pSelfPed = self.get_ped()
+   plHostPlayer = self.get_host()
 
-   coords = lobby.get_player_coords(lobby.get_host()) -- Returns host's coordinates
+   blEntityBlip = rage.ui.add_blip_for_entity(pSelfPed)
 
-   rage.ui.set_blip_coords(blip, coords.x, coords.y, coords.z)
+   v3HostCurrentCoords = lobby.get_player_coords(plHostPlayer) -- Returns host's coordinates
+
+   rage.ui.set_blip_coords(blEntityBlip, v3HostCurrentCoords.x, v3HostCurrentCoords.y, v3HostCurrentCoords.z)
 
 ================================
 
@@ -18261,9 +18478,10 @@ Set blip route, toggable.
 .. code-block:: lua
    :linenos:
 
-   blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
+   pSelfPed = self.get_ped()
+   blEntityBlip = rage.ui.add_blip_for_entity(pSelfPed) -- Adds a blip for self's ped
 
-   rage.ui.set_blip_route(blip, true)
+   rage.ui.set_blip_route(blEntityBlip, true)
 
 ================================
 
@@ -18288,9 +18506,10 @@ Set blip sprite.
 .. code-block:: lua
    :linenos:
 
-   blip = rage.ui.add_blip_for_entity(self.get_ped()) -- Adds a blip for self's ped
+   pSelfPed = self.get_ped()
+   blEntityBlip = rage.ui.add_blip_for_entity(pSelfPed) -- Adds a blip for self's ped
 
-   rage.ui.set_blip_sprite(blip, 64) -- Sets radar_helicopter sprite to precedently created blip
+   rage.ui.set_blip_sprite(blEntityBlip, 64) -- Sets radar_helicopter sprite to precedently created blip
 
 ================================
 
@@ -18313,7 +18532,7 @@ Set new waypoint to given coordinates.
 .. code-block:: lua
    :linenos:
 
-   rage.ui.set_new_waypoint(69.2, 420.1)
+   rage.ui.set_new_waypoint(1391.7, 3608.716) -- trevor's meth lab
 
 ================================
 
@@ -18638,9 +18857,9 @@ Gets gameplay camera relative pitch.
 .. code-block:: lua
    :linenos:
 
-   pitch = rage.cam.get_gameplay_cam_relative_pitch()
+   fCamRelativePitch = rage.cam.get_gameplay_cam_relative_pitch()
    
-   system.log_debug("LocalPlayer pitch: " .. pitch)
+   system.log_debug("LocalPlayer pitch: " .. fCamRelativePitch)
 
 ================================
 
@@ -18679,8 +18898,8 @@ Gets gameplay camera rotation
 .. code-block:: lua
    :linenos:
 
-   ggcr = rage.cam.get_gameplay_cam_rot(0) -- Returns the rotation of the camera with the first rotation order.
-   system.log_debug("LocalPlayer pitch: " .. tostring(ggcr.x) .. " roll: " .. tostring(ggcr.y) .. " yaw: " .. tostring(ggcr.z))
+   v3CamRotation = rage.cam.get_gameplay_cam_rot(0) -- Returns the rotation of the camera with the first rotation order.
+   system.log_debug("LocalPlayer pitch: " .. tostring(v3CamRotation.x) .. " roll: " .. tostring(v3CamRotation.y) .. " yaw: " .. tostring(v3CamRotation.z))
 
 ================================
 
@@ -18717,9 +18936,9 @@ Clear defined area of cops.
 .. code-block:: lua
    :linenos:
 
-   coords = self.get_coords()
+   v3CurrentCoords = self.get_coords()
 
-   rage.gameplay.clear_area_of_cops(coords.x, coords.y, coords.z, 100.0, 0) -- 100m cop purge
+   rage.gameplay.clear_area_of_cops(v3CurrentCoords.x, v3CurrentCoords.y, v3CurrentCoords.z, 100.0, 0) -- 100m cop purge
 
 ================================
 
@@ -18753,9 +18972,9 @@ Clear defined area of props.
 .. code-block:: lua
    :linenos:
 
-   coords = self.get_coords()
+   v3CurrentCoords = self.get_coords()
    
-   rage.gameplay.clear_area_of_objects(coords.x, coords.y, coords.z, 100.0, 0) -- 100m prop purge
+   rage.gameplay.clear_area_of_objects(v3CurrentCoords.x, v3CurrentCoords.y, v3CurrentCoords.z, 100.0, 0) -- 100m prop purge
 
 ================================
 
@@ -18783,9 +19002,9 @@ Clear defined area of peds.
 .. code-block:: lua
    :linenos:
 
-   coords = self.get_coords()
+   v3CurrentCoords = self.get_coords()
    
-   rage.gameplay.clear_area_of_peds(coords.x, coords.y, coords.z, 100.0, 1) -- 100m ped purge
+   rage.gameplay.clear_area_of_peds(v3CurrentCoords.x, v3CurrentCoords.y, v3CurrentCoords.z, 100.0, 1) -- 100m ped purge
 
 ================================
 
@@ -18817,9 +19036,9 @@ Clear defined area of vehicles.
 .. code-block:: lua
    :linenos:
 
-   coords = self.get_coords()
+   v3CurrentCoords = self.get_coords()
    
-   rage.gameplay.clear_area_of_vehicles(coords.x, coords.y, coords.z, 100.0) -- 100m vehicle purge
+   rage.gameplay.clear_area_of_vehicles(v3CurrentCoords.x, v3CurrentCoords.y, v3CurrentCoords.z, 100.0) -- 100m vehicle purge
 
 
 ================================
@@ -18886,13 +19105,13 @@ Displays an onscreen input window.
    :linenos:
 
    function foo()
-      data = nil
-      rage.gameplay.display_onscreen_keyboard(6, "FMMC_KEY_TIP10", "", "Example Text", "", "", "", 30) -- display onscreen keyboard with the "Enter Synopsis" title and a maximum input length of 30 characters
-      while data == "" or data == nil do
-         data = rage.gameplay.get_onscreen_keyboard_result()
+      enteredText = nil
+      rage.gameplay.display_onscreen_keyboard(6, "FMMC_KEY_TIP10", "", "Default Text", "", "", "", 30) -- display onscreen keyboard with the "Enter Synopsis" title and a maximum input length of 30 characters
+      while enteredText == "" or enteredText == nil do
+         enteredText = rage.gameplay.get_onscreen_keyboard_result()
          system.wait(-1)
       end
-      system.log_debug("The player entered " .. data .. ".")
+      system.log_debug("The player entered " .. enteredText .. ".")
    end
 
    parent = menu.add_parent("My Lua Script")
@@ -18930,13 +19149,14 @@ Attempts to find a spawn point in the specified direction.
 .. code-block:: lua
    :linenos:
 
-   coords = self.get_coords()
-   fwdVec = rage.entity.get_entity_rotation(self.get_ped(), 1)
-   spawnP = coords
-   rage.gameplay.find_spawn_point_in_direction(coords.x, coords.y, coords.z, fwdVec.x, fwdVec.y, fwdVec.z, 100.0, spawnP) -- find spawn point in 100m radius in the direction of the player
+   v3CurrentCoords = self.get_coords()
+   pSelfPed = self.get_ped()
+   v3ForwardVector = rage.entity.get_entity_rotation(pSelfPed, 1)
+   v3SpawnPoint = nil
+   rage.gameplay.find_spawn_point_in_direction(v3CurrentCoords.x, v3CurrentCoords.y, v3CurrentCoords.z, v3ForwardVector.x, v3ForwardVector.y, v3ForwardVector.z, 100.0, v3SpawnPoint) -- find spawn point in 100m radius in the direction of the player
 
-   if spawnP then
-      system.log_debug(tostring(spawnP.x) .. " " .. tostring(spawnP.y) .. " " .. tostring(spawnP.z)) -- set the player's coords to the found spawn point
+   if v3SpawnPoint then
+      system.log_debug(tostring(v3SpawnPoint.x) .. " " .. tostring(v3SpawnPoint.y) .. " " .. tostring(v3SpawnPoint.z))
    end
 
 ================================
@@ -18959,8 +19179,8 @@ Returns the current clouds opacity.
 .. code-block:: lua
    :linenos:
 
-   opacity = rage.gameplay.get_cloud_hat_opacity() -- get current clouds opacity
-   system.log_debug("The clouds opacity is " .. tostring(opacity)) -- log the current clouds opacity
+   iCloudOpacity = rage.gameplay.get_cloud_hat_opacity() -- get current clouds opacity
+   system.log_debug("The clouds opacity is " .. tostring(iCloudOpacity)) -- log the current clouds opacity
 
 ================================
 
@@ -18982,8 +19202,8 @@ Returns the current frame count.
 .. code-block:: lua
    :linenos:
 
-   frameCount = rage.gameplay.get_frame_count() -- get current frame count
-   system.log_debug("The frame count is " .. tostring(frameCount)) -- log the current frame count
+   iFrameCount = rage.gameplay.get_frame_count() -- get current frame count
+   system.log_debug("The frame count is " .. tostring(iFrameCount)) -- log the current frame count
 
 ================================
 
@@ -19005,8 +19225,8 @@ Returns the current frame time - the time it takes for a frame to be rendered.
 .. code-block:: lua
    :linenos:
 
-   frameTime = rage.gameplay.get_frame_time() -- get current frame time
-   system.log_debug("The frame time is " .. tostring(frameTime)) -- log the current frame time
+   fFrameTime = rage.gameplay.get_frame_time() -- get current frame time
+   system.log_debug("The frame time is " .. tostring(fFrameTime)) -- log the current frame time
 
 ================================
 
@@ -19021,15 +19241,15 @@ Returns the hash key of the specified game object.
 
 **Returns:**
 
-* ``int`` -- The hash key of the specified string
+* ``uint_64`` -- The hash key of the specified string
 
 **Example:**
 
 .. code-block:: lua
    :linenos:
 
-   hashKey = rage.gameplay.get_hash_key("ZENTORNO") -- get the hash key of "example"
-   system.log_debug("The hash key of \"ZENTORNO\" is " .. tostring(hashKey)) -- log the hash key of "example"
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO") -- get the hash key of "example"
+   system.log_debug("The hash key of \"ZENTORNO\" is " .. tostring(uZentornoHash)) -- log the hash key of "example"
 
 ================================
 
@@ -19052,13 +19272,13 @@ Returns the result of an onscreen input window.
    :linenos:
 
    function foo()
-      data = nil
-      rage.gameplay.display_onscreen_keyboard(6, "FMMC_KEY_TIP10", "", "Example Text", "", "", "", 30) -- display onscreen keyboard with the "Enter Synopsis" title and a maximum input length of 30 characters
-      while data == "" or data == nil do
-         data = rage.gameplay.get_onscreen_keyboard_result()
+      enteredText = nil
+      rage.gameplay.display_onscreen_keyboard(6, "FMMC_KEY_TIP10", "", "Default Text", "", "", "", 30) -- display onscreen keyboard with the "Enter Synopsis" title and a maximum input length of 30 characters
+      while enteredText == "" or enteredText == nil do
+         enteredText = rage.gameplay.get_onscreen_keyboard_result()
          system.wait(-1)
       end
-      system.log_debug("The player entered " .. data .. ".")
+      system.log_debug("The player entered " .. enteredText .. ".")
    end
 
    parent = menu.add_parent("My Lua Script")
@@ -19121,7 +19341,7 @@ Loads the specified cloud hat.
 
 ================================
 
-unload_cloud_hat(``name``)
+unload_cloud_hat(``name``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Unloads the specified cloud hat.
@@ -19135,6 +19355,7 @@ Unloads the specified cloud hat.
 * ``name`` (``string``) -- The cloud type
 
   * You can read more about cloud types here: :doc:`things/cloudtypes`
+* ``p1`` (``float``) -- appears to be ``0``
 
 **Returns:**
 
@@ -19145,7 +19366,7 @@ Unloads the specified cloud hat.
 .. code-block:: lua
    :linenos:
 
-   rage.gameplay.unload_cloud_hat("altostratus") -- unload the altostratus cloud hat
+   rage.gameplay.unload_cloud_hat("altostratus", 0) -- unload the altostratus cloud hat
    
 
 ================================
@@ -19230,9 +19451,9 @@ Shoots a bullet from the first coordinates to the second coordinates
 .. code-block:: lua
    :linenos:
 
-   coords1 = self.get_coords()
-   coords2 = self.get_coords_infront(10)
-   rage.gameplay.shoot_single_bullet_between_coords(coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 1000, true, rage.gameplay.get_hash_key("WEAPON_SAWNOFFSHOTGUN"), self.get_ped(), true, true, 50.0) -- shoot a bullet from player coords to 10 meters in front of them with a damage of 1000, with pinpoint accuracy, using the shotgun, the bullet owner is the player, the bullet is audible and invisible, and the bullet speed is 50.0
+   v3CurrentCoords = self.get_coords()
+   v3CoordsInfront = self.get_coords_infront(10)
+   rage.gameplay.shoot_single_bullet_between_coords(v3CurrentCoords.x, v3CurrentCoords.y, v3CurrentCoords.z, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 1000, true, rage.gameplay.get_hash_key("WEAPON_SAWNOFFSHOTGUN"), self.get_ped(), true, true, 50.0) -- shoot a bullet from player coords to 10 meters in front of them with a damage of 1000, with pinpoint accuracy, using the shotgun, the bullet owner is the player, the bullet is audible and invisible, and the bullet speed is 50.0
 
 
 update_onscreen_keyboard()
@@ -19303,9 +19524,9 @@ Add explosion in certain coordinates with multiple options.
 .. code-block:: lua
    :linenos:
 
-   c = self.get_coords()
-   rage.fire.add_explosion(922.60430908203, 49.672721862793, 80.89803314209, 7, 10, true, false, 10, false)
-   -- Adds a Car Explosion located at Casino Entrance, with 10 damage scale, audible, invisible, 10 camera shake intensity and damage toggled on
+   v3CurrentCoords = self.get_coords()
+   v3CasinoCoords = Vector3.new(922.60430908203, 49.672721862793, 80.89803314209)
+   rage.fire.add_explosion(v3CasinoCoords.x, v3CasinoCoords.y, v3CasinoCoords.z, 7, 10, true, false, 10, false)
 
 ================================
 
@@ -19327,9 +19548,10 @@ Start fire on entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.fire.start_entity_fire(entity)
+   iTimesApplied = rage.fire.start_entity_fire(pSelfPed)
+   system.log_debug("Times applied: " .. iTimesApplied)
 
 ================================
 
@@ -19351,9 +19573,9 @@ Stop fire on entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
-
-   rage.fire.stop_entity_fire(entity)
+   pSelfPed = self.get_ped()
+   rage.fire.start_entity_fire(pSelfPed)
+   rage.fire.stop_entity_fire(pSelfPed)
 
 ================================
 
@@ -19384,7 +19606,8 @@ Gets friend count.
 .. code-block:: lua
    :linenos:
 
-   rage.network.network_get_friend_count()
+   iFriendCount = rage.network.network_get_friend_count()
+   system.log_debug("Friend count: " .. iFriendCount)
 
 ================================
 
@@ -19406,7 +19629,9 @@ Gets ID of the player host of this script.
 .. code-block:: lua
    :linenos:
 
-   rage.network.network_get_host_of_this_script()
+   iHostOfTheScript = rage.network.network_get_host_of_this_script()
+   system.log_debug("Host of the script: " .. iHostOfTheScript)
+
 
 ================================
 
@@ -19428,7 +19653,8 @@ Gets max friends.
 .. code-block:: lua
    :linenos:
 
-   rage.network.network_get_max_friends()
+   iMaxFriends = rage.network.network_get_max_friends()
+   system.log_debug("Max friends: " .. iMaxFriends)
 
 ================================
 
@@ -19453,9 +19679,10 @@ Check network control of entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   eSelfPed = self.get_ped()
 
-   rage.network.network_has_control_of_entity(entity)
+   bHasControlOfEntity = rage.network.network_has_control_of_entity(eSelfPed)
+   system.log_debug("Got control of entity: " .. tostring(bHasControlOfEntity))
 
 ================================
 
@@ -19480,7 +19707,9 @@ Checks whether a friend is in multiplayer.
 .. code-block:: lua
    :linenos:
 
-   rage.network.network_is_friend_in_multiplayer("Bobby")
+   bIsInMultiplayer = rage.network.network_is_friend_in_multiplayer("Acid_Burn9")
+   system.log_debug("Is friend in multiplayer: " .. tostring(bIsInMultiplayer))
+
 
 ================================
 
@@ -19528,7 +19757,8 @@ Checks whether a friend is online.
 .. code-block:: lua
    :linenos:
 
-   rage.network.network_is_friend_online("Huginn5") -- stalking Huginn
+   bIsFriendOnline = rage.network.network_is_friend_online("Huginn5") -- stalking Huginn
+   system.log_debug("Is friend online: " .. tostring(bIsFriendOnline))
 
 ================================
 
@@ -19553,7 +19783,8 @@ Checks whether a session has started - you're fully connected, can control your 
 .. code-block:: lua
    :linenos:
 
-   rage.network.network_is_session_started()
+   bIsSessionStarted = rage.network.network_is_session_started()
+   system.log_debug("Is session started: " .. tostring(bIsSessionStarted))
 
 ================================
 
@@ -19568,23 +19799,23 @@ Gets hash from player handle.
 
 **Returns:**
 
-* ``Hash`` -- Hash from player handle.
+* ``Hash`` -- Hash of the player nickname
 
 **Example:**
 
 .. code-block:: lua
    :linenos:
 
-   player = lobby.get_host()
-   
-   rage.network.network_hash_from_player_handle(player)
+   plHostPlayer = lobby.get_host()
+   rage.network.network_hash_from_player_handle(plHostPlayer)
+
 
 ================================
 
 network_is_host()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check host status.
+Checks if you are a session host.
 
 **Parameters:**
 
@@ -19602,7 +19833,9 @@ Check host status.
 .. code-block:: lua
    :linenos:
 
-   rage.network.network_is_host()
+   bIsHost = rage.network.network_is_host()
+   system.log_debug("Am I host: " .. tostring(bIsHost))
+
 
 ================================
 
@@ -19624,9 +19857,9 @@ Kick player out of the session.
 .. code-block:: lua
    :linenos:
 
-   player = lobby.get_host()
+   plHostPlayer = lobby.get_host()
 
-   rage.network.network_session_kick_player(player)
+   rage.network.network_session_kick_player(plHostPlayer)
 
 ================================
 
@@ -19651,9 +19884,9 @@ Request control of entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.network.network_request_control_of_entity(entity)
+   rage.network.network_request_control_of_entity(pSelfPed)
 
 ================================
 
@@ -19675,11 +19908,11 @@ Returns netId from the given entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   id = rage.network.network_get_network_id_from_entity(entity)
+   iNetworkID = rage.network.network_get_network_id_from_entity(pSelfPed)
 
-   system.log_debug("NetID = " .. id)
+   system.log_debug("NetID = " .. iNetworkID)
 
 ================================
 
@@ -19713,7 +19946,13 @@ Checks whether a cutscene is active.
 .. code-block:: lua
    :linenos:
 
-   rage.cutscene.is_cutscene_active()
+   bIsCutsceneActive = rage.cutscene.is_cutscene_active()
+
+   if bIsCutsceneActive then
+      system.log_debug("Cutscene is active")
+   else
+      system.log_debug("Cutscene is not active")
+   end
 
 ================================
 
@@ -19738,7 +19977,12 @@ Checks whether a cutscene is playing.
 .. code-block:: lua
    :linenos:
 
-   rage.cutscene.is_cutscene_playing()
+   bIsCutscenePlaying = rage.cutscene.is_cutscene_playing()
+   if bIsCutscenePlaying then
+      system.log_debug("Cutscene is playing")
+   else
+      system.log_debug("Cutscene is not playing")
+   end
 
 ================================
 
@@ -19881,7 +20125,9 @@ is_control_just_pressed(``padIndex``, ``control``)
 .. code-block:: lua
    :linenos:
 
-   if rage.controls.is_control_just_pressed(21, 0) == 1 then
+   bIsControlJustPressed = rage.controls.is_control_just_pressed(21, 0)
+
+   if bIsControlJustPressed == 1 then
      notify.above_map("True")
    end
 
@@ -19919,7 +20165,8 @@ is_control_pressed(``padIndex``, ``control``)
 .. code-block:: lua
    :linenos:
 
-   if rage.controls.is_control_pressed(21, 0) == 1 then
+   bIsControlPressed = rage.controls.is_control_pressed(21, 0)
+   if bIsControlPressed == 1 then
      notify.above_map("True")
    end
 
@@ -19950,7 +20197,11 @@ Checks whether a disabled control is just pressed.
 .. code-block:: lua
    :linenos:
 
-   rage.controls.is_disabled_control_just_pressed(21, 0)
+
+   bIsDisabledControlJustPressed = rage.controls.is_disabled_control_just_pressed(21, 0)
+   if bIsDisabledControlJustPressed == 1 then
+     notify.above_map("True")
+   end
 
 ================================
 
@@ -19979,7 +20230,10 @@ Checks whether a disabled control is pressed.
 .. code-block:: lua
    :linenos:
 
-   rage.controls.is_disabled_control_pressed(21, 0)
+   bIsDisabledControlPressed = rage.controls.is_disabled_control_pressed(21, 0)
+   if bIsDisabledControlPressed == 1 then
+     notify.above_map("True")
+   end
 
 ================================
 
@@ -20013,7 +20267,10 @@ This function simulates player input.
 .. code-block:: lua
    :linenos:
 
-   rage.controls.set_control_normal(71, 0, 1) -- sets 1.0 to INPUT_VEH_ACCELERATE
+   bIsControlSet = rage.controls.set_control_normal(71, 0, 1) -- sets 1.0 to INPUT_VEH_ACCELERATE
+   if bIsControlSet == true then
+     notify.above_map("True")
+   end
 
 ================================
 
@@ -20031,6 +20288,8 @@ Checks whether a postFX effect is running.
 
 * ``effectName`` (``string``) -- Name of the animation postFX
 
+  * You can find more effect names here: :doc:`things/animfx`
+  
 **Returns:**
 
 * ``bool``
@@ -20043,7 +20302,8 @@ Checks whether a postFX effect is running.
 .. code-block:: lua
    :linenos:
 
-   if rage.graphics.animpostfx_is_running("FocusIn") then
+   bIsFXRunning = rage.graphics.animpostfx_is_running("FocusIn")
+   if bIsFXRunning then
       system.log_debug("Drugs effect is running")
    end
 
@@ -20157,19 +20417,19 @@ For scaleform IDs and methods, go here: :doc:`things/scaleforms`
 .. code-block:: lua
    :linenos:
 
-   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   iScaleformHandle = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
    rage.graphics.end_scaleform_movie_method()
-   kPressed = system.is_key_pressed("K")
-   while not kPressed do
-      rage.graphics.draw_scaleform_movie(scaleform, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
-      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+   bPressed = system.is_key_pressed("K")
+   while not bPressed do
+      rage.graphics.draw_scaleform_movie(iScaleformHandle, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+      rage.graphics.begin_scaleform_movie_method(iScaleformHandle, "SHOW_SHARD_WASTED_MP_MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
       rage.graphics.scaleform_movie_method_add_param_int(5)
-      kPressed = system.is_key_pressed("K")
+      bPressed = system.is_key_pressed("K")
       system.wait(-1)
    end
-   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(iScaleformHandle)
    return
    
 
@@ -20236,10 +20496,10 @@ Checkpoint types with images `here <https://docs.fivem.net/docs/game-references/
 .. code-block:: lua
    :linenos:
 
-   coords1 = self.get_coords()
-   coords2 = self.get_coords_infront(100)
+   v3CurrentCoords = self.get_coords()
+   v3CoordsInfront = self.get_coords_infront(100)
 
-   checkpoint = rage.graphics.create_checkpoint(42, coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 50, 255, 0, 0, 255, 120)
+   checkpoint = rage.graphics.create_checkpoint(42, v3CurrentCoords.x, v3CurrentCoords.y, v3CurrentCoords.z, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 50, 255, 0, 0, 255, 120)
  
 
 ================================
@@ -20262,10 +20522,10 @@ Deletes a checkpoint.
 .. code-block:: lua
    :linenos:
    
-   coords1 = self.get_coords()
-   coords2 = self.get_coords_infront(100)
-   checkpoint = rage.graphics.create_checkpoint(42, coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 50, 255, 0, 0, 255, 120)
-   rage.graphics.delete_checkpoint(checkpoint)
+   v3CurrentCoords = self.get_coords()
+   v3CoordsInfront = self.get_coords_infront(100)
+   iCheckpointHandle = rage.graphics.create_checkpoint(42, v3CurrentCoords.x, v3CurrentCoords.y, v3CurrentCoords.z, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 50, 255, 0, 0, 255, 120)
+   rage.graphics.delete_checkpoint(iCheckpointHandle)
 
 ================================
 
@@ -20300,12 +20560,12 @@ Draws a line from ``x1``, ``y1``, ``z1`` to ``x2``, ``y2``, ``z2``.
 .. code-block:: lua
    :linenos:
    
-   coords1 = self.get_coords()
-   coords2 = self.get_coords_infront(100)
-   kPressed = system.is_key_pressed("K")
-   while not kPressed do
-      rage.graphics.draw_marker(1, coords1.x, coords1.y, coords1.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0, 5.0, 5.0, 255, 0, 0, 255, true, true, 2, true, "mpmissmarkers256", "capture_the_flag_base_icon", true)
-      kPressed = system.is_key_pressed("K")
+   v3CurrentCoords = self.get_coords()
+   v3CoordsInfront = self.get_coords_infront(100)
+   bPressed = system.is_key_pressed("K")
+   while not bPressed do
+      rage.graphics.draw_line(coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 255, 0, 0, 255)
+      bPressed = system.is_key_pressed("K")
       system.wait(-1)
    end
    return
@@ -20358,12 +20618,12 @@ Draws a marker with the specified appearance at the target location.
 .. code-block:: lua
    :linenos:
    
-   coords1 = self.get_coords()
-   coords2 = self.get_coords_infront(100)
-   kPressed = system.is_key_pressed("K")
-   while not kPressed do
-      rage.graphics.draw_line(coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 255, 0, 0, 255)
-      kPressed = system.is_key_pressed("K")
+   v3CurrentCoords = self.get_coords()
+   v3CoordsInfront = self.get_coords_infront(100)
+   bPressed = system.is_key_pressed("K")
+   while not bPressed do
+      rage.graphics.draw_line(1, v3CurrentCoords.x, v3CurrentCoords.y, v3CurrentCoords.z, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 255, 255, 255, 255, 5.0, 5.0, 255, 0, 0, 255, true, true, 2, true, "mpmissmarkers256", "capture_the_flag_base_icon", true)
+      bPressed = system.is_key_pressed("K")
       system.wait(-1)
    end
 
@@ -20402,10 +20662,10 @@ Draws a rectangle on the screen. Similar to render.draw_box()
 .. code-block:: lua
    :linenos:
 
-   kPressed = system.is_key_pressed("K")
-   while not kPressed do
+   bPressed = system.is_key_pressed("K")
+   while not bPressed do
       rage.graphics.draw_rect(0.5, 0.5, 0.5, 0.5, 255, 255, 255, 100)
-      kPressed = system.is_key_pressed("K")
+      bPressed = system.is_key_pressed("K")
       system.wait(-1)
    end
 
@@ -20445,19 +20705,19 @@ For scaleform IDs and methods, go here: :doc:`things/scaleforms`
 .. code-block:: lua
    :linenos:
    
-   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   iScaleformHandle = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
    rage.graphics.end_scaleform_movie_method()
-   kPressed = system.is_key_pressed("K")
-   while not kPressed do
-      rage.graphics.draw_scaleform_movie(scaleform, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
-      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+   bPressed = system.is_key_pressed("K")
+   while not bPressed do
+      rage.graphics.draw_scaleform_movie(iScaleformHandle, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+      rage.graphics.begin_scaleform_movie_method(iScaleformHandle, "SHOW_SHARD_WASTED_MP_MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
       rage.graphics.scaleform_movie_method_add_param_int(5)
-      kPressed = system.is_key_pressed("K")
+      bPressed = system.is_key_pressed("K")
       system.wait(-1)
    end
-   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(iScaleformHandle)
    return
 
 ================================
@@ -20491,19 +20751,19 @@ For scaleform IDs and methods, go here: :doc:`things/scaleforms`
 .. code-block:: lua
    :linenos:
    
-   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   iScaleformHandle = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
    rage.graphics.end_scaleform_movie_method()
-   kPressed = system.is_key_pressed("K")
-   while not kPressed do
-      rage.graphics.draw_scaleform_movie_fullscreen(scaleform, 255, 255, 255, 255, 0)
-      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+   bPressed = system.is_key_pressed("K")
+   while not bPressed do
+      rage.graphics.draw_scaleform_movie_fullscreen(iScaleformHandle, 255, 255, 255, 255, 0)
+      rage.graphics.begin_scaleform_movie_method(iScaleformHandle, "SHOW_SHARD_WASTED_MP_MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
       rage.graphics.scaleform_movie_method_add_param_int(5)
-      kPressed = system.is_key_pressed("K")
+      bPressed = system.is_key_pressed("K")
       system.wait(-1)
    end
-   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(iScaleformHandle)
    return
    
 ================================
@@ -20577,19 +20837,19 @@ Finishes all scaleforms that are currently drawn.
 
 **Example:**
 
-   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   iScaleformHandle = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
    rage.graphics.end_scaleform_movie_method()
-   kPressed = system.is_key_pressed("K")
-   while not kPressed do
-      rage.graphics.draw_scaleform_movie_fullscreen(scaleform, 255, 255, 255, 255, 0)
-      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+   bPressed = system.is_key_pressed("K")
+   while not bPressed do
+      rage.graphics.draw_scaleform_movie_fullscreen(iScaleformHandle, 255, 255, 255, 255, 0)
+      rage.graphics.begin_scaleform_movie_method(iScaleformHandle, "SHOW_SHARD_WASTED_MP_MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
       rage.graphics.scaleform_movie_method_add_param_int(5)
-      kPressed = system.is_key_pressed("K")
+      bPressed = system.is_key_pressed("K")
       system.wait(-1)
    end
-   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(iScaleformHandle)
    return
    
 ================================
@@ -20609,8 +20869,8 @@ Checks whether a scaleform was loaded.
 
 **Example:**
 
-   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
-   if rage.graphics.has_scaleform_movie_loaded(scaleform) then
+   iScaleformHandle = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   if rage.graphics.has_scaleform_movie_loaded(iScaleformHandle) then
       print("scaleform loaded")
    else
       print("scaleform not loaded")
@@ -20655,8 +20915,8 @@ Request a scaleform handle.
 
 **Example:**
 
-   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
-   system.log_debug(scaleform)
+   iScaleformHandle = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   system.log_debug(iScaleformHandle)
 
 ================================
 
@@ -20700,19 +20960,19 @@ Pass a float param to scaleform. The scaleform should be initialized already.
 .. code-block:: lua
    :linenos:
 
-   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   iScaleformHandle = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
    rage.graphics.end_scaleform_movie_method()
-   kPressed = system.is_key_pressed("K")
-   while not kPressed do
-      rage.graphics.draw_scaleform_movie(scaleform, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
-      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+   bPressed = system.is_key_pressed("K")
+   while not bPressed do
+      rage.graphics.draw_scaleform_movie(iScaleformHandle, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+      rage.graphics.begin_scaleform_movie_method(iScaleformHandle, "SHOW_SHARD_WASTED_MP_MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
       rage.graphics.scaleform_movie_method_add_param_float(5.0)
-      kPressed = system.is_key_pressed("K")
+      bPressed = system.is_key_pressed("K")
       system.wait(-1)
    end
-   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(iScaleformHandle)
    return
 
 ================================
@@ -20735,19 +20995,19 @@ Pass an int param to scaleform. The scaleform should be initialized already.
 .. code-block:: lua
    :linenos:
 
-   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   iScaleformHandle = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
    rage.graphics.end_scaleform_movie_method()
-   kPressed = system.is_key_pressed("K")
-   while not kPressed do
-      rage.graphics.draw_scaleform_movie(scaleform, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
-      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+   bPressed = system.is_key_pressed("K")
+   while not bPressed do
+      rage.graphics.draw_scaleform_movie(iScaleformHandle, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+      rage.graphics.begin_scaleform_movie_method(iScaleformHandle, "SHOW_SHARD_WASTED_MP_MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
       rage.graphics.scaleform_movie_method_add_param_int(5)
-      kPressed = system.is_key_pressed("K")
+      bPressed = system.is_key_pressed("K")
       system.wait(-1)
    end
-   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(iScaleformHandle)
    return
 
 ================================
@@ -20770,19 +21030,19 @@ Pass a string param to scaleform. The scaleform should be initialized already.
 .. code-block:: lua
    :linenos:
 
-   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   iScaleformHandle = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
    rage.graphics.end_scaleform_movie_method()
-   kPressed = system.is_key_pressed("K")
-   while not kPressed do
-      rage.graphics.draw_scaleform_movie(scaleform, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
-      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+   bPressed = system.is_key_pressed("K")
+   while not bPressed do
+      rage.graphics.draw_scaleform_movie(iScaleformHandle, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+      rage.graphics.begin_scaleform_movie_method(iScaleformHandle, "SHOW_SHARD_WASTED_MP_MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
       rage.graphics.scaleform_movie_method_add_param_int(5)
-      kPressed = system.is_key_pressed("K")
+      bPressed = system.is_key_pressed("K")
       system.wait(-1)
    end
-   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(iScaleformHandle)
    return
 
 ================================
@@ -20808,10 +21068,10 @@ Set the height of the cylindrical checkpoint.
 .. code-block:: lua
    :linenos:
 
-   coords1 = self.get_coords()
-   coords2 = self.get_coords_infront(100)
-   checkpoint = rage.graphics.create_checkpoint(45, coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 50, 255, 0, 0, 255, 120)
-   rage.graphics.set_checkpoint_cylinder_height(checkpoint, 0.0, 100.0, 50.0)
+   v3CurrentCoords = self.get_coords()
+   v3CoordsInfront = self.get_coords_infront(100)
+   iCheckpointHandle = rage.graphics.create_checkpoint(45, v3CurrentCoords.x, v3CurrentCoords.y, v3CurrentCoords.z, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 50, 255, 0, 0, 255, 120)
+   rage.graphics.set_checkpoint_cylinder_height(iCheckpointHandle, 0.0, 100.0, 50.0)
 
 ================================
 
@@ -20838,10 +21098,10 @@ Set the RGBA of the checkpoint.
    :linenos:
 
 
-   coords1 = self.get_coords()
-   coords2 = self.get_coords_infront(100)
-   checkpoint = rage.graphics.create_checkpoint(45, coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z, 50, 255, 0, 0, 255, 120)
-   rage.graphics.set_checkpoint_rgba(checkpoint, 0, 255, 0, 255)
+   v3CurrentCoords = self.get_coords()
+   v3CoordsInfront = self.get_coords_infront(100)
+   iCheckpointHandle = rage.graphics.create_checkpoint(45, v3CurrentCoords.x, v3CurrentCoords.y, v3CurrentCoords.z, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 50, 255, 0, 0, 255, 120)
+   rage.graphics.set_checkpoint_rgba(iCheckpointHandle, 0, 255, 0, 255)
 
 ================================
 
@@ -20863,19 +21123,19 @@ Deinitializes a scaleform object.
 .. code-block:: lua
    :linenos:
 
-   scaleform = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
+   iScaleformHandle = rage.graphics.request_scaleform_movie("MP_BIG_MESSAGE_FREEMODE")
    rage.graphics.end_scaleform_movie_method()
-   kPressed = system.is_key_pressed("K")
-   while not kPressed do
-      rage.graphics.draw_scaleform_movie(scaleform, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
-      rage.graphics.begin_scaleform_movie_method(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+   bPressed = system.is_key_pressed("K")
+   while not bPressed do
+      rage.graphics.draw_scaleform_movie(iScaleformHandle, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+      rage.graphics.begin_scaleform_movie_method(iScaleformHandle, "SHOW_SHARD_WASTED_MP_MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("BIG MESSAGE")
       rage.graphics.scaleform_movie_method_add_param_texture_name_string("small message")
       rage.graphics.scaleform_movie_method_add_param_int(5)
-      kPressed = system.is_key_pressed("K")
+      bPressed = system.is_key_pressed("K")
       system.wait(-1)
    end
-   rage.graphics.set_scaleform_movie_as_no_longer_needed(scaleform)
+   rage.graphics.set_scaleform_movie_as_no_longer_needed(iScaleformHandle)
    return
 
 
@@ -20908,8 +21168,8 @@ Returns the current in-game hour
 .. code-block:: lua
    :linenos:
 
-   hour = rage.time.get_clock_hours()
-   system.log_debug("Current hour: " .. hour)
+   iCurrentHour = rage.time.get_clock_hours()
+   system.log_debug("Current hour: " .. iCurrentHour)
 
 ================================
 
@@ -20931,8 +21191,8 @@ Returns the current in-game minute
 .. code-block:: lua
    :linenos:
 
-   minute = rage.time.get_current_minutes()
-   system.log_debug("Current minute: " .. minute)
+   iCurrentMinute = rage.time.get_current_minutes()
+   system.log_debug("Current minute: " .. iCurrentMinute)
 
 ================================
 
@@ -20954,8 +21214,8 @@ Returns the current in-game second
 .. code-block:: lua
    :linenos:
 
-   second = rage.time.get_current_seconds()
-   system.log_debug("Current second: " .. second)
+   iCurrentSecond = rage.time.get_current_seconds()
+   system.log_debug("Current second: " .. iCurrentSecond)
 
 ================================
 
@@ -21015,9 +21275,9 @@ Checks whether a scenario group exists.
 .. code-block:: lua
    :linenos:
 
-   data = rage.ai.does_scenario_group_exist("SOLOMON_GATE")
+   bDoesScenGroupExist = rage.ai.does_scenario_group_exist("SOLOMON_GATE")
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bDoesScenGroupExist))
 
 ================================
 
@@ -21042,11 +21302,11 @@ Checks whether the ped is currently in any scenario.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   data = rage.ai.is_ped_active_in_scenario(ped)
+   bIsPedActiveInScen = rage.ai.is_ped_active_in_scenario(ped)
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsPedActiveInScen))
 
 ================================
 
@@ -21073,9 +21333,9 @@ Checks whether the scenario group is enabled.
 .. code-block:: lua
    :linenos:
 
-   data = rage.ai.is_scenario_group_enabled("SOLOMON_GATE")
+   bIsScenGroupEnabled = rage.ai.is_scenario_group_enabled("SOLOMON_GATE")
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsScenGroupEnabled))
 
 ================================
 
@@ -21102,9 +21362,9 @@ Checks whether the scenario type is enabled.
 .. code-block:: lua
    :linenos:
 
-   data = rage.ai.is_scenario_type_enabled("WORLD_HUMAN_DRINKING")
+   bIsScenTypeEnabled = rage.ai.is_scenario_type_enabled("WORLD_HUMAN_DRINKING")
 
-   system.log_debug(tostring(data))
+   system.log_debug(tostring(bIsScenTypeEnabled))
 
 ================================
 
@@ -21118,6 +21378,8 @@ Checks whether the task is active.
 * ``ped`` (``Ped``) -- Ped object
 * ``taskIndex`` (``int``) -- Task index enum
 
+  * You can check out possible task indexes here: :doc:`things/taskindex`
+
 **Returns:**
 
 * ``bool`` -- Task status check
@@ -21130,8 +21392,8 @@ Checks whether the task is active.
 .. code-block:: lua
    :linenos:
 
-   data = rage.ai.get_is_task_active(self.get_ped(), 127)  -- Checks whether the CTaskCrouch is active
-   system.log_debug(tostring(data))
+   bIsTaskActive = rage.ai.get_is_task_active(self.get_ped(), 127)  -- Checks whether the CTaskCrouch is active
+   system.log_debug(tostring(bIsTaskActive))
 
 ================================
 
@@ -21157,9 +21419,9 @@ Play the animation on any running scenario.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.play_anim_on_running_scenario(ped, "move_f@injured", "idle_intro")
+   rage.ai.play_anim_on_running_scenario(pSelfPed, "move_f@injured", "idle_intro")
 
 ================================
 
@@ -21296,9 +21558,9 @@ Make ped parachute to target
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.set_parachute_task_target(ped, 60, 118, 12)
+   rage.ai.set_parachute_task_target(pSelfPed, 60, 118, 12)
 
 ================================
 
@@ -21321,9 +21583,9 @@ Set the parachute task thrust.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.set_parachute_task_thrust(ped, 10)
+   rage.ai.set_parachute_task_thrust(pSelfPed, 10)
 
 ================================
 
@@ -21406,9 +21668,9 @@ Stop animation task.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.stop_anim_task(ped, "move_f@injured", "sprint")
+   rage.ai.stop_anim_task(pSelfPed, "move_f@injured", "sprint")
 
 ================================
 
@@ -21423,7 +21685,7 @@ Aim gun at coordinates.
 * ``x`` (``string``) -- The ``X`` coordinate
 * ``y`` (``string``) -- The ``Y`` coordinate
 * ``z`` (``string``) -- The ``Z`` coordinate
-* ``time`` (``int``) -- The time value
+* ``time`` (``int``) -- Time to aim at the coordinates
 * ``p5`` (``bool``) -- Unknown
 * ``p6`` (``bool``) -- Unknown
 
@@ -21436,9 +21698,11 @@ Aim gun at coordinates.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
+   v3CoordsInfront = self.get_coords_infront(10)
+   v3CoordsAbove = self.get_coords_above_of_coords(v3CoordsInfront, 10)
 
-   rage.ai.task_aim_gun_at_coord(ped, 60.12, 118.40, 12.28, 5)
+   rage.ai.task_aim_gun_at_coord(pSelfPed, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 5)
 
 ================================
 
@@ -21463,11 +21727,11 @@ Aim gun at entity.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   entity = lobby.get_player_ped(lobby.get_host())
+   pHostPed = lobby.get_player_ped(lobby.get_host())
 
-   rage.ai.task_aim_gun_at_entity(ped, entity, 5)
+   rage.ai.task_aim_gun_at_entity(pSelfPed, pHostPed, 5)
 
 ================================
 
@@ -21492,11 +21756,12 @@ Makes the specified ped attack the target ped.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
+   plHostPlayer = lobby.get_host()
 
-   targetPed = lobby.get_player_ped(lobby.get_host())
+   pTargetPed = lobby.get_player_ped(plhostPlayer)
 
-   rage.ai.task_combat_ped(ped, targetPed) -- Self's ped will attack lobby host's ped
+   rage.ai.task_combat_ped(pSelfPed, pTargetPed) -- You will attack the lobby host
 
 ================================
 
@@ -21537,11 +21802,14 @@ Makes the specified ped enter the vehicle.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   vehicle = rage.gameplay.get_hash_key("ZENTORNO")
+   uVehicleHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.ai.task_enter_vehicle(ped, vehicle, 0, -1, 2.0, 1, 0) --  Ped will enter the Zentorno walking and sitting on driver seat.
+   v3CoordsInfront = self.get_coords_infront(5)
+   vVehicleHandle = scripting.spawn.spawn_vehicle(vehicleHash, coordsInfront, 30)
+
+   rage.ai.task_enter_vehicle(pSelfPed, vVehicleHandle, 0, -1, 2.0, 1, 0) --  Ped will enter the Zentorno walking and sitting on driver seat.
 
 ================================
 
@@ -21575,11 +21843,11 @@ Follow to offset of the entity.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   entity = lobby.get_player_ped(lobby.get_host())
+   pHostPed = lobby.get_player_ped(lobby.get_host())
 
-   rage.ai.task_follow_to_offset_of_entity(ped, entity, 5, 5, 1, 2, 0, 1, true)
+   rage.ai.task_follow_to_offset_of_entity(pSelfPed, pHostPed, 5, 5, 1, 2, 0, 1, true)
 
 ================================
 
@@ -21626,9 +21894,9 @@ Make the ped move to a coordinate while aiming (and optionally shooting) at give
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.task_go_to_coord_while_aiming_at_coord(ped, 5, 5, 1, 10, 10, 1, 2, true)
+   rage.ai.task_go_to_coord_while_aiming_at_coord(pSelfPed, 5, 5, 1, 10, 10, 1, 2, true)
 
 ================================
 
@@ -21669,11 +21937,11 @@ Make the ped move to a coordinate while aiming (and optionally shooting) at give
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   ped2 = lobby.get_player_ped(lobby.get_host())
+   pHostPed = lobby.get_player_ped(lobby.get_host())
 
-   rage.ai.task_go_to_coord_while_aiming_at_entity(ped, 119.73, 65.30, 420.12, ped2, 2.0, false, 1.5, 1.5, false, false, false)
+   rage.ai.task_go_to_coord_while_aiming_at_entity(pSelfPed, 119.73, 65.30, 420.12, pHostPed, 2.0, false, 1.5, 1.5, false, false, false)
 
 ================================
 
@@ -21710,11 +21978,11 @@ Make the ped move to an entity while aiming and optionally shooting and optional
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   entity = lobby.get_player_ped(lobby.get_host())
+   pHostPed = lobby.get_player_ped(lobby.get_host())
 
-   rage.ai.task_go_to_entity_while_aiming_at_entity(ped, entity, 5, 5, 1, 2, 0, 1, true)
+   rage.ai.task_go_to_entity_while_aiming_at_entity(pSelfPed, pHostPed, 5, 5, 1, 2, 0, 1, true)
 
 ================================
 
@@ -21745,12 +22013,13 @@ Make the entity move to a target until time is over (duration) or get in target'
 .. code-block:: lua
    :linenos:
 
-   pedHandle = self.get_ped()
-   coords = self.get_coords_infront(10)
+   pSelfPed = self.get_ped()
+   v3CoordsInfront = self.get_coords_infront(10)
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   vehicleHandle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ZENTORNO"), coords, 30.0)
+   vSpawnedVehicleHandle = scripting.spawn.spawn_vehicle(uZentornoHash, v3CoordsInfront, 30.0)
 
-   rage.ai.task_go_to_entity(pedHandle, vehicleHandle, 5000, 4.0, 100, 1073741824, 0) 
+   rage.ai.task_go_to_entity(pSelfPed, vSpawnedVehicleHandle, 5000, 4.0, 100, 1073741824, 0) 
    -- Ped will run towards the vehicle for 5 seconds and stop when time is over or when he Returns 4 meters(?) around the vehicle
 
 ================================
@@ -21782,11 +22051,11 @@ Make the ped leave the vehicle with customizable flags.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   vehicle = self.rage.ped.get_vehicle_ped_is_using(ped)
+   vPedVehicle = self.rage.ped.get_vehicle_ped_is_using(ped)
 
-   rage.ai.task_leave_vehicle(ped, vehicle, 1)
+   rage.ai.task_leave_vehicle(pSelfPed, vPedVehicle, 1)
 
 ================================
 
@@ -21815,11 +22084,15 @@ Make the ped open the vehicle door of a specific seat, at given speed.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   vehicle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ZENTORNO"), self.get_coords_infront(10), 30.0)
+   uZentornoHash = self.rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.ai.task_open_vehicle_door(ped, vehicle, 100, 1, 2.0)
+   v3CoordsInfront = self.get_coords_infront(5)
+
+   vSpawnedVehicleHandle = scripting.spawn.spawn_vehicle(uZentornoHash, v3CoordsInfront, 30.0)
+
+   rage.ai.task_open_vehicle_door(pSelfPed, vSpawnedVehicleHandle, 100, 1, 2.0)
 
 ================================
 
@@ -21843,9 +22116,9 @@ Make the ped do a parachute jump
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.task_parachute(ped)
+   rage.ai.task_parachute(pSelfPed)
 
 ================================
 
@@ -21870,9 +22143,9 @@ Makes the ped parachute to given coordinates.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.task_parachute_to_target(ped, 69.5, 420.10, 57.91)
+   rage.ai.task_parachute_to_target(pSelfPed, 69.5, 420.10, 57.91)
 
 ================================
 
@@ -21915,9 +22188,9 @@ Makes the ped play an animation with custom duration and flags.
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.task_play_anim(ped, "move_f@injured", "sprint", 8.0, 8.0, 5000, 0, 0.0, 0, 0, 1)
+   rage.ai.task_play_anim(pSelfPed, "move_f@injured", "sprint", 8.0, 8.0, 5000, 0, 0.0, 0, 0, 1)
 
 ================================
 
@@ -21940,9 +22213,9 @@ Makes the ped rappel from helicopter, with settable minimum height above the gro
 .. code-block:: lua
    :linenos:
 
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.task_rappel_from_heli(ped, 100)
+   rage.ai.task_rappel_from_heli(pSelfPed, 100)
 
 ================================
 
@@ -21962,16 +22235,19 @@ Make the entity shoot at an entity targeted for a given duration and with custom
 
 **Returns:**
 
+* None
+
 **Example:**
 
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   targetEntity = lobby.get_player_ped(lobby.get_host())
+   plHostPlayer = lobby.get_host()
+   pHostPed = lobby.get_player_ped(plHostPlayer)
 
-   rage.ai.task_shoot_at_entity(entity, targetEntity, 5000, 1)
+   rage.ai.task_shoot_at_entity(pSelfPed, pHostPed, 5000, 1)
 
 ================================
 
@@ -21994,9 +22270,9 @@ Makes the ped sky-dive.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.task_sky_dive(ped)
+   rage.ai.task_sky_dive(pSelfPed)
 
 ================================
 
@@ -22025,9 +22301,9 @@ Makes the ped parachute to given coordinates.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.task_parachute_to_target(ped, 69.5, 420.10, 57.91, 1, "WORLD_HUMAN_GUARD_STAND")
+   rage.ai.task_parachute_to_target(pSelfPed, 69.5, 420.10, 57.91, 1, "WORLD_HUMAN_GUARD_STAND")
 
 ================================
 
@@ -22067,9 +22343,10 @@ Makes the ped start the scenario at a given position.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
+   v3CoordsInfront = self.get_coords_infront(10)
 
-   rage.ai.task_start_scenario_at_position(ped, "WORLD_HUMAN_GUARD_STAND", 69.5, 420.10, 57.91, 1, 5000, false, )
+   rage.ai.task_start_scenario_at_position(pSelfPed, "WORLD_HUMAN_GUARD_STAND", v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 1, 5000, false, true)
 
 ================================
 
@@ -22100,9 +22377,9 @@ Plays a scenario on a Ped at their current location.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.task_start_scenario_in_place(ped, "WORLD_HUMAN_GUARD_STAND", 0, true)
+   rage.ai.task_start_scenario_in_place(pSelfPed, "WORLD_HUMAN_GUARD_STAND", 0, true)
 
 ================================
 
@@ -22124,9 +22401,9 @@ Makes the ped stay in cover.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.ai.task_stay_in_cover(ped)
+   rage.ai.task_stay_in_cover(pSelfPed)
 
 ================================
 
@@ -22152,11 +22429,11 @@ Turn the ped to face towards the entity.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
+   plHostPlayer = lobby.get_host()
+   pHostPed = lobby.get_player_ped(plHostPlayer)
 
-   entity = lobby.get_player_ped(lobby.get_host())
-
-   rage.ai.task_turn_ped_to_face_entity(ped, entity, 500)
+   rage.ai.task_turn_ped_to_face_entity(pSelfPed, pHostPed, 500)
 
 ================================
 
@@ -22181,9 +22458,10 @@ Makes ped vehicle aim at given coordinates.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
+   v3CoordsInfront = self.get_coords_infront(10)
 
-   rage.ai.task_vehicle_aim_at_coord(ped, 69.5, 420.10, 57.91)
+   rage.ai.task_vehicle_aim_at_coord(ped, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z)
 
 ================================
 
@@ -22206,11 +22484,11 @@ Makes ped vehicle aim at a given ped.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
-   
-   target = lobby.get_player_ped(lobby.get_host())
+   pSelfPed = self.get_ped()
+   plHostPlayer = lobby.get_host()
+   pHostPed = lobby.get_player_ped(plHostPlayer)
 
-   rage.ai.task_vehicle_aim_at_ped(ped, target)
+   rage.ai.task_vehicle_aim_at_ped(pSelfPed, pHostPed)
 
 ================================
 
@@ -22233,11 +22511,11 @@ Makes ped driver chase a target entity.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
-   
-   targetEnt = lobby.get_player_ped(lobby.get_host())
+   pSelfPed = self.get_ped()
+   plHostPlayer = lobby.get_host()
+   pHostPed = lobby.get_player_ped(plHostPlayer)
 
-   rage.ai.task_vehicle_chase(ped, targetEnt)
+   rage.ai.task_vehicle_chase(pSelfPed, pHostPed)
 
 ================================
 
@@ -22269,11 +22547,16 @@ Makes ped drive the vehicle to given coordinates.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
-   
-   zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+   pSelfPed = self.get_ped()
+   v3CoordsInfront = self.get_coords_infront(5)
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.ai.task_vehicle_drive_to_coord(ped, 69.5, 420.10, 57.91, 100, zentornoHash, 1, 5)
+   vSpawnedVehicleHandle = scripting.spawn.spawn_vehicle(uZentornoHash, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 0.0)
+   scripting.teleport.to_nearest_vehicle()
+
+   v3CoordsInfront = self.get_coords_infront(100)
+
+   rage.ai.task_vehicle_drive_to_coord(pSelfPed, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 10, vSpawnedVehicleHandle, 1, 5)
 
 ================================
 
@@ -22306,11 +22589,16 @@ Makes ped drive to the destination at set speed and driving style.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
-   
-   zentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
+   pSelfPed = self.get_ped()
+   v3CoordsInfront = self.get_coords_infront(5)
+   uZentornoHash = rage.gameplay.get_hash_key("ZENTORNO")
 
-   rage.ai.task_vehicle_drive_to_coord_longrange(ped, 69.5, 420.10, 57.91, 100, zentornoHash, 1, 5)
+   vSpawnedVehicleHandle = scripting.spawn.spawn_vehicle(uZentornoHash, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 0.0)
+   scripting.teleport.to_nearest_vehicle()
+
+   v3CoordsInfront = self.get_coords_infront(1000)
+
+   rage.ai.task_vehicle_drive_to_coord_longrange(pSelfPed, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 50, vSpawnedVehicleHandle, 1, 5)
 
 ================================
 
@@ -22337,11 +22625,11 @@ Makes ped drive randomly with no destination set.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
    
-   vehicle = rage.gameplay.get_hash_key("ZENTORNO")
+   vCurrentVehicleHandle = self.get_vehicle()
 
-   rage.ai.task_vehicle_drive_wander(ped, vehicle, 50, 6)
+   rage.ai.task_vehicle_drive_wander(pSelfPed, vCurrentVehicleHandle, 30, 6)
 
 ================================
 
@@ -22388,13 +22676,13 @@ Makes a ped follow the targetVehicle with <minDistance> in between.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
-   veh = self.get_vehicle()
-
-   pedTarget = lobby.get_player_ped(lobby.get_host())
-   targetVehicle = rage.ped.get_vehicle_ped_is_using(pedTarget)
+   pSelfPed = self.get_ped()
+   vCurrentVehicleHandle = self.get_vehicle()
+   plHostPlayer = lobby.get_host()
+   pHostPed = lobby.get_player_ped(plHostPlayer)
+   vTargetVehicleHandle = rage.ped.get_vehicle_ped_is_using(pedHostPed)
    
-   rage.ai.task_vehicle_escort(ped, veh, targetVehicle, -1, 50, 6, 100) -- player will follow host with 100m in betweentask_vehicle_escorttargetVehicle, -150, 6, 10, 20
+   rage.ai.task_vehicle_escort(pSelfPed, vCurrentVehicleHandle, vTargetVehicleHandle, -1, 50, 6, 100) -- player will follow host with 100m in betweentask_vehicle_escorttargetVehicle, -150, 6, 10, 20
 
 ================================
 
@@ -22425,13 +22713,13 @@ Makes a ped in a vehicle follow an entity.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
-
-   target =  lobby.get_player_ped()
+   pSelfPed = self.get_ped()
+   plHostPlayer = lobby.get_host()
+   pHostPed = lobby.get_player_ped(plHostPlayer)
    
-   vehicle = rage.gameplay.get_hash_key("ZENTORNO")
+   vCurrentVehicleHandle = self.get_vehicle()
 
-   rage.ai.task_vehicle_follow(ped, vehicle, target, 100, 6, 10)
+   rage.ai.task_vehicle_follow(pSelfPed, vCurrentVehicleHandle, pHostPed, 100, 6, 10)
 
 ================================
 
@@ -22457,14 +22745,14 @@ Makes a ped shoot at a coord from vehicle
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
    
-   coords = self.get_coords_infront(10)
-   coords2 = self.get_coords_infront(100)
-   veh = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ANNIHILATOR"), coords, 30)
-   clone = rage.ped.clone_ped(self.get_ped(), true, true, false)
-   rage.ai.task_enter_vehicle(clone, veh, 0, -1, 2.0, 1, 0)
-   rage.ai.task_vehicle_shoot_at_coord(clone, coords2.x, coords2.y, coords2.z, 0.5)
+   v3CoordsInfront = self.get_coords_infront(10)
+   vSpawnedVehicleHandle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ANNIHILATOR"), v3CoordsInfront, 30)
+   vClonedPed = rage.ped.clone_ped(pSelfPed, true, true, false)
+   v3CoordsInfront = self.get_coords_infront(100)
+   rage.ai.task_enter_vehicle(vClonedPed, vSpawnedVehicleHandle, 0, -1, 2.0, 1, 0)
+   rage.ai.task_vehicle_shoot_at_coord(vClonedPed, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 0.5)
    
 
 ================================
@@ -22494,11 +22782,12 @@ Makes a ped shoot another ped from vehicle.
 .. code-block:: lua
   :linenos:
   
-  coords = self.get_coords_infront(10)
-  veh = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ANNIHILATOR"), coords, 30)
-  clone = rage.ped.clone_ped(self.get_ped(), true, true, false)
-  rage.ai.task_enter_vehicle(clone, veh, 0, -1, 2.0, 1, 0)
-  rage.ai.task_vehicle_shoot_at_ped(clone, self.get_ped(), 100)
+  pSelfPed = self.get_ped()
+  v3CoordsInfront = self.get_coords_infront(10)
+  vSpawnedVehicleHandle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ANNIHILATOR"), v3CoordsInfront, 30)
+  vClonedPed = rage.ped.clone_ped(pSelfPed, true, true, false)
+  rage.ai.task_enter_vehicle(vClonedPed, vSpawnedVehicleHandle, 0, -1, 2.0, 1, 0)
+  rage.ai.task_vehicle_shoot_at_ped(vClonedPed, pSelfPed, 100)
 
 ================================
 
@@ -22526,9 +22815,9 @@ Makes ped walk around the area.
 .. code-block:: lua
    :linenos:
    
-   ped = self.get_ped()
+   pSelfPed = self.get_ped()
    
-   rage.ai.task_wander_standard(ped, 10, 10) -- walk around the area without a duration, anywhere
+   rage.ai.task_wander_standard(pSelfPed, 10, 10) -- walk around the area without a duration, anywhere
 
 ================================
 
@@ -22764,9 +23053,9 @@ Gets the handle of the interior that the entity is in. Returns 0 if outside.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   rage.interior.get_interior_from_entity(entity)
+   rage.interior.get_interior_from_entity(pSelfPed)
 
 ================================
 
@@ -22788,11 +23077,11 @@ Refresh a given interior.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
 
-   interior = rage.interior.get_interior_from_entity(entity)
+   iInteriorID = rage.interior.get_interior_from_entity(pSelfPed)
 
-   rage.interior.refresh_interior(interior) -- Refreshes interior that the self's ped is in.
+   rage.interior.refresh_interior(iInteriorID) -- Refreshes interior that the self's ped is in.
 
 ================================
 
@@ -22866,8 +23155,8 @@ Play a specified sound from a given position.
 .. code-block:: lua
    :linenos:
 
-   coords = self.get_coords_infront(100)
-   rage.audio.play_sound_from_coord(-1, "Gas_Explosion", coords.x, coords.y, coords.z, "ARM_2_REPO_SOUNDS", 0, 0, 0) -- Plays gas explosion sound from 100m in front of the player.
+   v3CoordsInfront = self.get_coords_infront(100)
+   rage.audio.play_sound_from_coord(-1, "Gas_Explosion", v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, "ARM_2_REPO_SOUNDS", 0, 0, 0) -- Plays gas explosion sound from 100m in front of the player.
 
 =================================
 
@@ -22899,8 +23188,8 @@ Play a specified sound from a given entity.
 .. code-block:: lua
    :linenos:
 
-   entity = self.get_ped()
-   rage.audio.play_sound_from_entity(-1, "Gas_Tanker_Explosion", entity, "BIG_SCORE_3A_SOUNDS", 0, 0)
+   pSelfPed = self.get_ped()
+   rage.audio.play_sound_from_entity(-1, "Gas_Tanker_Explosion", pSelfPed, "BIG_SCORE_3A_SOUNDS", 0, 0)
 
 ================================
 
@@ -23037,7 +23326,9 @@ Creates a rope at the specific position, that extends in the specified direction
 .. code-block:: lua
    :linenos:
 
-   rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true) -- Creates a rope with a length of 100 meters, and a minimum length of 5 meters.
+   v3CoordsInfront10 = self.get_coords_infront(10)
+   v3CoordsAbove = self.get_coords_above_of_coords(v3CoordsInfront10, 10)
+   rage.rope.add_rope(v3CoordsInfront10.x, v3CoordsInfront10.y, v3CoordsInfront10.z, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 10, 2, 100, 5, 1, true, true, 1.0, true, 0) -- Creates a rope with a length of 100 meters, and a minimum length of 5 meters.
 
 ================================
 
@@ -23078,13 +23369,13 @@ Attaches entity 1 to entity 2 through a rope.
 .. code-block:: lua
    :linenos:
 
-   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+   v3CoordsInfront10 = self.get_coords_infront(10)
+   v3CoordsAbove = self.get_coords_above_of_coords(v3CoordsInfront10, 10)
+   iRopeID = rage.rope.add_rope(v3CoordsInfront10.x, v3CoordsInfront10.y, v3CoordsInfront10.z, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 10, 2, 100, 5, 1, true, true, 1.0, true, 0) -- Creates a rope with a length of 100 meters, and a minimum length of 5 meters.
 
-   entity1 = self.get_ped()
-
-   entity2 = lobby.get_player_ped(lobby.get_host())
-
-   rope = rage.rope.attach_entities_to_rope(rope, entity1, entity2, 79, 420, 69, 59, 420, 69, 10)
+   pSelfPed = self.get_ped()
+   pHostPed = lobby.get_player_ped(lobby.get_host())
+   rage.rope.attach_entities_to_rope(iRopeID, pSelfPed, pHostPed, 1, 1, 1, 1, 1, 1, 10)
 
 ================================
 
@@ -23106,9 +23397,12 @@ Delete a rope.
 .. code-block:: lua
    :linenos:
 
-   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+   v3CoordsInfront10 = self.get_coords_infront(10)
+   v3CoordsAbove = self.get_coords_above_of_coords(v3CoordsInfront10, 10)
+   iRopeID = rage.rope.add_rope(v3CoordsInfront10.x, v3CoordsInfront10.y, v3CoordsInfront10.z, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 10, 2, 100, 5, 1, true, true, 1.0, true, 0) -- Creates a rope with a length of 100 meters, and a minimum length of 5 meters.
 
-   rage.rope.delete_rope(rope)
+
+   rage.rope.delete_rope(iRopeID)
 
 ================================
 
@@ -23131,11 +23425,17 @@ Detach a rope from entity.
 .. code-block:: lua
    :linenos:
 
-   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+   v3CoordsInfront10 = self.get_coords_infront(10)
+   v3CoordsAbove = self.get_coords_above_of_coords(v3CoordsInfront10, 10)
+   iRopeID = rage.rope.add_rope(v3CoordsInfront10.x, v3CoordsInfront10.y, v3CoordsInfront10.z, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 10, 2, 100, 5, 1, true, true, 1.0, true, 0) -- Creates a rope with a length of 100 meters, and a minimum length of 5 meters.
 
-   entity = self.get_ped()
+   pSelfPed = self.get_ped()
+   pHostPed = lobby.get_player_ped(lobby.get_host())
+   rage.rope.attach_entities_to_rope(iRopeID, pSelfPed, pHostPed, 1, 1, 1, 1, 1, 1, 10)
 
-   rage.rope.detach_rope_from_entity(rope, entity)
+   pToDetach = pSelfPed
+
+   rage.rope.detach_rope_from_entity(iRopeID, eToDetach)
 
 ================================
 
@@ -23160,9 +23460,12 @@ Checks whether a rope exists.
 .. code-block:: lua
    :linenos:
 
-   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+   v3CoordsInfront10 = self.get_coords_infront(10)
+   v3CoordsAbove = self.get_coords_above_of_coords(v3CoordsInfront10, 10)
+   iRopeID = rage.rope.add_rope(v3CoordsInfront10.x, v3CoordsInfront10.y, v3CoordsInfront10.z, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 10, 2, 100, 5, 1, true, true, 1.0, true, 0) -- Creates a rope with a length of 100 meters, and a minimum length of 5 meters.
 
-   rage.rope.does_rope_exist(rope)
+
+   rage.rope.does_rope_exist(iRopeID)
 
 ================================
 
@@ -23210,9 +23513,11 @@ Forces a rope to a certain length.
 .. code-block:: lua
    :linenos:
 
-   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+   v3CoordsInfront10 = self.get_coords_infront(10)
+   v3CoordsAbove = self.get_coords_above_of_coords(v3CoordsInfront10, 10)
+   iRopeID = rage.rope.add_rope(v3CoordsInfront10.x, v3CoordsInfront10.y, v3CoordsInfront10.z, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 10, 2, 100, 5, 1, true, true, 1.0, true, 0) -- Creates a rope with a length of 100 meters, and a minimum length of 5 meters.
 
-   rage.rope.rope_force_length(rope, 50) -- Reduces the rope length from 100 to 50
+   rage.rope.rope_force_length(iRopeID, 50) -- Reduces the rope length from 100 to 50
 
 ================================
 
@@ -23278,9 +23583,11 @@ Start rope unwinding from the front.
 .. code-block:: lua
    :linenos:
 
-   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+   v3CoordsInfront10 = self.get_coords_infront(10)
+   v3CoordsAbove = self.get_coords_above_of_coords(v3CoordsInfront10, 10)
+   iRopeID = rage.rope.add_rope(v3CoordsInfront10.x, v3CoordsInfront10.y, v3CoordsInfront10.z, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 10, 2, 100, 5, 1, true, true, 1.0, true, 0) -- Creates a rope with a length of 100 meters, and a minimum length of 5 meters.
 
-   rage.rope.start_rope_unwinding_front(rope)
+   rage.rope.start_rope_unwinding_front(iRopeID)
 
 ================================
 
@@ -23302,9 +23609,11 @@ Start rope winding.
 .. code-block:: lua
    :linenos:
 
-   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+   v3CoordsInfront10 = self.get_coords_infront(10)
+   v3CoordsAbove = self.get_coords_above_of_coords(v3CoordsInfront10, 10)
+   iRopeID = rage.rope.add_rope(v3CoordsInfront10.x, v3CoordsInfront10.y, v3CoordsInfront10.z, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 10, 2, 100, 5, 1, true, true, 1.0, true, 0) -- Creates a rope with a length of 100 meters, and a minimum length of 5 meters.
 
-   rage.rope.start_rope_winding(rope)
+   rage.rope.start_rope_winding(iRopeID)
 
 ================================
 
@@ -23326,9 +23635,11 @@ Stop rope unwinding from the front.
 .. code-block:: lua
    :linenos:
 
-   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+   v3CoordsInfront10 = self.get_coords_infront(10)
+   v3CoordsAbove = self.get_coords_above_of_coords(v3CoordsInfront10, 10)
+   iRopeID = rage.rope.add_rope(v3CoordsInfront10.x, v3CoordsInfront10.y, v3CoordsInfront10.z, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 10, 2, 100, 5, 1, true, true, 1.0, true, 0) -- Creates a rope with a length of 100 meters, and a minimum length of 5 meters.
 
-   rage.rope.stop_rope_unwinding_front(rope)
+   rage.rope.stop_rope_unwinding_front(iRopeID)
 
 ================================
 
@@ -23350,8 +23661,10 @@ Stop rope winding.
 .. code-block:: lua
    :linenos:
 
-   rope = rage.rope.add_rope(69, 420, 69, 1, 1, 5, 10, 2, 100, 5, 1, true, true, 1.0, true)
+   v3CoordsInfront10 = self.get_coords_infront(10)
+   v3CoordsAbove = self.get_coords_above_of_coords(v3CoordsInfront10, 10)
+   iRopeID = rage.rope.add_rope(v3CoordsInfront10.x, v3CoordsInfront10.y, v3CoordsInfront10.z, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 10, 2, 100, 5, 1, true, true, 1.0, true, 0) -- Creates a rope with a length of 100 meters, and a minimum length of 5 meters.
 
-   rage.rope.stop_rope_winding(rope)
+   rage.rope.stop_rope_winding(iRopeID)
 
 ================================
