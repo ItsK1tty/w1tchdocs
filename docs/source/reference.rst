@@ -1,3 +1,5 @@
+:github_url: https://github.com/ItsK1tty/w1tchdocs/blob/main/docs/source/index.rst
+
 DIS2RBED LUA reference
 ========================
 
