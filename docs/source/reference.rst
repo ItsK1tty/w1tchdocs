@@ -15,7 +15,7 @@ Types in the LUA Engine are defined in the following order:
 * :ref:`hash` (uint64)
 * :ref:`Entity` (int)
 * :ref:`Ped` (int)
-* :ref:`Player` (int)
+* :ref:`PlayerT` (int)
 * :ref:`Cam` (int)
 * :ref:`Blip` (int)
 * :ref:`Any`
@@ -77,7 +77,7 @@ Easiest way to acquire a ped handle is to call ``player.get_ped()`` function tha
 
 ================================
 
-.. _Player:
+.. _PlayerT:
 
 Player
 ----------------------
