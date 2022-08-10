@@ -39,14 +39,14 @@ html_theme = 'sphinx-rtd-dark-mode'
 
 default_dark_mode = True
 
-# html_context = {
-#     #'source_url_prefix': "https://gitlab.com/ItsK1tty/w1tchdocs/edit/main/docs/source/",
-#     "display_github": True, # Add 'Edit on Github' link instead of 'View page source'
-#     "github_user": "ItsK1tty",
-#     "github_repo": "w1tchdocs",
-#     "github_version": "main",
-#     "conf_py_path": "/doc/", # needs leading and trailing slashes!
-# }
+html_context = {
+     #'source_url_prefix': "https://gitlab.com/ItsK1tty/w1tchdocs/edit/main/docs/source/",
+     "display_github": True, # Add 'Edit on Github' link instead of 'View page source'
+     "github_user": "ItsK1tty",
+     "github_repo": "w1tchdocs",
+     "github_version": "main",
+     "conf_py_path": "/docs/source/things/", # needs leading and trailing slashes!
+}
 
 
 # -- Options for EPUB output
