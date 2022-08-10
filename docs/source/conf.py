@@ -34,10 +34,10 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
-#html_theme = 'sphinx_rtd_theme'
-html_theme = 'sphinx-rtd-dark-mode'
+html_theme = 'sphinx_rtd_theme'
 
-default_dark_mode = True
+#html_theme = 'sphinx-rtd-dark-mode'
+#default_dark_mode = True
 
 html_context = {
      #'source_url_prefix': "https://gitlab.com/ItsK1tty/w1tchdocs/edit/main/docs/source/",
