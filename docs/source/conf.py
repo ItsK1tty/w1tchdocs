@@ -56,7 +56,7 @@ epub_show_urls = 'footnote'
 def insert_github_link(filename): #https://github.com/peterjc/thapbi-pict/commit/f14b1df17ed3faf382a63095aa6e22f519e71957
     """Insert file specific :github_url: metadata for theme breadcrumbs."""
     assert "/" not in filename and filename.endswith(".rst")
-    with open("source/" + filename) as handle:
+    with open("things/" + filename) as handle:
         text = handle.read()
     if ":github_url:" in text:
         return
