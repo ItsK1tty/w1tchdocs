@@ -79,7 +79,7 @@ def insert_github_link(filename): #https://github.com/peterjc/thapbi-pict/commit
     with open("api/" + filename, "w") as handle:
         handle.write(text)
 
-for f in os.listdir("docs/"):
+for f in os.listdir("things/"):
     print("Inserting GitHub links for %s" % f)
     if f.endswith(".rst"):
         insert_github_link(f)
