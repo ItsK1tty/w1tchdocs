@@ -6841,6 +6841,7 @@ Sets the value for the specified ammo parameter.
 
 * None
 
+
 **Example:**
 
 .. code-block:: lua
