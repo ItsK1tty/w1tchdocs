@@ -7138,7 +7138,7 @@ Scripting functions are functions that let you interact with DIS2RBED's built-in
 Functions that are not included in any namespace
 ----------------------------------------------------
 
-bool get_vehicle_bypass()
+get_vehicle_bypass()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Checks whether the bypass for spawning Online cars in SinglePlayer is enabled.
@@ -7168,7 +7168,7 @@ Checks whether the bypass for spawning Online cars in SinglePlayer is enabled.
 set_vehicle_bypass(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Checks whether the bypass for spawning Online cars in SinglePlayer is enabled.
+Sets whether the bypass for spawning Online cars in SinglePlayer is enabled.
 
 **Parameters:**
 
