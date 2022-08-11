@@ -17099,6 +17099,10 @@ set_entity_no_collision_entity(``entity1``, ``entity2``, ``thisFrameOnly``)
 
 Sets collision state between two entities.
 
+.. note::
+
+   Has to be called twice (once for each entity)
+
 **Parameters:**
 
 * ``entity1`` (``Entity``) -- The first entity ID
@@ -17122,6 +17126,7 @@ Sets collision state between two entities.
    pHostPed = lobby.get_player_ped(lobby.get_host())
 
    rage.entity.set_entity_no_collision_entity(pSelfPed, pHostPed, true)
+   rage.entity.set_entity_no_collision_entity(pHostPed, pSelfPed, true)
 
 ================================
 
