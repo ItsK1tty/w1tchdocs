@@ -26,6 +26,7 @@ Types in the LUA Engine are defined in the following order:
 * :ref:`ColorRGBA` (int ``r``, int ``g``, int ``b``, int ``a``)
 * :ref:`eSessionType` (int)
 * :ref:`Pickup`
+* :ref:`ModelBoundingBox` (Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3)
 
 ================================
 
@@ -47,7 +48,7 @@ Menu button, children and task hashes can be anything you want, but they have to
 * `Weapon Components <https://wiki.rage.mp/index.php?title=Weapons_Components>`__
 * `Vehicles <https://wiki.rage.mp/index.php?title=Vehicles>`__
 * `Peds <https://wiki.rage.mp/index.php?title=Peds>`__
-* `Blips <https://wiki.rage.mp/index.php?title=Blips>`__
+* `Blips <https://docs.fivem.net/docs/game-references/blips/>`__
 * `Props <https://cdn.rage.mp/public/odb/index.html>`__
 
 
@@ -105,7 +106,7 @@ Blip is an Integer ID that represents the mark object on the game map. You can s
 
 You can find Blip types here:
 
-* `Blips <https://wiki.rage.mp/index.php?title=Blips>`__
+* `Blips <https://docs.fivem.net/docs/game-references/blips/>`__
 
 ================================
 
@@ -216,6 +217,15 @@ Used for money drops. It's not used anywhere at the moment.
 
 ===========================
 
+.. _ModelBoundingBox:
+
+ModelBoundingBox represents a vector consisting of 8 Vector3's that contain the coordinates of box's corners (bounding coordinates).
+
+.. image:: mdb.png
+   :target: mdb.png
+
+===========================
+
 .. _gvars:
 
 Global Variables
@@ -224,6 +234,10 @@ Global Variables
 * ``int`` ``chatSenderId`` -- Last chat message sender ID
 * ``string`` ``chatSenderName`` -- Last chat message sender name
 * ``string`` ``chatMessage`` -- Last chat message
+* ``int`` ``scriptEventId`` -- Last script event hash
+* ``vector<int>`` ``scriptEventArgs`` -- Last script event arguments list
+* ``int`` ``scriptEventSenderID`` -- Last script event sender ID
+* ``string`` ``scriptEventSenderName`` -- Last script event sender name
 
 ================================
 
@@ -247,6 +261,7 @@ Function namespaces in LUA Engine are defined in the following order:
 * :ref:`player`
 * :ref:`lobby`
 * :ref:`vehicleNS`
+* :ref:`weaponNS`
 * :ref:`text`
 * :ref:`fs`
 * :ref:`scripting`
@@ -512,6 +527,7 @@ Removes a task from the process's main loop.
 
 .. code-block:: lua
    :linenos:
+
    function my_script_function()
         system.log_info("Hello World!")
    end
@@ -549,6 +565,7 @@ Connects a chat listener that calls a task every time a message is sent in the c
 
 .. code-block:: lua
    :linenos:
+
    function my_script_function(text)
         system.log_info("Hello World!")
    end
@@ -573,11 +590,65 @@ Disconnects a chat listener for a certain task.
 
 .. code-block:: lua
    :linenos:
+
    function my_script_function(text)
         system.log_info("Hello World!")
    end
    system.add_chat_listener("My script task", "luaTestTaskHash", my_script_function)
    system.remove_chat_listener("luaTestTaskHash")
+
+================================
+
+add_script_event_listener(``name``, ``hash``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Connects a script event listener that calls a task every time a script event is sent.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the task.
+* ``hash`` (``string``) -- The hash of the task. Hash is used to identify the task, so it must be unique.
+* ``fn`` (``function``) -- The function to call when the task is executed.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   function my_script_function()
+        system.log_info("Hello World!")
+   end
+   system.add_script_event_listener("My script task", "luaTestTaskHash", my_script_function)
+
+================================
+
+remove_script_event_listener(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Disconnects a script event listener for a certain task.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The hash of the task to remove.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   function my_script_function()
+        system.log_info("Hello World!")
+   end
+   system.add_script_event_listener("My script task", "luaTestTaskHash", my_script_function)
+   system.remove_script_event_listener("luaTestTaskHash")
 
 ================================
 
@@ -3302,6 +3373,61 @@ Returns the hash of the current option.
 
 ======================
 
+get_child_count(``parentId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the number of children of the specified parent.
+
+**Parameters:**
+
+* ``parentId`` (``string``) -- The parent ID
+
+**Returns:**
+
+* ``int`` -- The number of children of the specified parent
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   iChildCount = menu.get_child_count("parentId")
+   system.log_debug("The number of children of the parent is " .. iChildCount)
+
+======================
+
+get_option_spawn_hash(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This function is not yet implemented.
+
+======================
+
+set_active_parent(``parentId``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets an active parent section in the menu.
+
+**Parameters:**
+
+* ``parentId`` (``string``) -- The parent ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   iSectionWorld = menu.section_world()
+   menu.set_active_parent(iSectionWorld)
+
+======================
+
 .. _stats:
 
 Stats namespace
@@ -4101,7 +4227,7 @@ and gathering certain objects' coordinates on screen.
 
 ================================
 
-draw_box(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0``, ``rounding_flags`` = ``0``)
+draw_rect(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0``, ``rounding_flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Draws a box with the given color and rounding.
@@ -4139,11 +4265,11 @@ More about rounding flags: :doc:`things/roundingflags`
 .. code-block:: lua
    :linenos:
    
-   render.draw_box("MyHash", true, 0, 0, 100, 100, { 255, 255, 255, 255 }, 10, 0)
+   render.draw_rect("MyHash", true, 0, 0, 100, 100, { 255, 255, 255, 255 }, 10, 0)
 
 ================================
 
-draw_box_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0``, ``rounding_flags`` = ``0``)
+draw_rect_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``color``, ``rounding`` = ``0``, ``rounding_flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Draws a filled box with the given color and rounding.
@@ -4180,11 +4306,11 @@ More about rounding flags: :doc:`things/roundingflags`
 .. code-block:: lua
    :linenos:
    
-   render.draw_box_filled("MyHash", true, 0, 0, 100, 100, { 255, 255, 255, 255 }, 10, 0)
+   render.draw_rect_filled("MyHash", true, 0, 0, 100, 100, { 255, 255, 255, 255 }, 10, 0)
 
 ================================
 
-draw_box_border_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``borderSize``, ``color``, ``colorBorder``, ``borderFilled`` = ``true``, ``rounding`` = ``0``, ``rounding_flags`` = ``0``)
+draw_rect_border_filled(``hash``, ``draw``, ``x``, ``y``, ``w``, ``h``, ``borderSize``, ``color``, ``colorBorder``, ``borderFilled`` = ``true``, ``rounding`` = ``0``, ``rounding_flags`` = ``0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
@@ -4227,7 +4353,7 @@ More about rounding flags: :doc:`things/roundingflags`
 .. code-block:: lua
    :linenos:
    
-   render.draw_box_border_filled("MyHash", true, 0, 0, 100, 100, 10, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true, 10, 0)
+   render.draw_rect_border_filled("MyHash", true, 0, 0, 100, 100, 10, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, true, 10, 0)
 
 ================================
 
@@ -4580,6 +4706,41 @@ Draw an atlas texture frame.
    --assuming there's a texture named "test" in the atlas
    render.load_atlas("/path/to/atlas.png", "MyAtlas")
    render.draw_atlas_frame("MyFrameHash", "MyAtlas", "test", true, 240, 15, 0, 0, { 255, 255, 255, 255 }, 0, 0)
+
+================================
+
+draw_box(``hash``, ``draw``, ``boundingData``, ``color``, ``thickness`` = ``1.0``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   This doesn't have to be called every frame, only if you have to constantly change its parameters.
+
+Draws a 3D box with the given color and thickness.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The hash of the box to draw. Hash is used to identify the box, so it must be unique.
+* ``draw`` (``bool``) -- Whether to draw the box or not.
+* * ``True`` to draw the box
+* * ``false`` to not draw the box
+* ``boundingData`` (``ModelBoundingBox``) -- The vector consisting of 8 Vector3's that contain the coordinates of box's corners.
+* ``color`` (``ColorRGBA``) -- The color of the box. ``{R, G, B, A}``
+* ``thickness`` (``float``) -- The thickness of the box.
+* * Default is ``1.0``.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   pSelfPed = player.get_ped()
+   mbbBoundingCoords = scripting.get_entity_bounding_coords(pSelfPed)
+   render.draw_box("MyHash", true, mbbBoundingCoords, { 255, 255, 255, 255 }, 1.0)
 
 ================================
 
@@ -6486,6 +6647,259 @@ Sets the value for the specified handling parameter.
 
 ================================
 
+get_vehicle_handling_parameters()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get all vehicle handling parameters.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``vector<string>`` -- The vehicle handling parameters vector.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   vCurrentVehicle = player.get_vehicle()
+   vstrHandlingParameters = vehicle.get_vehicle_handling_parameters() -- Returns the vehicle handling parameters vector.
+   for i,v in pairs(vstrHandlingParameters) do
+		system.log_debug(tostring(i) .. " " .. tostring(v))
+   end
+
+
+
+================================
+
+
+.. _weaponNS:
+
+Weapon namespace
+-----------------------
+
+This namespace contains functions related to weapon manipulation
+
+================================
+
+get_weapon_info(``ped``, ``param``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the value for the specified weapon parameter.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID.
+* ``param`` (``string``) -- The weapon parameter.
+
+  * You can find a list of weapon parameters here: :doc:`things/weaponParams`.
+
+**Returns:**
+
+* ``float`` -- The value for the specified weapon parameter.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   pSelfPed = player.get_player()
+   fWeaponInfo = weapon.get_weapon_info(pSelfPed, "fWeaponRange") -- Returns the weapon range of the player.
+   system.log_debug("The player's weapon has " .. tostring(weaponInfo) .. " weapon range.")
+
+================================
+
+set_weapon_info(``ped``, ``param``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the value for the specified weapon parameter.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID.
+
+  * You can find a list of weapon parameters here: :doc:`things/weaponParams`.
+* ``param`` (``string``) -- The weapon parameter.
+* ``value`` (``float``) -- The value for the specified weapon parameter.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   pSelfPed = player.get_player()
+   fWeaponRange = weapon.get_weapon_info(pSelfPed, "fWeaponRange") -- Returns the weapon range of the player.
+   weapon.set_weapon_info(pSelfPed, "fWeaponRange", fWeaponRange+10)
+   system.log_debug("The player's weapon has been set to have " .. tostring((fWeaponRange+10)) .. " weapon range.")
+
+================================
+
+get_vehicle_weapon_info(``vehicle``, ``param``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the value of the vehicle weapon for the specified weapon parameter.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID.
+* ``param`` (``string``) -- The weapon parameter.
+
+  * You can find a list of weapon parameters here: :doc:`things/weaponParams`.
+
+**Returns:**
+
+* ``float`` -- The value for the specified weapon parameter.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   vCurrentVehicle = player.get_vehicle()
+   fWeaponInfo = weapon.get_vehicle_weapon_info(vCurrentVehicle, "fWeaponRange") -- Returns the weapon range of the vehicle.
+   system.log_debug("The player's vehicle has " .. tostring(weaponInfo) .. " weapon range.")
+
+================================
+
+set_vehicle_weapon_info(``vehicle``, ``param``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the value of the vehicle weapon for the specified weapon parameter.
+
+**Parameters:**
+
+* ``vehicle`` (``Vehicle``) -- The vehicle ID.
+
+  * You can find a list of weapon parameters here: :doc:`things/weaponParams`.
+* ``param`` (``string``) -- The weapon parameter.
+* ``value`` (``float``) -- The value for the specified weapon parameter.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   vCurrentVehicle = player.get_vehicle()
+   fWeaponInfo = weapon.get_vehicle_weapon_info(vCurrentVehicle, "fWeaponRange") -- Returns the weapon range of the vehicle.
+   weapon.set_vehicle_weapon_info(vCurrentVehicle, "fWeaponRange", fWeaponRange+10)
+   system.log_debug("The player's vehicle has been set to have " .. tostring((fWeaponRange+10)) .. " weapon range.")
+
+================================
+
+get_ammo_info(``ped``, ``param``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the value for the specified ammo parameter.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID.
+* ``param`` (``string``) -- The ammo parameter.
+
+  * You can find a list of ammo parameters here: :doc:`things/ammoParams`.
+
+**Returns:**
+
+* ``float`` -- The value for the specified ammo parameter.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   pSelfPed = player.get_player()
+   fMissileSpeed = weapon.get_ammo_info(pSelfPed, "fMissileSpeed") -- Returns the missile speed
+   system.log_debug("The player's weapon has " .. tostring(fMissileSpeed) .. " missile speed.")
+
+================================
+
+set_ammo_info(``ped``, ``param``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the value for the specified ammo parameter.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- The ped ID.
+* ``param`` (``string``) -- The ammo parameter.
+
+  * You can find a list of ammo parameters here: :doc:`things/ammoParams`.
+* ``value`` (``float``) -- The value for the specified ammo parameter.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   pSelfPed = player.get_player()
+   fMissileSpeed = weapon.get_ammo_info(pSelfPed, "fMissileSpeed") -- Returns the missile speed
+   weapon.set_ammo_info(pSelfPed, "fMissileSpeed", fMissileSpeed+10)
+   system.log_debug("The player's weapon has been set to have " .. tostring((fMissileSpeed+10)) .. " missile speed.")
+
+================================
+
+get_weapon_info_parameters()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a list of weapon parameters.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``vector<string>`` -- A list of weapon parameters.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   vstrWeaponParams = weapon.get_weapon_info_parameters()
+   for i,v in pairs(vstrWeaponParams) do
+		system.log_debug(tostring(i) .. " " .. tostring(v))
+   end
+
+================================
+
+get_ammo_info_parameters()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns a list of ammo parameters.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``vector<string>`` -- A list of ammo parameters.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   vstrAmmoParams = weapon.get_ammo_info_parameters()
+   for i,v in pairs(vstrAmmoParams) do
+      system.log_debug(tostring(i) .. " " .. tostring(v))
+   end
 
 .. _text:
 
@@ -6788,7 +7202,28 @@ Cuts string from the right.
    
    Hello...
 
+======================
 
+get_clipboard_text()
+^^^^^^^^^^^^^^^^^^^^^
+
+Copies the text from the clipboard
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``string`` -- The text from the clipboard.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   sClipboardText = get_clipboard_text()
+   system.log_debug(sClipboardText)
 
 ================================
 
@@ -7124,6 +7559,29 @@ Returns the filepath for the DIS2RBED lua directory.
 
 ================================
 
+get_gta_dir()
+^^^^^^^^^^^^^
+
+Returns the filepath for the GTA directory.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``string`` -- The filepath for the GTA directory
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   sDirectoryPath = fs.get_gta_dir()
+   system.log_debug(sDirectoryPath)
+
+================================
+
 .. _scripting:
 
 Scripting functions
@@ -7291,6 +7749,30 @@ Returns the ground Z coordinate (height) of the specified coordinates.
    fGroundZ = scripting.get_ground_z(v3CurrentCoords)
    system.log_debug(tostring(fGroundZ))
 
+================================
+
+get_entity_bounding_coords(``entity``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the bounding coordinates of the specified entity.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity to check
+
+**Returns:**
+
+* ``ModelBoundingBox`` -- Bounding coordinates
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   pSelfPed = player.get_ped()
+   mbbBoundingCoords = scripting.get_entity_bounding_coords(pSelfPed)
+   render.draw_box("MyHash", true, mbbBoundingCoords, { 255, 255, 255, 255 }, 1.0)
+
 
 .. _playerNSS:
 
@@ -7300,6 +7782,31 @@ Player namespace
 This namespace contains functions that are related to player and are used to execute built-in menu features
 
 ================================
+
+get_mp_gender()
+^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's character's gender.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- Gender ID
+
+  * ``0`` - Any non-gender game model
+  * ``1`` - Male (``mp_male``)
+  * ``2`` - Female (``mp_female``)
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   iSelfGenderID = player.get_mp_gender()
+   system.log_debug("Gender ID: " .. tostring(iSelfGenderID))
 
 set_clean()
 ^^^^^^^^^^^^^^^^^^^^
@@ -9437,8 +9944,8 @@ Teleport to blip.
 
 **Parameters:**
 
-* ``sprite`` (``int``) -- The `blip <https://wiki.rage.mp/index.php?title=Blips>`__ sprite ID to use.
-* ``color`` (``int``) -- The `blip <https://wiki.rage.mp/index.php?title=Blips>`__ color ID to use.
+* ``sprite`` (``int``) -- The `blip <https://docs.fivem.net/docs/game-references/blips/>`__ sprite ID to use.
+* ``color`` (``int``) -- The `blip <https://docs.fivem.net/docs/game-references/blips/>`__ color ID to use.
 
   * ``-1`` to use the default color
 
@@ -16589,7 +17096,7 @@ Sets the entity's max speed.
 set_entity_no_collision_entity(``entity1``, ``entity2``, ``thisFrameOnly``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sets disabled collision between two entities.
+Sets collision state between two entities.
 
 **Parameters:**
 
@@ -17335,6 +17842,168 @@ Set ped weapon tint ID.
    iTintID = rage.weapon.get_ped_weapon_tint_index(pSelfPed, uWeaponHash) -- Returns current weapon tint ID installed on MicroSMG
 
    rage.weapon.set_ped_weapon_tint_index(pSelfPed, uWeaponHash, (iTintID + 1)) -- Sets next weapon tint
+
+================================
+
+add_ammo_to_ped(``ped``, ``weaponHash``, ``ammo``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds ammo to ped's weapon
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped handle
+* ``weaponHash`` (``Hash``) -- Weapon model hash
+* ``ammo`` (``int``)
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   pSelfPed = player.get_ped()
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+   rage.weapon.add_ammo_to_ped(pSelfPed, uWeaponHash, 9999) -- 9999 ammo for microsmg
+
+===================================
+
+get_weapon_clip_size()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get weapon clip size.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- Weapon clip size
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+   iClipSize = rage.weapon.get_weapon_clip_size(uWeaponHash) -- Returns clip size for microsmg
+   system.log_debug("Clip size: " .. iClipSize)
+
+===================================
+
+has_entity_been_damaged_by_weapon(``entity``, ``weaponHash``, ``weaponType``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if entity has been damaged by weapon.
+
+**Parameters:**
+
+* ``entity`` (``Entity``) -- Entity handle
+* ``weaponHash`` (``Hash``) -- Weapon model hash
+* ``weaponType`` (``int``) -- Weapon type
+
+.. note::
+   
+   If you want to define only a specific weapon, second parameter=weapon hash code, third parameter=0
+   If you want to define any melee weapon, second parameter=0, third parameter=1.
+   If you want to identify any weapon (firearms, melee, rockets, etc.), second parameter=0, third parameter=2.
+
+**Returns:**
+
+* ``bool`` -- ``true`` if entity has been damaged by weapon, ``false`` otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   pSelfPed = player.get_ped()
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+   bDamaged = rage.weapon.has_entity_been_damaged_by_weapon(pSelfPed, uWeaponHash, 0) -- Check if self ped has been damaged by microsmg
+   if bDamaged then
+       system.log_debug("Self ped has been damaged by microsmg")
+   end
+
+===================================
+
+refill_ammo_instantly(``ped``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Refills ammo for all weapons.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped handle
+
+**Returns:**
+
+* ``bool`` -- ``true`` if ammo was refilled, ``false`` otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   pSelfPed = player.get_ped()
+   bRefilled = rage.weapon.refill_ammo_instantly(pSelfPed) -- Refills ammo for all weapons for self ped
+   if bRefilled then
+       system.log_debug("Ammo was refilled")
+   end
+
+===================================
+
+set_ammo_in_clip(``ped``, ``weaponHash``, ``ammo``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set ammo in clip.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped handle
+* ``weaponHash`` (``Hash``) -- Weapon model hash
+* ``ammo`` (``int``) -- Ammo in clip
+
+**Returns:**
+
+* ``bool`` -- ``true`` if ammo was set, ``false`` otherwise
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   pSelfPed = player.get_ped()
+   uWeaponHash = rage.gameplay.get_hash_key("weapon_microsmg")
+   rage.weapon.set_ammo_in_clip(pSelfPed, uWeaponHash, 9999) -- 9999 ammo in clip for microsmg
+
+===================================
+
+set_ped_infinite_ammo_clip(``ped``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets infinite clip ammo for ped.
+
+**Parameters:**
+
+* ``ped`` (``Ped``) -- Ped handle
+* ``toggle`` (``bool``) -- ``true`` to enable infinite clip ammo, ``false`` to disable
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   pSelfPed = player.get_ped()
+   rage.weapon.set_ped_infinite_ammo_clip(pSelfPed, true) -- Sets infinite clip ammo for self ped
+
 
 ================================
 
@@ -18413,7 +19082,7 @@ Set blip colour.
 **Parameters:**
 
 * ``blip`` (``Blip``) -- Blip
-* ``color`` (``int``) -- Blip `Color ID <https://wiki.rage.mp/index.php?title=Blips#Blip_colors>`__ 
+* ``color`` (``int``) -- Blip `Color ID <https://docs.fivem.net/docs/game-references/blips/#blip-colors>`__ 
 
 
 **Returns:**
@@ -18503,7 +19172,7 @@ Set blip sprite.
 * ``blip`` (``Blip``) -- Blip
 * ``spriteId`` (``int``) -- Blip `Sprite ID`_  
 
-.. _Sprite ID: https://wiki.rage.mp/index.php?title=Blips
+.. _Sprite ID: https://docs.fivem.net/docs/game-references/blips/
 
 **Returns:**
 
@@ -18795,6 +19464,87 @@ Show specified HUD (Heads-up Display) component.
 
 ================================
 
+get_first_blip_info_id(``blipSprite``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get the first blip info ID for the specified blip sprite.
+
+**Parameters:**
+
+* ``blipSprite`` (``int``) -- Blip sprite ID
+  
+  * Blip sprite IDs `here <https://docs.fivem.net/docs/game-references/blips/#blip-colors>`__.
+
+**Returns:**
+
+* ``Blip`` -- Blip handle
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   blip = rage.ui.get_first_blip_info_id(8) -- Get the first blip info ID for the waypoint blip sprite.
+
+
+================================
+
+get_gps_waypoint_route_end(``p1``, ``p2``, ``p3``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get the end of the GPS waypoint route.
+
+.. note::
+
+   This seems to crash the thread. More testing is required.
+
+**Parameters:**
+
+* ``p1`` (``int``) -- Unknown. Seen to be ``1``
+* ``p2`` (``float``) -- Unknown. Seen to be ``500``
+* ``p3`` (``bool``) -- Unknown. Seen to be ``true``
+
+**Returns:**
+
+* ``Vector3`` -- End of the GPS waypoint route
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   v3WaypointRouteEnd = rage.ui.get_gps_waypoint_route_end(1, 500, true) -- Get the end of the GPS waypoint route.
+   scripting.teleport.to_position(v3WaypointRouteEnd) -- Teleport to the end of the GPS waypoint route.
+
+================================
+
+get_next_blip_info_id(``blipSprite``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get the next blip info ID for the specified blip sprite.
+
+**Parameters:**
+
+* ``blipSprite`` (``int``) -- Blip sprite ID
+  
+  * Blip sprite IDs `here <https://docs.fivem.net/docs/game-references/blips/#blip-colors>`__.
+
+**Returns:**
+
+* ``Blip`` -- Blip handle
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   blHandle = rage.ui.get_next_blip_info_id(8) -- Get the next blip ID for the waypoint blip sprite.
+   v3BlipCoords = rage.ui.get_blip_coords(blHandle) -- Get the coordinates of the blip
+   scripting.teleport.to_position(v3BlipCoords) -- Teleport to the blip
+
+
+===============================
+
 .. _draw:
 
 Draw namespace
@@ -18908,6 +19658,148 @@ Gets gameplay camera rotation
 
    v3CamRotation = rage.cam.get_gameplay_cam_rot(0) -- Returns the rotation of the camera with the first rotation order.
    system.log_debug("LocalPlayer pitch: " .. tostring(v3CamRotation.x) .. " roll: " .. tostring(v3CamRotation.y) .. " yaw: " .. tostring(v3CamRotation.z))
+
+================================
+
+set_gameplay_cam_raw_pitch(``pitch``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the camera pitch.
+
+.. note::
+
+   Doesn't seem to do anything. Use ``set_gameplay_cam_relative_pitch`` instead.
+
+**Parameters:**
+
+* ``pitch`` (``float``) -- Pitch value
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   rage.cam.set_gameplay_cam_raw_pitch(0.0) -- Set the camera pitch to 0.
+
+================================
+
+set_gameplay_cam_raw_yaw(``yaw``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the camera yaw.
+
+.. note::
+
+   Doesn't seem to do anything. Try to use ``set_gameplay_cam_relative_heading`` instead.
+
+**Parameters:**
+
+* ``yaw`` (``float``) -- Yaw value
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   rage.cam.set_gameplay_cam_raw_yaw(0.0) -- Set the camera yaw to 0.
+
+================================
+
+set_gameplay_cam_relative_heading(``heading``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the camera heading.
+
+**Parameters:**
+
+* ``heading`` (``float``) -- Heading value
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   rage.cam.set_gameplay_cam_relative_heading(0.0) -- Set the camera heading to 0 degrees.
+
+================================
+
+set_gameplay_cam_relative_pitch(``angle``, ``scalingFactor``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the camera pitch.
+
+**Parameters:**   
+
+* ``angle`` (``float``) -- The angle to rotate the camera by
+* ``scalingFactor`` (``float``) -- Always seems to be set to 1.0 in native calls
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   rage.cam.set_gameplay_cam_relative_pitch(0.0, 1.0) -- Set the camera pitch to 0 degrees.
+
+================================
+
+set_gameplay_cam_relative_rotation(``roll``, ``pitch``, ``yaw``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets camera rotation.
+
+**Parameters:**
+
+* ``roll`` (``float``) -- Roll value
+* ``pitch`` (``float``) -- Pitch value
+* ``yaw`` (``float``) -- Yaw value
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   rage.cam.set_gameplay_cam_relative_rotation(0.0, 0.0, 0.0) -- Set all parameters to 0.0 degrees.
+
+================================
+
+set_gameplay_cam_vehicle_camera(``vehicleName``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: 
+
+   Not documented yet.
+
+================================
+
+set_gameplay_cam_vehicle_camera_name(``vehicleModel``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. note:: 
+
+   Not documented yet.
+
+
 
 ================================
 
@@ -20640,7 +21532,7 @@ Draws a marker with the specified appearance at the target location.
 draw_rect(``x``, ``y``, ``width``, ``height``, ``red``, ``green``, ``blue``, ``alpha``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Draws a rectangle on the screen. Similar to render.draw_box()
+Draws a rectangle on the screen. Similar to render.draw_rect()
 
 .. note::
 
@@ -21145,6 +22037,55 @@ Deinitializes a scaleform object.
    end
    rage.graphics.set_scaleform_movie_as_no_longer_needed(iScaleformHandle)
    return
+
+================================
+
+world_to_screen_pixels(``coords``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Transforms world coords to screen pixels.
+
+**Parameters:**
+
+* ``coords`` (``vector3``) -- The world coords.
+
+**Returns:**
+
+* ``vector2`` -- The screen coords.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   plHostPlayer = lobby.get_host()
+   v3HostCoords = lobby.get_player_coords(plHostPlayer)
+   v2PlayerScreenCoords = rage.graphics.world_to_screen_pixels(v3HostCoords)
+
+================================
+
+world_to_screen_relative(``coords``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns how you have to move the camera for the coords to be in the center of the screen
+
+**Parameters:**
+
+* ``coords`` (``vector3``) -- The world coords.
+
+**Returns:**
+
+* ``vector2`` -- The screen coords.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   plHostPlayer = lobby.get_host()
+   v3HostCoords = lobby.get_player_coords(plHostPlayer)
+   v2PlayerScreenCoords = rage.graphics.world_to_screen_relative(v3HostCoords)
+
 
 
 ================================
