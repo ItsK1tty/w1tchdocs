@@ -7777,6 +7777,32 @@ Returns the bounding coordinates of the specified entity.
    mbbBoundingCoords = scripting.get_entity_bounding_coords(pSelfPed)
    render.draw_box("MyHash", true, mbbBoundingCoords, { 255, 255, 255, 255 }, 1.0)
 
+================================
+
+get_direction_from_rotation(``rotation``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the direction from the specified rotation.
+
+**Parameters:**
+
+* ``rotation`` (``Vector3``) -- Rotation to use
+
+**Returns:**
+
+* ``Vector3`` -- Direction from the rotation
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   pSelfPed = player.get_ped()
+   v3Rotation = rage.entity.get_entity_rotation(pSelfPed, 2)
+   v3Direction = scripting.get_direction_from_rotation(v3Rotation)
+   system.log_debug(tostring(v3Direction.x) .. ", " .. tostring(v3Direction.y) .. ", " .. tostring(v3Direction.z))
+
+================================
 
 .. _playerNSS:
 
@@ -16262,7 +16288,7 @@ Returns the entity rotation velocity.
 
    pSelfPed = player.get_ped()
 
-   v3EntityRotationVelocity = rage.entity.get_entity_rotation_velocity(entity, 2)
+   v3EntityRotationVelocity = rage.entity.get_entity_rotation_velocity(pSelfPed)
    
    system.log_debug(tostring(v3EntityRotationVelocity.x) .. " " .. tostring(v3EntityRotationVelocity.y) .. " " .. tostring(v3EntityRotationVelocity.z))
 
@@ -19609,7 +19635,7 @@ This namespace contains draw-related game functions.
 get_gameplay_cam_relative_pitch()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gets gameplay camera relative pitch.
+Gets camera relative pitch.
 
 **Parameters:**
 
@@ -19630,6 +19656,30 @@ Gets gameplay camera relative pitch.
 
 ================================
 
+get_gameplay_cam_coords()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets camera coordinates.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``Vector3`` -- Camera coordinates
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   v3CamCoords = rage.cam.get_gameplay_cam_coords()
+   
+   system.log_debug("Camera coords: " .. v3CamCoords.x .. ", " .. v3CamCoords.y .. ", " .. v3CamCoords.z)
+
+================================
+
 get_gameplay_cam_rot(``rotationOrder``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -19637,7 +19687,7 @@ get_gameplay_cam_rot(``rotationOrder``)
 
    This function requires proper documentation & testing.
 
-Gets gameplay camera rotation
+Gets camera rotation
 
 **Parameters:**
 
