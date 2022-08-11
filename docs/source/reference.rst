@@ -219,6 +219,9 @@ Used for money drops. It's not used anywhere at the moment.
 
 .. _ModelBoundingBox:
 
+ModelBoundingBox
+----------------------
+
 ModelBoundingBox represents a vector consisting of 8 Vector3's that contain the coordinates of box's corners (bounding coordinates).
 
 .. image:: mdb.png
