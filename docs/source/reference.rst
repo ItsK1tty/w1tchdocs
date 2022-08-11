@@ -17132,6 +17132,10 @@ Sets collision state between two entities.
 
    Has to be called twice (once for each entity)
 
+.. note::
+
+   Has to be called twice (once for each entity)
+
 **Parameters:**
 
 * ``entity1`` (``Entity``) -- The first entity ID
