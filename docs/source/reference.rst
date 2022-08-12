@@ -1017,7 +1017,7 @@ Adds a slider menu option.
 * ``value`` (``float``) -- The option default value.
 * ``min`` (``float``) -- Minimum slider value.
 * ``max`` (``float``) -- Maximum slider value.
-* ``mod`` (``float``) -- Delimeter of value increase.
+* ``mod`` (``float``) -- Delimiter of value increase.
 * ``parent`` (``int``) -- The parent section.
 * ``fn`` (``function``) -- Function to call.
 
@@ -1402,7 +1402,7 @@ Updates a slider option.
 * ``value`` (``float``) -- The option default value.
 * ``min`` (``float``) -- Minimum slider value.
 * ``max`` (``float``) -- Maximum slider value.
-* ``mod`` (``float``) -- Delimeter of value increase.
+* ``mod`` (``float``) -- Delimiter of value increase.
 * ``fn`` (``function``) -- Function to call.
 
 **Returns:**
@@ -1430,7 +1430,7 @@ Updates a slider toggable option.
 * ``value`` (``float``) -- The option default value.
 * ``min`` (``float``) -- Minimum slider value.
 * ``max`` (``float``) -- Maximum slider value.
-* ``mod`` (``float``) -- Delimeter of value increase.
+* ``mod`` (``float``) -- Delimiter of value increase.
 * ``fn`` (``function``) -- Function to call.
 
 **Returns:**
@@ -1807,7 +1807,7 @@ Adds a player menu option with multiple values in the selected player section.
 * ``name`` (``string``) -- The name of the option.
 * ``hash`` (``string``) -- The option hash.
 * ``value`` (``float``) -- The option default value.
-* ``list`` (``string``) -- The values list separed with a comma.
+* ``list`` (``string``) -- The values list separated with a comma.
 * ``fn`` (``function``) -- Function to call.
 
 **Returns:**
@@ -1833,7 +1833,7 @@ Adds a toggable player menu option with multiple values in the selected player s
 * ``name`` (``string``) -- The name of the option.
 * ``hash`` (``string``) -- The option hash.
 * ``value`` (``float``) -- The option default value.
-* ``list`` (``string``) -- The values list separed with a comma.
+* ``list`` (``string``) -- The values list separated with a comma.
 * ``fn`` (``function``) -- Function to call.
 
 **Returns:**
@@ -5746,7 +5746,7 @@ Checks whether the player is in a vehicle.
    :linenos:
    
    plHostPlayer = lobby.get_host()
-   bIsInVehicle = lobby.is_player_in_vehicle(plhostPlayer) -- Checks whether the player is in a vehicle.
+   bIsInVehicle = lobby.is_player_in_vehicle(plHostPlayer) -- Checks whether the player is in a vehicle.
    if bIsInVehicle then -- If the player is in a vehicle.
       system.log_info("The player is in a vehicle.")
    end
@@ -11359,7 +11359,7 @@ Spawns a ped (biped character, pedestrian, actor) with the specified model at th
 
 **Parameters:**
 
-* ``pedType`` (``int``) -- Unused. Peds get set to CIVMALE/CIVFEMALE/etc. no matter the value specified
+* ``pedType`` (``int``) -- Unused Peds get set to CIVMALE/CIVFEMALE/etc. no matter the value specified
 * ``modelHash`` (``Hash``) -- The model of ped to spawn
 
   * `Ped Models <https://wiki.rage.mp/index.php?title=Peds>`__
@@ -11576,7 +11576,7 @@ get_number_of_ped_prop_texture_variations(``ped``, ``propID``, ``drawableID``)
 
 .. note::
       
-   this funciton is not yet documented.
+   this function is not yet documented.
 
 ================================
 
@@ -12117,7 +12117,7 @@ Checks whether the specified ped is swimming.
    :linenos:
 
    pSelfPed = player.get_ped()
-   bIsPedSwimming = rage.ped.is_ped_wimming(pSelfPed)
+   bIsPedSwimming = rage.ped.is_ped_swimming(pSelfPed)
    if bIsPedSwimming then
       system.log_debug("Ped is swimming")
    else
@@ -12921,7 +12921,7 @@ Sets the color of the specified head part (lipstick, beards, eyebrows, chest hai
 
    pSelfPed = player.get_ped()
    rage.ped.set_ped_head_overlay_color(pSelfPed, 8, 1, 1, 1)
-   system.log_debug("Ped's lIpstick set to red.")
+   system.log_debug("Ped's lipstick set to red.")
 
 ====================================
 
@@ -12996,7 +12996,7 @@ Sets the movement clipset (walking animation set) for the ped.
 * ``clipset`` (``string``) -- The movement clipset name
 
   * For a list of movement clipsets, see this: :doc:`things/pedMovements`
-* ``transitionSpeed`` (``float``) -- The speed of transtition between two clipsets
+* ``transitionSpeed`` (``float``) -- The speed of transition between two clipsets
 
 **Returns:**
 
@@ -13239,7 +13239,7 @@ Sets ped density during scenarios
 Vehicle namespace
 ----------------------
 
-This namepsace contains vehicle-related game functions.
+This namespace contains vehicle-related game functions.
 
 ====================================
 
@@ -13578,7 +13578,7 @@ Returns the name for the type of vehicle mod(Armour, engine etc)
 
 .. note::
 
-   Unrealiable. Sometimes returns "".
+   Unreliable. Sometimes returns "".
 
 **Parameters:**
 
@@ -14828,7 +14828,7 @@ Sets a vehicle door to open.
    :linenos:
 
    vCurrentVehicle = player.get_vehicle()
-   rage.vehicle.set_vehicle_door_open(vCurrentVehicle, 5, true, false) -- open the trunt
+   rage.vehicle.set_vehicle_door_open(vCurrentVehicle, 5, true, false) -- open the trunk
 
 ====================================
 
@@ -14915,7 +14915,7 @@ Sets whether the vehicle doors are locked for non-script players.
 set_vehicle_doors_locked_for_player(``vehicle``, ``player``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Lokcs or unlocks the vehicle doors for a certain player.
+Locks or unlocks the vehicle doors for a certain player.
 
 **Parameters:**
 
@@ -15309,7 +15309,7 @@ Sets a vehicle on the ground on all wheels.
 
 **Returns:**
 
-* ``bool`` -- Whether the vehicle was set on the ground succesfully
+* ``bool`` -- Whether the vehicle was set on the ground successfully
 
 **Example:**
 
@@ -17859,7 +17859,7 @@ Set ped weapon tint ID.
     * Metallic Blue = ``29``
     * Metallic White & Aqua = ``30``
     * Metallic Orange & Yellow = ``31``
-    * Mettalic Red and Yellow = ``32``
+    * Metallic Red and Yellow = ``32``
 
 
   
@@ -18636,7 +18636,7 @@ Requests the animation dictionary.
 request_anim_set(``animSet``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Rquests the animation set.
+Requests the animation set.
 
 **Parameters:**
 
@@ -19016,7 +19016,7 @@ Checks whether specified HUD (Heads-up Display) component is active.
 
 **Returns:**
 
-* ``bool`` -- Rerturns hud component status
+* ``bool`` -- Returns hud component status
 
   * ``true`` -- Hud component is active
   * ``false`` -- Hud component is inactive
@@ -19080,7 +19080,7 @@ Removes a blip.
    pSelfPed = player.get_ped()
    blEntityBlip = rage.ui.add_blip_for_entity(pSelfPed)
 
-   rage.ui.remove_blip(blEntityBlip) -- Removes precedently added blip
+   rage.ui.remove_blip(blEntityBlip) -- Removes added blip
    
 ================================
 
@@ -19109,7 +19109,7 @@ Set blip as mission creator blip.
    pSelfPed = player.get_ped()
    blEntityBlip = rage.ui.add_blip_for_entity(pSelfPed)
 
-   rage.ui.set_blip_as_mission_creator_blip(blEntityBlip, true) -- Sets precedently added blip as mission creator blip
+   rage.ui.set_blip_as_mission_creator_blip(blEntityBlip, true) -- Sets added blip as mission creator blip
    
 ================================
 
@@ -19225,7 +19225,7 @@ Set blip sprite.
    pSelfPed = player.get_ped()
    blEntityBlip = rage.ui.add_blip_for_entity(pSelfPed) -- Adds a blip for player's ped
 
-   rage.ui.set_blip_sprite(blEntityBlip, 64) -- Sets radar_helicopter sprite to precedently created blip
+   rage.ui.set_blip_sprite(blEntityBlip, 64) -- Sets radar_helicopter sprite to created blip
 
 ================================
 
@@ -19414,12 +19414,12 @@ Set text scale.
 set_text_wrap(``start``, ``end``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set the text in a specified box and wrap the text if it exceeds the boundries. Both values are for X axis. Useful when positioning text set to center or aligned to the right.
+Set the text in a specified box and wrap the text if it exceeds the boundaries. Both values are for X axis. Useful when positioning text set to center or aligned to the right.
 
 **Parameters:**
 
-* ``start`` (``float``) -- Left boundry on screen position (0.0 - 1.0)  
-* ``end`` (``float``) -- Right boundry on screen position (0.0 - 1.0)
+* ``start`` (``float``) -- Left boundary on screen position (0.0 - 1.0)
+* ``end`` (``float``) -- Right boundary on screen position (0.0 - 1.0)
 
 **Returns:**
 
@@ -21887,7 +21887,7 @@ Request a scaleform handle.
 scaleform_movie_method_add_param_bool(``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Pass a bool param to scaleform. The scaleform should be initialiazed already.
+Pass a bool param to scaleform. The scaleform should be initialized already.
 
 **Parameters:**
 
@@ -22934,7 +22934,7 @@ Make the ped move to a coordinate while aiming (and optionally shooting) at give
 * ``p12`` (``Any``) -- Firing pattern
 
   * Firing patterns can be found here: :doc:`things/firingpatterns`
-* ``p13`` (``Any``) -- Unknown -- let it be 20000, noone knows what that is
+* ``p13`` (``Any``) -- Unknown -- let it be 20000, nobody knows what that is
 
 **Returns:**
 
@@ -23239,7 +23239,7 @@ Make the entity shoot at an entity targeted for a given duration and with custom
 **Parameters:**
 
 * ``entity`` (``Entity``) -- Entity object
-* ``target`` (``Entityt``) -- Target entity object
+* ``target`` (``Entity``) -- Target entity object
 * ``duration`` (``int``) -- Duration in milliseconds
 * ``firingPattern`` (``Hash``) -- Firing pattern hash
 
@@ -23427,7 +23427,7 @@ Turn the ped to face towards the entity.
 **Parameters:**
 
 * ``ped`` (``Ped``) -- Ped object
-* ``entity`` (``Entity``) -- Entityd object
+* ``entity`` (``Entity``) -- Entity object
 * ``duration`` (``int``) -- The amount of time in milliseconds to do the task. 
   
   * ``-1`` will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped
@@ -23545,7 +23545,7 @@ Makes ped drive the vehicle to given coordinates.
 * ``z`` (``float``) -- The ``Z`` position
 * ``speed`` (``float``) -- The driving speed
 * ``p6`` (``Any``) -- Unknown
-* ``vehicleModel`` (``Hash``) -- The vehilemde ash 
+* ``vehicleModel`` (``Hash``) -- The vehiclemde hash
 * ``drivingMode`` (``int``) -- Driving mode
 * ``stopRange`` (``float``) -- Stops in the specific range near the destination. ``20.0`` works fine.
 * ``p10`` (``float``) -- Unknown
@@ -23670,7 +23670,7 @@ Makes a ped follow the targetVehicle with <minDistance> in between.
 
   * ``minDistance`` is ignored if drivingstyle is Avoiding Traffic, but Rushed is fine.  
 
-* ``p7`` (``int``) -- Unknwn
+* ``p7`` (``int``) -- Unknown
 * ``noRoadsDistance`` (``float``) -- If the target is closer than noRoadsDistance, the driver will ignore pathing/roads and follow it direct.
 
 .. _Driving Style calculator: https://vespura.com/fivem/drivingstyle/
@@ -23942,7 +23942,7 @@ Set a boolean property.
 
 **Returns:**
 
-* ``bool`` -- Whether the value was succesfully set
+* ``bool`` -- Whether the value was successfully set
   
   * ``true`` -- the value was set
   * ``false`` -- the value was not set.
@@ -23962,7 +23962,7 @@ Set a float property.
 
 **Returns:**
 
-* ``bool`` -- Whether the value was succesfully set
+* ``bool`` -- Whether the value was successfully set
   
   * ``true`` -- the value was set
   * ``false`` -- the value was not set.
@@ -23983,7 +23983,7 @@ Set an integer property.
 
 **Returns:**
 
-* ``bool`` -- Whether the value was succesfully set
+* ``bool`` -- Whether the value was successfully set
   
   * ``true`` -- the value was set
   * ``false`` -- the value was not set.
@@ -24004,7 +24004,7 @@ Set a time property.
 
 **Returns:**
 
-* ``bool`` -- Whether the value was succesfully set
+* ``bool`` -- Whether the value was successfully set
   
   * ``true`` -- the value was set
   * ``false`` -- the value was not set.
@@ -24299,7 +24299,7 @@ Creates a rope at the specific position, that extends in the specified direction
 
 .. note::
    Rope does NOT interact with anything you attach it to, in some cases it make interact with the world AFTER it breaks (seems to occur if you set the type to -1).  
-   Rope will sometimes contract and fall to the ground like you'd expect it to, but since it doesn't interact with the world the effect is just jaring.  
+   Rope will sometimes contract and fall to the ground like you'd expect it to, but since it doesn't interact with the world the effect is just jaring.
 
 **Parameters:**
 
