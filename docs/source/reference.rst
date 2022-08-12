@@ -6499,6 +6499,30 @@ Returns the player's coordinates.
 
 ================================
 
+get_player_vehicle(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the player's vehicle.
+
+**Parameters:**
+
+* ``player`` (``Player``) -- The player ID.
+
+**Returns:**
+
+* ``Vehicle`` -- The player's vehicle.
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   plHostPlayer = lobby.get_host()
+   vPlayerVehicle = lobby.get_player_vehicle(plHostPlayer) -- Returns the host's vehicle.
+   system.log_debug("The host's vehicle is " .. tostring(vPlayerVehicle) .. ".")
+
+================================
+
 set_player_modder(``player``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
