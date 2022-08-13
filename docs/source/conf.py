@@ -1,4 +1,4 @@
-# Configuration file for the Sphinx documentation builder.
+#Configuration file for the Sphinx documentation builder.
 
 # -- Project information
 import os
@@ -53,33 +53,22 @@ html_context = {
 epub_show_urls = 'footnote'
 
 
-# def insert_github_link(filename): #https://github.com/peterjc/thapbi-pict/commit/f14b1df17ed3faf382a63095aa6e22f519e71957
-#     """Insert file specific :github_url: metadata for theme breadcrumbs."""
-#     assert "/" not in filename and filename.endswith(".rst")
-#     with open("things/" + filename) as handle:
-#         text = handle.read()
-#     if ":github_url:" in text:
-#         return
+def insert_github_link(filename): #https://github.com/peterjc/thapbi-pict/commit/f14b1df17ed3faf382a63095aa6e22f519e71957
+    """Insert file specific :github_url: metadata for theme breadcrumbs."""
 
-#     python = filename[:-4].replace(".", "/") + "/__init__.py"
-#     if not os.path.isfile(os.path.join("../", python)):
-#         python = filename[:-4].replace(".", "/") + ".py"
-#     if not os.path.isfile(os.path.join("../", python)):
-#         sys.stderr.write(
-#             "WARNING: Could not map %s to a Python file, e.g. %s\n" % (filename, python)
-#         )
-#         return
+    t = ""
+    with open(filename, "r") as f:
+        t = f.read()
+    if ":github_url:" in t:
+        return
+    ver = os.environ.get('READTHEDOCS_VERSION')
+    if ver == 'latest':
+        ver = 'main'
+    text = ":github_url: https://github.com/ItsK1tty/w1tchdocs/edit/%s\n\n%s" % (
+        ver,
+        t,
+    )
+    with open(filename, "w") as handle:
+        handle.write(text)
 
-#     text = ":github_url: https://github.com/%s/%s/edit/%s\n\n%s" % (
-#         html_context["github_user"],
-#         html_context["github_repo"],
-#         html_context["github_version"],
-#         text,
-#     )
-#     with open("api/" + filename, "w") as handle:
-#         handle.write(text)
-
-# for f in os.listdir("things/"):
-#     print("Inserting GitHub links for %s" % f)
-#     if f.endswith(".rst"):
-#         insert_github_link(f)
+insert_github_link("reference.rst")
