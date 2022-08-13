@@ -64,7 +64,7 @@ def insert_github_link(filename): #https://github.com/peterjc/thapbi-pict/commit
     ver = os.environ.get('READTHEDOCS_VERSION')
     if ver == 'latest':
         ver = 'main'
-    text = ":github_url: https://github.com/ItsK1tty/w1tchdocs/edit/%s\n\n%s" % (
+    text = ":github_url: https://github.com/ItsK1tty/w1tchdocs/edit/%s/docs/source/reference.rst\n\n%s" % (
         ver,
         t,
     )
