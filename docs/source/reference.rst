@@ -15864,7 +15864,7 @@ Attach an entity to the specified entity.
    plHostPlayer = lobby.get_host()
    pHostPed = lobby.get_player_ped(plHostPlayer)
 
-   iBoneIndex = get_ped_bone_index(entity2, 1)
+   iBoneIndex = rage.ped.get_ped_bone_index(entity2, 1)
 
    rage.entity.attach_entity_to_entity(pSelfPed, pHostPed, iBoneIndex, 10, 10, 10, 1, 1, 0, false, true, true, 1, true)
 
