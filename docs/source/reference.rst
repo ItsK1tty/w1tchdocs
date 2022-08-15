@@ -12846,14 +12846,14 @@ Sets the face shape settings for the selected ped.
 
 
 * ``ped`` (``Ped``) -- The ped ID
-* ``shapeFirst`` (``int``) -- dad shape
-* ``shapeSecond`` (``int``) -- mom shape
+* ``shapeFirst`` (``int``) -- dad shape (from 0 to 45)
+* ``shapeSecond`` (``int``) -- mom shape (from 0 to 45)
 * ``shapeThird`` (``int``) -- third shape (unused)
-* ``skinFirst`` (``int``) -- dad skin color
-* ``skinSecond`` (``int``) -- mom skin color
+* ``skinFirst`` (``int``) -- dad skin color (from 0 to 45)
+* ``skinSecond`` (``int``) -- mom skin color (from 0 to 45)
 * ``skinThird`` (``int``) -- third skin color (unused)
-* ``shapeMix`` (``float``) -- shape mix (``0.0`` - ``1.0`` of whose characteristics to take: Mother -> Father)
-* ``skinMix`` (``float``) -- skin mix (``0.0`` - ``1.0`` of whose characteristics to take: Mother -> Father)
+* ``shapeMix`` (``float``) -- shape mix (``0.0`` -> ``1.0`` of whose characteristics to take: Father -> Mother)
+* ``skinMix`` (``float``) -- skin mix (``0.0`` -> ``1.0`` of whose characteristics to take: Father -> Mother)
 * ``thirdMix`` (``float``) -- third mix (unused)
 * ``isParent`` (``bool``) -- usually ``false``
 
