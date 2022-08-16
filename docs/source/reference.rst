@@ -10999,8 +10999,7 @@ Sets the model for a specific player.
 .. code-block:: lua
    :linenos:
    
-   iPlayerId = self.get_id()
-   iPlayerPed = self.get_ped()
+   iPlayerId = player.get_id()
    uModel = rage.gameplay.get_hash_key("s_f_y_hooker_02")
 
    for i=1,50 do 
@@ -11010,6 +11009,7 @@ Sets the model for a specific player.
 
    if rage.streaming.has_model_loaded(uModel) then
       rage.player.set_player_model(iPlayerId, uModel)
+      iPlayerPed = player.get_ped()
       rage.ped.set_ped_default_component_variation(iPlayerPed)
       system.wait()
       rage.streaming.set_model_as_no_longer_needed(uModel)
