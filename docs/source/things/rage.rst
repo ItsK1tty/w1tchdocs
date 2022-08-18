@@ -1,6 +1,12 @@
 WIP New RAGE API
 =======================
 
+.. warning::
+
+    THIS IS A WORK IN PROGRESS!
+
+    Some (most of them) functions descriptions can be incomplete, show incorrectly, etc. as they were generated automatically. The work continues.
+
 .. _rage_system:
 
 System namespace
@@ -4504,11 +4510,9 @@ AUDIO::START_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);
 First parameter (char) is the name of the alarm.
 Second parameter (bool) is unknown, it does not seem to make a difference if this one is 0 or 1.
 
-----------
 
 It DOES make a difference but it has to do with the duration or something I dunno yet
 
-----------
 
  Found in the b617d scripts:
 
@@ -4778,14 +4782,10 @@ Possible flag names:
 "WantedMusicDisabled"
 "WantedMusicOnMission"
 
--------------------------------
+
 No added flag names between b393d and b573d, including b573d.
 
-#######################################################################
-
 "IsDirectorModeActive" is an audio flag which will allow you to play speech infinitely without any pauses like in Director Mode.
-
------------------------------------------------------------------------
 
 All flag IDs and hashes:
 
@@ -5159,7 +5159,6 @@ BRAIN::ADD_SCRIPT_TO_RANDOM_PED("pb_prostitute", ${s_f_y_hooker_01}, 100, 0);
 
 - Nacorpio
 
------
 
 Hardcoded to not work in Multiplayer.
 
@@ -5366,13 +5365,13 @@ create_cam_with_params(``camName``, ``posX``, ``posY``, ``posZ``, ``rotX``, ``ro
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 camName is always set to "DEFAULT_SCRIPTED_CAMERA" in Rockstar's scripts.
-------------
+
 Camera names found in the b617d scripts:
 "DEFAULT_ANIMATED_CAMERA"
 "DEFAULT_SCRIPTED_CAMERA"
 "DEFAULT_SCRIPTED_FLY_CAMERA"
 "DEFAULT_SPLINE_CAMERA"
-------------
+
 Side Note: It seems p8 is basically to represent what would be the bool p1 within CREATE_CAM native. As well as the p9 since it's always 2 in scripts seems to represent what would be the last param within SET_CAM_ROT native which normally would be 2.
 
 **Parameters:**
@@ -5707,7 +5706,6 @@ set_cam_fov(``cam``, ``fieldOfView``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sets the field of view of the cam.
----------------------------------------------
 Min: 1.0f
 Max: 130.0f
 
@@ -11518,13 +11516,13 @@ get_entity_speed(``entity``)
 
 result is in meters per second
 
-------------------------------------------------------------
+
 So would the conversion to mph and km/h, be along the lines of this.
 
 float speed = GET_ENTITY_SPEED(veh);
 float kmh = (speed * 3.6);
 float mph = (speed * 2.236936);
-------------------------------------------------------------
+
 
 **Parameters:**
 
@@ -13303,7 +13301,6 @@ set_entity_proofs(``entity``, ``bulletProof``, ``fireProof``, ``explosionProof``
 Enable / disable each type of damage.
 
 Can't get drownProof to work.
---------------
 p7 is to to '1' in am_mp_property_ext/int: entity::set_entity_proofs(uParam0->f_19, true, true, true, true, true, true, 1, true);
 
 
@@ -15489,7 +15486,7 @@ draw_line(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``, ``red``, ``green``, ``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Draws a depth-tested line from one point to another.
-----------------
+
 x1, y1, z1 : Coordinates for the first point
 x2, y2, z2 : Coordinates for the second point
 r, g, b, alpha : Color with RGBA-Values
@@ -15528,7 +15525,7 @@ draw_poly(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``, ``x3``, ``y3``, ``z3``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 x/y/z - Location of a vertex (in world coords), presumably.
-----------------
+
 x1, y1, z1     : Coordinates for the first point
 x2, y2, z2     : Coordinates for the second point
 x3, y3, z3     : Coordinates for the third point
@@ -15662,7 +15659,7 @@ x,y,z = start pos
 x2,y2,z2 = end pos
 
 Draw's a 3D Box between the two x,y,z coords.
---------------
+
 Keep in mind that the edges of the box do only align to the worlds base-vectors. Therefore something like rotation cannot be applied. That means this function is pretty much useless, unless you want a static unicolor box somewhere.
 I recommend using a predefined function to call this.
 [VB.NET]
@@ -16308,32 +16305,32 @@ Parameters:
 * reserved - Special parameter, see below for details. Usually set to 0 in the scripts.
 
 Checkpoint types:
-0-4---------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
-5-9---------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
-10-14-------Ring: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
-15-19-------1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker      
-20-24-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker 
-25-29-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker    
-30-34-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker 
-35-38-------Ring: Airplane Up, Left, Right, UpsideDown
-39----------?
-40----------Ring: just a ring
-41----------?
-42-44-------Cylinder w/ number (uses 'reserved' parameter)
-45-47-------Cylinder no arrow or number
+0-4 -- Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
+5-9 -- Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
+10-14 -- Ring: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
+15-19 -- 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker      
+20-24 -- Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker 
+25-29 -- Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker    
+30-34 -- Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker 
+35-38 -- Ring: Airplane Up, Left, Right, UpsideDown
+39 -- ?
+40 -- Ring: just a ring
+41 -- ?
+42-44 -- Cylinder w/ number (uses 'reserved' parameter)
+45-47 -- Cylinder no arrow or number
 
 If using type 42-44, reserved sets number / number and shape to display
 
-0-99------------Just numbers (0-99)
-100-109-----------------Arrow (0-9)
-110-119------------Two arrows (0-9)
-120-129----------Three arrows (0-9)
-130-139----------------Circle (0-9)
-140-149------------CycleArrow (0-9)
-150-159----------------Circle (0-9)
-160-169----Circle  w/ pointer (0-9)
-170-179-------Perforated ring (0-9)
-180-189----------------Sphere (0-9)
+0-99 -- Just numbers (0-99)
+100-109 -- Arrow (0-9)
+110-119 -- Two arrows (0-9)
+120-129 -- Three arrows (0-9)
+130-139 -- Circle (0-9)
+140-149 -- CycleArrow (0-9)
+150-159 -- Circle (0-9)
+160-169 -- Circle  w/ pointer (0-9)
+170-179 -- Perforated ring (0-9)
+180-189 -- Sphere (0-9)
 
 **Parameters:**
 
@@ -18309,7 +18306,6 @@ Axis - Invert Axis Flags
 Full list of particle effect dictionaries and effects by DurtyFree: https://github.com/DurtyFree/gta-v-data-dumps/blob/master/particleEffectsCompact.json
 
 
--------------------------------------------------------------------
 C#
 
 Function.Call<int>(Hash.START_PARTICLE_FX_NON_LOOPED_AT_COORD, = you are calling this function.
@@ -23555,7 +23551,7 @@ replace_hud_colour(``hudColorIndex``, ``hudColorIndex2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 HUD colors and their values: pastebin.com/d9aHPbXN
---------------------------------------------------
+
 makes hudColorIndex2 color into hudColorIndex color
 
 **Parameters:**
@@ -25101,7 +25097,7 @@ if (HUD::DOES_BLIP_EXIST(b)) HUD::REMOVE_BLIP(&b);
 doesn't work. And yes, doesn't work without the DOES_BLIP_EXIST check either. Also, if you attach multiple blips to the same thing (say, a vehicle), and that thing disappears, the blips randomly attach to other things (in my case, a vehicle).
 
 Thus for me, HUD::REMOVE_BLIP(&b) only works if there's one blip, (in my case) the vehicle is marked as no longer needed, you drive away from it and it eventually despawns, AND there is only one blip attached to it. I never intentionally attach multiple blips but if the user saves the car, this adds a blip. Then if they delete it, it is supposed to remove the blip, but it doesn't. Then they can immediately save it again, causing another blip to re-appear.
--------------
+
 
 Passing the address of the variable instead of the value works for me.
 e.g.
@@ -25940,8 +25936,8 @@ Examples:
 "LETTERS_HELP2"
 "Dummy"
 
-**The bool appears to always be false (if it even is a bool, as it's represented by a zero)**
---------
+The bool appears to always be false (if it even is a bool, as it's represented by a zero)
+
 p1 doesn't seem to make a difference, regardless of the state it's in. 
 
 
@@ -34921,11 +34917,11 @@ network_refund_cash(``index``, ``context``, ``reason``, ``unk``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 index
--------
+
 See function sub_1005 in am_boat_taxi.ysc
 
 context
-----------
+
 "BACKUP_VAGOS"
 "BACKUP_LOST"
 "BACKUP_FAMILIES"
@@ -34941,7 +34937,7 @@ context
 "DEFAULT"
 
 reason
----------
+
 "NOTREACHTARGET"
 "TARGET_ESCAPE"
 "DELIVERY_FAIL"
@@ -34951,12 +34947,6 @@ reason
 "RECEIVE_LJ_L"
 "CHALLENGE_PLAYER_LEFT"
 "DEFAULT"
-
-unk
------
-Unknown bool value
-
-
 
 **Parameters:**
 
@@ -51056,7 +51046,6 @@ locked is 0 if no door is found
 locked is 0 if door is unlocked
 locked is 1 if door is found and unlocked.
 
--------------
 the locked bool is either 0(unlocked)(false) or 1(locked)(true)
 
 **Parameters:**
@@ -53724,7 +53713,7 @@ get_closest_vehicle_node(``x``, ``y``, ``z``, ``nodeType``, ``p5``, ``p6``)
 
 FYI: When falling through the map (or however you got under it) you will respawn when your player ped's height is <= -200.0 meters (I think you all know this) and when in a vehicle you will actually respawn at the closest vehicle node.
 
-----------
+
 
 Vector3 nodePos;
 GET_CLOSEST_VEHICLE_NODE(x,y,z,&nodePos,...)
@@ -53791,7 +53780,6 @@ ENTITY::SET_ENTITY_HEADING(playerVeh, roadHeading);
 ENTITY::SET_ENTITY_COORDS(playerVeh, closestVehicleNodeCoords.x, closestVehicleNodeCoords.y, closestVehicleNodeCoords.z, 1, 0, 0, 1);
 VEHICLE::SET_VEHICLE_ON_GROUND_PROPERLY(playerVeh);
 
-------------------------------------------------------------------
 C# Example (ins1de) : pastebin.com/fxtMWAHD
 
 **Parameters:**
@@ -55755,7 +55743,7 @@ set_ped_money(``ped``, ``amount``)
 
 Maximum possible amount of money on MP is 2000. ~JX
 
------------------------------------------------------------------------------
+
 
 Maximum amount that a ped can theoretically have is 65535 (0xFFFF) since the amount is stored as an unsigned short (uint16_t) value.
 
@@ -57655,7 +57643,7 @@ p1 probably refers to the attributes configured in combatbehavior.meta. There ar
 <TriggerChargeTime_Near value="4.0"/>
 <TriggerChargeTime_Far value="10.0"/>
 
--------------Confirmed by editing combatbehavior.meta:
+Confirmed by editing combatbehavior.meta:
 p1:
 0=BlindFireChance
 1=BurstDurationInCover
@@ -58929,7 +58917,7 @@ Ids
 4 - Legs
 5 - Hands
 6 - Foot
-7 - ------
+7 - unknown
 8 - Accessories 1
 9 - Accessories 2
 10- Decals
@@ -60142,7 +60130,7 @@ SWAT = 27
 Animal = 28
 Army = 29
 
-------------------
+
 P4 P5 P7 P8
 1  0  x  x  = return nearest walking Ped
 1  x  0  x  = return nearest walking Ped
@@ -60491,7 +60479,7 @@ Works for both player and peds, but some flags don't seem to work for the player
 2 - Blocks ragdolling when hit by a vehicle. The ped still might play a falling animation.
 4 - Blocks ragdolling when set on fire.
 
------------------------------------------------------------------------
+
 
 There seem to be 26 flags
 
@@ -64367,13 +64355,12 @@ ignore - ped type to ignore
 
 Return value is the number of peds found and added to the array passed.
 
------------------------------------
+
 
 To make this work in most menu bases at least in C++ do it like so,
 
  Formatted Example: pastebin.com/D8an9wwp
 
------------------------------------
 
 Example: gtaforums.com/topic/789788-function-args-to-pedget-ped-nearby-peds/?p=1067386687
 
@@ -66586,11 +66573,10 @@ From am_armybase.ysc.c4:
 
 PLAYER::REPORT_CRIME(PLAYER::PLAYER_ID(4), 36, PLAYER::GET_WANTED_LEVEL_THRESHOLD(4));
 
------
+
 
 This was taken from the GTAV.exe v1.334. The function is called sub_140592CE8. For a full decompilation of the function, see here: pastebin.com/09qSMsN7 
 
------
 crimeType:
 1: Firearms possession
 2: Person running a red light ("5-0-5")
@@ -67175,7 +67161,7 @@ int_to_participantindex(``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).
---------------------------------------------------------
+
 if (NETWORK::NETWORK_IS_PARTICIPANT_ACTIVE(PLAYER::INT_TO_PARTICIPANTINDEX(i)))
 
 
@@ -76908,8 +76894,6 @@ enum ePlayerSwitchTypes
 
 Use GET_IDEAL_PLAYER_SWITCH_TYPE for the best switch type.
 
-----------------------------------------------------
-
 Examples from the decompiled scripts:
 
 STREAMING::START_PLAYER_SWITCH(l_832._f3, PLAYER::PLAYER_PED_ID(), 0, 3);
@@ -77857,7 +77841,6 @@ task_vehicle_drive_to_coord(``ped``, ``vehicle``, ``x``, ``y``, ``z``, ``speed``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 info about driving modes: HTTP://gtaforums.com/topic/822314-guide-driving-styles/
----------------------------------------------------------------
 Passing P6 value as floating value didn't throw any errors, though unsure what is it exactly, looks like radius or something.
 
 P10 though, it is mentioned as float, however, I used bool and set it to true, that too worked.
@@ -78604,13 +78587,10 @@ task_play_anim(``ped``, ``animDictionary``, ``animationName``, ``blendInSpeed``,
 Full list of animation dictionaries and anims by DurtyFree: https://github.com/DurtyFree/gta-v-data-dumps/blob/master/animDictsCompact.json
 
 float speed > normal speed is 8.0f
-----------------------
 
 float speedMultiplier > multiply the playback speed
-----------------------
 
 int duration: time in millisecond
-----------------------
 -1 _ _ _ _ _ _ _> Default (see flag)
 0 _ _ _ _ _ _ _ > Not play at all
 Small value _ _ > Slow down animation speed
@@ -78619,7 +78599,6 @@ _ _ _ _ _ _ _ _ _ passed. (No effect if flag is set to be
 _ _ _ _ _ _ _ _ _ controllable.)
 
 int flag:
-----------------------
 enum eAnimationFlags
 {
  ANIM_FLAG_NORMAL = 0,
@@ -80372,7 +80351,7 @@ task_warp_ped_into_vehicle(``ped``, ``vehicle``, ``seat``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Seat Numbers
--------------------------------
+
 Driver = -1
 Any = -2
 Left-Rear = 1
@@ -81228,7 +81207,6 @@ Plays a scenario on a Ped at their current location.
 unkDelay - Usually 0 or -1, doesn't seem to have any effect. Might be a delay between sequences.
 playEnterAnim - Plays the "Enter" anim if true, otherwise plays the "Exit" anim. Scenarios that don't have any "Enter" anims won't play if this is set to true.
 
-----
 
 From "am_hold_up.ysc.c4" at line 339:
 
@@ -81240,7 +81218,7 @@ WORLD_HUMAN_HANG_OUT_STREET
 WORLD_HUMAN_STAND_MOBILE
 
 This makes sense, as these are what I commonly see when going by a liquor store.
--------------------------
+
 List of scenarioNames: pastebin.com/6mrYTdQv
 (^ Thank you so fucking much for this)
 
@@ -81286,7 +81264,6 @@ task_start_scenario_at_position(``ped``, ``scenarioName``, ``x``, ``y``, ``z``, 
 Full list of ped scenarios by DurtyFree: https://github.com/DurtyFree/gta-v-data-dumps/blob/master/scenariosCompact.json
 
 Also a few more listed at TASK::TASK_START_SCENARIO_IN_PLACE just above.
----------------
 The first parameter in every scenario has always been a Ped of some sort. The second like TASK_START_SCENARIO_IN_PLACE is the name of the scenario. 
 
 The next 4 parameters were harder to decipher. After viewing "hairdo_shop_mp.ysc.c4", and being confused from seeing the case in other scripts, they passed the first three of the arguments as one array from a function, and it looked like it was obviously x, y, and z.
@@ -81866,10 +81843,9 @@ task_throw_projectile(``ped``, ``x``, ``y``, ``z``, ``p4``, ``p5``)
 In every case of this native, I've only seen the first parameter passed as 0, although I believe it's a Ped after seeing tasks around it using 0. That's because it's used in a Sequence Task.
 
 The last 3 parameters are definitely coordinates after seeing them passed in other scripts, and even being used straight from the player's coordinates.
----
 It seems that - in the decompiled scripts - this native was used on a ped who was in a vehicle to throw a projectile out the window at the player. This is something any ped will naturally do if they have a throwable and they are doing driveby-combat (although not very accurately).
 It is possible, however, that this is how SWAT throws smoke grenades at the player when in cover.
-----------------------------------------------------
+
 The first comment is right it definately is the ped as if you look in script finale_heist2b.c line 59628 in Xbox Scripts atleast you will see task_throw_projectile and the first param is Local_559[2 <14>] if you look above it a little bit line 59622 give_weapon_to_ped uses the same exact param Local_559[2 <14>] and we all know the first param of that native is ped. So it guaranteed has to be ped. 0 just may mean to use your ped by default for some reason.
 
 **Parameters:**
@@ -81907,8 +81883,6 @@ task_reload_weapon(``ped``, ``unused``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The 2nd param (unused) is not implemented.
-
------------------------------------------------------------------------
 
 The only occurrence I found in a R* script ("assassin_construction.ysc.c4"):
 
@@ -84700,7 +84674,7 @@ set_vehicle_colours(``vehicle``, ``colorPrimary``, ``colorSecondary``)
 
 colorPrimary & colorSecondary are the paint index for the vehicle.
 For a list of valid paint indexes, view: pastebin.com/pwHci0xK
--------------------------------------------------------------------------
+
 Use this to get the number of color indices: pastebin.com/RQEeqTSM
 Note: minimum color index is 0, maximum color index is (numColorIndices - 1)
 
@@ -87035,7 +87009,6 @@ At exactly 16384 which is 0100000000000000 in binary and 4000 in hexadecimal onl
 
 It's probably more convenient to use worldGetAllVehicles(int *arr, int arrSize) and check the shortest distance yourself and sort if you want by checking the vehicle type with for example VEHICLE::IS_THIS_MODEL_A_BOAT
 
--------------------------------------------------------------------------
 
 Conclusion: This native is not worth trying to use. Use something like this instead: pastebin.com/xiFdXa7h
 
@@ -88305,11 +88278,10 @@ set_vehicle_extra(``vehicle``, ``extraId``, ``disable``)
 Note: only some vehicle have extras
 extra ids are from 1 - 9 depending on the vehicle
 
--------------------------------------------------
+
 
 ^ not sure if outdated or simply wrong. Max extra ID for b944 is 14
 
--------------------------------------------------
 p2 is not a on/off toggle. mostly 0 means on and 1 means off.
 not sure if it really should be a BOOL.
 
@@ -88557,7 +88529,7 @@ set_vehicle_engine_health(``vehicle``, ``health``)
 Begins leaking gas at around 650 health
 -999.90002441406 appears to be minimum health, although nothing special occurs <- false statement
 
--------------------------
+
 Minimum: -4000
 Maximum: 1000
 
@@ -88809,9 +88781,9 @@ get_display_name_from_vehicle_model(``modelHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns model name of vehicle in all caps. Needs to be displayed through localizing text natives to get proper display name.
------------------------------------------------------------------------------------------------------------------------------------------
+
 While often the case, this does not simply return the model name of the vehicle (which could be hashed to return the model hash). Variations of the same vehicle may also use the same display name.
------------------------------------------------------------------------------------------------------------------------------------------
+
 
 Returns "CARNOTFOUND" if the hash doesn't match a vehicle hash.
 
@@ -88851,7 +88823,7 @@ The only example I can find of this function in the scripts, is this:
 
 struct _s = VEHICLE::GET_VEHICLE_DEFORMATION_AT_POS(rPtr((A_0) + 4), 1.21f, 6.15f, 0.3f);
 
------------------------------------------------------------------------------------------------------------------------------------------
+
 PC scripts:
 
 v_5/*{3}*/ = VEHICLE::GET_VEHICLE_DEFORMATION_AT_POS(a_0._f1, 1.21, 6.15, 0.3);
@@ -95404,7 +95376,6 @@ Returns the hash of the weapon.
 
 Also see WEAPON::GET_CURRENT_PED_WEAPON. Difference?
 
--------------------------------------------------------------------------
 
 The difference is that GET_SELECTED_PED_WEAPON simply returns the ped's current weapon hash but GET_CURRENT_PED_WEAPON also checks the weapon object and returns true if the hash of the weapon object equals the weapon hash
 Full list of weapons by DurtyFree: https://github.com/DurtyFree/gta-v-data-dumps/blob/master/weapons.json
