@@ -78885,7 +78885,6 @@ task_play_phone_gesture_animation(``ped``, ``animDict``, ``animation``, ``boneMa
 Example from the scripts:
 TASK::TASK_PLAY_PHONE_GESTURE_ANIMATION(PLAYER::PLAYER_PED_ID(), v_3, v_2, v_4, 0.25, 0.25, 0, 0);
 
-=========================================================
 ^^ No offense, but Idk how that would really help anyone.
 
 As for the animDict & animation, they're both store in a global in all 5 scripts. So if anyone would be so kind as to read that global and comment what strings they use. Thanks.
@@ -78902,7 +78901,6 @@ p6 known args - 1 if a global if check is passed.
 p7 known args - 1 if a global if check is passed.
 
 The values found above, I found within the 5 scripts this is ever called in. (fmmc_launcher, fm_deathmatch_controller, fm_impromptu_dm_controller, fm_mission_controller, and freemode).
-=========================================================
 
 Full list of animation dictionaries and anims by DurtyFree: https://github.com/DurtyFree/gta-v-data-dumps/blob/master/animDictsCompact.json
 
