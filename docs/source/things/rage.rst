@@ -411,8 +411,8 @@ vdist(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``)
 
 Calculates distance between vectors.
 
-.. image:: 3d_distance.png
-   :target: 3d_distance.png
+.. image:: 3d_distance.jpg
+   :target: 3d_distance.jpg
 
 .. math::
 
@@ -446,8 +446,8 @@ vdist2(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``)
 
 Calculates distance between vectors but does not perform Sqrt operations. Faster than ``vdist``.
 
-.. image:: 3d_distance.png
-   :target: 3d_distance.png
+.. image:: 3d_distance.jpg
+   :target: 3d_distance.jpg
 
 .. math::
    
