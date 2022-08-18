@@ -19,7 +19,7 @@ Special thanks to:
 * MrDario
 * Chiya
 * Antrix
-* DurtyFree for GTA V Dump data
+* DurtyFree for some useful parts of GTA V Dump data
 
 This wouldn't have been possible without you!
 
