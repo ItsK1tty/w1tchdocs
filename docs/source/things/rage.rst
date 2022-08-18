@@ -273,7 +273,7 @@ Get the square root of ``value``.
 
 .. math::
    
-   sqrt(x) = sqrt{x}
+   y = \sqrt{x}
 
 **Parameters:**
 
@@ -355,7 +355,7 @@ Calculates the magnitude of a vector.
 
 .. math::
    
-   vmag(x, y, z) = sqrt{x^2 + y^2 + z^2}
+   vmag(x, y, z) = \sqrt{x^2 + y^2 + z^2}
 
 **Parameters:**
 

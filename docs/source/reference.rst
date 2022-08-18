@@ -658,7 +658,7 @@ Disconnects a script event listener for a certain task.
 ================================
 
 add_script_event(``name``, ``eventId``, ``args`` = ``{}``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Add a script event into the protection blacklist.
 
@@ -10849,8 +10849,8 @@ Returns the team ID the player is member of. Almost like :ref:`lobby_get_player_
 
 ================================
 
-get_player_wanted_level1(``player``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+get_player_wanted_level(``player``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Returns the player's wanted level.
 
@@ -20331,7 +20331,7 @@ Loads the specified cloud hat.
 ================================
 
 unload_cloud_hat(``name``, ``p1``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Unloads the specified cloud hat.
 
@@ -22037,7 +22037,7 @@ Pass a string param to scaleform. The scaleform should be initialized already.
 ================================
 
 set_checkpoint_cylinder_height(``checkpoint``, ``nearHeight``, ``farHeight``, ``radius``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Set the height of the cylindrical checkpoint.
 
