@@ -3,6 +3,10 @@ DIS2RBED LUA reference
 
 There are multiple namespaces & types in the current DIS2RBED LUA framework, each with their own set of functions.
 
+.. note::
+
+   New, WIP Rage API Documentation is available here: :doc:`things/rage`
+
 .. _lua_types:
 
 Types in the LUA Engine
