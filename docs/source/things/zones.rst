@@ -7488,7 +7488,7 @@ Area #1
 IsHeistZone
 ------------
 
-Island
+No Display Name
 
 
 ===================

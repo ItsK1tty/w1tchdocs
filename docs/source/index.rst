@@ -34,7 +34,9 @@ To install code snippets, drop the file into the ``C:\Users\%username%\AppData\R
 
 Dear other mod menus,
 
-If you plan on stealing this documentation for yourselves, please give us some credits! We've put efforts in this!
+If you plan on stealing this documentation for yourselves, please give us some credit! We've put efforts in this!
+
+====================================================
 
 Contents
 --------
