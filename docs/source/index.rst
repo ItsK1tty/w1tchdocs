@@ -48,7 +48,7 @@ Contents
    generalinfo
    gettingstarted
    reference
-   things/rage
+   rage
 
 .. toctree::
    :glob:

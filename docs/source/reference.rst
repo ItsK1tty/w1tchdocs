@@ -5,7 +5,7 @@ There are multiple namespaces & types in the current DIS2RBED LUA framework, eac
 
 .. note::
 
-   New, WIP Rage API Documentation is available here: :doc:`things/rage`
+   New, WIP Rage API Documentation is available here: :doc:`rage`
 
 .. _lua_types:
 
