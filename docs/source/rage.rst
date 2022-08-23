@@ -10872,28 +10872,107 @@ Documentation for the dlc namespace.
 is_dlc_present(``dlcHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Example:
-DLC::IS_DLC_PRESENT($\mpbusiness2\);
-($ = gethashkey)
-
-bruteforce these:
-0xB119F6D
-0x96F02EE6
+Checks whether the specified dlc is installed.
 
 **Parameters:**
 
 * ``dlcHash`` (``Hash``)
 
+  * ``mpairraces``
+  * ``mpapartment``
+  * ``mpassault``
+  * ``mpbattle``
+  * ``mpbiker``
+  * ``mpbeach``
+  * ``mpbusiness``
+  * ``mpbusiness2``
+  * ``mpchristmas``
+  * ``mpchristmas2``
+  * ``mpchristmas2017``
+  * ``mpchristmas2018``
+  * ``mpexecutive``
+  * ``mpg9ec``
+  * ``mpgunrunning``
+  * ``mphalloween``
+  * ``mpheist``
+  * ``mpheist3``
+  * ``mpheist4``
+  * ``mphipster``
+  * ``mpimportexport``
+  * ``mpindependence``
+  * ``mpjanuary2016``
+  * ``mplowrider``
+  * ``mplowrider2``
+  * ``mpluxe``
+  * ``mpluxe2``
+  * ``mplts``
+  * ``mppatchesng``
+  * ``mppilot``
+  * ``mpreplay``
+  * ``mpsecurity``
+  * ``mpsmuggler``
+  * ``mpspecialraces``
+  * ``mpstunt``
+  * ``mpsum``
+  * ``mpsum2``
+  * ``mpsum2_g9ec``
+  * ``mptuner``
+  * ``mpvalentines2``
+  * ``mpvinewood``
+  * ``mpvalentines``
+  * ``mpxmas_604490``
+  * ``patchday1ng``
+  * ``patchday2bng``
+  * ``patchday2ng``
+  * ``patchday3ng``
+  * ``patchday4ng``
+  * ``patchday5ng``
+  * ``patchday6ng``
+  * ``patchday7ng``
+  * ``patchday8ng``
+  * ``patchday9ng``
+  * ``patchday10ng``
+  * ``patchday11ng``
+  * ``patchday12ng``
+  * ``patchday13ng``
+  * ``patchday14ng``
+  * ``patchday15ng``
+  * ``patchday16ng``
+  * ``patchday17ng``
+  * ``patchday18ng``
+  * ``patchday19ng``
+  * ``patchday20ng``
+  * ``patchday21ng``
+  * ``patchday22ng``
+  * ``patchday23ng``
+  * ``patchday24ng``
+  * ``patchday25ng``
+  * ``patchday26ng``
+  * ``patchday27g9ecng``
+  * ``patchday27ng``
+  * ``patchdayg9ecng``
+  * ``spupgrades``
+  
 **Returns:**
 
 * ``bool``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   bIsPresent = rage.dlc.is_dlc_present("mpgunrunning")
+   if bIsPresent then
+       system.log_debug("DLC is present")
+   end
 
 ================================
 
 get_extra_content_pack_has_been_installed_()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-No documentation found for this native.
+Not sure what this does. Checks whether the starter pack is bought, maybe?
 
 **Parameters:**
 
@@ -10902,13 +10981,24 @@ No documentation found for this native.
 **Returns:**
 
 * ``bool``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   bIsInstalled = rage.dlc.get_extra_content_pack_has_been_installed_()
+   if bIsPresent then
+       system.log_debug("Content pack is present")
+   end
+
 
 ================================
 
 get_is_loading_screen_active()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-No documentation found for this native.
+Checks whether the loading screen is active.
 
 **Parameters:**
 
@@ -10917,6 +11007,16 @@ No documentation found for this native.
 **Returns:**
 
 * ``bool``
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   bIsActive = rage.dlc.get_is_loading_screen_active()
+   if bIsActive then
+       system.log_debug("Loading screen is active")
+   end
 
 ================================
 
