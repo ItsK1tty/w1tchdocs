@@ -2170,7 +2170,7 @@ Yes
 
 ================================
 
-set_ambient_voice_name_hash_(``ped``, ``hash``)
+set_ambient_voice_name_hash(``ped``, ``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -2186,7 +2186,7 @@ No documentation found for this native.
 
 ================================
 
-get_ambient_voice_name_hash_(``ped``)
+get_ambient_voice_name_hash(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -2201,7 +2201,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_scream_(``ped``)
+set_ped_scream(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -2216,7 +2216,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_voice_group_(``ped``, ``voiceGroupHash``)
+set_ped_voice_group(``ped``, ``voiceGroupHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -2232,7 +2232,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_audio_gender_(``ped``, ``p1``)
+set_ped_audio_gender(``ped``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -2623,7 +2623,7 @@ An older list including hidden radio stations: https://pastebin.com/Kj9t38KF
 
 ================================
 
-set_veh_has_radio_override_(``vehicle``)
+set_veh_has_radio_override(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -2638,7 +2638,7 @@ No documentation found for this native.
 
 ================================
 
-is_vehicle_radio_enabled_(``vehicle``)
+is_vehicle_radio_enabled(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -2690,7 +2690,7 @@ Full list of static emitters by DurtyFree: https://github.com/DurtyFree/gta-v-da
 
 ================================
 
-link_static_emitter_to_entity_(``emitterName``, ``entity``)
+link_static_emitter_to_entity(``emitterName``, ``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -2905,7 +2905,7 @@ AUDIO::SET_RADIO_TRACK("RADIO_03_HIPHOP_NEW", "ARM1_RADIO_STARTS");
 
 ================================
 
-set_radio_track_mix_(``radioStationName``, ``mixName``, ``p2``)
+set_radio_track_mix(``radioStationName``, ``mixName``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -3139,7 +3139,7 @@ AUDIO::UNLOCK_RADIO_STATION_TRACK_LIST("RADIO_16_SILVERLAKE", "MIRRORPARK_LOCKED
 
 ================================
 
-lock_radio_station_track_list_(``radioStation``, ``trackListName``)
+lock_radio_station_track_list(``radioStation``, ``trackListName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -3155,7 +3155,7 @@ No documentation found for this native.
 
 ================================
 
-update_lsur_(``enableMixes``)
+update_lsur(``enableMixes``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -3170,7 +3170,7 @@ No documentation found for this native.
 
 ================================
 
-lock_radio_station_(``radioStationName``, ``toggle``)
+lock_radio_station(``radioStationName``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -3186,7 +3186,7 @@ No documentation found for this native.
 
 ================================
 
-set_radio_station_is_visible_(``radioStation``, ``toggle``)
+set_radio_station_is_visible(``radioStation``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -3202,7 +3202,7 @@ No documentation found for this native.
 
 ================================
 
-force_radio_track_list_position_(``radioStation``, ``trackListName``, ``milliseconds``)
+force_radio_track_list_position(``radioStation``, ``trackListName``, ``milliseconds``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -3219,7 +3219,7 @@ No documentation found for this native.
 
 ================================
 
-get_current_radio_station_hash_(``radioStationName``)
+get_current_radio_station_hash(``radioStationName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -3408,7 +3408,7 @@ Full list of police report names by DurtyFree https://github.com/DurtyFree/gta-v
 
 ================================
 
-cancel_current_police_report_()
+cancel_current_police_report()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -3734,7 +3734,7 @@ No documentation found for this native.
 
 ================================
 
-set_siren_keep_on_(``vehicle``, ``toggle``)
+set_siren_keep_on(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -3750,7 +3750,7 @@ No documentation found for this native.
 
 ================================
 
-trigger_siren_(``vehicle``)
+trigger_siren(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -3844,7 +3844,7 @@ No documentation found for this native.
 
 ================================
 
-force_vehicle_engine_audio_(``vehicle``, ``audioName``)
+force_vehicle_engine_audio(``vehicle``, ``audioName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -3860,7 +3860,7 @@ No documentation found for this native.
 
 ================================
 
-preload_vehicle_audio_(``vehicleModel``)
+preload_vehicle_audio(``vehicleModel``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -3892,7 +3892,7 @@ No documentation found for this native.
 
 ================================
 
-reset_vehicle_startup_rev_sound_(``vehicle``)
+reset_vehicle_startup_rev_sound(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -4310,7 +4310,7 @@ No documentation found for this native.
 
 ================================
 
-audio_is_scripted_music_playing_2_()
+audio_is_scripted_music_playing_2()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -4651,7 +4651,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_audio_footstep_loud_(``ped``, ``toggle``)
+set_ped_audio_footstep_loud(``ped``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -4667,7 +4667,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_audio_footstep_quiet_(``ped``, ``toggle``)
+set_ped_audio_footstep_quiet(``ped``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -4699,7 +4699,7 @@ Sets audio flag "OverridePlayerGroundMaterial"
 
 ================================
 
-override_microphone_settings_(``hash``, ``toggle``)
+override_microphone_settings(``hash``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -5089,7 +5089,7 @@ No documentation found for this native.
 
 ================================
 
-has_multiplayer_audio_data_loaded_()
+has_multiplayer_audio_data_loaded()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -5104,7 +5104,7 @@ No documentation found for this native.
 
 ================================
 
-has_multiplayer_audio_data_unloaded_()
+has_multiplayer_audio_data_unloaded()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -5119,7 +5119,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_default_horn_variation_(``vehicle``)
+get_vehicle_default_horn_variation(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -5134,7 +5134,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_horn_variation_(``vehicle``, ``value``)
+set_vehicle_horn_variation(``vehicle``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -5300,7 +5300,7 @@ No documentation found for this native.
 
 ================================
 
-prepare_script_brain_()
+prepare_script_brain()
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -5890,7 +5890,7 @@ No documentation found for this native.
 
 ================================
 
-set_cam_dof_fnumber_of_lens_(``camera``, ``p1``)
+set_cam_dof_fnumber_of_lens(``camera``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -5906,7 +5906,7 @@ No documentation found for this native.
 
 ================================
 
-set_cam_dof_focal_length_multiplier_(``camera``, ``multiplier``)
+set_cam_dof_focal_length_multiplier(``camera``, ``multiplier``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -5922,7 +5922,7 @@ No documentation found for this native.
 
 ================================
 
-set_cam_dof_focus_distance_bias_(``camera``, ``p1``)
+set_cam_dof_focus_distance_bias(``camera``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -5938,7 +5938,7 @@ No documentation found for this native.
 
 ================================
 
-set_cam_dof_max_near_in_focus_distance_(``camera``, ``p1``)
+set_cam_dof_max_near_in_focus_distance(``camera``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -5954,7 +5954,7 @@ No documentation found for this native.
 
 ================================
 
-set_cam_dof_max_near_in_focus_distance_blend_level_(``camera``, ``p1``)
+set_cam_dof_max_near_in_focus_distance_blend_level(``camera``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -6011,7 +6011,7 @@ No documentation found for this native.
 
 ================================
 
-attach_cam_to_ped_bone_2_(``cam``, ``ped``, ``boneIndex``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``)
+attach_cam_to_ped_bone_2(``cam``, ``ped``, ``boneIndex``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -6035,7 +6035,7 @@ No documentation found for this native.
 
 ================================
 
-attach_cam_to_vehicle_bone_(``cam``, ``vehicle``, ``boneIndex``, ``relativeRotation``, ``rotX``, ``rotY``, ``rotZ``, ``offsetX``, ``offsetY``, ``offsetZ``, ``fixedDirection``)
+attach_cam_to_vehicle_bone(``cam``, ``vehicle``, ``boneIndex``, ``relativeRotation``, ``rotX``, ``rotY``, ``rotZ``, ``offsetX``, ``offsetY``, ``offsetZ``, ``fixedDirection``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -6201,7 +6201,7 @@ Rotates the radar to match the camera's Z rotation
 
 ================================
 
-set_cam_smooth_shadows_(``cam``, ``toggle``)
+set_cam_smooth_shadows(``cam``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -6233,7 +6233,7 @@ NOTE: Debugging functions are not present in the retail version of the game.
 
 ================================
 
-get_debug_camera_()
+get_debug_camera()
 ^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -6859,7 +6859,7 @@ No documentation found for this native.
 
 ================================
 
-set_fly_cam_vertical_speed_multiplier_(``cam``, ``p1``, ``p2``, ``p3``)
+set_fly_cam_vertical_speed_multiplier(``cam``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7138,7 +7138,7 @@ This native sets the camera's pitch (rotation on the x-axis).
 
 ================================
 
-set_gameplay_cam_relative_rotation_(``roll``, ``pitch``, ``yaw``)
+set_gameplay_cam_relative_rotation(``roll``, ``pitch``, ``yaw``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7155,7 +7155,7 @@ No documentation found for this native.
 
 ================================
 
-set_gameplay_cam_raw_yaw_(``yaw``)
+set_gameplay_cam_raw_yaw(``yaw``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7170,7 +7170,7 @@ No documentation found for this native.
 
 ================================
 
-set_gameplay_cam_raw_pitch_(``pitch``)
+set_gameplay_cam_raw_pitch(``pitch``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7294,7 +7294,7 @@ Examples when this function will return 0 are:
 
 ================================
 
-enable_crosshair_this_frame_()
+enable_crosshair_this_frame()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7324,7 +7324,7 @@ No documentation found for this native.
 
 ================================
 
-disable_cam_collision_for_entity_(``entity``)
+disable_cam_collision_for_entity(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7410,7 +7410,7 @@ CAM::SET_FOLLOW_PED_CAM_THIS_UPDATE("FOLLOW_PED_SKY_DIVING_CAMERA", 0);
 
 ================================
 
-clamp_gameplay_cam_yaw_(``minimum``, ``maximum``)
+clamp_gameplay_cam_yaw(``minimum``, ``maximum``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7426,7 +7426,7 @@ No documentation found for this native.
 
 ================================
 
-clamp_gameplay_cam_pitch_(``minimum``, ``maximum``)
+clamp_gameplay_cam_pitch(``minimum``, ``maximum``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7442,7 +7442,7 @@ No documentation found for this native.
 
 ================================
 
-animate_gameplay_cam_zoom_(``p0``, ``distance``)
+animate_gameplay_cam_zoom(``p0``, ``distance``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7474,7 +7474,7 @@ Forces gameplay cam to specified vehicle as if you were in it
 
 ================================
 
-disable_first_person_cam_this_frame_()
+disable_first_person_cam_this_frame()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7659,7 +7659,7 @@ context: see _GET_CAM_ACTIVE_VIEW_MODE_CONTEXT
 
 ================================
 
-get_cam_active_view_mode_context_()
+get_cam_active_view_mode_context()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7674,7 +7674,7 @@ No documentation found for this native.
 
 ================================
 
-use_stunt_camera_this_frame_()
+use_stunt_camera_this_frame()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7689,7 +7689,7 @@ No documentation found for this native.
 
 ================================
 
-set_gameplay_cam_hash_(``camName``)
+set_gameplay_cam_hash(``camName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7704,7 +7704,7 @@ No documentation found for this native.
 
 ================================
 
-set_follow_turret_seat_cam_(``seatIndex``)
+set_follow_turret_seat_cam(``seatIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7734,7 +7734,7 @@ No documentation found for this native.
 
 ================================
 
-is_aim_cam_third_person_active_()
+is_aim_cam_third_person_active()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -7809,7 +7809,7 @@ No documentation found for this native.
 
 ================================
 
-set_first_person_cam_pitch_range_(``p0``, ``p1``)
+set_first_person_cam_pitch_range(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -8197,7 +8197,7 @@ No documentation found for this native.
 
 ================================
 
-set_gameplay_hint_anim_offsetx_(``xOffset``)
+set_gameplay_hint_anim_offsetx(``xOffset``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -8212,7 +8212,7 @@ No documentation found for this native.
 
 ================================
 
-set_gameplay_hint_anim_offsety_(``yOffset``)
+set_gameplay_hint_anim_offsety(``yOffset``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -8227,7 +8227,7 @@ No documentation found for this native.
 
 ================================
 
-set_gameplay_hint_anim_closeup_(``toggle``)
+set_gameplay_hint_anim_closeup(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -8335,7 +8335,7 @@ No documentation found for this native.
 
 ================================
 
-disable_vehicle_first_person_cam_this_frame_()
+disable_vehicle_first_person_cam_this_frame()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -8350,7 +8350,7 @@ No documentation found for this native.
 
 ================================
 
-invalidate_vehicle_idle_cam_()
+invalidate_vehicle_idle_cam()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -8395,7 +8395,7 @@ No documentation found for this native.
 
 ================================
 
-is_in_vehicle_cam_disabled_()
+is_in_vehicle_cam_disabled()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -8571,7 +8571,7 @@ No documentation found for this native.
 
 ================================
 
-set_cam_effect_(``p0``)
+set_cam_effect(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -8586,7 +8586,7 @@ No documentation found for this native.
 
 ================================
 
-set_gameplay_cam_vehicle_camera_(``vehicleName``)
+set_gameplay_cam_vehicle_camera(``vehicleName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -8601,7 +8601,7 @@ No documentation found for this native.
 
 ================================
 
-set_gameplay_cam_vehicle_camera_name_(``vehicleModel``)
+set_gameplay_cam_vehicle_camera_name(``vehicleModel``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -8616,7 +8616,7 @@ No documentation found for this native.
 
 ================================
 
-replay_free_cam_get_max_range_()
+replay_free_cam_get_max_range()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -9264,7 +9264,7 @@ Full list of cutscene names by DurtyFree https://github.com/DurtyFree/gta-v-data
 
 ================================
 
-get_cut_file_num_sections_(``cutsceneName``)
+get_cut_file_num_sections(``cutsceneName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -9710,7 +9710,7 @@ Full list of ped components by DurtyFree: https://github.com/DurtyFree/gta-v-dat
 
 ================================
 
-has_cutscene_cut_this_frame_()
+has_cutscene_cut_this_frame()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -10969,7 +10969,7 @@ Checks whether the specified dlc is installed.
 
 ================================
 
-get_extra_content_pack_has_been_installed_()
+get_extra_content_pack_has_been_installed()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Not sure what this does. Checks whether the starter pack is bought, maybe?
@@ -10987,7 +10987,7 @@ Not sure what this does. Checks whether the starter pack is bought, maybe?
 .. code-block:: lua
    :linenos:
 
-   bIsInstalled = rage.dlc.get_extra_content_pack_has_been_installed_()
+   bIsInstalled = rage.dlc.get_extra_content_pack_has_been_installed()
    if bIsPresent then
        system.log_debug("Content pack is present")
    end
@@ -11248,7 +11248,7 @@ There is other codes used for traceType:
 
 ================================
 
-has_entity_clear_los_to_entity_2_(``entity1``, ``entity2``, ``traceType``)
+has_entity_clear_los_to_entity_2(``entity1``, ``entity2``, ``traceType``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -11501,7 +11501,7 @@ Returns the heading of the entity in degrees. Also know as the "Yaw" of an entit
 
 ================================
 
-get_entity_physics_heading_(``entity``)
+get_entity_physics_heading(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -12646,7 +12646,7 @@ fixedRot - if false it ignores entity vector
 
 ================================
 
-attach_entity_bone_to_entity_bone_(``entity1``, ``entity2``, ``boneIndex1``, ``boneIndex2``, ``p4``, ``p5``)
+attach_entity_bone_to_entity_bone(``entity1``, ``entity2``, ``boneIndex1``, ``boneIndex2``, ``p4``, ``p5``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -12666,7 +12666,7 @@ No documentation found for this native.
 
 ================================
 
-attach_entity_bone_to_entity_bone_physically_(``entity1``, ``entity2``, ``boneIndex1``, ``boneIndex2``, ``p4``, ``p5``)
+attach_entity_bone_to_entity_bone_physically(``entity1``, ``entity2``, ``boneIndex1``, ``boneIndex2``, ``p4``, ``p5``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -12870,7 +12870,7 @@ Freezes or unfreezes an entity preventing its coordinates to change by the playe
 
 ================================
 
-set_entity_cleanup_by_engine_(``entity``, ``toggle``)
+set_entity_cleanup_by_engine(``entity``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -13606,7 +13606,7 @@ p7 is to to '1' in am_mp_property_ext/int: entity::set_entity_proofs(uParam0->f_
 
 ================================
 
-get_entity_proofs_(``entity``)
+get_entity_proofs(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -13716,7 +13716,7 @@ Note that the third parameter(denoted as z) is "up and down" with positive numbe
 
 ================================
 
-set_entity_angular_velocity_(``entity``, ``x``, ``y``, ``z``)
+set_entity_angular_velocity(``entity``, ``x``, ``y``, ``z``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -14097,7 +14097,7 @@ p1 always false.
 
 ================================
 
-set_entity_decals_disabled_(``entity``, ``p1``)
+set_entity_decals_disabled(``entity``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -14113,7 +14113,7 @@ No documentation found for this native.
 
 ================================
 
-get_entity_bone_rotation_(``entity``, ``boneIndex``)
+get_entity_bone_rotation(``entity``, ``boneIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -14129,7 +14129,7 @@ No documentation found for this native.
 
 ================================
 
-get_entity_bone_position_2_(``entity``, ``boneIndex``)
+get_entity_bone_position_2(``entity``, ``boneIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -14145,7 +14145,7 @@ No documentation found for this native.
 
 ================================
 
-get_entity_bone_rotation_local_(``entity``, ``boneIndex``)
+get_entity_bone_rotation_local(``entity``, ``boneIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -14161,7 +14161,7 @@ No documentation found for this native.
 
 ================================
 
-get_entity_bone_count_(``entity``)
+get_entity_bone_count(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -14176,7 +14176,7 @@ No documentation found for this native.
 
 ================================
 
-enable_entity_unk_(``entity``)
+enable_entity_unk(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -14191,7 +14191,7 @@ No documentation found for this native.
 
 ================================
 
-get_entity_pickup_(``entity``, ``modelHash``)
+get_entity_pickup(``entity``, ``modelHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -14690,7 +14690,7 @@ No documentation found for this native.
 
 ================================
 
-get_shop_ped_apparel_variant_prop_count_(``propHash``)
+get_shop_ped_apparel_variant_prop_count(``propHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -14721,7 +14721,7 @@ No documentation found for this native.
 
 ================================
 
-get_variant_prop_(``componentHash``, ``variantPropIndex``)
+get_variant_prop(``componentHash``, ``variantPropIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -14995,7 +14995,7 @@ Returns the total number of DLC weapons.
 
 ================================
 
-get_num_dlc_weapons_sp_()
+get_num_dlc_weapons_sp()
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -15047,7 +15047,7 @@ char upperCaseNameLabel[64];
 
 ================================
 
-get_dlc_weapon_data_sp_(``dlcWeaponIndex``)
+get_dlc_weapon_data_sp(``dlcWeaponIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -15077,7 +15077,7 @@ Returns the total number of DLC weapon components.
 
 ================================
 
-get_num_dlc_weapon_components_sp_(``dlcWeaponIndex``)
+get_num_dlc_weapon_components_sp(``dlcWeaponIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -15127,7 +15127,7 @@ char descLabel[64];
 
 ================================
 
-get_dlc_weapon_component_data_sp_(``dlcWeaponIndex``, ``dlcWeapCompIndex``, ``ComponentDataPtr``)
+get_dlc_weapon_component_data_sp(``dlcWeaponIndex``, ``dlcWeapCompIndex``, ``ComponentDataPtr``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -15189,7 +15189,7 @@ No documentation found for this native.
 
 ================================
 
-load_content_change_set_group_(``hash``)
+load_content_change_set_group(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -15204,7 +15204,7 @@ No documentation found for this native.
 
 ================================
 
-unload_content_change_set_group_(``hash``)
+unload_content_change_set_group(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -15327,7 +15327,7 @@ No documentation found for this native.
 
 ================================
 
-set_fire_spread_rate_(``p0``)
+set_fire_spread_rate(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -15514,7 +15514,7 @@ explosionType: See ADD_EXPLOSION.
 
 ================================
 
-get_entity_inside_explosion_sphere_(``explosionType``, ``x``, ``y``, ``z``, ``radius``)
+get_entity_inside_explosion_sphere(``explosionType``, ``x``, ``y``, ``z``, ``radius``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -15852,7 +15852,7 @@ BTW: Intersecting triangles are not supported: They overlap in the order they we
 
 ================================
 
-draw_sprite_poly_(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``, ``x3``, ``y3``, ``z3``, ``red``, ``green``, ``blue``, ``alpha``, ``textureDict``, ``textureName``, ``u1``, ``v1``, ``w1``, ``u2``, ``v2``, ``w2``, ``u3``, ``v3``, ``w3``)
+draw_sprite_poly(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``, ``x3``, ``y3``, ``z3``, ``red``, ``green``, ``blue``, ``alpha``, ``textureDict``, ``textureName``, ``u1``, ``v1``, ``w1``, ``u2``, ``v2``, ``w2``, ``u3``, ``v3``, ``w3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -15890,7 +15890,7 @@ No documentation found for this native.
 
 ================================
 
-draw_sprite_poly_2_(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``, ``x3``, ``y3``, ``z3``, ``red1``, ``green1``, ``blue1``, ``alpha1``, ``red2``, ``green2``, ``blue2``, ``alpha2``, ``red3``, ``green3``, ``blue3``, ``alpha3``, ``textureDict``, ``textureName``, ``u1``, ``v1``, ``w1``, ``u2``, ``v2``, ``w2``, ``u3``, ``v3``, ``w3``)
+draw_sprite_poly_2(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``, ``x3``, ``y3``, ``z3``, ``red1``, ``green1``, ``blue1``, ``alpha1``, ``red2``, ``green2``, ``blue2``, ``alpha2``, ``red3``, ``green3``, ``blue3``, ``alpha3``, ``textureDict``, ``textureName``, ``u1``, ``v1``, ``w1``, ``u2``, ``v2``, ``w2``, ``u3``, ``v3``, ``w3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -16145,7 +16145,7 @@ No documentation found for this native.
 
 ================================
 
-get_status_of_draw_low_quality_photo_(``p0``)
+get_status_of_draw_low_quality_photo(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -16252,7 +16252,7 @@ appcamera, appmedia, and cellphone_controller.
 
 ================================
 
-return_two_(``p0``)
+return_two(``p0``)
 ^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -16267,7 +16267,7 @@ No documentation found for this native.
 
 ================================
 
-draw_light_with_range_and_shadow_(``x``, ``y``, ``z``, ``r``, ``g``, ``b``, ``range``, ``intensity``, ``shadow``)
+draw_light_with_range_and_shadow(``x``, ``y``, ``z``, ``r``, ``g``, ``b``, ``range``, ``intensity``, ``shadow``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -16511,7 +16511,7 @@ GRAPHICS::DRAW_MARKER(2, v.x, v.y, v.z + 2, 0, 0, 0, 0, 180, 0, 2, 2, 2, 255, 12
 
 ================================
 
-draw_marker_2_(``type``, ``posX``, ``posY``, ``posZ``, ``dirX``, ``dirY``, ``dirZ``, ``rotX``, ``rotY``, ``rotZ``, ``scaleX``, ``scaleY``, ``scaleZ``, ``red``, ``green``, ``blue``, ``alpha``, ``bobUpAndDown``, ``faceCamera``, ``p19``, ``rotate``, ``textureDict``, ``textureName``, ``drawOnEnts``, ``p24``, ``p25``)
+draw_marker_2(``type``, ``posX``, ``posY``, ``posZ``, ``dirX``, ``dirY``, ``dirZ``, ``rotX``, ``rotY``, ``rotZ``, ``scaleX``, ``scaleY``, ``scaleZ``, ``red``, ``green``, ``blue``, ``alpha``, ``bobUpAndDown``, ``faceCamera``, ``p19``, ``rotate``, ``textureDict``, ``textureName``, ``drawOnEnts``, ``p24``, ``p25``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -16551,7 +16551,7 @@ No documentation found for this native.
 
 ================================
 
-draw_sphere_(``x``, ``y``, ``z``, ``radius``, ``red``, ``green``, ``blue``, ``alpha``)
+draw_sphere(``x``, ``y``, ``z``, ``radius``, ``red``, ``green``, ``blue``, ``alpha``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -16654,7 +16654,7 @@ No documentation found for this native.
 
 ================================
 
-set_checkpoint_icon_scale_(``checkpoint``, ``scale``)
+set_checkpoint_icon_scale(``checkpoint``, ``scale``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -16968,7 +16968,7 @@ Sets the draw offset/calculated size for SET_SCRIPT_GFX_ALIGN. If using any alig
 
 ================================
 
-get_script_gfx_position_(``x``, ``y``)
+get_script_gfx_position(``x``, ``y``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17040,7 +17040,7 @@ alpha - opacity level
 
 ================================
 
-draw_interactive_sprite_(``textureDict``, ``textureName``, ``screenX``, ``screenY``, ``width``, ``height``, ``heading``, ``red``, ``green``, ``blue``, ``alpha``, ``p11``)
+draw_interactive_sprite(``textureDict``, ``textureName``, ``screenX``, ``screenY``, ``width``, ``height``, ``heading``, ``red``, ``green``, ``blue``, ``alpha``, ``p11``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17066,7 +17066,7 @@ No documentation found for this native.
 
 ================================
 
-draw_sprite_uv_(``textureDict``, ``textureName``, ``x``, ``y``, ``width``, ``height``, ``u1``, ``v1``, ``u2``, ``v2``, ``heading``, ``red``, ``green``, ``blue``, ``alpha``, ``p15``)
+draw_sprite_uv(``textureDict``, ``textureName``, ``x``, ``y``, ``width``, ``height``, ``u1``, ``v1``, ``u2``, ``v2``, ``heading``, ``red``, ``green``, ``blue``, ``alpha``, ``p15``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17201,7 +17201,7 @@ See GRAPHICS::SET_DRAW_ORIGIN(...) for further information.
 
 ================================
 
-set_bink_movie_(``name``)
+set_bink_movie(``name``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17216,7 +17216,7 @@ No documentation found for this native.
 
 ================================
 
-play_bink_movie_(``binkMovie``)
+play_bink_movie(``binkMovie``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17231,7 +17231,7 @@ No documentation found for this native.
 
 ================================
 
-stop_bink_movie_(``binkMovie``)
+stop_bink_movie(``binkMovie``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17246,7 +17246,7 @@ No documentation found for this native.
 
 ================================
 
-release_bink_movie_(``binkMovie``)
+release_bink_movie(``binkMovie``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17261,7 +17261,7 @@ No documentation found for this native.
 
 ================================
 
-draw_bink_movie_(``binkMovie``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``r``, ``g``, ``b``, ``a``)
+draw_bink_movie(``binkMovie``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``r``, ``g``, ``b``, ``a``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17285,7 +17285,7 @@ No documentation found for this native.
 
 ================================
 
-set_bink_movie_time_(``binkMovie``, ``progress``)
+set_bink_movie_time(``binkMovie``, ``progress``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17301,7 +17301,7 @@ No documentation found for this native.
 
 ================================
 
-get_bink_movie_time_(``binkMovie``)
+get_bink_movie_time(``binkMovie``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17316,7 +17316,7 @@ No documentation found for this native.
 
 ================================
 
-set_bink_movie_volume_(``binkMovie``, ``value``)
+set_bink_movie_volume(``binkMovie``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17347,7 +17347,7 @@ Might be more appropriate in AUDIO?
 
 ================================
 
-set_bink_movie_unk_2_(``binkMovie``, ``p1``)
+set_bink_movie_unk_2(``binkMovie``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17378,7 +17378,7 @@ Probably changes tvs from being a 3d audio to being "global" audio
 
 ================================
 
-set_bink_should_skip_(``binkMovie``, ``bShouldSkip``)
+set_bink_should_skip(``binkMovie``, ``bShouldSkip``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17455,7 +17455,7 @@ GET_SCREEN_RESOLUTION(&screenresx,&screenresy);
 
 ================================
 
-get_active_screen_resolution_()
+get_active_screen_resolution()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17470,7 +17470,7 @@ No documentation found for this native.
 
 ================================
 
-get_aspect_ratio_(``b``)
+get_aspect_ratio(``b``)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17669,7 +17669,7 @@ Note: Most texture resolutions are doubled compared to the console version of th
 
 ================================
 
-override_ped_badge_texture_(``ped``, ``txd``, ``txn``)
+override_ped_badge_texture(``ped``, ``txd``, ``txn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17740,7 +17740,7 @@ state: True turns off all artificial light sources in the map: buildings, street
 
 ================================
 
-set_artificial_lights_state_affects_vehicles_(``toggle``)
+set_artificial_lights_state_affects_vehicles(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17819,7 +17819,7 @@ No documentation found for this native.
 
 ================================
 
-grass_lod_shrink_script_areas_(``x``, ``y``, ``z``, ``radius``, ``p4``, ``p5``, ``p6``)
+grass_lod_shrink_script_areas(``x``, ``y``, ``z``, ``radius``, ``p4``, ``p5``, ``p6``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -17840,7 +17840,7 @@ No documentation found for this native.
 
 ================================
 
-grass_lod_reset_script_areas_()
+grass_lod_reset_script_areas()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -18271,7 +18271,7 @@ No documentation found for this native.
 
 ================================
 
-seethrough_set_fade_start_distance_(``distance``)
+seethrough_set_fade_start_distance(``distance``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -18286,7 +18286,7 @@ No documentation found for this native.
 
 ================================
 
-seethrough_set_fade_end_distance_(``distance``)
+seethrough_set_fade_end_distance(``distance``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -18301,7 +18301,7 @@ No documentation found for this native.
 
 ================================
 
-seethrough_get_max_thickness_()
+seethrough_get_max_thickness()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -18316,7 +18316,7 @@ No documentation found for this native.
 
 ================================
 
-seethrough_set_max_thickness_(``thickness``)
+seethrough_set_max_thickness(``thickness``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -18331,7 +18331,7 @@ No documentation found for this native.
 
 ================================
 
-seethrough_set_noise_amount_min_(``amount``)
+seethrough_set_noise_amount_min(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -18346,7 +18346,7 @@ No documentation found for this native.
 
 ================================
 
-seethrough_set_noise_amount_max_(``amount``)
+seethrough_set_noise_amount_max(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -18361,7 +18361,7 @@ No documentation found for this native.
 
 ================================
 
-seethrough_set_hi_light_intensity_(``intensity``)
+seethrough_set_hi_light_intensity(``intensity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -18376,7 +18376,7 @@ No documentation found for this native.
 
 ================================
 
-seethrough_set_hi_light_noise_(``noise``)
+seethrough_set_hi_light_noise(``noise``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -18560,7 +18560,7 @@ No documentation found for this native.
 
 ================================
 
-set_hidof_env_blur_params_(``p0``, ``p1``, ``nearplaneOut``, ``nearplaneIn``, ``farplaneOut``, ``farplaneIn``)
+set_hidof_env_blur_params(``p0``, ``p1``, ``nearplaneOut``, ``nearplaneIn``, ``farplaneOut``, ``farplaneIn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -18774,7 +18774,7 @@ Full list of particle effect dictionaries and effects by DurtyFree: https://gith
 
 ================================
 
-start_networked_particle_fx_non_looped_on_entity_bone_(``effectName``, ``entity``, ``offsetX``, ``offsetY``, ``offsetZ``, ``rotX``, ``rotY``, ``rotZ``, ``boneIndex``, ``scale``, ``axisX``, ``axisY``, ``axisZ``)
+start_networked_particle_fx_non_looped_on_entity_bone(``effectName``, ``entity``, ``offsetX``, ``offsetY``, ``offsetZ``, ``rotX``, ``rotY``, ``rotZ``, ``boneIndex``, ``scale``, ``axisX``, ``axisY``, ``axisZ``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -19872,7 +19872,7 @@ No documentation found for this native.
 
 ================================
 
-register_noir_screen_effect_this_frame_()
+register_noir_screen_effect_this_frame()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -19902,7 +19902,7 @@ No documentation found for this native.
 
 ================================
 
-set_force_ped_footsteps_tracks_(``toggle``)
+set_force_ped_footsteps_tracks(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -19917,7 +19917,7 @@ No documentation found for this native.
 
 ================================
 
-set_force_vehicle_trails_(``toggle``)
+set_force_vehicle_trails(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -19932,7 +19932,7 @@ No documentation found for this native.
 
 ================================
 
-disable_script_ambient_effects_(``p0``)
+disable_script_ambient_effects(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -20185,7 +20185,7 @@ No documentation found for this native.
 
 ================================
 
-set_extra_timecycle_modifier_(``modifierName``)
+set_extra_timecycle_modifier(``modifierName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -20200,7 +20200,7 @@ No documentation found for this native.
 
 ================================
 
-clear_extra_timecycle_modifier_()
+clear_extra_timecycle_modifier()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -20215,7 +20215,7 @@ No documentation found for this native.
 
 ================================
 
-get_extra_timecycle_modifier_index_()
+get_extra_timecycle_modifier_index()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -20230,7 +20230,7 @@ No documentation found for this native.
 
 ================================
 
-enable_extra_timecycle_modifier_strength_(``strength``)
+enable_extra_timecycle_modifier_strength(``strength``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -20245,7 +20245,7 @@ No documentation found for this native.
 
 ================================
 
-reset_extra_timecycle_modifier_strength_()
+reset_extra_timecycle_modifier_strength()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -20275,7 +20275,7 @@ No documentation found for this native.
 
 ================================
 
-request_scaleform_movie_2_(``scaleformName``)
+request_scaleform_movie_2(``scaleformName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -20305,7 +20305,7 @@ No documentation found for this native.
 
 ================================
 
-request_scaleform_movie_interactive_(``scaleformName``)
+request_scaleform_movie_interactive(``scaleformName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -20401,7 +20401,7 @@ No documentation found for this native.
 
 ================================
 
-set_scaleform_fit_rendertarget_(``scaleformHandle``, ``toggle``)
+set_scaleform_fit_rendertarget(``scaleformHandle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -20770,7 +20770,7 @@ Used to get a return value from a scaleform function. Returns an int in the same
 
 ================================
 
-get_scaleform_movie_method_return_value_bool_(``methodReturn``)
+get_scaleform_movie_method_return_value_bool(``methodReturn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -20894,7 +20894,7 @@ No documentation found for this native.
 
 ================================
 
-end_text_command_scaleform_string_2_()
+end_text_command_scaleform_string_2()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -20909,7 +20909,7 @@ No documentation found for this native.
 
 ================================
 
-scaleform_movie_method_add_param_texture_name_string_2_(``string``)
+scaleform_movie_method_add_param_texture_name_string_2(``string``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21214,7 +21214,7 @@ No documentation found for this native.
 
 ================================
 
-is_playlist_unk_(``tvChannel``, ``p1``)
+is_playlist_unk(``tvChannel``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21230,7 +21230,7 @@ No documentation found for this native.
 
 ================================
 
-is_tv_playlist_item_playing_(``videoCliphash``)
+is_tv_playlist_item_playing(``videoCliphash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21422,7 +21422,7 @@ Full list of animpostFX / screen effects by DurtyFree: https://github.com/DurtyF
 
 ================================
 
-animpostfx_get_unk_(``effectName``)
+animpostfx_get_unk(``effectName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21470,7 +21470,7 @@ Stops ALL currently playing effects.
 
 ================================
 
-animpostfx_stop_and_do_unk_(``effectName``)
+animpostfx_stop_and_do_unk(``effectName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21624,7 +21624,7 @@ No documentation found for this native.
 
 ================================
 
-set_mouse_cursor_active_this_frame_()
+set_mouse_cursor_active_this_frame()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21639,7 +21639,7 @@ No documentation found for this native.
 
 ================================
 
-set_mouse_cursor_sprite_(``spriteId``)
+set_mouse_cursor_sprite(``spriteId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21654,7 +21654,7 @@ No documentation found for this native.
 
 ================================
 
-set_mouse_cursor_visible_in_menus_(``toggle``)
+set_mouse_cursor_visible_in_menus(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21699,7 +21699,7 @@ No documentation found for this native.
 
 ================================
 
-thefeed_disable_loading_screen_tips_()
+thefeed_disable_loading_screen_tips()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21729,7 +21729,7 @@ Once called each frame hides all above radar notifications.
 
 ================================
 
-thefeed_display_loading_screen_tips_()
+thefeed_display_loading_screen_tips()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21924,7 +21924,7 @@ Displays "normal" notifications again after calling `_0x56C8B608CFD49854` (those
 
 ================================
 
-thefeed_set_next_post_background_color_(``hudColorIndex``)
+thefeed_set_next_post_background_color(``hudColorIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21939,7 +21939,7 @@ No documentation found for this native.
 
 ================================
 
-thefeed_set_animpostfx_color_(``red``, ``green``, ``blue``, ``alpha``)
+thefeed_set_animpostfx_color(``red``, ``green``, ``blue``, ``alpha``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21957,7 +21957,7 @@ No documentation found for this native.
 
 ================================
 
-thefeed_set_animpostfx_count_(``count``)
+thefeed_set_animpostfx_count(``count``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -21972,7 +21972,7 @@ No documentation found for this native.
 
 ================================
 
-thefeed_set_animpostfx_sound_(``toggle``)
+thefeed_set_animpostfx_sound(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -22032,7 +22032,7 @@ No documentation found for this native.
 
 ================================
 
-thefeed_set_flush_animpostfx_(``p0``)
+thefeed_set_flush_animpostfx(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -22147,7 +22147,7 @@ iconTypes:
 
 ================================
 
-end_text_command_thefeed_post_messagetext_gxt_entry_(``txdName``, ``textureName``, ``flash``, ``iconType``, ``sender``, ``subject``)
+end_text_command_thefeed_post_messagetext_gxt_entry(``txdName``, ``textureName``, ``flash``, ``iconType``, ``sender``, ``subject``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -22524,7 +22524,7 @@ Shows a deathmatch score above the minimap, example: https://i.imgur.com/YmoMklG
 
 ================================
 
-end_text_command_thefeed_post_replay_icon_(``type``, ``image``, ``text``)
+end_text_command_thefeed_post_replay_icon(``type``, ``image``, ``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -22541,7 +22541,7 @@ No documentation found for this native.
 
 ================================
 
-end_text_command_thefeed_post_replay_input_(``type``, ``button``, ``text``)
+end_text_command_thefeed_post_replay_input(``type``, ``button``, ``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -22679,7 +22679,7 @@ Used to be known as _DRAW_TEXT
 
 ================================
 
-begin_text_command_get_width_(``text``)
+begin_text_command_get_width(``text``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -22694,7 +22694,7 @@ No documentation found for this native.
 
 ================================
 
-end_text_command_get_width_(``p0``)
+end_text_command_get_width(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -22709,7 +22709,7 @@ No documentation found for this native.
 
 ================================
 
-begin_text_command_line_count_(``entry``)
+begin_text_command_line_count(``entry``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -22724,7 +22724,7 @@ No documentation found for this native.
 
 ================================
 
-end_text_command_line_count_(``x``, ``y``)
+end_text_command_line_count(``x``, ``y``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -22860,7 +22860,7 @@ Finalizes a text command started with BEGIN_TEXT_COMMAND_SET_BLIP_NAME, setting 
 
 ================================
 
-begin_text_command_objective_(``p0``)
+begin_text_command_objective(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -22875,7 +22875,7 @@ No documentation found for this native.
 
 ================================
 
-end_text_command_objective_(``p0``)
+end_text_command_objective(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -23134,7 +23134,7 @@ No documentation found for this native.
 
 ================================
 
-get_text_substring_(``text``, ``position``, ``length``)
+get_text_substring(``text``, ``position``, ``length``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -23151,7 +23151,7 @@ No documentation found for this native.
 
 ================================
 
-get_text_substring_safe_(``text``, ``position``, ``length``, ``maxLength``)
+get_text_substring_safe(``text``, ``position``, ``length``, ``maxLength``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -23169,7 +23169,7 @@ No documentation found for this native.
 
 ================================
 
-get_text_substring_slice_(``text``, ``startPosition``, ``endPosition``)
+get_text_substring_slice(``text``, ``startPosition``, ``endPosition``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -23186,7 +23186,7 @@ No documentation found for this native.
 
 ================================
 
-get_label_text_(``labelName``)
+get_label_text(``labelName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -23537,7 +23537,7 @@ If Hud should be displayed
 
 ================================
 
-display_hud_when_dead_this_frame_()
+display_hud_when_dead_this_frame()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -23643,7 +23643,7 @@ Enable / disable showing route for the Blip-object.
 
 ================================
 
-clear_all_blip_routes_()
+clear_all_blip_routes()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -23674,7 +23674,7 @@ No documentation found for this native.
 
 ================================
 
-set_force_blip_routes_on_foot_(``toggle``)
+set_force_blip_routes_on_foot(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -23689,7 +23689,7 @@ No documentation found for this native.
 
 ================================
 
-set_use_waypoint_as_destination_(``toggle``)
+set_use_waypoint_as_destination(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -23813,7 +23813,7 @@ Sets the color of HUD_COLOUR_SCRIPT_VARIABLE
 
 ================================
 
-set_script_variable_2_hud_colour_(``r``, ``g``, ``b``, ``a``)
+set_script_variable_2_hud_colour(``r``, ``g``, ``b``, ``a``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -23868,7 +23868,7 @@ HUD colors and their values: pastebin.com/d9aHPbXN
 
 ================================
 
-set_ability_bar_visibility_in_multiplayer_(``visible``)
+set_ability_bar_visibility_in_multiplayer(``visible``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -23883,7 +23883,7 @@ No documentation found for this native.
 
 ================================
 
-set_allow_ability_bar_in_multiplayer_(``toggle``)
+set_allow_ability_bar_in_multiplayer(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -23944,7 +23944,7 @@ No documentation found for this native.
 
 ================================
 
-set_current_character_hud_color_(``hudColorId``)
+set_current_character_hud_color(``hudColorId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -24375,7 +24375,7 @@ No documentation found for this native.
 
 ================================
 
-set_help_message_text_style_(``style``, ``hudColor``, ``alpha``, ``p3``, ``p4``)
+set_help_message_text_style(``style``, ``hudColor``, ``alpha``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -24469,7 +24469,7 @@ No documentation found for this native.
 
 ================================
 
-get_closest_blip_of_type_(``blipSprite``)
+get_closest_blip_of_type(``blipSprite``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -24599,7 +24599,7 @@ No documentation found for this native.
 
 ================================
 
-add_blip_for_area_(``x``, ``y``, ``z``, ``width``, ``height``)
+add_blip_for_area(``x``, ``y``, ``z``, ``width``, ``height``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -24862,7 +24862,7 @@ No documentation found for this native.
 
 ================================
 
-get_blip_fade_status_(``blip``)
+get_blip_fade_status(``blip``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -24893,7 +24893,7 @@ After some testing, looks like you need to use CEIL() on the rotation (vehicle/p
 
 ================================
 
-set_blip_squared_rotation_(``blip``, ``heading``)
+set_blip_squared_rotation(``blip``, ``heading``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -24909,7 +24909,7 @@ No documentation found for this native.
 
 ================================
 
-get_blip_rotation_(``blip``)
+get_blip_rotation(``blip``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -25173,7 +25173,7 @@ No documentation found for this native.
 
 ================================
 
-show_contact_instructional_button_(``toggle``)
+show_contact_instructional_button(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -25267,7 +25267,7 @@ No documentation found for this native.
 
 ================================
 
-set_blip_scale_transformation_(``blip``, ``xScale``, ``yScale``)
+set_blip_scale_transformation(``blip``, ``xScale``, ``yScale``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -25652,7 +25652,7 @@ HUD::SET_WAYPOINT_OFF();
 
 ================================
 
-delete_waypoint_()
+delete_waypoint()
 ^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -25764,7 +25764,7 @@ p2 appears to be always -1. If p2 is -1 then native wouldn't change the color. S
 
 ================================
 
-set_minimap_sonar_enabled_(``toggle``)
+set_minimap_sonar_enabled(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -25779,7 +25779,7 @@ No documentation found for this native.
 
 ================================
 
-show_signin_ui_()
+show_signin_ui()
 ^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -25844,7 +25844,7 @@ Not for every interior zoom > 0 available.
 
 ================================
 
-set_interior_zoom_level_increased_(``toggle``)
+set_interior_zoom_level_increased(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -25859,7 +25859,7 @@ No documentation found for this native.
 
 ================================
 
-set_interior_zoom_level_decreased_(``toggle``)
+set_interior_zoom_level_decreased(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -25889,7 +25889,7 @@ No documentation found for this native.
 
 ================================
 
-set_player_blip_position_this_frame_(``x``, ``y``)
+set_player_blip_position_this_frame(``x``, ``y``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -25905,7 +25905,7 @@ No documentation found for this native.
 
 ================================
 
-is_minimap_in_interior_()
+is_minimap_in_interior()
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -25950,7 +25950,7 @@ No documentation found for this native.
 
 ================================
 
-set_toggle_minimap_heist_island_(``toggle``)
+set_toggle_minimap_heist_island(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -26253,7 +26253,7 @@ Forces the weapon wheel to show/hide.
 
 ================================
 
-hud_display_loading_screen_tips_()
+hud_display_loading_screen_tips()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -26268,7 +26268,7 @@ No documentation found for this native.
 
 ================================
 
-hud_weapon_wheel_ignore_selection_()
+hud_weapon_wheel_ignore_selection()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -26283,7 +26283,7 @@ No documentation found for this native.
 
 ================================
 
-hud_weapon_wheel_get_selected_hash_()
+hud_weapon_wheel_get_selected_hash()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -26313,7 +26313,7 @@ Set the active slotIndex in the wheel weapon to the slot associated with the pro
 
 ================================
 
-hud_weapon_wheel_get_slot_hash_(``weaponTypeIndex``)
+hud_weapon_wheel_get_slot_hash(``weaponTypeIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -26328,7 +26328,7 @@ No documentation found for this native.
 
 ================================
 
-hud_weapon_wheel_ignore_control_input_(``toggle``)
+hud_weapon_wheel_ignore_control_input(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -26583,7 +26583,7 @@ No documentation found for this native.
 
 ================================
 
-set_main_player_blip_colour_(``color``)
+set_main_player_blip_colour(``color``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -26885,7 +26885,7 @@ No documentation found for this native.
 
 ================================
 
-set_minimap_altitude_indicator_level_(``altitude``, ``p1``, ``p2``)
+set_minimap_altitude_indicator_level(``altitude``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27035,7 +27035,7 @@ No documentation found for this native.
 
 ================================
 
-show_scripted_hud_component_this_frame_(``id``)
+show_scripted_hud_component_this_frame(``id``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27145,7 +27145,7 @@ These integers also work for the `HIDE_HUD_COMPONENT_THIS_FRAME` native, but ins
 
 ================================
 
-hide_area_and_vehicle_name_this_frame_()
+hide_area_and_vehicle_name_this_frame()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27556,7 +27556,7 @@ enum eMpGamerTagComponent
 
 ================================
 
-set_mp_gamer_tag_enabled_(``gamerTagId``, ``toggle``)
+set_mp_gamer_tag_enabled(``gamerTagId``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27572,7 +27572,7 @@ No documentation found for this native.
 
 ================================
 
-set_mp_gamer_tag_icons_(``gamerTagId``, ``toggle``)
+set_mp_gamer_tag_icons(``gamerTagId``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27588,7 +27588,7 @@ No documentation found for this native.
 
 ================================
 
-set_mp_gamer_health_bar_display_(``gamerTagId``, ``toggle``)
+set_mp_gamer_health_bar_display(``gamerTagId``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27604,7 +27604,7 @@ No documentation found for this native.
 
 ================================
 
-set_mp_gamer_health_bar_max_(``gamerTagId``, ``value``, ``maximumValue``)
+set_mp_gamer_health_bar_max(``gamerTagId``, ``value``, ``maximumValue``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27694,7 +27694,7 @@ displays wanted star above head
 
 ================================
 
-set_mp_gamer_tag_unk_(``gamerTagId``, ``p1``)
+set_mp_gamer_tag_unk(``gamerTagId``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27726,7 +27726,7 @@ No documentation found for this native.
 
 ================================
 
-is_valid_mp_gamer_tag_movie_(``gamerTagId``)
+is_valid_mp_gamer_tag_movie(``gamerTagId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27825,7 +27825,7 @@ No documentation found for this native.
 
 ================================
 
-is_warning_message_active_2_()
+is_warning_message_active_2()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27930,7 +27930,7 @@ https://imgur.com/a/IYA7vJ8
 
 ================================
 
-set_warning_message_with_header_unk_(``entryHeader``, ``entryLine1``, ``flags``, ``entryLine2``, ``p4``, ``p5``, ``p6``, ``p7``, ``showBg``, ``p9``, ``p10``)
+set_warning_message_with_header_unk(``entryHeader``, ``entryLine1``, ``flags``, ``entryLine2``, ``p4``, ``p5``, ``p6``, ``p7``, ``showBg``, ``p9``, ``p10``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27955,7 +27955,7 @@ No documentation found for this native.
 
 ================================
 
-set_warning_message_with_alert_(``labelTitle``, ``labelMessage``, ``p2``, ``p3``, ``labelMessage2``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``, ``background``, ``errorCode``)
+set_warning_message_with_alert(``labelTitle``, ``labelMessage``, ``p2``, ``p3``, ``labelMessage2``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``, ``background``, ``errorCode``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27981,7 +27981,7 @@ No documentation found for this native.
 
 ================================
 
-get_warning_message_title_hash_()
+get_warning_message_title_hash()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -27996,7 +27996,7 @@ No documentation found for this native.
 
 ================================
 
-set_warning_message_list_row_(``index``, ``name``, ``cash``, ``rp``, ``lvl``, ``colour``)
+set_warning_message_list_row(``index``, ``name``, ``cash``, ``rp``, ``lvl``, ``colour``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -28016,7 +28016,7 @@ No documentation found for this native.
 
 ================================
 
-remove_warning_message_list_items_()
+remove_warning_message_list_items()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -28139,7 +28139,7 @@ Doesn't actually return anything.
 
 ================================
 
-get_north_radar_blip_()
+get_north_radar_blip()
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -28331,7 +28331,7 @@ No documentation found for this native.
 
 ================================
 
-allow_pause_menu_when_dead_this_frame_()
+allow_pause_menu_when_dead_this_frame()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -28416,7 +28416,7 @@ No documentation found for this native.
 
 ================================
 
-log_debug_info_(``p0``)
+log_debug_info(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -28635,7 +28635,7 @@ No documentation found for this native.
 
 ================================
 
-get_pause_menu_selection_()
+get_pause_menu_selection()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -28650,7 +28650,7 @@ No documentation found for this native.
 
 ================================
 
-get_pause_menu_selection_data_()
+get_pause_menu_selection_data()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -28895,7 +28895,7 @@ No documentation found for this native.
 
 ================================
 
-force_close_text_input_box_()
+force_close_text_input_box()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -28910,7 +28910,7 @@ No documentation found for this native.
 
 ================================
 
-override_multiplayer_chat_prefix_(``gxtEntryHash``)
+override_multiplayer_chat_prefix(``gxtEntryHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -28925,7 +28925,7 @@ No documentation found for this native.
 
 ================================
 
-is_multiplayer_chat_active_()
+is_multiplayer_chat_active()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -28940,7 +28940,7 @@ No documentation found for this native.
 
 ================================
 
-close_multiplayer_chat_()
+close_multiplayer_chat()
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -28955,7 +28955,7 @@ No documentation found for this native.
 
 ================================
 
-override_multiplayer_chat_colour_(``p0``, ``hudColor``)
+override_multiplayer_chat_colour(``p0``, ``hudColor``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -28971,7 +28971,7 @@ No documentation found for this native.
 
 ================================
 
-multiplayer_chat_set_disabled_(``toggle``)
+multiplayer_chat_set_disabled(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29019,7 +29019,7 @@ See gtaforums.com/topic/884370-native-research-ai-blips for further information.
 
 ================================
 
-set_ped_has_ai_blip_with_color_(``ped``, ``hasCone``, ``color``)
+set_ped_has_ai_blip_with_color(``ped``, ``hasCone``, ``color``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29115,7 +29115,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_ai_blip_sprite_(``ped``, ``spriteId``)
+set_ped_ai_blip_sprite(``ped``, ``spriteId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29131,7 +29131,7 @@ No documentation found for this native.
 
 ================================
 
-get_ai_blip_2_(``ped``)
+get_ai_blip_2(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29146,7 +29146,7 @@ No documentation found for this native.
 
 ================================
 
-get_ai_blip_(``ped``)
+get_ai_blip(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29161,7 +29161,7 @@ No documentation found for this native.
 
 ================================
 
-has_director_mode_been_triggered_()
+has_director_mode_been_triggered()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29176,7 +29176,7 @@ No documentation found for this native.
 
 ================================
 
-set_director_mode_clear_triggered_flag_()
+set_director_mode_clear_triggered_flag()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29191,7 +29191,7 @@ No documentation found for this native.
 
 ================================
 
-set_player_is_in_director_mode_(``toggle``)
+set_player_is_in_director_mode(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29213,7 +29213,7 @@ Interior namespace
 
 Documentation for the interior namespace.
 
-get_interior_heading_(``interior``)
+get_interior_heading(``interior``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29399,7 +29399,7 @@ No documentation found for this native.
 
 ================================
 
-clear_interior_for_entity_(``entity``)
+clear_interior_for_entity(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29684,7 +29684,7 @@ Full list of IPLs and interior entity sets by DurtyFree: https://github.com/Durt
 
 ================================
 
-set_interior_entity_set_color_(``interior``, ``entitySetName``, ``color``)
+set_interior_entity_set_color(``interior``, ``entitySetName``, ``color``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29733,7 +29733,7 @@ More info: http://gtaforums.com/topic/836301-hiding-gta-online-apartment-exterio
 
 ================================
 
-enable_script_cull_model_this_frame_(``mapObjectHash``)
+enable_script_cull_model_this_frame(``mapObjectHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29966,7 +29966,7 @@ Loadingscreen namespace
 
 Documentation for the loadingscreen namespace.
 
-loadingscreen_get_load_freemode_()
+loadingscreen_get_load_freemode()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29981,7 +29981,7 @@ No documentation found for this native.
 
 ================================
 
-loadingscreen_set_load_freemode_(``toggle``)
+loadingscreen_set_load_freemode(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -29996,7 +29996,7 @@ No documentation found for this native.
 
 ================================
 
-loadingscreen_get_load_freemode_with_event_name_()
+loadingscreen_get_load_freemode_with_event_name()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30011,7 +30011,7 @@ No documentation found for this native.
 
 ================================
 
-loadingscreen_set_load_freemode_with_event_name_(``toggle``)
+loadingscreen_set_load_freemode_with_event_name(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30026,7 +30026,7 @@ No documentation found for this native.
 
 ================================
 
-loadingscreen_is_loading_freemode_()
+loadingscreen_is_loading_freemode()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30041,7 +30041,7 @@ No documentation found for this native.
 
 ================================
 
-loadingscreen_set_is_loading_freemode_(``toggle``)
+loadingscreen_set_is_loading_freemode(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30063,7 +30063,7 @@ Localization namespace
 
 Documentation for the localization namespace.
 
-localization_get_system_language_()
+localization_get_system_language()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30105,7 +30105,7 @@ get_current_language()
 
 ================================
 
-localization_get_system_date_format_()
+localization_get_system_date_format()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30247,7 +30247,7 @@ No documentation found for this native.
 
 ================================
 
-get_global_char_buffer_()
+get_global_char_buffer()
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30262,7 +30262,7 @@ No documentation found for this native.
 
 ================================
 
-has_resumed_from_suspend_()
+has_resumed_from_suspend()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30277,7 +30277,7 @@ No documentation found for this native.
 
 ================================
 
-get_base_element_metadata_(``p0``, ``p1``, ``p2``, ``p3``)
+get_base_element_metadata(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30446,7 +30446,7 @@ No documentation found for this native.
 
 ================================
 
-clear_weather_type_overtime_persist_(``milliseconds``)
+clear_weather_type_overtime_persist(``milliseconds``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30461,7 +30461,7 @@ No documentation found for this native.
 
 ================================
 
-get_weather_type_transition_()
+get_weather_type_transition()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30476,7 +30476,7 @@ No documentation found for this native.
 
 ================================
 
-set_weather_type_transition_(``weatherType1``, ``weatherType2``, ``percentWeather2``)
+set_weather_type_transition(``weatherType1``, ``weatherType2``, ``percentWeather2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30808,7 +30808,7 @@ No documentation found for this native.
 
 ================================
 
-set_rain_level_(``intensity``)
+set_rain_level(``intensity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30838,7 +30838,7 @@ No documentation found for this native.
 
 ================================
 
-set_snow_level_(``level``)
+set_snow_level(``level``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30945,7 +30945,7 @@ No documentation found for this native.
 
 ================================
 
-set_cloud_hat_opacity_(``opacity``)
+set_cloud_hat_opacity(``opacity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -30960,7 +30960,7 @@ No documentation found for this native.
 
 ================================
 
-get_cloud_hat_opacity_()
+get_cloud_hat_opacity()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -31005,7 +31005,7 @@ No documentation found for this native.
 
 ================================
 
-get_benchmark_time_()
+get_benchmark_time()
 ^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -31067,7 +31067,7 @@ No documentation found for this native.
 
 ================================
 
-get_random_int_in_range_2_(``startRange``, ``endRange``)
+get_random_int_in_range_2(``startRange``, ``endRange``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -31119,7 +31119,7 @@ No documentation found for this native.
 
 ================================
 
-get_ground_z_for_3d_coord_2_(``x``, ``y``, ``z``, ``p4``, ``p5``)
+get_ground_z_for_3d_coord_2(``x``, ``y``, ``z``, ``p4``, ``p5``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -31269,7 +31269,7 @@ No documentation found for this native.
 
 ================================
 
-get_progress_along_line_between_coords_(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``, ``x3``, ``y3``, ``z3``, ``clamp``)
+get_progress_along_line_between_coords(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``, ``x3``, ``y3``, ``z3``, ``clamp``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -31778,7 +31778,7 @@ No documentation found for this native.
 
 ================================
 
-set_restart_custom_position_(``x``, ``y``, ``z``, ``heading``)
+set_restart_custom_position(``x``, ``y``, ``z``, ``heading``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -31796,7 +31796,7 @@ No documentation found for this native.
 
 ================================
 
-clear_restart_custom_position_()
+clear_restart_custom_position()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -32910,7 +32910,7 @@ No documentation found for this native.
 
 ================================
 
-is_japanese_version_()
+is_japanese_version()
 ^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -33251,7 +33251,7 @@ No documentation found for this native.
 
 ================================
 
-has_button_combination_just_been_entered_(``hash``, ``amount``)
+has_button_combination_just_been_entered(``hash``, ``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -33267,7 +33267,7 @@ No documentation found for this native.
 
 ================================
 
-has_cheat_string_just_been_entered_(``hash``)
+has_cheat_string_just_been_entered(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -33435,7 +33435,7 @@ No documentation found for this native.
 
 ================================
 
-register_int64_to_save_(``p0``, ``name``)
+register_int64_to_save(``p0``, ``name``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -33515,7 +33515,7 @@ No documentation found for this native.
 
 ================================
 
-register_text_label_to_save_2_(``p0``, ``name``)
+register_text_label_to_save_2(``p0``, ``name``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -33595,7 +33595,7 @@ No documentation found for this native.
 
 ================================
 
-copy_memory_(``dst``, ``src``, ``size``)
+copy_memory(``dst``, ``src``, ``size``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -33644,7 +33644,7 @@ No documentation found for this native.
 
 ================================
 
-get_num_dispatched_units_for_player_(``dispatchService``)
+get_num_dispatched_units_for_player(``dispatchService``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -33748,7 +33748,7 @@ No documentation found for this native.
 
 ================================
 
-set_incident_unk_(``incidentId``, ``p1``)
+set_incident_unk(``incidentId``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -33841,7 +33841,7 @@ No documentation found for this native.
 
 ================================
 
-is_pop_multiplier_area_unk_(``id``)
+is_pop_multiplier_area_unk(``id``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -33996,7 +33996,7 @@ No documentation found for this native.
 
 ================================
 
-reset_dispatch_spawn_location_()
+reset_dispatch_spawn_location()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34126,7 +34126,7 @@ No documentation found for this native.
 
 ================================
 
-add_dispatch_spawn_blocking_area_(``x1``, ``y1``, ``x2``, ``y2``)
+add_dispatch_spawn_blocking_area(``x1``, ``y1``, ``x2``, ``y2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34299,7 +34299,7 @@ No documentation found for this native.
 
 ================================
 
-cancel_onscreen_keyboard_()
+cancel_onscreen_keyboard()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34405,7 +34405,7 @@ No documentation found for this native.
 
 ================================
 
-set_beast_mode_active_(``player``)
+set_beast_mode_active(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34420,7 +34420,7 @@ No documentation found for this native.
 
 ================================
 
-set_force_player_to_jump_(``player``)
+set_force_player_to_jump(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34528,7 +34528,7 @@ No documentation found for this native.
 
 ================================
 
-start_benchmark_recording_()
+start_benchmark_recording()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34543,7 +34543,7 @@ No documentation found for this native.
 
 ================================
 
-stop_benchmark_recording_()
+stop_benchmark_recording()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34558,7 +34558,7 @@ No documentation found for this native.
 
 ================================
 
-reset_benchmark_recording_()
+reset_benchmark_recording()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34573,7 +34573,7 @@ No documentation found for this native.
 
 ================================
 
-save_benchmark_recording_()
+save_benchmark_recording()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34588,7 +34588,7 @@ No documentation found for this native.
 
 ================================
 
-ui_is_singleplayer_pause_menu_active_()
+ui_is_singleplayer_pause_menu_active()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34603,7 +34603,7 @@ No documentation found for this native.
 
 ================================
 
-landing_menu_is_active_()
+landing_menu_is_active()
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34618,7 +34618,7 @@ No documentation found for this native.
 
 ================================
 
-is_command_line_benchmark_value_set_()
+is_command_line_benchmark_value_set()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34633,7 +34633,7 @@ No documentation found for this native.
 
 ================================
 
-get_benchmark_iterations_from_command_line_()
+get_benchmark_iterations_from_command_line()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34648,7 +34648,7 @@ No documentation found for this native.
 
 ================================
 
-get_benchmark_pass_from_command_line_()
+get_benchmark_pass_from_command_line()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34663,7 +34663,7 @@ No documentation found for this native.
 
 ================================
 
-restart_game_()
+restart_game()
 ^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34678,7 +34678,7 @@ No documentation found for this native.
 
 ================================
 
-force_social_club_update_()
+force_social_club_update()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34693,7 +34693,7 @@ No documentation found for this native.
 
 ================================
 
-has_async_install_finished_()
+has_async_install_finished()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34708,7 +34708,7 @@ No documentation found for this native.
 
 ================================
 
-cleanup_async_install_()
+cleanup_async_install()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34723,7 +34723,7 @@ No documentation found for this native.
 
 ================================
 
-is_in_power_saving_mode_()
+is_in_power_saving_mode()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34738,7 +34738,7 @@ No documentation found for this native.
 
 ================================
 
-get_power_saving_mode_duration_()
+get_power_saving_mode_duration()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34753,7 +34753,7 @@ No documentation found for this native.
 
 ================================
 
-set_player_is_in_animal_form_(``toggle``)
+set_player_is_in_animal_form(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34783,7 +34783,7 @@ No documentation found for this native.
 
 ================================
 
-set_player_rockstar_editor_disabled_(``toggle``)
+set_player_rockstar_editor_disabled(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34959,7 +34959,7 @@ I can confirm the above. This function is hard-coded to always return 1.
 
 ================================
 
-set_mobile_phone_unk_(``toggle``)
+set_mobile_phone_unk(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34974,7 +34974,7 @@ No documentation found for this native.
 
 ================================
 
-cell_cam_move_finger_(``direction``)
+cell_cam_move_finger(``direction``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -34989,7 +34989,7 @@ No documentation found for this native.
 
 ================================
 
-cell_cam_set_lean_(``toggle``)
+cell_cam_set_lean(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35020,7 +35020,7 @@ No documentation found for this native.
 
 ================================
 
-cell_cam_disable_this_frame_(``toggle``)
+cell_cam_disable_this_frame(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35105,7 +35105,7 @@ Note the 2nd parameters are always 1, 0. I have a feeling it deals with your mon
 
 ================================
 
-network_manual_delete_character_(``characterSlot``)
+network_manual_delete_character(``characterSlot``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35120,7 +35120,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_is_high_earner_()
+network_get_is_high_earner()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35245,7 +35245,7 @@ reason
 
 ================================
 
-network_deduct_cash_(``amount``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``)
+network_deduct_cash(``amount``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35297,7 +35297,7 @@ No documentation found for this native.
 
 ================================
 
-network_casino_can_use_gambling_type_(``hash``)
+network_casino_can_use_gambling_type(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35312,7 +35312,7 @@ No documentation found for this native.
 
 ================================
 
-network_casino_can_purchase_chips_with_pvc_()
+network_casino_can_purchase_chips_with_pvc()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35327,7 +35327,7 @@ No documentation found for this native.
 
 ================================
 
-network_casino_can_gamble_(``p0``)
+network_casino_can_gamble(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35342,7 +35342,7 @@ No documentation found for this native.
 
 ================================
 
-network_casino_can_purchase_chips_with_pvc_2_()
+network_casino_can_purchase_chips_with_pvc_2()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35357,7 +35357,7 @@ No documentation found for this native.
 
 ================================
 
-network_casino_purchase_chips_(``p0``, ``p1``)
+network_casino_purchase_chips(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35373,7 +35373,7 @@ No documentation found for this native.
 
 ================================
 
-network_casino_sell_chips_(``p0``, ``p1``)
+network_casino_sell_chips(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35389,7 +35389,7 @@ No documentation found for this native.
 
 ================================
 
-can_pay_goon_(``p0``, ``p1``, ``amount``, ``p3``)
+can_pay_goon(``p0``, ``p1``, ``amount``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35422,7 +35422,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_cashing_out_(``amount``)
+network_earn_from_cashing_out(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35452,7 +35452,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_assassinate_target_killed_(``amount``)
+network_earn_from_assassinate_target_killed(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35467,7 +35467,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_armour_truck_(``amount``)
+network_earn_from_armour_truck(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35529,7 +35529,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_job_x2_(``amount``, ``p1``)
+network_earn_from_job_x2(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35545,7 +35545,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_premium_job_(``amount``, ``p1``)
+network_earn_from_premium_job(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35801,7 +35801,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_criminal_mastermind_bonus_(``p0``, ``p1``, ``p2``)
+network_earn_from_criminal_mastermind_bonus(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35818,7 +35818,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_job_bonus_heist_award_(``p0``, ``p1``, ``p2``)
+network_earn_job_bonus_heist_award(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35835,7 +35835,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_job_bonus_first_time_bonus_(``p0``, ``p1``, ``p2``)
+network_earn_job_bonus_first_time_bonus(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35852,7 +35852,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_goon_(``p0``, ``p1``, ``p2``)
+network_earn_goon(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35869,7 +35869,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_boss_(``p0``, ``p1``, ``p2``)
+network_earn_boss(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35886,7 +35886,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_boss_agency_(``p0``, ``p1``, ``p2``, ``p3``)
+network_earn_boss_agency(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35904,7 +35904,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_warehouse_(``amount``, ``id``)
+network_earn_from_warehouse(``amount``, ``id``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35920,7 +35920,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_contraband_(``amount``, ``p1``)
+network_earn_from_contraband(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35936,7 +35936,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_destroying_contraband_(``p0``)
+network_earn_from_destroying_contraband(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35951,7 +35951,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_business_product_(``amount``, ``p1``, ``p2``, ``p3``)
+network_earn_from_business_product(``amount``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35969,7 +35969,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_vehicle_export_(``amount``, ``p1``, ``p2``)
+network_earn_from_vehicle_export(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -35986,7 +35986,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_smuggling_(``amount``, ``p1``, ``p2``, ``p3``)
+network_earn_from_smuggling(``amount``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36004,7 +36004,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_bounty_hunter_reward_(``p0``)
+network_earn_bounty_hunter_reward(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36019,7 +36019,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_business_battle_(``p0``)
+network_earn_from_business_battle(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36034,7 +36034,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_club_management_participation_(``p0``)
+network_earn_from_club_management_participation(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36049,7 +36049,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_fmbb_phonecall_mission_(``p0``)
+network_earn_from_fmbb_phonecall_mission(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36064,7 +36064,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_business_hub_sell_(``p0``, ``p1``, ``p2``)
+network_earn_from_business_hub_sell(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36081,7 +36081,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_fmbb_boss_work_(``p0``)
+network_earn_from_fmbb_boss_work(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36096,7 +36096,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_fmbb_wage_bonus_(``p0``)
+network_earn_fmbb_wage_bonus(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36131,7 +36131,7 @@ No documentation found for this native.
 
 ================================
 
-network_can_spend_money_2_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
+network_can_spend_money_2(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36248,7 +36248,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_wager_(``p0``, ``p1``, ``amount``)
+network_spent_wager(``p0``, ``p1``, ``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36942,7 +36942,7 @@ The last 3 parameters are,
 
 ================================
 
-network_spent_job_skip_(``amount``, ``matchId``, ``p2``, ``p3``)
+network_spent_job_skip(``amount``, ``matchId``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36960,7 +36960,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_boss_(``amount``, ``p1``, ``p2``)
+network_spent_boss(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36977,7 +36977,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_pay_goon_(``p0``, ``p1``, ``amount``)
+network_spent_pay_goon(``p0``, ``p1``, ``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -36994,7 +36994,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_pay_boss_(``p0``, ``p1``, ``p2``)
+network_spent_pay_boss(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37011,7 +37011,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_move_yacht_(``amount``, ``p1``, ``p2``)
+network_spent_move_yacht(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37028,7 +37028,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_rename_organization_(``p0``, ``p1``, ``p2``)
+network_spent_rename_organization(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37045,7 +37045,7 @@ No documentation found for this native.
 
 ================================
 
-network_buy_contraband_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+network_buy_contraband(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37064,7 +37064,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_pa_service_dancer_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_pa_service_dancer(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37082,7 +37082,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_pa_service_heli_pickup_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_pa_service_heli_pickup(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37100,7 +37100,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_purchase_warehouse_(``amount``, ``data``, ``p2``, ``p3``)
+network_spent_purchase_warehouse(``amount``, ``data``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37118,7 +37118,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_order_warehouse_vehicle_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_order_warehouse_vehicle(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37136,7 +37136,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_order_bodyguard_vehicle_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_order_bodyguard_vehicle(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37154,7 +37154,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_jukebox_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_jukebox(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37172,7 +37172,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_ba_service_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+network_spent_ba_service(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37191,7 +37191,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_business_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_business(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37209,7 +37209,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_vehicle_export_mods_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``)
+network_spent_vehicle_export_mods(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37233,7 +37233,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_import_export_repair_(``p0``, ``p1``, ``p2``)
+network_spent_import_export_repair(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37250,7 +37250,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_purchase_hangar_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_purchase_hangar(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37268,7 +37268,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_upgrade_hangar_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_upgrade_hangar(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37286,7 +37286,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_hangar_utility_charges_(``amount``, ``p1``, ``p2``)
+network_spent_hangar_utility_charges(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37303,7 +37303,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_hangar_staff_charges_(``amount``, ``p1``, ``p2``)
+network_spent_hangar_staff_charges(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37320,7 +37320,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_buy_truck_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_buy_truck(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37338,7 +37338,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_upgrade_truck_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_upgrade_truck(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37356,7 +37356,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_buy_bunker_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_buy_bunker(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37374,7 +37374,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_upgrade_bunker_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_upgrade_bunker(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37392,7 +37392,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_sell_bunker_(``amount``, ``bunkerHash``)
+network_earn_from_sell_bunker(``amount``, ``bunkerHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37408,7 +37408,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_ballistic_equipment_(``amount``, ``p1``, ``p2``)
+network_spent_ballistic_equipment(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37425,7 +37425,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_rdr_bonus_(``amount``, ``p1``)
+network_earn_from_rdr_bonus(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37441,7 +37441,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_wage_payment_(``amount``, ``p1``)
+network_earn_from_wage_payment(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37457,7 +37457,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_wage_payment_bonus_(``amount``)
+network_earn_from_wage_payment_bonus(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37472,7 +37472,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_buy_base_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_buy_base(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37490,7 +37490,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_upgrade_base_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_upgrade_base(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37508,7 +37508,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_buy_tiltrotor_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_buy_tiltrotor(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37526,7 +37526,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_upgrade_tiltrotor_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_upgrade_tiltrotor(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37544,7 +37544,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_employ_assassins_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_employ_assassins(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37562,7 +37562,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_gangops_cannon_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_gangops_cannon(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37580,7 +37580,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_gangops_start_mission_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_gangops_start_mission(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37598,7 +37598,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_casino_heist_skip_mission_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_casino_heist_skip_mission(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37616,7 +37616,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_sell_base_(``amount``, ``baseNameHash``)
+network_earn_from_sell_base(``amount``, ``baseNameHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37632,7 +37632,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_target_refund_(``amount``, ``p1``)
+network_earn_from_target_refund(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37648,7 +37648,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_gangops_wages_(``amount``, ``p1``)
+network_earn_from_gangops_wages(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37664,7 +37664,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_gangops_wages_bonus_(``amount``, ``p1``)
+network_earn_from_gangops_wages_bonus(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37680,7 +37680,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_dar_challenge_(``amount``, ``p1``)
+network_earn_from_dar_challenge(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37696,7 +37696,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_doomsday_finale_bonus_(``amount``, ``vehicleHash``)
+network_earn_from_doomsday_finale_bonus(``amount``, ``vehicleHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37712,7 +37712,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_gangops_awards_(``amount``, ``unk``, ``p2``)
+network_earn_from_gangops_awards(``amount``, ``unk``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37729,7 +37729,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_gangops_elite_(``amount``, ``unk``, ``actIndex``)
+network_earn_from_gangops_elite(``amount``, ``unk``, ``actIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37746,7 +37746,7 @@ No documentation found for this native.
 
 ================================
 
-network_rival_delivery_completed_(``earnedMoney``)
+network_rival_delivery_completed(``earnedMoney``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37761,7 +37761,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_gangops_start_strand_(``type``, ``amount``, ``p2``, ``p3``)
+network_spent_gangops_start_strand(``type``, ``amount``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37779,7 +37779,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_gangops_trip_skip_(``amount``, ``p1``, ``p2``)
+network_spent_gangops_trip_skip(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37796,7 +37796,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_gangops_jobs_prep_participation_(``amount``)
+network_earn_from_gangops_jobs_prep_participation(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37811,7 +37811,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_gangops_jobs_setup_(``amount``, ``unk``)
+network_earn_from_gangops_jobs_setup(``amount``, ``unk``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37827,7 +37827,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_gangops_jobs_finale_(``amount``, ``unk``)
+network_earn_from_gangops_jobs_finale(``amount``, ``unk``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37843,7 +37843,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_bb_event_bonus_(``amount``)
+network_earn_from_bb_event_bonus(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37858,7 +37858,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_hacker_truck_mission_(``p0``, ``amount``, ``p2``, ``p3``)
+network_earn_from_hacker_truck_mission(``p0``, ``amount``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37876,7 +37876,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_rdrhatchet_bonus_(``amount``, ``p1``, ``p2``)
+network_spent_rdrhatchet_bonus(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37893,7 +37893,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_nightclub_entry_fee_(``player``, ``amount``, ``p1``, ``p2``, ``p3``)
+network_spent_nightclub_entry_fee(``player``, ``amount``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37912,7 +37912,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_nightclub_bar_drink_(``amount``, ``p1``, ``p2``, ``p3``)
+network_spent_nightclub_bar_drink(``amount``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37930,7 +37930,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_bounty_hunter_mission_(``amount``, ``p1``, ``p2``)
+network_spent_bounty_hunter_mission(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37947,7 +37947,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_rehire_dj_(``amount``, ``p1``, ``p2``, ``p3``)
+network_spent_rehire_dj(``amount``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37965,7 +37965,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_arena_join_spectator_(``amount``, ``p1``, ``p2``, ``p3``)
+network_spent_arena_join_spectator(``amount``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37983,7 +37983,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_arena_skill_level_progression_(``amount``, ``p1``)
+network_earn_from_arena_skill_level_progression(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -37999,7 +37999,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_arena_career_progression_(``amount``, ``p1``)
+network_earn_from_arena_career_progression(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38015,7 +38015,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_make_it_rain_(``amount``, ``p1``, ``p2``)
+network_spent_make_it_rain(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38032,7 +38032,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_buy_arena_(``amount``, ``p1``, ``p2``, ``p3``)
+network_spent_buy_arena(``amount``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38050,7 +38050,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_upgrade_arena_(``amount``, ``p1``, ``p2``, ``p3``)
+network_spent_upgrade_arena(``amount``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38068,7 +38068,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_arena_spectator_box_(``amount``, ``p1``, ``p2``, ``p3``)
+network_spent_arena_spectator_box(``amount``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38086,7 +38086,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_spin_the_wheel_payment_(``amount``, ``p1``, ``p2``)
+network_spent_spin_the_wheel_payment(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38103,7 +38103,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_spin_the_wheel_cash_(``amount``)
+network_earn_from_spin_the_wheel_cash(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38118,7 +38118,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_arena_premium_(``amount``, ``p1``, ``p2``)
+network_spent_arena_premium(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38135,7 +38135,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_arena_war_(``amount``, ``p1``, ``p2``, ``p3``)
+network_earn_from_arena_war(``amount``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38153,7 +38153,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_assassinate_target_killed_2_(``amount``)
+network_earn_from_assassinate_target_killed_2(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38168,7 +38168,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_bb_event_cargo_(``amount``)
+network_earn_from_bb_event_cargo(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38183,7 +38183,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_rc_time_trial_(``amount``)
+network_earn_from_rc_time_trial(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38198,7 +38198,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_daily_objective_event_(``amount``)
+network_earn_from_daily_objective_event(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38213,7 +38213,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_casino_membership_(``amount``, ``p1``, ``p2``, ``p3``)
+network_spent_casino_membership(``amount``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38231,7 +38231,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_buy_casino_(``amount``, ``p1``, ``p2``, ``data``)
+network_spent_buy_casino(``amount``, ``p1``, ``p2``, ``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38249,7 +38249,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_upgrade_casino_(``amount``, ``p1``, ``p2``, ``data``)
+network_spent_upgrade_casino(``amount``, ``p1``, ``p2``, ``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38267,7 +38267,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_casino_generic_(``amount``, ``p1``, ``p2``, ``p3``, ``p4``)
+network_spent_casino_generic(``amount``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38286,7 +38286,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_time_trial_win_(``amount``)
+network_earn_from_time_trial_win(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38301,7 +38301,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_collectables_action_figures_(``amount``)
+network_earn_from_collectables_action_figures(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38316,7 +38316,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_complete_collection_(``amount``)
+network_earn_from_complete_collection(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38331,7 +38331,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_selling_vehicle_(``amount``, ``p1``, ``p2``)
+network_earn_from_selling_vehicle(``amount``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38348,7 +38348,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_casino_mission_reward_(``amount``)
+network_earn_from_casino_mission_reward(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38363,7 +38363,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_casino_story_mission_reward_(``amount``)
+network_earn_from_casino_story_mission_reward(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38378,7 +38378,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_casino_mission_participation_(``amount``)
+network_earn_from_casino_mission_participation(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38393,7 +38393,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_casino_award_(``amount``, ``hash``)
+network_earn_from_casino_award(``amount``, ``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38409,7 +38409,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_casino_heist_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``, ``p10``)
+network_spent_casino_heist(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``, ``p10``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38434,7 +38434,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_arcade_game_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+network_spent_arcade_game(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38453,7 +38453,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_arcade_generic_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+network_spent_arcade_generic(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38472,7 +38472,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_casino_heist_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
+network_earn_casino_heist(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38493,7 +38493,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_casino_heist_bonus_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+network_earn_casino_heist_bonus(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38512,7 +38512,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_collection_item_(``amount``, ``p1``)
+network_earn_from_collection_item(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38528,7 +38528,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_collectable_completed_collection_(``amount``, ``p1``)
+network_earn_collectable_completed_collection(``amount``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38544,7 +38544,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_beach_party_generic_(``p0``)
+network_spent_beach_party_generic(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38559,7 +38559,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_submarine_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``)
+network_spent_submarine(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38579,7 +38579,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_casino_club_generic_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``)
+network_spent_casino_club_generic(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38602,7 +38602,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_upgrade_sub_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_upgrade_sub(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38620,7 +38620,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_island_heist_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_island_heist(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38638,7 +38638,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_island_heist_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``)
+network_earn_island_heist(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38658,7 +38658,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_carclub_membership_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+network_spent_carclub_membership(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38677,7 +38677,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_carclub_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_carclub(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38695,7 +38695,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_autoshop_modifications_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+network_spent_autoshop_modifications(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38714,7 +38714,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_carclub_takeover_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_carclub_takeover(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38732,7 +38732,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_buy_autoshop_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_buy_autoshop(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38750,7 +38750,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_upgrade_autoshop_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_upgrade_autoshop(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38768,7 +38768,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_autoshop_business_(``p0``, ``p1``)
+network_earn_from_autoshop_business(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38784,7 +38784,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_autoshop_income_(``p0``)
+network_earn_from_autoshop_income(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38799,7 +38799,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_carclub_membership_(``p0``)
+network_earn_from_carclub_membership(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38814,7 +38814,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_vehicle_autoshop_(``p0``, ``p1``)
+network_earn_from_vehicle_autoshop(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38830,7 +38830,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_vehicle_autoshop_bonus_(``p0``)
+network_earn_from_vehicle_autoshop_bonus(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38845,7 +38845,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_tuner_award_(``p0``, ``p1``, ``p2``)
+network_earn_from_tuner_award(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38862,7 +38862,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_tuner_finale_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+network_earn_from_tuner_finale(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38881,7 +38881,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_upgrade_autoshop_location_(``p0``, ``p1``)
+network_earn_from_upgrade_autoshop_location(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38897,7 +38897,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_interaction_menu_ability_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_interaction_menu_ability(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38915,7 +38915,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_from_bank_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_from_bank(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38933,7 +38933,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_buy_agency_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_buy_agency(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38951,7 +38951,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_upgrade_agency_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_upgrade_agency(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38969,7 +38969,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_agency_concierge_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_agency_concierge(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -38987,7 +38987,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_hidden_contact_service_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_hidden_contact_service(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39005,7 +39005,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_source_bike_contact_service_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_source_bike_contact_service(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39023,7 +39023,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_company_suv_contact_service_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_company_suv_contact_service(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39041,7 +39041,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_suv_fast_travel_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_suv_fast_travel(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39059,7 +39059,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_supply_contact_service_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_supply_contact_service(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39077,7 +39077,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_agency_income_(``p0``)
+network_earn_from_agency_income(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39092,7 +39092,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_award_security_contract_(``p0``, ``p1``)
+network_earn_from_award_security_contract(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39108,7 +39108,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_agency_security_contract_(``p0``, ``p1``)
+network_earn_from_agency_security_contract(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39124,7 +39124,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_award_phone_hit_(``p0``, ``p1``)
+network_earn_from_award_phone_hit(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39140,7 +39140,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_agency_phone_hit_(``p0``, ``p1``, ``p2``)
+network_earn_from_agency_phone_hit(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39157,7 +39157,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_award_agency_story_(``p0``, ``p1``)
+network_earn_from_award_agency_story(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39173,7 +39173,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_agency_story_prep_(``p0``, ``p1``)
+network_earn_from_agency_story_prep(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39189,7 +39189,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_agency_story_finale_(``p0``, ``p1``)
+network_earn_from_agency_story_finale(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39205,7 +39205,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_agency_short_trip_(``p0``, ``p1``)
+network_earn_from_agency_short_trip(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39221,7 +39221,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_award_short_trip_(``p0``, ``p1``)
+network_earn_from_award_short_trip(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39237,7 +39237,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_rival_delivery_security_contract_(``p0``, ``p1``)
+network_earn_rival_delivery_security_contract(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39253,7 +39253,7 @@ No documentation found for this native.
 
 ================================
 
-network_earn_from_upgrade_agency_location_(``p0``, ``p1``)
+network_earn_from_upgrade_agency_location(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39269,7 +39269,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_aggregated_utility_bills_(``amount``, ``p1``, ``p2``, ``data``)
+network_spent_aggregated_utility_bills(``amount``, ``p1``, ``p2``, ``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39287,7 +39287,7 @@ No documentation found for this native.
 
 ================================
 
-network_spent_business_expenses_(``p0``, ``p1``, ``p2``, ``p3``)
+network_spent_business_expenses(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39572,7 +39572,7 @@ Netshopping namespace
 
 Documentation for the netshopping namespace.
 
-net_gameserver_use_server_transactions_()
+net_gameserver_use_server_transactions()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39587,7 +39587,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_catalog_item_exists_(``name``)
+net_gameserver_catalog_item_exists(``name``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39602,7 +39602,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_catalog_item_exists_hash_(``hash``)
+net_gameserver_catalog_item_exists_hash(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39634,7 +39634,7 @@ bool is always true in game scripts
 
 ================================
 
-net_gameserver_catalog_is_ready_()
+net_gameserver_catalog_is_ready()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39649,7 +39649,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_is_catalog_valid_()
+net_gameserver_is_catalog_valid()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39664,7 +39664,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_get_catalog_crc_()
+net_gameserver_get_catalog_crc()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39679,7 +39679,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_get_catalog_state_()
+net_gameserver_get_catalog_state()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39754,7 +39754,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_update_balance_(``inventory``, ``playerbalance``)
+net_gameserver_update_balance(``inventory``, ``playerbalance``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39770,7 +39770,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_get_transaction_manager_data_()
+net_gameserver_get_transaction_manager_data()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39803,7 +39803,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_basket_delete_()
+net_gameserver_basket_delete()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39930,7 +39930,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_delete_character_slot_(``slot``, ``transfer``, ``reason``)
+net_gameserver_delete_character_slot(``slot``, ``transfer``, ``reason``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39947,7 +39947,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_delete_character_slot_get_status_()
+net_gameserver_delete_character_slot_get_status()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39977,7 +39977,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_transfer_bank_to_wallet_(``charSlot``, ``amount``)
+net_gameserver_transfer_bank_to_wallet(``charSlot``, ``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -39993,7 +39993,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_transfer_wallet_to_bank_(``charSlot``, ``amount``)
+net_gameserver_transfer_wallet_to_bank(``charSlot``, ``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -40009,7 +40009,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_transfer_cash_get_status_()
+net_gameserver_transfer_cash_get_status()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -40024,7 +40024,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_transfer_cash_get_status_2_()
+net_gameserver_transfer_cash_get_status_2()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -40039,7 +40039,7 @@ No documentation found for this native.
 
 ================================
 
-net_gameserver_transfer_cash_set_telemetry_nonce_seed_()
+net_gameserver_transfer_cash_set_telemetry_nonce_seed()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -40076,7 +40076,7 @@ Network namespace
 
 Documentation for the network namespace.
 
-get_online_version_()
+get_online_version()
 ^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -40213,7 +40213,7 @@ No documentation found for this native.
 
 ================================
 
-network_has_age_restricted_profile_()
+network_has_age_restricted_profile()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -40323,7 +40323,7 @@ No documentation found for this native.
 
 ================================
 
-network_have_online_privilege_2_()
+network_have_online_privilege_2()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -40370,7 +40370,7 @@ No documentation found for this native.
 
 ================================
 
-network_transition_track_(``hash``, ``p1``, ``p2``, ``state``, ``p4``)
+network_transition_track(``hash``, ``p1``, ``p2``, ``state``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -40864,7 +40864,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_targeting_mode_()
+network_get_targeting_mode()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -41166,7 +41166,7 @@ No documentation found for this native.
 
 ================================
 
-network_accept_invite_()
+network_accept_invite()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -41271,7 +41271,7 @@ No documentation found for this native.
 
 ================================
 
-network_block_kicked_players_(``p0``)
+network_block_kicked_players(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -42618,7 +42618,7 @@ No documentation found for this native.
 
 ================================
 
-network_send_presence_transition_invite_(``gamerHandle``, ``p1``, ``p2``, ``p3``)
+network_send_presence_transition_invite(``gamerHandle``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -43096,7 +43096,7 @@ Hardcoded to return false.
 
 ================================
 
-network_get_platform_party_unk_()
+network_get_platform_party_unk()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -43265,7 +43265,7 @@ No documentation found for this native.
 
 ================================
 
-trigger_script_crc_check_on_player_(``player``, ``p1``, ``scriptHash``)
+trigger_script_crc_check_on_player(``player``, ``p1``, ``scriptHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -43282,7 +43282,7 @@ No documentation found for this native.
 
 ================================
 
-remote_cheat_detected_(``player``, ``a``, ``b``)
+remote_cheat_detected(``player``, ``a``, ``b``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -43316,7 +43316,7 @@ No documentation found for this native.
 
 ================================
 
-network_add_invalid_model_(``modelHash``)
+network_add_invalid_model(``modelHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -43331,7 +43331,7 @@ No documentation found for this native.
 
 ================================
 
-network_remove_invalid_model_(``modelHash``)
+network_remove_invalid_model(``modelHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -43346,7 +43346,7 @@ No documentation found for this native.
 
 ================================
 
-network_clear_invalid_models_()
+network_clear_invalid_models()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -43394,7 +43394,7 @@ No documentation found for this native.
 
 ================================
 
-network_is_this_script_marked_(``p0``, ``p1``, ``p2``)
+network_is_this_script_marked(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -43779,7 +43779,7 @@ No documentation found for this native.
 
 ================================
 
-network_is_thread_active_(``threadId``)
+network_is_thread_active(``threadId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -43826,7 +43826,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_position_hash_of_this_script_()
+network_get_position_hash_of_this_script()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -43920,7 +43920,7 @@ This native is exactly the same as 'PARTICIPANT_ID' native.
 
 ================================
 
-network_get_player_killer_of_player_(``player``)
+network_get_player_killer_of_player(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -43950,7 +43950,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_destroyer_of_entity_(``entity``)
+network_get_destroyer_of_entity(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -43965,7 +43965,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_assisted_damage_of_dead_entity_(``player``, ``entity``)
+network_get_assisted_damage_of_dead_entity(``player``, ``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -44079,7 +44079,7 @@ No documentation found for this native.
 
 ================================
 
-network_ped_force_game_state_update_(``ped``)
+network_ped_force_game_state_update(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -44274,7 +44274,7 @@ No documentation found for this native.
 
 ================================
 
-network_is_network_id_a_clone_(``netId``)
+network_is_network_id_a_clone(``netId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -44852,7 +44852,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_entity_net_script_id_(``entity``)
+network_get_entity_net_script_id(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -44927,7 +44927,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_friend_name_from_index_(``friendIndex``)
+network_get_friend_name_from_index(``friendIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -45213,7 +45213,7 @@ No documentation found for this native.
 
 ================================
 
-network_can_communicate_with_gamer_2_(``gamerHandle``)
+network_can_communicate_with_gamer_2(``gamerHandle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -45776,7 +45776,7 @@ No documentation found for this native.
 
 ================================
 
-network_is_text_chat_active_()
+network_is_text_chat_active()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -45806,7 +45806,7 @@ Starts a new singleplayer game (at the prologue).
 
 ================================
 
-shutdown_and_load_most_recent_save_()
+shutdown_and_load_most_recent_save()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -46175,7 +46175,7 @@ No documentation found for this native.
 
 ================================
 
-network_clan_animation_(``animDict``, ``animName``)
+network_clan_animation(``animDict``, ``animName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -46394,7 +46394,7 @@ No documentation found for this native.
 
 ================================
 
-set_network_id_can_be_reassigned_(``netId``, ``toggle``)
+set_network_id_can_be_reassigned(``netId``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -46426,7 +46426,7 @@ No documentation found for this native.
 
 ================================
 
-network_set_object_force_static_blend_(``object``, ``toggle``)
+network_set_object_force_static_blend(``object``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -46442,7 +46442,7 @@ No documentation found for this native.
 
 ================================
 
-network_set_entity_invisible_to_network_(``entity``, ``toggle``)
+network_set_entity_invisible_to_network(``entity``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -46475,7 +46475,7 @@ No documentation found for this native.
 
 ================================
 
-set_network_id_visible_in_cutscene_no_collision_(``netId``, ``p1``, ``p2``)
+set_network_id_visible_in_cutscene_no_collision(``netId``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -46793,7 +46793,7 @@ No documentation found for this native.
 
 ================================
 
-is_damage_tracker_active_on_player_(``player``)
+is_damage_tracker_active_on_player(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -46808,7 +46808,7 @@ No documentation found for this native.
 
 ================================
 
-activate_damage_tracker_on_player_(``player``, ``toggle``)
+activate_damage_tracker_on_player(``player``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -46906,7 +46906,7 @@ No documentation found for this native.
 
 ================================
 
-reserve_network_local_objects_(``amount``)
+reserve_network_local_objects(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -46921,7 +46921,7 @@ No documentation found for this native.
 
 ================================
 
-reserve_network_local_peds_(``amount``)
+reserve_network_local_peds(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -46936,7 +46936,7 @@ No documentation found for this native.
 
 ================================
 
-reserve_network_local_vehicles_(``amount``)
+reserve_network_local_vehicles(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -46996,7 +46996,7 @@ No documentation found for this native.
 
 ================================
 
-can_register_mission_pickups_(``amount``)
+can_register_mission_pickups(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -47122,7 +47122,7 @@ No documentation found for this native.
 
 ================================
 
-get_reservations_for_slot_world_position_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
+get_reservations_for_slot_world_position(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -47203,7 +47203,7 @@ No documentation found for this native.
 
 ================================
 
-network_set_object_interest_range_(``object``, ``range``)
+network_set_object_interest_range(``object``, ``range``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -47360,7 +47360,7 @@ No documentation found for this native.
 
 ================================
 
-get_cloud_time_as_string_()
+get_cloud_time_as_string()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -47581,7 +47581,7 @@ No documentation found for this native.
 
 ================================
 
-set_network_vehicle_position_update_multiplier_(``vehicle``, ``multiplier``)
+set_network_vehicle_position_update_multiplier(``vehicle``, ``multiplier``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -47597,7 +47597,7 @@ No documentation found for this native.
 
 ================================
 
-set_network_enable_vehicle_position_correction_(``vehicle``, ``toggle``)
+set_network_enable_vehicle_position_correction(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -47613,7 +47613,7 @@ No documentation found for this native.
 
 ================================
 
-set_local_player_as_ghost_(``toggle``, ``p1``)
+set_local_player_as_ghost(``toggle``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -47629,7 +47629,7 @@ No documentation found for this native.
 
 ================================
 
-is_entity_ghosted_to_local_player_(``entity``)
+is_entity_ghosted_to_local_player(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -47644,7 +47644,7 @@ No documentation found for this native.
 
 ================================
 
-set_relationship_to_player_(``player``, ``p1``)
+set_relationship_to_player(``player``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -47660,7 +47660,7 @@ No documentation found for this native.
 
 ================================
 
-set_ghosted_entity_alpha_(``alpha``)
+set_ghosted_entity_alpha(``alpha``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -47675,7 +47675,7 @@ No documentation found for this native.
 
 ================================
 
-reset_ghosted_entity_alpha_()
+reset_ghosted_entity_alpha()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -47690,7 +47690,7 @@ No documentation found for this native.
 
 ================================
 
-network_set_entity_ghosted_with_owner_(``entity``, ``p1``)
+network_set_entity_ghosted_with_owner(``entity``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -48072,7 +48072,7 @@ No documentation found for this native.
 
 ================================
 
-network_is_player_equal_to_index_(``player``, ``index``)
+network_is_player_equal_to_index(``player``, ``index``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -48120,7 +48120,7 @@ No documentation found for this native.
 
 ================================
 
-network_conceal_entity_(``entity``, ``toggle``)
+network_conceal_entity(``entity``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -48136,7 +48136,7 @@ No documentation found for this native.
 
 ================================
 
-network_is_entity_concealed_(``entity``)
+network_is_entity_concealed(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -48169,7 +48169,7 @@ Passing wrong data (e.g. hours above 23) will cause the game to crash.
 
 ================================
 
-network_override_clock_milliseconds_per_game_minute_(``ms``)
+network_override_clock_milliseconds_per_game_minute(``ms``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -48526,7 +48526,7 @@ No documentation found for this native.
 
 ================================
 
-network_register_tunable_int_hash_(``contextHash``, ``nameHash``, ``value``)
+network_register_tunable_int_hash(``contextHash``, ``nameHash``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -48560,7 +48560,7 @@ No documentation found for this native.
 
 ================================
 
-network_register_tunable_float_hash_(``contextHash``, ``nameHash``, ``value``)
+network_register_tunable_float_hash(``contextHash``, ``nameHash``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -48593,7 +48593,7 @@ No documentation found for this native.
 
 ================================
 
-network_register_tunable_bool_hash_(``contextHash``, ``nameHash``)
+network_register_tunable_bool_hash(``contextHash``, ``nameHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -48663,7 +48663,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_num_body_trackers_()
+network_get_num_body_trackers()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -48678,7 +48678,7 @@ No documentation found for this native.
 
 ================================
 
-network_set_vehicle_wheels_destructible_(``entity``, ``toggle``)
+network_set_vehicle_wheels_destructible(``entity``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -49208,7 +49208,7 @@ No documentation found for this native.
 
 ================================
 
-clear_launch_params_()
+clear_launch_params()
 ^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50426,7 +50426,7 @@ No documentation found for this native.
 
 ================================
 
-facebook_is_sending_data_()
+facebook_is_sending_data()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50441,7 +50441,7 @@ No documentation found for this native.
 
 ================================
 
-facebook_do_unk_check_()
+facebook_do_unk_check()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50456,7 +50456,7 @@ No documentation found for this native.
 
 ================================
 
-facebook_is_available_()
+facebook_is_available()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50588,7 +50588,7 @@ get_status_of_texture_download(``p0``)
 
 ================================
 
-network_should_show_connectivity_troubleshooting_()
+network_should_show_connectivity_troubleshooting()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50618,7 +50618,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_ros_privilege_9_()
+network_get_ros_privilege_9()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50740,7 +50740,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_ros_privilege_24_()
+network_get_ros_privilege_24()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50755,7 +50755,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_ros_privilege_25_()
+network_get_ros_privilege_25()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50785,7 +50785,7 @@ Always returns -1. Seems to be XB1 specific.
 
 ================================
 
-network_has_game_been_altered_()
+network_has_game_been_altered()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50800,7 +50800,7 @@ No documentation found for this native.
 
 ================================
 
-network_update_player_scars_()
+network_update_player_scars()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50830,7 +50830,7 @@ No documentation found for this native.
 
 ================================
 
-network_allow_local_entity_attachment_(``entity``, ``toggle``)
+network_allow_local_entity_attachment(``entity``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50846,7 +50846,7 @@ No documentation found for this native.
 
 ================================
 
-network_is_connection_endpoint_relay_server_(``player``)
+network_is_connection_endpoint_relay_server(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50861,7 +50861,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_average_latency_for_player_(``player``)
+network_get_average_latency_for_player(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50876,7 +50876,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_average_latency_for_player_2_(``player``)
+network_get_average_latency_for_player_2(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50891,7 +50891,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_average_packet_loss_for_player_(``player``)
+network_get_average_packet_loss_for_player(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50906,7 +50906,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_num_unacked_for_player_(``player``)
+network_get_num_unacked_for_player(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50921,7 +50921,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_unreliable_resend_count_for_player_(``player``)
+network_get_unreliable_resend_count_for_player(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50936,7 +50936,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_oldest_resend_count_for_player_(``player``)
+network_get_oldest_resend_count_for_player(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50951,7 +50951,7 @@ No documentation found for this native.
 
 ================================
 
-network_report_myself_()
+network_report_myself()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50966,7 +50966,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_player_coords_(``player``)
+network_get_player_coords(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50981,7 +50981,7 @@ No documentation found for this native.
 
 ================================
 
-network_get_last_velocity_received_(``entity``)
+network_get_last_velocity_received(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -50996,7 +50996,7 @@ No documentation found for this native.
 
 ================================
 
-network_ugc_nav_(``p0``, ``p1``)
+network_ugc_nav(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -51091,7 +51091,7 @@ No documentation found for this native.
 
 ================================
 
-place_object_on_ground_properly_2_(``object``)
+place_object_on_ground_properly_2(``object``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -51245,7 +51245,7 @@ No documentation found for this native.
 
 ================================
 
-get_object_offset_from_coords_(``xPos``, ``yPos``, ``zPos``, ``heading``, ``xOffset``, ``yOffset``, ``zOffset``)
+get_object_offset_from_coords(``xPos``, ``yPos``, ``zPos``, ``heading``, ``xOffset``, ``yOffset``, ``zOffset``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -51345,7 +51345,7 @@ the locked bool is either 0(unlocked)(false) or 1(locked)(true)
 
 ================================
 
-door_control_(``modelHash``, ``x``, ``y``, ``z``, ``locked``, ``xRotMult``, ``yRotMult``, ``zRotMult``)
+door_control(``modelHash``, ``x``, ``y``, ``z``, ``locked``, ``xRotMult``, ``yRotMult``, ``zRotMult``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -51528,7 +51528,7 @@ Ranges from -1.0 to 1.0, and 0.0 is closed / default.
 
 ================================
 
-door_system_get_automatic_distance_(``doorHash``)
+door_system_get_automatic_distance(``doorHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -51784,7 +51784,7 @@ Despite the name, it does work for any entity type.
 
 ================================
 
-clear_garage_area_(``garageHash``, ``isNetwork``)
+clear_garage_area(``garageHash``, ``isNetwork``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -52069,7 +52069,7 @@ No documentation found for this native.
 
 ================================
 
-set_unk_global_bool_related_to_damage_(``value``)
+set_unk_global_bool_related_to_damage(``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -52084,7 +52084,7 @@ No documentation found for this native.
 
 ================================
 
-set_create_weapon_object_light_source_(``object``, ``toggle``)
+set_create_weapon_object_light_source(``object``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -52272,7 +52272,7 @@ Full list of pickup types by DurtyFree: https://github.com/DurtyFree/gta-v-data-
 
 ================================
 
-create_non_networked_ambient_pickup_(``pickupHash``, ``posX``, ``posY``, ``posZ``, ``flags``, ``value``, ``modelHash``, ``p7``, ``p8``)
+create_non_networked_ambient_pickup(``pickupHash``, ``posX``, ``posY``, ``posZ``, ``flags``, ``value``, ``modelHash``, ``p7``, ``p8``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -52659,7 +52659,7 @@ No documentation found for this native.
 
 ================================
 
-toggle_use_pickups_for_player_(``player``, ``pickupHash``, ``toggle``)
+toggle_use_pickups_for_player(``player``, ``pickupHash``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -52676,7 +52676,7 @@ No documentation found for this native.
 
 ================================
 
-set_local_player_can_use_pickups_with_this_model_(``modelHash``, ``toggle``)
+set_local_player_can_use_pickups_with_this_model(``modelHash``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -52756,7 +52756,7 @@ No documentation found for this native.
 
 ================================
 
-get_pickup_generation_range_multiplier_()
+get_pickup_generation_range_multiplier()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -52905,7 +52905,7 @@ Full list of pickup types by DurtyFree: https://github.com/DurtyFree/gta-v-data-
 
 ================================
 
-get_pickup_hash_from_weapon_(``weaponHash``)
+get_pickup_hash_from_weapon(``weaponHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -52935,7 +52935,7 @@ No documentation found for this native.
 
 ================================
 
-get_object_texture_variation_(``object``)
+get_object_texture_variation(``object``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -52950,7 +52950,7 @@ No documentation found for this native.
 
 ================================
 
-set_object_texture_variation_(``object``, ``textureVariation``)
+set_object_texture_variation(``object``, ``textureVariation``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -52966,7 +52966,7 @@ No documentation found for this native.
 
 ================================
 
-set_texture_variation_of_closest_object_of_type_(``x``, ``y``, ``z``, ``radius``, ``modelHash``, ``textureVariation``)
+set_texture_variation_of_closest_object_of_type(``x``, ``y``, ``z``, ``radius``, ``modelHash``, ``textureVariation``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -52986,7 +52986,7 @@ No documentation found for this native.
 
 ================================
 
-set_object_light_color_(``object``, ``p1``, ``r``, ``g``, ``b``)
+set_object_light_color(``object``, ``p1``, ``r``, ``g``, ``b``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53005,7 +53005,7 @@ No documentation found for this native.
 
 ================================
 
-set_object_stunt_prop_speedup_(``object``, ``p1``)
+set_object_stunt_prop_speedup(``object``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53021,7 +53021,7 @@ No documentation found for this native.
 
 ================================
 
-set_object_stunt_prop_duration_(``object``, ``duration``)
+set_object_stunt_prop_duration(``object``, ``duration``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53037,7 +53037,7 @@ No documentation found for this native.
 
 ================================
 
-get_pickup_hash_(``pickupHash``)
+get_pickup_hash(``pickupHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53070,7 +53070,7 @@ No documentation found for this native.
 
 ================================
 
-mark_object_for_deletion_(``object``)
+mark_object_for_deletion(``object``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53085,7 +53085,7 @@ No documentation found for this native.
 
 ================================
 
-set_enable_arena_prop_physics_(``object``, ``toggle``, ``p2``)
+set_enable_arena_prop_physics(``object``, ``toggle``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53102,7 +53102,7 @@ No documentation found for this native.
 
 ================================
 
-set_enable_arena_prop_physics_on_ped_(``object``, ``toggle``, ``p2``, ``ped``)
+set_enable_arena_prop_physics_on_ped(``object``, ``toggle``, ``p2``, ``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53120,7 +53120,7 @@ No documentation found for this native.
 
 ================================
 
-get_is_arena_prop_physics_disabled_(``object``, ``p1``)
+get_is_arena_prop_physics_disabled(``object``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53279,7 +53279,7 @@ padIndex: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
 
 ================================
 
-set_control_normal_(``padIndex``, ``control``, ``amount``)
+set_control_normal(``padIndex``, ``control``, ``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53411,7 +53411,7 @@ No documentation found for this native.
 
 ================================
 
-is_using_keyboard_(``padIndex``)
+is_using_keyboard(``padIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53426,7 +53426,7 @@ No documentation found for this native.
 
 ================================
 
-is_using_keyboard_2_(``padIndex``)
+is_using_keyboard_2(``padIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53441,7 +53441,7 @@ No documentation found for this native.
 
 ================================
 
-set_cursor_location_(``x``, ``y``)
+set_cursor_location(``x``, ``y``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53575,7 +53575,7 @@ No documentation found for this native.
 
 ================================
 
-clear_suppressed_pad_rumble_(``p0``)
+clear_suppressed_pad_rumble(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53620,7 +53620,7 @@ Returns the local player's targeting mode. See PLAYER::SET_PLAYER_TARGETING_MODE
 
 ================================
 
-get_local_player_aim_state_2_()
+get_local_player_aim_state_2()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -53635,7 +53635,7 @@ No documentation found for this native.
 
 ================================
 
-get_is_using_alternate_handbrake_()
+get_is_using_alternate_handbrake()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -54316,7 +54316,7 @@ No documentation found for this native.
 
 ================================
 
-set_ai_global_path_nodes_type_(``type``)
+set_ai_global_path_nodes_type(``type``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -54539,7 +54539,7 @@ No documentation found for this native.
 
 ================================
 
-set_ignore_secondary_route_nodes_(``toggle``)
+set_ignore_secondary_route_nodes(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -54639,7 +54639,7 @@ No documentation found for this native.
 
 ================================
 
-get_point_on_road_side_(``x``, ``y``, ``z``, ``p3``)
+get_point_on_road_side(``x``, ``y``, ``z``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -54766,7 +54766,7 @@ No documentation found for this native.
 
 ================================
 
-is_navmesh_required_region_owned_by_any_thread_()
+is_navmesh_required_region_owned_by_any_thread()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -55091,7 +55091,7 @@ No documentation found for this native.
 
 ================================
 
-clone_ped_ex_(``ped``, ``isNetwork``, ``bScriptHostPed``, ``copyHeadBlendFlag``, ``p4``)
+clone_ped_ex(``ped``, ``isNetwork``, ``bScriptHostPed``, ``copyHeadBlendFlag``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -55126,7 +55126,7 @@ Copies ped's components and props to targetPed.
 
 ================================
 
-clone_ped_to_target_ex_(``ped``, ``targetPed``, ``p2``)
+clone_ped_to_target_ex(``ped``, ``targetPed``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -55386,7 +55386,7 @@ No documentation found for this native.
 
 ================================
 
-freeze_ped_camera_rotation_(``ped``)
+freeze_ped_camera_rotation(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -56613,7 +56613,7 @@ No documentation found for this native.
 
 ================================
 
-is_ped_opening_a_door_(``ped``)
+is_ped_opening_a_door(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -56812,7 +56812,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_perception_override_this_frame_(``seeingRange``, ``seeingRangePeripheral``, ``hearingRange``, ``visualFieldMinAzimuthAngle``, ``visualFieldMaxAzimuthAngle``, ``fieldOfGazeMaxAngle``, ``p6``)
+set_ped_perception_override_this_frame(``seeingRange``, ``seeingRangePeripheral``, ``hearingRange``, ``visualFieldMinAzimuthAngle``, ``visualFieldMaxAzimuthAngle``, ``fieldOfGazeMaxAngle``, ``p6``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -56993,7 +56993,7 @@ No documentation found for this native.
 
 ================================
 
-get_ped_visual_field_center_angle_(``ped``)
+get_ped_visual_field_center_angle(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -57237,7 +57237,7 @@ p1 is usually 0 in the scripts because it gets the ped id during the task sequen
 
 ================================
 
-get_ped_task_combat_target_(``ped``, ``p1``)
+get_ped_task_combat_target(``ped``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -57654,7 +57654,7 @@ No documentation found for this native.
 
 ================================
 
-does_relationship_group_exist_(``groupHash``)
+does_relationship_group_exist(``groupHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -57758,7 +57758,7 @@ PED::GET_RELATIONSHIP_BETWEEN_GROUPS(0xA49E591C, l_1017);
 
 ================================
 
-set_relationship_group_dont_affect_wanted_level_(``group``, ``p1``)
+set_relationship_group_dont_affect_wanted_level(``group``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -57823,7 +57823,7 @@ No documentation found for this native.
 
 ================================
 
-get_ped_event_data_(``ped``, ``eventType``)
+get_ped_event_data(``ped``, ``eventType``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -58146,7 +58146,7 @@ damages a ped with the given amount
 
 ================================
 
-get_time_of_last_ped_weapon_damage_(``ped``, ``weaponHash``)
+get_time_of_last_ped_weapon_damage(``ped``, ``weaponHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -58953,7 +58953,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_cover_clipset_override_(``ped``, ``p1``)
+set_ped_cover_clipset_override(``ped``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -58969,7 +58969,7 @@ No documentation found for this native.
 
 ================================
 
-clear_ped_cover_clipset_override_(``ped``)
+clear_ped_cover_clipset_override(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59562,7 +59562,7 @@ See SET_PED_HEAD_BLEND_DATA().
 
 ================================
 
-set_ped_eye_color_(``ped``, ``index``)
+set_ped_eye_color(``ped``, ``index``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59578,7 +59578,7 @@ No documentation found for this native.
 
 ================================
 
-get_ped_eye_color_(``ped``)
+get_ped_eye_color(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59626,7 +59626,7 @@ overlayID       Part                  Index, to disable
 
 ================================
 
-get_ped_head_overlay_value_(``ped``, ``overlayID``)
+get_ped_head_overlay_value(``ped``, ``overlayID``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59657,7 +59657,7 @@ Used with freemode (online) characters.
 
 ================================
 
-set_ped_head_overlay_color_(``ped``, ``overlayID``, ``colorType``, ``colorID``, ``secondColorID``)
+set_ped_head_overlay_color(``ped``, ``overlayID``, ``colorType``, ``colorID``, ``secondColorID``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59676,7 +59676,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_hair_color_(``ped``, ``colorID``, ``highlightColorID``)
+set_ped_hair_color(``ped``, ``colorID``, ``highlightColorID``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59693,7 +59693,7 @@ No documentation found for this native.
 
 ================================
 
-get_num_hair_colors_()
+get_num_hair_colors()
 ^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59708,7 +59708,7 @@ No documentation found for this native.
 
 ================================
 
-get_num_makeup_colors_()
+get_num_makeup_colors()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59723,7 +59723,7 @@ No documentation found for this native.
 
 ================================
 
-get_ped_hair_rgb_color_(``hairColorIndex``)
+get_ped_hair_rgb_color(``hairColorIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59738,7 +59738,7 @@ No documentation found for this native.
 
 ================================
 
-get_ped_makeup_rgb_color_(``makeupColorIndex``)
+get_ped_makeup_rgb_color(``makeupColorIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59753,7 +59753,7 @@ No documentation found for this native.
 
 ================================
 
-is_ped_hair_valid_creator_color_(``colorId``)
+is_ped_hair_valid_creator_color(``colorId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59768,7 +59768,7 @@ No documentation found for this native.
 
 ================================
 
-get_default_secondary_hair_creator_color_(``colorId``)
+get_default_secondary_hair_creator_color(``colorId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59783,7 +59783,7 @@ No documentation found for this native.
 
 ================================
 
-is_ped_lipstick_valid_creator_color_(``colorId``)
+is_ped_lipstick_valid_creator_color(``colorId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59798,7 +59798,7 @@ No documentation found for this native.
 
 ================================
 
-is_ped_blush_valid_creator_color_(``colorId``)
+is_ped_blush_valid_creator_color(``colorId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59813,7 +59813,7 @@ No documentation found for this native.
 
 ================================
 
-is_ped_hair_valid_barber_color_(``colorID``)
+is_ped_hair_valid_barber_color(``colorID``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59828,7 +59828,7 @@ No documentation found for this native.
 
 ================================
 
-get_default_secondary_hair_barber_color_(``colorID``)
+get_default_secondary_hair_barber_color(``colorID``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59843,7 +59843,7 @@ No documentation found for this native.
 
 ================================
 
-is_ped_lipstick_valid_barber_color_(``colorID``)
+is_ped_lipstick_valid_barber_color(``colorID``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59858,7 +59858,7 @@ No documentation found for this native.
 
 ================================
 
-is_ped_blush_valid_barber_color_(``colorID``)
+is_ped_blush_valid_barber_color(``colorID``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59873,7 +59873,7 @@ No documentation found for this native.
 
 ================================
 
-is_ped_blush_facepaint_valid_barber_color_(``colorId``)
+is_ped_blush_facepaint_valid_barber_color(``colorId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59888,7 +59888,7 @@ No documentation found for this native.
 
 ================================
 
-get_tint_of_hair_component_variation_(``modelHash``, ``drawableId``, ``textureId``)
+get_tint_of_hair_component_variation(``modelHash``, ``drawableId``, ``textureId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -59905,7 +59905,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_micro_morph_value_(``ped``, ``index``, ``scale``)
+set_ped_micro_morph_value(``ped``, ``index``, ``scale``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -60266,7 +60266,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_scuba_gear_variation_(``ped``)
+set_ped_scuba_gear_variation(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -61762,7 +61762,7 @@ No documentation found for this native.
 
 ================================
 
-does_scenario_blocking_area_exist_(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``)
+does_scenario_blocking_area_exist(``x1``, ``y1``, ``z1``, ``x2``, ``y2``, ``z2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -61831,7 +61831,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_scared_when_using_scenario_(``ped``, ``toggle``)
+set_ped_scared_when_using_scenario(``ped``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -61847,7 +61847,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_should_play_directed_scenario_exit_(``p0``, ``p1``, ``p2``, ``p3``)
+set_ped_should_play_directed_scenario_exit(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -61930,7 +61930,7 @@ Full list of animation dictionaries and anims by DurtyFree: https://github.com/D
 
 ================================
 
-set_facial_clipset_override_(``ped``, ``animDict``)
+set_facial_clipset_override(``ped``, ``animDict``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -62011,7 +62011,7 @@ p2 usually 0
 
 ================================
 
-set_ped_can_play_injured_anims_(``ped``, ``p1``)
+set_ped_can_play_injured_anims(``ped``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -62903,7 +62903,7 @@ No documentation found for this native.
 
 ================================
 
-block_ped_dead_body_shocking_events_(``ped``, ``toggle``)
+block_ped_dead_body_shocking_events(``ped``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -63040,7 +63040,7 @@ gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
 
 ================================
 
-set_ped_helmet_unk_(``ped``, ``p1``, ``p2``, ``p3``)
+set_ped_helmet_unk(``ped``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -63058,7 +63058,7 @@ No documentation found for this native.
 
 ================================
 
-is_ped_helmet_unk_(``ped``)
+is_ped_helmet_unk(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -64154,7 +64154,7 @@ In the "agency_heist3b" script, p1 - p3 are always under 100 - usually they are 
 
 ================================
 
-set_ped_emissive_intensity_(``ped``, ``intensity``)
+set_ped_emissive_intensity(``ped``, ``intensity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -64170,7 +64170,7 @@ No documentation found for this native.
 
 ================================
 
-get_ped_emissive_intensity_(``ped``)
+get_ped_emissive_intensity(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -64185,7 +64185,7 @@ No documentation found for this native.
 
 ================================
 
-is_ped_shader_effect_valid_(``ped``)
+is_ped_shader_effect_valid(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -64514,7 +64514,7 @@ enum eMotionState // 0x92A659FE
 
 ================================
 
-get_ped_current_movement_speed_(``ped``)
+get_ped_current_movement_speed(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -64758,7 +64758,7 @@ gtaforums.com/topic/885580-ped-headshotmugshot-txd/
 
 ================================
 
-register_pedheadshot_3_(``ped``)
+register_pedheadshot_3(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -65305,7 +65305,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_can_play_in_car_idles_(``ped``, ``toggle``)
+set_ped_can_play_in_car_idles(``ped``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -65360,7 +65360,7 @@ Min and max are usually 100.0 and 200.0
 
 ================================
 
-set_disable_ped_fall_damage_(``ped``, ``toggle``)
+set_disable_ped_fall_damage(``ped``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -65376,7 +65376,7 @@ No documentation found for this native.
 
 ================================
 
-set_ped_steer_bias_(``ped``, ``value``)
+set_ped_steer_bias(``ped``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -65392,7 +65392,7 @@ No documentation found for this native.
 
 ================================
 
-is_ped_swapping_weapon_(``Ped``)
+is_ped_swapping_weapon(``Ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -65407,7 +65407,7 @@ No documentation found for this native.
 
 ================================
 
-set_enable_scuba_gear_light_(``ped``, ``toggle``)
+set_enable_scuba_gear_light(``ped``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -65423,7 +65423,7 @@ No documentation found for this native.
 
 ================================
 
-is_scuba_gear_light_enabled_(``ped``)
+is_scuba_gear_light_enabled(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -65438,7 +65438,7 @@ No documentation found for this native.
 
 ================================
 
-clear_facial_clipset_override_(``ped``)
+clear_facial_clipset_override(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -65897,7 +65897,7 @@ Unloads rope textures for all ropes in the current scene.
 
 ================================
 
-does_rope_belong_to_this_script_(``ropeId``)
+does_rope_belong_to_this_script(``ropeId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -66102,7 +66102,7 @@ No documentation found for this native.
 
 ================================
 
-get_has_object_frag_inst_(``object``)
+get_has_object_frag_inst(``object``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -66149,7 +66149,7 @@ No documentation found for this native.
 
 ================================
 
-set_launch_control_enabled_(``toggle``)
+set_launch_control_enabled(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -66299,7 +66299,7 @@ Set player team on deathmatch and last team standing..
 
 ================================
 
-get_number_of_players_in_team_(``team``)
+get_number_of_players_in_team(``team``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -66786,7 +66786,7 @@ No documentation found for this native.
 
 ================================
 
-get_wanted_level_parole_duration_()
+get_wanted_level_parole_duration()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -66801,7 +66801,7 @@ No documentation found for this native.
 
 ================================
 
-set_wanted_level_hidden_evasion_time_(``player``, ``wantedLevel``, ``lossTime``)
+set_wanted_level_hidden_evasion_time(``player``, ``wantedLevel``, ``lossTime``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -66818,7 +66818,7 @@ No documentation found for this native.
 
 ================================
 
-reset_wanted_level_hidden_evasion_time_(``player``)
+reset_wanted_level_hidden_evasion_time(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -67251,7 +67251,7 @@ No documentation found for this native.
 
 ================================
 
-set_player_underwater_time_remaining_(``player``, ``time``)
+set_player_underwater_time_remaining(``player``, ``time``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -67316,7 +67316,7 @@ You can't disable controls with this, use SET_PLAYER_CONTROL(...) for this.
 
 ================================
 
-is_player_cam_control_disabled_()
+is_player_cam_control_disabled()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -67780,7 +67780,7 @@ give_achievement_to_player(``achievementId``)
 
 ================================
 
-set_achievement_progress_(``achievementId``, ``progress``)
+set_achievement_progress(``achievementId``, ``progress``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -67796,7 +67796,7 @@ No documentation found for this native.
 
 ================================
 
-get_achievement_progress_(``achievementId``)
+get_achievement_progress(``achievementId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -67940,7 +67940,7 @@ This function will always return false if 0x733A643B5B0C53C1 is used to set the 
 
 ================================
 
-set_player_invincible_keep_ragdoll_enabled_(``player``, ``toggle``)
+set_player_invincible_keep_ragdoll_enabled(``player``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -68355,7 +68355,7 @@ Default is 100. Use player id and not ped id. For instance: PLAYER::SET_PLAYER_M
 
 ================================
 
-special_ability_activate_(``player``, ``p1``)
+special_ability_activate(``player``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -68371,7 +68371,7 @@ No documentation found for this native.
 
 ================================
 
-set_special_ability_(``player``, ``p1``, ``p2``)
+set_special_ability(``player``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -68388,7 +68388,7 @@ No documentation found for this native.
 
 ================================
 
-special_ability_deplete_(``player``, ``p1``)
+special_ability_deplete(``player``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -68837,7 +68837,7 @@ Use 1.0 to reset it back to normal
 
 ================================
 
-get_player_health_recharge_limit_(``player``)
+get_player_health_recharge_limit(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -68852,7 +68852,7 @@ No documentation found for this native.
 
 ================================
 
-set_player_health_recharge_limit_(``player``, ``limit``)
+set_player_health_recharge_limit(``player``, ``limit``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -68868,7 +68868,7 @@ No documentation found for this native.
 
 ================================
 
-set_player_fall_distance_(``player``, ``p1``)
+set_player_fall_distance(``player``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -68920,7 +68920,7 @@ modifier's min value is 0.1
 
 ================================
 
-set_player_weapon_defense_modifier_2_(``player``, ``modifier``)
+set_player_weapon_defense_modifier_2(``player``, ``modifier``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69663,7 +69663,7 @@ No documentation found for this native.
 
 ================================
 
-set_player_reserve_parachute_model_override_(``player``, ``model``)
+set_player_reserve_parachute_model_override(``player``, ``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69679,7 +69679,7 @@ No documentation found for this native.
 
 ================================
 
-get_player_parachute_model_override_(``player``)
+get_player_parachute_model_override(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69694,7 +69694,7 @@ No documentation found for this native.
 
 ================================
 
-get_player_reserve_parachute_model_override_(``player``)
+get_player_reserve_parachute_model_override(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69724,7 +69724,7 @@ No documentation found for this native.
 
 ================================
 
-clear_player_reserve_parachute_model_override_(``player``)
+clear_player_reserve_parachute_model_override(``player``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69831,7 +69831,7 @@ No documentation found for this native.
 
 ================================
 
-set_player_homing_rocket_disabled_(``p0``, ``p1``)
+set_player_homing_rocket_disabled(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69854,7 +69854,7 @@ Recording namespace
 
 Documentation for the recording namespace.
 
-stop_recording_this_frame_()
+stop_recording_this_frame()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69869,7 +69869,7 @@ No documentation found for this native.
 
 ================================
 
-disable_rockstar_editor_camera_changes_()
+disable_rockstar_editor_camera_changes()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69884,7 +69884,7 @@ No documentation found for this native.
 
 ================================
 
-start_recording_(``mode``)
+start_recording(``mode``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69899,7 +69899,7 @@ No documentation found for this native.
 
 ================================
 
-stop_recording_and_save_clip_()
+stop_recording_and_save_clip()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69914,7 +69914,7 @@ No documentation found for this native.
 
 ================================
 
-stop_recording_and_discard_clip_()
+stop_recording_and_discard_clip()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69929,7 +69929,7 @@ No documentation found for this native.
 
 ================================
 
-save_recording_clip_()
+save_recording_clip()
 ^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69944,7 +69944,7 @@ No documentation found for this native.
 
 ================================
 
-is_recording_()
+is_recording()
 ^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69966,7 +69966,7 @@ Replay namespace
 
 Documentation for the replay namespace.
 
-is_interior_rendering_disabled_()
+is_interior_rendering_disabled()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69981,7 +69981,7 @@ No documentation found for this native.
 
 ================================
 
-reset_editor_values_()
+reset_editor_values()
 ^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -69996,7 +69996,7 @@ No documentation found for this native.
 
 ================================
 
-activate_rockstar_editor_(``p0``)
+activate_rockstar_editor(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -70168,7 +70168,7 @@ No documentation found for this native.
 
 ================================
 
-get_name_of_thread_(``threadId``)
+get_name_of_thread(``threadId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -70244,7 +70244,7 @@ No documentation found for this native.
 
 ================================
 
-get_number_of_references_of_script_with_name_hash_(``scriptHash``)
+get_number_of_references_of_script_with_name_hash(``scriptHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -70422,7 +70422,7 @@ No documentation found for this native.
 
 ================================
 
-bg_exited_because_background_thread_stopped_()
+bg_exited_because_background_thread_stopped()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -70497,7 +70497,7 @@ Deletes the given context from the background scripts context map.
 
 ================================
 
-trigger_script_event_2_(``eventGroup``, ``eventData``, ``eventDataSize``, ``playerBits``)
+trigger_script_event_2(``eventGroup``, ``eventData``, ``eventDataSize``, ``playerBits``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -70522,7 +70522,7 @@ Security namespace
 
 Documentation for the security namespace.
 
-register_protected_variable_(``variable``)
+register_protected_variable(``variable``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -70537,7 +70537,7 @@ No documentation found for this native.
 
 ================================
 
-unregister_protected_variable_(``variable``)
+unregister_protected_variable(``variable``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -70552,7 +70552,7 @@ No documentation found for this native.
 
 ================================
 
-force_check_protected_variables_now_()
+force_check_protected_variables_now()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -70743,7 +70743,7 @@ No documentation found for this native.
 
 ================================
 
-start_shape_test_surrounding_coords_(``flag``, ``entity``, ``flag2``)
+start_shape_test_surrounding_coords(``flag``, ``entity``, ``flag2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -70902,7 +70902,7 @@ No documentation found for this native.
 
 ================================
 
-sc_inbox_message_get_data_bool_(``p0``, ``p1``)
+sc_inbox_message_get_data_bool(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -70965,7 +70965,7 @@ No documentation found for this native.
 
 ================================
 
-sc_inbox_message_push_gamer_to_event_recip_list_(``gamerHandle``)
+sc_inbox_message_push_gamer_to_event_recip_list(``gamerHandle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -70980,7 +70980,7 @@ No documentation found for this native.
 
 ================================
 
-sc_inbox_message_send_ugc_stat_update_event_(``data``)
+sc_inbox_message_send_ugc_stat_update_event(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -71011,7 +71011,7 @@ No documentation found for this native.
 
 ================================
 
-sc_inbox_message_send_bounty_presence_event_(``data``)
+sc_inbox_message_send_bounty_presence_event(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -71026,7 +71026,7 @@ No documentation found for this native.
 
 ================================
 
-sc_inbox_message_get_bounty_data_(``index``)
+sc_inbox_message_get_bounty_data(``index``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -71041,7 +71041,7 @@ No documentation found for this native.
 
 ================================
 
-sc_inbox_get_emails_(``offset``, ``limit``)
+sc_inbox_get_emails(``offset``, ``limit``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -71087,7 +71087,7 @@ No documentation found for this native.
 
 ================================
 
-set_handle_rockstar_message_via_script_(``toggle``)
+set_handle_rockstar_message_via_script(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -71102,7 +71102,7 @@ No documentation found for this native.
 
 ================================
 
-is_rockstar_message_ready_for_script_()
+is_rockstar_message_ready_for_script()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -71117,7 +71117,7 @@ No documentation found for this native.
 
 ================================
 
-rockstar_message_get_string_()
+rockstar_message_get_string()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -71258,7 +71258,7 @@ See also: 1753344C770358AE, 82E4A58BABC15AE7.
 
 ================================
 
-sc_profanity_check_ugc_string_(``string``, ``token``)
+sc_profanity_check_ugc_string(``string``, ``token``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -71537,7 +71537,7 @@ No documentation found for this native.
 
 ================================
 
-sc_get_nickname_()
+sc_get_nickname()
 ^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -71552,7 +71552,7 @@ No documentation found for this native.
 
 ================================
 
-sc_get_has_achievement_been_passed_(``achievementId``)
+sc_get_has_achievement_been_passed(``achievementId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -72274,7 +72274,7 @@ profileSetting seems to only be 936, 937 and 938 in scripts
 
 ================================
 
-stat_get_packed_int_mask_(``p0``)
+stat_get_packed_int_mask(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -72325,7 +72325,7 @@ No documentation found for this native.
 
 ================================
 
-get_ngstat_int_hash_(``index``, ``spStat``, ``charStat``, ``character``, ``section``)
+get_ngstat_int_hash(``index``, ``spStat``, ``charStat``, ``character``, ``section``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -72344,7 +72344,7 @@ No documentation found for this native.
 
 ================================
 
-get_packed_stat_bool_(``index``, ``characterSlot``)
+get_packed_stat_bool(``index``, ``characterSlot``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -72360,7 +72360,7 @@ No documentation found for this native.
 
 ================================
 
-get_packed_stat_int_(``index``, ``characterSlot``)
+get_packed_stat_int(``index``, ``characterSlot``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -72376,7 +72376,7 @@ No documentation found for this native.
 
 ================================
 
-set_packed_stat_bool_(``index``, ``value``, ``characterSlot``)
+set_packed_stat_bool(``index``, ``value``, ``characterSlot``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -72393,7 +72393,7 @@ No documentation found for this native.
 
 ================================
 
-set_packed_stat_int_(``index``, ``value``, ``characterSlot``)
+set_packed_stat_int(``index``, ``value``, ``characterSlot``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -72473,7 +72473,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_start_offline_mode_()
+playstats_start_offline_mode()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -72976,7 +72976,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_director_mode_(``p0``)
+playstats_director_mode(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -72991,7 +72991,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_award_badsport_(``id``)
+playstats_award_badsport(``id``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73006,7 +73006,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_pegasaircraft_(``modelHash``)
+playstats_pegasaircraft(``modelHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73021,7 +73021,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_challenges_(``p0``)
+playstats_freemode_challenges(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73036,7 +73036,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_vehicle_target_(``p0``)
+playstats_freemode_vehicle_target(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73051,7 +73051,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_urban_warfare_(``p0``)
+playstats_freemode_urban_warfare(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73066,7 +73066,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_checkpoint_collection_(``p0``)
+playstats_freemode_checkpoint_collection(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73081,7 +73081,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_atob_(``p0``)
+playstats_freemode_atob(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73096,7 +73096,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_penned_in_(``p0``)
+playstats_freemode_penned_in(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73111,7 +73111,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_pass_the_parcel_(``p0``)
+playstats_freemode_pass_the_parcel(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73126,7 +73126,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_hot_property_(``p0``)
+playstats_freemode_hot_property(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73141,7 +73141,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_deaddrop_(``p0``)
+playstats_freemode_deaddrop(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73156,7 +73156,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_king_of_the_castle_(``p0``)
+playstats_freemode_king_of_the_castle(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73171,7 +73171,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_criminal_damage_(``p0``)
+playstats_freemode_criminal_damage(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73186,7 +73186,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_competitive_urban_warfare_(``p0``)
+playstats_freemode_competitive_urban_warfare(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73201,7 +73201,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_hunt_beast_(``p0``)
+playstats_freemode_hunt_beast(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73216,7 +73216,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_pi_menu_hide_settings_(``data``)
+playstats_pi_menu_hide_settings(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73504,7 +73504,7 @@ No documentation found for this native.
 
 ================================
 
-leaderboards2_read_by_platform_(``p0``, ``gamerHandleCsv``, ``platformName``)
+leaderboards2_read_by_platform(``p0``, ``gamerHandleCsv``, ``platformName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73838,7 +73838,7 @@ No documentation found for this native.
 
 ================================
 
-stat_migrate_save_(``platformName``)
+stat_migrate_save(``platformName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73868,7 +73868,7 @@ No documentation found for this native.
 
 ================================
 
-stat_save_migration_cancel_()
+stat_save_migration_cancel()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73883,7 +73883,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_cancel_save_migration_status_()
+stat_get_cancel_save_migration_status()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73898,7 +73898,7 @@ No documentation found for this native.
 
 ================================
 
-stat_save_migration_consume_content_unlock_(``contentId``, ``srcPlatform``, ``srcGamerHandle``)
+stat_save_migration_consume_content_unlock(``contentId``, ``srcPlatform``, ``srcGamerHandle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73915,7 +73915,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_save_migration_consume_content_unlock_status_()
+stat_get_save_migration_consume_content_unlock_status()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73930,7 +73930,7 @@ No documentation found for this native.
 
 ================================
 
-stat_manager_set_mutable_()
+stat_manager_set_mutable()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73945,7 +73945,7 @@ No documentation found for this native.
 
 ================================
 
-stat_manager_set_immutable_()
+stat_manager_set_immutable()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73960,7 +73960,7 @@ No documentation found for this native.
 
 ================================
 
-stat_manager_is_mutable_()
+stat_manager_is_mutable()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73975,7 +73975,7 @@ No documentation found for this native.
 
 ================================
 
-stat_tracking_enable_(``statType``, ``valueType``)
+stat_tracking_enable(``statType``, ``valueType``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -73991,7 +73991,7 @@ No documentation found for this native.
 
 ================================
 
-stat_tracking_clear_progress_()
+stat_tracking_clear_progress()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74006,7 +74006,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_progress_of_tracked_stat_()
+stat_get_progress_of_tracked_stat()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74021,7 +74021,7 @@ No documentation found for this native.
 
 ================================
 
-stat_is_tracking_enabled_()
+stat_is_tracking_enabled()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74036,7 +74036,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_challenge_near_misses_()
+stat_get_challenge_near_misses()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74051,7 +74051,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_challenge_longest_wheelie_()
+stat_get_challenge_longest_wheelie()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74066,7 +74066,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_challenge_longest_stoppie_()
+stat_get_challenge_longest_stoppie()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74081,7 +74081,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_challenge_longest_jump_()
+stat_get_challenge_longest_jump()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74096,7 +74096,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_challenge_no_crashes_()
+stat_get_challenge_no_crashes()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74111,7 +74111,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_challenge_highest_speed_()
+stat_get_challenge_highest_speed()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74126,7 +74126,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_challenge_reverse_driving_()
+stat_get_challenge_reverse_driving()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74141,7 +74141,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_challenge_longest_freefall_()
+stat_get_challenge_longest_freefall()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74156,7 +74156,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_challenge_low_flying_()
+stat_get_challenge_low_flying()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74171,7 +74171,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_height_above_ground_()
+stat_get_height_above_ground()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74186,7 +74186,7 @@ No documentation found for this native.
 
 ================================
 
-stat_is_above_deep_water_()
+stat_is_above_deep_water()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74201,7 +74201,7 @@ No documentation found for this native.
 
 ================================
 
-stat_get_longest_bail_()
+stat_get_longest_bail()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74216,7 +74216,7 @@ No documentation found for this native.
 
 ================================
 
-set_has_content_unlocks_flags_(``value``)
+set_has_content_unlocks_flags(``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74231,7 +74231,7 @@ No documentation found for this native.
 
 ================================
 
-set_save_migration_transaction_id_(``transactionId``)
+set_save_migration_transaction_id(``transactionId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74246,7 +74246,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bw_boss_on_boss_death_match_(``p0``)
+playstats_bw_boss_on_boss_death_match(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74261,7 +74261,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bw_yacht_attack_(``p0``)
+playstats_bw_yacht_attack(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74276,7 +74276,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bw_hunt_the_boss_(``p0``)
+playstats_bw_hunt_the_boss(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74291,7 +74291,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bw_sightseer_(``p0``)
+playstats_bw_sightseer(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74306,7 +74306,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bw_assault_(``p0``)
+playstats_bw_assault(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74321,7 +74321,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bw_belly_of_the_beast_(``p0``)
+playstats_bw_belly_of_the_beast(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74336,7 +74336,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bw_headhunter_(``p0``)
+playstats_bw_headhunter(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74351,7 +74351,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bw_fragile_gooods_(``p0``)
+playstats_bw_fragile_gooods(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74366,7 +74366,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bw_air_freight_(``p0``)
+playstats_bw_air_freight(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74381,7 +74381,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bc_car_jacking_(``p0``)
+playstats_bc_car_jacking(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74396,7 +74396,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bc_smash_and_grab_(``p0``)
+playstats_bc_smash_and_grab(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74411,7 +74411,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bc_protection_racket_(``p0``)
+playstats_bc_protection_racket(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74426,7 +74426,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bc_most_wanted_(``p0``)
+playstats_bc_most_wanted(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74441,7 +74441,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bc_finders_keepers_(``p0``)
+playstats_bc_finders_keepers(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74456,7 +74456,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bc_point_to_point_(``p0``)
+playstats_bc_point_to_point(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74471,7 +74471,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bc_cashing_(``p0``)
+playstats_bc_cashing(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74486,7 +74486,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_bc_salvage_(``p0``)
+playstats_bc_salvage(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74501,7 +74501,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_spent_pi_custom_loadout_(``amount``)
+playstats_spent_pi_custom_loadout(``amount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74516,7 +74516,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_buy_contraband_(``data``)
+playstats_buy_contraband(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74531,7 +74531,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_sell_contraband_(``data``)
+playstats_sell_contraband(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74546,7 +74546,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_defend_contraband_(``data``)
+playstats_defend_contraband(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74561,7 +74561,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_recover_contraband_(``data``)
+playstats_recover_contraband(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74576,7 +74576,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_hit_contraband_destroy_limit_(``p0``)
+playstats_hit_contraband_destroy_limit(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74591,7 +74591,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_become_boss_(``p0``)
+playstats_become_boss(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74606,7 +74606,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_become_goon_(``p0``, ``p1``, ``p2``)
+playstats_become_goon(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74623,7 +74623,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_end_being_boss_(``p0``, ``p1``)
+playstats_end_being_boss(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74639,7 +74639,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_end_being_goon_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+playstats_end_being_goon(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74658,7 +74658,7 @@ No documentation found for this native.
 
 ================================
 
-hired_limo_(``p0``, ``p1``)
+hired_limo(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74674,7 +74674,7 @@ No documentation found for this native.
 
 ================================
 
-ordered_boss_vehicle_(``p0``, ``p1``, ``vehicleHash``)
+ordered_boss_vehicle(``p0``, ``p1``, ``vehicleHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74691,7 +74691,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_change_uniform_(``p0``, ``p1``, ``p2``)
+playstats_change_uniform(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74708,7 +74708,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_change_goon_looking_for_work_(``p0``)
+playstats_change_goon_looking_for_work(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74723,7 +74723,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_ghosting_to_player_(``p0``)
+playstats_ghosting_to_player(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74738,7 +74738,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_vip_poach_(``p0``, ``p1``, ``p2``)
+playstats_vip_poach(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74755,7 +74755,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_punish_bodyguard_(``p0``)
+playstats_punish_bodyguard(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74770,7 +74770,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_stunt_performed_event_allow_trigger_()
+playstats_stunt_performed_event_allow_trigger()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74785,7 +74785,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_stunt_performed_event_disallow_trigger_()
+playstats_stunt_performed_event_disallow_trigger()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74800,7 +74800,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_mission_ended_(``p0``)
+playstats_mission_ended(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74815,7 +74815,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_impexp_mission_ended_(``p0``)
+playstats_impexp_mission_ended(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74830,7 +74830,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_change_mc_role_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
+playstats_change_mc_role(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74851,7 +74851,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_change_mc_outfit_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+playstats_change_mc_outfit(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74870,7 +74870,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_change_mc_emblem_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+playstats_change_mc_emblem(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74889,7 +74889,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_mc_request_bike_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+playstats_mc_request_bike(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74908,7 +74908,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_killed_rival_mc_member_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+playstats_killed_rival_mc_member(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74927,7 +74927,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_abandoning_mc_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+playstats_abandoning_mc(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74946,7 +74946,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_earned_mc_points_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``)
+playstats_earned_mc_points(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74966,7 +74966,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_mc_formation_ends_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
+playstats_mc_formation_ends(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -74987,7 +74987,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_mc_clubhouse_activity_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
+playstats_mc_clubhouse_activity(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75008,7 +75008,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_rival_behaviour_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``)
+playstats_rival_behaviour(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75032,7 +75032,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_copy_rank_into_new_slot_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
+playstats_copy_rank_into_new_slot(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75053,7 +75053,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_dupe_detection_(``data``)
+playstats_dupe_detection(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75068,7 +75068,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_ban_alert_(``p0``)
+playstats_ban_alert(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75083,7 +75083,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_gunrun_mission_ended_(``data``)
+playstats_gunrun_mission_ended(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75098,7 +75098,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_gunrun_rnd_(``p0``)
+playstats_gunrun_rnd(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75113,7 +75113,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_business_battle_ended_(``p0``)
+playstats_business_battle_ended(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75128,7 +75128,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_warehouse_mission_ended_(``p0``)
+playstats_warehouse_mission_ended(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75143,7 +75143,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_nightclub_mission_ended_(``p0``)
+playstats_nightclub_mission_ended(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75158,7 +75158,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_dj_usage_(``p0``, ``p1``)
+playstats_dj_usage(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75174,7 +75174,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_minigame_usage_(``p0``, ``p1``, ``p2``)
+playstats_minigame_usage(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75191,7 +75191,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_stone_hatchet_end_(``data``)
+playstats_stone_hatchet_end(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75206,7 +75206,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_smug_mission_ended_(``data``)
+playstats_smug_mission_ended(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75221,7 +75221,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_h2_fmprep_end_(``data``)
+playstats_h2_fmprep_end(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75236,7 +75236,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_h2_instance_end_(``data``, ``p1``, ``p2``, ``p3``)
+playstats_h2_instance_end(``data``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75254,7 +75254,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_dar_mission_end_(``data``)
+playstats_dar_mission_end(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75269,7 +75269,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_enter_session_pack_(``data``)
+playstats_enter_session_pack(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75284,7 +75284,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_drone_usage_(``p0``, ``p1``, ``p2``)
+playstats_drone_usage(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75301,7 +75301,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_spectator_wheel_spin_(``p0``, ``p1``, ``p2``, ``p3``)
+playstats_spectator_wheel_spin(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75319,7 +75319,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_arena_war_spectator_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+playstats_arena_war_spectator(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75338,7 +75338,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_arena_wars_ended_(``data``)
+playstats_arena_wars_ended(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75353,7 +75353,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_passive_mode_(``p0``, ``p1``, ``p2``, ``p3``)
+playstats_passive_mode(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75371,7 +75371,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_collectible_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``)
+playstats_collectible(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75395,7 +75395,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_story_mission_ended_(``p0``, ``p1``)
+playstats_casino_story_mission_ended(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75411,7 +75411,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_chip_(``p0``)
+playstats_casino_chip(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75426,7 +75426,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_roulette_(``p0``)
+playstats_casino_roulette(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75441,7 +75441,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_blackjack_(``p0``)
+playstats_casino_blackjack(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75456,7 +75456,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_threecardpoker_(``p0``)
+playstats_casino_threecardpoker(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75471,7 +75471,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_slotmachine_(``p0``)
+playstats_casino_slotmachine(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75486,7 +75486,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_insidetrack_(``p0``)
+playstats_casino_insidetrack(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75501,7 +75501,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_luckyseven_(``p0``)
+playstats_casino_luckyseven(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75516,7 +75516,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_roulette_light_(``p0``)
+playstats_casino_roulette_light(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75531,7 +75531,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_blackjack_light_(``p0``)
+playstats_casino_blackjack_light(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75546,7 +75546,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_threecardpoker_light_(``p0``)
+playstats_casino_threecardpoker_light(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75561,7 +75561,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_slotmachine_light_(``p0``)
+playstats_casino_slotmachine_light(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75576,7 +75576,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_insidetrack_light_(``p0``)
+playstats_casino_insidetrack_light(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75591,7 +75591,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_arcadegame_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
+playstats_arcadegame(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75612,7 +75612,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_arcade_lovematch_(``p0``, ``p1``)
+playstats_arcade_lovematch(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75628,7 +75628,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_casino_mission_ended_(``data``)
+playstats_casino_mission_ended(``data``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75643,7 +75643,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_heist3_drone_(``p0``)
+playstats_heist3_drone(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75658,7 +75658,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_heist3_hack_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``)
+playstats_heist3_hack(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75678,7 +75678,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_npc_phone_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``)
+playstats_npc_phone(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75698,7 +75698,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_arcade_cabinet_(``p0``)
+playstats_arcade_cabinet(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75713,7 +75713,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_heist3_finale_(``p0``)
+playstats_heist3_finale(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75728,7 +75728,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_heist3_prep_(``p0``)
+playstats_heist3_prep(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75743,7 +75743,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_master_control_(``p0``, ``p1``, ``p2``, ``p3``)
+playstats_master_control(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75761,7 +75761,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_quit_mode_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+playstats_quit_mode(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75780,7 +75780,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_mission_vote_(``p0``)
+playstats_mission_vote(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75795,7 +75795,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_njvs_vote_(``p0``)
+playstats_njvs_vote(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75810,7 +75810,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_freemode_mission_end_(``p0``, ``p1``, ``p2``)
+playstats_freemode_mission_end(``p0``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75827,7 +75827,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_heist4_prep_(``p0``)
+playstats_heist4_prep(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75842,7 +75842,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_heist4_finale_(``p0``)
+playstats_heist4_finale(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75857,7 +75857,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_heist4_hack_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
+playstats_heist4_hack(``p0``, ``p1``, ``p2``, ``p3``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75876,7 +75876,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_sub_weap_(``p0``, ``p1``, ``p2``, ``p3``)
+playstats_sub_weap(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75894,7 +75894,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_fast_trvl_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``)
+playstats_fast_trvl(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75917,7 +75917,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_hub_entry_(``p0``)
+playstats_hub_entry(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75932,7 +75932,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_dj_mission_ended_(``p0``)
+playstats_dj_mission_ended(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75947,7 +75947,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_robbery_prep_(``p0``)
+playstats_robbery_prep(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75962,7 +75962,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_robbery_finale_(``p0``)
+playstats_robbery_finale(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75977,7 +75977,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_extra_event_(``p0``)
+playstats_extra_event(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -75992,7 +75992,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_carclub_points_(``p0``)
+playstats_carclub_points(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -76007,7 +76007,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_carclub_challenge_(``p0``, ``p1``, ``p2``, ``p3``)
+playstats_carclub_challenge(``p0``, ``p1``, ``p2``, ``p3``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -76025,7 +76025,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_carclub_prize_(``p0``, ``p1``)
+playstats_carclub_prize(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -76041,7 +76041,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_awards_nav_(``p0``, ``p1``)
+playstats_awards_nav(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -76057,7 +76057,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_inst_mission_end_(``p0``)
+playstats_inst_mission_end(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -76072,7 +76072,7 @@ No documentation found for this native.
 
 ================================
 
-playstats_hub_exit_(``p0``)
+playstats_hub_exit(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -76627,7 +76627,7 @@ No documentation found for this native.
 
 ================================
 
-load_global_water_type_(``waterType``)
+load_global_water_type(``waterType``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -76642,7 +76642,7 @@ No documentation found for this native.
 
 ================================
 
-get_global_water_type_()
+get_global_water_type()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -77481,7 +77481,7 @@ No documentation found for this native.
 
 ================================
 
-switch_out_player_(``ped``, ``flags``, ``switchType``)
+switch_out_player(``ped``, ``flags``, ``switchType``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -77498,7 +77498,7 @@ No documentation found for this native.
 
 ================================
 
-switch_in_player_(``ped``)
+switch_in_player(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -77796,7 +77796,7 @@ GET_*
 
 ================================
 
-set_island_hopper_enabled_(``name``, ``toggle``)
+set_island_hopper_enabled(``name``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -80152,7 +80152,7 @@ No documentation found for this native.
 
 ================================
 
-clear_vehicle_tasks_(``vehicle``)
+clear_vehicle_tasks(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -81011,7 +81011,7 @@ No documentation found for this native.
 
 ================================
 
-add_scripted_blocking_area_(``x``, ``y``, ``z``, ``radius``)
+add_scripted_blocking_area(``x``, ``y``, ``z``, ``radius``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -81448,7 +81448,7 @@ No documentation found for this native.
 
 ================================
 
-remove_cover_blocking_areas_at_coord_(``x``, ``y``, ``z``)
+remove_cover_blocking_areas_at_coord(``x``, ``y``, ``z``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -81465,7 +81465,7 @@ No documentation found for this native.
 
 ================================
 
-remove_specific_cover_blocking_area_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``)
+remove_specific_cover_blocking_area(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -82387,7 +82387,7 @@ TASK::DELETE_PATROL_ROUTE("miss_dock");
 
 ================================
 
-get_patrol_task_status_(``ped``)
+get_patrol_task_status(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -83512,7 +83512,7 @@ TASK::TASK_MOVE_NETWORK_ADVANCED_BY_NAME(PLAYER::PLAYER_PED_ID(), "minigame_tatt
 
 ================================
 
-task_move_network_by_name_with_init_params_(``ped``, ``p1``, ``data``, ``p3``, ``p4``, ``animDict``, ``flags``)
+task_move_network_by_name_with_init_params(``ped``, ``p1``, ``data``, ``p3``, ``p4``, ``animDict``, ``flags``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -83617,7 +83617,7 @@ Example: TASK::_D5BB4025AE449A4E(PLAYER::PLAYER_PED_ID(), "Phase", 0.5);
 
 ================================
 
-set_task_move_network_signal_float_2_(``ped``, ``signalName``, ``value``)
+set_task_move_network_signal_float_2(``ped``, ``signalName``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -83651,7 +83651,7 @@ No documentation found for this native.
 
 ================================
 
-get_task_move_network_signal_float_(``ped``, ``signalName``)
+get_task_move_network_signal_float(``ped``, ``signalName``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -84101,7 +84101,7 @@ Deletes the specified vehicle, then sets the handle pointed to by the pointer to
 
 ================================
 
-set_vehicle_can_be_locked_on_(``vehicle``, ``canBeLockedOn``, ``unk``)
+set_vehicle_can_be_locked_on(``vehicle``, ``canBeLockedOn``, ``unk``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -84496,7 +84496,7 @@ No documentation found for this native.
 
 ================================
 
-does_vehicle_allow_rappel_(``vehicle``)
+does_vehicle_allow_rappel(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -84768,7 +84768,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_doors_locked_for_unk_(``vehicle``, ``toggle``)
+set_vehicle_doors_locked_for_unk(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -84856,7 +84856,7 @@ No documentation found for this native.
 
 ================================
 
-clear_vehicle_phone_explosive_device_()
+clear_vehicle_phone_explosive_device()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -85226,7 +85226,7 @@ No documentation found for this native.
 
 ================================
 
-get_submarine_is_below_first_crush_depth_(``submarine``)
+get_submarine_is_below_first_crush_depth(``submarine``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -85241,7 +85241,7 @@ No documentation found for this native.
 
 ================================
 
-get_submarine_crush_depth_warning_state_(``submarine``)
+get_submarine_crush_depth_warning_state(``submarine``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -85287,7 +85287,7 @@ No documentation found for this native.
 
 ================================
 
-can_anchor_boat_here_2_(``vehicle``)
+can_anchor_boat_here_2(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -85302,7 +85302,7 @@ No documentation found for this native.
 
 ================================
 
-set_boat_frozen_when_anchored_(``vehicle``, ``toggle``)
+set_boat_frozen_when_anchored(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -85318,7 +85318,7 @@ No documentation found for this native.
 
 ================================
 
-set_boat_movement_resistance_(``vehicle``, ``value``)
+set_boat_movement_resistance(``vehicle``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -85334,7 +85334,7 @@ No documentation found for this native.
 
 ================================
 
-is_boat_anchored_and_frozen_(``vehicle``)
+is_boat_anchored_and_frozen(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -85365,7 +85365,7 @@ No documentation found for this native.
 
 ================================
 
-set_boat_is_sinking_(``p0``)
+set_boat_is_sinking(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -85621,7 +85621,7 @@ This native makes the vehicle stop immediately, as happens when we enter a MP ga
 
 ================================
 
-stop_bring_vehicle_to_halt_(``vehicle``)
+stop_bring_vehicle_to_halt(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -85636,7 +85636,7 @@ No documentation found for this native.
 
 ================================
 
-is_vehicle_being_halted_(``vehicle``)
+is_vehicle_being_halted(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -85698,7 +85698,7 @@ No documentation found for this native.
 
 ================================
 
-find_vehicle_carrying_this_entity_(``entity``)
+find_vehicle_carrying_this_entity(``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -85713,7 +85713,7 @@ No documentation found for this native.
 
 ================================
 
-is_handler_frame_above_container_(``vehicle``, ``entity``)
+is_handler_frame_above_container(``vehicle``, ``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -86076,7 +86076,7 @@ For further information, see : gtaforums.com/topic/859570-glass/#entry1068894566
 
 ================================
 
-eject_jb700_roof_(``vehicle``, ``x``, ``y``, ``z``)
+eject_jb700_roof(``vehicle``, ``x``, ``y``, ``z``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -86134,7 +86134,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_lights_mode_(``vehicle``, ``p1``)
+set_vehicle_lights_mode(``vehicle``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -86354,7 +86354,7 @@ in the decompiled scripts, seems to be always called on the vehicle right after 
 
 ================================
 
-set_trailer_legs_lowered_(``p0``)
+set_trailer_legs_lowered(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -86650,7 +86650,7 @@ No documentation found for this native.
 
 ================================
 
-set_random_boats_in_mp_(``toggle``)
+set_random_boats_in_mp(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -87335,7 +87335,7 @@ Corrected p1. it's basically the 'carriage/trailer number'. So if the train has 
 
 ================================
 
-is_mission_train_(``vehicle``)
+is_mission_train(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -87534,7 +87534,7 @@ No documentation found for this native.
 
 ================================
 
-is_this_model_an_amphibious_car_(``model``)
+is_this_model_an_amphibious_car(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -87549,7 +87549,7 @@ No documentation found for this native.
 
 ================================
 
-is_this_model_an_amphibious_quadbike_(``model``)
+is_this_model_an_amphibious_quadbike(``model``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -87991,7 +87991,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_xenon_lights_color_(``vehicle``, ``colorIndex``)
+set_vehicle_xenon_lights_color(``vehicle``, ``colorIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -88007,7 +88007,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_xenon_lights_color_(``vehicle``)
+get_vehicle_xenon_lights_color(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -88080,7 +88080,7 @@ enum VehicleLockStatus = {
 
 ================================
 
-get_vehicle_door_destroy_type_(``vehicle``, ``doorId``)
+get_vehicle_door_destroy_type(``vehicle``, ``doorId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -88112,7 +88112,7 @@ doorID starts at 0, not seeming to skip any numbers. Four door vehicles intuitiv
 
 ================================
 
-set_vehicle_door_can_break_(``vehicle``, ``doorId``, ``isBreakable``)
+set_vehicle_door_can_break(``vehicle``, ``doorId``, ``isBreakable``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -88282,7 +88282,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_interior_color_(``vehicle``, ``color``)
+set_vehicle_interior_color(``vehicle``, ``color``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -88298,7 +88298,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_interior_color_(``vehicle``)
+get_vehicle_interior_color(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -88313,7 +88313,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_dashboard_color_(``vehicle``, ``color``)
+set_vehicle_dashboard_color(``vehicle``, ``color``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -88329,7 +88329,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_dashboard_color_(``vehicle``)
+get_vehicle_dashboard_color(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -88603,7 +88603,7 @@ Checks via CVehicleModelInfo
 
 ================================
 
-does_vehicle_tyre_exist_(``vehicle``, ``tyreIndex``)
+does_vehicle_tyre_exist(``vehicle``, ``tyreIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -88839,7 +88839,7 @@ Maximum: 1000
 
 ================================
 
-set_plane_engine_health_(``vehicle``, ``health``)
+set_plane_engine_health(``vehicle``, ``health``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -89035,7 +89035,7 @@ Note: If a player is in the vehicle, it will only sound briefly.
 
 ================================
 
-set_vehicle_silent_(``vehicle``, ``toggle``)
+set_vehicle_silent(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -89091,7 +89091,7 @@ Full list of vehicles by DurtyFree: https://github.com/DurtyFree/gta-v-data-dump
 
 ================================
 
-get_make_name_from_vehicle_model_(``modelHash``)
+get_make_name_from_vehicle_model(``modelHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -89177,7 +89177,7 @@ Returns -1 if the vehicle has no livery
 
 ================================
 
-set_vehicle_roof_livery_(``vehicle``, ``livery``)
+set_vehicle_roof_livery(``vehicle``, ``livery``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -89193,7 +89193,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_roof_livery_(``vehicle``)
+get_vehicle_roof_livery(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -89208,7 +89208,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_roof_livery_count_(``vehicle``)
+get_vehicle_roof_livery_count(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -89359,7 +89359,7 @@ At -100 both helicopter rotors will stall.
 
 ================================
 
-set_heli_main_rotor_health_(``vehicle``, ``health``)
+set_heli_main_rotor_health(``vehicle``, ``health``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -89375,7 +89375,7 @@ No documentation found for this native.
 
 ================================
 
-set_heli_tail_rotor_health_(``vehicle``, ``health``)
+set_heli_tail_rotor_health(``vehicle``, ``health``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -89455,7 +89455,7 @@ No documentation found for this native.
 
 ================================
 
-does_vehicle_have_landing_gear_(``vehicle``)
+does_vehicle_have_landing_gear(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -89797,7 +89797,7 @@ No documentation found for this native.
 
 ================================
 
-disable_vehicle_turret_movement_this_frame_(``vehicle``)
+disable_vehicle_turret_movement_this_frame(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -89859,7 +89859,7 @@ No documentation found for this native.
 
 ================================
 
-set_disable_vehicle_flight_nozzle_position_(``vehicle``, ``toggle``)
+set_disable_vehicle_flight_nozzle_position(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -89928,7 +89928,7 @@ Reduces grip significantly so it's hard to go anywhere.
 
 ================================
 
-set_vehicle_reduce_traction_(``vehicle``, ``val``)
+set_vehicle_reduce_traction(``vehicle``, ``val``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -90433,7 +90433,7 @@ No documentation found for this native.
 
 ================================
 
-are_bomb_bay_doors_open_(``aircraft``)
+are_bomb_bay_doors_open(``aircraft``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -90482,7 +90482,7 @@ Only works during nighttime.
 
 ================================
 
-does_vehicle_have_searchlight_(``vehicle``)
+does_vehicle_have_searchlight(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -90521,7 +90521,7 @@ onEnter = check if you can enter (true) or exit (false) a vehicle.
 
 ================================
 
-get_entry_position_of_door_(``vehicle``, ``doorId``)
+get_entry_position_of_door(``vehicle``, ``doorId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -91272,7 +91272,7 @@ if (iVar3 == joaat("weapon_stickybomb"))
 
 ================================
 
-override_overheat_health_(``vehicle``, ``health``)
+override_overheat_health(``vehicle``, ``health``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -91318,7 +91318,7 @@ From the driver's perspective, is the right headlight broken.
 
 ================================
 
-is_vehicle_engine_on_fire_(``vehicle``)
+is_vehicle_engine_on_fire(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -91349,7 +91349,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_max_speed_(``vehicle``, ``speed``)
+set_vehicle_max_speed(``vehicle``, ``speed``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -91457,7 +91457,7 @@ Sets the wanted state of this vehicle.
 
 ================================
 
-set_boat_boom_position_ratio_(``vehicle``, ``ratio``)
+set_boat_boom_position_ratio(``vehicle``, ``ratio``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -91473,7 +91473,7 @@ No documentation found for this native.
 
 ================================
 
-get_boat_boom_position_ratio_2_(``vehicle``, ``p1``)
+get_boat_boom_position_ratio_2(``vehicle``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -91489,7 +91489,7 @@ No documentation found for this native.
 
 ================================
 
-get_boat_boom_position_ratio_3_(``vehicle``, ``p1``)
+get_boat_boom_position_ratio_3(``vehicle``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -91700,7 +91700,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_number_of_broken_off_bones_(``vehicle``)
+get_vehicle_number_of_broken_off_bones(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -91715,7 +91715,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_number_of_broken_bones_(``vehicle``)
+get_vehicle_number_of_broken_bones(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -91926,7 +91926,7 @@ Enable/Disables global slipstream physics
 
 ================================
 
-get_vehicle_current_slipstream_draft_(``vehicle``)
+get_vehicle_current_slipstream_draft(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -91941,7 +91941,7 @@ No documentation found for this native.
 
 ================================
 
-is_vehicle_slipstream_leader_(``vehicle``)
+is_vehicle_slipstream_leader(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -92019,7 +92019,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_shadow_effect_(``vehicle``, ``p1``, ``p2``)
+set_vehicle_shadow_effect(``vehicle``, ``p1``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -92036,7 +92036,7 @@ No documentation found for this native.
 
 ================================
 
-remove_vehicle_shadow_effect_(``vehicle``)
+remove_vehicle_shadow_effect(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -92081,7 +92081,7 @@ No documentation found for this native.
 
 ================================
 
-set_plane_propellers_health_(``plane``, ``health``)
+set_plane_propellers_health(``plane``, ``health``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -92209,7 +92209,7 @@ No documentation found for this native.
 
 ================================
 
-detach_entity_from_cargobob_(``cargobob``, ``entity``)
+detach_entity_from_cargobob(``cargobob``, ``entity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -92256,7 +92256,7 @@ Returns attached vehicle (Vehicle in parameter must be cargobob)
 
 ================================
 
-get_entity_attached_to_cargobob_(``p0``)
+get_entity_attached_to_cargobob(``p0``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -92327,7 +92327,7 @@ Stops cargobob from being able to detach the attached vehicle.
 
 ================================
 
-get_cargobob_hook_position_(``cargobob``)
+get_cargobob_hook_position(``cargobob``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -92624,7 +92624,7 @@ Full list of weapons by DurtyFree (Search for VEHICLE_*): https://github.com/Dur
 
 ================================
 
-is_vehicle_weapon_disabled_(``weaponHash``, ``vehicle``, ``owner``)
+is_vehicle_weapon_disabled(``weaponHash``, ``vehicle``, ``owner``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -92789,7 +92789,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_handling_hash_for_ai_(``vehicle``, ``hash``)
+set_vehicle_handling_hash_for_ai(``vehicle``, ``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -92837,7 +92837,7 @@ No documentation found for this native.
 
 ================================
 
-set_helicopter_roll_pitch_yaw_mult_(``helicopter``, ``multiplier``)
+set_helicopter_roll_pitch_yaw_mult(``helicopter``, ``multiplier``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -92966,7 +92966,7 @@ Used to be incorrectly named _SET_VEHICLE_EXCLUSIVE_DRIVER_2
 
 ================================
 
-is_ped_exclusive_driver_of_vehicle_(``ped``, ``vehicle``)
+is_ped_exclusive_driver_of_vehicle(``ped``, ``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93014,7 +93014,7 @@ No documentation found for this native.
 
 ================================
 
-set_disable_vehicle_window_collisions_(``vehicle``, ``toggle``)
+set_disable_vehicle_window_collisions(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93045,7 +93045,7 @@ Toggles to render distant vehicles. They may not be vehicles but images to look 
 
 ================================
 
-set_vehicle_neon_lights_colour_(``vehicle``, ``r``, ``g``, ``b``)
+set_vehicle_neon_lights_colour(``vehicle``, ``r``, ``g``, ``b``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93063,7 +93063,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_neon_lights_colour_(``vehicle``)
+get_vehicle_neon_lights_colour(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93078,7 +93078,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_neon_light_enabled_(``vehicle``, ``index``, ``toggle``)
+set_vehicle_neon_light_enabled(``vehicle``, ``index``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93095,7 +93095,7 @@ No documentation found for this native.
 
 ================================
 
-is_vehicle_neon_light_enabled_(``vehicle``, ``index``)
+is_vehicle_neon_light_enabled(``vehicle``, ``index``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93111,7 +93111,7 @@ No documentation found for this native.
 
 ================================
 
-disable_vehicle_neon_lights_(``vehicle``, ``toggle``)
+disable_vehicle_neon_lights(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93127,7 +93127,7 @@ No documentation found for this native.
 
 ================================
 
-set_disable_superdummy_mode_(``vehicle``, ``p1``)
+set_disable_superdummy_mode(``vehicle``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93143,7 +93143,7 @@ No documentation found for this native.
 
 ================================
 
-request_vehicle_dashboard_scaleform_movie_(``vehicle``)
+request_vehicle_dashboard_scaleform_movie(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93191,7 +93191,7 @@ p2 often set to 1000.0 in the decompiled scripts.
 
 ================================
 
-get_vehicle_suspension_bounds_(``vehicle``)
+get_vehicle_suspension_bounds(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93206,7 +93206,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_suspension_height_(``vehicle``)
+get_vehicle_suspension_height(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93221,7 +93221,7 @@ No documentation found for this native.
 
 ================================
 
-set_car_high_speed_bump_severity_multiplier_(``multiplier``)
+set_car_high_speed_bump_severity_multiplier(``multiplier``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93236,7 +93236,7 @@ No documentation found for this native.
 
 ================================
 
-get_number_of_vehicle_doors_(``vehicle``)
+get_number_of_vehicle_doors(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93251,7 +93251,7 @@ No documentation found for this native.
 
 ================================
 
-set_hydraulic_raised_(``p0``, ``p1``)
+set_hydraulic_raised(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93369,7 +93369,7 @@ No documentation found for this native.
 
 ================================
 
-set_heli_resist_to_explosion_(``vehicle``, ``p1``)
+set_heli_resist_to_explosion(``vehicle``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93385,7 +93385,7 @@ No documentation found for this native.
 
 ================================
 
-set_hydraulic_wheel_value_(``vehicle``, ``wheelId``, ``value``)
+set_hydraulic_wheel_value(``vehicle``, ``wheelId``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93402,7 +93402,7 @@ No documentation found for this native.
 
 ================================
 
-get_hydraulic_wheel_value_(``vehicle``, ``wheelId``)
+get_hydraulic_wheel_value(``vehicle``, ``wheelId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93418,7 +93418,7 @@ No documentation found for this native.
 
 ================================
 
-set_cambered_wheels_disabled_(``p0``, ``p1``)
+set_cambered_wheels_disabled(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93434,7 +93434,7 @@ No documentation found for this native.
 
 ================================
 
-set_hydraulic_wheel_state_(``p0``, ``p1``)
+set_hydraulic_wheel_state(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93450,7 +93450,7 @@ No documentation found for this native.
 
 ================================
 
-set_hydraulic_wheel_state_transition_(``vehicle``, ``wheelId``, ``state``, ``value``, ``p4``)
+set_hydraulic_wheel_state_transition(``vehicle``, ``wheelId``, ``state``, ``value``, ``p4``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93469,7 +93469,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_damage_modifier_(``vehicle``, ``p1``)
+set_vehicle_damage_modifier(``vehicle``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93485,7 +93485,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_unk_damage_multiplier_(``vehicle``, ``multiplier``)
+set_vehicle_unk_damage_multiplier(``vehicle``, ``multiplier``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93501,7 +93501,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_controls_inverted_(``vehicle``, ``state``)
+set_vehicle_controls_inverted(``vehicle``, ``state``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93517,7 +93517,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_ramp_launch_modifier_(``p0``, ``p1``)
+set_vehicle_ramp_launch_modifier(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93533,7 +93533,7 @@ No documentation found for this native.
 
 ================================
 
-get_is_door_valid_(``vehicle``, ``doorId``)
+get_is_door_valid(``vehicle``, ``doorId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93549,7 +93549,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_rocket_boost_refill_time_(``vehicle``, ``seconds``)
+set_vehicle_rocket_boost_refill_time(``vehicle``, ``seconds``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93565,7 +93565,7 @@ No documentation found for this native.
 
 ================================
 
-get_has_rocket_boost_(``vehicle``)
+get_has_rocket_boost(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93580,7 +93580,7 @@ No documentation found for this native.
 
 ================================
 
-is_vehicle_rocket_boost_active_(``vehicle``)
+is_vehicle_rocket_boost_active(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93595,7 +93595,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_rocket_boost_active_(``vehicle``, ``active``)
+set_vehicle_rocket_boost_active(``vehicle``, ``active``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93611,7 +93611,7 @@ No documentation found for this native.
 
 ================================
 
-get_has_retractable_wheels_(``vehicle``)
+get_has_retractable_wheels(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93626,7 +93626,7 @@ No documentation found for this native.
 
 ================================
 
-get_is_wheels_lowered_state_active_(``vehicle``)
+get_is_wheels_lowered_state_active(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93641,7 +93641,7 @@ No documentation found for this native.
 
 ================================
 
-raise_retractable_wheels_(``vehicle``)
+raise_retractable_wheels(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93656,7 +93656,7 @@ No documentation found for this native.
 
 ================================
 
-lower_retractable_wheels_(``vehicle``)
+lower_retractable_wheels(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93671,7 +93671,7 @@ No documentation found for this native.
 
 ================================
 
-get_can_vehicle_jump_(``vehicle``)
+get_can_vehicle_jump(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93686,7 +93686,7 @@ No documentation found for this native.
 
 ================================
 
-set_use_higher_vehicle_jump_force_(``vehicle``, ``toggle``)
+set_use_higher_vehicle_jump_force(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93702,7 +93702,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_weapon_capacity_(``vehicle``, ``weaponIndex``, ``capacity``)
+set_vehicle_weapon_capacity(``vehicle``, ``weaponIndex``, ``capacity``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93719,7 +93719,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_weapon_capacity_(``vehicle``, ``weaponIndex``)
+get_vehicle_weapon_capacity(``vehicle``, ``weaponIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93735,7 +93735,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_has_parachute_(``vehicle``)
+get_vehicle_has_parachute(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93750,7 +93750,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_can_activate_parachute_(``vehicle``)
+get_vehicle_can_activate_parachute(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93765,7 +93765,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_parachute_active_(``vehicle``, ``active``)
+set_vehicle_parachute_active(``vehicle``, ``active``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93781,7 +93781,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_receives_ramp_damage_(``vehicle``, ``toggle``)
+set_vehicle_receives_ramp_damage(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93797,7 +93797,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_ramp_sideways_launch_motion_(``p0``, ``p1``)
+set_vehicle_ramp_sideways_launch_motion(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93813,7 +93813,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_ramp_upwards_launch_motion_(``p0``, ``p1``)
+set_vehicle_ramp_upwards_launch_motion(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93829,7 +93829,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_weapons_disabled_(``p0``, ``p1``)
+set_vehicle_weapons_disabled(``p0``, ``p1``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93845,7 +93845,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_parachute_model_(``vehicle``, ``modelHash``)
+set_vehicle_parachute_model(``vehicle``, ``modelHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93861,7 +93861,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_parachute_texture_variation_(``vehicle``, ``textureVariation``)
+set_vehicle_parachute_texture_variation(``vehicle``, ``textureVariation``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93877,7 +93877,7 @@ No documentation found for this native.
 
 ================================
 
-get_all_vehicles_(``vehsStruct``)
+get_all_vehicles(``vehsStruct``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93892,7 +93892,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_rocket_boost_percentage_(``vehicle``, ``percentage``)
+set_vehicle_rocket_boost_percentage(``vehicle``, ``percentage``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93908,7 +93908,7 @@ No documentation found for this native.
 
 ================================
 
-set_oppressor_transform_state_(``vehicle``, ``state``)
+set_oppressor_transform_state(``vehicle``, ``state``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93924,7 +93924,7 @@ No documentation found for this native.
 
 ================================
 
-disable_vehicle_world_collision_(``vehicle``)
+disable_vehicle_world_collision(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93939,7 +93939,7 @@ No documentation found for this native.
 
 ================================
 
-set_cargobob_hook_can_attach_(``vehicle``, ``toggle``)
+set_cargobob_hook_can_attach(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93955,7 +93955,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_bomb_count_(``vehicle``, ``bombCount``)
+set_vehicle_bomb_count(``vehicle``, ``bombCount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93971,7 +93971,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_bomb_count_(``vehicle``)
+get_vehicle_bomb_count(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -93986,7 +93986,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_countermeasure_count_(``vehicle``, ``counterMeasureCount``)
+set_vehicle_countermeasure_count(``vehicle``, ``counterMeasureCount``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94002,7 +94002,7 @@ No documentation found for this native.
 
 ================================
 
-get_vehicle_countermeasure_count_(``vehicle``)
+get_vehicle_countermeasure_count(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94017,7 +94017,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_hover_transform_ratio_(``vehicle``, ``ratio``)
+set_vehicle_hover_transform_ratio(``vehicle``, ``ratio``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94033,7 +94033,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_hover_transform_percentage_(``vehicle``, ``percentage``)
+set_vehicle_hover_transform_percentage(``vehicle``, ``percentage``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94049,7 +94049,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_hover_transform_enabled_(``vehicle``, ``toggle``)
+set_vehicle_hover_transform_enabled(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94065,7 +94065,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_hover_transform_active_(``vehicle``, ``toggle``)
+set_vehicle_hover_transform_active(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94081,7 +94081,7 @@ No documentation found for this native.
 
 ================================
 
-are_chernobog_stabilizers_deployed_(``vehicle``)
+are_chernobog_stabilizers_deployed(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94096,7 +94096,7 @@ No documentation found for this native.
 
 ================================
 
-find_random_point_in_space_(``ped``)
+find_random_point_in_space(``ped``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94111,7 +94111,7 @@ No documentation found for this native.
 
 ================================
 
-set_deploy_heli_stub_wings_(``vehicle``, ``deploy``, ``p2``)
+set_deploy_heli_stub_wings(``vehicle``, ``deploy``, ``p2``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94128,7 +94128,7 @@ No documentation found for this native.
 
 ================================
 
-are_heli_stub_wings_deployed_(``vehicle``)
+are_heli_stub_wings_deployed(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94143,7 +94143,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_turret_unk_(``vehicle``, ``index``, ``toggle``)
+set_vehicle_turret_unk(``vehicle``, ``index``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94160,7 +94160,7 @@ No documentation found for this native.
 
 ================================
 
-set_specialflight_wing_ratio_(``vehicle``, ``ratio``)
+set_specialflight_wing_ratio(``vehicle``, ``ratio``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94176,7 +94176,7 @@ No documentation found for this native.
 
 ================================
 
-set_disable_turret_movement_this_frame_(``vehicle``, ``turretId``)
+set_disable_turret_movement_this_frame(``vehicle``, ``turretId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94192,7 +94192,7 @@ No documentation found for this native.
 
 ================================
 
-set_unk_float_for_submarine_vehicle_task_(``vehicle``, ``value``)
+set_unk_float_for_submarine_vehicle_task(``vehicle``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94208,7 +94208,7 @@ No documentation found for this native.
 
 ================================
 
-set_unk_bool_for_submarine_vehicle_task_(``vehicle``, ``value``)
+set_unk_bool_for_submarine_vehicle_task(``vehicle``, ``value``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94224,7 +94224,7 @@ No documentation found for this native.
 
 ================================
 
-get_is_vehicle_shunt_boost_active_(``vehicle``)
+get_is_vehicle_shunt_boost_active(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94239,7 +94239,7 @@ No documentation found for this native.
 
 ================================
 
-get_last_rammed_vehicle_(``vehicle``)
+get_last_rammed_vehicle(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94254,7 +94254,7 @@ No documentation found for this native.
 
 ================================
 
-set_disable_vehicle_unk_(``toggle``)
+set_disable_vehicle_unk(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94269,7 +94269,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_nitro_enabled_(``vehicle``, ``toggle``, ``level``, ``power``, ``rechargeTime``, ``disableSound``)
+set_vehicle_nitro_enabled(``vehicle``, ``toggle``, ``level``, ``power``, ``rechargeTime``, ``disableSound``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94289,7 +94289,7 @@ No documentation found for this native.
 
 ================================
 
-set_vehicle_wheels_deal_damage_(``vehicle``, ``toggle``)
+set_vehicle_wheels_deal_damage(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94305,7 +94305,7 @@ No documentation found for this native.
 
 ================================
 
-set_disable_vehicle_unk_2_(``toggle``)
+set_disable_vehicle_unk_2(``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94320,7 +94320,7 @@ No documentation found for this native.
 
 ================================
 
-get_does_vehicle_have_tombstone_(``vehicle``)
+get_does_vehicle_have_tombstone(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94335,7 +94335,7 @@ No documentation found for this native.
 
 ================================
 
-hide_vehicle_tombstone_(``vehicle``, ``toggle``)
+hide_vehicle_tombstone(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94351,7 +94351,7 @@ No documentation found for this native.
 
 ================================
 
-get_is_vehicle_emp_disabled_(``vehicle``)
+get_is_vehicle_emp_disabled(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94366,7 +94366,7 @@ No documentation found for this native.
 
 ================================
 
-get_tyre_health_(``vehicle``, ``wheelIndex``)
+get_tyre_health(``vehicle``, ``wheelIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94382,7 +94382,7 @@ No documentation found for this native.
 
 ================================
 
-set_tyre_health_(``vehicle``, ``wheelIndex``, ``health``)
+set_tyre_health(``vehicle``, ``wheelIndex``, ``health``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94399,7 +94399,7 @@ No documentation found for this native.
 
 ================================
 
-get_tyre_wear_multiplier_(``vehicle``, ``wheelIndex``)
+get_tyre_wear_multiplier(``vehicle``, ``wheelIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94415,7 +94415,7 @@ No documentation found for this native.
 
 ================================
 
-set_tyre_wear_multiplier_(``vehicle``, ``wheelIndex``, ``multiplier``)
+set_tyre_wear_multiplier(``vehicle``, ``wheelIndex``, ``multiplier``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94432,7 +94432,7 @@ No documentation found for this native.
 
 ================================
 
-set_tyre_softness_multiplier_(``vehicle``, ``wheelIndex``, ``multiplier``)
+set_tyre_softness_multiplier(``vehicle``, ``wheelIndex``, ``multiplier``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94449,7 +94449,7 @@ No documentation found for this native.
 
 ================================
 
-set_tyre_traction_loss_multiplier_(``vehicle``, ``wheelIndex``, ``multiplier``)
+set_tyre_traction_loss_multiplier(``vehicle``, ``wheelIndex``, ``multiplier``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94466,7 +94466,7 @@ No documentation found for this native.
 
 ================================
 
-set_reduce_drift_vehicle_suspension_(``vehicle``, ``enable``)
+set_reduce_drift_vehicle_suspension(``vehicle``, ``enable``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94482,7 +94482,7 @@ No documentation found for this native.
 
 ================================
 
-set_drift_tyres_enabled_(``vehicle``, ``toggle``)
+set_drift_tyres_enabled(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94498,7 +94498,7 @@ No documentation found for this native.
 
 ================================
 
-get_drift_tyres_enabled_(``vehicle``)
+get_drift_tyres_enabled(``vehicle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94513,7 +94513,7 @@ No documentation found for this native.
 
 ================================
 
-network_use_high_precision_vehicle_blending_(``vehicle``, ``toggle``)
+network_use_high_precision_vehicle_blending(``vehicle``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94823,7 +94823,7 @@ No documentation found for this native.
 
 ================================
 
-get_weapon_component_variant_extra_component_count_(``componentHash``)
+get_weapon_component_variant_extra_component_count(``componentHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -94838,7 +94838,7 @@ No documentation found for this native.
 
 ================================
 
-get_weapon_component_variant_extra_component_model_(``componentHash``, ``extraComponentIndex``)
+get_weapon_component_variant_extra_component_model(``componentHash``, ``extraComponentIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -95470,7 +95470,7 @@ Full list of weapons by DurtyFree: https://github.com/DurtyFree/gta-v-data-dumps
 
 ================================
 
-get_max_ammo_by_type_(``ped``, ``ammoTypeHash``)
+get_max_ammo_by_type(``ped``, ``ammoTypeHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -95486,7 +95486,7 @@ No documentation found for this native.
 
 ================================
 
-add_ammo_to_ped_by_type_(``ped``, ``ammoTypeHash``, ``ammo``)
+add_ammo_to_ped_by_type(``ped``, ``ammoTypeHash``, ``ammo``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -95586,7 +95586,7 @@ Full list of weapons by DurtyFree: https://github.com/DurtyFree/gta-v-data-dumps
 
 ================================
 
-get_ped_ammo_type_from_weapon_2_(``ped``, ``weaponHash``)
+get_ped_ammo_type_from_weapon_2(``ped``, ``weaponHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96035,7 +96035,7 @@ Unknown behavior when unarmed.
 
 ================================
 
-give_loadout_to_ped_(``ped``, ``loadoutHash``)
+give_loadout_to_ped(``ped``, ``loadoutHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96140,7 +96140,7 @@ Full list of weapons by DurtyFree: https://github.com/DurtyFree/gta-v-data-dumps
 
 ================================
 
-set_ped_weapon_livery_color_(``ped``, ``weaponHash``, ``camoComponentHash``, ``colorIndex``)
+set_ped_weapon_livery_color(``ped``, ``weaponHash``, ``camoComponentHash``, ``colorIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96158,7 +96158,7 @@ No documentation found for this native.
 
 ================================
 
-get_ped_weapon_livery_color_(``ped``, ``weaponHash``, ``camoComponentHash``)
+get_ped_weapon_livery_color(``ped``, ``weaponHash``, ``camoComponentHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96175,7 +96175,7 @@ No documentation found for this native.
 
 ================================
 
-set_weapon_object_livery_color_(``weaponObject``, ``camoComponentHash``, ``colorIndex``)
+set_weapon_object_livery_color(``weaponObject``, ``camoComponentHash``, ``colorIndex``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96192,7 +96192,7 @@ No documentation found for this native.
 
 ================================
 
-get_weapon_object_livery_color_(``weaponObject``, ``camoComponentHash``)
+get_weapon_object_livery_color(``weaponObject``, ``camoComponentHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96305,7 +96305,7 @@ Full list of weapons by DurtyFree: https://github.com/DurtyFree/gta-v-data-dumps
 
 ================================
 
-get_weapon_time_between_shots_(``weaponHash``)
+get_weapon_time_between_shots(``weaponHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96368,7 +96368,7 @@ No documentation found for this native.
 
 ================================
 
-set_weapon_damage_modifier_this_frame_(``weaponHash``, ``damageMultiplier``)
+set_weapon_damage_modifier_this_frame(``weaponHash``, ``damageMultiplier``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96384,7 +96384,7 @@ No documentation found for this native.
 
 ================================
 
-set_weapon_explosion_radius_multiplier_(``weaponHash``, ``multiplier``)
+set_weapon_explosion_radius_multiplier(``weaponHash``, ``multiplier``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96447,7 +96447,7 @@ No documentation found for this native.
 
 ================================
 
-set_flash_light_enabled_(``ped``, ``toggle``)
+set_flash_light_enabled(``ped``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96564,7 +96564,7 @@ Full list of weapons by DurtyFree: https://github.com/DurtyFree/gta-v-data-dumps
 
 ================================
 
-create_air_defense_sphere_(``x``, ``y``, ``z``, ``radius``, ``p4``, ``p5``, ``p6``, ``weaponHash``)
+create_air_defense_sphere(``x``, ``y``, ``z``, ``radius``, ``p4``, ``p5``, ``p6``, ``weaponHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96586,7 +96586,7 @@ No documentation found for this native.
 
 ================================
 
-create_air_defense_area_(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``, ``weaponHash``)
+create_air_defense_area(``p0``, ``p1``, ``p2``, ``p3``, ``p4``, ``p5``, ``p6``, ``p7``, ``p8``, ``p9``, ``weaponHash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96611,7 +96611,7 @@ No documentation found for this native.
 
 ================================
 
-remove_air_defense_zone_(``zoneId``)
+remove_air_defense_zone(``zoneId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96626,7 +96626,7 @@ No documentation found for this native.
 
 ================================
 
-remove_all_air_defense_zones_()
+remove_all_air_defense_zones()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96641,7 +96641,7 @@ No documentation found for this native.
 
 ================================
 
-set_player_air_defense_zone_flag_(``player``, ``zoneId``, ``enable``)
+set_player_air_defense_zone_flag(``player``, ``zoneId``, ``enable``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96658,7 +96658,7 @@ No documentation found for this native.
 
 ================================
 
-is_any_air_defense_zone_inside_sphere_(``x``, ``y``, ``z``, ``radius``)
+is_any_air_defense_zone_inside_sphere(``x``, ``y``, ``z``, ``radius``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96676,7 +96676,7 @@ No documentation found for this native.
 
 ================================
 
-fire_air_defense_weapon_(``zoneId``, ``x``, ``y``, ``z``)
+fire_air_defense_weapon(``zoneId``, ``x``, ``y``, ``z``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96694,7 +96694,7 @@ No documentation found for this native.
 
 ================================
 
-does_air_defense_zone_exist_(``zoneId``)
+does_air_defense_zone_exist(``zoneId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96709,7 +96709,7 @@ No documentation found for this native.
 
 ================================
 
-set_can_ped_equip_weapon_(``ped``, ``weaponHash``, ``toggle``)
+set_can_ped_equip_weapon(``ped``, ``weaponHash``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
@@ -96726,7 +96726,7 @@ No documentation found for this native.
 
 ================================
 
-set_can_ped_equip_all_weapons_(``ped``, ``toggle``)
+set_can_ped_equip_all_weapons(``ped``, ``toggle``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No documentation found for this native.
