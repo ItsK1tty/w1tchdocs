@@ -446,6 +446,40 @@ Sends a message to the log as ``[WARNING]``. Has a red color.
 
 ================================
 
+get_user_group()
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the group of the current user.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- Returns the group of the user:
+
+  * ``1`` -- User is Basic
+  * ``2`` -- User is VIP
+  * ``3`` -- User is Tester
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   userGroup = system.get_user_group()
+   
+   if userGroup == 1 then
+     system.log_info("User is Basic")
+   elseif userGroup == 2 then
+     system.log_info("User is VIP")
+   elseif userGroup == 3 then
+     system.log_info("User is Tester")
+   end
+
+================================
+
 wait(``ms``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
