@@ -1981,6 +1981,32 @@ Updates the current section to display the created Lua section/option.
 
 ======================
 
+set_option_toggled(``hash``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set an option toggled.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``toggle`` (``bool``) -- Option toggle status:
+
+  * ``True`` -- The option is set toggled
+  * ``False`` -- The option is not set toggled
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   menu.set_option_toggled("LuaOptToggledHash", true)
+
+======================
+
 is_option_toggled(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
