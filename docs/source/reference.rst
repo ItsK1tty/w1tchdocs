@@ -450,6 +450,40 @@ Sends a message to the log as ``[WARNING]``. Has a red color.
 
 ================================
 
+get_user_group()
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Gets the group of the current user.
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``int`` -- Returns the group of the user:
+
+  * ``1`` -- User is Basic
+  * ``2`` -- User is VIP
+  * ``3`` -- User is Tester
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   userGroup = system.get_user_group()
+   
+   if userGroup == 1 then
+     system.log_info("User is Basic")
+   elseif userGroup == 2 then
+     system.log_info("User is VIP")
+   elseif userGroup == 3 then
+     system.log_info("User is Tester")
+   end
+
+================================
+
 wait(``ms``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1948,6 +1982,32 @@ Updates the current section to display the created Lua section/option.
    :linenos:
 
    menu.update_current_parent(true)
+
+======================
+
+set_option_toggled(``hash``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set an option toggled.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``toggle`` (``bool``) -- Option toggle status:
+
+  * ``True`` -- The option is set toggled
+  * ``False`` -- The option is not set toggled
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   menu.set_option_toggled("LuaOptToggledHash", true)
 
 ======================
 
@@ -11003,8 +11063,7 @@ Sets the model for a specific player.
 .. code-block:: lua
    :linenos:
    
-   iPlayerId = self.get_id()
-   iPlayerPed = self.get_ped()
+   iPlayerId = player.get_id()
    uModel = rage.gameplay.get_hash_key("s_f_y_hooker_02")
 
    for i=1,50 do 
@@ -11014,6 +11073,7 @@ Sets the model for a specific player.
 
    if rage.streaming.has_model_loaded(uModel) then
       rage.player.set_player_model(iPlayerId, uModel)
+      iPlayerPed = player.get_ped()
       rage.ped.set_ped_default_component_variation(iPlayerPed)
       system.wait()
       rage.streaming.set_model_as_no_longer_needed(uModel)
@@ -12850,14 +12910,14 @@ Sets the face shape settings for the selected ped.
 
 
 * ``ped`` (``Ped``) -- The ped ID
-* ``shapeFirst`` (``int``) -- dad shape
-* ``shapeSecond`` (``int``) -- mom shape
+* ``shapeFirst`` (``int``) -- dad shape (from 0 to 45)
+* ``shapeSecond`` (``int``) -- mom shape (from 0 to 45)
 * ``shapeThird`` (``int``) -- third shape (unused)
-* ``skinFirst`` (``int``) -- dad skin color
-* ``skinSecond`` (``int``) -- mom skin color
+* ``skinFirst`` (``int``) -- dad skin color (from 0 to 45)
+* ``skinSecond`` (``int``) -- mom skin color (from 0 to 45)
 * ``skinThird`` (``int``) -- third skin color (unused)
-* ``shapeMix`` (``float``) -- shape mix (``0.0`` - ``1.0`` of whose characteristics to take: Mother -> Father)
-* ``skinMix`` (``float``) -- skin mix (``0.0`` - ``1.0`` of whose characteristics to take: Mother -> Father)
+* ``shapeMix`` (``float``) -- shape mix (``0.0`` -> ``1.0`` of whose characteristics to take: Father -> Mother)
+* ``skinMix`` (``float``) -- skin mix (``0.0`` -> ``1.0`` of whose characteristics to take: Father -> Mother)
 * ``thirdMix`` (``float``) -- third mix (unused)
 * ``isParent`` (``bool``) -- usually ``false``
 
