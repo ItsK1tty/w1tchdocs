@@ -4296,7 +4296,7 @@ scr_sum_q3
 ===================
 
 scr_sum2
------------
+---------
 
 * ``scr_sum2_club_vomit``
 * ``scr_sum2_plane_splash``
@@ -4304,7 +4304,7 @@ scr_sum2
 ===================
 
 scr_sum2_agent
-----------------
+---------------
 
 * ``scr_sum2_agent_helicopter_damage``
 * ``scr_sum2_agent_gas``
@@ -4313,7 +4313,7 @@ scr_sum2_agent
 ===================
 
 scr_sum2_hal
-----------------
+-------------
 
 * ``scr_sum2_hal_rider_death_green``
 * ``scr_sum2_hal_rider_death_blue``

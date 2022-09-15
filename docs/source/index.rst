@@ -19,6 +19,7 @@ Special thanks to:
 * MrDario
 * Chiya
 * Antrix
+* DurtyFree for some useful parts of GTA V Dump data
 
 This wouldn't have been possible without you!
 
@@ -28,6 +29,14 @@ Code snippets
 You can find code snippets for VS Code here: :download:`click <d2st.code-snippets>`
 
 To install code snippets, drop the file into the ``C:\Users\%username%\AppData\Roaming\Code\User\snippets`` directory.
+
+====================================================
+
+Dear other mod menus,
+
+If you plan on stealing this documentation for yourselves, please give us some credit! We've put efforts in this!
+
+====================================================
 
 Contents
 --------
@@ -39,6 +48,7 @@ Contents
    generalinfo
    gettingstarted
    reference
+   rage
 
 .. toctree::
    :glob:
