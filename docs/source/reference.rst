@@ -1934,6 +1934,33 @@ Adds a text menu option in the selected player section.
 
 ======================
 
+set_option_description(``hash``, ``description``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets a description for the specified option
+
+**Parameters:**
+
+* ``hash`` (``string``) -- Option hash
+* ``description`` (``string``) -- Option description
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   iRecoverySectionID = menu.section_recovery()
+   menu.add_option("Sample option", "sampleOption", iRecoverySectionID, fn())
+   menu.set_option_description("sampleOption", "Sample Option Description")
+
+==========================================
+
+
+
 update_root_parent(``keepActiveOption`` = ``false``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2174,6 +2201,33 @@ Returns the selected color of a color selection option.
 
    crgbaOptionColor = "Option color is: " .. tostring(menu.get_option_color("luaOptHashColor"))
 
+
+========================
+
+get_option_description(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns an option description for the specified option hash
+
+**Parameters:**
+
+* ``hash`` (``string``) -- Option hash
+
+**Returns:**
+
+* ``string`` -- Option Description
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+   
+   iRecoverySectionID = menu.section_recovery()
+   menu.add_option("Sample option", "sampleOption", iRecoverySectionID, fn())
+   menu.set_option_description("sampleOption", "Sample Option Description")
+
+   sOptionDescription = menu.get_option_description("sampleOption")
+   system.log_info(sOptionDescription)
 
 ======================
 
@@ -3438,6 +3492,21 @@ Returns the hash of the current option.
 
 ======================
 
+get_current_spawn_option_hash()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the current model hash for a newly-spawned entity
+
+**Parameters:**
+
+* None
+
+**Returns:**
+
+* ``Hash`` -- current model hash
+
+======================
+
 get_child_count(``parentId``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4686,7 +4755,7 @@ More about text flags: :doc:`things/textflags`
 .. code-block:: lua
    :linenos:
 
-   render.draw_text("MyHash", true, "Hello World", 0, 0, 1, { 255, 255, 255, 255 }, 0)
+   render.draw_text("MyHash", true, "Hello World", 0, 0, 10, { 255, 255, 255, 255 }, 0)
 
 ================================
 
@@ -5291,6 +5360,17 @@ Returns the screen resolution.
    system.log_info("The screen resolution is " .. tostring(v2ScreenRes.y) .. ".") -- Prints the screen Y resolution.
 
 ================================
+
+get_text_size()
+^^^^^^^^^^^^^^^^^^^^
+
+Returns the size of the drawn text.
+
+.. note::
+
+   not documented yet
+
+======================================
 
 set_warning(``message``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
