@@ -10847,7 +10847,7 @@ Disable GTA built-in stunt cameras.
 RAGE Functions
 #################
 
-This namespace contains native game functions.
+This namespace contains native game functions. Use :doc:`rage` for rage functions, as these are obsolete and only kept here just in case.
 
 ================================
 
