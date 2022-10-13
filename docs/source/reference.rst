@@ -932,7 +932,7 @@ Adds a parent section into menu resolution.
 
 ======================
 
-add_child(``name``, ``parent``)
+add_parent(``name``, ``parent``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a child section to a parent section.
@@ -953,7 +953,7 @@ Adds a child section to a parent section.
 
    iParentID = menu.add_parent("My parent section")
 
-   iChildID = menu.add_child("Child section of my parent section", iParentID)
+   iChildID = menu.add_parent("Child section of my parent section", iParentID)
 
 ======================
 
@@ -996,7 +996,7 @@ Adds a menu option button.
 
 **Returns:**
 
-* None
+* ``int`` -- option ID
 
 **Example:**
 
@@ -1028,7 +1028,7 @@ Adds a toggable menu option button.
 
 **Returns:**
 
-* None
+* ``int`` -- option ID
 
 **Example:**
 
@@ -1090,7 +1090,7 @@ Adds a toggable slider menu option.
 
 **Returns:**
 
-* None
+* ``int`` -- option ID
 
 **Example:**
 
@@ -1122,7 +1122,7 @@ Adds a menu option with a pre-set value
 
 **Returns:**
 
-* None
+* ``int`` -- option ID
 
 **Example:**
 
@@ -1154,7 +1154,7 @@ Adds a toggable menu option with a pre-set value.
 
 **Returns:**
 
-* None
+* ``int`` -- option ID
 
 **Example:**
 
@@ -1183,7 +1183,7 @@ Adds a menu option with multiple values.
 
 **Returns:**
 
-* None
+* ``int`` -- option ID
 
 **Example:**
 
@@ -1212,7 +1212,7 @@ Adds a toggable menu option with multiple values.
 
 **Returns:**
 
-* None
+* ``int`` -- option ID
 
 **Example:**
 
@@ -1238,7 +1238,7 @@ Adds a teleport option button.
 
 **Returns:**
 
-* None
+* ``int`` -- option ID
 
 **Example:**
 
@@ -1265,7 +1265,7 @@ Adds a spawn option button.
 
 **Returns:**
 
-* None
+* ``int`` -- option ID
 
 **Example:**
 
@@ -1283,19 +1283,20 @@ Adds a spawn option button.
 add_option_text(``name``, ``hash``, ``text``, ``parent``, ``fn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adds a text option (e.g. a note).
+Adds a text option.
 
 **Parameters:**
 
 * ``name`` (``string``) -- The name of the option.
 * ``hash`` (``string``) -- The option hash.
 * ``text`` (``string``) -- The displayed text to the right of the name.
+* ``length`` (``int``) -- The max length of the option text.
 * ``parent`` (``int``) -- The parent section.
 * ``fn`` (``function``) -- Function to call.
 
 **Returns:**
 
-* None
+* ``int`` -- option ID
 
 **Example:**
 
@@ -1304,7 +1305,37 @@ Adds a text option (e.g. a note).
 
    iParentID = menu.add_parent("My parent section")
 
-   menu.add_option_text("Just a text option", "luaOptHashText", "Text", iParentID, foo)
+   menu.add_option_text("Just a text option", "luaOptHashText", "Text", 10, iParentID, foo)
+
+======================
+
+add_option_text_toggle(``name``, ``hash``, ``text``, ``length``, ``parent``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Adds a togglable text option.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``text`` (``string``) -- The displayed text to the right of the name.
+* ``length`` (``int``) -- The max length of the option text.
+* ``parent`` (``int``) -- The parent section.
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* ``int`` -- option ID
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   iParentID = menu.add_parent("My parent section")
+
+   menu.add_option_text_toggle("Just a text option", "luaOptHashText", "Text", 10, iParentID, foo)
 
 ======================
 
@@ -1322,7 +1353,7 @@ Adds a text option. (e.g. a note).
 
 **Returns:**
 
-* None
+* ``int`` -- option ID
 
 **Example:**
 
@@ -1350,7 +1381,7 @@ Adds a color selection button.
 
 **Returns:**
 
-* None
+* ``int`` -- option ID
 
 **Example:**
 
@@ -1592,7 +1623,7 @@ Updates a toggable value string option.
 
 ======================
 
-update_option_text(``hash``, ``name``, ``text``, ``fn``)
+update_option_text(``hash``, ``name``, ``text``, ``length``, ``fn``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Updates a text option (e.g. a note).
@@ -1602,6 +1633,7 @@ Updates a text option (e.g. a note).
 * ``hash`` (``string``) -- The option hash.
 * ``name`` (``string``) -- The name of the option.
 * ``text`` (``string``) -- The displayed text to the right of the name.
+* ``length`` (``int``) -- The max length of the option text.
 * ``fn`` (``function``) -- Function to call.
 
 **Returns:**
@@ -1613,7 +1645,7 @@ Updates a text option (e.g. a note).
 .. code-block:: lua
    :linenos:
 
-   menu.update_option_text("luaOptHashText", "Just a text option", "Text", fn())
+   menu.update_option_text("luaOptHashText", "Just a text option", "Text", 10, fn())
 
 ======================
 
@@ -1885,8 +1917,8 @@ Adds a toggable player menu option with multiple values in the selected player s
 
 ======================
 
-add_player_option_text(``name``, ``hash``, ``text``, ``fn``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+add_player_option_text(``name``, ``hash``, ``text``, ``length``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Adds a player menu text option in the selected player section.
 
@@ -1895,6 +1927,7 @@ Adds a player menu text option in the selected player section.
 * ``name`` (``string``) -- The name of the option.
 * ``hash`` (``string``) -- The option hash.
 * ``text`` (``string``) -- The option displayed text.
+* ``length`` (``int``) -- The max length of the option text.
 * ``fn`` (``function``) -- Function to call.
 
 **Returns:**
@@ -1906,7 +1939,33 @@ Adds a player menu text option in the selected player section.
 .. code-block:: lua
    :linenos:
 
-   menu.add_player_option_text("Just a text option", "luaOptHashText", "Text", foo)
+   menu.add_player_option_text("Just a text option", "luaOptHashText", "Text", 10, foo)
+
+======================
+
+add_player_option_text_toggle(``name``, ``hash``, ``text``, ``length``, ``fn``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a togglable player menu text option in the selected player section.
+
+**Parameters:**
+
+* ``name`` (``string``) -- The name of the option.
+* ``hash`` (``string``) -- The option hash.
+* ``text`` (``string``) -- The option displayed text.
+* ``length`` (``int``) -- The max length of the option text.
+* ``fn`` (``function``) -- Function to call.
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   menu.add_player_option_text_toggle("Just a text option", "luaOptHashText", "Text", 10, foo)
 
 ======================
 
@@ -1934,6 +1993,32 @@ Adds a text menu option in the selected player section.
 
 ======================
 
+set_option_toggled(``hash``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Switch the option on or off.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The hash of the option
+* ``toggle`` (``bool``) -- Whether to toggle the option
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   iRecoverySectionID = menu.section_recovery()
+   menu.add_option("Sample option", "sampleOption", iRecoverySectionID, fn())
+   menu.set_option_toggled("sampleOption", true)
+
+==========================
+   
+
 set_option_description(``hash``, ``description``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1959,7 +2044,126 @@ Sets a description for the specified option
 
 ==========================================
 
+set_option_visible(``hash``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Sets the option visible or invisible to user.
+
+**Parameters:**
+
+* ``hash`` (``string``) - the hash of the option
+* ``toggle`` (``bool``) - whether to toggle the option visibility
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   iRecoverySectionID = menu.section_recovery()
+   menu.add_option("Sample option", "sampleOption", iRecoverySectionID, fn())
+   menu.set_option_visible("sampleOption", true)
+
+=======================
+
+set_option_vip(``hash``, ``toggle``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sets the option to be available only to VIP users
+
+**Parameters:**
+
+* ``hash`` (``string``) - the hash of the option
+* ``toggle`` (``bool``) - whether to toggle the option VIP-only availability
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   iRecoverySectionID = menu.section_recovery()
+   menu.add_option("Sample option", "sampleOption", iRecoverySectionID, fn())
+   menu.set_option_vip("sampleOption", true)
+
+==========================
+
+
+set_option_value(``hash``, ``value``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Returns the value of an option.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+* ``value`` (``float``) -- Option value.
+
+**Returns:**
+
+* None
+
+======================
+
+toggle_option(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Toggles the option.
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+
+**Returns:**
+
+* None
+
+**Examples:**
+
+.. code-block:: lua
+   :linenos:
+
+   iRecoverySectionID = menu.section_recovery()
+   menu.add_option("Sample option", "sampleOption", iRecoverySectionID, fn())
+   menu.toggle_option("sampleOption")
+
+===========================
+
+increase_option(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+"Scroll up" the option value
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+
+**Returns:**
+
+* None
+
+===============================
+
+decrease_option(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+"Scroll down" the option value
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The option hash.
+
+**Returns:**
+
+* None
+
+===============================
 
 update_root_parent(``keepActiveOption`` = ``false``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2009,32 +2213,6 @@ Updates the current section to display the created Lua section/option.
    :linenos:
 
    menu.update_current_parent(true)
-
-======================
-
-set_option_toggled(``hash``, ``toggle``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Set an option toggled.
-
-**Parameters:**
-
-* ``hash`` (``string``) -- The option hash.
-* ``toggle`` (``bool``) -- Option toggle status:
-
-  * ``True`` -- The option is set toggled
-  * ``False`` -- The option is not set toggled
-
-**Returns:**
-
-* None
-
-**Example:**
-
-.. code-block:: lua
-   :linenos:
-   
-   menu.set_option_toggled("LuaOptToggledHash", true)
 
 ======================
 
@@ -2113,6 +2291,21 @@ Checks whether an option is enabled.
    bIsOptionEnabled = "Option state is: " .. tostring(menu.is_option_enabled("luaOptDummyToggle"))
 
 ======================
+
+does_option_exist(``hash``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Checks whether the option exists
+
+**Parameters:**
+
+* ``hash`` (``string``) -- The hash of the option
+
+**Returns:**
+
+* ``bool`` -- whether the option exists
+
+=======================
 
 get_option_value(``hash``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2254,6 +2447,28 @@ Removes an option.
 ======================
 
 
+remove_parent(``id``)
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes a parent section
+
+**Parameters:**
+
+* ``id`` (``int``) -- The parent section ID
+
+**Returns:**
+
+* None
+
+**Example:**
+
+.. code-block:: lua
+   :linenos:
+
+   iParentID = menu.add_parent("Parent section")
+   menu.remove_parent(iParentID)
+
+===================
 
 Menu sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2573,7 +2788,7 @@ Returns the Recovery section ID.
 
    iRecoverySectionID = menu.section_recovery()
 
-   iCayoPericoHeistSectionID = menu.add_child("Cayo Perico Heist", iRecoverySectionID)
+   iCayoPericoHeistSectionID = menu.add_parent("Cayo Perico Heist", iRecoverySectionID)
 
 ======================
 
