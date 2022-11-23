@@ -70,7 +70,7 @@ Weapon Info parameters
 * ``uRecoilShakeHashFirstPerson``
 * ``fMinTimeBetweenRecoilShakes``
 * ``fRecoilShakeAmplitude``
-* ``fExplosionShakeAmplitude
+* ``fExplosionShakeAmplitude``
 
 ========================
 
