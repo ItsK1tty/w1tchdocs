@@ -22638,10 +22638,10 @@ Set the in-game time
 
 .. _ai:
 
-AI namespace
+Task namespace
 ----------------------
 
-This namespace contains ai-related game functions. 
+This namespace contains task-related game functions. 
 
 ================================
 
@@ -22668,7 +22668,7 @@ Checks whether a scenario group exists.
 .. code-block:: lua
    :linenos:
 
-   bDoesScenGroupExist = rage.ai.does_scenario_group_exist("SOLOMON_GATE")
+   bDoesScenGroupExist = rage.task.does_scenario_group_exist("SOLOMON_GATE")
 
    system.log_debug(tostring(bDoesScenGroupExist))
 
@@ -22697,7 +22697,7 @@ Checks whether the ped is currently in any scenario.
 
    pSelfPed = player.get_ped()
 
-   bIsPedActiveInScen = rage.ai.is_ped_active_in_scenario(ped)
+   bIsPedActiveInScen = rage.task.is_ped_active_in_scenario(ped)
 
    system.log_debug(tostring(bIsPedActiveInScen))
 
@@ -22726,7 +22726,7 @@ Checks whether the scenario group is enabled.
 .. code-block:: lua
    :linenos:
 
-   bIsScenGroupEnabled = rage.ai.is_scenario_group_enabled("SOLOMON_GATE")
+   bIsScenGroupEnabled = rage.task.is_scenario_group_enabled("SOLOMON_GATE")
 
    system.log_debug(tostring(bIsScenGroupEnabled))
 
@@ -22755,7 +22755,7 @@ Checks whether the scenario type is enabled.
 .. code-block:: lua
    :linenos:
 
-   bIsScenTypeEnabled = rage.ai.is_scenario_type_enabled("WORLD_HUMAN_DRINKING")
+   bIsScenTypeEnabled = rage.task.is_scenario_type_enabled("WORLD_HUMAN_DRINKING")
 
    system.log_debug(tostring(bIsScenTypeEnabled))
 
@@ -22785,7 +22785,7 @@ Checks whether the task is active.
 .. code-block:: lua
    :linenos:
 
-   bIsTaskActive = rage.ai.get_is_task_active(player.get_ped(), 127)  -- Checks whether the CTaskCrouch is active
+   bIsTaskActive = rage.task.get_is_task_active(player.get_ped(), 127)  -- Checks whether the CTaskCrouch is active
    system.log_debug(tostring(bIsTaskActive))
 
 ================================
@@ -22814,7 +22814,7 @@ Play the animation on any running scenario.
 
    pSelfPed = player.get_ped()
 
-   rage.ai.play_anim_on_running_scenario(pSelfPed, "move_f@injured", "idle_intro")
+   rage.task.play_anim_on_running_scenario(pSelfPed, "move_f@injured", "idle_intro")
 
 ================================
 
@@ -22836,7 +22836,7 @@ Reset the exclusive scenario group.
 .. code-block:: lua
    :linenos:
 
-   rage.ai.reset_exclusive_scenario_group()
+   rage.task.reset_exclusive_scenario_group()
 
 ================================
 
@@ -22858,7 +22858,7 @@ Reset all the enabled scenario groups.
 .. code-block:: lua
    :linenos:
 
-   rage.ai.reset_scenario_groups_enabled()
+   rage.task.reset_scenario_groups_enabled()
 
 ================================
 
@@ -22880,7 +22880,7 @@ Reset all the enabled scenario types.
 .. code-block:: lua
    :linenos:
 
-   rage.ai.reset_scenario_types_enabled()
+   rage.task.reset_scenario_types_enabled()
 
 ================================
 
@@ -22904,7 +22904,7 @@ Set the scenario group as exclusive.
 .. code-block:: lua
    :linenos:
 
-   rage.ai.set_exclusive_scenario_group("SOLOMON_GATE")
+   rage.task.set_exclusive_scenario_group("SOLOMON_GATE")
 
 ================================
 
@@ -22926,7 +22926,7 @@ Reset the exclusive scenario group(s).
 .. code-block:: lua
    :linenos:
 
-   rage.ai.reset_exclusive_scenario_group()
+   rage.task.reset_exclusive_scenario_group()
 
 ================================
 
@@ -22953,7 +22953,7 @@ Make ped parachute to target
 
    pSelfPed = player.get_ped()
 
-   rage.ai.set_parachute_task_target(pSelfPed, 60, 118, 12)
+   rage.task.set_parachute_task_target(pSelfPed, 60, 118, 12)
 
 ================================
 
@@ -22978,7 +22978,7 @@ Set the parachute task thrust.
 
    pSelfPed = player.get_ped()
 
-   rage.ai.set_parachute_task_thrust(pSelfPed, 10)
+   rage.task.set_parachute_task_thrust(pSelfPed, 10)
 
 ================================
 
@@ -23004,7 +23004,7 @@ Set scenario group as enabled.
 .. code-block:: lua
    :linenos:
 
-   rage.ai.set_scenario_group_enabled("SOLOMON_GATE")
+   rage.task.set_scenario_group_enabled("SOLOMON_GATE")
 
 ================================
 
@@ -23033,7 +23033,7 @@ Toggle the scenario type.
 .. code-block:: lua
    :linenos:
 
-   rage.ai.set_scenario_type_enabled("WORLD_HUMAN_DRINKING", true)
+   rage.task.set_scenario_type_enabled("WORLD_HUMAN_DRINKING", true)
 
 ================================
 
@@ -23063,7 +23063,7 @@ Stop animation task.
 
    pSelfPed = player.get_ped()
 
-   rage.ai.stop_anim_task(pSelfPed, "move_f@injured", "sprint")
+   rage.task.stop_anim_task(pSelfPed, "move_f@injured", "sprint")
 
 ================================
 
@@ -23095,7 +23095,7 @@ Aim gun at coordinates.
    v3CoordsInfront = player.get_coords_infront(10)
    v3CoordsAbove = player.get_coords_above_of_coords(v3CoordsInfront, 10)
 
-   rage.ai.task_aim_gun_at_coord(pSelfPed, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 5)
+   rage.task.task_aim_gun_at_coord(pSelfPed, v3CoordsAbove.x, v3CoordsAbove.y, v3CoordsAbove.z, 5)
 
 ================================
 
@@ -23124,7 +23124,7 @@ Aim gun at entity.
 
    pHostPed = lobby.get_player_ped(lobby.get_host())
 
-   rage.ai.task_aim_gun_at_entity(pSelfPed, pHostPed, 5)
+   rage.task.task_aim_gun_at_entity(pSelfPed, pHostPed, 5)
 
 ================================
 
@@ -23154,7 +23154,7 @@ Makes the specified ped attack the target ped.
 
    pTargetPed = lobby.get_player_ped(plhostPlayer)
 
-   rage.ai.task_combat_ped(pSelfPed, pTargetPed) -- You will attack the lobby host
+   rage.task.task_combat_ped(pSelfPed, pTargetPed) -- You will attack the lobby host
 
 ================================
 
@@ -23202,7 +23202,7 @@ Makes the specified ped enter the vehicle.
    v3CoordsInfront = player.get_coords_infront(5)
    vVehicleHandle = scripting.spawn.spawn_vehicle(vehicleHash, coordsInfront, 30)
 
-   rage.ai.task_enter_vehicle(pSelfPed, vVehicleHandle, 0, -1, 2.0, 1, 0) --  Ped will enter the Zentorno walking and sitting on driver seat.
+   rage.task.task_enter_vehicle(pSelfPed, vVehicleHandle, 0, -1, 2.0, 1, 0) --  Ped will enter the Zentorno walking and sitting on driver seat.
 
 ================================
 
@@ -23240,7 +23240,7 @@ Follow to offset of the entity.
 
    pHostPed = lobby.get_player_ped(lobby.get_host())
 
-   rage.ai.task_follow_to_offset_of_entity(pSelfPed, pHostPed, 5, 5, 1, 2, 0, 1, true)
+   rage.task.task_follow_to_offset_of_entity(pSelfPed, pHostPed, 5, 5, 1, 2, 0, 1, true)
 
 ================================
 
@@ -23289,7 +23289,7 @@ Make the ped move to a coordinate while aiming (and optionally shooting) at give
 
    pSelfPed = player.get_ped()
 
-   rage.ai.task_go_to_coord_while_aiming_at_coord(pSelfPed, 5, 5, 1, 10, 10, 1, 2, true)
+   rage.task.task_go_to_coord_while_aiming_at_coord(pSelfPed, 5, 5, 1, 10, 10, 1, 2, true)
 
 ================================
 
@@ -23334,7 +23334,7 @@ Make the ped move to a coordinate while aiming (and optionally shooting) at give
 
    pHostPed = lobby.get_player_ped(lobby.get_host())
 
-   rage.ai.task_go_to_coord_while_aiming_at_entity(pSelfPed, 119.73, 65.30, 420.12, pHostPed, 2.0, false, 1.5, 1.5, false, false, false)
+   rage.task.task_go_to_coord_while_aiming_at_entity(pSelfPed, 119.73, 65.30, 420.12, pHostPed, 2.0, false, 1.5, 1.5, false, false, false)
 
 ================================
 
@@ -23375,7 +23375,7 @@ Make the ped move to an entity while aiming and optionally shooting and optional
 
    pHostPed = lobby.get_player_ped(lobby.get_host())
 
-   rage.ai.task_go_to_entity_while_aiming_at_entity(pSelfPed, pHostPed, 5, 5, 1, 2, 0, 1, true)
+   rage.task.task_go_to_entity_while_aiming_at_entity(pSelfPed, pHostPed, 5, 5, 1, 2, 0, 1, true)
 
 ================================
 
@@ -23412,7 +23412,7 @@ Make the entity move to a target until time is over (duration) or get in target'
 
    vSpawnedVehicleHandle = scripting.spawn.spawn_vehicle(uZentornoHash, v3CoordsInfront, 30.0)
 
-   rage.ai.task_go_to_entity(pSelfPed, vSpawnedVehicleHandle, 5000, 4.0, 100, 1073741824, 0) 
+   rage.task.task_go_to_entity(pSelfPed, vSpawnedVehicleHandle, 5000, 4.0, 100, 1073741824, 0) 
    -- Ped will run towards the vehicle for 5 seconds and stop when time is over or when he Returns 4 meters(?) around the vehicle
 
 ================================
@@ -23448,7 +23448,7 @@ Make the ped leave the vehicle with customizable flags.
 
    vPedVehicle = player.rage.ped.get_vehicle_ped_is_using(ped)
 
-   rage.ai.task_leave_vehicle(pSelfPed, vPedVehicle, 1)
+   rage.task.task_leave_vehicle(pSelfPed, vPedVehicle, 1)
 
 ================================
 
@@ -23485,7 +23485,7 @@ Make the ped open the vehicle door of a specific seat, at given speed.
 
    vSpawnedVehicleHandle = scripting.spawn.spawn_vehicle(uZentornoHash, v3CoordsInfront, 30.0)
 
-   rage.ai.task_open_vehicle_door(pSelfPed, vSpawnedVehicleHandle, 100, 1, 2.0)
+   rage.task.task_open_vehicle_door(pSelfPed, vSpawnedVehicleHandle, 100, 1, 2.0)
 
 ================================
 
@@ -23511,7 +23511,7 @@ Make the ped do a parachute jump
    
    pSelfPed = player.get_ped()
 
-   rage.ai.task_parachute(pSelfPed)
+   rage.task.task_parachute(pSelfPed)
 
 ================================
 
@@ -23538,7 +23538,7 @@ Makes the ped parachute to given coordinates.
    
    pSelfPed = player.get_ped()
 
-   rage.ai.task_parachute_to_target(pSelfPed, 69.5, 420.10, 57.91)
+   rage.task.task_parachute_to_target(pSelfPed, 69.5, 420.10, 57.91)
 
 ================================
 
@@ -23583,7 +23583,7 @@ Makes the ped play an animation with custom duration and flags.
 
    pSelfPed = player.get_ped()
 
-   rage.ai.task_play_anim(pSelfPed, "move_f@injured", "sprint", 8.0, 8.0, 5000, 0, 0.0, 0, 0, 1)
+   rage.task.task_play_anim(pSelfPed, "move_f@injured", "sprint", 8.0, 8.0, 5000, 0, 0.0, 0, 0, 1)
 
 ================================
 
@@ -23608,7 +23608,7 @@ Makes the ped rappel from helicopter, with settable minimum height above the gro
 
    pSelfPed = player.get_ped()
 
-   rage.ai.task_rappel_from_heli(pSelfPed, 100)
+   rage.task.task_rappel_from_heli(pSelfPed, 100)
 
 ================================
 
@@ -23640,7 +23640,7 @@ Make the entity shoot at an entity targeted for a given duration and with custom
    plHostPlayer = lobby.get_host()
    pHostPed = lobby.get_player_ped(plHostPlayer)
 
-   rage.ai.task_shoot_at_entity(pSelfPed, pHostPed, 5000, 1)
+   rage.task.task_shoot_at_entity(pSelfPed, pHostPed, 5000, 1)
 
 ================================
 
@@ -23665,7 +23665,7 @@ Makes the ped sky-dive.
    
    pSelfPed = player.get_ped()
 
-   rage.ai.task_sky_dive(pSelfPed)
+   rage.task.task_sky_dive(pSelfPed)
 
 ================================
 
@@ -23696,7 +23696,7 @@ Makes the ped parachute to given coordinates.
    
    pSelfPed = player.get_ped()
 
-   rage.ai.task_parachute_to_target(pSelfPed, 69.5, 420.10, 57.91, 1, "WORLD_HUMAN_GUARD_STAND")
+   rage.task.task_parachute_to_target(pSelfPed, 69.5, 420.10, 57.91, 1, "WORLD_HUMAN_GUARD_STAND")
 
 ================================
 
@@ -23739,7 +23739,7 @@ Makes the ped start the scenario at a given position.
    pSelfPed = player.get_ped()
    v3CoordsInfront = player.get_coords_infront(10)
 
-   rage.ai.task_start_scenario_at_position(pSelfPed, "WORLD_HUMAN_GUARD_STAND", v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 1, 5000, false, true)
+   rage.task.task_start_scenario_at_position(pSelfPed, "WORLD_HUMAN_GUARD_STAND", v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 1, 5000, false, true)
 
 ================================
 
@@ -23772,7 +23772,7 @@ Plays a scenario on a Ped at their current location.
    
    pSelfPed = player.get_ped()
 
-   rage.ai.task_start_scenario_in_place(pSelfPed, "WORLD_HUMAN_GUARD_STAND", 0, true)
+   rage.task.task_start_scenario_in_place(pSelfPed, "WORLD_HUMAN_GUARD_STAND", 0, true)
 
 ================================
 
@@ -23796,7 +23796,7 @@ Makes the ped stay in cover.
    
    pSelfPed = player.get_ped()
 
-   rage.ai.task_stay_in_cover(pSelfPed)
+   rage.task.task_stay_in_cover(pSelfPed)
 
 ================================
 
@@ -23826,7 +23826,7 @@ Turn the ped to face towards the entity.
    plHostPlayer = lobby.get_host()
    pHostPed = lobby.get_player_ped(plHostPlayer)
 
-   rage.ai.task_turn_ped_to_face_entity(pSelfPed, pHostPed, 500)
+   rage.task.task_turn_ped_to_face_entity(pSelfPed, pHostPed, 500)
 
 ================================
 
@@ -23854,7 +23854,7 @@ Makes ped vehicle aim at given coordinates.
    pSelfPed = player.get_ped()
    v3CoordsInfront = player.get_coords_infront(10)
 
-   rage.ai.task_vehicle_aim_at_coord(ped, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z)
+   rage.task.task_vehicle_aim_at_coord(ped, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z)
 
 ================================
 
@@ -23881,7 +23881,7 @@ Makes ped vehicle aim at a given ped.
    plHostPlayer = lobby.get_host()
    pHostPed = lobby.get_player_ped(plHostPlayer)
 
-   rage.ai.task_vehicle_aim_at_ped(pSelfPed, pHostPed)
+   rage.task.task_vehicle_aim_at_ped(pSelfPed, pHostPed)
 
 ================================
 
@@ -23908,7 +23908,7 @@ Makes ped driver chase a target entity.
    plHostPlayer = lobby.get_host()
    pHostPed = lobby.get_player_ped(plHostPlayer)
 
-   rage.ai.task_vehicle_chase(pSelfPed, pHostPed)
+   rage.task.task_vehicle_chase(pSelfPed, pHostPed)
 
 ================================
 
@@ -23949,7 +23949,7 @@ Makes ped drive the vehicle to given coordinates.
 
    v3CoordsInfront = player.get_coords_infront(100)
 
-   rage.ai.task_vehicle_drive_to_coord(pSelfPed, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 10, vSpawnedVehicleHandle, 1, 5)
+   rage.task.task_vehicle_drive_to_coord(pSelfPed, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 10, vSpawnedVehicleHandle, 1, 5)
 
 ================================
 
@@ -23991,7 +23991,7 @@ Makes ped drive to the destination at set speed and driving style.
 
    v3CoordsInfront = player.get_coords_infront(1000)
 
-   rage.ai.task_vehicle_drive_to_coord_longrange(pSelfPed, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 50, vSpawnedVehicleHandle, 1, 5)
+   rage.task.task_vehicle_drive_to_coord_longrange(pSelfPed, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 50, vSpawnedVehicleHandle, 1, 5)
 
 ================================
 
@@ -24022,7 +24022,7 @@ Makes ped drive randomly with no destination set.
    
    vCurrentVehicleHandle = player.get_vehicle()
 
-   rage.ai.task_vehicle_drive_wander(pSelfPed, vCurrentVehicleHandle, 30, 6)
+   rage.task.task_vehicle_drive_wander(pSelfPed, vCurrentVehicleHandle, 30, 6)
 
 ================================
 
@@ -24075,7 +24075,7 @@ Makes a ped follow the targetVehicle with <minDistance> in between.
    pHostPed = lobby.get_player_ped(plHostPlayer)
    vTargetVehicleHandle = rage.ped.get_vehicle_ped_is_using(pedHostPed)
    
-   rage.ai.task_vehicle_escort(pSelfPed, vCurrentVehicleHandle, vTargetVehicleHandle, -1, 50, 6, 100) -- player will follow host with 100m in betweentask_vehicle_escorttargetVehicle, -150, 6, 10, 20
+   rage.task.task_vehicle_escort(pSelfPed, vCurrentVehicleHandle, vTargetVehicleHandle, -1, 50, 6, 100) -- player will follow host with 100m in betweentask_vehicle_escorttargetVehicle, -150, 6, 10, 20
 
 ================================
 
@@ -24112,7 +24112,7 @@ Makes a ped in a vehicle follow an entity.
    
    vCurrentVehicleHandle = player.get_vehicle()
 
-   rage.ai.task_vehicle_follow(pSelfPed, vCurrentVehicleHandle, pHostPed, 100, 6, 10)
+   rage.task.task_vehicle_follow(pSelfPed, vCurrentVehicleHandle, pHostPed, 100, 6, 10)
 
 ================================
 
@@ -24144,8 +24144,8 @@ Makes a ped shoot at a coord from vehicle
    vSpawnedVehicleHandle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ANNIHILATOR"), v3CoordsInfront, 30)
    vClonedPed = rage.ped.clone_ped(pSelfPed, true, true, false)
    v3CoordsInfront = player.get_coords_infront(100)
-   rage.ai.task_enter_vehicle(vClonedPed, vSpawnedVehicleHandle, 0, -1, 2.0, 1, 0)
-   rage.ai.task_vehicle_shoot_at_coord(vClonedPed, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 0.5)
+   rage.task.task_enter_vehicle(vClonedPed, vSpawnedVehicleHandle, 0, -1, 2.0, 1, 0)
+   rage.task.task_vehicle_shoot_at_coord(vClonedPed, v3CoordsInfront.x, v3CoordsInfront.y, v3CoordsInfront.z, 0.5)
    
 
 ================================
@@ -24179,8 +24179,8 @@ Makes a ped shoot another ped from vehicle.
   v3CoordsInfront = player.get_coords_infront(10)
   vSpawnedVehicleHandle = scripting.spawn.spawn_vehicle(rage.gameplay.get_hash_key("ANNIHILATOR"), v3CoordsInfront, 30)
   vClonedPed = rage.ped.clone_ped(pSelfPed, true, true, false)
-  rage.ai.task_enter_vehicle(vClonedPed, vSpawnedVehicleHandle, 0, -1, 2.0, 1, 0)
-  rage.ai.task_vehicle_shoot_at_ped(vClonedPed, pSelfPed, 100)
+  rage.task.task_enter_vehicle(vClonedPed, vSpawnedVehicleHandle, 0, -1, 2.0, 1, 0)
+  rage.task.task_vehicle_shoot_at_ped(vClonedPed, pSelfPed, 100)
 
 ================================
 
@@ -24210,7 +24210,7 @@ Makes ped walk around the area.
    
    pSelfPed = player.get_ped()
    
-   rage.ai.task_wander_standard(pSelfPed, 10, 10) -- walk around the area without a duration, anywhere
+   rage.task.task_wander_standard(pSelfPed, 10, 10) -- walk around the area without a duration, anywhere
 
 ================================
 
