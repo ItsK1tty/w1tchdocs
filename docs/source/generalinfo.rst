@@ -6,7 +6,7 @@ General Information
 Installation path
 --------------------------
 
-To install LUA scripts, you need to drop them into a directory that is ``%appdata%\DIS2RBED\Lua``:
+To install LUA scripts, you need to drop them into a directory that is ``%programdata%\DIS2RBED\Lua``:
 
 You can edit scripts with any editor you want, but DIS2RBED will only scan for them during initialization.
 
