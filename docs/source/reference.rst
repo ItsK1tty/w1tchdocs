@@ -11359,21 +11359,26 @@ Sets the model for a specific player.
    :linenos:
    
    iPlayerId = player.get_id()
+   iPlayerPed = player.get_ped()
    uModel = rage.gameplay.get_hash_key("s_f_y_hooker_02")
-
-   for i=1,50 do 
-      rage.streaming.request_model(uModel)
-      system.wait()
-   end
-
-   if rage.streaming.has_model_loaded(uModel) then
-      rage.player.set_player_model(iPlayerId, uModel)
-      iPlayerPed = player.get_ped()
-      rage.ped.set_ped_default_component_variation(iPlayerPed)
-      system.wait()
-      rage.streaming.set_model_as_no_longer_needed(uModel)
-   else
-      system.log_warning("Cannot load model " .. tostring(uModel))
+   currentModelHash = rage.entity.get_entity_model(iPlayerPed)
+   if currentModelHash ~= uModel then
+      if not rage.streaming.has_model_loaded(uModel) then
+         for i=1,10 do 
+            rage.streaming.request_model(uModel)
+            system.wait(1)
+         end
+      end
+      if rage.streaming.has_model_loaded(uModel) then
+         olduModel = rage.entity.get_entity_model(iPlayerPed)
+         rage.player.set_player_model(iPlayerId, uModel)
+         iPlayerPed = player.get_ped()
+         rage.ped.set_ped_default_component_variation(iPlayerPed)
+         system.wait(1)
+         rage.streaming.set_model_as_no_longer_needed(olduModel)
+      else
+         system.log_warning("Cannot load model " .. tostring(uModel))
+      end
    end
 
 
